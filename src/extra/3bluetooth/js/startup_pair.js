@@ -1,0 +1,1 @@
+const servicesArray=["settingsService"];window.libSession.initService(servicesArray).then(()=>{SettingsObserver.init(),window.api.l10n.once(()=>{const i=new PairManager;i.init()})});

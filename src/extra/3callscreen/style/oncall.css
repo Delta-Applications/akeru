@@ -1,0 +1,1394 @@
+@media (min-height: 4.5em) {
+  html, body {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    font-size: 10px;
+    color: white;
+    background: transparent;
+    -moz-user-select: none;
+    --name-maxsize: 2.2rem;
+    --name-minsize: 1.7rem;
+    background-color: var(--header-background);
+  }
+
+  @media (prefers-text-size: large) {
+    body {
+      --name-maxsize: 2.8rem;
+      --name-minsize: 2.2rem;
+    }
+  }
+
+  html * {
+    overflow: hidden;
+  }
+
+  #calls[show-mode="list-mode"] .duration .font-light {
+    position: relative;
+    width: 6rem;
+    color: var(--color-gs70);
+    margin-top: 0.7rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  html[dir="ltr"] #calls[show-mode="list-mode"] .duration .font-light {
+    text-align: right;
+    left: 0;
+  }
+
+  html[dir="rtl"] #calls[show-mode="list-mode"] .duration .font-light {
+    text-align: left;
+    right: 0;
+  }
+
+  #calls:not(.big-duration) > section.ended .duration .font-light {
+    line-height: 2rem;
+  }
+
+  #calls:not(.big-duration) > section.ended .callended {
+    line-height: 1.4rem;
+    color: var(--color-gs70);
+    font-size: 1.4rem;
+    font-weight: 400;
+    height: 2.4rem;
+    width: 100%;
+  }
+
+  #calls:not(.big-duration) > section.connecting:not(.held) .connect {
+    line-height: 1.4rem;
+    color: var(--color-gs70);
+    font-size: 1.4rem;
+    font-weight: 400;
+    height: 2.4rem;
+    width: 100%;
+  }
+
+  #calls[show-mode="list-mode"] > section.outgoing.connecting .duration,
+  #calls[show-mode="list-mode"] > section.outgoing.connecting .additionalContactInfo,
+  #calls[show-mode="list-mode"] > section.outgoing.connecting.ended:not(.held) .connect,
+  #calls[show-mode="list-mode"] > section.outgoing.connecting:not(.ended) .callended {
+    height: 0;
+  }
+  #calls[show-mode="list-mode"] > section.outgoing.connecting:not(.held) .connect,
+  #calls[show-mode="list-mode"] > section.outgoing.connecting.ended .callended {
+    line-height: 1.4rem;
+    color: var(--color-gs70);
+    font-size: 1.4rem;
+    font-weight: 400;
+    height: 2.4rem;
+    width: 100%;
+  }
+
+  #calls[show-mode="max-mode"] .connect {
+    height: 0 !important;
+  }
+
+  #calls:not(.big-duration) > section.connected:not(.ended) .callended,
+  #calls:not(.big-duration) > section.connected:not(.ended) .connect
+  {
+    height: 0 !important;
+  }
+
+  #calls[show-mode="max-mode"] .callended {
+    height: 0 !important;
+  }
+
+  #calls:not(.big-duration) > section.ended .connect,
+  #calls:not(.big-duration) > section.held .connect,
+  #calls:not(.big-duration) > section.connecting:not(.ended) .callended
+  {
+    height: 0 !important;
+  }
+  #calls:.big-duration > section.connecting .connect {
+    height: 0 !important;
+  }
+  body:not(.single-line) #calls > section.connecting:not(.held) .additionalContactInfo {
+    height: 0 !important;
+  }
+
+  #calls:not(.big-duration) > section.ended:not(.ongoing) .duration .font-light {
+    line-height: 3.5rem;
+  }
+
+  #calls .held .duration{
+    display: block !important;
+  }
+
+  #calls section:not(.held, .active-second-call) {
+    background-image: none !important;
+  }
+
+  button::-moz-focus-inner {
+    border: 0;
+  }
+
+  #phone-number-view {
+    width:100%;
+    border:0;
+    background:transparent;
+    text-align: left;
+    cursor:none;
+    -moz-user-select: none;
+  }
+
+  #views {
+    position: absolute;
+    top: 100%;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    visibility: hidden;
+  }
+
+  body.no-handled-calls * {
+    pointer-events: none;
+  }
+
+  #views > .view {
+    height: 100%;
+    width: 100%;
+  }
+
+  body.hidden *[data-l10n-id] {
+    visibility: hidden;
+  }
+
+  #call-screen {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - var(--statusbar-softkeybar-height));
+    margin: 0;
+    border: 0;
+    background: black;
+    z-index: 100;
+    top: var(--statusbar-height);
+  }
+
+  #main-container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--color-gs00);
+  }
+
+  .callended.hidden {
+    display: none;
+  }
+
+  .remote-video-anchor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: grey;
+  }
+
+  .remote-video-view {
+    width: 100%;
+    height: auto;
+  }
+
+  .remote-video-view.landscapeView {
+    height: 100%;
+  }
+
+  .local-video-anchor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  .local-video-anchor div,
+  .local-video-view {
+    position: absolute;
+    bottom: 7.5rem;
+    right: 0.5rem;
+    width: 4.8rem;
+    height: 6.4rem;
+    border: 0.1rem solid var(--color-gs00);
+  }
+
+  .local-video-view.rotate{
+    bottom: 6.5rem;
+    right: 1rem;
+  }
+
+  .local-video-view.landscape {
+    width: 6.4rem;
+    height: 4.8rem;
+  }
+
+  .local-video-view.landscape.rotate {
+    bottom: 8.3rem;
+    right: -0.5rem;
+  }
+
+  .local-video-anchor div.large,
+  .local-video-view.large {
+    bottom: 0.5rem;
+    right: 0.5rem;
+    width: 6.1rem;
+    height: 8.2rem;
+  }
+
+  .local-video-view.large.rotate {
+    bottom: -0.5rem;
+    right: 1.5rem;
+  }
+
+  .local-video-view.large.landscape {
+    width: 8.2rem;
+    height: 6.1rem;
+  }
+
+  .local-video-view.large.landscape.rotate {
+    bottom: 1.5rem;
+    right: -0.5rem;
+  }
+
+  .local-video-view.full {
+    position: absolute;
+    top: 0rem;
+    bottom: 0;
+    right: 0;
+    height: 32rem;
+    width: 24rem;
+    border: none;
+    background-color: grey;
+  }
+
+  .local-video-view.full.landscape {
+    top: 4rem;
+    height: 24rem;
+    width: 32rem;
+  }
+
+  html[dir="ltr"] .local-video-view.full.landscape {
+    left: -4rem;
+    right: 0;
+  }
+
+  html[dir="rtl"] .local-video-view.full.landscape {
+    right: -4rem;
+    left: 0;
+  }
+
+  .local-video-anchor div {
+    background-color: var(--color-gs90);
+    color: var(--color-gs70);
+    font-size: 3.2rem;
+    text-align: center;
+    line-height: 6.4rem;
+
+  }
+
+  .local-video-anchor div.large {
+    line-height: 8.2rem;
+  }
+
+  .local-video-anchor.hide-camera[hidden],
+  .local-video-anchor.hide-camera video,
+  .local-video-anchor:not(.hide-camera) div {
+    display: none;
+  }
+
+  button[disabled] .icon {
+    opacity: 0.6;
+  }
+
+  /* Multiple call handling */
+  #calls {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 500;
+    background: var(--color-gs00);
+    transform: translateY(0);
+    transition: transform 0.4s ease-in-out, visibility 0.4s;
+    background-position: center center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+  }
+
+  #calls > section {
+    position: relative;
+    height: 100%;
+  }
+
+  #calls > section.groupended {
+    display: none;
+  }
+
+  #calls:not(.big-duration) > section:not(.ended) .duration:not(.isTimer) {
+    visibility: hidden;
+  }
+
+  #calls > section .numberWrapper .hd-icon {
+    display: inline-block;
+    border: 1px solid #000;
+    color: #333;
+    width: 3rem;
+    height: 2rem;
+    font-size: 2rem;
+    border-radius: 4px;
+    padding: 0.1rem;
+    text-align: center;
+    line-height: 2rem;
+  }
+
+  #calls > section .numberWrapper .hd-icon.hide {
+    display: none;
+  }
+
+  body:not(.single-line) #calls > section.ended .numberWrapper .number {
+    color: var(--color-gs100);
+  }
+
+  #calls > section.emergency.additionalInfo .numberWrapper .number {
+    color: #b90000;
+  }
+
+  .group-check-div {
+    background-color: var(--highlight-color, #00B965);
+    padding: 1rem 0;
+  }
+
+  .group-check-p {
+    display: inline-block;
+    color: var(--color-gs00);
+    background-color: var(--highlight-color, #00B965) !important;
+    margin-left: 1.5rem;
+  }
+
+  .group-check-input {
+    float: right;
+    font-size: 2.5rem;
+    margin-right: 2rem;
+    margin-top: 1.5rem;
+  }
+
+  .group-check-input::before {
+    color: var(--color-gs00);
+  }
+
+  .height-adjust {
+    max-height: 22.2rem;
+  }
+
+  .additionalContactInfo > * {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
+  }
+
+  .additionalContactInfo > .tel-info {
+    margin-right: auto;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  html[dir="ltr"] .additionalContactInfo > .tel-info {
+    padding-right: 0.5rem;
+  }
+
+  html[dir="rtl"] .additionalContactInfo > .tel-info {
+    padding-left: 0.5rem;
+  }
+
+  .additionalContactInfo .tel-type {
+    max-width: 12rem;
+  }
+
+  .wifi-call-quality-container {
+    display: flex;
+    flex-shrink: 0;
+    width: auto;
+  }
+
+  #calls[show-mode="max-mode"] #group-call .wifi-call-quality-container {
+    margin-right: 0.5rem;
+  }
+
+  #calls[show-mode="list-mode"] .wifi-call .wifi-call-quality-container {
+    margin: 0.5rem 0.5rem 0 0;
+  }
+
+  #calls[show-mode="list-mode"] .show-rec .call-recording-container {
+    margin-top: 0.5rem;
+  }
+
+  #group-call .wifi-call-quality-container {
+    float: right;
+  }
+
+  #calls[show-mode="list-mode"] #group-call .call-recording-container,
+  #calls[show-mode="list-mode"] #group-call .wifi-call-quality-container {
+    float: left;
+  }
+
+  .wifi-call-quality {
+    border-radius: 1rem;
+    width: auto;
+    height: 2rem;
+    background-color: var(--color-gs20);
+    min-width: 4rem;
+    padding: 0 0.5rem;
+    display: flex;
+    flex-flow: row-reverse wrap;
+    flex-shrink: 0;
+  }
+
+  .call-recording-container.hide,
+  .wifi-call-quality-container.hide {
+    display: none;
+  }
+
+  .quality-dot {
+    border-radius: 0.3rem;
+    width: 0.6rem;
+    height: 0.6rem;
+    background-color: rgb(--color-black);
+    margin: 0.7rem 0.5rem 0;
+  }
+
+  .quality-dot[data-quality='excellent'] {
+    background-color: var(--color-lime);
+  }
+
+  .quality-dot[data-quality='fair'] {
+    background-color: var(--color-orange);
+  }
+
+  .quality-dot[data-quality='bad'] {
+    background-color: var(--color-red);
+  }
+
+
+  .quality-content {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-gs90);
+    padding-top: 0.2rem;
+  }
+
+  html[dir="ltr"] .quality-content {
+    padding-right: 0.5rem;
+  }
+
+  html[dir="rtl"] .quality-content {
+    padding-left: 0.5rem;
+  }
+
+  .call-recording-container {
+    width: auto;
+    bottom: 1.2rem;
+  }
+
+  #calls[show-mode="max-mode"] .call-recording-container {
+    position: absolute;
+  }
+
+  .call-recording {
+    border-radius: 1rem;
+    width: auto;
+    height: 2rem;
+    background-color: var(--color-gs100);
+    min-width: 4.7rem;
+    display: flex;
+    flex-flow: row-reverse wrap;
+    flex-shrink: 0;
+    opacity: 0.5;
+  }
+
+  .rec-content {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-gs00);
+    padding-top: 0.1rem;
+    margin-right: 0.7rem;
+  }
+
+  .rec-dot {
+    border-radius: 0.3rem;
+    width: 0.6rem;
+    height: 0.6rem;
+    background-color: red;
+    margin: 0.7rem 0.5rem 0;
+  }
+
+  .indicator-container {
+    width: auto;
+    display: flex;
+    flex-shrink: 0;
+  }
+
+  #calls[show-mode="max-mode"] .indicator-container > .call-recording-container {
+    display: none;
+  }
+
+  #calls[show-mode="list-mode"] .duration > .call-recording-container {
+    display: none;
+  }
+
+
+  html[dir="ltr"]  #calls[show-mode="max-mode"] .call-recording-container {
+    right: 0.5rem;
+  }
+
+  html[dir="rtl"] #calls[show-mode="max-mode"] .call-recording-container {
+    left: 0.5rem;
+  }
+
+  html[dir="rtl"] #calls:not(.big-duration) > section.ended .additionalContactInfo {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  #calls > section:not(.additionalInfo) .additionalContactInfo {
+    display: none;
+  }
+
+  html[dir="rtl"] #calls:not(.big-duration) > section .duration {
+    padding-right: 25.6rem;
+  }
+
+  html[dir="rtl"] #calls:not(.big-duration) > #group-call:not(.held) {
+    background-position: 28.3rem;
+  }
+
+  html[dir="rtl"] #calls:not(.big-duration) > section.ended .numberWrapper {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  html[dir="rtl"] #calls:not(.big-duration) > section.held {
+    background-position: 28.3rem;
+  }
+  html[dir="rtl"] #calls:not(.big-duration) > section:not(.held) {
+    background-position: 28.3rem;
+  }
+
+  html[dir="rtl"] #calls:not(.big-duration) > section.ended {
+    background-position: 28.3rem;
+    padding-left: 7rem;
+    padding-right: 4rem;
+  }
+
+  #calls.big-duration > section.held .duration {
+    display: block;
+  }
+
+  body:not(.single-line) #calls > section.held:not(.ended) .duration {
+    display: none;
+  }
+
+  #calls.big-duration .handled-call .direction:before,
+  #calls.big-duration #group-call .direction:before {
+    content: "";
+    display: block;
+    width: 4rem;
+    height: 4rem;
+    background-repeat: no-repeat;
+    background-size: 2.6rem auto;
+    background-position: 0rem -0.3rem;
+  }
+
+
+  #calls:not(.big-duration) > section.ended .duration,
+  #calls:not(.big-duration) > section.ended.held .duration {
+    color: white;
+    font-size: 1.4rem;
+  }
+
+  #calls:not(.big-duration) > section.ended .duration {
+    line-height: 0;
+    margin-top: 0;
+  }
+
+  #incoming-container {
+    position: absolute;
+    width: 100%;
+    transform: translateY(-100%);
+    transition: transform 0.4s cubic-bezier(0,0,0,1), visibility 0.4s;
+    z-index: 500;
+    height: 100%;
+    background: none;
+    opacity: 1;
+    top: 0;
+  }
+
+  #incoming-info {
+    position: absolute;
+    background-color: var(--header-background);
+    top: 0;
+    width: 100%;
+    height: 5.8rem;
+  }
+
+  #incoming-container.displayed {
+    transform: translateY(0);
+  }
+
+  #call-screen:not(.list-mode-call-waiting) #incoming-container.displayed {
+    background: var(--color-gs100);
+    opacity: 0.75;
+  }
+
+  .list-mode-call-waiting #calls[show-mode="list-mode"] {
+    top: 5.8rem !important;
+  }
+
+  .incoming-number-info {
+    height: 5.8rem;
+    display: flex;
+    flex-direction: column;
+  }
+  @media (prefers-text-size: large) {
+    #incoming-number {
+      font-size: 1.9rem;
+    }
+  }
+
+  #incoming-number {
+    width: calc(100% - 6.2rem);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: var(--color-gs00);
+    margin-left: 5.2rem;
+    line-height: 2.2rem;
+    margin-top: 1rem;
+  }
+
+  html[dir="rtl"] #incoming-number {
+    margin-right: 5.2rem;
+    margin-left: 0;
+    text-align: right;
+  }
+
+  #incoming-number-additional-info {
+    display: flex;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: var(--color-gs70);
+    -moz-margin-start: 5.2rem;
+    width: calc(100% - 8.9rem);
+  }
+
+  .handled-call .tel-info .tel-type,
+  #incoming-number-additional-info-tel-type {
+    flex-shrink: 0;
+  }
+
+  .handled-call .tel-info .tel,
+  #incoming-number-additional-info-tel {
+    flex-shrink: 1;
+    text-overflow: ellipsis;
+    -moz-margin-start: 0.1rem;
+  }
+
+  .handled-call .tel-info {
+    display: flex;
+  }
+
+  .handled-call .tel-info .stir-checked,
+  #incoming-number-additional-info .stir-checked {
+    flex-shrink: 0;
+    -moz-margin-start: 0.5rem;
+  }
+
+  #incoming-number .hd-icon {
+    height: 3.2rem;
+    width: 3.2rem;
+    background: url("images/ic_hd_call.png");
+    float: right;
+    margin-right: 0.5rem;
+  }
+
+  #contact-background {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: none;
+  }
+
+  .option-menu {
+    z-index: 751;
+  }
+
+  /* Action List */
+  #action_list {
+    bottom: var(--softkeybar-height) !important;
+    padding-bottom: 1rem;
+    background-color: var(--color-gs00) !important;
+  }
+
+  #action_list > .visible > menu > button {
+    color: var(--color-gs90);
+    background: var(--color-gs20);
+    height: 3.5rem;
+    width: calc(100% - 2rem);
+    margin: 0.5rem 1rem 0 1rem;
+    text-align: center;
+    border-radius: 0.2rem;
+    font-weight: 400;
+    font-size: var(--name-minsize);
+  }
+
+  #action_list > .visible > menu > button:active {
+    background: #00B965;
+  }
+
+  #action_list > .visible > menu > button.focus{
+    background: var(--highlight-color);
+    color: var(--color-gs00);
+  }
+
+  #action_list > .visible > menu > button.disable{
+    background: var(--color-gs20);
+    color: var(--color-gs90);
+    opacity: 0.3;
+  }
+
+  #callsinfo {
+    position: absolute;
+    width: 100%;
+    height: 7rem;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+  #callsinfo.hide {
+    display: none;
+  }
+
+  #group-call #callsinfo {
+    position: unset;
+  }
+
+  #callsinfo .numberWrapper {
+    font-size: var(--name-maxsize);
+    font-weight: 400;
+    color: var(--color-gs90);
+    width: 100%;
+  }
+
+  /*FIH:changjj add for marquee begin*/
+  @-moz-keyframes scroll-left {
+    0% {
+      -moz-transform: translateX(100%);
+    }
+    100% {
+      -moz-transform: translateX(-100%);
+    }
+  }
+
+  @-webkit-keyframes scroll-left {
+    0% {
+      -webkit-transform: translateX(100%);
+    }
+    100% {
+      -webkit-transform: translateX(-100%);
+    }
+  }
+
+  @keyframes scroll-left {
+    0% {
+      -moz-transform: translateX(100%);
+      -webkit-transform: translateX(100%);
+      transform: translateX(100%);
+    }
+    100% {
+      -moz-transform: translateX(-100%);
+      -webkit-transform: translateX(-100%);
+      transform: translateX(-100%);
+    }
+  }
+
+  .animationMarquee{
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    -moz-animation: scroll-left 1s linear infinite;
+    -webkit-animation: scroll-left 1s linear infinite;
+    animation: scroll-left 10s linear infinite;
+  }
+  /*FIH:changjj add for marquee end*/
+
+  #callsinfo .numberWrapper .number {
+    /*overflow: hidden;
+    text-overflow: ellipsis;*/
+    white-space: nowrap;
+    width: 100%;
+
+  }
+
+
+  #callsinfo .additionalContactInfo {
+    color: var(--color-gs70);
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  #calls[show-mode="max-mode"] .wifi-call #callsinfo .additionalContactInfo {
+    display: flex;
+  }
+
+  .hd-icon {
+    height: 3.2rem;
+    width: 3.2rem;
+    background: url("images/ic_hd_call.png");
+    position: relative;
+    margin-top: 3.3rem;
+  }
+
+  .hd-icon.hide {
+    display: none;
+  }
+
+  .hd-icon.white {
+    background: url("images/ic_hd_call.png") bottom;
+    position: absolute;
+    margin-top: -2.4rem;
+  }
+
+  html[dir="ltr"] .hd-icon.white {
+    right: 0.5rem;
+  }
+
+  html[dir="rtl"] .hd-icon.white {
+    left: 0.5rem;
+  }
+
+  .photo-icon {
+    width: 100%;
+    background-color: var(--header-background);
+    position: relative;
+    color: var(--highlight-color-pressed);
+    font-size: 9.6rem;
+    text-align: center;
+  }
+
+  #calls > section.voice-mail .photo-icon {
+    color: var(--color-lime-pressed);
+    padding-left: calc(50vw - 4.8rem);
+  }
+
+  #calls > section.emergency .photo-icon {
+    background-color: var(--header-red-background);
+    color: var(--color-red-pressed);
+    padding-left: calc(50vw - 3.2rem);
+    font-size: 6rem;
+  }
+
+  html[dir="rtl"] #calls > section.emergency .photo-icon,
+  html[dir="rtl"] #calls > section.voice-mail .photo-icon {
+    right: calc(4.8rem - 50vw);
+  }
+
+  #calls[show-mode="max-mode"] .photo-icon {
+    height: calc(100% - 7rem);
+    line-height: 19rem;
+    background-position: center center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+  }
+
+  #calls[show-mode="middle-mode"] .photo-icon {
+    height: calc(100% - 12.5rem);
+    line-height: 14rem;
+    background-position: center center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+  }
+
+  #calls[show-mode="min-mode"] .photo-icon {
+    height: calc(100% - 16rem);
+    line-height: 10rem;
+  }
+
+  #calls[show-mode="list-mode"] .photo-icon {
+    height: 0;
+  }
+
+  #calls[show-mode="max-mode"] .duration {
+    bottom: 7rem;
+  }
+
+  #calls[show-mode="middle-mode"] .duration {
+    bottom: 12.5rem;
+  }
+
+  #calls[show-mode="min-mode"] .duration {
+    bottom: 16rem;
+  }
+
+  #calls[show-mode="list-mode"] .duration {
+    margin-bottom: 0;
+    background: none;
+    position: absolute;
+    width: 6rem;
+    height: auto;
+    padding-top: 0.5rem;
+  }
+
+  html[dir="ltr"] #calls[show-mode="list-mode"] .duration {
+    right: 0.5rem;
+  }
+
+  html[dir="rtl"] #calls[show-mode="list-mode"] .duration {
+    left: 0.5rem;
+  }
+
+  #calls[show-mode="max-mode"] .status-icon::after {
+    bottom: 7.5rem;
+  }
+
+  #calls[show-mode="middle-mode"] .status-icon::after {
+    bottom: 12.5rem;
+  }
+
+  #calls[show-mode="min-mode"] .status-icon::after {
+    bottom: 16.5rem;
+  }
+
+  #calls[show-mode="list-mode"] .status-icon::after {
+    top: 1.1rem;
+    color: var(--highlight-color);
+    text-shadow: unset;
+  }
+
+  #calls[show-mode="list-mode"] > section {
+    height: 5.8rem;
+  }
+
+  #calls[show-mode="list-mode"] > section.show-rec,
+  #calls[show-mode="list-mode"] > section.wifi-call {
+    height: 7.8rem;
+  }
+
+  #calls[show-mode="list-mode"] #callsinfo {
+    position: absolute;
+    top: 0;
+    background: none;
+    width: calc(100% - 4.2rem);
+    height: 5.8rem;
+  }
+
+  html[dir="ltr"] #calls[show-mode="list-mode"] #callsinfo {
+    margin-left: 4.2rem;
+  }
+
+  html[dir="rtl"] #calls[show-mode="list-mode"] #callsinfo {
+    margin-right: 4.2rem;
+  }
+
+  #calls[show-mode="list-mode"] > section.show-rec #callsinfo,
+  #calls[show-mode="list-mode"] > section.wifi-call #callsinfo {
+    height: 7.8rem;
+  }
+
+  #calls[show-mode="list-mode"] .numberWrapper {
+    font-size: var(--name-minsize);
+    padding-bottom: 0;
+  }
+
+  #calls[show-mode="list-mode"] .numberWrapper .number {
+    /*FIH:changjj remove overflow: hidden;
+    text-overflow: ellipsis;*/
+    white-space: nowrap;
+    width: calc(100% - 2.8rem);
+  }
+
+  #calls[show-mode="list-mode"] .additionalContactInfo {
+    font-size: 1.4rem;
+  }
+
+  #calls[show-mode="list-mode"] .hd-icon {
+    margin-top: 2.1rem;
+  }
+  /* Multiple call handling */
+  #calls[show-mode="list-mode"].movedown{
+    transform: translateY(5.8rem);
+    transition: transform 0.4s ease-in-out, visibility 0.4s;
+  }
+
+  #calls[show-mode="min-mode"] .fadeout .duration,
+  #calls[show-mode="min-mode"] .fadeout .status-icon::after {
+    transition: opacity 0.3s linear;
+    opacity:0;
+  }
+
+  .duration {
+    width: 100%;
+    height: 4.4rem;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
+    position: absolute;
+    transition: opacity 0.3s linear;
+    opacity:100;
+  }
+
+  .rtt-mode .duration {
+    background: var(--color-orange);
+    opacity: 0.9;
+  }
+
+  .duration.hide {
+    display: none;
+  }
+
+  .status-icon::after {
+    font-family: "gaia-icons";
+    position: absolute;
+    text-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.5);
+    color: var(--color-gs00);
+    position: absolute;
+    font-size: 3.2rem;
+  }
+
+  html[dir="rtl"] #software-keys-center [data-icon='mute']::after,
+  html[dir="rtl"] #software-keys-center [data-icon='speaker-on']::after {
+    transform: rotateY(180deg);
+  }
+
+  html[dir="rtl"] .status-icon::after {
+    right: 1rem;
+  }
+
+  html[dir="ltr"] .status-icon::after {
+    left: 1rem;
+  }
+
+  .status-icon.hide {
+    display: none;
+  }
+
+  #calls .status-icon::after {
+    transition: opacity 0.3s linear;
+    opacity:100;
+  }
+
+  #calls:not(.mute) .handled-call.incoming:not(.video-call):not(.rtt-mode) .status-icon[data-ims]::after,
+  #calls:not(.mute) .handled-call.outgoing:not(.video-call):not(.rtt-mode) .status-icon[data-ims]::after,
+  .handled-call.ongoing.held:not(.video-call):not(.rtt-mode) .status-icon[data-ims]::after,
+  #calls:not(.mute) #group-call .status-icon.ims[data-ims]::after,
+  #incoming-info .status-icon[data-ims]::after,
+  #group-call.held .status-icon[data-ims]::after {
+    content: attr(data-ims) !important;;
+  }
+
+  #calls:not(.mute) .handled-call.incoming.video-call .status-icon::after,
+  #calls:not(.mute) .handled-call.outgoing.video-call .status-icon::after {
+    content: 'video' attr(data-index) !important;
+  }
+
+  #calls:not(.mute) .handled-call.rtt-mode .status-icon::after {
+    content: 'call-rtt' attr(data-index);
+  }
+
+  .handled-call.ongoing.held.rtt-mode .status-icon::after {
+    content: 'call-rtt-hold' attr(data-index) !important;
+  }
+
+  .handled-call.ongoing.held:not(.rtt-mode) .status-icon::after,
+  #group-call.held .status-icon::after {
+    content: 'call-hold' attr(data-index) !important;
+  }
+
+  #calls[show-mode="list-mode"] .handled-call.ongoing.held:not(.rtt-mode) .status-icon::after,
+  #calls[show-mode="list-mode"] #group-call.held .status-icon::after {
+    color: var(--color-gs45) !important;
+  }
+
+  #calls.mute .handled-call .status-icon::after,
+  #calls.mute #group-call .status-icon::after {
+    content: "mic-off";
+  }
+
+  #calls:not(.mute) .handled-call .status-icon::after,
+  #calls:not(.mute) #group-call .status-icon::after {
+    content: 'call' attr(data-index);
+  }
+
+  #calls:not(.mute) .handled-call.ended.video-call .status-icon::after,
+  .ended .status-icon::after {
+    content: "call-hang-up" !important;
+  }
+
+  .duration .font-light {
+    width: auto;
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--color-gs00);
+    position: absolute;
+    bottom: 0.5rem;
+  }
+
+  #calls[show-mode="max-mode"] .duration .font-light {
+    line-height: 4.4rem;
+    bottom: 0;
+  }
+
+  html[dir="ltr"] .duration .font-light {
+    left: 4.7rem;
+  }
+
+  html[dir="rtl"] .duration .font-light {
+    right: 4.7rem;
+  }
+
+  #incoming-info .status-icon::after {
+    content: 'call' attr(data-index);
+    top: 1.3rem;
+    text-shadow: unset;
+  }
+
+  html[dir="ltr"] #incoming-info .status-icon::after {
+    left: 1rem;
+  }
+
+  html[dir="rtl"] #incoming-info .status-icon::after {
+    right: 1rem;
+  }
+
+  .option-menu {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .option-menu.display {
+    visibility: visible;
+  }
+
+  .option-menu > div {
+    opacity: 0.85;
+    background-color: var(--color-gs90);
+    width: 100%;
+    flex-grow: 1;
+  }
+
+  .option-menu > h1 {
+    background-color: var(--color-gs20);
+    line-height: 2.6rem;
+    margin: 0;
+    text-align: center;
+    height: var(--header-height);
+    color: var(--color-gs90);
+  }
+
+  .option-menu > menu {
+    background-color: var(--color-gs00);
+    padding: 0;
+    margin: 0;
+  }
+
+  .option-menu > menu > button {
+    line-height: 4.8rem;
+    color: var(--color-gs90);
+    width: 100%;
+    background: none;
+    border: medium none;
+    text-align: left;
+    overflow: unset;
+  }
+
+  html[dir="rtl"] .option-menu > menu > button {
+    text-align: right;
+  }
+
+  .option-menu > menu > button.focus {
+    background: var(--highlight-color);
+    color: var(--color-gs00);
+  }
+
+  #bluetooth-menu.option-menu > menu > button.selected::after {
+    color: var(--highlight-color);
+    content: "radio-on";
+  }
+
+  #bluetooth-menu.option-menu > menu > button.selected.focus::after {
+    color: var(--color-gs00);
+  }
+
+
+  #bluetooth-menu.option-menu > menu > button::after {
+    font-family: "gaia-icons";
+    content: "radio-off";
+    right: 1rem;
+    position: absolute;
+    font-size: 3.2rem;
+    color:var(--color-gs45);
+  }
+
+  .infoContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: calc(100% - 1.5rem);
+  }
+
+  html[dir="ltr"] .infoContainer {
+    margin-left: 1rem;
+    margin-right: 0.5rem;
+    float: left;
+  }
+
+  html[dir="rtl"] .infoContainer {
+    margin-left: 0.5rem;
+    margin-right: 1rem;
+    float: right;
+  }
+
+  .infoContainer[hdicon-display="show"]  {
+    width: calc(100% - 5.2rem) !important;
+  }
+
+  #group-call .numberWrapper {
+    float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+  }
+
+  .skbar div {
+    height: var(--softkeybar-height, 3rem);
+  }
+
+  .sk-button [data-icon='messages']::after {
+    font-size: 2.4rem !important;
+  }
+
+  #dialing-number bdi {
+    padding: 1.4rem 0 0;
+    display: block;
+    line-height: 3rem !important
+  }
+
+  [role="dialog"][data-type="action"] > menu > button.focus {
+    background: var(--highlight-color) !important;
+  }
+
+
+  .confirm-input-container input {
+    display: block;
+    width: 100%;
+    height: 3.6rem;
+    line-height: 3.6rem;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    font-size: 1.7rem;
+    line-height: 1.7rem;
+  }
+
+  .confirm-input-mode {
+    color: var(--color-gs00);
+    background-color: var(--highlight-color) !important;
+  }
+
+  .is-loading .confirm-body {
+    display: flex;
+    align-items: center;
+  }
+
+  .is-loading .confirm-body::before {
+    content: '';
+    width: 3.2rem;
+    height: 3.2rem;
+    margin-right: 1rem;
+    background: url('images/loading.png');
+  }
+
+  .check-div {
+    background-color: var(--highlight-color, #00B965);
+  }
+  
+  .check-p {
+    display: inline-block;
+    background-color: var(--highlight-color, #00B965) !important;
+  }
+  
+  .check-input {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    margin-top: -1rem;
+    margin-left: 3rem;
+  }
+  
+  .large-text .check-input {
+    margin-left: 0;
+  }
+
+  .line-wrap {
+    white-space: pre-wrap;
+  }
+
+  .height-adjust {
+    max-height: 22.2rem;
+  }
+
+  .stir-container {
+    position: absolute;
+    width: 100%;
+    top: 1rem;
+    z-index:1;
+    text-align: center;
+  }
+
+  .stir {
+    border-radius: 1rem;
+    width: auto;
+    height: 2rem;
+    background-color: var(--color-gs100);
+    min-width: 10rem;
+    display: inline-block;
+    opacity: 0.5;
+    margin: 0 auto;
+  }
+
+  .stir-content {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-gs00);
+    -moz-margin-end: 0.8rem;
+    display:inline-block;
+  }
+
+  .stir-checked {
+    background-image: url("images/ic_valid_number.png");
+    width: 1.6rem;
+    height: 1.6rem;
+    -moz-margin-start: 0.2rem;
+    margin-top: 0.2rem;
+    display:inline-block;
+  }
+
+  @media only screen and (orientation: landscape) {
+    #calls[show-mode="max-mode"] .photo-icon {
+      line-height: 11rem;
+    }
+  }
+}

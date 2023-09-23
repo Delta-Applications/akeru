@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+  <meta name="theme-color" content="rgb(255, 255, 255)">
+  <title>Calculator</title>
+  <meta name="defaultLanguage" content="en-US">
+  <meta name="availableLanguages" content="en-US:202208231919, es-US:202208231919">
+  <link href="/locales-obj/{locale}.json" rel="localization">
+
+  <script defer="" src="http://shared.localhost/js/utils/l10n/l10n.js"></script>
+  <script defer="" src="http://shared.localhost/js/utils/l10n/l10n_date.js"></script>
+  <script defer="" src="http://shared.localhost/js/utils/common/lazy_loader.js"></script>
+  <script defer="" src="http://shared.localhost/js/helper/softkey/softkey_register.js"></script>
+  <link rel="stylesheet" href="dist/style.css">
+  <link rel="stylesheet" href="http://shared.localhost/style/gaia_theme/gaia-theme.css">
+<meta name="appVersion" content="2.2"></head>
+
+<body class="theme-productivity">
+  <div id="app"></div>
+  <div class="ssr">
+    <div class="content">
+      <div class="display"></div>
+      <div class="keyboard"></div>
+      <form class="skbar none-paddings visible focused">
+        <button data-l10n-id="clear" data-position="left" class="sk-button">Clear</button>
+        <button data-l10n-id="" data-position="center" class="sk-button"></button>
+        <button data-l10n-id="clear-all" data-position="right" class="sk-button">Clear all</button>
+      </form>
+    </div>
+  </div>
+  <script defer="" src="dist/vendors.js"></script>
+  <script defer="" src="dist/bundle.js"></script>
+
+
+
+
+
+</body>
+</html>

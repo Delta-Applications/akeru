@@ -1,0 +1,23 @@
+#dialing-info {
+  width: 100%;
+  position: absolute;
+  height: 5.8rem;
+  display: none;
+  z-index: 999;
+  background-color: var(--header-background);
+  opacity: 0.85;
+}
+#dialing-number {
+  overflow: visible;
+  color: var(--color-gs00);
+  margin-left: 0.5rem;
+  line-height: 5.8rem;
+  width: calc(100% - 1rem);
+  font-weight: 400;
+  text-align: center;
+  font-size: 3rem;
+}
+.none-visible {
+  position: absolute !important;
+  visibility: hidden;
+}

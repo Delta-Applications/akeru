@@ -1,0 +1,1 @@
+window.NavigationMap={currentActivatedLength:0};

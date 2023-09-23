@@ -1,0 +1,86 @@
+#lock-screen {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1000;
+}
+
+#lock-screen.display {
+  visibility: visible;
+}
+
+#lock-screen-background {
+  top: var(--header-height);
+  width: 100%;
+  background: var(--color-gs100);
+  opacity: 0.75;
+  height: calc(100% - 9.16rem);
+}
+
+#passcode-view {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: var(--name-minsize);
+  width: 100%;
+  text-align: center;
+  bottom: 0;
+  position: absolute;
+  height: 9.16rem;
+  background: var(--color-gs00);
+}
+
+.info-text {
+  width: 91%;
+  height: 3.36rem;
+  padding: 0.6rem 1rem;
+  color: var(--color-gs90);
+}
+
+#passcode-text {
+  display: flex;
+  height: 100%;
+  font-size: 1.4rem;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.codes {
+  display: flex;
+  align-items: center;
+  width: 73%;
+  padding: 0 0 1rem 0;
+}
+
+.codes .code {
+  border-radius: 0.2rem;
+  margin: 0 0.5rem;
+  width: 3.6rem;
+  height: 3.6rem;
+  background-color: var(--color-gs20);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.code .dot {
+  display: none;
+  border-radius: 50%;
+  width: 0.6rem;
+  height: 0.6rem;
+  background-color: var(--color-gs90);;
+}
+
+.codes .code.dotted .dot {
+  display: block;
+}
+
+.error .info-text {
+  color: var(--color-red);
+}
+.error .codes .code .dot {
+  background-color: var(--color-red);
+}

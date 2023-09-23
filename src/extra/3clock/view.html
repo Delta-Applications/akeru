@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="theme-color" content="transparent">
+    <title>Clock</title>
+    <meta name="defaultLanguage" content="en-US">
+    <meta name="availableLanguages" content="en-US:202208231920, es-US:202208231920">
+    <link href="/locales-obj/{locale}.json" rel="localization">
+    
+    
+    
+
+    <!-- These are lazy loaded. Need to be included here so the build picks them up
+    <link rel="stylesheet" type="text/css" href="http://shared.localhost/style/commons/input_areas.css" >
+    <link rel="stylesheet" type="text/css" href="http://shared.localhost/style/commons/buttons.css" >
+    <link rel="stylesheet" type="text/css" href="http://shared.localhost/style/commons/switches.css" >
+    <link rel="stylesheet" type="text/css" href="http://shared.localhost/style/commons/softkey.css">
+    <link rel="stylesheet" type="text/css" href="http://shared.localhost/style/commons/option_menu.css">
+    <link rel="stylesheet" type="text/css" href="http://shared.localhost/style/commons/action_menu.css">
+    <link rel="stylesheet" type="text/css" href="http://shared.localhost/style/commons/status.css">
+    <link rel="stylesheet" type="text/css" href="http://shared.localhost/style/commons/tabs.css">
+    <link rel="stylesheet" type="text/css" href="http://shared.localhost/style/commons/switches.css">
+    <link rel="stylesheet" type="text/css" href="http://shared.localhost/style/commons/navigation.css">
+    <link rel="stylesheet" type="text/css" href="http://shared.localhost/style/gaia_theme/gaia-theme.css" />
+    <link rel="stylesheet" type="text/css" href="http://shared.localhost/style/gaia_theme/gaia-font.css" />
+    <link rel="stylesheet" type="text/css" href="http://shared.localhost/style/gaia_icons/gaia-icons.css" />
+    -->
+
+    <!--
+      The following scripts are lazy loaded but left here to ensure
+      they get copied over from shared during the build
+    -->
+    <!--
+    <script defer src="/js/settings_app.js"></script>
+    <script defer src="http://shared.localhost/js/utils/components/component_utils.js"></script>
+    <script defer src="http://shared.localhost/js/helper/date_time/date_time_helper.js"></script>
+    <script defer src="http://shared.localhost/js/utils/storage/async_storage.js"></script>
+    <script defer src="http://shared.localhost/js/helper/accessibility/accessibility_helper.js"></script>
+    <script defer src="http://shared.localhost/js/utils/common/template.js"></script>
+    <script defer src="http://shared.localhost/js/utils/toaster/toaster.js"></script>
+    <script defer src="http://shared.localhost/elements/gaia_confirm/gaia_confirm.js"></script>
+    <script defer src="http://shared.localhost/js/helper/dialog/confirm_dialog_helper.js"></script>
+    -->
+    <script src="http://shared.localhost/js/utils/l10n/l10n.js"></script>
+    <script src="http://shared.localhost/js/utils/l10n/l10n_date.js"></script>
+
+    <!-- Web Components -->
+    <script src="http://shared.localhost/js/utils/common/lazy_loader.js"></script>
+    <script defer="" src="http://shared.localhost/js/helper/accessibility/accessibility_helper.js"></script>
+    <script defer="" src="http://shared.localhost/js/utils/common/template.js"></script>
+    <!-- session -->
+    <script src="http://shared.localhost/js/session/task_scheduler.js"></script>
+    <script src="http://shared.localhost/js/session/lib_session.js"></script>
+    <script src="http://shared.localhost/js/session/settings/settings_observer.js"></script>
+    <script defer="" src="http://shared.localhost/js/session/time_service/time_service.js"></script>
+    <script defer="" src="http://shared.localhost/js/helper/option_menu/option_menu.js"></script>
+    <script defer="" src="http://shared.localhost/js/helper/softkey/softkey_panel.js"></script>
+    <script defer="" src="http://shared.localhost/js/helper/option_menu/option_menu_helper.js"></script>
+    <script defer="" src="http://shared.localhost/js/utils/toaster/toaster.js"></script>
+    <script defer="" src="js/navigation_manager.js"></script>
+    <script defer="" src="js/navigation_map.js"></script>
+    <script defer="" src="/js/menu_params.js"></script>
+    <script defer="" src="http://shared.localhost/js/utils/storage/async_storage.js"></script>
+    <script defer="" src="/js/constants.js"></script>
+    <script defer="" src="/js/utils.js"></script>
+    <script defer="" src="js/activity.js"></script>
+
+    <!-- Shared sounds -->
+    <link rel="resources" type="directory" href="http://shared.localhost/resources/media/alarms/">
+
+    <link rel="stylesheet" type="text/css" href="style/main.css">
+  <meta name="appVersion" content="2.2"></head>
+
+  <body class="theme-productivity" id="body-dom">
+    <header class="view-header regular-header clock-header">
+      <h1 data-l10n-id="kai-clock-title">Clock</h1>
+    </header>
+
+    <div class="statusbar"></div>
+    <div id="root-panel" class="views zindex2">
+      <div id="over-cache-context">
+        <div id="over-panel" class="no-alarms-message p-pri">
+          <div data-l10n-id="no-alarms-body" class="no-alarms-body">No alarms have been set.</div>
+          <div data-l10n-id="press-new">Press New to get started.</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="views">
+      <div id="main-panel-wrapper">
+        <div id="alarm-panel" class="active panel" data-panel-id="alarm" role="heading" aria-labelledby="alarm-tab"></div>
+        <div id="timer-panel" class="panel hidden" data-panel-id="timer" role="heading" aria-labelledby="timer-tab"></div>
+        <div id="stopwatch-panel" class="panel hidden" data-panel-id="stopwatch" role="heading" aria-labelledby="stopwatch-tab"></div>
+      </div>
+    </div>
+
+    <section role="region" class="skin-dark panel alarm_edit hidden" data-panel-id="alarm_edit">
+    </section>
+    <section role="region" class="skin-dark panel alarm_settings hidden" data-panel-id="alarm_settings">
+    </section>
+
+    <!-- .bb-tablist .custom-tablist-->
+    <ul role="tablist" class="custom-tablist skin-light bottom" id="clock-tabs">
+      <li role="presentation">
+        <a id="alarm-tab" class="h3" aria-controls="alarm-panel" aria-selected="true" role="tab" href="#alarm-panel" data-l10n-id="alarm">Alarm</a>
+      </li>
+      <li role="presentation">
+        <a id="timer-tab" class="h3" aria-controls="timer-panel" aria-selected="false" role="tab" href="#timer-panel" data-l10n-id="timer">Timer</a>
+      </li>
+      <li role="presentation">
+        <a id="stopwatch-tab" class="h3" aria-controls="stopwatch-panel" aria-selected="false" role="tab" href="#stopwatch-panel" data-l10n-id="stopwatch">Stopwatch</a></li>
+    </ul>
+    <script src="js/activity.js"></script>
+  </body>
+
+</html>

@@ -1,0 +1,56 @@
+#dialer-helper {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1000;
+}
+
+#dialer-helper.display {
+  visibility: visible;
+}
+
+#input-container {
+  height: 5.8rem;
+  width: 100%;
+  z-index: 750;
+  background-color: var(--header-background);
+  background-image: none;
+  line-height: 5.8rem;
+}
+
+#dialer-number-input {
+  color: var(--color-gs00);
+  width: calc(100% - 1rem);
+  height: 100%;
+  text-align: center;
+  font-size: 3rem;
+  margin-left: 0.5rem;
+  border: unset;
+  background-color: unset;
+  font-variant-numeric: normal;
+}
+#dialer-background {
+  top: var(--header-height);
+  height: calc(100% - var(--header-height));
+  width: 100%;
+  background: var(--color-gs100);
+  opacity: 0.75;
+}
+
+#dialer-helper p {
+  width: calc(100% - 2rem);
+  text-align: center;
+  color: var(--color-gs90);
+  height: 3.5rem;
+  line-height: 3.5rem;
+  margin-left: 1rem;
+  display: table;
+}
+
+#input-container.showBackground {
+  background-image: url('images/handled_call/ic_empty_make_call.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}

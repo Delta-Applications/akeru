@@ -1,0 +1,87 @@
+<header id="alarm-header">
+  <h1 class="new-alarm-title" id="new-alarm-header" data-l10n-id="newAlarm"></h1>
+  <button id="alarm-done" data-l10n-id=""></button>
+</header>
+<section role="heading" aria-labelledby="new-alarm-header">
+  <ul id="edit-alarm" class="compact" role="menu">
+    <li id="new-time-select" class="navigation" role="menuitem" tabindex="0">
+      <label data-l10n-id="time" class="p-pri">Time</label>
+      <input id="time-select" aria-hidden="true" type="time" data-track-class="datatrack-time-selector-title"/>
+    </li>
+    <li id="new-repeat-select" class="navigation" role="menuitem" tabindex="0">
+      <label data-l10n-id="repeat" class="p-pri">Repeat</label>
+      <select id="repeat-select" multiple="true" data-track-class="datatrack-repeat-selector-title">
+        <!-- NOTE: These are reordered based upon the value for
+                   the l10n variable 'weekStartsOnMonday'. -->
+        <option aria-hidden="true" value="monday" data-l10n-id="weekday-1-long">Monday</option>
+        <option aria-hidden="true" value="tuesday" data-l10n-id="weekday-2-long">Tuesday</option>
+        <option aria-hidden="true" value="wednesday" data-l10n-id="weekday-3-long">Wednesday</option>
+        <option aria-hidden="true" value="thursday" data-l10n-id="weekday-4-long">Thursday</option>
+        <option aria-hidden="true" value="friday" data-l10n-id="weekday-5-long">Friday</option>
+        <option aria-hidden="true" value="saturday" data-l10n-id="weekday-6-long">Saturday</option>
+        <option aria-hidden="true" value="sunday" id="repeat-select-sunday"
+                data-l10n-id="weekday-0-long">Sunday</option>
+      </select>
+    </li>
+    <li id="new-sound-select" class="navigation" role="menuitem" tabindex="0">
+      <label data-l10n-id="sound" class="p-pri">Sound</label>
+      <div id="new-timersound">
+        <label id="new-alarm-sound-label" data-l10n-id="ac_woody_ogg" class="p-sec">Woody</label>
+      </div>
+    </li>
+    <li id="new-vibrate-select" class="navigation" role="menuitem" tabindex="0">
+      <label data-l10n-id="vibrate" class="p-pri">Vibrate</label>
+      <select id="vibrate-select" data-track-class="datatrack-vibrate-selector-title">
+        <option aria-hidden="true" value="true" data-l10n-id="vibrateOn">On</option>
+        <option aria-hidden="true" value="false" data-l10n-id="vibrateOff">Off</option>
+      </select>
+    </li>
+    <li class="navigation alarm-name" role="menuitem" tabindex="0">
+      <label data-l10n-id="alarmName" class="p-sec">Alarm name</label>
+      <input type="text" name="alarm.label" id="alarm-name" data-l10n-id="alarm-name" placeholder="Alarm" maxLength="40" dir="auto"  class="p-pri"/>
+    </li>
+    <!-- <li id="delete-menu">
+      <button id="alarm-delete" class="danger full" data-l10n-id="delete">Delete</button>
+    </li> -->
+  </ul>
+</section>
+<section id="new-alarm-sound" role="heading" aria-labelledby="new-alarm-header">
+  <ul id="alarmnew-sound-ul" class="alarmNewSound" role="menu">
+    <li id="ac_africa" class="navigation" value="ac_africa.ogg" role="menuitem" tabindex="1">
+      <div class="clsNewSoundLabel" data-l10n-id="ac_africa_ogg"></div>
+      <div class="clsSoundBackIcon" data-icon="radio-off"></div>
+    </li>
+    <li id="ac_amazon" class="navigation" value="ac_amazon.ogg" role="menuitem" tabindex="1">
+      <div class="clsNewSoundLabel" data-l10n-id="ac_amazon_ogg"></div>
+      <div class="clsSoundBackIcon" data-icon="radio-off"></div>
+    </li>
+    <li id="ac_disco" class="navigation" value="ac_disco.ogg" role="menuitem" tabindex="1">
+      <div class="clsNewSoundLabel" data-l10n-id="ac_disco_ogg"></div>
+      <div class="clsSoundBackIcon" data-icon="radio-off"></div>
+    </li>
+    <li id="ac_fairy_tales" class="navigation" value="ac_fairy_tales.ogg" role="menuitem" tabindex="1">
+      <div class="clsNewSoundLabel" data-l10n-id="ac_fairy_tales_ogg"></div>
+      <div class="clsSoundBackIcon" data-icon="radio-off"></div>
+    </li>
+    <li id="ac_fresh" class="navigation" value="ac_fresh.ogg" role="menuitem" tabindex="1">
+      <div class="clsNewSoundLabel" data-l10n-id="ac_fresh_ogg"></div>
+      <div class="clsSoundBackIcon" data-icon="radio-off"></div>
+    </li>
+    <li id="ac_galaxy" class="navigation" value="ac_galaxy.ogg" role="menuitem" tabindex="1">
+      <div class="clsNewSoundLabel" data-l10n-id="ac_galaxy_ogg"></div>
+      <div class="clsSoundBackIcon" data-icon="radio-off"></div>
+    </li>
+    <li id="ac_kai" class="navigation" value="ac_kai.ogg" role="menuitem" tabindex="1">
+      <div class="clsNewSoundLabel" data-l10n-id="ac_kai_ogg"></div>
+      <div class="clsSoundBackIcon" data-icon="radio-off"></div>
+    </li>
+    <li id="ac_techno" class="navigation" value="ac_techno.ogg" role="menuitem" tabindex="1">
+      <div class="clsNewSoundLabel" data-l10n-id="ac_techno_ogg"></div>
+      <div class="clsSoundBackIcon" data-icon="radio-off"></div>
+    </li>
+    <li id="ac_woody" class="navigation" value="ac_woody.ogg" role="menuitem" tabindex="1">
+      <div class="clsNewSoundLabel" data-l10n-id="ac_woody_ogg"></div>
+      <div class="clsSoundBackIcon soundChecked" data-icon="radio-on"></div>
+    </li>
+  </ul>
+</section>

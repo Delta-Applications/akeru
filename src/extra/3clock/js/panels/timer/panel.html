@@ -1,0 +1,84 @@
+<div id="timer-dialog" class="panel skin-dark">
+
+  <div id="value-selector">
+    <!-- Time Picker -->
+
+    <div id="time-picker" data-type="picker" class="hide">
+      <div class="picker-container timer-item">
+        <div class="picker-labels">
+          <div class="picker-label" id="hours" data-l10n-id="hours">
+            Hours
+          </div>
+          <div class="picker-label" id="minutes" data-l10n-id="minutes">
+            Minutes
+          </div>
+        </div>
+        <div class="picker-bar-background">
+        </div>
+        <div class="picker-hours-wrapper" role="spinbutton" aria-labelledby="hours">
+          <div class="picker-hours">
+          </div>
+        </div>
+        <div class="picker-minutes-wrapper" role="spinbutton" aria-labelledby="minutes">
+          <div class="picker-minutes">
+          </div>
+        </div>
+        <div class="value-indicator">
+          <div class="value-indicator-colon" aria-hidden="true">:</div>
+        </div>
+      </div>
+    </div>
+    <div id="kai-timer-time-display">
+
+      <div id="kai-timer-time">
+        <div id='kai-hours' class="navigation inline nav-time" tabindex="0">00</div>
+        :
+        <div id='kai-minutes' class="navigation inline nav-time" tabindex="0">00</div>
+        :
+        <div id='kai-seconds' class="navigation inline nav-time" tabindex="0">00</div>
+      </div>
+      <div id="timer-time-label">
+        <div class="timer-label p-sec" data-l10n-id="hour"></div>
+        <div class="timer-label p-sec" data-l10n-id="minute"></div>
+        <div class="timer-label p-sec" data-l10n-id="second"></div>
+      </div>
+    </div>
+
+    <ul id="timer-edit" class="compact">
+      <li class="timer-item" style="display: none;">
+        <button id="timer-create" class="recommend" data-l10n-id="start">
+          Start
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>
+<div id="timer-active">
+  <div id="timer-time-display">
+    <!-- <div id='kai-hours' class="kai-timer-title">Hours</div>
+    <div id='kai-minutes' class="kai-timer-title">Minutes</div>
+    <div id='kai-seconds' class="kai-timer-title">Seconds</div> -->
+    <div id="timer-time">00:00:00</div>
+    <div id="timer-time-label">
+      <div class="timer-label p-sec" data-l10n-id="hour"></div>
+      <div class="timer-label p-sec" data-l10n-id="minute"></div>
+      <div class="timer-label p-sec" data-l10n-id="second"></div>
+    </div>
+    <menu id="timer-controls" style="display: none;">
+      <button id="timer-start" class="edit-button" data-l10n-id="resume">
+        Resume
+      </button>
+      <button id="timer-pause" class="edit-button" data-l10n-id="pause">
+        Pause
+      </button>
+      <button id="timer-cancel" class="danger" data-l10n-id="cancel">
+        Cancel
+      </button>
+    </menu>
+  </div>
+  <div id="timer-plus-time" style="display: none;">
+    <button id="timer-plus" data-value="60" data-l10n-id="plusMinute">
+      +1 Min
+    </button>
+  </div>
+</div>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="theme-color" content="rgb(245, 245, 245)">
+    <title>Clock</title>
+    <meta name="defaultLanguage" content="en-US">
+    <meta name="availableLanguages" content="en-US:202208231920, es-US:202208231920">
+    <link href="/locales-obj/{locale}.json" rel="localization">
+    
+
+    <script defer="" src="http://shared.localhost/js/utils/l10n/l10n.js"></script>
+    <script defer="" src="http://shared.localhost/js/utils/l10n/l10n_date.js"></script>
+    <script src="http://shared.localhost/js/utils/common/lazy_loader.js"></script>
+
+    <!-- Shared sounds -->
+    <link rel="stylesheet" type="text/css" href="style/main.css">
+  <meta name="appVersion" content="2.2"></head>
+
+  <body class="theme-productivity">
+    <header class="view-header regular-header clock-header">
+      <h1 data-l10n-id="kai-clock-title">Clock</h1>
+    </header>
+
+    <div class="statusbar"></div>
+    <div id="root-panel" class="views zindex2">
+      <div id="over-cache-context">
+        <div id="over-panel" class="no-alarms-message p-pri">
+          <div data-l10n-id="no-alarms-body" class="no-alarms-body">No alarms have been set.</div>
+          <div data-l10n-id="press-new">Press New to get started.</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="views">
+      <!-- <div id="main-panel-wrapper">
+        <div id="alarm-panel" class="active panel" data-panel-id="alarm"
+             role="heading" aria-labelledby="alarm-tab"></div>
+        <div id="timer-panel" class="panel hidden" data-panel-id="timer"
+             role="heading" aria-labelledby="timer-tab"></div>
+        <div id="stopwatch-panel" class="panel hidden" data-panel-id="stopwatch"
+             role="heading" aria-labelledby="stopwatch-tab"></div>
+      </div> -->
+    </div>
+
+    <section role="region" class="skin-dark panel alarm_edit hidden" data-panel-id="alarm_edit">
+    </section>
+    <section role="region" class="skin-dark panel alarm_settings hidden" data-panel-id="alarm_settings">
+    </section>
+
+    <!-- .bb-tablist .custom-tablist-->
+    <ul role="tablist" class="custom-tablist skin-light bottom" id="clock-tabs">
+      <!-- <li role="presentation">
+        <a id="alarm-tab" class="h3"
+           aria-controls="alarm-panel"
+           aria-selected="true" role="tab"
+           href="#alarm-panel" data-l10n-id="alarm"></a>
+      </li>
+      <li role="presentation">
+        <a id="timer-tab" class="h3"
+           aria-controls="timer-panel"
+           aria-selected="false" role="tab"
+           href="#timer-panel" data-l10n-id="timer"></a>
+      </li>
+      <li role="presentation">
+        <a id="stopwatch-tab" class="h3"
+           aria-controls="stopwatch-panel"
+           aria-selected="false" role="tab"
+           href="#stopwatch-panel"
+           data-l10n-id="stopwatch"></a></li> -->
+    </ul>
+    <form id="over-softkeyPanel" class="skbar none-paddings visible" data-z-index-level="softkeyPanel" data-type="actions">
+      <div>
+        <button id="software-keys-left" class="sk-button"></button>
+      </div>
+      <div>
+        <button id="software-keys-center" class="sk-button"></button>
+      </div>
+      <div>
+        <button id="software-keys-right" class="sk-button"></button>
+      </div>
+    </form>
+    <script src="/js/main.js"></script>
+  </body>
+
+</html>

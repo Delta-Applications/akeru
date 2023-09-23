@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="theme-color" content="rgb(245, 245, 245)">
+    <title>Calendar</title>
+    <link rel="stylesheet" type="text/css" href="dist/css/start.css">
+
+    <!-- localization -->
+    <meta name="defaultLanguage" content="en-US">
+    <meta name="availableLanguages" content="en-US:202208231919, es-US:202208231919">
+    <link href="/locales-obj/{locale}.json" rel="localization">
+    
+    
+    <link rel="stylesheet" type="text/css" href="http://shared.localhost/style/gaia_theme/gaia-theme.css">
+
+    <script src="http://shared.localhost/js/utils/common/lazy_loader.js"></script>
+  <meta name="appVersion" content="2.2"></head>
+  <body>
+    <div class="statusbar-placeholder"></div>
+    <div id="launch-view" class="theme-calendar">
+      <div tabindex="-1" class="launcherView" aria-level="1" role="menuitem">
+      <div class="header" id="current-today" tabindex="-1"></div>
+      <div class="container">
+        <div id="current-week-view" tabindex="-1"></div>
+        <div id="current-day-view" tabindex="-1"></div>
+        <div id="current-month-year-view" tabindex="-1"></div>
+      </div>
+      <div id="launch-softkey" class="softkey-placeholder">
+      </div>
+    </div>
+    </div>
+    <div id="root" class="theme-calendar hidden">
+    </div>
+    <div id="confirm-dialog-container" data-z-index-level="confirm-dialog-container"></div>
+  <script type="text/javascript" src="dist/start.bundle.js"></script>
+
+
+
+</body>
+</html>

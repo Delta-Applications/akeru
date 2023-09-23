@@ -1,0 +1,36 @@
+html {
+  font-size: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+#main-wrapper {
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  height: calc(100% - var(--statusbar-height));
+  left: 0;
+  top: var(--statusbar-height);
+  background: none repeat scroll 0% 0% var(--color-gs00);
+}
+
+.ring-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: -3rem;
+  left: 0;
+}
+
+.content {
+  position: relative;
+  top: 12rem;
+  color: var(--color-gs90);
+  height: 1rem;
+  text-align: center;
+}

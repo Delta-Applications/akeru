@@ -1,0 +1,58 @@
+/*
+ * Extend action menu as an overlay
+ */
+#group-call-details {
+  background-color: var(--color-gs00);
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 750;
+}
+
+#group-call-details h1 {
+  background-color: var(--header-background);
+  line-height: var(--header-height);
+  margin: 0;
+  text-align: center;
+  height: var(--header-height);
+  color: var(--color-gs00);
+}
+
+#group-call-details.display {
+  visibility: visible;
+}
+
+#group-call-details menu {
+  height: calc(100% - var(--header-height));
+  width: 100%;
+  list-style: none;
+  overflow-y: scroll;
+  padding: 0 0;
+  border-top: none;
+  margin: 0;
+}
+
+#group-call-details li {
+  height: 6rem;
+  background-color: var(--color-gs00);
+  color: var(--color-gs90);
+  width: 100%;
+  margin-top: 0;
+}
+
+#group-call-details div {
+  display: block;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  width: calc(100% - 2rem);
+  line-height: 6rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+#group-call-details li.focus {
+  background-color: var(--highlight-color);
+  color: var(--color-gs00);
+}

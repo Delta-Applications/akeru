@@ -1,0 +1,1 @@
+let voicemailNumbers=null;SettingsObserver.observe("ril.iccInfo.mbdn",null,e=>{voicemailNumbers=e}),function(e){e.Voicemail={check(e,i){if(!e)return!1;const{voicemail:r}=navigator.b2g;if(r){const m=r.getNumber(i);if(m===e)return!0}let l=!1,m=null;return m="string"==typeof voicemailNumbers?voicemailNumbers:voicemailNumbers&&voicemailNumbers[i],m===e&&(l=!0),l}}}(window);

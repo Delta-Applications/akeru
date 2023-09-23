@@ -1,0 +1,1 @@
+const PhotoResize={resize(h,n){return new Promise(t=>{let e=window.screen.width,i=window.screen.height;var o=window.getComputedStyle(n);o&&(o.width&&(e=parseInt(o.width,0)),o.height&&(i=parseInt(o.height,0))),ImageUtils.resizeAndCropToCover(h,e,i,ImageUtils.PNG).then(e=>{t(e)})})}};window.PhotoResize=PhotoResize;

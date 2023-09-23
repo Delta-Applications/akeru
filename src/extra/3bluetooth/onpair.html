@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+    <meta charset="utf-8">
+
+    <title>Bluetooth Pair Device</title>
+    <meta name="description" content="Prompts user to take a device pair request">
+    <meta name="theme-color" content="rgb(255, 255, 255)">
+
+    <!-- Localization -->
+    <meta name="defaultLanguage" content="en-US">
+    <meta name="availableLanguages" content="en-US:202208231919, es-US:202208231919">
+    <link href="/locales-obj/{locale}.json" rel="localization">
+    <script defer="" src="http://shared.localhost/js/utils/l10n/l10n.js"></script>
+
+    <!-- Specific style -->
+    <link rel="stylesheet" type="text/css" href="http://shared.localhost/style/gaia_icons/gaia-icons.css">
+    <link rel="stylesheet" type="text/css" href="http://shared.localhost/style/gaia_theme/gaia-font.css">
+    <link rel="stylesheet" type="text/css" href="http://shared.localhost/style/gaia_theme/gaia-theme.css">
+    <link rel="stylesheet" type="text/css" href="http://shared.localhost/style/commons/navigation.css">
+    <link rel="stylesheet" type="text/css" href="style/onpair.css">
+    <link rel="stylesheet" type="text/css" href="style/icons.css">
+    <link rel="stylesheet" type="text/css" href="style/header.css">
+    <link rel="stylesheet" type="text/css" href="style/lists.css">
+    <link rel="stylesheet" type="text/css" href="http://shared.localhost/style/commons/softkey.css">
+    <link rel="stylesheet" type="text/css" href="http://shared.localhost/style/commons/switches.css">
+
+    <!-- Specific code -->
+    <script defer="" src="http://shared.localhost/js/helper/softkey/softkey_panel.js"></script>
+    <script defer="" src="http://shared.localhost/js/helper/softkey/softkey_panel_helper.js"></script>
+
+    <script src="http://shared.localhost/js/utils/common/lazy_loader.js"></script>
+    <script src="http://shared.localhost/js/session/task_scheduler.js"></script>
+    <script src="http://shared.localhost/js/session/lib_session.js"></script>
+    <script src="http://shared.localhost/js/session/settings/settings_observer.js"></script>
+
+    <script src="http://shared.localhost/js/utils/l10n/l10n.js"></script>
+    <script src="http://shared.localhost/js/utils/toaster/toaster.js"></script>
+
+    <!-- Specific code -->
+    <script defer="" src="js/views/pair_view.js"></script>
+    <script src="js/modules/mvvm/observable.js"></script>
+    <script src="js/modules/bluetooth/bluetooth_adapter_manager.js"></script>
+    <script src="js/modules/pair_manager.js"></script>
+    <script src="js/startup_pair.js"></script>
+  <meta name="appVersion" content="2.2"></head>
+  <body role="application" class="theme-settings">
+    <div id="pair-view" role="region">
+      <header>
+        <h1 data-l10n-id="pair-view-title" id="pair-view-title">Bluetooth Request</h1>
+      </header>
+
+      <div id="pair-view-content" class="content" role="heading" aria-labelledby="pair-view-title">
+        <div id="description-content" role="menuitem">
+          <p id="label-name"></p>
+          <p id="pair-description"></p>
+          <div id="confirmation-method">
+            <span id="passkey"></span>
+          </div>
+        </div>
+
+        <span id="pin-input-method" hidden="">
+          <span data-l10n-id="pin-input-title">Enter PIN code</span>
+          <input type="text" id="pin-input" x-inputmode="digit" size="6" maxlength="6">
+        </span>
+        <ul id="phonebook-check-content" data-rendered="true">
+          <li role="menuitem" class="focus">
+            <label class="pack-checkbox">
+              <input type="checkbox" data-name="access.checked" id="phonebook-checkbox">
+              <span data-l10n-id="access-phonebook" id="access-phone-content">Allow access to contacts and call history</span>
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+
+</html>

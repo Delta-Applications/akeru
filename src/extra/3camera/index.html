@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+    <title>Camera</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+    <meta name="theme-color" content="rgb(0, 0, 0)">
+    <meta name="defaultLanguage" content="en-US">
+    <meta name="availableLanguages" content="en-US:202208231920, es-US:202208231920">
+    <link href="/locales-obj/{locale}.json" rel="localization">
+
+    <script defer="" src="http://shared.localhost/js/utils/common/lazy_loader.js"></script>
+    <script defer="" src="http://shared.localhost/js/utils/l10n/l10n.js"></script>
+    <script defer="" src="http://shared.localhost/js/helper/softkey/softkey_register.js"></script>
+
+    <!-- Web Components -->
+    <link rel="stylesheet" type="text/css" href="http://shared.localhost/style/gaia_theme/gaia-theme.css">
+    <link rel="stylesheet" type="text/css" href="http://shared.localhost/style/gaia_theme/gaia-font.css">
+    <link rel="stylesheet" type="text/css" href="http://shared.localhost/style/gaia_icons/gaia-icons.css">
+    <link rel="stylesheet" type="text/css" href="dist/style.css">
+
+    <script defer="" src="http://shared.localhost/elements/gaia_slider/gaia_slider.js"></script>
+  <meta name="appVersion" content="2.2"></head>
+  <body role="application" class="theme-media">
+    <div id="fake-viewfinder" class="viewfinder visible" enabled="true">
+      <div id="frame" class="viewfinder-frame" scale-type="fill">
+        <div id="video-container" class="viewfinder-video-container" aria-hidden="true">
+          <video id="viewfinder-video" class="viewfinder-video">
+        </video></div>
+      </div>
+    </div>
+    <div id="ssr" class="root"></div>
+    <div id="root" class="root">
+    </div>
+    <script defer="" src="./dist/bundle.js"></script>
+  </body>
+
+</html>

@@ -1,0 +1,159 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 10px;
+  overflow: hidden;
+}
+
+.statusbar-placeholder {
+  background-color: var(--header-background);
+  height: var(--statusbar-height);
+}
+
+.launcher-date {
+    width: 100%;
+    height: 11rem;
+    font-size: 9rem;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: var(--color-orange);
+    padding-bottom: 1.5rem;
+}
+
+.launcher-date i {
+    position: relative;
+    margin: -1rem;
+}
+
+.day-month-year {
+    width: 100%;
+    height: 14.4rem;
+    font-size: 4rem;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    color: var(--color-gs100);
+    text-transform: uppercase;
+}
+
+.launcherView {
+    display: flex;
+    width: 100%;
+    background-color: var(--color-gs00);
+    flex-direction: column;
+    overflow: hidden;
+    position: absolute;
+    height: 100%;
+}
+
+.launcherView:focus {
+  color: transparent !important;
+  text-shadow: 0 0 0 #fff !important;
+}
+
+.launcher-view-container {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    z-index: 2;
+}
+
+.img_calendar_launcher {
+    position: absolute;
+    left: 15rem;
+    top: -11.5rem;
+    width: 25rem;
+    height: 80rem;
+    z-index: 1;
+}
+
+html[dir="rtl"] .img_calendar_launcher {
+  transform: rotateY(180deg);
+  left: -4rem;
+}
+
+.launcher-today {
+    width: 100%;
+    height: 3.8rem;
+    font-size: 2.8rem;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: var(--color-gs100);
+    margin: 0 3rem 16.5rem;
+}
+
+.launcherView .header {
+    line-height: var(--header-height);
+    background: var(--header-background);
+    color: var(--header-color);
+    padding: 0 1rem;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 600;
+    font-size: 1.7rem;
+  }
+  
+  .launcherView .container {
+    display: flex;
+    height: 22rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+  }
+  
+  .launcherView #current-day-view {
+    width: 10.4rem;
+    height: 9.2rem;
+    line-height: 9.2rem;
+    font-size: 6rem;
+    font-weight: 400;
+    text-align: center;
+    border-radius: 3rem;
+    background-color: var(--highlight-color);
+    color: var(--color-gs00);
+    margin: 1.4rem 0;
+  }
+  
+  .launcherView #current-week-view {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-gs70);
+  }
+  
+  .launcherView #current-month-year-view {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--color-gs45);
+  }
+  
+  .softkey-placeholder {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    color: var(--color-gs90);
+    background-color: var(--color-gs20);
+    height: var(--softkeybar-height);
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: var(--softkeybar-height);
+    text-align: center;
+  }

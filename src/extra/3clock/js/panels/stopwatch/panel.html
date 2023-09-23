@@ -1,0 +1,18 @@
+<div class="stopwatch-time-wrapper">
+  <div class="stopwatch-time" tabindex="0"></div>
+  <div id="stopwatch-time-label">
+    <label class="stopwatch-min p-sec" data-l10n-id="minute"></label>
+    <label class="stopwatch-sec p-sec" data-l10n-id="second"></label>
+  </div>
+</div>
+<menu id="stopwatch-controls">
+  <button class="p-btn stopwatch-start edit-button" data-l10n-id="start">Start</button>
+  <button class="p-btn stopwatch-pause edit-button recommend" data-l10n-id="pause">Pause</button>
+  <button class="p-btn stopwatch-resume edit-button" data-l10n-id="resume">Resume</button>
+  <button class="p-btn stopwatch-reset edit-button danger" data-l10n-id="reset">Reset</button>
+  <button class="p-btn stopwatch-lap edit-button" data-l10n-id="lap">Lap</button>
+</menu>
+<div class="stopwatch-lap-list">
+  <!-- list of exisiting alarms, to be populated -->
+  <ul class="stopwatch-laps" role="menu" tabindex="1"></ul>
+</div>

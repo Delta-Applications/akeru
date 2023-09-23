@@ -1,0 +1,149 @@
+@media (prefers-text-size: large) {
+  #ring-labe {
+    font-size: 2.2rem;
+    line-height: 2.2rem;
+  }
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden !important;
+  background-size: 100% 100%;
+  background-color: var(--header-background, --color-gs100);
+  -moz-user-select: none;
+}
+html {
+  visibility: hidden;
+}
+html.ready {
+  visibility: visible;
+}
+.clock-onring-header {
+  position: absolute;
+  width: 100%;
+  height: var(--header-height);
+  top: var(--statusbar-height);
+}
+.ring-display {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: calc(var(--header-height) + var(--statusbar-height));
+  text-align: center;
+  background-color: var(--color-gs00);
+}
+#ring-icon {
+  width: 9.6rem;
+  height: 9.6rem;
+  left: calc(50% - 4.8rem);
+  padding-top: calc(50% - 9.65rem);
+  color: var(--highlight-color);
+  font-size: 9.6rem;
+  line-height: 9.6rem;
+  text-align: center;
+  position: absolute;
+}
+#ring-clock {
+  width: 100%;
+  height: 100%;
+  color: #000;
+  text-align: center;
+}
+#ring-clock-display {
+  width: 95%;
+  margin-top: calc(50% + 0.95rem);
+  margin-left: auto;
+  margin-right: auto;
+}
+#ring-clock-time {
+  font-family: "Open Sans";
+  font-size: 3rem;
+  line-height: 3rem;
+  width: 100%;
+  color: #323232;
+  font-weight: 600;
+}
+#ring-clock-time small {
+  font-weight: 300;
+  font-size: inherit;
+  line-height: 5rem;
+}
+#ring-label {
+  color: var(--color-gs70);
+  height: auto;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin-top: 1rem;
+  margin-left: 0.7rem;
+  margin-right: 0.7rem;
+}
+.ring-display[data-ring-type="timer"] #ring-button-snooze {
+  display: none;
+}
+@media (orientation: portrait) and (width: 320px),
+       (orientation: landscape) and (width: 480px) {
+  html {
+    font-size: 10px;
+  }
+}
+@media (orientation: portrait) and (width: 480px),
+       (orientation: landscape) and (width: 800px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media screen and (max-height: 4em) {
+  #ring-icon {
+    width: 4rem;
+    height: 4rem;
+    left: 0.4rem;
+    top: 0;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+  }
+  #ring-clock {
+    text-align: left;
+  }
+  #ring-clock-display {
+    position: absolute;
+    bottom: 0.3rem;
+    left: 5rem;
+    border-bottom: none;
+  }
+  #ring-clock-time {
+    font-weight: bolder;
+    font-size: 1.38rem;
+    line-height: 1.38rem;
+  }
+  #ring-clock-time small {
+    display: none;
+  }
+  #ring-label {
+    position: absolute;
+    top: 0.5rem;
+    left: 5rem;
+    font-weight: bolder;
+    font-size: 1.31rem;
+    line-height: 1.44rem;
+    color: #00aac8;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    height: 1.5rem;
+  }
+  #footer-button-container {
+    display: none;
+  }
+}
+@media only screen and (orientation: landscape) {
+  #ring-icon {
+    padding-top: calc(25% - 9.65rem);
+  }
+  #ring-clock-display {
+    margin-top: calc(25% + 1.5rem);
+  }
+  #ring-label {
+    margin-top: 0.6rem;
+  }
+}

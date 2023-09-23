@@ -1,0 +1,1 @@
+require.config({baseUrl:"/js",paths:{modules:"modules",views:"views"}});

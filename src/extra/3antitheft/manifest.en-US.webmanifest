@@ -1,0 +1,1 @@
+{"name":"Kill-switch","lang":"en-US","start_url":"/index.html","b2g_features":{"role":"system","permissions":{"settings":{"access":"readwrite"},"audio-channel-ringer":{},"systemXHR":{},"attention":{}},"serviceworker":{"script_url":"sw.js"},"activities":{"antitheft-ring":{}},"core":true,"version":"2.2"}}

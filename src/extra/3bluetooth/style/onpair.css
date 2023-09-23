@@ -1,0 +1,90 @@
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 10px;
+  overflow: hidden;
+  font-family: "Open Sans";
+}
+* {
+  -moz-user-select: none;
+}
+input[type="text"],
+textarea,
+[contenteditable="true"] {
+  -moz-user-select: text;
+}
+#pair-view-content {
+  width: 100%;
+  display: inline-block;
+  overflow-y: scroll;
+  height: calc(100% - var(--softkeybar-height) - var(--header-height));
+}
+#pair-view {
+  padding: 0;
+  background: var(--color-gs00);
+  overflow: hidden;
+  position: fixed;
+  z-index: 110;
+  top: var(--statusbar-height);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: left;
+}
+#description-content {
+  padding: 0 1rem;
+  margin-top: 1rem;
+}
+#description-content p {
+  display: inline;
+  border: none;
+  color: var(--color-gs90);
+}
+#description-content #label-name {
+  display: inline-block;
+  max-width: 8rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 2rem;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  margin-bottom: -0.3rem;
+}
+#pair-view > section {
+  height: 100%;
+}
+#confirmation-method {
+  text-align: center;
+}
+#passkey {
+  margin-top: 2rem;
+  font-size: 4rem;
+  color: var(--highlight-color);
+  font-weight: bold;
+}
+#pin-input-method > p {
+  margin-top: 2rem;
+  margin-left: 1rem;
+  font-size: 1.4rem;
+}
+#pin-input {
+  width: 90%;
+  margin: 1rem 1rem;
+}
+#pair-description {
+  font-size: 1.4rem;
+}
+#phonebook-check-content {
+  position: absolute;
+  bottom: var(--softkeybar-height);
+}
+#access-phone-content {
+  font-size: 1.4rem;
+  -moz-padding-end: 3rem;
+  white-space: break-spaces;
+}

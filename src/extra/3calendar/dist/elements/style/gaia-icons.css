@@ -1,0 +1,10 @@
+[data-icon]:before {
+  font-family: "gaia-icons";
+  content: attr(data-icon);
+  display: inline-block;
+  font-weight: 500;
+  font-style: normal;
+  text-decoration: inherit;
+  text-transform: none;
+  text-rendering: optimizeLegibility;
+}
