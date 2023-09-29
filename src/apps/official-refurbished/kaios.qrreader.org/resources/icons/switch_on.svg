@@ -1,0 +1,12 @@
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Control/Switch on unselect</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Qr-reader" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="switch-on">
+            <g id="Control/Switch-on-unselect">
+                <path d="M16,19 C20.9705627,19 25,14.9705627 25,10 C25,5.02943725 20.9705627,1 16,1 C11.0294373,1 7,5.02943725 7,10 C7,14.9705627 11.0294373,19 16,19 Z" id="Oval-48" fill="#FF3366"></path>
+                <rect id="Rectangle-6" stroke="#FF3366" x="15.5" y="18.5" width="1" height="12" rx="0.5"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

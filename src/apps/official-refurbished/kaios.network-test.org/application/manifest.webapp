@@ -1,0 +1,48 @@
+{
+  "name": "Network Test",
+  "description":
+    "A KaiOS application for testing and evaluating a network connection.",
+  "subtitle": "Test your internet connection",
+  "version": "1.0.7",
+  "categories": ["utilities"],
+  "launch_path": "/index.html",
+  "type": "certified",
+  "origin": "app://kaios.network-test.org",
+  "developer": {
+    "name": "KaiOS",
+    "url": "http://kaiostech.com"
+  },
+  "permissions": {
+    "wifi-manage": {},
+    "mobileconnection": {},
+    "cloud-authorization": {},
+    "settings": {
+      "access": "readwrite"
+    }
+  },
+  "theme_color": "#8500DB",
+  "default_locale": "en-US",
+  "locales": {
+    "en-US": {
+      "name": "Network Test",
+      "description":
+        "A KaiOS application to test and evaluate a network connection.",
+      "subtitle": "Test your internet connection"
+    },
+    "pt-BR": {
+      "name": "Teste de Rede",
+      "description":
+        "Um aplicativo KaiOS para testar e avaliar uma conexão de rede.",
+      "subtitle": "Teste sua conexao de internet."
+    }
+  },
+  "icons": {
+    "56": "/resources/icons/network_test_56.png",
+    "112": "/resources/icons/network_test_112.png"
+  },
+  "orientation": "default",
+  "activities": {},
+  "chrome": {
+    "statusbar": "overlap"
+  }
+}

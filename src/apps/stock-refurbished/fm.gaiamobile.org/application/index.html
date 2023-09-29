@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="theme-color" content="rgb(255, 255, 255)">
+    <title>FM Radio</title>
+    <link rel="stylesheet" href="style/fm.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="shared/elements/gaia-icons/gaia-icons.css">
+    <link rel="stylesheet" type="text/css" href="shared/elements/gaia-theme/gaia-theme.css">
+    <link rel="stylesheet" type="text/css" href="shared/elements/gaia-theme/gaia-font.css">
+    <meta name="defaultLanguage" content="en-US">
+    <meta name="availableLanguages" content="af-ZA:201911070909, ar-SA:201911070909, az-Latn-AZ:201911070909, be-BY:201911070909, bg-BG:201911070909, bn-BD:201911070909, bn-IN:201911070909, bs-BA:201911070909, cs-CZ:201911070909, da-DK:201911070909, de-DE:201911070909, el-GR:201911070909, en-GB:201911070909, en-US:201911070909, es-ES:201911070909, es-US:201911070909, et-EE:201911070909, fi-FI:201911070909, fr-FR:201911070909, fr-CA:201911070909, he-IL:201911070909, hi-IN:201911070909, hr-HR:201911070909, hu-HU:201911070909, hy-AM:201911070909, id-ID:201911070909, it-IT:201911070909, km-KH:201911070909, kk-KZ:201911070909, lt-LT:201911070909, lv-LV:201911070909, lo-LA:201911070909, ka-GE:201911070909, mk-MK:201911070909, ms-MY:201911070909, nb-NO:201911070909, ne-IN:201911070909, nl-NL:201911070909, pl-PL:201911070909, pt-BR:201911070909, pt-PT:201911070909, ro-RO:201911070909, ru-RU:201911070909, si-LK:201911070909, sk-SK:201911070909, sl-SI:201911070909, sq-AL:201911070909, sr-Latn-CS:201911070909, sv-SE:201911070909, sw-ZA:201911070909, ta-IN:201911070909, th-TH:201911070909, fil-PH:201911070909, tr-TR:201911070909, uk-UA:201911070909, ur-PK:201911070909, vi-VN:201911070909, xh-ZA:201911070909, zh-CN:201911070909, zh-TW:201911070909, zh-HK:201911070909, is-IS:201911070909, zu-ZA:201911070909, mo-RO:201911070909, fa-IR:201911070909, ps-AF:201911070909, uz-Cyrl-UZ:201911070909">
+    <link rel="localization" href="/locales-obj/{locale}.json">
+
+    <script src="shared/js/lazy_loader.js"></script>
+    <script defer="" src="shared/js/l10n.js"></script>
+    <!--<script defer src="shared/js/airplane_mode_helper.js"></script>
+
+    <script defer src="js/speaker_state.js"></script>
+    <script defer src="js/headphone_state.js"></script>
+    <script defer src="js/fm_softkey_helper.js"></script>
+    <script defer src="js/history_frequency.js"></script>
+    <script defer src="js/status_manager.js"></script>
+    <script defer src="js/frequency_manager.js"></script>
+    <script defer src="js/frequency_dialer.js"></script>
+    <script defer src="js/frequency_list.js"></script>
+    <script defer src="js/warning_ui.js"></script>
+    <script defer src="js/activity.js"></script>
+    <script defer src="js/fm_radio.js"></script>-->
+    <script defer="" src="js/cache.js"></script>
+    <script defer="" src="js/startup.js"></script>
+
+    <!--
+      The following scripts are lazy loaded but left here to ensure
+      they get copied over from shared during the build
+    -->
+    <!--
+    <script defer src="js/favorite_editor.js"></script>
+    <script defer src="js/fm_volume_manager.js"></script>
+    <script defer src="js/focus_manager.js"></script>
+    <script defer src="js/stations_list.js"></script>
+    <script defer src="shared/js/toaster.js"></script>
+    <script defer src="shared/elements/gaia-progress/dist/gaia-progress.js"></script>
+    -->
+  <meta content="2.2" name="appVersion"></head>
+
+  <body class="theme-media">
+    <div class="statusbar-placeholder"></div>
+    <section role="heading" aria-labelledby="fm-header">
+      <header id="fm-header" class="hidden">
+        <h1 data-l10n-id="tcl-fm-radio">FM Radio</h1>
+      </header>
+      <!-- A thin indeterminate progress bar to indicate scanning -->
+      <!-- set class to "throb" to make it go, or hidden" to make it stop -->
+      <gaia-progress id="gaia-progress" class="hidden"></gaia-progress>
+      <div id="fm-container" class="">
+        <div id="frequency-bar">
+          <div id="frequency-display">
+            <div id="frequency" class="updated" tabindex="0" role="status">87.5</div>
+            <span class="icon icon-back"></span>
+            <span class="icon icon-forward"></span>
+          </div>
+        </div>
+        <div id="frequency-list" class="favorites-list">
+          <div aria-label="Favorited stations" id="frequency-list-container" class="p-pri" role="listbox" data-l10n-id="frequency-list-container"></div>
+          <template id="frequency-list-template">
+            <div></div>
+            <input class="frequency p-pri hidden" type="text">
+            <div class="frequency-list-frequency p-pri"></div>
+          </template>
+        </div>
+        <div id="favoritelist-warning">
+          <div class="warning">
+            <div id="favoritelist-warning-body" class="p warning-body" data-l10n-id="noFavoritelistMsg">Add favorite stations here!</div>
+          </div>
+        </div>
+      </div>
+      <div id="turning-status" data-l10n-id="turning-on" class="p-pri hidden">Turning on...</div>
+      <div id="antenna-warning" tabindex="0" hidden="">
+        <div class="warning">
+          <div id="antenna-warning-body" class="p warning-body" data-l10n-id="noAntennaMsg">It is suggested to plug in headphones to receive better quality radio signals. Your device may not have an internal antenna</div>
+        </div>
+      </div>
+      <div id="airplane-mode-warning" tabindex="0" hidden="">
+        <div class="warning">
+          <div id="airplane-mode-warning-body" class="p warning-body" data-l10n-id="airplaneModeMsg">Turn off airplane mode to use FM Radio.</div>
+        </div>
+      </div>
+    </section>
+
+    <div id="dialog-container" class="dialog-container hidden" tabindex="-1">
+      <div role="heading" class="dialog">
+        <div id="dialog-header" class="header h1" data-l10n-id="scan-stations">Scan Stations</div>
+        <div class="content p-pri" tabindex="-1"></div>
+      </div>
+    </div>
+
+    <div id="fm-softkey-panel" class="fm-softkey-panel visible">
+      <div>
+        <button id="fm-softkey-left" class="fm-softkey"></button>
+      </div>
+      <div>
+        <button id="fm-softkey-center" class="fm-softkey"></button>
+      </div>
+      <div>
+        <button id="fm-softkey-right" class="fm-softkey"></button>
+      </div>
+    </div>
+
+    <div class="fm-softkey-menu">
+      <div class="fm-softkey-menu-container"></div>
+    </div>
+    <script src="js/cache_restore.js"></script>
+  </body>
+
+</html>

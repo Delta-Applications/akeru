@@ -1,0 +1,848 @@
+/* constant variables define*/
+.theme-media{
+--frequencybar-height: 10.8rem;
+}
+
+@media only screen and (orientation: landscape) {
+  .theme-media{
+    --frequencybar-height: 6.4rem;
+  }
+}
+  /* constnt variables end*/
+html, body {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  color: #000;
+  font-size: 10px;
+  width: 100%;
+}
+
+body > section {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  position: absolute;
+  top: var(--statusbar-height);
+  width: 100%;
+  height: var(--client-height);
+  background-color: var(--color-gs00);
+  font-size: 1.7rem;
+}
+
+.statusbar-placeholder {
+  height: var(--statusbar-height);
+  background-color: var(--color-gs00);
+  color: var(--color-gs100);
+}
+
+/**
+ * 1. No content inside the app
+ *    should be user-selectable.
+ */
+* {
+  -moz-user-select: none; /* 1 */
+  outline-style: none;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.hidden {
+  display: none !important;
+}
+
+a {
+  outline: 0 none;
+  text-decoration: none;
+  color: #FFF;
+}
+
+a:active {
+  color: #000;
+  background-color: #00ABCD;
+}
+
+.hidden-block {
+  visibility: hidden;
+}
+
+#fm-container {
+  height: 100%;
+  width: 100%;
+  background-color: var(--color-gs00);
+}
+
+/*
+@fixed change dim bg color as spec 2.5r1
+ Rewrite previous dim's implementations that incorrect way but sames right result
+*/
+#fm-container.dim {
+  opacity: 1;
+}
+#fm-container.dim::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: var(--color-gs100);
+  z-index: 1;
+  opacity: 0.9;
+}
+
+#fm-container > div {
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+
+/****** styles for frequency view *******/
+#frequency-bar {
+  box-sizing: border-box;
+  top: 0;
+  height: var(--frequencybar-height);
+  width: 100%;
+  text-align: center;
+  background-color: #FFF;
+  overflow: hidden;
+  color: var(--color-gs90);
+}
+
+#frequency-bar.dim {
+  background-color: #FFF;
+}
+
+#frequency-bar > div {
+  text-align: center;
+}
+
+#frequency-bar a {
+  position: absolute;
+  z-index: 1;
+  line-height: 4rem;
+  width: 3.8rem;
+  height: 3.8rem;
+  font-size: 1.4rem;
+  display: inline-block;
+  margin-top: 3rem;
+}
+
+#frequency-display {
+  position: relative;
+  height: var(--frequencybar-height);
+  line-height: var(--frequencybar-height);
+  width: 100%;
+}
+
+#frequency-display > .icon {
+  display: inline-block;
+  position: absolute;
+  width: 1.4rem;
+  height: 2.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background-size: 100%;
+  background-position: center;
+}
+
+#frequency-display > .icon-back {
+  left: .7rem;
+  background-image: url(images/back.png);
+}
+
+#frequency-display > .icon-forward {
+  right: .7rem;
+  background-image: url(images/forward.png);
+}
+
+#frequency-display > #frequency.focus ~ .icon-back {
+  background-image: url(images/back-light.png);
+}
+
+#frequency-display > #frequency.focus ~ .icon-forward {
+  background-image: url(images/forward-light.png);
+}
+
+#frequency {
+  display: block;
+  width: 100%;
+  height: var(--frequencybar-height);
+  top: 0;
+  left: 0;
+  line-height: var(--frequencybar-height);
+  font-size: 5rem;
+  font-weight: normal;
+  background-image: url(images/channel-background.png);
+  color: var(--color-gs100);
+}
+
+#frequency.focus {
+  color: var(--color-gs00);
+  background-image: url(images/channel-background-select.png);
+  background-color: var(--highlight-color, #00B965);
+}
+
+.dim {
+  opacity: 0;
+}
+
+.dim .focus {
+  color: var(--color-gs100);
+  background-color: var(--color-gs00);
+}
+
+.dim .favorite-icon {
+  background: url("images/favorite.png") no-repeat center -3.2rem / 3.2rem;
+}
+
+#frequency::after {
+  content: "MHz";
+  margin-left: 0.3rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+#favorite-star-icon {
+  position: absolute;
+  bottom: calc((var(--frequencybar-height) - 5rem) / 2 + 1.8rem + 0.4rem);
+  transform: translateX(2.2rem);
+}
+
+.favorite-icon {
+  background: url("images/favorite.png") no-repeat center -3.2rem / 3.2rem;
+  height: 3.2rem;
+  width: 3.2rem;
+}
+
+#frequency .favorite-icon {
+  height: 2.4rem;
+  width: 2.4rem;
+  background-size: 2.4rem;
+  background-position: center -2.4rem;
+}
+
+#frequency.focus .favorite-icon {
+  background-position: center 0;
+}
+
+.favorite-icon-hidden {
+  background: url("images/favorite_hidden.png") no-repeat center -3.2rem / 3.2rem;
+  height: 3.2rem;
+  width: 3.2rem;
+}
+
+.dim .favorite-icon-hidden {
+  background: url("images/favorite_hidden.png") no-repeat center -3.2rem / 3.2rem;
+}
+
+div.focus .favorite-icon ,div.hasfocused .favorite-icon {
+  background: url("images/favorite.png") no-repeat center 0 / 3.2rem;
+}
+
+div.focus .favorite-icon-hidden ,div.hasfocused .favorite-icon-hidden {
+  background: url("images/favorite_hidden.png") no-repeat center 0 / 3.2rem;
+}
+
+/*****  end  *****/
+
+/**** styles for frequency dialer *****/
+#dialer-bar {
+  top: 10rem;
+  font-size: 1.4rem;
+  font-weight: 400;
+  height: 9rem;
+  overflow: hidden;
+  background: #2F3337;
+  color: #FFF;
+  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.3);
+}
+
+#dialer-container {
+  box-shadow: inset 0 0.05rem 0 #3A3F44;
+  position: relative;
+  padding-left: 50%;
+  margin: 0 2rem;
+  height: 100%;
+}
+
+#dialer-container:before,
+#dialer-container:after {
+  content: "";
+  background-color: #474E57;
+  box-shadow: inset 0 0.05rem 0 #585E65;
+  position: absolute;
+  width: 2rem;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+#dialer-container:before {
+  border-right: 0.1rem solid #24292E;
+  left: -2rem;
+}
+
+#dialer-container:after {
+  border-left: 0.1rem solid #24292E;
+  right: -2rem;
+}
+
+#frequency-indicator {
+  border-radius: 50%/0.1rem;
+  height: 8.6rem;
+  width: 1.6rem;
+  margin: 0.6rem 0 0 -0.8rem;
+  position: absolute;
+  z-index: 1;
+  background: url(images/selector.png) no-repeat center center / 1.6rem;
+  top: 0;
+  left: 50%;
+}
+
+#turning-status {
+  display: flex;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  font-weight: 400;
+  z-index: 1;
+  justify-content: center;
+  flex-direction: column;
+  color: var(--color-gs00);
+  text-align: center;
+}
+
+#frequency-dialer {
+  display: inline-block;
+  display: -moz-inline-box;
+  -moz-user-select: none;
+  width: 100%;
+  margin-left: -2.2rem;
+  position: absolute;
+  top: 0;
+}
+
+#frequency-dialer .dialer-unit-mark-box {
+  background: url(images/dial-notches.png) no-repeat 0 3.4rem / 32rem;
+  overflow: hidden;
+  height: 5.5rem;
+}
+
+#frequency-dialer .dialer-unit {
+  text-align: left;
+  height: 7.5rem;
+  position: absolute;
+  width: 32rem;
+}
+
+/* The beginning and end of the dial are masked to hide notches that
+are out of range. */
+.dialer-unit-mark-mask-start,
+.dialer-unit-mark-mask-end {
+  background-color: #2F3337;
+  display: block;
+  height: 5.5rem;
+  position: absolute;
+}
+/* The mask at the end should be jogged left by 0.3rem, since the
+mask is intended to cover everything except the first notch. */
+.dialer-unit-mark-mask-end {
+  margin-left: .3rem;
+}
+
+#frequency-dialer .dialer-unit-floor {
+  color: #AAA;
+  float: left;
+}
+/**** end *******/
+
+div#favoritelist-warning {
+  overflow-x: hidden;
+  overflow-y: auto;
+  top: var(--frequencybar-height);
+  height: calc(100% - var(--frequencybar-height));
+}
+
+/***** styles for favorites list ******/
+div#frequency-list.favorites-list {
+  overflow-x: hidden;
+  overflow-y: auto;
+  top: var(--frequencybar-height);
+  height: calc(100% - var(--frequencybar-height));
+}
+
+div#frequency-list.stations-list {
+  overflow-x: hidden;
+  overflow-y: auto;
+  top: calc(var(--header-height));
+  height: calc(100% - var(--header-height));
+}
+
+div#frequency-list.scanning {
+  overflow-x: hidden;
+  overflow-y: auto;
+  top: calc(var(--header-height) + .2rem);
+  height: calc(100% - var(--header-height) - .2rem);
+}
+
+div#frequency-list.edit-mode {
+  top: var(--header-height);
+  height: calc(100% - var(--header-height));
+}
+
+div#frequency-list-container {
+  max-height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+div#frequency-list-container > div {
+  height: 6rem;
+  line-height: 6rem;
+  color: var(--color-gs100);
+  background-color: var(--color-gs00);
+}
+
+div#frequency-list-container > div.focus {
+  color: var(--color-gs00);
+  background-color: var(--highlight-color, #00B965);
+}
+
+div#frequency-list-container > div.focus.rename {
+  color: var(--color-gs00);
+  background-color: var(--highlight-color, #00B965);
+}
+
+div#frequency-list-container > div:active:before,
+div#frequency-list-container > div:active + div:before {
+  background-color: transparent;
+}
+
+div#frequency-list-container div.frequency-list-favorite-icon {
+  float: left;
+  cursor: pointer;
+  margin: 1.4rem 1rem 0 1rem;
+}
+
+div#frequency-list-container div.frequency-list-frequency {
+  text-align: left;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+div#frequency-list-container div.frequency-list-frequency::after {
+  font-size: 1.5rem;
+  position: absolute;
+  padding: .6rem .2rem 0 1rem;
+}
+
+div#frequency-list-container input[type="text"].frequency {
+  height: 3.6rem;
+  display: block;
+  width: calc(100% - 6.2rem);
+  border: none;
+  position: relative;
+  top: 1.2rem;
+  border-radius: 0.2rem;
+  padding: 0 1rem;
+  color: var(--color-gs90);
+  background: var(--color-gs00);
+  box-shadow: none;
+  box-sizing: border-box;
+  margin: 0 0 1rem 0;
+  unicode-bidi: -moz-plaintext;
+}
+
+/***** end *****/
+
+/***** styles for status bars *****/
+#action-bar {
+  bottom: 0;
+  border-top: .1rem solid #3A3E46;
+  box-shadow: 0 0 .2rem #111;
+  height: 9rem;
+  overflow: hidden;
+}
+
+/* Styles for action bar */
+/* FIX: it doesn't hide itself */
+#action-bar[hidden] {
+  display: none;
+}
+
+#action-bar > div {
+  text-align: center;
+  padding: 1rem 0 0;
+  width: 33.333%;
+  float: left;
+}
+
+#action-bar > div:first-child {
+  text-align: right;
+}
+
+#action-bar > div:last-child {
+  text-align: left;
+}
+
+#action-bar a {
+  display: inline-block;
+  border: none;
+  font-size: 2.5rem;
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  text-align: center;
+  box-shadow: 0 .1rem .1rem #A8A8A8 inset, 0 .2rem 0 #1e2226;
+}
+
+#action-bar a:active {
+  color: #FFF;
+  background-color: #00ABCD;
+  box-shadow: 0 .1rem .1rem #3F6978 inset, 0 .2rem 0 #1e2226;
+}
+
+#power-switch, #power-switch span {
+  background-image: url(images/play.png), url(images/reflection-72.png);
+  background-repeat: no-repeat, no-repeat;
+  background-color: transparent;
+  background-position: center center, 0 0;
+  background-size: 7.2rem;
+  overflow: hidden;
+  position: relative;
+}
+
+#power-switch:active {
+  background-image: url(images/play.png);
+}
+
+#power-switch[data-enabled="true"] {
+  background-image: url(images/stop.png), url(images/reflection-72.png);
+}
+
+#power-switch[data-enabled="true"]:active {
+  background-image: url(images/stop.png);
+}
+
+#power-switch span {
+  background-image: url(images/spinner-FMRadio.png);
+  background-size: 6.6rem;
+  display: none;
+  height: 6.6rem;
+  left: 0.2rem;
+  position: absolute;
+  top: 0.2rem;
+  width: 6.6rem;
+}
+
+a#frequency-op-seekdown {
+  width: 5rem;
+  height: 5rem;
+  margin: 1rem 0;
+  background-image: url(images/seekdown.png), url(images/reflection-56.png);
+  background-repeat: no-repeat, no-repeat;
+  background-color: transparent;
+  background-position: center center;
+  background-size: 5.6rem;
+}
+
+a#frequency-op-seekdown:active {
+  background-image: url(images/seekdown.png);
+}
+
+a#frequency-op-seekup {
+  width: 5rem;
+  height: 5rem;
+  margin: 1rem 0;
+  background-image: url(images/seekup.png), url(images/reflection-56.png);
+  background-repeat: no-repeat, no-repeat;
+  background-color: transparent;
+  background-position: center center;
+  background-size: 5.6rem;
+}
+
+a#frequency-op-seekup:active {
+  background-image: url(images/seekup.png);
+}
+/**** end ****/
+
+/***  styles for  warning box ****/
+.warning {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  color: var(--color-gs90);
+  background-color: var(--color-gs00);
+  margin: 0;
+  padding: 0;
+  display: table;
+  text-align: center;
+  word-break: normal;
+}
+
+.warning .warning-body {
+  padding: 0 1rem;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/***  styles for antenna warning box ****/
+#antenna-warning {
+  z-index: 2;
+}
+/******* end *******/
+
+/***  styles for airplane mode warning box ****/
+#airplane-mode-warning {
+  z-index: 3;
+}
+/******* end *******/
+
+/* Dialog, should move to some place else later */
+
+.dialog-container {
+  z-index: 9999;
+  width: 100%;
+  height: calc(100% - var(--softkeybar-height));
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .85);
+}
+
+.dialog-container .dialog {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  max-height: calc(100% - 2rem - var(--statusbar-height));
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+}
+
+.dialog-container .dialog > .header {
+  padding: .5rem 1rem;
+  background-color: var(--color-gs20);
+  color: var(--color-gs90);
+  text-align: center;
+}
+
+.dialog-container .dialog > .content {
+  height: auto;
+  overflow-y: auto;
+  word-wrap: break-word;
+  white-space: pre-line;
+  padding: 1rem;
+  background-color: var(--color-gs00);
+  color: var(--color-gs90);
+}
+
+/***  styles for RTL languages ****/
+/* The scrollbar should be on the left.
+ * But direction is explicitly set to LTR on #container
+   So we force #frequency-list to be RTL, while keeping the children LTR
+*/
+html[dir=rtl] #frequency-list {
+  direction: rtl;
+}
+
+html[dir=rtl] #frequency-list > * {
+  direction: ltr;
+}
+
+html[dir=rtl] div#frequency-list-container div.frequency-list-favorite-icon {
+  float: right;
+}
+
+html[dir=rtl] div#frequency-list-container div.frequency-list-frequency {
+  text-align: right;
+}
+
+html[dir="rtl"] div#frequency-list-container input[type="text"].frequency {
+  left: 1rem;
+  text-align: right;
+}
+/******* end *******/
+
+gaia-progress {
+  height: .2rem;
+}
+
+header h1 {
+  line-height: var(--header-height);
+  background: var(--color-gs00);
+  color: var(--color-gs100);
+  padding: 0 1rem;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* special handle large text mode, header offset a little after loaded */
+.large-text header {
+  background: var(--color-gs00);
+}
+
+.large-text header h1 {
+  position: relative;
+  bottom: 0.2rem;
+  padding-bottom: 0.2rem;
+}
+
+.fm-softkey-panel {
+  bottom: 0;
+  width: 100%;
+  position: fixed;
+  border: 0;
+  text-align: center;
+  background-color: var(--color-gs20, #dadada);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  direction: ltr;
+}
+
+.fm-softkey-panel div {
+  top: 0;
+}
+
+.fm-softkey-panel:not(.visible) {
+  display: none;
+}
+
+.fm-softkey-panel div:first-child {
+  text-align: left;
+  padding: 0 0.5rem 0 0.5rem;
+  min-width: 1rem;
+}
+
+.fm-softkey-panel div:last-child {
+  text-align: right;
+  padding: 0 0.5rem 0 0.5rem;
+  min-width: 1rem;
+}
+
+.fm-softkey {
+  top: 0;
+  border: none;
+  font-weight: 600;
+  font-size: 1.4rem;
+  background: transparent;
+  color: var(--color-gs90, #323232);
+  height: var(--softkeybar-height, 3rem);
+  line-height: var(--softkeybar-height, 3rem);
+}
+
+[dir="rtl"] .fm-softkey {
+  direction: rtl;
+}
+
+button.fm-softkey {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+button#fm-softkey-left {
+  text-align: left;
+}
+
+button#fm-softkey-center {
+  font-weight: 700;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+
+button#fm-softkey-center:empty {
+  width: 0;
+  padding: 0;
+}
+
+button#fm-softkey-right {
+  text-align: right;
+}
+
+.fm-softkey-menu {
+  width: 100%;
+  display: none;
+  position: fixed;
+  color: var(--color-gs00);
+  bottom: var(--softkeybar-height);
+  height: calc(100% - var(--softkeybar-height) - var(--statusbar-height));
+  transition: transform ease-in-out .2s, visibility .2s;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: rgba(0, 0, 0, .7);
+}
+
+.fm-softkey-menu.visible {
+  display: block;
+}
+
+.fm-softkey-menu-container {
+  bottom: 0;
+  width: 100%;
+  max-height: 100%;
+  position: absolute;
+}
+
+.fm-softkey-menu-header {
+  padding: .5rem 1rem;
+  text-align: center;
+  color: var(--color-gs90);
+  background: var(--color-gs20);
+}
+
+.fm-softkey-menu-item {
+  height: 4.8rem;
+  width: 100%;
+  padding: 0 1rem;
+  text-align: start;
+  line-height: 4.8rem;
+  color: var(--color-gs90);
+  background: var(--color-gs00);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: none;
+  outline: none;
+  border: none;
+  border-radius: 0;
+}
+
+.current {
+  color: var(--color-gs00);
+  background-color: var(--highlight-color, #00B965)
+}
+
+@media only screen and (orientation: landscape) {
+
+  .warning {
+    height: 100%;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+}

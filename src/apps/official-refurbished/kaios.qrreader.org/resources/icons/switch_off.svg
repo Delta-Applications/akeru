@@ -1,0 +1,18 @@
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Control/Switch off</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M16,31 C20.9705627,31 25,26.9705627 25,22 C25,17.0294373 20.9705627,13 16,13 C11.0294373,13 7,17.0294373 7,22 C7,26.9705627 11.0294373,31 16,31 Z" id="path-1"></path>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="18" height="18" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Qr-reader" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="switch-off" stroke="#CBCBCB">
+            <g id="Control-/-Switch-off-">
+                <use id="Oval-48" mask="url(#mask-2)" stroke-width="8" stroke-linecap="square" stroke-dasharray="2" xlink:href="#path-1"></use>
+                <rect id="Rectangle-6" stroke-width="1" x="15.5" y="1.5" width="1" height="12" rx="0.5"></rect>
+            </g>
+        </g>
+    </g>
+</svg>
