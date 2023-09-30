@@ -1,0 +1,30 @@
+@import url('main.css');
+
+#alert-detail {
+  width: 100%;
+  height: calc(100% - var(--statusbar-height));
+  top: var(--statusbar-height);
+  position: absolute;
+  background-color: var(--color-gs00);
+}
+
+#alert-container {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.highlight-color {
+  color: red;
+}
+
+p > a {
+  color: rgb(0, 78, 255);
+  text-decoration: underline;
+}
+
+a {
+  text-decoration: none;
+  outline: medium none;
+  color: rgb(255, 78, 0);
+}
+

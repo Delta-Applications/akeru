@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="theme-color" content="rgb(255, 255, 255)">
+    <title>Gallery</title>
+    <link rel="stylesheet" type="text/css" href="shared/elements/gaia-theme/gaia-theme.css">
+    <link rel="stylesheet" type="text/css" href="shared/elements/gaia-theme/gaia-font.css">
+    <link rel="stylesheet" type="text/css" href="shared/elements/gaia-icons/gaia-icons.css">
+    <link rel="stylesheet" type="text/css" href="shared/style/input_areas.css">
+    <link rel="stylesheet" href="style/gallery_thumbnail.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="shared/style/softkey.css">
+    <link rel="stylesheet" href="style/gallery.css" type="text/css">
+    <!-- this file is loaded lazily but is listed here so it gets packaged
+    <link rel="stylesheet" href="shared/style/status.css"/>
+    <link rel="stylesheet" type="text/css" href="shared/style/progress_activity.css">
+    <link rel="stylesheet" type="text/css" href="shared/style/navigation.css" />
+    <link rel="stylesheet" type="text/css" href="shared/style/action_menu.css" /> -->
+    <!-- <link rel="stylesheet" href="shared/style/confirm.css" type="text/css" />
+    <link rel="stylesheet" href="shared/style/option_menu.css" type="text/css" />
+    <link rel="stylesheet" href="shared/style/toaster.css" type="text/css" />
+    <link rel="stylesheet" href="shared/style/switches.css" type="text/css" />
+    <link rel="stylesheet" href="shared/elements/gaia_confirm/style.css" type="text/css" /> -->
+
+    <!-- Localization -->
+    <meta name="defaultLanguage" content="en-US">
+    <meta name="availableLanguages" content="af-ZA:202107131655, ar-SA:202107131655, az-Latn-AZ:202107131655, be-BY:202107131655, bg-BG:202107131655, bn-BD:202107131655, bn-IN:202107131655, bs-BA:202107131655, cs-CZ:202107131655, da-DK:202107131655, de-DE:202107131655, el-GR:202107131655, en-GB:202107131655, en-US:202107131655, es-ES:202107131655, es-US:202107131655, en-NG:202107131655, et-EE:202107131655, fi-FI:202107131655, fr-FR:202107131655, fr-CA:202107131655, he-IL:202107131655, hi-IN:202107131655, hr-HR:202107131655, hu-HU:202107131655, hy-AM:202107131655, id-ID:202107131655, it-IT:202107131655, km-KH:202107131655, kk-KZ:202107131655, lt-LT:202107131655, lv-LV:202107131655, lo-LA:202107131655, ka-GE:202107131655, mk-MK:202107131655, ms-MY:202107131655, nb-NO:202107131655, ne-IN:202107131655, nl-NL:202107131655, pl-PL:202107131655, pt-BR:202107131655, pt-PT:202107131655, ro-RO:202107131655, ru-RU:202107131655, si-LK:202107131655, sk-SK:202107131655, sl-SI:202107131655, sq-AL:202107131655, sr-Latn-CS:202107131655, sv-SE:202107131655, sw-ZA:202107131655, ta-IN:202107131655, th-TH:202107131655, fil-PH:202107131655, tr-TR:202107131655, uk-UA:202107131655, ur-PK:202107131655, vi-VN:202107131655, xh-ZA:202107131655, zh-CN:202107131655, zh-TW:202107131655, zh-HK:202107131655, is-IS:202107131655, zu-ZA:202107131655, mo-RO:202107131655, fa-IR:202107131655, ps-AF:202107131655, uz-Cyrl-UZ:202107131655">
+    <link rel="localization" href="/locales-obj/{locale}.json">
+    
+
+    <!-- Shared code -->
+    <script defer="" src="shared/js/l10n.js"></script>
+    <script defer="" src="shared/js/l10n_date.js"></script>
+    <script defer="" src="shared/js/template.js"></script>
+    <script defer="" src="js/files_store.js"></script>
+    <script defer="" src="shared/js/mediadb.js"></script>
+    <script defer="" src="shared/js/lazy_loader.js"></script>
+    <script defer="" src="shared/js/media/media_utils.js"></script>
+    <script defer="" src="shared/js/media/downsample.js"></script>
+    <script defer="" src="shared/js/navigation_handler.js"></script>
+    <script defer="" src="shared/js/softkey_panel.js"></script>
+    <!-- <script defer src="shared/js/input_handler.js"></script> -->
+    <script defer="" src="shared/js/navigation_helper.js"></script>
+
+    <!-- <script defer src="shared/elements/gaia-progress/dist/gaia-progress.js"></script> -->
+    <!-- <script defer src="shared/js/dialogs.js"></script> -->
+    <!-- <script defer src="js/shared/confirm_dialog_helper.js"></script> -->
+    <!-- This script is lazy loaded, but listed here so it gets packaged -->
+    <!-- <script defer src="shared/js/media/crop_resize_rotate.js"></script> -->
+    <!-- <script defer src="shared/js/toaster.js"></script> -->
+    <!-- <script defer src="shared/js/option_menu.js"></script> -->
+    <!-- <script defer src="shared/elements/gaia_confirm/script.js"></script> -->
+    <!-- <script defer src="shared/js/component_utils.js"></script>-->
+
+    <!-- Specific code -->
+    <script defer="" src="js/globals.js"></script>
+    <script defer="" src="js/utils.js"></script>
+<!--     <script defer src="js/ensure_file_backed_blob.js"></script> -->
+    <!-- <script defer src="js/spinner.js"></script> -->
+    <script defer="" src="js/overlay.js"></script>
+    <!-- <script defer src="js/navigation_map.js"></script> -->
+    <script defer="" src="js/app.js"></script>
+
+    <script defer="" src="js/softkey_manager.js"></script>
+    <script defer="" src="js/view_helper.js"></script>
+    <script defer="" src="js/addFavorite.js"></script>
+    <script defer="" src="js/dongle.js"></script>
+    <script defer="" src="js/gallery.js"></script>
+    <script defer="" src="js/gallery_settings.js"></script>
+    <script defer="" src="js/thumbnail_scripts.js"></script>
+    <!-- <script defer src="js/frame_scripts.js"></script> -->
+
+  <meta content="2.2" name="appVersion"></head>
+
+  <body role="application" class="theme-media">
+    <section id="mask-background" class="hidden" data-l10n-id="deleting">Deleting...</section>
+    <!-- This section holds the thumbnails list and the headers and footers -->
+    <!-- for all views that display the thumbnails -->
+    <section role="region" id="thumbnail-views" class="skin-dark">
+      <!-- This header only shown on tablet view  -->
+      <header id="selected-header" class="thumbnails-select">
+        <h1 id="multiple-select-count" aria-live="assertive" class="notransform"></h1>
+      </header>
+      <header id="pick-header" class="thumbnails-pick">
+        <h1 id="pick-header-title" data-l10n-id="kai-pickoneimage">Select A Photo</h1>
+      </header>
+      <progress id="list-progress" value="0" max="100" class="hidden"></progress>
+      <!-- This element gets positioned over different view elements -->
+      <!-- It gets styled differently depending on what it is over -->
+      <ul id="thumbnails" role="presentation"></ul> <!-- Thumbnails inserted here -->
+    </section>
+
+    <section role="region" id="fullscreen-view" class="skin-dark" tabindex="1">
+      <!--
+      <div id="frames">
+        <section id="frame1" class="frame"></section>
+        <section id="frame2" class="frame"></section>
+        <section id="frame3" class="frame"></section>
+      </div>
+      <div id="set-wallpaper" class="hidden">
+        <img></img>
+      </div>
+      <section role="status" id="edit-copy-save-banner" class="banner" hidden>
+        <p id="edit-copy-save-status"></p>
+      </section>
+       -->
+    </section>
+
+    <form id="info-view" role="dialog" data-type="confirm" class="hidden">
+      <!--
+      <div class="statusbar-placeholder"></div>
+      <section role="menuitem">
+        <header>
+          <h1 data-l10n-id="kai-file-info">File Info</h1>
+        </header>
+        <div id="info-view-container"  tabindex="0">
+          <dl id="infoView">
+          </dl>
+        </div>
+      </section>
+       -->
+    </form>
+
+    <section role="region" id="crop-view" class="skin-dark" tabindex="3">
+      <!--
+      <div id="crop-frame" class="crop-top"></div>
+       -->
+    </section>
+
+    <section role="region" id="edit-view" class="skin-dark" tabindex="0">
+      <!--
+      <header id="edit-header" role="heading">
+        <h1 id="edit-title" data-l10n-id="kai-edit-title"></h1>
+      </header>
+
+      <progress id="save-progress" value="0" max="120" class="hidden"></progress>
+
+      <div id="edit-preview-area"></div>
+
+      <div id="edit-options" class='hidden'>
+        <div id="exposure-slider" class="edit-options-bar-exposure hidden" role="slider" aria-valuemax="3" aria-valuemin="-3" aria-valuenow="0">
+          <div id="sliderbar">
+            <hr id="sliderline"/>
+            <div id="sliderthumb"></div>
+          </div>
+          <div id="sliderlabels">
+            <div id="slider-3" class="sliderlabel p-pri" data-label="-3">-3</div>
+            <div id="slider-2" class="sliderlabel p-pri" data-label="-2">-2</div>
+            <div id="slider-1" class="sliderlabel p-pri" data-label="-1">-1</div>
+            <div id="slider0" class="sliderlabel p-pri" data-label="0">0</div>
+            <div id="slider1" class="sliderlabel p-pri" data-label="+1">+1</div>
+            <div id="slider2" class="sliderlabel p-pri" data-label="+2">+2</div>
+            <div id="slider3" class="sliderlabel p-pri" data-label="+3">+3</div>
+          </div>
+        </div>
+
+        <div id="edit-crop-options" class="edit-options-bar hidden">
+          <a id="edit-crop-aspect-square" class="radio button" data-l10n-id="crop-aspect-square"></a>
+          <a id="edit-crop-aspect-landscape" class="radio button" data-l10n-id="crop-aspect-landscape"></a>
+          <a id="edit-crop-aspect-portrait" class="radio button" data-l10n-id="crop-aspect-portrait"></a>
+        </div>
+        <span id="edit-crop-arrow" class="hidden"></span>
+
+        <div id="edit-filters-options" class="edit-options-bar hidden">
+          <a id="edit-filters-none" class="radio button" data-effect="none" data-l10n-id="edit-filters-none"></a>
+          <a id="edit-filters-bw" class="radio button" data-effect="bw" data-l10n-id="edit-filters-bw"></a>
+          <a id="edit-filters-sepia" class="radio button" data-effect="sepia" data-l10n-id="edit-filters-sepia"></a>
+          <a id="edit-filters-bluesteel" class="radio button" data-effect="bluesteel" data-l10n-id="edit-filters-bluesteel"></a>
+          <a id="edit-filters-faded" class="radio button" data-effect="faded" data-l10n-id="edit-filters-faded"></a>
+        </div>
+
+        <div id="edit-auto-correct-options" class="edit-options-bar hidden">
+          <a id="edit-auto-correct-on" class="radio button p-pri" data-auto-correct="on" data-l10n-id="kai-on">On</a>
+          <a id="edit-auto-correct-off" class="radio button p-pri" data-auto-correct="off" data-l10n-id="kai-off">Off</a>
+        </div>
+
+      </div>
+      <section role="status" id="edit-auto-correct-banner" class="banner" hidden>
+        <p id="edit-auto-correct-status"></p>
+      </section>
+      <footer id="edit-toolbar" role="heading" aria-labelledby="edit-header">
+        <a id="edit-exposure-button" class="radio button" data-l10n-id="edit-exposure"></a>
+        <a id="edit-rotate-button" class="radio button" data-l10n-id="edit-rotate"></a>
+        <a id="edit-crop-button" class="radio button" data-l10n-id="edit-crop"></a>
+        <a id="edit-filters-button" class="radio button" data-l10n-id="edit-filters"></a>
+        <a id="edit-auto-correct-button" class="radio button" data-l10n-id="edit-auto-correct"></a>
+      </footer>
+      -->
+    </section>
+
+    <!-- This element is the template of each thumbnail item -->
+    <div id="thumbnail-group-header" hidden="">
+      <!--
+        <li role="presentation">
+          <div class="thumbnail-group-header p-sec" role="heading" aria-level="1">${group-header}</div>
+          <div class="thumbnail-group-container"></div>
+        </li>
+      -->
+    </div>
+
+    <!-- See spinner.js -->
+    <!-- a spinner that we display in the center of the screen when -->
+    <!-- doing time-consuming operations like rotating images -->
+    <!-- The value=0 attribute is a workaround for bug 962594 -->
+    <progress id="spinner" class="hidden" value="0"></progress>
+
+    <!-- See overlay.js -->
+    <!-- display messages like "No Photos" and "No SD Card" here -->
+    <form id="overlay" role="region" data-type="confirm">
+      <section id="overlay-content" role="dialog">
+        <p id="overlay-text" class="p-pri"></p>
+      </section>
+    </form>
+
+    <form id="settings-dialog" role="dialog" data-type="confirm" class="hidden">
+      <!--
+      <div class="statusbar-placeholder"></div>
+      <section role="heading" aria-labelledby="gallery-settings">
+        <header>
+          <h1 id="gallery-settings" data-l10n-id="sort-and-group"></h1>
+        </header>
+        <ul id="list">
+          <li role="menuitem" class="menu-item">
+            <span data-l10n-id="kai-sort-by" class="sort-by p-pri">Sort by</span>
+            <select aria-hidden="true" name="sortby" data-value-type="boolean" data-track-class="sort-by">
+              <option data-l10n-id="kai-date-and-time-label" value="0">Date and Time</option>
+              <option data-l10n-id="name-label" value="1">Name</option>
+              <option data-l10n-id="size-label" value="2">Size</option>
+              <option data-l10n-id="image-type-label" value="3">Image Type</option>
+            </select>
+            <span class="button icon icon-dialog p-sec" id="sortbyLabel"></span>
+            <i aria-hidden="true" class="menu-item-forward" data-icon="forward"></i>
+          </li>
+          <li role="menuitem" class="menu-item">
+            <span data-l10n-id="kai-group-by-date-and-location" class="group-by p-pri">Group by Date</span>
+            <select aria-hidden="true" name="groupby" data-value-type="boolean" data-track-class="group-by">
+              <option data-l10n-id="kai-on" value="on">On</option>
+              <option data-l10n-id="kai-off" value="off">Off</option>
+            </select>
+            <span class="button icon icon-dialog p-sec" id="groupLabel"></span>
+            <i aria-hidden="true" class="menu-item-forward" data-icon="forward"></i>
+          </li>
+        </ul>
+      </section>
+       -->
+    </form>
+    <form id="confirm-dialog" role="dialog" data-type="confirm" class="hidden">
+      <!--
+      <section>
+        <p id="confirm-msg"></p>
+      </section>
+      <menu>
+        <button id="confirm-cancel"></button>
+        <button id="confirm-ok"></button>
+      </menu>
+       -->
+    </form>
+
+    <!-- Some SVG filters we use -->
+    <svg id="filters" width="0" height="0">
+      <filter id="filter-bw">
+        <feColorMatrix type="matrix" values="0.65 0.25 0.10 0 0
+                               0.65 0.25 0.10 0 0
+                               0.65 0.25 0.10 0 0
+                               0    0    0    1 0"></feColorMatrix>
+      </filter>
+      <filter id="filter-sepia">
+        <feColorMatrix type="matrix" values="0.393 0.769 0.189 0 0
+                               0.349 0.686 0.168 0 0
+                               0.272 0.534 0.131 0 0
+                               0     0     0     1 0"></feColorMatrix>
+      </filter>
+      <filter id="filter-bluesteel">
+        <feColorMatrix type="matrix" values="1    0.25 0.65 0   0
+                               0.1  1    0.65 0   0
+                               0.1  0.25 1    0.1 0
+                               0    0    0    1   0"></feColorMatrix>
+      </filter>
+      <filter id="filter-faded">
+        <feColorMatrix type="matrix" values="1    0.2   0.2   0.03 0
+                               0.2  0.7   0.2   0.05 0
+                               0.1  0     0.8   0    0
+                               0    0     0     1    0"></feColorMatrix>
+      </filter>
+    </svg>
+  <div id="app-dialog" style="z-index:1024;"></div>
+  </body>
+
+</html>

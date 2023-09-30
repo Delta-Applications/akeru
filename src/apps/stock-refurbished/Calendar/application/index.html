@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+<meta charset="utf-8">
+<meta name="theme-color" content="rgb(245, 245, 245)">
+<title>Calendar</title>
+
+<!-- stylesheets -->
+<!-- need to keep shared styles on the markup so it gets copied to build_stage
+<link rel="stylesheet" type="text/css" href="/shared/style/toolbars.css">
+<link rel="stylesheet" type="text/css" href="/shared/style/tabs.css">
+-->
+<!-- lazy-loaded styles
+<link rel="stylesheet" type="text/css" href="/shared/style/buttons.css">
+<link rel="stylesheet" type="text/css" href="/shared/style/confirm.css">
+<link rel="stylesheet" type="text/css" href="/shared/style/switches.css">
+<link rel="stylesheet" type="text/css" href="/shared/style/status.css">
+<link rel="stylesheet" type="text/css" href="/shared/style/progress_activity.css">
+-->
+<link rel="stylesheet" type="text/css" href="/style/base.css">
+<link rel="stylesheet" href="/shared/style/action_menu.css">
+<link rel="stylesheet" href="/shared/style/option_menu.css">
+<link rel="stylesheet" type="text/css" href="shared/style/confirm.css">
+<link rel="stylesheet" type="text/css" href="shared/style/toaster.css">
+<link rel="stylesheet" type="text/css" href="shared/style/animations.css">
+
+<!-- localization -->
+<meta name="defaultLanguage" content="en-US">
+<meta name="availableLanguages" content="af-ZA:202107131655, ar-SA:202107131655, az-Latn-AZ:202107131655, be-BY:202107131655, bg-BG:202107131655, bn-BD:202107131655, bn-IN:202107131655, bs-BA:202107131655, cs-CZ:202107131655, da-DK:202107131655, de-DE:202107131655, el-GR:202107131655, en-GB:202107131655, en-US:202107131655, es-ES:202107131655, es-US:202107131655, en-NG:202107131655, et-EE:202107131655, fi-FI:202107131655, fr-FR:202107131655, fr-CA:202107131655, he-IL:202107131655, hi-IN:202107131655, hr-HR:202107131655, hu-HU:202107131655, hy-AM:202107131655, id-ID:202107131655, it-IT:202107131655, km-KH:202107131655, kk-KZ:202107131655, lt-LT:202107131655, lv-LV:202107131655, lo-LA:202107131655, ka-GE:202107131655, mk-MK:202107131655, ms-MY:202107131655, nb-NO:202107131655, ne-IN:202107131655, nl-NL:202107131655, pl-PL:202107131655, pt-BR:202107131655, pt-PT:202107131655, ro-RO:202107131655, ru-RU:202107131655, si-LK:202107131655, sk-SK:202107131655, sl-SI:202107131655, sq-AL:202107131655, sr-Latn-CS:202107131655, sv-SE:202107131655, sw-ZA:202107131655, ta-IN:202107131655, th-TH:202107131655, fil-PH:202107131655, tr-TR:202107131655, uk-UA:202107131655, ur-PK:202107131655, vi-VN:202107131655, xh-ZA:202107131655, zh-CN:202107131655, zh-TW:202107131655, zh-HK:202107131655, is-IS:202107131655, zu-ZA:202107131655, mo-RO:202107131655, fa-IR:202107131655, ps-AF:202107131655, uz-Cyrl-UZ:202107131655">
+<link rel="localization" href="/locales-obj/{locale}.json">
+
+
+<script defer="" src="/shared/js/date_time_helper.js"></script>
+<script src="/shared/js/l10n.js"></script>
+<script src="/shared/js/l10n_date.js"></script>
+<script defer="" src="shared/js/settings_listener.js"></script>
+<script defer="" src="/js/ext/date.js"></script>
+<script defer="" src="/js/ext/jstz-1.0.4.min.js"></script>
+
+<!-- The following scripts are lazy loaded but left here to ensure
+     they get copied over from shared during the build -->
+<!-- <script defer src="/shared/js/accessibility_helper.js"></script> -->
+<!-- <script defer src="/shared/js/gesture_detector.js"></script> -->
+<!-- <script defer src="/shared/js/input_parser.js"></script> -->
+<!-- <script defer src="/shared/js/notification_helper.js"></script> -->
+<!-- <script defer src="/shared/js/performance_testing_helper.js"></script> -->
+<!-- <script defer src="/shared/elements/gaia_confirm/script.js"></script> -->
+
+<!-- Web Components -->
+<script defer="" src="shared/js/component_utils.js"></script>
+<link rel="stylesheet" type="text/css" href="shared/elements/gaia-theme/gaia-theme.css">
+<link rel="stylesheet" type="text/css" href="shared/elements/gaia-theme/gaia-font.css">
+<link rel="stylesheet" type="text/css" href="shared/elements/gaia-icons/gaia-icons.css">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--Task 5317587 Add by ting-wang@t2mobile.com 20170911-->
+
+
+<script defer="" src="/shared/js/option_menu.js"></script>
+<script defer="" src="/shared/js/option_menu_helper.js"></script>
+<script defer="" src="/shared/js/lazy_loader.js"></script>
+
+<!-- SoftKeybar support -->
+<script defer="" src="shared/js/softkey_panel.js"></script>
+<link rel="stylesheet" type="text/css" href="shared/style/softkey.css">
+<script defer="" src="shared/js/softkey_panel_helper.js"></script>
+<script defer="" src="/shared/js/custom_dialog.js"></script>
+
+<script defer="" src="shared/js/homescreens/confirm_dialog_helper.js"></script>
+
+<!-- Navigation support -->
+<script defer="" src="shared/js/navigation_handler.js"></script>
+<link rel="stylesheet" type="text/css" href="shared/style/navigation.css">
+<script defer="" src="shared/js/toaster.js"></script>
+<link rel="stylesheet" type="text/css" href="shared/style/toaster.css">
+
+<meta content="2.2" name="appVersion"></head>
+
+<body role="application" class="theme-calendar" data-path="/month/">
+<div class="statusbar-placeholder"></div>
+
+<section id="errors" role="status" aria-live="assertive" aria-atomic="true"><!--
+  <p class="errors"></p>
+  --></section>
+<section id="settings" class="fullscreen-view" role="heading" aria-labelledby="settings-header-title"><!--
+    <header class="settings-header" id="settings-header">
+      <h1 id="settings-header-title" data-l10n-id="kai-settings-header">Calendar to Display</h1>
+    </header>
+
+    <div class="settings-drawer-container">
+      <div class="settings-drawer">
+        <ol class="calendars">
+        </ol>
+      </div>
+    </div>
+  --></section>
+
+<section id="time-views" class="fullscreen-view" aria-level="1" role="heading" aria-labelledby="current-week-view current-day-view current-month-year-view launch-softkey">
+  <header id="time-header">
+    <h1 id="current-month-year" tabindex="-1" data-l10n-id="today">Today</h1>
+  </header>
+
+  <div id="progress-indicator">
+    <div id="throbber"></div>
+  </div>
+  <section id="launch-view" class="active" tabindex="0" aria-hidden="true">
+    <div class="container">
+      <div id="current-week-view"></div>
+      <div id="current-day-view"></div>
+      <div id="current-month-year-view"></div>
+    </div>
+    <div id="launch-softkey" class="softkey-placeholder" data-l10n-id="kai-event-calendar">Calendar</div>
+  </section>
+  <section id="month-view" role="tabpanel" aria-labelledby="month"></section>
+
+  <!---
+  When a day is selected you have
+  access to the details here
+  -->
+  <section id="month-day-agenda" role="tabpanel">
+    <div id="event-list-date" class="p-sec hidden"></div>
+    <section id="event-list" class="day-events" role="listbox" aria-labelledby="event-list-date">
+    </section>
+  </section>
+
+  <section id="day-view" class="multi-day day-view" aria-level="2" role="heading" aria-labelledby="current-month-year"><!--
+    <div class="md__sticky">
+      <span class="md__all_space"></span>
+      <span class="md__all-day" data-icon="all-day" aria-hidden="true" data-l10n-id="all-day"></span>
+      <div class="md__alldays-wrapper">
+        <section class="md__alldays"></section>
+        <div class="focusBox__weekAllDay"></div>
+      </div>
+    </div>
+    <div class="md__main">
+      <div class="md__separator">
+        <span class="p-thi" id="zero-clock"></span>
+        <span class="zero-sep" id="zero-separator"></span>
+      </div>
+      <div class="md__main-content">
+        <ol class="md__sidebar p-thi"></ol>
+        <div class="md__days-wrapper">
+          <section class="md__days"></section>
+        </div>
+      </div>
+    </div>
+  --></section>
+
+  <section id="week-view" class="multi-day week-view" role="tabpanel" aria-labelledby="week"><!--
+    <div class="md__sticky">
+      <span class="md__all_space"></span>
+      <span class="md__all-day" data-icon="all-day" aria-hidden="true" data-l10n-id="all-day"></span>
+      <div class="md__alldays-wrapper">
+        <section class="md__alldays"></section>
+        <div class="focusBox__weekAllDay"></div>
+      </div>
+    </div>
+    <div class="md__main">
+      <div class="md__separator">
+        <span class="p-thi" id="zero-clock"></span>
+        <span class="zero-sep" id="zero-separator"></span>
+      </div>
+      <div class="md__main-content">
+        <ol class="md__sidebar p-thi"></ol>
+        <div class="md__days-wrapper">
+          <section class="md__days"></section>
+        </div>
+      </div>
+    </div>
+  --></section>
+
+  <ul id="view-selector" role="tablist" class="bb-tablist" style="display: none;">
+    <li class="today" role="presentation" dir="ltr">
+      <a aria-label="Today" id="today" href="#today" data-l10n-id="present"><span class="gaia-icon icon-calendar-today"></span></a>
+    </li>
+    <li class="month" role="presentation"><a role="tab" aria-selected="true" aria-controls="month-view" id="month" data-l10n-id="show-month-view" href="/month/">Month</a></li>
+    <li class="week" role="presentation"><a role="tab" aria-selected="false" aria-controls="week-view" id="week" data-l10n-id="show-week-view" href="/week/">Week</a></li>
+    <li class="day" role="presentation"><a role="tab" aria-selected="false" aria-controls="day-view" id="day" data-l10n-id="show-day-view" href="/day/">Day</a></li>
+  </ul>
+</section>
+
+<section class="fullscreen-view" id="create-account-view" role="heading" aria-labelledby="add-account-title"><!--
+    <header id="create-account-header">
+      <h1 id="add-account-title" data-l10n-id="add-account"></h1>
+    </header>
+    <ol id="account-list" class="link-list" role="listbox"></ol>
+
+    <header class="sync-account-header hidden">
+      <h1 id="add-account-title" data-l10n-id="account-login"></h1>
+    </header>
+    <ol class="sync-account-body hidden" role="listbox">
+      <h1 class="sync-account-string" data-l10n-id="setting-up-account"></h1>
+      <p class="sync-progress-container"><progress></progress></p>
+    </ol>
+  --></section>
+<section class="fullscreen-view in-progress" role="heading" aria-labelledby="advanced-settings-header" id="advanced-settings-view"><!--
+    <header>
+      <h1 id="advanced-settings-header" data-l10n-id="advanced-settings-header">Calendar Settings</h1>
+    </header>
+
+    <section class="content">
+      <div class="errors"></div>
+      <header class="reminders" skin="organic">
+        <span class="p-sec" data-l10n-id="advanced-settings-reminders">Reminders</span>
+      </header>
+
+      <ol class="settings-list link-list" role="presentation">
+        <li class="focusable">
+          <label id="default-event-alarm">
+            <span data-l10n-id="events" data-title-class="reminder" class="p-pri reminder option-title">Events Reminder</span>
+            <span class="button"></span>
+          </label>
+        </li>
+        <li class="focusable">
+          <label id="default-allday-alarm">
+            <span data-l10n-id="allday-events" data-title-class="allday-reminder" class="p-pri allday-reminder option-title">All-day Events Reminder</span>
+            <span class="button"></span>
+          </label>
+        </li>
+      </ol>
+    </section>
+  --></section>
+<section class="fullscreen-view" id="modify-event-view" role="heading" aria-labelledby="new-event-header"><!--
+    <header id="modify-event-header">
+      <h1 id="new-event-header" data-l10n-id="new-event-header" class="save-text">Add Event</h1>
+      <h1 id="edit-event-header" data-l10n-id="edit-event-header" class="done-text">Edit Event</h1>
+    </header>
+
+    <form id="event-info-form">
+      <ol role="menu">
+        <li class="title focusable">
+          <span id="title-title" class="p-sec" data-l10n-id="event-title">Title</span>
+          <input aria-labelledby="title-title" class="p-pri tcl-input-focusable" name="title" maxlength="100" x-inputmode="latin-prose" dir="auto" type="text">
+        </li>
+
+        <li class="location focusable">
+          <span id="where-title" class="p-sec" data-l10n-id="event-location">Location</span>
+          <input aria-labelledby="where-title" class="p-pri tcl-input-focusable" name="location" maxlength="100" x-inputmode="latin-prose" dir="auto" type="text">
+        </li>
+
+        <li role="menuitem" class="allday focusable">
+          <label class="pack-checkbox-large">
+            <input name="allday" type="checkbox">
+            <span aria-hidden="true" id="allday-title" class="p-pri" data-l10n-id="event-is-allday">All-day Event</span>
+          </label>
+        </li>
+
+        <li role="menuitem" class="start-date focusable" aria-labelledby="startdate-title" aria-describedby="start-date-locale">
+          <span id="startdate-title" data-l10n-id="event-start-date" class="p-pri start-date-track">Start Date</span>
+          <span role="combobox" aria-autocomplete="none" data-l10n-id="start-date">
+            <input aria-hidden="true" class="hidden-input start-date-picker" min="1970-1-1" max="2035-12-31" data-track-class="start-date-track" type="date">
+            <span class="p-sec" id="start-date-locale" data-type="date"></span>
+          </span>
+        </li>
+
+        <li role="menuitem" class="end-date focusable" aria-labelledby="enddate-title" aria-describedby="end-date-locale">
+          <span id="enddate-title" data-l10n-id="event-end-date" class="p-pri end-date-track">End Date</span>
+          <span role="combobox" aria-autocomplete="none" data-l10n-id="end-date">
+            <input class="hidden-input end-date-picker" aria-hidden="true" min="1970-1-1" max="2035-12-31" data-track-class="end-date-track" type="date">
+            <span class="p-sec" id="end-date-locale" data-type="date"></span>
+          </span>
+        </li>
+
+
+        <li role="menuitem" class="start-time focusable" id="startTime-Li" aria-labelledby="starttime-title" aria-describedby="start-time-locale">
+          <span id="starttime-title" data-l10n-id="event-start-time" class="p-pri start-time-track">Start Time</span>
+          <span role="combobox" aria-autocomplete="none" data-l10n-id="start-time">
+            <input class="hidden-input start-time-picker" aria-hidden="true" data-track-class="start-time-track" type="time">
+            <span class="p-sec" id="start-time-locale" data-type="time"></span>
+          </span>
+        </li>
+
+        <li role="menuitem" class="end-time focusable" id="endTime-Li" aria-labelledby="endtime-title" aria-describedby="end-time-locale">
+          <span id="endtime-title" data-l10n-id="event-end-time" class="p-pri end-time-track">End Time</span>
+          <span role="combobox" aria-autocomplete="none" data-l10n-id="end-time">
+            <input class="hidden-input end-time-picker" aria-hidden="true" data-track-class="end-time-track" type="time">
+            <span class="p-sec" id="end-time-locale" data-type="time"></span>
+          </span>
+        </li>
+
+        <li role="menuitem" class="repeat-event pack-select sk-modify-event-repeat repeat-style focusable" tabindex="0">
+          <span id="eventreminder-title" data-l10n-id="repeat" role="heading" aria-level="2" class="p-pri modify-event-reminder">repeat</span>
+          <span class="button">
+            <select id="repeat-select" class="p-sec" name="repeat" nav-scope="" nav-ignore="">
+              <option data-l10n-id="never" value="never">Never</option>
+              <option data-l10n-id="every-day" value="every-day">Every day</option>
+              <option data-l10n-id="every-week" value="every-week">Every week</option>
+              <option data-l10n-id="every-2-weeks" value="every-2-weeks">Every 2 weeks</option>
+              <option data-l10n-id="every-month" value="every-month">Every month</option>
+            </select>
+          </span>
+        </li>
+
+        <li role="menuitem" class="focusable event-reminder">
+          <span id="eventReminder-title" data-l10n-id="reminder" role="heading" aria-level="2" class="p-pri modify-event-reminder">Event Reminder</span>
+          <div class="alarms">
+          </div>
+        </li>
+
+        <li class="notes focusable">
+          <span id="notes-title" class="p-sec" data-l10n-id="event-description">Notes</span>
+          <textarea role="textbox" maxlength="500" tabindex="0" aria-labelledby="notes-title" id="note-pad" class="p-pri tcl-input-focusable" name="description" x-inputmode="latin-prose" dir="auto"></textarea>
+        </li>
+
+      </ol>
+      <section role="status">
+        <p class="errors"></p>
+      </section>
+    </form>
+  --></section>
+<section class="fullscreen-view eventview" id="event-view" role="heading" aria-labelledby="view-event-header"><!--
+    <header id="show-event-header">
+      <h1 id="view-event-header" aria-flowto="view-event-panel" data-l10n-id="view-event-header"></h1>
+      <button class="edit" style="display: none;">
+        <span data-l10n-id="edit">Edit</span>
+      </button>
+    </header>
+    <section role="textbox" id="view-event-panel" tabindex="0" class="event-view-scrollable" data-type="list">
+      <ul id="view-event-content">
+        <li class="title">
+          <span aria-hidden="true" data-l10n-id="title" class="content h2"></span>
+          <span aria-hidden="true" class="content location p" data-l10n-id="location"></span>
+        </li>
+
+        <li class="duration-time">
+          <span aria-hidden="true" class="content p-sec" data-l10n-id="duration"></span>
+        </li>
+
+        <li class="alarms">
+          <span aria-hidden="true" class="p-sec" data-l10n-id="reminder">Reminder:</span>
+          <span aria-hidden="true" class="content p-pri" role="list" data-l10n-id="alarms"></span>
+        </li>
+
+        <li class="description">
+          <span aria-hidden="true" class="p-sec" data-l10n-id="event-description"></span>
+          <span aria-hidden="true" class="content" data-l10n-id="description"></span>
+        </li>
+      </ul>
+    </section>
+  --></section>
+<section class="fullscreen-view skin-dark" id="oauth2" role="region"><!--
+    <header id="oauth-header" action="back">
+      <h1 class="oauth-browser-title">
+        &nbsp;
+      </h1>
+    </header>
+    <div class="browser-container">
+    </div>
+  --></section>
+<section class="fullscreen-view skin-organic" id="modify-account-view" role="heading" aria-labelledby="account-header"><!--
+    <header id="modify-account-header">
+      <h1 data-l10n-id="account-login" id="account-header"></h1>
+    </header>
+
+    <form class="modify-account-form">
+      <fieldset>
+        <ol role="list">
+          <li id="acc-user-name" class="user-name" role="listitem">
+            <span class="p-pri account-user-name"></span>
+          </li>
+          <li id="acc-sync-account" class="sync-account" role="listitem">
+            <label class="pack-checkbox-large">
+              <input name="syncAccount" id="syncAccount" type="checkbox">
+              <span aria-hidden="true" class="p-pri" data-l10n-id="sync-account">Sync account</span>
+            </label>
+          </li>
+          <li id="acc-user" class="user" role="listitem">
+            <span id="modify-account-username" class="p-sec" data-l10n-id="field-user">Username</span>
+            <input aria-labelledby="modify-account-username" class="p-pri" name="user" maxlength="100" x-inputmode="verbatim" id="account-name" type="email">
+          </li>
+          <li id="acc-password" class="password" role="listitem">
+            <span id="modify-account-password" class="p-sec" data-l10n-id="field-password">Password</span>
+            <input aria-labelledby="modify-account-password" class="p-pri" name="password" maxlength="50" id="account-password" type="password">
+          </li>
+          <li id="showPwd-li" class="show-password" role="listitem">
+            <label class="pack-checkbox-large">
+              <input name="showPwd" id="showPwd" type="checkbox">
+              <span aria-hidden="true" class="p-pri" data-l10n-id="show-password">Show password</span>
+            </label>
+          </li>
+          <li id="acc-url" class="full-url" role="listitem">
+            <span id="modify-account-url" class="p-sec" data-l10n-id="field-full-url">URL</span>
+            <input aria-labelledby="modify-account-url" class="p-pri" name="fullUrl" id="account-url" pattern="https?://.+" type="url">
+          </li>
+          <li class="sync-errors">
+            <p data-l10n-id="modify-account-unable-to-sync">&gt;uNaBle to SynC</p>
+          </li>
+          <li class="oauth2-sign-in">
+            <button data-l10n-id="modify-account-sign-in" class="force-oauth2"></button>
+          </li>
+        </ol>
+      </fieldset>
+    </form>
+
+    <ol class="sync-account-body hidden" tabindex="0" role="listbox">
+      <h1 class="sync-account-string" data-l10n-id="setting-up-account"></h1>
+      <p class="sync-progress-container"><progress></progress></p>
+    </ol>
+
+    <ol class="sup-account hidden" role="listbox">
+      <h1 class="sup-account-used-info" data-l10n-id="setup-account-usedInfo">
+      </h1>
+      <p class="sup-app-li" data-l10n-id="app-calendar">Calendar</p>
+    </ol>
+
+    <section role="status" aria-live="assertive" aria-atomic="true">
+      <p class="errors"></p>
+    </section>
+
+    <form role="dialog" data-type="confirm" id="remove-account-dialog">
+      <section>
+        <h1 data-l10n-id="remove-account-dialog">Remove Account</h1>
+        <p data-l10n-id="remove-account-dialog-details">
+          Removing this account will also remove your local copy of associated calendars and events.
+        </p>
+      </section>
+      <menu>
+        <button class="delete-cancel" data-l10n-id="cancel">Cancel</button>
+        <button class="danger delete-confirm" data-l10n-id="confirm">Confirm</button>
+      </menu>
+    </form>
+  --></section>
+<section class="fullscreen-view" id="event-search-view" role="region"><!--
+    <div id="search-input-container" class="focusable">
+      <input name="search" class="textfield p-pri" maxlength="100" x-inputmode="latin-prose" id="event-search-input" data-l10n-id="kai-event-search-header" type="text">
+    </div>
+    <div class="p-sec" id="event-search-result-header" data-l10n-id="upcoming-events">Upcoming Events</div>
+    <section id="event-search-result-view" role="tabpanel">
+      <div id="event-search-no-message" class="h2" data-l10n-id="no-events"></div>
+      <section id="event-search-result-list" class="event-search-result-events" role="listbox" aria-labelledby="event-search-result-header"></section>
+    </section>
+  --></section>
+<section class="fullscreen-view" id="multi-events-view" role="region"><!--
+    <header id="multi-events-header">
+      <h1 data-l10n-id="kai-multi-events">Events</h1>
+    </header>
+    <section id="multi-event-list" role="listbox"></section>
+  --></section>
+<section class="fullscreen-view skin-organic" id="modify-password-view" role="heading" aria-labelledby="account-header"><!--
+    <header id="modify-password-header">
+      <h1 id="password-header"></h1>
+    </header>
+
+    <form class="modify-password-form">
+      <fieldset>
+        <ol role="list">
+          <li role="menuitem" class="incorrect-name-desc">
+            <p data-l10n-id="incorrect-password-description">
+          </p></li>
+          <li id="acc-user-name" class="user-name" role="listitem">
+            <span class="p-pri account-user-name" data-l10n-id="account-user-name"></span>
+            <span class="p-sec account-username"></span>
+          </li>
+          <li id="acc-password" class="password" role="listitem">
+            <span id="modify-account-password" class="p-sec" data-l10n-id="field-password">Password</span>
+            <input aria-labelledby="modify-account-password" class="p-pri" name="password" maxlength="50" id="account-password" type="password">
+          </li>
+          <li id="showPwd-li" class="show-password" role="listitem">
+            <label class="pack-checkbox-large">
+              <input name="showPwd" id="showPwd" type="checkbox">
+              <span aria-hidden="true" class="p-pri" data-l10n-id="show-password">Show password</span>
+            </label>
+          </li>
+        </ol>
+      </fieldset>
+    </form>
+
+    <section role="status" aria-live="assertive" aria-atomic="true">
+      <p class="errors"></p>
+    </section>
+
+    <form role="dialog" data-type="confirm" id="remove-account-dialog">
+      <section>
+        <h1 data-l10n-id="remove-account-dialog">Remove Account</h1>
+        <p data-l10n-id="remove-account-dialog-details">
+          Removing this account will also remove your local copy of associated calendars and events.
+        </p>
+      </section>
+      <menu>
+        <button class="delete-cancel" data-l10n-id="cancel">Cancel</button>
+        <button class="danger delete-confirm" data-l10n-id="confirm">Confirm</button>
+      </menu>
+    </form>
+  --></section>
+<!--Task 5317587 Add by ting-wang@t2mobile.com 20170911-->
+<section class="fullscreen-view" id="lunar-day-view" role="heading"><!--
+        <div class="lunar-class">
+            <div id="day-date" class="lunar-text"></div>
+            <div id="day-week" class="lunar-text"></div>
+            <br>
+            <div id="lunar-year" class="lunar-text"></div>
+            <div id="lunar-date" class="lunar-text "></div>
+        </div>
+    --></section>
+<section class="fullscreen-view" id="switchto-date-view" role="heading" aria-labelledby="switchto-date-header-title"><!--
+    <header id="show-switchto-date-header">
+      <h1 id="switchto-date-header-title" data-l10n-id="go">
+        Go to Date
+      </h1>
+    </header>
+    <section id="show-switchto-date-content">
+      <div class="switchto-input-container">
+        <ul>
+          <li class="switchto-day focusable">
+            <div id="switchto-day-up" class="switchto-arrow-up"></div>
+            <div role="spinbutton" class="p-pri switchto-input-datetime" id="input-switchto-day"></div>
+            <div id="switchto-day-down" class="switchto-arrow-down"></div>
+          </li>
+          <li class="switchto-month focusable">
+            <div id="switchto-month-up" class="switchto-arrow-up"></div>
+            <div role="spinbutton" class="p-pri switchto-input-datetime" id="input-switchto-month"></div>
+            <div id="switchto-month-down" class="switchto-arrow-down"></div>
+          </li>
+          <li class="switchto-year focusable">
+            <div id="switchto-year-up" class="switchto-arrow-up"></div>
+            <div role="spinbutton" class="p-pri switchto-input-datetime" id="input-switchto-year"></div>
+            <div id="switchto-year-down" class="switchto-arrow-down"></div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section aria-hidden="true" role="tabpanel" id="view-switchto-month"></section>
+  --></section>
+
+<div id="confirm-dialog-container" data-z-index-level="confirm-dialog-container"></div>
+
+<div id="select-value" class="select-value">
+  <input class="date-hidden-input" aria-hidden="true" data-track-class="end-date-track" min="1970-1-1" max="2035-12-31" type="date">
+  <select name="calendarId" class="p-sec calendarId-select" data-track-class="title-calendar" multiple="multiple">
+  </select>
+  <select name="eventedit" class="event-edit-select">
+    <option data-l10n-id="event-edit-all" value="edit-all">Edit all events</option>
+    <option data-l10n-id="event-edit-all-future" value="edit-all-future">Edit all future events</option>
+  </select>
+  <select name="eventdelete" class="p-sec event-delete-select" data-track-class="title-event-delete">
+  </select>
+</div>
+
+<div id="model-createAccount" style="display:none">
+  <li class="focusable google" role="menuitem">
+    <a class="p-pri" data-provider="google" data-l10n-id="kai-google">Google</a>
+    <span aria-hidden="true" class="icon" data-icon="forward"></span>
+  </li>
+  <li class="focusable exchange" role="menuitem">
+      <a class="p-pri" data-provider="exchange" data-l10n-id="exchange-account">ActiveSync</a>
+      <span aria-hidden="true" class="icon" data-icon="forward"></span>
+  </li>
+  <li class="focusable caldav" role="menuitem">
+     <a class="p-pri" data-provider="caldav" data-l10n-id="kai-caldav">CalDav</a>
+     <span aria-hidden="true" class="icon" data-icon="forward"></span>
+   </li>
+</div>
+<script src="/shared/js/lazy_loader.js"></script>
+<script src="/js/startup.js"></script>
+
+
+
+
+</body>
+</html>

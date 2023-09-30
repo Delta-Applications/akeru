@@ -1,0 +1,166 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 10px;
+  background-color: var(--header-background);
+  overflow: hidden;
+  -moz-user-select: none;
+  font-family: 'Open Sans';
+}
+
+#header-title {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: var(--header-height);
+  background-color: var(--header-background);
+  margin: 0;
+  color: var(--color-gs90, #323232);
+  text-align: center;
+  line-height: var(--header-height);
+  font-weight: 600;
+}
+
+section[role="region"] {
+  width: 100%;
+  height: calc(100% - var(--statusbar-height));
+  top: var(--statusbar-height);
+  position: absolute;
+  background-color: var(--color-gs00);
+}
+
+article {
+  position: absolute;
+  top: var(--header-height);
+  right: 0;
+  bottom: 30px;
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  will-change: scroll-position;
+}
+
+ul {
+  margin: 0;
+  padding: 0!important;
+  overflow: hidden;
+  list-style: none;
+}
+
+li {
+  padding: 0 1rem !important;
+  z-index: 1;
+  line-height: 6rem;
+}
+
+.desc {
+  /* This keeps our ringtone names from bumping up against the actions button
+     in the management UI. */
+  font-family: "gaia-icons";
+  -moz-margin-end: 3.3rem;
+}
+
+.desc:active:before {
+  /* This makes a highlight slightly *bigger* than .desc so that it fills up the
+     whole list item (except for the "other actions" button). It causes a
+     reflow, but that's not a big deal here. */
+  position: absolute;
+  left: -2rem;
+  width: calc(100% - 1.6rem); /* 1.5rem for the left padding and 0.1rem for the
+                                 right border. */
+  height: 5.9rem; /* Subtract 0.1rem for the bottom border. */
+  background-color: rgba(0, 213, 255, 0.3);
+  z-index: -1;
+  content: '';
+}
+
+html[dir="rtl"] .desc:active:before {
+  left: initial;
+  right: -2rem;
+}
+
+li .play-icon {
+  display: none;
+  width: var(--font-label);
+  height: 6rem;
+  font-size: var(--font-label) !important;
+  position: absolute;
+  right: 1rem;
+}
+
+li .play-icon::before {
+  color: var(--color-gs45) !important;
+}
+
+li.focus .play-icon::before {
+  color: var(--color-gs00) !important;
+}
+
+[data-type="list"] {
+  padding: 0 0rem;
+}
+
+[data-type="list"] .focus1,
+[data-type="list"] .focus1 p,
+[data-type="list"] .focus1 p:first-of-type {
+  color: #fff;
+}
+
+[data-type="list"] .focus,
+[data-type="list"] .focus p,
+[data-type="list"] .focus p:first-of-type {
+  color: #fff;
+}
+
+html[dir="rtl"] li .play-icon {
+  left: 1rem;
+  right: auto;
+}
+
+li[data-playing="true"] .play-icon {
+  display: block;
+}
+
+#dialog-message {
+  white-space: pre-line;
+}
+
+section[role="status"] {
+  transition: opacity 0.6s ease 0s;
+  opacity: 0;
+}
+
+section[role="status"].toast-visible {
+  opacity: 1;
+}
+
+.hasNoTones {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hasNoTones[hidden] {
+  display: none;
+}
+
+.hasNoTones p {
+  font-size: var(--font-p-pri);
+  color: var(--color-gs90);
+  padding: 0 1rem;
+}
+
+[data-type="list"] li p:first-of-type {
+  padding: 1rem 0 0;
+}
+
+[data-type="list"] li p:first-of-type:last-of-type {
+  padding: 0.4rem 0;
+}

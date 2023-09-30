@@ -1,0 +1,2 @@
+'use strict';function NullRingtone(){}
+NullRingtone.prototype={get name(){return navigator.mozL10n.get(this.l10nID);},get filename(){return null;},get l10nID(){return'ringtone-none';},get id(){return'none:none';},get type(){return null;},get url(){return null;},get shareable(){return false;},get deletable(){return false;},getBlob:function(){return new Promise(function(resolve,reject){resolve(null);});}};

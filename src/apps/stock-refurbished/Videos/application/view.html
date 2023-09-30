@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+    <meta charset="utf-8">
+    <title>Videos</title>
+    <meta name="defaultLanguage" content="en-US">
+    <meta name="theme-color" content="rgb(0, 0, 0)">
+    <meta name="availableLanguages" content="af-ZA:202107131655, ar-SA:202107131655, az-Latn-AZ:202107131655, be-BY:202107131655, bg-BG:202107131655, bn-BD:202107131655, bn-IN:202107131655, bs-BA:202107131655, cs-CZ:202107131655, da-DK:202107131655, de-DE:202107131655, el-GR:202107131655, en-GB:202107131655, en-US:202107131655, es-ES:202107131655, es-US:202107131655, en-NG:202107131655, et-EE:202107131655, fi-FI:202107131655, fr-FR:202107131655, fr-CA:202107131655, he-IL:202107131655, hi-IN:202107131655, hr-HR:202107131655, hu-HU:202107131655, hy-AM:202107131655, id-ID:202107131655, it-IT:202107131655, km-KH:202107131655, kk-KZ:202107131655, lt-LT:202107131655, lv-LV:202107131655, lo-LA:202107131655, ka-GE:202107131655, mk-MK:202107131655, ms-MY:202107131655, nb-NO:202107131655, ne-IN:202107131655, nl-NL:202107131655, pl-PL:202107131655, pt-BR:202107131655, pt-PT:202107131655, ro-RO:202107131655, ru-RU:202107131655, si-LK:202107131655, sk-SK:202107131655, sl-SI:202107131655, sq-AL:202107131655, sr-Latn-CS:202107131655, sv-SE:202107131655, sw-ZA:202107131655, ta-IN:202107131655, th-TH:202107131655, fil-PH:202107131655, tr-TR:202107131655, uk-UA:202107131655, ur-PK:202107131655, vi-VN:202107131655, xh-ZA:202107131655, zh-CN:202107131655, zh-TW:202107131655, zh-HK:202107131655, is-IS:202107131655, zu-ZA:202107131655, mo-RO:202107131655, fa-IR:202107131655, ps-AF:202107131655, uz-Cyrl-UZ:202107131655">
+    <link rel="localization" href="/locales-obj/{locale}.json">
+    <link rel="stylesheet" type="text/css" href="style/video.css">
+    <link rel="stylesheet" type="text/css" href="shared/style/status.css">
+    <link rel="stylesheet" type="text/css" href="style/info.css">
+
+  <meta content="2.2" name="appVersion"></head>
+  <body role="application" class="skin-dark layout-fullscreen-player view-activity theme-video theme-media">
+    <section role="region" id="player-view" class="video-controls-hidden">
+      <!-- video controls header -->
+      <header id="player-header" class="video-controls">
+        <h1 id="video-title" class="video-player-header"></h1>
+      </header>
+      <!-- In order for the screen reader to be able to activate the container
+             to toggle controls, it must have the semantics of the button -->
+      <div id="video-container" role="button">
+        <!-- Hiding the video element from the screen reader since the
+             controls are implemented elsewhere. -->
+        <div id="poster-img"></div>
+        <video id="player" preload="metadata" aria-hidden="true"></video>
+      </div>
+      <!-- video controls footer toolbar -->
+      <div role="toolbar" class="video-controls bottom">
+        <!-- It is simpler and less verbose (for the screen reader) to not
+             expose that this block is a footer and consider it part of
+             its toolbar container. -->
+        <footer id="videoBar" role="presentation">
+          <div id="timeSlider" role="slider">
+            <!-- We need to use aria hideen for the text nodes in the slider
+                 subtree because the screen reader treats sliders as atomic
+                 elements and does not step inside their subtree. All the
+                 information is conveyed via the slider attributes instead -->
+            <span id="elapsed-text" aria-hidden="true" class="p-thi"></span>
+            <div id="slider-wrapper" aria-hidden="true">
+              <div id="elapsedTime" class="progress"></div>
+              <div id="bufferedTime" class="progress"></div>
+              <div id="timeBackground" class="progress"></div>
+              <button id="playHead"></button>
+            </div>
+            <span id="duration-text" aria-hidden="true" class="p-thi"></span>
+            <span id="player-skip-foward" class="hidden" data-icon="skip-forward"></span>
+          </div>
+        </footer>
+      </div>
+      <!-- display messages like "Cannot load video" here -->
+      <form id="in-use-overlay" role="dialog" data-type="confirm" class="hidden">
+        <section id="in-use-overlay-content">
+          <h1 id="in-use-overlay-title"></h1>
+          <p id="in-use-overlay-text"></p>
+        </section>
+      </form>
+    </section>
+    <section role="region" id="file-info" class="file-info hidden">
+      <form aria-label="Info" id="info-view" class="hidden">
+        <header class="file-info-header">
+          <h1 id="file-info-title" data-l10n-id="opt-fileinfo">File info</h1>
+        </header>
+        <section>
+          <dl id="infosection">
+            <div class="twoline">
+              <dt data-l10n-id="name-label" class="p-pri">Name</dt>
+              <dd id="info-name" class="value p-sec"></dd>
+            </div>
+            <div class="twoline">
+              <dt data-l10n-id="length-label" class="p-pri">Length</dt>
+              <dd id="info-length" class="value p-sec"></dd>
+            </div>
+            <div class="twoline">
+              <dt data-l10n-id="size-label" class="p-pri">Size</dt>
+              <dd id="info-size" class="value p-sec"></dd>
+            </div>
+            <div class="twoline">
+              <dt data-l10n-id="video-type-label" class="p-pri">Video Type</dt>
+              <dd id="info-type" class="value p-sec"></dd>
+            </div>
+          </dl>
+        </section>
+      </form>
+    </section>
+    <section id="banner" role="status" hidden="">
+      <p id="message"></p>
+    </section>
+
+    <!-- Shared Libs -->
+    <script src="shared/js/l10n.js"></script>
+    <script src="shared/js/device_storage/get_storage_if_available.js"></script>
+    <script src="shared/js/device_storage/get_unused_filename.js"></script>
+    <script defer="" src="shared/js/blobview.js"></script>
+    <script defer="" src="shared/js/mime_mapper.js"></script>
+    <script defer="" src="shared/js/media/get_video_rotation.js"></script>
+    <script defer="" src="shared/js/media/media_utils.js"></script>
+    <script defer="" src="shared/js/lazy_loader.js"></script>
+    <script defer="" src="/shared/js/component_utils.js"></script>
+    <script defer="" src="/shared/elements/gaia_confirm/script.js"></script>
+    <script defer="" src="shared/js/toaster.js"></script>
+    <link rel="stylesheet" type="text/css" href="shared/style/toaster.css">
+
+    <!-- SoftKeybar support -->
+    <script defer="" src="shared/js/softkey_panel.js"></script>
+    <link rel="stylesheet" type="text/css" href="shared/style/softkey.css">
+    <script defer="" src="shared/js/homescreens/confirm_dialog_helper.js"></script>
+
+    <!-- Navigation support -->
+    <script defer="" src="shared/js/navigation_handler.js"></script>
+    <link rel="stylesheet" type="text/css" href="shared/style/navigation.css">
+
+    <!-- Web Components -->
+    <script defer="" src="shared/elements/config.js"></script>
+    <link rel="stylesheet" type="text/css" href="shared/elements/gaia-icons/gaia-icons.css">
+    <link rel="stylesheet" type="text/css" href="shared/elements/gaia-theme/gaia-theme.css">
+    <link rel="stylesheet" type="text/css" href="shared/elements/gaia-theme/gaia-font.css">
+
+    <!-- App Code -->
+    <script defer="" src="js/video_loading_checker.js"></script>
+    <script defer="" src="js/video_utils.js"></script>
+    <script defer="" src="js/forward_rewind_controller.js"></script>
+    <script src="js/view.js"></script>
+    <div id="confirm-dialog-container" data-z-index-level="confirm-dialog-container" style="z-index:1024;"></div>
+  </body>
+
+</html>

@@ -1,0 +1,1 @@
+'use strict';(function(){window.addEventListener('load',()=>{MessageController.init();new ViewManager();});})();

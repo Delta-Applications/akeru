@@ -1,0 +1,76 @@
+<element name="modify-account" extends="section">
+  <template>
+    <header id="modify-account-header" >
+      <h1 data-l10n-id="account-login" id="account-header"></h1>
+    </header>
+
+    <form class="modify-account-form">
+      <fieldset>
+        <ol role="list">
+          <li id="acc-user-name" class="user-name" role="listitem">
+            <span class="p-pri account-user-name"></span>
+          </li>
+          <li id="acc-sync-account" class="sync-account"role="listitem">
+            <label class="pack-checkbox-large">
+              <input name="syncAccount" id="syncAccount" type="checkbox">
+              <span aria-hidden="true" class="p-pri" data-l10n-id="sync-account">Sync account</span>
+            </label>
+          </li>
+          <li id="acc-user" class="user" role="listitem">
+            <span id="modify-account-username" class="p-sec" data-l10n-id="field-user">Username</span>
+            <input type="email" aria-labelledby="modify-account-username" class="p-pri" name="user" maxlength="100" x-inputmode="verbatim" id="account-name">
+          </li>
+          <li id="acc-password" class="password" role="listitem">
+            <span id="modify-account-password" class="p-sec" data-l10n-id="field-password">Password</span>
+            <input aria-labelledby="modify-account-password" class="p-pri" name="password" maxlength="50" type="password" id="account-password">
+          </li>
+          <li id="showPwd-li" class="show-password"role="listitem">
+            <label class="pack-checkbox-large">
+              <input name="showPwd" id="showPwd" type="checkbox">
+              <span aria-hidden="true" class="p-pri" data-l10n-id="show-password">Show password</span>
+            </label>
+          </li>
+          <li id="acc-url" class="full-url" role="listitem">
+            <span id="modify-account-url" class="p-sec" data-l10n-id="field-full-url">URL</span>
+            <input aria-labelledby="modify-account-url" class="p-pri" name="fullUrl" type="url" id="account-url" pattern="https?://.+">
+          </li>
+          <li class="sync-errors">
+            <p data-l10n-id="modify-account-unable-to-sync">>uNaBle to SynC</p>
+          </li>
+          <li class="oauth2-sign-in">
+            <button data-l10n-id="modify-account-sign-in" class="force-oauth2"></button>
+          </li>
+        </ol>
+      </fieldset>
+    </form>
+
+    <ol class="sync-account-body hidden" tabindex="0" role="listbox">
+      <h1 class="sync-account-string"  data-l10n-id="setting-up-account"></h1>
+      <p class="sync-progress-container"><progress></progress></p>
+    </ol>
+
+    <ol class="sup-account hidden" role="listbox">
+      <h1 class="sup-account-used-info"
+         data-l10n-id="setup-account-usedInfo">
+      </h1>
+      <p class="sup-app-li" data-l10n-id="app-calendar">Calendar</p>
+    </ol>
+
+    <section role="status" aria-live="assertive" aria-atomic="true">
+      <p class="errors"></p>
+    </section>
+
+    <form role="dialog" data-type="confirm" id="remove-account-dialog">
+      <section>
+        <h1 data-l10n-id="remove-account-dialog">Remove Account</h1>
+        <p data-l10n-id="remove-account-dialog-details">
+          Removing this account will also remove your local copy of associated calendars and events.
+        </p>
+      </section>
+      <menu>
+        <button class="delete-cancel" data-l10n-id="cancel">Cancel</button>
+        <button class="danger delete-confirm" data-l10n-id="confirm">Confirm</button>
+      </menu>
+    </form>
+  </template>
+</element>

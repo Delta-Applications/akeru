@@ -1,0 +1,2 @@
+
+var TitleBar={get text(){return this._text||(this._text=document.getElementById("title-text")),this._text},updateByContent:function(t){this.text.textContent=t},updateById:function(t,e){this.text.dataset.l10nId=t,e&&(this.text.dataset.l10nArgs=JSON.stringify(e))}};

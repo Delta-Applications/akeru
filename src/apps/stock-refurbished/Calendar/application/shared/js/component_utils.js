@@ -1,0 +1,3 @@
+
+(function(exports){exports.ComponentUtils={style:function(baseUrl){var style=document.createElement('style');var url=baseUrl+'style.css';var self=this;style.setAttribute('scoped','');style.innerHTML='@import url('+url+');';this.appendChild(style);this.style.visibility='hidden';style.addEventListener('load',function(){if(self.shadowRoot){self.shadowRoot.appendChild(style.cloneNode(true));}
+self.style.visibility='';});}};}(window));

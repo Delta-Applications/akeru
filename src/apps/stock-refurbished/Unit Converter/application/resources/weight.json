@@ -1,0 +1,94 @@
+{
+  "rate": [
+    {
+      "id": 0,
+      "n1": "g",
+      "n2": "mg",
+      "r": "1000",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Grams",
+      "fullTo": "Milligrams"
+    },
+    {
+      "id": 1,
+      "n1": "g",
+      "n2": "g",
+      "r": "1",
+      "defaultFrom": true,
+      "defaultTo": false,
+      "fullFrom": "Grams",
+      "fullTo": "Grams"
+    },
+    {
+      "id": 2,
+      "n1": "g",
+      "n2": "kg",
+      "r": "0.001",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Grams",
+      "fullTo": "Kilograms"
+    },
+    {
+      "id": 3,
+      "n1": "g",
+      "n2": "t",
+      "r": "0.000001",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Grams",
+      "fullTo": "Tonnes"
+    },
+    {
+      "id": 4,
+      "n1": "g",
+      "n2": "oz",
+      "r": "16/453.59237",
+      "defaultFrom": false,
+      "defaultTo": true,
+      "fullFrom": "Grams",
+      "fullTo": "Ounces"
+    },
+    {
+      "id": 5,
+      "n1": "g",
+      "n2": "lb",
+      "r": "1/453.59237",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Grams",
+      "fullTo": "Pounds"
+    },
+    {
+      "id": 6,
+      "n1": "g",
+      "n2": "st",
+      "r": "1/6350.29318",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Grams",
+      "fullTo": "Stone,UK"
+    },
+    {
+      "id": 7,
+      "n1": "g",
+      "n2": "L/T",
+      "r": "1/1016046.9088",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Grams",
+      "fullTo": "Long Ton,UK"
+    },
+    {
+      "id": 8,
+      "n1": "g",
+      "n2": "S/T",
+      "r": "1/907184.74",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Grams",
+      "fullTo": "Short Ton,US"
+    }
+  ]
+}

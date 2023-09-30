@@ -1,0 +1,254 @@
+{
+  "rate": [
+    {
+      "id": 0,
+      "n1": "cl",
+      "n2": "mm³",
+      "r": "10000",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Centiliter",
+      "fullTo": "Cubic Millimeter"
+    },
+    {
+      "id": 1,
+      "n1": "cl",
+      "n2": "cm³",
+      "r": "10",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Centiliter",
+      "fullTo": "Cubic Centimeter"
+    },
+    {
+      "id": 2,
+      "n1": "cl",
+      "n2": "m³",
+      "r": "0.00001",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Centiliter",
+      "fullTo": "Cubic Meter"
+    },
+    {
+      "id": 3,
+      "n1": "cl",
+      "n2": "ml",
+      "r": "10",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Centiliter",
+      "fullTo": "Milliliter"
+    },
+    {
+      "id": 4,
+      "n1": "cl",
+      "n2": "cl",
+      "r": "1",
+      "defaultFrom": true,
+      "defaultTo": false,
+      "fullFrom": "Centiliter",
+      "fullTo": "Centiliter"
+    },
+    {
+      "id": 5,
+      "n1": "cl",
+      "n2": "l",
+      "r": "0.01",
+      "defaultFrom": false,
+      "defaultTo": true,
+      "fullFrom": "Centiliter",
+      "fullTo": "Liter"
+    },
+    {
+      "id": 6,
+      "n1": "cl",
+      "n2": "in³",
+      "r": "10000000/16387064",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Centiliter",
+      "fullTo": "Cubic Inch"
+    },
+    {
+      "id": 7,
+      "n1": "cl",
+      "n2": "ft³",
+      "r": "10000000/28316846592",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Centiliter",
+      "fullTo": "Cubic Foot"
+    },
+    {
+      "id": 8,
+      "n1": "cl",
+      "n2": "yd³",
+      "r": "10000000/764554857984",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Centiliter",
+      "fullTo": "Cubic Yard"
+    },
+    {
+      "id": 9,
+      "n1": "cl",
+      "n2": "tsp",
+      "r": "1.689363827",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Centiliter",
+      "fullTo": "Tea Spoon,UK"
+    },
+    {
+      "id": 10,
+      "n1": "cl",
+      "n2": "tbsp",
+      "r": "0.563121276",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Centiliter",
+      "fullTo": "Table Spoon,UK"
+    },
+    {
+      "id": 11,
+      "n1": "cl",
+      "n2": "fl oz",
+      "r": "0.351950797",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Centiliter",
+      "fullTo": "Fluid Ounce,UK"
+    },
+    {
+      "id": 12,
+      "n1": "cl",
+      "n2": "c",
+      "r": "0.03519508",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Centiliter",
+      "fullTo": "Cup,UK"
+    },
+    {
+      "id": 13,
+      "n1": "cl",
+      "n2": "pt",
+      "r": "0.01759754",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Centiliter",
+      "fullTo": "Pint,UK"
+    },
+    {
+      "id": 14,
+      "n1": "cl",
+      "n2": "qt",
+      "r": "0.00879877",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Centiliter",
+      "fullTo": "Quart,UK"
+    },
+    {
+      "id": 15,
+      "n1": "cl",
+      "n2": "gal",
+      "r": "0.002199692",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Centiliter",
+      "fullTo": "Gallon,UK"
+    },
+    {
+      "id": 16,
+      "n1": "cl",
+      "n2": "bbl",
+      "r": "0.000061103",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Centiliter",
+      "fullTo": "Barrel,UK"
+    },
+    {
+      "id": 17,
+      "n1": "cl",
+      "n2": "tsp",
+      "r": "2.028841362",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Centiliter",
+      "fullTo": "Tea Spoon,US"
+    },
+    {
+      "id": 18,
+      "n1": "cl",
+      "n2": "tbsp",
+      "r": "0.676280454",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Centiliter",
+      "fullTo": "Table Spoon,US"
+    },
+    {
+      "id": 19,
+      "n1": "cl",
+      "n2": "fl oz",
+      "r": "0.338140227",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Centiliter",
+      "fullTo": "Fluid Ounce,US"
+    },
+    {
+      "id": 20,
+      "n1": "cl",
+      "n2": "c",
+      "r": "0.042267528",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Centiliter",
+      "fullTo": "Cup,US"
+    },
+    {
+      "id": 21,
+      "n1": "cl",
+      "n2": "pt",
+      "r": "0.021133764",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Centiliter",
+      "fullTo": "Pint,US"
+    },
+    {
+      "id": 22,
+      "n1": "cl",
+      "n2": "qt",
+      "r": "0.010566882",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Centiliter",
+      "fullTo": "Quart,US"
+    },
+    {
+      "id": 23,
+      "n1": "cl",
+      "n2": "gal",
+      "r": "0.002641721",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Centiliter",
+      "fullTo": "Gallon,US"
+    },
+    {
+      "id": 24,
+      "n1": "cl",
+      "n2": "bbl",
+      "r": "0.000083864",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Centiliter",
+      "fullTo": "Barrel,US"
+    }
+  ]
+}

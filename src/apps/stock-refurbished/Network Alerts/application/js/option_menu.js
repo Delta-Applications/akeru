@@ -1,0 +1,14 @@
+'use strict'; (function (exports) {
+    let Optionmenu = function () { this.options = []; this.content = document.querySelector('.option-menu-container .content'); 
+    this.element = document.querySelector('.option-menu-container'); }; O
+    ptionmenu.prototype.init = function () { 
+        NavigationHelper.init('.menu-item', this.element); };
+         Optionmenu.prototype.isActive = function () { return !this.element.classList.contains('hidden'); }; 
+         Optionmenu.prototype.show = function (type, deleteCB, deleteCancelCB) { this.init(); this.deleteCB = deleteCB; this.deleteCancelCB = deleteCancelCB; this.updateoptionButton(type); this.buildOptions(); SoftkeyHelper.setSoftKey('option'); 
+    his.element.classList.remove('hidden'); NavigationHelper.updateCandidates(); }; Optionmenu.prototype.buildOptions = function () { let fragment = document.createDocumentFragment(); this.content.innerHTML = ''; this.options.forEach((option, index) => { let container = document.createElement('div'); container.className = 'menu-item p-pri'; container.setAttribute('tabindex', '-1'); container.setAttribute('data-index', index); if (index == 0) { container.id = 'option-menu-first-item'; container.setAttribute('aria-labelledby', 'option-menu-header option-menu-first-item'); }; let div = document.createElement('div'); div.className = 'content'; div.setAttribute('data-l10n-id', option); container.appendChild(div); fragment.appendChild(container); }); this.content.appendChild(fragment); }; Optionmenu.prototype.updateoptionButton = function (type) { if (type === 'inbox') { let target = document.activeElement; this.id = target.id; this.options = ['delete', 'multiselect']; } else { let focusElement = ViewUtils.scrollElement.querySelector('.focus'); let l10nId = ViewUtils.operatorMessageExtractionSelectKey(); if (focusElement) { ViewUtils.orginPage === type !== 'attention'; this.options = type !== 'attention' ? [l10nId, 'delete'] : [l10nId]; } else { this.options = ['delete']; } } }; Optionmenu.prototype.hide = function () { this.element.classList.add('hidden'); }; Optionmenu.prototype.select = function () {
+        let operator = document.activeElement.querySelector('.content'); let l10n = operator.getAttribute('data-l10n-id'); switch (l10n) {
+            case 'delete': this.hide(); NavigationHelper.destroy(); Dialog.show('delete-message', this.deleteCB, this.deleteCancelCB); break; case 'open-web': case 'open-dial': case 'open-mailbox': let scrollElement = document.getElementById('alert-content'); let focusLink = scrollElement.querySelector('.focus'); let type = focusLink.getAttribute('ext-tag'); if (type) { let content = focusLink.textContent; ViewUtils.openLink(type, content); }
+                break; case 'multiselect': this.hide(); AlertBox.showEditMode(true); break; default: break;
+        }
+    }; exports.Optionmenu = new Optionmenu();
+})(window);

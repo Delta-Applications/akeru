@@ -1,0 +1,16 @@
+
+function ThumbnailItem(videoData){if(!videoData){throw new Error('videoData should not be null or undefined.');}
+this.posterNode=null;this.unwatchedNode=null;this.detailNode=null;this.titleNode=null;this.htmlNode=null;this.tapListeners=[];this.data=videoData;var _this=this;render();function convertToDOM(htmlText){var dummyDiv=document.createElement('div');dummyDiv.innerHTML=htmlText;var domNode=dummyDiv.firstElementChild;if(!domNode){throw new Error('the template does not contain any element');}
+_this.htmlNode=domNode;_this.posterNode=domNode.querySelector('.img');_this.detailNode=domNode.querySelector('.details');_this.titleNode=domNode.querySelector('.title');_this.unwatchedNode=domNode.querySelector('.unwatched');_this.sizeNode=domNode.querySelector('.size-text');}
+function render(){if(!ThumbnailItem.Template){throw new Error('Template is needed while rendering');}
+var duration='';if(isFinite(_this.data.metadata.duration)){duration=MediaUtils.formatDuration(_this.data.metadata.duration);}
+var htmlText=ThumbnailItem.Template.interpolate({'title':_this.data.metadata.title,'duration-text':duration,'selection':currentLayoutMode==='layout-selection'?currentLayoutMode:''});convertToDOM(htmlText);_this.updatePoster(_this.data.metadata);_this.setWatched(_this.data.metadata.watched);if(_this.detailNode){_this.detailNode.dataset.title=_this.data.metadata.title;}
+_this.htmlNode.addEventListener('click',dispatchClick);if(navigator.mozL10n.readyState==='complete'){_this.localize();}}
+function dispatchClick(){_this.tapListeners.forEach(function(listener){if(listener.handleEvent){listener.handleEvent(_this.data);}else if((typeof listener)==='function'){listener(_this.data);}});}}
+ThumbnailItem.titleMaxLines=2;ThumbnailItem.prototype.addTapListener=function(listener){if(!listener){return;}
+this.tapListeners[this.tapListeners.length]=listener;};ThumbnailItem.prototype.removeTapListener=function(listener){if(!listener){return;}
+var idx=this.tapListeners.indexOf(listener);if(idx>-1){this.tapListeners.splice(idx,1);}};ThumbnailItem.prototype.setWatched=function(watched){if(!this.unwatchedNode){return;}
+this.unwatchedNode.hidden=watched;};ThumbnailItem.prototype.updatePoster=function(metadata){if(!this.posterNode){return;}
+if(this.posterNode.dataset.uri){URL.revokeObjectURL(this.posterNode.dataset.uri);}
+if(metadata){if(metadata.rotation){this.posterNode.style.transform='rotate('+metadata.rotation+'deg)';}
+this.posterNode.classList.remove('default');var imageUri=URL.createObjectURL(metadata.poster);this.posterNode.dataset.uri=imageUri;this.posterNode.src=imageUri;}else{this.posterNode.classList.add('default');this.posterNode.dataset.uri='';this.posterNode.src='style/images/default_thumbnail.png';}};ThumbnailItem.prototype.updateTitleText=function(){this.titleNode.textContent=VideoUtils.getTruncated(this.data.metadata.title,{node:this.titleNode,maxLine:ThumbnailItem.titleMaxLines});};ThumbnailItem.prototype.localize=function(){if(this.sizeNode&&isFinite(this.data.size)){this.sizeNode.textContent=MediaUtils.formatSize(this.data.size);}};

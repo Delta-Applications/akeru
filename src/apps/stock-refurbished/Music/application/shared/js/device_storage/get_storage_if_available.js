@@ -1,0 +1,2 @@
+
+function getStorageIfAvailable(e,r,n,o){var t=navigator.getDeviceStorage(e);t.available().onsuccess=function(e){"available"!==e.target.result?o&&o(e.target.result):t.freeSpace().onsuccess=function(e){e.target.result<r?o&&o(e.target.result):n(t)}}}

@@ -1,0 +1,308 @@
+@import url('main.css');
+#inbox-screen {
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  background-color: var(--color-gs00);
+  height: calc(100% - var(--header-height));
+}
+
+#inbox-container,
+#ringtone-preview-container {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: calc(100% - var(--header-height));
+}
+
+#empty-list {
+  font-size: var(--font-p-pri);
+  text-align: center;
+  top: 50%;
+  color: var(--color-gs70);
+  position: absolute;
+  width: 100%;
+}
+
+#inbox-container ul {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+ul > h2 {
+  background-color: var(--color-gs20);
+  color: var(--color-gs70);
+  font-size: var(--font-p-pri);
+  padding: 0.5rem 1rem;
+}
+
+ul li {
+  padding: 1rem;
+}
+
+li p {
+  text-align: left;
+}
+
+:focus p {
+  color: var(--color-gs00) !important;
+}
+
+:focus .checkbox-list-input:checked + .checkbox-list-span,
+:focus .checkbox-list-input:checked + .checkbox-list-span::after {
+  border-color: #fff !important;
+}
+
+li p:nth-child(1) {
+  color: var(--color-gs90);
+  font-size: var(--font-p-pri);
+  line-height: 1.5rem;
+}
+
+li p:nth-child(2),
+li p:nth-child(3) {
+  color: var(--color-gs70);
+  font-size: var(--font-p-sec);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-top: 0.5rem;
+  line-height: 1.5rem;
+}
+
+li {
+  border-bottom: 0.2rem solid var(--color-gs20);
+}
+
+.list-items {
+  position: relative;
+  padding: 1rem;
+  align-items: center;
+  display: block;
+  height: auto;
+}
+
+.editMode {
+  margin-left: 3rem;
+}
+
+.list-items .content:not(:first-child) {
+  padding: 0 1rem;
+}
+
+.list-checkbox .content:not(:first-child) {
+  padding-left: 4rem;
+}
+
+.list-items .icon {
+  width: 3.2rem;
+  height: 6.4rem;
+  text-align: center;
+  display: inline;
+  float: left;
+}
+
+.list-items .content {
+  flex: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.list-items .pack-checkbox {
+  font-size: 3.2rem !important;
+  pointer-events: none;
+  color: var(--highlight-color);
+}
+
+.pack-checkbox {
+  top: 35%;
+  left: 0.8rem;
+  right: auto;
+  float: right;
+  font-size: 3.2rem !important;
+  width: 2.2rem !important;
+  height: 2.2rem !important;
+  position: absolute;
+  pointer-events: none;
+  display: inline-block;
+  vertical-align: middle;
+  content: "check-on";
+  color: var(--highlight-color);
+}
+
+.checkbox-list-input {
+  margin: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 0;
+}
+
+label {
+  margin-left: 2rem;
+}
+
+/**
+ * Table View
+ * line height = 6rem, border included
+ */
+
+*.break-all {
+  word-break: break-all !important;
+}
+
+*.break-word {
+  word-wrap: break-word !important;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  list-style: none;
+}
+
+ul li {
+  -moz-box-sizing: border-box;
+  position: relative;
+  height: 6rem;
+  margin: 0;
+  color: #000;
+  background: var(--color-gs00);
+}
+
+ul li.auto-height {
+  height: auto;
+}
+
+ul + ul li:first-child {
+  border-top: 0.1rem solid #e6e6e3;
+}
+
+ul li:last-child {
+  border-bottom: none;
+}
+
+ul li label:not([for]) {
+  background: none;
+}
+
+ul li.longRadioText span {
+  width: auto !important;
+}
+
+ul li > a {
+  text-decoration: none;
+  outline: 0;
+  color: var(--color-gs90);
+  -moz-box-sizing: border-box;
+  font-size: var(--font-p-pri);
+  margin: 0;
+}
+
+ul li > label > select {
+  padding-left: 1rem;
+}
+
+ul li,
+ul li > a,
+ul li > label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+ul li {
+  height: 6rem;
+  padding: 0 1rem;
+}
+
+ul li.simpin-item {
+  height: auto;
+  padding: 0 1rem !important;
+}
+
+ul li[hidden] {
+  display: none;
+}
+
+/* text ellipsis */
+ul li > *,
+ul li > label > *,
+ul li > a > * {
+  display: block;
+  border: none;
+}
+
+ul li .disabled {
+  color: #b8b8b8;
+}
+
+ul li > label {
+  font-size: var(--font-p-pri);
+  line-height: var(--font-p-pri);
+  font-weight: 400;
+  margin: 0;
+}
+
+.checkbox-list-span {
+  display: inline-block;
+  border-radius: 35%;
+  border: 0.3rem solid var(--color-gs20);
+  position: relative;
+  height: 2rem;
+  vertical-align: middle;
+}
+
+.checkbox-list-span::after {
+  border: 0.3rem solid transparent;
+  border-left: 0;
+  border-top: 0;
+  content: "";
+  left: 0.6rem;
+  position: absolute;
+  width: 0.3rem;
+  height: 1rem;
+  transform: rotate(45deg) scale(0);
+  transition: transform .2s;
+}
+
+.checkbox-list-input:checked + .checkbox-list-span {
+  border-color: var(--highlight-color);
+}
+.checkbox-list-input:checked + .checkbox-list-span::after {
+  border-color: var(--highlight-color);
+  transform: rotate(45deg) scale(1);
+}
+
+/******************************************************************************
+ * Boolean inputs
+ */
+
+/* custom styles for boolean inputs (see /shared/style/switches.css) */
+ul li label {
+  text-transform: none;
+}
+
+ul li > label:not([for]),
+ul li > label.pack-checkbox {
+  -moz-margin-start: -1rem;
+  -moz-margin-end: -1rem;
+  -moz-padding-start: 1rem;
+  width: calc(100% + 1rem);
+  height: calc(100% - 1rem);
+  overflow: hidden;
+  display: flex;
+}
+
+/******************************************************************************
+ * Right-To-Left layout
+ */
+
+html[dir="rtl"] .checkbox-list-span::after {
+  left: 0.7rem;
+  right: auto;
+}

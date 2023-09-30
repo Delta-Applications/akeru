@@ -15,6 +15,10 @@ Akeru refurbished apps are versions of stock/official KaiOS apps from 2.5.2, mod
 
 Contains all stock apps from 2.5.2 KaiOS (primarily from the 800T), refurbished to have extra functionality and latest design features (for example radio without headphones, modified settings app, unit conversion with latest icons, etc.)
 
+### `hidden-refurbished`
+
+Contains all hidden (system role apps) stock services refurbished to have extra functionality and latest design features (for example wallpapers app without vendor customization). Can contain repackaged custom services like OmniSD or Java emulator adapted to look like stock apps.
+
 ### `official-refurbished`
 
 Contains all refurbished official apps: modified apps from the KaiOS team extracted from the KaiStore, with as many online features as possible removed (ads & tracking), intended to be used as bloat-free stock apps (like weather & network tester)

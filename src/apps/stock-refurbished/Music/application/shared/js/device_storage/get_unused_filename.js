@@ -1,0 +1,2 @@
+
+function getUnusedFilename(e,r,n){var o=e.get(r);o.onerror=function(){n(r)},o.onsuccess=function(){var o=0,t=r.lastIndexOf("/"),i=r.substring(0,t+1),a=r.substring(t+1);t=a.lastIndexOf("."),-1===t&&(t=a.length);var s=a.substring(t),c=a.substring(0,t),u=c.match(/^(.*)_(\d{1,2})$/);u&&(c=u[1],o=parseInt(u[2]));var p=i+c+"_"+(o+1)+s;getUnusedFilename(e,p,n)}}

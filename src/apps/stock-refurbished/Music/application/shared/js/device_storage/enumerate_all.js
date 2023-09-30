@@ -1,0 +1,2 @@
+
+function enumerateAll(e,r,o){function n(r){if(c.result=r.target.result,!c.result&&(a++,a<e.length))return i(),void 0;if(c.onsuccess)try{c.onsuccess(r)}catch(o){console.warn("enumerateAll onsuccess threw",o)}}function t(r){if(c.error=r.target.error,"NotFoundError"===c.error.name&&a!==e.length-1)return a++,i(),void 0;if(c.onerror)try{c.onerror(r)}catch(o){console.warn("enumerateAll onerror threw",o)}}function i(){s=e[a].enumerate(r,o||{}),s.onsuccess=n,s.onerror=t}var a=0,s=null,c={"continue":function(){s.continue()}};return i(),c}

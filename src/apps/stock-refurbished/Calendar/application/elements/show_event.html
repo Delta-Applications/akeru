@@ -1,0 +1,32 @@
+<element name="show-event" extends="section">
+  <template>
+    <header id="show-event-header">
+      <h1 id="view-event-header" aria-flowto="view-event-panel" data-l10n-id="view-event-header"></h1>
+      <button class="edit" style="display: none;">
+        <span data-l10n-id="edit">Edit</span>
+      </button>
+    </header>
+    <section role="textbox" id="view-event-panel" tabindex="0" class="event-view-scrollable" data-type="list">
+      <ul id="view-event-content">
+        <li class="title">
+          <span aria-hidden="true" data-l10n-id="title" class="content h2"></span>
+          <span aria-hidden="true" class="content location p" data-l10n-id="location"></span>
+        </li>
+
+        <li class="duration-time">
+          <span aria-hidden="true" class="content p-sec" data-l10n-id="duration"></span>
+        </li>
+
+        <li class="alarms">
+          <span aria-hidden="true" class="p-sec" data-l10n-id="reminder">Reminder:</span>
+          <span aria-hidden="true" class="content p-pri" role="list" data-l10n-id="alarms"></span>
+        </li>
+
+        <li class="description">
+          <span aria-hidden="true" class="p-sec" data-l10n-id="event-description"></span>
+          <span aria-hidden="true" class="content" data-l10n-id="description"></span>
+        </li>
+      </ul>
+    </section>
+  </template>
+</element>

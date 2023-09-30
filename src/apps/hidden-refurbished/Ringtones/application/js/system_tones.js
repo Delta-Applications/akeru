@@ -1,0 +1,8 @@
+'use strict';window.systemTones=(function(){function _getSettingsBase(toneType){switch(toneType){case'ringtone':return'dialer.ringtone';case'alerttone':return'notification.ringtone';default:throw new Error('tone type not supported');}}
+function _getSetting(settingKey){return new Promise(function(resolve,reject){var req=navigator.mozSettings.createLock().get(settingKey);req.onsuccess=function(){resolve(req.result[settingKey]);};req.onerror=function(){reject(req.error);};});}
+function getDefault(toneType){var settingKey=_getSettingsBase(toneType)+'.default.id';return _getSetting(settingKey).then(function(id){return window.builtInRingtones.get(id);});}
+function set(toneType,tone){var settingsBase=_getSettingsBase(toneType);return tone.getBlob().then(function(blob){return new Promise(function(resolve,reject){navigator.mozL10n.once(function(){var settings={};var name=tone.l10nID?{l10nID:tone.l10nID}:tone.name;settings[settingsBase]=blob;settings[settingsBase+'.name']=name||'';settings[settingsBase+'.id']=tone.id;var req=navigator.mozSettings.createLock().set(settings);req.onsuccess=function(){resolve();};req.onerror=function(){reject(req.error);};});});});}
+function isInUse(tone){var inUseAs=[];var getCurrentID=function(toneType){return _getSetting(_getSettingsBase(toneType)+'.id');};return getCurrentID('ringtone').then(function(id){if(tone.id===id){inUseAs.push('ringtone');}
+return getCurrentID('alerttone').then(function(id){if(tone.id===id){inUseAs.push('alerttone');}
+return inUseAs;});});}
+return{getDefault:getDefault,set:set,isInUse:isInUse};})();

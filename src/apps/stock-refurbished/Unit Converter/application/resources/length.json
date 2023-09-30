@@ -1,0 +1,84 @@
+{
+  "rate": [
+    {
+      "id": 0,
+      "n1": "m",
+      "n2": "mm",
+      "r": "1000",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Meter",
+      "fullTo": "Millimeter"
+    },
+    {
+      "id": 1,
+      "n1": "m",
+      "n2": "cm",
+      "r": "100",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Meter",
+      "fullTo": "Centimeter"
+    },
+    {
+      "id": 2,
+      "n1": "m",
+      "n2": "m",
+      "r": "1",
+      "defaultFrom": true,
+      "defaultTo": false,
+      "fullFrom": "Meter",
+      "fullTo": "Meter"
+    },
+    {
+      "id": 3,
+      "n1": "m",
+      "n2": "km",
+      "r": "0.001",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Meter",
+      "fullTo": "Kilometer"
+    },
+    {
+      "id": 4,
+      "n1": "m",
+      "n2": "in",
+      "r": "10000/254",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Meter",
+      "fullTo": "Inch"
+    },
+    {
+      "id": 5,
+      "n1": "m",
+      "n2": "ft",
+      "r": "10000/3048",
+      "defaultFrom": false,
+      "defaultTo": true,
+      "fullFrom": "Meter",
+      "fullTo": "Feet"
+    },
+    {
+      "id": 6,
+      "n1": "m",
+      "n2": "yd",
+      "r": "10000/9144",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Meter",
+      "fullTo": "Yard"
+    },
+    {
+      "id": 7,
+      "n1": "m",
+      "n2": "mi",
+      "r": "10000/16093440",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Meter",
+      "fullTo": "Mile"
+    }
+  ]
+}

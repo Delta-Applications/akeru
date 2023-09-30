@@ -1,0 +1,64 @@
+{
+  "rate": [
+    {
+      "id": 0,
+      "n1": "km/h",
+      "n2": "m/s",
+      "r": "5/18",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Kilometer/Hour",
+      "fullTo": "Meters/Second"
+    },
+    {
+      "id": 1,
+      "n1": "km/h",
+      "n2": "km/h",
+      "r": "1",
+      "defaultFrom": true,
+      "defaultTo": false,
+      "fullFrom": "Kilometer/Hour",
+      "fullTo": "Kilometer/Hour"
+    },
+    {
+      "id": 2,
+      "n1": "km/h",
+      "n2": "mph",
+      "r": "10000000/16093440",
+      "defaultFrom": false,
+      "defaultTo": true,
+      "fullFrom": "Kilometer/Hour",
+      "fullTo": "Miles/Hour"
+    },
+    {
+      "id": 3,
+      "n1": "km/h",
+      "n2": "ft/s",
+      "r": "100000/109728",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Kilometer/Hour",
+      "fullTo": "Feet/Second"
+    },
+    {
+      "id": 4,
+      "n1": "km/h",
+      "n2": "knot",
+      "r": "1000/1852",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Kilometer/Hour",
+      "fullTo": "Knots"
+    },
+    {
+      "id": 5,
+      "n1": "km/h",
+      "n2": "Mach",
+      "r": "1/1224",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Kilometer/Hour",
+      "fullTo": "Mach"
+    }
+  ]
+}

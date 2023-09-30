@@ -1,0 +1,129 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 10px;
+  background-color: var(--header-pink-background);
+  overflow: hidden;
+  -moz-user-select: none;
+}
+
+section[role="region"] {
+  position: absolute;
+  width: 100%;
+  height: calc(100% - var(--statusbar-height));
+  top: var(--statusbar-height);
+  background-color: var(--color-gs00);
+}
+
+article {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: var(--header-height);
+}
+
+#metadata {
+  margin: 1rem;
+}
+
+#metadata p {
+  margin: 0;
+  padding: 0 0 0 4rem;
+  font-size: var(--font-p-sec);
+  line-height: 136%;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+html[dir="rtl"] #metadata p {
+  padding: 0 4rem 0 0;
+  text-align: right;
+}
+#metadata p.small {
+  font-weight: normal;
+  font-style: italic;
+}
+
+#metadata p.title {
+  padding: 1rem 4rem 1rem 4rem !important;
+}
+
+#picture {
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  -moz-margin-end: 1.2rem;
+  background-size: 3rem;
+  margin: 0.5rem 0;
+}
+
+html[dir="rtl"] #picture {
+  float: right;
+}
+
+#playpause {
+  width: 8.6rem;
+  height: 8.6rem;
+  margin: 2.2rem auto;
+  background: url("images/create_ringtone_play.png")
+    no-repeat center center / 8.6rem;
+}
+
+#playpause.playing {
+  background: url("images/create_ringtone_pause.png")
+    no-repeat center center / 8.6rem;
+}
+
+#set-default label.pack-checkbox {
+  height: 6rem !important;
+  width: 100%;
+}
+
+#set-default > label.pack-checkbox > span {
+  display: flex;
+  margin-left: 0;
+  flex-direction: column;
+  justify-content: center;
+  line-height: var(--font-p-pri);
+  padding: 0 1.5rem 0 1rem;
+  height: auto;
+  white-space: normal;
+  position: relative;
+  min-height: 6rem;
+}
+
+#set-default > label.pack-checkbox > span::after {
+  left: auto !important;
+  right: 1rem !important;
+  font-size: var(--font-label);
+}
+
+html[dir="rtl"] #set-default > label.pack-checkbox > span::after {
+  right: auto !important;
+  left: 1rem !important;
+}
+
+#saving-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  background-color: rgba(51, 51, 51, 0.85);
+}
+
+#saving-overlay[hidden] {
+  display: none;
+}
+
+.focus label.pack-checkbox input#default-switch:checked ~ span:after,
+.focus label.pack-checkbox-large input#default-switch:checked ~ span:after {
+  top: 50%;
+}

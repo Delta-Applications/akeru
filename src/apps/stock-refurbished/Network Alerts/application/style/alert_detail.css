@@ -1,0 +1,25 @@
+@import url('main.css');
+
+#alert-icon {
+  width: 6.4rem;
+  height: 6.4rem;
+  margin: 0 auto;
+}
+
+[data-icon="alert"] {
+  font-size: 5rem;
+  color: var(--color-red);
+}
+
+#alert-content {
+  color: var(--color-gs90);
+  font-size: var(--font-p-pri);
+  word-wrap: break-word;
+  word-break: normal;
+  text-indent: 2rem;
+  margin-top: 0.5rem;
+}
+
+.highlight-color {
+  color: red;
+}

@@ -1,0 +1,12 @@
+<element name="event-search" extends="section">
+  <template>
+    <div id="search-input-container" class="focusable">
+      <input name="search" class="textfield p-pri" maxlength="100" x-inputmode="latin-prose" id="event-search-input" type="text" data-l10n-id="kai-event-search-header">
+    </div>
+    <div class="p-sec" id="event-search-result-header" data-l10n-id="upcoming-events">Upcoming Events</div>
+    <section id="event-search-result-view" role="tabpanel">
+      <div id="event-search-no-message" class="h2" data-l10n-id="no-events"></div>
+      <section id="event-search-result-list" class="event-search-result-events" role="listbox" aria-labelledby="event-search-result-header"></section>
+    </section>
+  </template>
+</element>

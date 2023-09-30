@@ -1,0 +1,90 @@
+<element name="modify-event" extends="section">
+  <template>
+    <header id="modify-event-header">
+      <h1 id="new-event-header" data-l10n-id="new-event-header" class="save-text">Add Event</h1>
+      <h1 id="edit-event-header" data-l10n-id="edit-event-header" class="done-text">Edit Event</h1>
+    </header>
+
+    <form id="event-info-form">
+      <ol role="menu">
+        <li class="title focusable">
+          <span id="title-title" class="p-sec" data-l10n-id="event-title">Title</span>
+          <input aria-labelledby="title-title" class="p-pri tcl-input-focusable" name="title" maxlength="100" x-inputmode="latin-prose" dir="auto" type="text">
+        </li>
+
+        <li class="location focusable">
+          <span id="where-title" class="p-sec" data-l10n-id="event-location">Location</span>
+          <input aria-labelledby="where-title" class="p-pri tcl-input-focusable" name="location" maxlength="100" x-inputmode="latin-prose" dir="auto" type="text">
+        </li>
+
+        <li role="menuitem" class="allday focusable">
+          <label class="pack-checkbox-large">
+            <input name="allday" type="checkbox">
+            <span aria-hidden="true" id="allday-title" class="p-pri" data-l10n-id="event-is-allday">All-day Event</span>
+          </label>
+        </li>
+
+        <li role="menuitem" class="start-date focusable" aria-labelledby="startdate-title" aria-describedby="start-date-locale">
+          <span id="startdate-title" data-l10n-id="event-start-date" class="p-pri start-date-track">Start Date</span>
+          <span role="combobox" aria-autocomplete="none" data-l10n-id="start-date">
+            <input aria-hidden="true" class="hidden-input start-date-picker" min="1970-1-1" max="2035-12-31" type="date" data-track-class="start-date-track">
+            <span class="p-sec" id="start-date-locale" data-type="date"></span>
+          </span>
+        </li>
+
+        <li role="menuitem" class="end-date focusable" aria-labelledby="enddate-title" aria-describedby="end-date-locale">
+          <span id="enddate-title" data-l10n-id="event-end-date" class="p-pri end-date-track">End Date</span>
+          <span role="combobox" aria-autocomplete="none" data-l10n-id="end-date">
+            <input class="hidden-input end-date-picker" aria-hidden="true" min="1970-1-1" max="2035-12-31" type="date" data-track-class="end-date-track">
+            <span class="p-sec" id="end-date-locale" data-type="date"></span>
+          </span>
+        </li>
+
+
+        <li role="menuitem" class="start-time focusable" id="startTime-Li" aria-labelledby="starttime-title" aria-describedby="start-time-locale">
+          <span id="starttime-title" data-l10n-id="event-start-time" class="p-pri start-time-track">Start Time</span>
+          <span role="combobox" aria-autocomplete="none" data-l10n-id="start-time">
+            <input class="hidden-input start-time-picker" aria-hidden="true" type="time" data-track-class="start-time-track">
+            <span class="p-sec" id="start-time-locale" data-type="time"></span>
+          </span>
+        </li>
+
+        <li role="menuitem" class="end-time focusable" id="endTime-Li" aria-labelledby="endtime-title" aria-describedby="end-time-locale">
+          <span id="endtime-title" data-l10n-id="event-end-time" class="p-pri end-time-track">End Time</span>
+          <span role="combobox" aria-autocomplete="none" data-l10n-id="end-time">
+            <input class="hidden-input end-time-picker" aria-hidden="true" type="time" data-track-class="end-time-track">
+            <span class="p-sec" id="end-time-locale" data-type="time"></span>
+          </span>
+        </li>
+
+        <li role="menuitem" class="repeat-event pack-select sk-modify-event-repeat repeat-style focusable" tabindex="0">
+          <span id="eventreminder-title" data-l10n-id="repeat" role="heading" aria-level="2" class="p-pri modify-event-reminder">repeat</span>
+          <span class="button">
+            <select id="repeat-select" class="p-sec" name="repeat" nav-scope nav-ignore>
+              <option data-l10n-id="never" value="never">Never</option>
+              <option data-l10n-id="every-day" value="every-day">Every day</option>
+              <option data-l10n-id="every-week" value="every-week">Every week</option>
+              <option data-l10n-id="every-2-weeks" value="every-2-weeks">Every 2 weeks</option>
+              <option data-l10n-id="every-month" value="every-month">Every month</option>
+            </select>
+          </span>
+        </li>
+
+        <li role="menuitem" class="focusable event-reminder">
+          <span id="eventReminder-title" data-l10n-id="reminder" role="heading" aria-level="2" class="p-pri modify-event-reminder">Event Reminder</span>
+          <div class="alarms">
+          </div>
+        </li>
+
+        <li class="notes focusable">
+          <span id="notes-title" class="p-sec" data-l10n-id="event-description">Notes</span>
+          <textarea role="textbox" maxlength="500" tabindex="0" aria-labelledby="notes-title" id="note-pad" class="p-pri tcl-input-focusable" name="description" x-inputmode="latin-prose" dir="auto"></textarea>
+        </li>
+
+      </ol>
+      <section role="status">
+        <p class="errors"></p>
+      </section>
+    </form>
+  </template>
+</element>

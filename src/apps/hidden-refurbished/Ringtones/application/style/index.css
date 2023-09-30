@@ -1,0 +1,15 @@
+:root {
+  --font-p-pri: 1.7rem;
+  --font-p-sec: 1.4rem;
+  --font-label: 3.2rem;
+  --font-p-empty: 2.0rem;
+}
+.large-text {
+  --font-p-pri: 2.2rem;
+  --font-p-sec: 1.8rem;
+  --font-p-empty: 2.6rem;
+}
+
+[data-type="list"] li p:first-of-type {
+  font-size: var(--font-p-pri) !important;
+}

@@ -1,0 +1,813 @@
+html, body {
+  font-size: 10px;
+  height: 100%;
+}
+
+body {
+  color: #fff;
+  font-size: 10px;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+}
+
+body.video-controls-hidden {
+  background-color: var(--color-gs100);
+}
+
+body > section {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-size: 1.4rem;
+  background-color: #0E1214;
+}
+
+.hidden {
+  display: none;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background-color: #FFF;
+}
+
+li .inner {
+  height: 7.2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+li .inner .img {
+  width: 7.2rem;
+}
+
+li .img.default {
+  width: 6rem;
+}
+
+/* 1. Leave room for two rem when computing width of details
+      to account for one rem margin left and right */
+li .inner .details {
+  line-height: 1.6rem;
+  margin: 0.5rem 1rem; /* 1 */
+  font-size: 1.4rem;
+  color: #000;
+  width: calc(100% - 7.3rem); /* 1 */
+  overflow: hidden;
+}
+
+html[dir="rtl"] li .inner .details{
+  margin: 0.5rem 1rem 0rem 0rem;
+}
+
+li .details[data-visible] {
+  visibility: visible;
+}
+li .after {
+  color: #000;
+}
+
+span.line-break {
+  display: block;
+  height: 1.6rem;
+  overflow: hidden;
+}
+
+span.line-break .size-text {
+  height: 1.6rem;
+  overflow: hidden;
+}
+
+section[role="region"] {
+  position: absolute;
+  left: 0;
+  top: var(--statusbar-height);
+  width: 100%;
+  height: calc(100% - var(--statusbar-softkeybar-height));
+}
+
+/* All of the main views fill the screen */
+#thumbnail-views, #player-view {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  font-size: 1.2rem;
+  background-color: var(--color-gs100);
+}
+
+/*
+ * The thumbnail list appears in regular browsing mode, in selection mode,
+ * and in pick mode.
+ */
+
+#thumbnails {
+  position: absolute;
+  left: 0;
+  right: 0;
+  /* top and bottom are set depending on view below */
+  padding: 0;
+  margin: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  /*
+   * the body background is black, but remind the UA of that here to
+   * keep the thumbnail view opaque if possible.
+   */
+  background-color: #FFF;
+  height: calc(100%);
+}
+
+.thumbnail {
+  margin: 0;
+  height: 7.2rem;
+  overflow: hidden;
+  position: relative;
+  list-style-type: none;
+}
+
+li .thumbnail.focus *,
+li .thumbnail.hasfocused *{
+  color: #FFF !important;
+}
+/*
+ * for normal thumbnails-select case, it is 5rem at top and 4rem at bottom.
+ */
+#thumbnails.select>li:last-child{
+  margin-bottom: 9rem;
+}
+
+#thumbnails.select, #thumbnails.pick {
+  height: calc(100% - var(--header-height));
+}
+
+.thumbnail-group-header.separator {
+  height: 2.4rem;
+  line-height: 2.4rem;
+  color: var(--color-gs70);
+  background-color: var(--color-gs00);
+  padding: 0rem 1rem;
+}
+
+.thumbnail-group-header {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #000;
+  padding: 0;
+  -moz-padding-start: 1rem;
+  height: 4rem;
+  line-height: 4rem;
+}
+
+#thumbnails>li:first-child .thumbnail-group-header {
+  border-top: 0.1rem solid;
+  border-color:rgba(255,255,255, 0.1);
+}
+
+#video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#video-container:active {
+  background: none;
+}
+
+#player,
+#poster-img {
+  /* size and position are set in JS depending on*/
+  /* video size and screen orientation */
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: 0 0;
+}
+
+/*
+ * The overlay is where we display messages like Scanning, No Videos,
+ * No SD card and SD Card in Use along with instructions for resolving
+ * the issue.  The user can't interact with the app while the overlay
+ * is displayed.
+ */
+#overlay {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+}
+#in-use-overlay,
+#confirm-dialog {
+  /* it takes up the whole screen */
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+#overlay,
+#in-use-overlay {
+  /* almost transparent gray */
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+#confirm-dialog {
+  background-color: #2d2d2d;
+}
+
+/*
+ * In view.html (but not index.html) we put the in-use-overlay element
+ * inside video-controls. In that case there is a 5rem title bar that needs
+ * to be visible, so we alter the top position. And if we're handling
+ * a pick activity, we also need the title bar with the back button to show.
+ */
+.video-controls > #in-use-overlay,
+body.pick-activity > #in-use-overlay {
+  top: 5rem;
+}
+
+
+/*
+ * The overlay content area holds the text of the overlay.
+ * It has borders and a less transparent background so that
+ * the overlay text shows up more clearly
+ */
+#overlay-content, #in-use-overlay-content {
+  background-color: var(--color-gs00);
+  background-size: auto auto, 100% 100%;
+  /* We can't use shortand with background size because is not implemented yet:
+  https://bugzilla.mozilla.org/show_bug.cgi?id=570326; */
+  overflow: hidden;
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-size: 0;
+  /* Using font-size: 0; we avoid the unwanted visual space (about 3px)
+  created by white-spaces and break lines in the code betewen inline-block elements */
+  color: #fff;
+  display: table;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  padding: 0 0.5rem;
+  box-sizing: border-box;
+}
+
+#in-use-overlay-title {
+  font-weight: normal;
+  font-size: 1.6rem;
+  color: #fff;
+  margin: 0 0.5rem 0 0.5rem;
+  padding: 0;
+  background-color: #2d2d2d;
+}
+
+#overlay-title {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+#overlay-text, #in-use-overlay-text {
+  color: var(--color-gs90);
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#overlay-menu {
+  z-index: 100;
+}
+
+/* For overriding the style from BB */
+#overlay-menu.hidden {
+  display: none;
+}
+
+/* localization */
+body.hidden *[data-l10n-id] {
+  visibility: hidden;
+}
+
+#close {
+  outline: none;
+}
+
+#h1 {
+  background: none !important;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* buttons */
+a.button {
+  display: block;
+  padding: 0;
+  margin: 0;
+  border-width: 0;
+
+  /* for buttons that display text */
+  font-size: 1.4rem;
+  text-align: center;
+  line-height: 4rem;
+}
+
+a.button:active, a.button:focus {
+  outline: none;
+}
+
+a.button.disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+footer {
+  background: rgba(0, 0, 0, 0.75);
+  height: 4rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+header .icon:after {
+  background: none !important;
+}
+
+/* video player controls */
+.video-controls {
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  opacity: 1;
+  will-change: opacity, visibility;
+  transition: visibility 0s, opacity 0.5s;
+}
+.video-controls-hidden .video-controls {
+  opacity: 0;
+  visibility: hidden;
+  transition-delay: 0.5s, 0s;
+}
+
+.video-controls.bottom {
+  bottom: 0;
+}
+
+.video-player-header {
+  flex: 1 1 0%;
+  margin: 0px !important;
+  padding: 0px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: left;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 23px !important;
+  height: 35px;
+  line-height: 35px !important;
+  background: #333333;
+
+  margin-left: 0px;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  display: none; /*remove header*/
+}
+
+/* main control bar: play|pause, timeupdate, rwd|fwd
+   For landscape mode here. Settings for portrait mode is written in
+   media query at bottom */
+#videoBar {
+  position: absolute;
+  right: 0;
+  bottom: 4.4rem;
+  left: 0;
+  height: 6rem;
+  font-size: 0;
+  background: -moz-linear-gradient(-90deg, rgba(0,0,0,0.00)0%, rgba(0, 0, 0, 0.6) 100%);
+  white-space: nowrap;
+  z-index: 10;
+}
+
+#videoBar:last-child {
+  bottom: 0;
+}
+
+#elapsed-text, #duration-text {
+  position: absolute;
+  color: var(--color-gs20, #ffffff);
+  bottom: 1rem;
+}
+
+#player-skip-foward {
+  position: absolute;
+  color: var(--color-gs20);
+  bottom: 1.2rem;
+  height: 1.6rem;
+  width: 1.6rem;
+  left: 5rem;
+  font-size: 1.6rem;
+}
+
+/* elapsed-text and duration-text have padding on left and right
+   to support ltr and rtl locales */
+#elapsed-text {
+  left: 1rem;
+}
+
+#duration-text {
+  right: 1rem;
+}
+
+/* time slider */
+#timeSlider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+#slider-wrapper {
+  position: absolute;
+  width: calc(100% - 2rem);
+  height: 0.6rem;
+  left: 1rem;
+  top: calc(50% - 0.8rem);
+}
+
+#slider-wrapper div {
+  position: absolute;
+  pointer-events: none;
+}
+
+.progress {
+  height: 0.6rem;
+  width: 0;
+  top: 50%;
+}
+
+#elapsedTime {
+  background-color: var(--highlight-color, #00caf2);
+  z-index: 30;
+  border-width: 0;
+  border-radius: 2rem;
+}
+
+#bufferedTime {
+  background-color: var(--color-gs20, blue);
+  z-index: 20;
+}
+
+#timeBackground {
+  width: 100%;
+  background-color: var(--color-gs45, #a6b4b6);
+  z-index: 10;
+  opacity: 0.5;
+  border-width: 0;
+  border-radius: 2rem;
+}
+
+#videoControlBar {
+  height: 4.5rem;
+}
+
+#videoToolBar {
+  position: relative;
+  height: 4.8rem;
+  font-size: 0;
+  vertical-align: top;
+  border-top: 0.1rem solid rgba(255,255,255, 0.1);
+  background-color: #000;
+  overflow: hidden;
+  direction: ltr
+}
+
+#seek-backward,
+#seek-forward,
+#play {
+  position: relative;
+  height: 100%;
+  padding: 0;
+  font-weight: 500;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 3rem;
+}
+
+#seek-backward,
+#seek-forward {
+  width: 33%;
+}
+
+#play {
+  width: 34%;
+}
+
+#play.paused:before {
+  content: 'play';
+  padding-left: 4px;
+}
+
+.player-controls-button {
+  color: #FFFFFF;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+}
+
+.player-controls-button:hover {
+  background: transparent;
+}
+
+.player-controls-button:active {
+  background: #00caf2;
+}
+
+.player-controls-button:disabled {
+  opacity: 0.3;
+}
+
+.player-controls-button:disabled:active {
+  background: transparent;
+}
+
+#playHead {
+  position: absolute;
+  top: calc(50% - 0.3rem);
+  width: 0.3rem;
+  height: 0.6rem;
+
+  /* For LTR langauges, position the playhead 1.15 rems to the left 
+   * so that the center of the playhead aligns with the beginning of
+   * the time slider.
+   */
+  margin-left: -0.15rem;
+
+  /* For RTL langauges, position the playhead 1.15 rems to the right 
+   * so that the center of the playhead aligns with the end of
+   * the time slider.
+   */
+  margin-right: -0.15rem;
+ 
+  border: none;
+  background: none;
+  pointer-events: none;
+  z-index: 40;
+}
+
+#playHead:after {
+  content: "";
+  position: absolute;
+  left: 0rem;
+  width: 0.3rem;
+  height: 0.6rem;
+  background-color: #fff;
+}
+
+#playHead.active:before {
+  content: "";
+  position: absolute;
+  top: calc(50% - 3.05rem);
+  left: calc(50% - 3.05rem);
+  width: 6.1rem;
+  height: 6.1rem;
+  border-radius: 50%;
+  background-color: #00CAF2;
+}
+
+/* layout changes for pick activity */
+body:not(.pick-activity) #picker-title,
+body:not(.pick-activity) #picker-done,
+body:not(.pick-activity) #picker-close {
+  display: none;
+}
+
+/**
+ * 1. COMPLEX: Scoped style-sheets within <gaia-header>
+ *    trump all other rules. !important is required
+ *    for an app to over-ride the default appearance
+ *    of content within the custom-element. This may
+ *    change when we get `:host` and `:content` selectors
+ *    in shadow-dom.
+ */
+
+body:not(.pick-activity) #picker-done {
+  display: none !important; /* 1 */
+}
+
+/* hide options when picking */
+body.pick-activity #options,
+body.pick-activity #thumbnail-list-title {
+  display: none !important; /* 1 */
+}
+
+#two-column-spearator {
+  display: none;
+}
+
+/* details of a thumbnail */
+.thumbnail .details {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.large-text .thumbnail .details .title {
+  height: 2.2rem;
+}
+
+.thumbnail .details .title {
+  order: 1;
+  align-self: auto;
+  word-break: break-all;
+  direction: ltr; /* the title is from the file name : always ltr */
+  color: var(--color-gs90);
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  height: 2rem;
+  overflow: hidden;
+}
+
+.thumbnail .details .duration-text {
+  order: 2;
+  align-self: auto;
+  color: var(--color-gs70);
+  margin-top: 0.3rem;
+}
+
+.thumbnail .details .size-type-group {
+  order: 3;
+  align-self: auto;
+  margin-top: 0.3rem;
+  color: var(--color-gs70);
+}
+
+/**
+ * 1. COMPLEX: Scoped style-sheets within <gaia-header>
+ *    trump all other rules. !important is required
+ *    for an app to over-ride the default appearance
+ *    of content within the custom-element. This may
+ *    change when we get `:host` and `:content` selectors
+ *    in shadow-dom.
+ */
+
+/* we don't have fullscreen button when we are not in large layout */
+#fullscreen-button {
+  display: none;
+}
+
+.large-only {
+  display: none !important; /* 1 */
+}
+
+/* not selection mode */
+body:not(.layout-selection) .thumbnails-select,
+/* not list mode */
+body:not(.layout-list) .thumbnails-list,
+/* not fullscreen-player mode */
+body:not(.layout-fullscreen-player) #player-view {
+  display: none !important; /* 1 */
+}
+
+.layout-fullscreen-player #thumbnails,
+.layout-fullscreen-player #fakeSoftkeyPanel {
+  display: none !important;
+}
+
+/* overlay mode */
+.overlay #app-container, .info-view #app-container,
+.options-view #app-container, .in-use-overlay #app-container {
+  visibility: hidden;
+}
+
+/* spinner is only valid for tablet and landscape mode */
+body:not(.view-activity) #spinner-overlay {
+  display: none;
+}
+
+/*
+ * increase specificity to overwrite confirm.css rules for dialog buttons
+ */
+form[role="dialog"][data-type="confirm"] button.hidden {
+  display: none;
+}
+
+@media screen and (orientation: portrait) {
+  li.details {
+    width: 8rem;
+  }
+}
+
+:focus { outline:none; }
+::-moz-focus-inner {
+  outline: none;
+  border: none;
+  padding: 0;
+}
+
+html[dir=rtl] #video-title {
+  direction: ltr;
+}
+
+li .select-checkbox {
+  float: left;
+  width: 2.8rem;
+  height: 2.8rem;
+  padding-top: 1.5rem;
+}
+
+.select-checkbox {
+  display: none;
+}
+
+.layout-selection .select-checkbox {
+  display: inline-block;
+  font-family: "gaia-icons";
+  font-size: 2.8rem;
+}
+
+body.layout-list .select-checkbox {
+  display: none;
+}
+
+.thumbnail.focus > .selected.select-checkbox::after,
+.thumbnail.hasfocused > .selected.select-checkbox::after {
+  content: "check-on";
+  color: var(--color-gs00);
+}
+
+.thumbnail.focus > .select-checkbox::after,
+.thumbnail.hasfocused > .select-checkbox::after {
+  content: "check-off";
+  color: var(--color-gs45);
+}
+
+/*no focus, no selected*/
+.select-checkbox::after {
+  content: "check-off";
+  color: var(--color-gs45);
+}
+
+.selected.select-checkbox::after {
+  font-family: "gaia-icons";
+  content: "check-on";
+  color: var(--highlight-color);
+}
+
+form[role="dialog"][data-type="confirm"] h1 {
+  background: var(--header-background, var(--background, #fff)) !important;
+}
+
+.video-controls-hidden #player-view {
+  top: 0;
+  height: 100%;
+}
+
+.large-text #thumbnails .thumbnail {
+  height: inherit !important;
+}
+
+.large-text #thumbnails .thumbnail .inner {
+  height: inherit !important;
+}
+
+.large-text #thumbnails .thumbnail .inner .details {
+ margin: 0.5rem;
+}
+
+#mainmenu>.menu-button.focus {
+  background-color: var(--color-pink) !important;
+}
+
+header h1 {
+  line-height: var(--header-height);
+  background: var(--color-gs00);
+  color: var(--color-gs90);
+  padding: 0 1rem;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 0;
+}

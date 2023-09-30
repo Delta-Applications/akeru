@@ -1,0 +1,119 @@
+.skbar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  right: 0;
+  background-color: var(--color-gs20, #dadada);
+  color: var(--color-gs90, #323232);
+  border: 0;
+  z-index: 99999;
+  text-align: center;
+  white-space: nowrap;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  direction: ltr;
+}
+.skbar.visible {
+  display: grid !important;
+}
+.skbar div {
+  top: 0;
+}
+.skbar div:first-child {
+  text-align: left;
+  padding: 0 0.5rem 0 0.5rem;
+  min-width: 1rem;
+}
+.skbar div:last-child {
+  text-align: right;
+  padding: 0 0.5rem 0 0.5rem;
+  min-width: 1rem;
+}
+.skbar:not(.visible) {
+  display: none;
+}
+.none-paddings {
+  border: none;
+  padding: 0;
+  width: 100%;
+  margin: 0;
+}
+.sk-button {
+  color: var(--color-gs90, #323232);
+  font-size: 1.4rem;
+  font-weight: 600;
+  background: transparent;
+  padding: 0.1rem;
+  margin: 0;
+  height: var(--softkeybar-height, 3rem);
+  line-height: var(--softkeybar-height, 3rem);
+  border: none;
+}
+[dir="rtl"] .sk-button {
+  direction: rtl;
+}
+.skbar div:nth-child(2) .sk-button {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.skbar div:nth-child(2) .sk-button:empty {
+  width: 0;
+  padding: 0;
+}
+.sk-button [data-icon] {
+  
+  display: inline-flex;
+  height: var(--softkeybar-height, 3rem);
+  align-items: center;
+}
+.sk-button [data-icon]::before {
+  content: unset;
+}
+.sk-button [data-icon]::after {
+  content: attr(data-icon);
+  font-family: 'gaia-icons';
+  display: inline-block;
+  font-weight: 500;
+  font-style: normal;
+  text-decoration: inherit;
+  text-transform: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: initial;
+  font-size: 2rem;
+}
+.sk-button [data-icon=ok] {
+  font-size: 2.4rem;
+  line-height: 2.6rem;
+}
+.sk-button.active {
+  background: #00aacc;
+}
+.sk-button[disabled] {
+  background-color: transparent;
+  color: #c7c7c7;
+  pointer-events: auto;
+}
+button.sk-button {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+button#software-keys-left {
+  text-align: left;
+}
+button#software-keys-right {
+  text-align: right;
+}
+input[type="button"][class="sk-button"]:active {
+  background: #00aacc;
+}
+.group-menu > menu > button {
+  font-style: normal;
+  line-height: var(--softkeybar-height, 3rem);
+  display: inline-block;
+}
+* {
+  outline: none;
+}

@@ -1,0 +1,31 @@
+<element name="switchto-date" extends="section">
+  <template>
+    <header id="show-switchto-date-header">
+      <h1 id="switchto-date-header-title" data-l10n-id="go">
+        Go to Date
+      </h1>
+    </header>
+    <section id="show-switchto-date-content">
+      <div class="switchto-input-container">
+        <ul>
+          <li class="switchto-day focusable">
+            <div id="switchto-day-up" class="switchto-arrow-up"></div>
+            <div role="spinbutton" class="p-pri switchto-input-datetime" id="input-switchto-day"></div>
+            <div id="switchto-day-down" class="switchto-arrow-down"></div>
+          </li>
+          <li class="switchto-month focusable">
+            <div id="switchto-month-up" class="switchto-arrow-up"></div>
+            <div role="spinbutton" class="p-pri switchto-input-datetime" id="input-switchto-month"></div>
+            <div id="switchto-month-down" class="switchto-arrow-down"></div>
+          </li>
+          <li class="switchto-year focusable">
+            <div id="switchto-year-up" class="switchto-arrow-up"></div>
+            <div role="spinbutton" class="p-pri switchto-input-datetime" id="input-switchto-year"></div>
+            <div id="switchto-year-down" class="switchto-arrow-down"></div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section aria-hidden="true" role="tabpanel" id="view-switchto-month"></section>
+  </template>
+</element>

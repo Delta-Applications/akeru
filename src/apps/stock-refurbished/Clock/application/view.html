@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="theme-color" content="transparent">
+    <title>Clock</title>
+    <meta name="defaultLanguage" content="en-US">
+    <meta name="availableLanguages" content="af-ZA:202107131655, ar-SA:202107131655, az-Latn-AZ:202107131655, be-BY:202107131655, bg-BG:202107131655, bn-BD:202107131655, bn-IN:202107131655, bs-BA:202107131655, cs-CZ:202107131655, da-DK:202107131655, de-DE:202107131655, el-GR:202107131655, en-GB:202107131655, en-US:202107131655, es-ES:202107131655, es-US:202107131655, en-NG:202107131655, et-EE:202107131655, fi-FI:202107131655, fr-FR:202107131655, fr-CA:202107131655, he-IL:202107131655, hi-IN:202107131655, hr-HR:202107131655, hu-HU:202107131655, hy-AM:202107131655, id-ID:202107131655, it-IT:202107131655, km-KH:202107131655, kk-KZ:202107131655, lt-LT:202107131655, lv-LV:202107131655, lo-LA:202107131655, ka-GE:202107131655, mk-MK:202107131655, ms-MY:202107131655, nb-NO:202107131655, ne-IN:202107131655, nl-NL:202107131655, pl-PL:202107131655, pt-BR:202107131655, pt-PT:202107131655, ro-RO:202107131655, ru-RU:202107131655, si-LK:202107131655, sk-SK:202107131655, sl-SI:202107131655, sq-AL:202107131655, sr-Latn-CS:202107131655, sv-SE:202107131655, sw-ZA:202107131655, ta-IN:202107131655, th-TH:202107131655, fil-PH:202107131655, tr-TR:202107131655, uk-UA:202107131655, ur-PK:202107131655, vi-VN:202107131655, xh-ZA:202107131655, zh-CN:202107131655, zh-TW:202107131655, zh-HK:202107131655, is-IS:202107131655, zu-ZA:202107131655, mo-RO:202107131655, fa-IR:202107131655, ps-AF:202107131655, uz-Cyrl-UZ:202107131655">
+    <link rel="localization" href="/locales-obj/{locale}.json">
+    
+    
+    
+
+    <!-- Web Components -->
+    <script src="/shared/js/lazy_loader.js"></script>
+    <script defer="" src="/shared/js/option_menu.js"></script>
+    <script defer="" src="/shared/js/softkey_panel.js"></script>
+    <script defer="" src="/shared/js/option_menu_helper.js"></script>
+    <script defer="" src="js/navigation_manager.js"></script>
+    <script defer="" src="js/navigation_map.js"></script>
+    <script defer="" src="/js/menu_params.js"></script>
+
+    <!-- Shared sounds -->
+    <link rel="resources" type="directory" href="shared/resources/media/alarms/">
+
+    <link rel="stylesheet" type="text/css" href="style/main.css">
+  <meta content="2.2" name="appVersion"></head>
+
+  <body class="theme-productivity" id="body-dom">
+    <header class="view-header regular-header clock-header">
+      <h1 data-l10n-id="kai-clock-title">Clock</h1>
+    </header>
+    <div id="root-panel" class="views zindex2 hidden">
+      <div id="over-cache-context">
+        <div id="over-panel" class="no-alarms-message p-pri" data-l10n-id="no-alarms-body">No alarms have been set.</div>
+      </div>
+    </div>
+
+    <div id="views">
+      <div id="main-panel-wrapper">
+        <div id="alarm-panel" class="active panel" data-panel-id="alarm" role="heading" aria-labelledby="alarm-tab"></div>
+        <div id="timer-panel" class="panel hidden" data-panel-id="timer" role="heading" aria-labelledby="timer-tab"></div>
+        <div id="stopwatch-panel" class="panel hidden" data-panel-id="stopwatch" role="heading" aria-labelledby="stopwatch-tab"></div>
+      </div>
+    </div>
+    <ul role="tablist" class="custom-tablist skin-light bottom" id="clock-tabs">
+      <li role="presentation">
+        <a id="alarm-tab" class="h3" aria-controls="alarm-panel" aria-selected="true" role="tab" href="#alarm-panel" data-l10n-id="alarm">Alarm</a>
+      </li>
+      <li role="presentation">
+        <a id="timer-tab" class="h3" aria-controls="timer-panel" aria-selected="false" role="tab" href="#timer-panel" data-l10n-id="timer">Timer</a>
+      </li>
+      <li role="presentation">
+        <a id="stopwatch-tab" class="h3" aria-controls="stopwatch-panel" aria-selected="false" role="tab" href="#stopwatch-panel" data-l10n-id="stopwatch">Stopwatch</a></li>
+    </ul>
+    <script src="/js/main.js"></script>
+  </body>
+
+</html>

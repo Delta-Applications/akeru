@@ -1,0 +1,114 @@
+{
+  "rate": [
+    {
+      "id": 0,
+      "n1": "m²",
+      "n2": "mm²",
+      "r": "1000000",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Square Meters",
+      "fullTo": "Square Millimeters"
+    },
+    {
+      "id": 1,
+      "n1": "m²",
+      "n2": "cm²",
+      "r": "10000",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Square Meters",
+      "fullTo": "Square Centimeters"
+    },
+    {
+      "id": 2,
+      "n1": "m²",
+      "n2": "m²",
+      "r": "1",
+      "defaultFrom": true,
+      "defaultTo": false,
+      "fullFrom": "Square Meters",
+      "fullTo": "Square Meters"
+    },
+    {
+      "id": 3,
+      "n1": "m²",
+      "n2": "a",
+      "r": "0.01",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Square Meters",
+      "fullTo": "Ares"
+    },
+    {
+      "id": 4,
+      "n1": "m²",
+      "n2": "ha",
+      "r": "0.0001",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Square Meters",
+      "fullTo": "Hectares"
+    },
+    {
+      "id": 5,
+      "n1": "m²",
+      "n2": "km²",
+      "r": "0.000001",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Square Meters",
+      "fullTo": "Square Kilometers"
+    },
+    {
+      "id": 6,
+      "n1": "m²",
+      "n2": "in²",
+      "r": "25000000/16129",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Square Meters",
+      "fullTo": "Square Inches"
+    },
+    {
+      "id": 7,
+      "n1": "m²",
+      "n2": "ft²",
+      "r": "25000000/2322576",
+      "defaultFrom": false,
+      "defaultTo": true,
+      "fullFrom": "Square Meters",
+      "fullTo": "Square Feet"
+    },
+    {
+      "id": 8,
+      "n1": "m²",
+      "n2": "yd²",
+      "r": "25000000/20903184",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Square Meters",
+      "fullTo": "Square Yards"
+    },
+    {
+      "id": 9,
+      "n1": "m²",
+      "n2": "mi²",
+      "r": "25/64749696",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Square Meters",
+      "fullTo": "Square Miles"
+    },
+    {
+      "id": 10,
+      "n1": "m²",
+      "n2": "ac",
+      "r": "250/1011714",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Square Meters",
+      "fullTo": "Acres"
+    }
+  ]
+}

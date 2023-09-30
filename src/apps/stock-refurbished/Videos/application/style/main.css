@@ -1,0 +1,18 @@
+/**
+ * External
+ */
+
+@import url("../shared/elements/gaia-icons/gaia-icons.css");
+@import url("../shared/elements/gaia-theme/gaia-theme.css");
+@import url("../shared/elements/gaia-theme/gaia-font.css");
+@import url("../shared/style/softkey.css");
+@import url("../shared/style/option_menu.css");
+@import url("../shared/style/action_menu.css");
+@import url("../shared/style/navigation.css");
+
+/**
+ * App
+ */
+
+@import url("info.css");
+@import url("video.css"); 

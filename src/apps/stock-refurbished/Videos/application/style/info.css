@@ -1,0 +1,68 @@
+#info-view {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-bottom: 0;
+  position: absolute;
+  height: 100%;
+  top: 0;
+}
+
+#info-view > section {
+  vertical-align: top;  /* override confirm.css */
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-gs00);
+  height: calc(100% - var(--header-height));
+  overflow: hidden;
+}
+
+#info-view > section > dl {
+  border-top: none;     /* override confirm.css */
+  margin: 1rem 0 0 0.1rem;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+#info-view > section > dl > div > dt {
+  display: block;
+  padding-left: 1rem;
+  color: var(--color-gs90);
+
+  /* override confirm.css */
+  width: 100% !important;
+  float: none !important;
+}
+
+/* 1. Text in the info view should not be selectable */
+#info-view > section > dl > div > dd {
+  display: block;
+  color: var(--color-gs70);
+  padding-left: 1rem;
+  margin: 0 0 0.7rem;
+  -moz-user-select: none; /* 1 */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#info-view > section > dl > div {
+  height: 6rem;
+  background-color: var(--color-gs00)
+}
+
+#info-view > section > dl > div > dd:last-child {
+  /* no separator after the last item in the list */
+  border-bottom: none;
+}
+
+html[dir="rtl"] #info-view > section > dl {
+  border-top: none;     /* override confirm.css */
+  margin: 1rem 1rem 0 0.1rem;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}

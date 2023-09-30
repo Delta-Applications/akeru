@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="theme-color" content="rgb(255, 255, 255)">
+    <title>Music</title>
+    <!-- Include shared building blocks -->
+    <!--<link rel="stylesheet" type="text/css" href="shared/elements/gaia-icons/gaia-icons.css"/>-->
+    <!--<link rel="stylesheet" type="text/css" href="shared/elements/gaia-theme/gaia-theme.css"/>-->
+    <!--<link rel="stylesheet" type="text/css" href="shared/elements/gaia-theme/gaia-font.css"/>-->
+    <!--<link rel="stylesheet" type="text/css" href="shared/style/progress_activity.css"/>-->
+    <link rel="stylesheet" type="text/css" href="style/main.css">
+
+    <!-- Localization -->
+    <meta name="defaultLanguage" content="en-US">
+    <meta name="availableLanguages" content="af-ZA:202107131655, ar-SA:202107131655, az-Latn-AZ:202107131655, be-BY:202107131655, bg-BG:202107131655, bn-BD:202107131655, bn-IN:202107131655, bs-BA:202107131655, cs-CZ:202107131655, da-DK:202107131655, de-DE:202107131655, el-GR:202107131655, en-GB:202107131655, en-US:202107131655, es-ES:202107131655, es-US:202107131655, en-NG:202107131655, et-EE:202107131655, fi-FI:202107131655, fr-FR:202107131655, fr-CA:202107131655, he-IL:202107131655, hi-IN:202107131655, hr-HR:202107131655, hu-HU:202107131655, hy-AM:202107131655, id-ID:202107131655, it-IT:202107131655, km-KH:202107131655, kk-KZ:202107131655, lt-LT:202107131655, lv-LV:202107131655, lo-LA:202107131655, ka-GE:202107131655, mk-MK:202107131655, ms-MY:202107131655, nb-NO:202107131655, ne-IN:202107131655, nl-NL:202107131655, pl-PL:202107131655, pt-BR:202107131655, pt-PT:202107131655, ro-RO:202107131655, ru-RU:202107131655, si-LK:202107131655, sk-SK:202107131655, sl-SI:202107131655, sq-AL:202107131655, sr-Latn-CS:202107131655, sv-SE:202107131655, sw-ZA:202107131655, ta-IN:202107131655, th-TH:202107131655, fil-PH:202107131655, tr-TR:202107131655, uk-UA:202107131655, ur-PK:202107131655, vi-VN:202107131655, xh-ZA:202107131655, zh-CN:202107131655, zh-TW:202107131655, zh-HK:202107131655, is-IS:202107131655, zu-ZA:202107131655, mo-RO:202107131655, fa-IR:202107131655, ps-AF:202107131655, uz-Cyrl-UZ:202107131655">
+    <link rel="localization" href="/locales-obj/{locale}.json">
+    <!-- Shared code -->
+    <script defer="" src="shared/js/l10n.js"></script>
+    <script defer="" src="shared/js/device_storage/enumerate_all.js"></script>
+    <script defer="" src="shared/js/mediadb.js"></script>
+    <script defer="" src="shared/js/lazy_loader.js"></script>
+    <script defer="" src="shared/js/async_storage.js"></script>
+    <script defer="" src="shared/js/image_utils.js"></script>
+    <script defer="" src="shared/js/text_normalizer.js"></script>
+    <script defer="" src="shared/js/bluetooth_helper.js"></script>
+    <script defer="" src="shared/js/media/remote_controls.js"></script>
+
+    <!-- Web components -->
+    <script defer="" src="shared/js/component_utils.js"></script>
+    <script defer="" src="shared/elements/gaia_tabs/script.js"></script>
+    <script defer="" src="shared/js/toaster.js"></script>
+    <!-- Specific code -->
+    <script defer="" src="js/utils.js"></script>
+    <script defer="" src="js/navigator.js"></script>
+    <script defer="" src="js/softkey.js"></script>
+    <script defer="" src="js/dialog.js"></script>
+    <script defer="" src="js/option_menu.js"></script>
+    <script defer="" src="js/music.js"></script>
+    <script defer="" src="js/db.js"></script>
+    <script defer="" src="js/ui/title_bar.js"></script>
+    <script defer="" src="js/ui/tab_bar.js"></script>
+    <script defer="" src="js/ui/views/mode_manager.js"></script>
+    <script defer="" src="js/ui/views/list_view.js"></script>
+    <script defer="" src="js/ui/views/subList_view.js"></script>
+    <script defer="" src="js/ui/views/search_view.js"></script>
+    <script defer="" src="js/communications.js"></script>
+  <meta content="2.2" name="appVersion"></head>
+
+  <body role="application" class="theme-media list-mode">
+    <header id="title">
+      <h1 id="title-text" data-l10n-id="music" role="heading">Music</h1>
+    </header>
+
+    <section role="region" id="region-views" class="hidden">
+      <gaia-tabs id="tabs" class="h3" underline="child" selected="0" position="top">
+        <a id="tabs-playlists"><span data-l10n-id="playlists">Playlist</span></a>
+        <a id="tabs-artists"><span data-l10n-id="artists">Artists</span></a>
+        <a id="tabs-albums"><span data-l10n-id="albums">Albums</span></a>
+        <a id="tabs-songs"><span data-l10n-id="songs">Songs</span></a>
+      </gaia-tabs>
+
+      <div id="views">
+        <div class="view tabs-playlists" id="views-list" tabindex="-1">
+          <div id="views-list-search">
+            <input placeholder="Search" id="views-list-search-input" class="p-pri focusable" data-l10n-id="search-music" maxlength="100" x-inputmode="verbatim" aria-hidden="true" type="search">
+          </div>
+          <div id="list-search" class="hidden">
+            <div id="views-search-no-result" class="search-category hidden">
+              <p id="search-no-result" data-l10n-id="search-no-result">No tracks found, try searching with a different keyword.</p>
+            </div>
+            <div id="views-search-list" class="search-category hidden">
+              <div class="sub-header p-sec" skin="dark">
+                <span id="search-list-option" data-l10n-id="search-artists">Artists</span>
+                  (<span id="search-list-count" class="search-result-count"></span>)
+              </div>
+              <div id="list-search-results" class="search-results" role="listbox">
+              </div>
+            </div>
+          </div>
+          <div id="views-list-anchor" role="listbox"></div>
+        </div>
+        <div id="views-sublist" class="view hidden" tabindex="-1">
+          <div id="views-sublist-search" class="hidden">
+            <input placeholder="Search" id="views-sublist-search-input" class="focusable p-pri" data-l10n-id="search-music" x-inputmode="verbatim" maxlength="100" aria-hidden="true" type="search">
+          </div>
+          <div id="views-sublist-create-playlist" class="hidden">
+            <label id="name-label" class="p-pri" data-l10n-id="name-label" for="views-sublist-create-playlist-input">Name</label>
+            <input id="views-sublist-create-playlist-input" class="focusable p-pri" x-inputmode="verbatim" maxlength="40" aria-labelledby="title-text name-label" type="text">
+          </div>
+          <div id="sublist-search" class="hidden">
+            <div id="sublist-views-search-no-result" class="search-category hidden">
+              <p id="search-no-result" data-l10n-id="search-no-result">No tracks found, try searching with a different keyword.</p>
+            </div>
+            <div id="sublist-views-search-result" class="search-category hidden">
+              <div class="sub-header p-sec" skin="dark">
+                <span data-l10n-id="search-titles">Tracks</span>
+                (<span id="search-sublist-count" class="search-result-count"></span>)
+              </div>
+              <div id="sublist-search-results" class="search-results" role="listbox"></div>
+            </div>
+          </div>
+          <div id="views-scrollable-sublist-anchor">
+            <div id="views-sublist-anchor" class="hidden" role="listbox"></div>
+            <div id="views-sublist-list-anchor" class="hidden" role="listbox"></div>
+            <div id="views-no-my-playlists" class="hidden">
+              <p id="no-my-playlists" data-l10n-id="no-my-playlists" role="menuitem" aria-labelledby="title-text no-my-playlists">You haven't created any playlists yet.</p>
+            </div>
+            <div id="views-no-songs-added" class="hidden">
+              <p id="no-songs-added" data-l10n-id="no-songs-added" role="menuitem" aria-labelledby="title-text no-songs-added">You haven't added any songs to this playlist yet.</p>
+            </div>
+            <div id="views-no-most-played" class="hidden">
+              <p id="no-played-songs" data-l10n-id="no-played-songs" role="menuitem" aria-labelledby="title-text no-played-songs">You haven't played any songs yet.</p>
+            </div>
+            <div id="views-no-recently-added" class="hidden">
+              <p id="no-recently-added" data-l10n-id="no-recently-added" role="menuitem" aria-labelledby="title-text no-recently-added">No new songs added recently.</p>
+            </div>
+          </div>
+        </div>
+        <div id="views-player" class="view hidden" tabindex="-1">
+          <div id="player-readout"></div>
+          <div id="player-cover">
+            <div id="player-cover-image"></div>
+          </div>
+          <div id="player-seek">
+            <div id="player-cover-caption">
+              <div id="player-cover-name"><bdi data-l10n-id="songName">Song name</bdi></div>
+              <div id="player-cover-artist" class="p-pri"><bdi data-l10n-id="songArtist">Song artist</bdi></div>
+              <div id="player-cover-album" class="p-sec"><bdi data-l10n-id="songAlbum">Song album</bdi></div>
+            </div>
+
+            <div id="player-seek-bar">
+              <progress id="player-seek-bar-progress" value="0" aria-hidden="true"></progress>
+            </div>
+            <div id="player-cover-buttons">
+              <span id="player-seek-elapsed" class="p-thi" dir="ltr">00:00</span>
+              <button id="player-album-shuffle" class="player-cover-button" data-icon="shuffle" aria-pressed="true"></button>
+              <button id="player-album-repeat" class="player-cover-button" data-icon="repeat"></button>
+              <span id="player-seek-remaining" class="p-thi" dir="ltr">00:00</span>
+            </div>
+          </div>
+          <audio id="player-audio" class="hidden"></audio>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- display messages like "Scanning", "No Songs" and "No SD Card" here -->
+    <section role="region" id="overlay" class="hidden" tabindex="-1">
+      <div id="overlay-content">
+        <p id="overlay-text" class="ul"></p>
+      </div>
+    </section>
+
+    <div class="option-menu-container hidden" tabindex="-1">
+      <div class="option-menu">
+        <div id="option-menu-header" class="header h1" data-l10n-id="options">Options</div>
+        <div class="content p-ul"></div>
+      </div>
+    </div>
+
+    <div class="dialog-container hidden" role="dialog" tabindex="-1">
+      <div class="dialog">
+        <div id="dialog-header" class="header h1" data-l10n-id="confirmation-title" role="heading" aria-labelledby="dialog-content">Confirmation</div>
+        <div id="dialog-content" class="content p-pri"></div>
+      </div>
+    </div>
+
+    <form class="skbar none-paddings visible focused" data-type="action" id="softkeyPanel">
+      <div><button id="software-keys-left" class="sk-button" data-position="left"></button></div>
+      <div><button id="software-keys-center" class="sk-button" data-position="center"></button></div>
+      <div><button id="software-keys-right" class="sk-button" data-position="right"></button></div>
+    </form>
+  </body>
+
+</html>

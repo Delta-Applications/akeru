@@ -1,0 +1,12 @@
+
+function ThumbnailDateGroup(item){if(!item){throw new Error('item should not be null or undefined.');}
+this.thumbnails=[];this.groupID=ThumbnailDateGroup.getGroupID(item);this.date=item.date;if(!ThumbnailDateGroup.Template){throw new Error('template is required while rendering.');}
+var htmlText=ThumbnailDateGroup.Template.interpolate();var dummyDiv=document.createElement('DIV');dummyDiv.innerHTML=htmlText;var domNode=dummyDiv.firstElementChild;if(!domNode){throw new Error('the template is empty');}
+this.htmlNode=domNode;this.container=domNode.querySelector('.thumbnail-group-container');this.header=domNode.querySelector('.thumbnail-group-header');if(navigator.mozL10n.readyState==='complete'){this.localize();}}
+ThumbnailDateGroup.getGroupID=function(item){var dateObj=new Date(item.date);var month=dateObj.getMonth()+1;return'group_'+dateObj.getFullYear()+'-'+
+(month<10?'0'+month:month);};ThumbnailDateGroup.compareGroupID=function(id1,id2){return id1>id2?1:(id1<id2?-1:0);};ThumbnailDateGroup.prototype.addItem=function(item){if(!item){return;}
+var _this=this;function getInsertPosition(thumbnail){if(_this.thumbnails.length===0||thumbnail.data.date>_this.thumbnails[0].data.date){return 0;}
+else if(thumbnail.data.date<_this.thumbnails[_this.thumbnails.length-1].data.date){return _this.thumbnails.length;}
+else{return MediaUtils.binarySearch(_this.thumbnails,thumbnail,function(a,b){return b.data.date-a.data.date;});}}
+var thumbnail=new ThumbnailItem(item);var insertPosition=getInsertPosition(thumbnail);this.container.insertBefore(thumbnail.htmlNode,this.container.children[insertPosition]);this.thumbnails.splice(insertPosition,0,thumbnail);return thumbnail;};ThumbnailDateGroup.prototype.getCount=function(){return this.thumbnails.length;};ThumbnailDateGroup.prototype.removeItem=function(thumbnail){var idx=this.thumbnails.indexOf(thumbnail);if(idx<0){return;}
+this.thumbnails.splice(idx,1);this.container.removeChild(thumbnail.htmlNode);};ThumbnailDateGroup.formatter=new navigator.mozL10n.DateTimeFormat();ThumbnailDateGroup.prototype.localize=function(){var date=new Date(this.date);var format=navigator.mozL10n.get('date-group-header');var formattedDate=ThumbnailDateGroup.formatter.localeFormat(date,format);this.header.textContent=formattedDate;this.thumbnails.forEach(function(thumbnail){thumbnail.localize();});};

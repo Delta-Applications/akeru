@@ -1,0 +1,241 @@
+
+progress#list-progress {
+  position: absolute;
+  top: 0.1rem;
+  z-index: 1;
+  height: 0.2rem !important;
+}
+
+progress#list-progress[value]::-moz-progress-bar {
+  background-color: var(--color-pink);
+}
+
+[mode='multi-select'] .check-icon {
+  display: block !important;
+}
+
+.check-icon {
+  position: absolute;
+  z-index: 100;
+  font-family: gaia-icons;
+  font-size: 3.2rem;
+  height: 3.2rem;
+  width: 3.2rem;
+  display: none;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+}
+
+html[dir="rtl"] .check-icon {
+  float: right;
+  margin-right: 0.4rem;
+}
+
+.thumbnail-favorite-status {
+  position: absolute;
+  z-index: 100;
+  width: 2.2rem;
+  height: 2.2rem;
+  font-size: 2rem;
+  color: var(--color-gs00);
+  text-align: right;
+  margin-top: 5.2rem;
+  font-family: bold;
+}
+
+.fullscreen-favorite-status {
+  position: absolute;
+  bottom: 1rem;
+  left: 3rem;
+  z-index: 105;
+  width: 3.2rem;
+  height: 3.2rem;
+  font-size: 3.2rem;
+  text-align: right;
+  color: var(--color-gs00);
+}
+
+.fullscreen-favorite-status, .thumbnail-favorite-status{
+  display: none;
+}
+
+.favorite .thumbnail-favorite-status, .favorite .fullscreen-favorite-status{
+  display: block;
+}
+
+.fullscreen-favorite-status.framefull-status {
+  bottom: calc(1rem + var(--softkeybar-height));
+}
+
+.thumbnail-list-img {
+  padding-left: 0.1rem;
+  padding-top: 0.1rem;
+  width: 7.8rem;
+  height: 7.8rem;
+  background-repeat: no-repeat;
+  background-size: 7.8rem 7.8rem;
+}
+
+body.thumbnailListView #thumbnails .thumbnail {
+  display: block;
+}
+
+body.enterFavorite #thumbnails .thumbnail {
+  display: none;
+}
+
+body.enterFavorite #thumbnails .thumbnail.favorite {
+  display: block;
+}
+
+.thumbnail-list-img-overlay {
+  background-color: var(--color-gs100);
+  opacity: 0.3;
+  z-index: 90;
+}
+
+.thumbnail-list-img-large {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4.8rem;
+  color: var(--color-gs45);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+}
+
+.focus > .selected > .thumbnail-list-img-overlay {
+  position: absolute;
+  top: 0.4rem;
+  left: 0.4rem;
+  width: calc(100% - 0.8rem);
+  height: calc(100% - 0.8rem);
+}
+
+.selected > .thumbnail-list-img-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.largeSize .thumbnail-list-img {
+  background-color: var(--color-gs20);
+}
+
+#thumbnails-toolbar > .button,
+#select-toolbar > .button,
+#fullscreen-toolbar > .button {
+  position: absolute;
+  font-size: 1.8rem;
+}
+
+#thumbnails-camera-button,
+#select-all-button,
+#fullscreen-zoom-button {
+  left: 1.4rem;
+}
+
+#thumbnails-options-button,
+#select-options-button,
+#fullscreen-options-button {
+  right: 1.4rem;
+}
+
+#set-wallpaper {
+  position: absolute;
+  background-color: var(--color-alpha);
+  pointer-events: none;
+  -moz-user-select: none;
+  z-index: 2;
+  left: 0;
+  top: var(--statusbar-height);
+  width: 100%;
+  height: var(--client-height);
+}
+
+#set-wallpaper > img {
+  top: 0;
+  left: 0;
+  transform-origin: 0 0 0;
+  position: absolute;
+}
+
+/**
+* crop - edit
+**/
+#edit-auto-correct-options {
+  line-height: 5.5rem;
+  text-align: center;
+}
+
+#edit-auto-correct-options a.button {
+  position: absolute;
+  width: 50%;
+  margin: 0;
+  padding: 0;
+  display: block;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  font-size: 1.4rem;
+  background-position: center;
+  line-height: 3rem;
+  height: 3rem;
+}
+
+#edit-auto-correct-options a.button.focus {
+  background-color: transparent !important;
+  border-bottom: solid var(--highlight-color) 0.3rem;
+}
+
+#edit-auto-correct-on {
+  left:0
+}
+#edit-auto-correct-off {
+  left:50%
+}
+
+html[dir="rtl"] #edit-auto-correct-on {
+  right: 0;
+}
+html[dir="rtl"] #edit-auto-correct-off {
+  right: 50%;
+}
+
+#edit-toolbar > a {
+  position: relative;
+  float: left;
+  vertical-align: top;
+  width: 20%;
+  height: 100%;
+  background-size: initial;
+}
+
+html[dir="rtl"] #edit-toolbar > a {
+  float: right;
+}
+
+@media (orientation: landscape) {
+  .thumbnail-list-img {
+    width: 100%;
+    background-size: 100%;
+  }
+
+  .check-icon {
+    font-size: 3rem;
+  }
+
+  .checkBoxContainer {
+    margin-left: 0;
+  }
+
+  .fullscreen-favorite-status {
+    margin: 0;
+    bottom: 1rem;
+  }
+}

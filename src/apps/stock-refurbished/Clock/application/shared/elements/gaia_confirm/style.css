@@ -1,0 +1,160 @@
+
+gaia-confirm {
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow: auto;
+  position: absolute;
+  height: calc(100% - var(--softkeybar-height));
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-bottom: 0;
+  
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  transition: transform ease-in-out 0.3s, visibility 0.3s;
+  
+  z-index: 1023;
+}
+gaia-confirm.insystem {
+  margin-top: 3rem;
+}
+html[dir="ltr"] gaia-confirm {
+  text-align: left;
+}
+html[dir="rtl"] gaia-confirm {
+  text-align: right;
+}
+gaia-confirm[hidden] {
+  transform: translateY(100%);
+  visibility: hidden;
+  pointer-events: none;
+}
+gaia-confirm button {
+  width: 50%;
+  border-radius: none;
+}
+gaia-confirm div.content {
+  overflow-y: auto;
+}
+gaia-confirm button.blank {
+  visibility: hidden;
+}
+h1 {
+  font-weight: 300;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  word-wrap: break-word;
+  color: var(--color-gs90);
+  background-color: var(--color-gs20);
+}
+p {
+  font-weight: normal;
+  word-wrap: break-word;
+  margin: 0;
+  padding: 1rem;
+  line-height: 2.4rem;
+  color: var(--color-gs90);
+  background: var(--color-gs10);
+}
+p.noborder {
+  border: none;
+}
+p img {
+  float: left;
+  margin-right: 2rem;
+}
+p strong {
+  font-weight: 300;
+}
+p small {
+  font-size: 1.4rem;
+  font-weight: normal;
+  color: #cbcbcb;
+  display: block;
+}
+dl {
+  border-top: 0.1rem solid #686868;
+  margin: 1rem 0 0;
+  overflow: hidden;
+  padding-top: 1rem;
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+}
+dl > dt {
+  clear: both;
+  float: left;
+  width: 7rem;
+  padding-left: 1.5rem;
+  font-weight: 500;
+  text-align: left;
+  color: #fff;
+}
+dl > dd {
+  padding-right: 1.5rem;
+  font-weight: 300;
+  text-overflow: ellipsis;
+  vertical-align: top;
+  overflow: hidden;
+}
+figure {
+  margin: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+figure img {
+  padding-right: 1.5rem;
+  flex-shrink: 0;
+}
+figure figcaption {
+  font-size: 2.1rem;
+  font-weight: 300;
+}
+ul {
+  margin: 0;
+  padding: 2rem 1.5rem;
+  border-top: 0.1rem solid #686868;
+  list-style: none;
+  font-size: 1.6rem;
+  font-weight: normal;
+}
+ul li {
+  word-wrap: break-word;
+  line-height: 2rem;
+  padding-bottom: 1.5rem;
+}
+ul li:last-child {
+  padding-bottom: 0;
+}
+ul li ul {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+*[dir="rtl"] gaia-confirm {
+  text-align: right;
+}
+*[dir="rtl"] gaia-confirm:before {
+  margin-left: auto;
+  margin-right: -0.1rem;
+}
+*[dir="rtl"] p img {
+  float: right;
+  margin-left: 2rem;
+  margin-right: auto;
+}
+*[dir="rtl"] dl > dt {
+  float: right;
+  padding-left: inherit;
+  padding-right: 1.5rem;
+  text-align: right;
+}
+*[dir="rtl"] dl > dd {
+  padding-left: 1.5rem;
+  padding-right: inherit;
+}
+*[dir="rtl"] figure img {
+  padding-left: 1.5rem;
+  padding-right: inherit;
+}

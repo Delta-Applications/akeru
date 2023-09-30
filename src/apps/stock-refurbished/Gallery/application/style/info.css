@@ -1,0 +1,36 @@
+/**
+* Info Section Style
+*
+**/
+#infoView  {
+  padding: 1rem 0.8rem;
+  margin: 0;
+}
+form#info-view section {
+  height: calc(100% - var(--softkeybar-height) - var(--statusbar-height));
+}
+#infoView .info-title {
+  margin-bottom: 0.5rem;
+}
+#infoView dt {
+  color: var(--color-gs100);
+}
+#infoView  .value {
+  padding: 0;
+  color: var(--color-gs70);
+  margin: 0 0 1rem 0;
+  word-break: break-all;
+}
+#info-view-container {
+  margin: 0;
+  overflow: auto;
+  height: calc(100% - var(--header-height));
+}
+
+#info-view {
+  top: 0;
+}
+
+#info-view .value:last-child {
+  margin-bottom: 0.3rem;
+}

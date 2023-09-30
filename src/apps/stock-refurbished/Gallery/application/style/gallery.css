@@ -1,0 +1,1158 @@
+* { -moz-box-sizing: border-box;
+  /**
+    By default do not allow any user text selection, only enable
+    for certain parts on a per-element/region area
+  */
+    outline-style: none;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  font-size: 10px;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  color: var(--color-gs00);
+  font-size: 1rem;
+  overflow: hidden;
+  background-color: var(--color-gs100);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-size: 1.4rem;
+}
+
+form[role="dialog"][data-type="confirm"],div[role="dialog"][data-type="confirm"] {
+  position: fixed;
+  z-index: 1001;
+  left: 0;
+  right: 0;
+  top: var(--statusbar-height);
+  bottom: 0;
+  background: var(--color-gs00) !important;
+}
+
+#softkeyPanel .disable {
+  opacity: 0.4;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* hide sections from screen reader when modal dialogs are showing */
+body.showing-dialog > section {
+  visibility: hidden;
+}
+
+/* All of the main views fill the screen */
+#fullscreen-view, #edit-view, #crop-view, #thumbnail-views {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  bottom: var(--softkeybar-height);
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  font-size: 2.1rem;
+  /* display will be determined by LAYOUT_MODE */
+  display: none;
+}
+
+#edit-view {
+  background: var(--color-gs90);
+}
+
+/* Bug 1111735 - !important is needed because of the shadow CSS polyfill */
+.thumbnails-list, .thumbnails-select, .thumbnails-pick {
+  /* display will be determined by LAYOUT_MODE */
+  display: none !important;
+}
+
+body.thumbnailListView .thumbnails-list,
+body.thumbnailSelectView .thumbnails-select,
+body.pickView .thumbnails-pick {
+  display: block !important;
+}
+.notransform{
+  text-transform: none;
+}
+
+body.thumbnailListView #thumbnail-views,
+body.favoriteView #thumbnail-views,
+body.thumbnailSelectView #thumbnail-views,
+body.pickView #thumbnail-views,
+body.fullscreenView #fullscreen-view,
+body.editView #edit-view {
+  display: block;
+  top: var(--statusbar-height);
+  background-color: var(--color-gs00);
+}
+body.cropView #crop-view {
+  display: block;
+  top: var(--statusbar-height);
+  background-color: var(--color-gs00);
+}
+
+body.fullscreenView #fullscreen-view {
+  top: 0;
+  bottom: 0;
+}
+
+body.fullscreenView #fullscreen-view,
+body.editView #edit-view,
+body.cropView #crop-view {
+  background-color: var(--color-gs100) !important;
+}
+
+body.editView .skbar {
+  background-color: var(--color-gs100);
+}
+
+body.fullscreenView #info-view.hidden ~ #settings-dialog.hidden ~ .skbar {
+  background-color: rgba(0, 0, 0, .5);
+}
+
+body.editView .skbar .sk-button,
+body.editView .skbar .sk-button span,
+body.fullscreenView #info-view.hidden ~ #settings-dialog.hidden ~ .skbar .sk-button {
+  color: var(--color-gs00);
+}
+
+body.fullscreenView.show-option #info-view ~ #settings-dialog ~ .skbar,
+body.fullscreenView #info-view ~ #settings-dialog ~ .skbar ~ .skbar {
+  background-color: var(--color-gs20) !important;
+}
+
+body.fullscreenView.show-option #info-view ~ #settings-dialog ~ .skbar .sk-button,
+body.fullscreenView #info-view ~ #settings-dialog ~ .skbar ~ .skbar .sk-button,
+body.fullscreenView #info-view ~ #settings-dialog ~ .skbar .sk-button span {
+  color: var(--color-gs90) !important;
+}
+
+#crop-preview-canvas,#crop-border-canvas {
+  position:absolute;
+  z-index:199;
+}
+/*
+ * The overlay content area holds the text of the overlay.
+ * It has borders and a less transparent background so that
+ * the overlay text shows up more clearly
+ */
+#overlay-content {
+  background-color:rgb(255,255,255);
+  /* We can't use shortand with background size because is not implemented yet:
+  https://bugzilla.mozilla.org/show_bug.cgi?id=570326; */
+  overflow: hidden;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  font-size: 0;
+  /* Using font-size: 0; we avoid the unwanted visual space (about 3px)
+  created by white-spaces and break lines in the code betewen inline-block elements */
+  color: var(--color-gs00);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  height: calc(100% - var(--softkeybar-height));
+}
+
+#overlay-text {
+  width: 100%;
+  color: var(--color-gs100);
+  text-align: center;
+}
+
+#overlay-text.scanning {
+  text-align: center;
+}
+
+#overlay-menu {
+  z-index: 1;
+}
+
+/* For overriding the style from BB */
+#overlay-menu.hidden {
+  display: none;
+}
+
+#overlay-menu button.hidden {
+  display: none;
+}
+
+#overlay-menu button.full {
+  margin: 0;
+}
+
+/*
+ * Thumbnails are implemented as <li> elements in a <ul> with background-image
+ * set to display the image. We use background-size: cover to automatically
+ * resize the image as needed.
+ */
+
+#thumbnails {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 0;
+  bottom: var(--softkeybar-height);
+  /* top and bottom are set depending on view below */
+  padding: 0;
+  margin: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  /*
+   * the body background is black, but remind the UA of that here to
+   * keep the thumbnail view opaque if possible.
+   */
+  background-color: var(--color-gs00);
+  will-change: scroll-position;
+  /*
+   * set it visible/hidden by LAYOUT_MODE
+   */
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/*
+ * The thumbnail list appears in regular browsing mode, in selection mode,
+ * and in pick mode.
+ */
+body.thumbnailSelectView #thumbnails,
+body.favoriteView #thumbnails,
+body.pickView #thumbnails,
+body.thumbnailListView #thumbnails {
+  visibility: visible;
+  pointer-events: auto;
+  bottom: 0;
+}
+
+body.thumbnailSelectView #thumbnails,
+body.pickView #thumbnails {
+  top: var(--header-height);
+}
+
+.thumbnail-group-header {
+  font-weight: 400;
+  color: var(--color-gs70);
+  -moz-padding-start: 0.5rem;
+  height: 2.4rem;
+  line-height: 2.4rem;
+  width:100%;
+  float:left;
+  background-color: var(--color-gs00);
+}
+
+/* Bug 968311 - Keep Gallery in scrollable
+ * background color. Need in all four
+ * containers below.
+ */
+#thumbnails > li,
+#thumbnails > li > ul,
+.thumbnail-group-container {
+  background-color: #0E1214;
+}
+
+.thumbnail-group-container {
+  padding: 0;
+}
+
+.thumbnail-group-header.hidden {
+  display: none;
+}
+
+#thumbnails>li {
+  /* no list item bullets */
+  list-style-type: none;
+}
+
+.thumbnail {
+  position: relative;
+}
+
+.thumbnail[data-columncount="3"] {
+  margin-bottom: 0.3rem;
+  padding: 0;
+  float: left;
+  -moz-user-select: none;
+  width: calc((100% - 0.6rem) / 3 );
+  height: 0;
+  padding-bottom: calc((100% - 0.6rem) / 3 );
+  margin-right: 0.3rem;
+}
+
+.thumbnail[data-columncount="3"]:nth-child(3n) {
+  margin-right: 0;
+}
+
+body.enterFavorite #thumbnails .thumbnail.favorite {
+  margin-right: 0!important;
+}
+
+body.enterFavorite #thumbnails .thumbnail.favorite.favorite-margin-right {
+  margin-right: 0.3rem!important;
+}
+
+.thumbnail.focus {
+  outline: solid var(--highlight-color) 0.4rem;
+  outline-offset: -0.4rem;
+  background-color: transparent !important;
+}
+
+/* RTL modifications */
+html[dir=rtl] #thumbnails-number-selected {
+  direction: rtl;
+}
+
+/*
+ * give the very last thumbnail a large bottom margin so that it doesn't
+ * get stuck hidden behind the overlaid toolbar.
+ */
+#thumbnails>li:last-child {
+  margin-bottom: 4.5rem;
+}
+
+#thumbnail-list-title2,
+#thumbnails-number-selected {
+  padding-right: 1rem !important;
+  text-align: right !important;
+}
+
+/**
+ * 1. Make sure icon is aligned inside circle
+ */
+
+#frames {
+  position: absolute;
+  top: var(--statusbar-height);
+  left: 0;
+  width: 100%;
+  height: var(--client-height);
+  padding: 0;
+  margin: 0;
+}
+
+#frames.frameFullScreen{
+  top:0;
+  height:100%;
+}
+
+.frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100%);
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  -moz-user-select: none;
+  will-change: scroll-position;
+}
+
+.frame > .image-view {
+  top: 0;  /* javascript modifies this position with a transform */
+  left: 0;
+  position: absolute;
+  border-width: 0;
+  padding: 0;
+  margin: 0;
+  pointer-events: none;
+  -moz-user-select: none;
+  transition: opacity 100ms ease-in;
+  will-change: opacity;
+  backface-visibility: hidden;
+}
+
+.frame > .image-view-zoom {
+  transition: opacity 100ms ease-in, transform 200ms ease;
+  will-change: opacity, transform;
+}
+
+.frame > video {
+  transform-origin: 0 0;
+}
+
+/* localization */
+body.hidden *[data-l10n-id] {
+  visibility: hidden;
+}
+
+*[dir=rtl] .thumbnail {
+  float: right;
+}
+
+#mask-background {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-gs100);
+  opacity: 0.9;
+  color: var(--color-gs00);
+  z-index: 1;
+  font-weight: 400;
+  justify-content: center;
+  text-align: center;
+}
+
+/* the indeterminate progress bar displayed while scanning */
+#progress {
+  position: absolute;
+  top: var(--header-height);
+  left: 0;
+  right: 0;
+  height: 0.2rem;
+  border: none;
+  overflow: hidden;
+  z-index: 1002; /* has to be higher than pick-top */
+}
+
+gaia-progress {
+  margin-top: 0.1rem;
+  height: 0.2rem !important;
+  position: absolute;
+  top: calc(var(--statusbar-height));
+  z-index: 1003;
+}
+
+#option-menu {
+  z-index: 1004;
+}
+
+@keyframes throb {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-2.1rem);
+  }
+}
+
+#spinner {
+  position: absolute;
+  top: calc(50% - 1.5rem);
+  left: calc(50% - 1.5rem);
+  z-index: 1000;
+}
+
+/* override progress_activity.css */
+#spinner.hidden {
+  display: none;
+}
+
+/* buttons */
+a.button {
+  display: block;
+  padding: 0;
+  margin: 0;
+  border-width: 0;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 3rem;
+
+  /* for buttons that display text */
+  font-size: 1.4rem;
+  text-align: center;
+  line-height: 3rem;
+}
+
+a.button.focus {
+  background-color: var(--color-blue);
+  border: none;
+  color: var(--color-gs00);
+}
+
+a.button.disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+footer {
+  background: rgba(0, 0, 0, 0.75);
+  height: 4.5rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  /* box-shadow: 0 -0.2rem 0.5rem rgba(50, 50, 50, 0.75); */
+}
+
+#fullscreen-toolbar {
+  height: 4.5rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 0;
+  visibility: visible;
+  direction: ltr; /* buttons in toolbar are not directional and stays LTR */
+
+  /**
+    Bug 991367 - This is a temporary workaround for an issue where
+    the `tap` event on the video player "Pause" button causes a
+    `click` event to bleed through to the "Camera" button on the
+    toolbar. To get around this issue, we add 0.1s delay before
+    restoring the toolbar from hidden state and transition the
+    `visibility` property as well.
+   */
+  transition: visibility 0.2s linear 0.1s, transform 0.2s linear 0.1s;
+}
+
+#fullscreen-toolbar > a {
+  display: inline-block;
+  width: 20%;
+  height: 100%;
+}
+
+#fullscreen-view.toolbar-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#pick-header {
+  /*
+   * we want the user to be able to push the close button even if
+   * an overlay is displayed, so be sure that this titlebar/toolbar
+   * is above the overlay
+   */
+  z-index: 2;
+}
+
+
+
+#edit-preview-area {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: var(--header-height);
+  bottom: 0;
+  z-index: 1;
+}
+#crop-frame {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.crop-top {
+    top: 0 !important;
+}
+
+#edit-preview-area {
+  margin: 0.35rem 0;
+  bottom: 4rem;
+}
+
+#edit-preview-canvas {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+#edit-crop-canvas {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#edit-options {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3.5rem;
+  bottom: 0;
+  z-index: 100;
+}
+.edit-options-bar-exposure {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4.1rem;
+  bottom: 0;
+  z-index: 100;
+}
+
+#edit-options.exposure {
+  height: 4rem;
+}
+
+#edit-options.filters,
+#edit-options.cropRect {
+  height: 3rem;
+}
+
+#edit-options.autoCorrect {
+  height: 2.6rem;
+}
+
+#edit-options.rotate {
+  display: none;
+}
+
+/* The progress has higer selectivity css in progress.css to control display.
+ * The hidden attribute in progress is not working in this case. We need to use
+ * css to override it. */
+#save-progress.hidden {
+  display: none;
+}
+
+#save-progress::-moz-progress-bar {
+  background-color: var(--highlight-color) !important;
+}
+
+/* All the effect options radio buttons share these styles */
+#edit-filters-options a.radio.button {
+  display: block;
+  top: 1rem;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  border-right: solid var(--color-gs100) 0.1rem;
+  overflow: hidden;
+  float: left;
+}
+
+html[dir="rtl"] #edit-filters-options a.radio.button {
+  float: right;
+}
+
+#edit-filters-options a.selected.radio.button {
+  outline: solid #00aacc 0.2rem;
+  outline-offset: -0.2rem;
+}
+
+#edit-filters-options .focus {
+  background-color: transparent !important;
+  border: 0.3rem solid var(--highlight-color, #00B965) !important;
+}
+
+html[dir="rtl"] #edit-crop-options a.button {
+  float: right;
+}
+
+#edit-crop-options a.selected.radio.button {
+  outline: solid #00aacc 0.2rem;
+  outline-offset: -0.2rem;
+}
+
+#edit-filters-options {
+  height: 3rem;
+  background: url('images/filters.png') no-repeat;
+  margin-top: 0;
+}
+#edit-crop-options {
+  display: flex;
+  justify-content: space-around;
+}
+
+#edit-crop-options a.button {
+  flex: 0 0 auto;
+  width: 3rem;
+  height: 3rem;
+  margin: 0;
+  border-width: 0;
+  border-right: solid var(--color-gs100) 0.1rem;
+  overflow: hidden;
+  font-size: 1.4rem;
+  background-position: center;
+}
+
+#edit-crop-options a.focus, #edit-toolbar a.focus {
+  background-color: transparent !important;
+}
+
+#edit-crop-options a.focus:after, #edit-toolbar a.focus:after {
+  content: '';
+  display: inline-block;
+  height: 0.3rem;
+  width: 100%;
+  vertical-align: bottom;
+  background-color: var(--highlight-color, #00B965) !important;
+}
+
+#edit-crop-arrow {
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--color-red);
+  margin: 0 auto;
+  background: url(./images/ic_horizontal_arrow.png) center center no-repeat;
+}
+
+.rotate90 {
+  transform: rotate(90deg);
+}
+
+#edit-crop-aspect-free {
+  background-image: url('icons/iconaction_camera_freecrop_30x30.png');
+}
+#edit-crop-aspect-portrait {
+  background-image: url('icons/iconaction_camera_crop2x3_30x30.png');
+}
+#edit-crop-aspect-landscape {
+  background-image: url('icons/iconaction_camera_crop3x2_30x30.png');
+}
+#edit-crop-aspect-square {
+  background-image: url('icons/iconaction_camera_crop1x1_30x30.png');
+}
+
+/* instead of using images inside the buttons above, just draw boxes */
+#edit-free-frame {
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+  width: 3rem;
+  height: 2.5rem;
+  border: dotted var(--color-gs00) 0.1rem;
+}
+
+#edit-portrait-frame {
+  margin-left: 1.1rem;
+  margin-top: 0.6rem;
+  width: 2.6rem;
+  height: 3.9rem;
+  border: solid var(--color-gs00) 0.1rem;
+}
+
+#edit-landscape-frame {
+  margin-left: 0.5rem;
+  margin-top: 1.2rem;
+  width: 3.9rem;
+  height: 2.6rem;
+  border: solid var(--color-gs00) 0.1rem;
+}
+
+#edit-square-frame {
+  margin-left: 0.8rem;
+  margin-top: 0.9rem;
+  width: 3.2rem;
+  height: 3.2rem;
+  border: solid var(--color-gs00) 0.1rem;
+}
+
+/* All the effects radio buttons share these styles */
+#edit-filters-options > a.radio.button {
+  width: 20%;
+}
+
+#edit-filters-none {
+  left:0;
+}
+#edit-filters-bw {
+  left:20%
+}
+#edit-filters-sepia {
+  left:40%
+}
+#edit-filters-bluesteel {
+  left:60%
+}
+#edit-filters-faded {
+  left:80%
+}
+
+
+
+a.filter-bw {
+  filter: url(../index.html#filter-bw);
+}
+a.filter-sepia {
+  filter: url(../index.html#filter-sepia);
+}
+a.filter-bluesteel {
+  filter: url(../index.html#filter-bluesteel);
+}
+a.filter-faded {
+  filter: url(../index.html#filter-faded);
+}
+
+#edit-toolbar {
+  position: absolute;
+  height: var(--softkeybar-height);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 0;
+  transition: transform 0.2s linear;
+  direction: ltr; /* buttons in toolbar are not directional and stays LTR */
+  background-color: #272727;
+  z-index: 100;
+}
+
+#edit-exposure-button {
+  left: 0;
+}
+
+html[dir="rtl"] #edit-exposure-button {
+  transform: scale(-1, 1);
+}
+
+html[dir="rtl"] #edit-rotate-button {
+  transform: scale(-1, 1);
+}
+
+/* Override the styles from shared/styles/status.css */
+#edit-copy-save-banner.banner, #edit-auto-correct-banner.banner {
+  position: absolute;
+  left: 0;
+  bottom: 4.5rem;
+  background-color: #0E1214;
+}
+
+#edit-copy-save-banner > p, #edit-auto-correct-banner > p {
+  text-align: center;
+}
+
+#edit-exposure-button {
+  background-image: url('icons/edit_bar_exposure.png');
+}
+
+#edit-rotate-button {
+  background-image: url('icons/edit_bar_rotate.png');
+}
+
+#edit-crop-button {
+  background-image: url('icons/edit_bar_crop.png');
+}
+
+#edit-filters-button {
+  background-image: url('icons/edit_bar_effects.png');
+}
+
+#edit-auto-correct-button {
+  background-image: url('icons/edit_bar_auto_correct.png');
+}
+
+/*
+ * All of these slider styles are for the exposure compensation slider
+ * If this app ever needs another slider, we'll have lots of name
+ * collisions.  Ideally, this slider stuff should all be packaged up
+ * into a reusable component. But this is one-off for now
+ */
+#exposure-slider {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4rem;
+  font-size: 1.4rem;
+  background-color: var(--color-gs100);
+}
+
+#sliderbar {
+  position: relative;
+  height: 1.2rem;
+  padding: 0;
+  margin: 0;
+  background: url(images/slider-background.png);
+}
+
+#sliderline {
+  position: absolute;
+  height: 0.4rem;
+  top: 0.4rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  margin: 0;
+  background: url('images/exposure_slidebar.png') no-repeat;
+  border: none;
+}
+
+#sliderthumb {
+  position: absolute;
+  width: 0.4rem;
+  height: 1.2rem;
+  background: url('images/exposure_slider.png') no-repeat center center;
+  font: 0/0 a;
+}
+
+#sliderlabels {
+  position: relative;
+  height: 1.7rem;
+  padding: 0;
+  margin: 0.4rem 0;
+  -moz-padding-start: 0.4rem;
+}
+
+html[dir="rtl"] #sliderlabels {
+  -moz-padding-start: 0.6rem;
+}
+
+.sliderlabel {
+  position: relative;
+  height: 1.7rem;
+  color: var(--color-gs00);
+  float: left;
+  direction: ltr;
+  width: 3.3rem;
+  text-align: center;
+}
+html[dir="rtl"] .sliderlabel{
+  float: right;
+}
+
+  /**
+  * form Style
+  *
+  **/
+ul#list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: "gaia-icons";
+}
+ul#list > li {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+  position: relative;
+}
+ul#list > li span {
+  text-decoration: none;
+  outline: 0 none;
+  color: var(--color-gs100);
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+ul#list > li span:first-child {
+  margin: 0;
+}
+.settings ul#list > li span {
+  color: var(--color-gs100);
+}
+ul#list > li.focus span,
+ul#list > li.focus select {
+  color: var(--color-gs00) !important;
+}
+ul#list > li >span > select {
+  font-style: normal;
+  text-shadow: none;
+  color: var(--color-gs70);
+  line-height: normal;
+  background: none repeat scroll 0% 0% transparent;
+  border: medium none;
+  width: 100%;
+  min-height: 0px;
+  text-indent: -0.3rem;
+}
+
+#settings-dialog.hidden {
+  display: none !important;
+  height: 0;
+  overflow: hidden;
+}
+
+.menu-item-forward,
+[role="dialog"][data-type="action"] > menu > button[data-hasmenu="true"]:after {
+  font-family: "gaia-icons";
+  content: "forward" !important;
+  position: absolute;
+  top: calc(50% - 1.5rem);
+  right: 0.5rem;
+  font-size: 3.2rem !important;
+  color: var(--color-gs45);
+  left: auto !important;
+}
+
+html[dir="rtl"] [role="dialog"][data-type="action"] > menu > button[data-hasmenu="true"]:after {
+  transform: rotate(180deg);
+  left: 0.5rem !important;
+  right: unset;
+}
+
+html[dir="rtl"] .menu-item-forward {
+  transform: rotate(180deg);
+  left: 0.5rem;
+  right: unset;
+}
+
+li.focus.menu-item:after,
+[role="dialog"][data-type="action"] > menu > button[data-hasmenu="true"].focus:after {
+  color: var(--color-gs00);
+}
+
+#edit-view #edit-title {
+  background-color: var(--color-gs100);
+  height: 100%;
+  line-height: 2.8rem;
+  color: var(--color-gs00);
+}
+
+header h1 {
+  line-height: var(--header-height);
+  background: var(--color-gs00);
+  color: var(--color-gs90);
+  padding: 0 1rem;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.statusbar-placeholder {
+  width: 100%;
+  height: var(--statusbar-height);
+  background-color: var(--header-background);
+}
+
+#settings-dialog {
+  top: 0;
+}
+
+@media only screen and (orientation: landscape) {
+  #overlay-content {
+    display: flex;
+    align-items: center;
+  }
+
+  #overlay-text {
+    width: 100%;
+    padding-top: 0;
+  }
+
+  /* 4 thumbnails for each row in landscape mode. */
+  .thumbnail[data-columncount="4"] {
+    margin-bottom: 0.4rem;
+    float: left;
+    width: calc((100% - 1.2rem) / 4);
+    height: 0;
+    padding-bottom: calc((100% - 1.2rem) / 4);
+    margin-right: 0.4rem;
+  }
+
+  .thumbnail:nth-child(4n) {
+    margin-right: 0;
+  }
+
+  #edit-preview-area {
+    margin: 0;
+    bottom: var(--softkeybar-height);
+  }
+
+  a.button {
+    border-right: none !important;
+  }
+
+  a.button.focus {
+    background-color: transparent !important;
+  }
+
+  a.button.focus::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.3rem;
+    background-color: var(--highlight-color);
+  }
+
+  #edit-filters-options {
+    height: 4rem;
+    background: url('images/filters_lnd.png') no-repeat;
+  }
+
+  #edit-filters-options > a.radio.button {
+    position: relative;
+    top: auto;
+    left: auto !important;
+    border-right: 0.1rem solid var(--color-gs100) !important;
+  }
+
+  #edit-filters-options > a.radio.button.focus::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0.3rem solid var(--highlight-color);
+    box-sizing: border-box;
+  }
+
+  #edit-filters-options > a.radio.button.focus::after {
+    content: unset;
+  }
+
+  #edit-options {
+    height: auto !important;
+  }
+
+  #edit-toolbar,
+  #exposure-slider,
+  .edit-options-bar {
+    background-color: #2a2a2a !important;
+  }
+
+  #edit-crop-options,
+  #edit-auto-correct-options {
+    height: var(--softkeybar-height);
+  }
+
+  #sliderbar {
+    margin-top: 0.4rem;
+  }
+
+  #sliderline {
+    background-position: center;
+    background-size: 100%;
+  }
+
+  #sliderlabels {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-top: 0;
+  }
+
+  #sliderlabels > div {
+    position: static;
+    width: calc(100% / 7);
+    text-align: center;
+    -moz-margin-start:  0;
+  }
+}
+
+select[name="sortby"], select[name="groupby"] {
+  width: 0;
+  height: 0;
+  border: 0;
+}
+
+#submenu_setas .menu-button {
+  line-height: 2.2rem;
+  word-wrap: break-word;
+  white-space: normal
+}

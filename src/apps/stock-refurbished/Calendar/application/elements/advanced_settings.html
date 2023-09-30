@@ -1,0 +1,29 @@
+<element name="advanced-settings" extends="section">
+  <template>
+    <header >
+      <h1 id="advanced-settings-header" data-l10n-id="advanced-settings-header">Calendar Settings</h1>
+    </header>
+
+    <section class="content">
+      <div class="errors"></div>
+      <header class="reminders" skin="organic">
+        <span class="p-sec" data-l10n-id="advanced-settings-reminders">Reminders</span>
+      </header>
+
+      <ol class="settings-list link-list" role="presentation">
+        <li class="focusable">
+          <label id="default-event-alarm">
+            <span data-l10n-id="events" data-title-class="reminder" class="p-pri reminder option-title">Events Reminder</span>
+            <span class="button"></span>
+          </label>
+        </li>
+        <li class="focusable">
+          <label id="default-allday-alarm">
+            <span data-l10n-id="allday-events" data-title-class="allday-reminder" class="p-pri allday-reminder option-title">All-day Events Reminder</span>
+            <span class="button"></span>
+          </label>
+        </li>
+      </ol>
+    </section>
+  </template>
+</element>

@@ -1,0 +1,29 @@
+{
+  "NokiaTune.ogg": {"l10nID": "NokiaTune"},
+  "Arrival.ogg": {"l10nID": "Arrival"},
+  "Barbell.ogg": {"l10nID": "Barbell"},
+  "Bird.ogg": {"l10nID": "Bird"},
+  "Bounce.ogg": {"l10nID": "Bounce"},
+
+  "Brikabrak.ogg": {"l10nID": "Brikabrak"},
+  "Buzzer.ogg": {"l10nID": "Buzzer"},
+  "Cadenza.ogg": {"l10nID": "Cadenza"},
+  "Chirp.ogg": {"l10nID": "Chirp"},
+  "Delays.ogg": {"l10nID": "Delays"},
+
+  "Distance.ogg": {"l10nID": "Distance"},
+  "Earring.ogg": {"l10nID": "Earring"},
+  "Electronic.ogg": {"l10nID": "Electronic"},
+  "Imperial.ogg": {"l10nID": "Imperial"},
+  "Karimba.ogg": {"l10nID": "Karimba"},
+
+  "Marbles.ogg": {"l10nID": "Marbles"},
+  "Monkey_drum.ogg": {"l10nID": "Monkey_drum"},
+  "Nostalgia.ogg": {"l10nID": "Nostalgia"},
+  "Ring_ring.ogg": {"l10nID": "Ring_ring"},
+  "Spirals.ogg": {"l10nID": "Spirals"},
+
+  "Stones.ogg": {"l10nID": "Stones"},
+  "Timer.ogg": {"l10nID": "Timer"},
+  "Tip_toe.ogg": {"l10nID": "Tip_toe"}
+}

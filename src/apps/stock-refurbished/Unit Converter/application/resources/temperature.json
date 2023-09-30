@@ -1,0 +1,81 @@
+{
+  "rate": [
+    {
+      "id": 0,
+      "n1": "°C",
+      "n2": "°C",
+      "r": "1*x",
+      "r2": "x/1",
+      "defaultFrom": true,
+      "defaultTo": false,
+      "fullFrom": "Celsius",
+      "fullTo": "Celsius"
+    },
+    {
+      "id": 1,
+      "n1": "°C",
+      "n2": "°F",
+      "r": "1.8*x+32",
+      "r2": "(x-32)/1.8",
+      "defaultFrom": false,
+      "defaultTo": true,
+      "fullFrom": "Celsius",
+      "fullTo": "Fahrenheit"
+    },
+    {
+      "id": 2,
+      "n1": "°C",
+      "n2": "°K",
+      "r": "x+273.15",
+      "r2": "x-273.15",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Celsius",
+      "fullTo": "Kelvin"
+    },
+    {
+      "id": 3,
+      "n1": "°C",
+      "n2": "°N",
+      "r": "x*0.33",
+      "r2": "x/0.33",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Celsius",
+      "fullTo": "Newton"
+    },
+    {
+      "id": 4,
+      "n1": "°C",
+      "n2": "°De",
+      "r": "(100-x)*1.5",
+      "r2": "100-x/1.5",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Celsius",
+      "fullTo": "Delisle"
+    },
+    {
+      "id": 5,
+      "n1": "°C",
+      "n2": "°R",
+      "r": "(x+273.15)*1.8",
+      "r2": "x/1.8-273.15",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Celsius",
+      "fullTo": "Rankine"
+    },
+    {
+      "id": 6,
+      "n1": "°C",
+      "n2": "°Ré",
+      "r": "x*0.8",
+      "r2": "x/0.8",
+      "defaultFrom": false,
+      "defaultTo": false,
+      "fullFrom": "Celsius",
+      "fullTo": "Réaumur"
+    }
+  ]
+}

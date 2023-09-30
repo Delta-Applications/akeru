@@ -1,0 +1,110 @@
+* {
+  /**
+    By default do not allow any user text selection, only enable
+    for certain parts on a per-element/region area
+  */
+    -moz-user-select: none;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+  background-color: #000;
+  overflow: hidden;
+  height: 100%;
+}
+
+section {
+  width: 100%;
+  height: calc(100% - var(--statusbar-height));
+  top: var(--statusbar-height);
+  position: absolute;
+
+}
+
+/* for the pick activity */
+#wallpapers {
+  position: absolute;
+  overflow-y:scroll;
+  top: var(--header-height);
+  bottom: var(--softkeybar-height);
+}
+
+.wallpaper {
+  position: relative;
+  overflow: hidden;
+  float: left;
+  width: 33%;
+  -moz-margin-end: 0.1rem;
+  margin-bottom: 0.1rem;
+}
+
+html[dir="rtl"] .wallpaper {
+  float: right;
+}
+
+#wallpapers .wallpaper:nth-child(3n) {
+  -moz-margin-end: 0;
+}
+
+/* for the share activity */
+#preview {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow:hidden;
+  /*
+   * The image positioning code in share.js assumes the preview image
+   * is positioned in the upper-left corner
+   */
+  direction: ltr;
+}
+
+/* like .frame in gallery.css */
+#frame {
+  position: absolute;
+  top: var(--header-height);
+  left: 0;
+  width: 100%;
+  bottom: var(--softkeybar-height);
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  -moz-user-select: none;
+}
+
+#frame > .image-view {
+  top: 0;  /* javascript modifies this position with a transform */
+  left: 0;
+  position: absolute;
+  border-width: 0;
+  padding: 0;
+  margin: 0;
+  pointer-events: none;
+  -moz-user-select: none;
+}
+
+#buttons {
+  -moz-box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 7rem;
+  padding: 1.5rem 1rem;
+  font-size: 0;
+  white-space: nowrap;
+}
+
+#buttons button {
+  width: calc((100% - 2rem) / 2);
+  margin: 0 0.5rem;
+}
+
+.wallpaper.focus{
+  outline: 0.3rem solid  #00B965;
+  outline-offset: -0.3rem;
+}

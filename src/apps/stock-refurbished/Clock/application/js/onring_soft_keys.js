@@ -1,0 +1,8 @@
+
+(function(exports){const leftKey=1;const middleKey=2;const rightKey=3;window.onload=()=>{window.addEventListener('visibilitychange',function(){if(!document.hidden){window.focus();}}.bind(this));window.addEventListener('keydown',function(event){var clockType=checkAlarmOrTimer();switch(event.key){case'BrowserBack':case'Backspace':case'VolumeUp':case'VolumeDown':if(clockType==='alarm'){snooze();}else if(clockType==='timer'){stop();}
+event.preventDefault();break;case'EndCall':event.preventDefault();stop();break;default:break;}});var alarmMenu={items:[{name:'Snooze',l10nId:'kai-snooze',priority:leftKey,method:function(){snooze();}},{name:'Stop',l10nId:'kai-stop',priority:rightKey,method:function(){stop();}}]};var timerMenu={items:[{name:'Stop',l10nId:'stop',priority:middleKey,method:function(){stop();}}]};OptionHelper.optionParams['alarmMenu']=alarmMenu;OptionHelper.optionParams['timerMenu']=timerMenu;OptionHelper.updateMenu=function(clockType){if(!clockType){clockType=checkAlarmOrTimer();}
+if(clockType==='alarm'){OptionHelper.show('alarmMenu');}else if(clockType==='timer'){OptionHelper.show('timerMenu');}else{setTimeout(OptionHelper.updateMenu,100);}}
+function checkAlarmOrTimer(){var stop=document.querySelector('#ring-button-stop');var stopCSS=window.getComputedStyle(stop,null);var snooze=document.querySelector('#ring-button-snooze');var snoozeCSS=window.getComputedStyle(snooze,null);if(stopCSS.getPropertyValue('visibility')=='visible'){if(snoozeCSS.getPropertyValue('display')=='none'){return'timer';}else{return'alarm';}}else{return null;}}
+function snooze(){document.querySelector('#ring-button-snooze').click();}
+function stop(){document.querySelector('#ring-button-stop').click();}
+OptionHelper.updateMenu();window.focus();};})(window);

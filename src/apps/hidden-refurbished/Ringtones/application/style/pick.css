@@ -1,0 +1,117 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 10px;
+  background-color: var(--header-background);
+  overflow: hidden;
+  -moz-user-select: none;
+  font-family: 'Open Sans';
+}
+
+#header-title {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: var(--header-height);
+  background-color: var(--header-background);
+  margin: 0;
+  color: var(--color-gs90, #323232);
+  text-align: center;
+  line-height: var(--header-height);
+  font-weight: 600;
+}
+
+section[role="region"] {
+  width: 100%;
+  height: calc(100% - var(--statusbar-height));
+  top: var(--statusbar-height);
+  position: absolute;
+  background-color: var(--color-gs00);
+}
+
+article {
+  position: absolute;
+  top: var(--header-height);
+  right: 0;
+  bottom: 30px;
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  will-change: scroll-position;
+}
+
+ul[data-type="edit"] {
+  overflow: visible;
+}
+
+[data-type="list"] {
+  padding: 0 0rem!important;
+}
+
+[data-type="list"] li p:first-of-type {
+  padding: 1rem 0 0;
+}
+
+[data-type="list"] li p:first-of-type:last-of-type {
+  padding: 0.4rem 0;
+}
+
+[data-type="list"] ul[data-type="edit"] li > .pack-radio {
+  font-family: "gaia-icons";
+  left: 10px;
+}
+
+[data-type="list"] .focus,
+[data-type="list"] .focus p,
+[data-type="list"] .focus p:first-of-type {
+  color: #fff;
+}
+
+[data-type="list"]  ul[data-type="edit"] li > .pack-radio input ~ span::after {
+  -moz-margin-start: 19.5rem !important;
+  width: 3.2rem;
+  height: 3.2rem;
+  top: 0;
+  margin: 0;
+}
+
+label.pack-radio input ~ span::after {
+  font-size: var(--font-label) !important;
+  top: 0;
+  margin: 0;
+}
+
+li {
+  z-index: 1;
+  padding: 0 3rem 0 1rem !important;
+  line-height: 6rem;
+}
+
+li:active:before {
+  /* This makes a highlight slightly *bigger* than the li so that it fills up
+     the whole list item. It causes a reflow, but that's not a big deal here. */
+  position: absolute;
+  left: -1.5rem;
+  width: 100vw;
+  height: 5.9rem; /* Subtract 0.1rem for the bottom border. */
+  background-color: rgba(0, 213, 255, 0.3);
+  z-index: -1;
+  content: '';
+}
+
+@media only screen and (orientation: landscape) {
+  [data-type="list"] li > .pack-radio input ~ span::after {
+    -moz-margin-start: 27.5rem !important;
+  }
+}
+
+.sub-header {
+  color: var(--color-gs70);
+  background-color: var(--color-gs10);
+  font-size: var(--font-p-sec);
+  padding: 0 1rem;
+  height: calc(1.0rem + var(--font-p-sec));
+}
+
