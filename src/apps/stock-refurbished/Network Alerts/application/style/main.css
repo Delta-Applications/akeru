@@ -60,8 +60,8 @@ h1 {
   height: var(--header-height);
   line-height: var(--header-height);
   padding: 0 1rem;
-  background-color: var(--header-background);
-  color: var(--color-gs00);
+  background-color: var(--color-gs00);
+  color: var(--header-background);
 }
 
 .scrollBar {
