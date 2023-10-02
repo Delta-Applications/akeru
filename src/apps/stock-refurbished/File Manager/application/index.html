@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+      <meta name="theme-color" content="rgb(0,0,0)">
+      <title>FileManager</title>
+      <!-- Localization -->
+      <meta name="defaultLanguage" content="en-US">
+      <meta name="availableLanguages" content="af-ZA:202107131655, ar-SA:202107131655, az-Latn-AZ:202107131655, be-BY:202107131655, bg-BG:202107131655, bn-BD:202107131655, bn-IN:202107131655, bs-BA:202107131655, cs-CZ:202107131655, da-DK:202107131655, de-DE:202107131655, el-GR:202107131655, en-GB:202107131655, en-US:202107131655, es-ES:202107131655, es-US:202107131655, en-NG:202107131655, et-EE:202107131655, fi-FI:202107131655, fr-FR:202107131655, fr-CA:202107131655, he-IL:202107131655, hi-IN:202107131655, hr-HR:202107131655, hu-HU:202107131655, hy-AM:202107131655, id-ID:202107131655, it-IT:202107131655, km-KH:202107131655, kk-KZ:202107131655, lt-LT:202107131655, lv-LV:202107131655, lo-LA:202107131655, ka-GE:202107131655, mk-MK:202107131655, ms-MY:202107131655, nb-NO:202107131655, ne-IN:202107131655, nl-NL:202107131655, pl-PL:202107131655, pt-BR:202107131655, pt-PT:202107131655, ro-RO:202107131655, ru-RU:202107131655, si-LK:202107131655, sk-SK:202107131655, sl-SI:202107131655, sq-AL:202107131655, sr-Latn-CS:202107131655, sv-SE:202107131655, sw-ZA:202107131655, ta-IN:202107131655, th-TH:202107131655, fil-PH:202107131655, tr-TR:202107131655, uk-UA:202107131655, ur-PK:202107131655, vi-VN:202107131655, xh-ZA:202107131655, zh-CN:202107131655, zh-TW:202107131655, zh-HK:202107131655, is-IS:202107131655, zu-ZA:202107131655, mo-RO:202107131655, fa-IR:202107131655, ps-AF:202107131655, uz-Cyrl-UZ:202107131655">
+      <link rel="localization" href="/locales-obj/{locale}.json">
+      
+      <script defer="" src="shared/js/l10n.js"></script>
+      <script defer="" src="shared/js/l10n_date.js"></script>
+
+      <link rel="stylesheet" type="text/css" href="shared/elements/gaia-theme/gaia-theme.css">
+      <link rel="stylesheet" type="text/css" href="shared/elements/gaia-theme/gaia-font.css">
+      <link rel="stylesheet" type="text/css" href="/shared/elements/gaia-icons/gaia-icons.css">
+
+      <!-- Web Components -->
+      <script defer="" src="shared/js/mime_mapper.js"></script>
+      <script defer="" src="shared/js/toaster.js"></script>
+      <link rel="stylesheet" href="dist/style.css">
+      <link rel="stylesheet" type="text/css" href="shared/style/toaster.css">
+
+    <meta content="2.2" name="appVersion"></head>
+    <body role="application" class="theme-productivity">
+      <div id="root">
+      </div>
+      <div id="ssr">
+        <div class="statusbar-placeholder"></div>
+        <div class="fm-header h1">
+          <p data-l10n-id="filemanager">File Manager</p>
+        </div>
+        <ul id="main-list"></ul>
+        <form dir="ltr" data-type="action" id="softkeyPanel" class="skbar none-paddings visible focused">
+          <button data-l10n-id="" data-position="left" class="sk-button" id="software-keys-left"></button>
+          <button data-l10n-id="open" data-position="center" class="sk-button" id="software-keys-center">Open</button>
+          <button data-l10n-id="search" data-position="right" class="sk-button" id="software-keys-right">Search</button>
+        </form>
+      </div>
+      <script defer="" src="dist/bundle.js"></script>
+    
+  </body>
+
+</html>

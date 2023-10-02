@@ -3,7 +3,7 @@
 }
 
 :root {
-  --softkeybar-background-color: var(--color-gs20, #ccc);
+  --softkeybar-background-color: var(--color-gs00, #ccc);
   --softkey-color: var(--color-gs90, #323232);
   --softkey-color--icon: var(--color-gs70, #6a6a6a);
   --softkey-color--disabled: var(--color-eta, #c7c7c7);
@@ -151,7 +151,7 @@ html body #app,
 html body #ssr {
   height: 100%;
   width: 100%;
-  background-color: white;
+  background-color: var(--color-gs00);
 }
 
 #root,
@@ -347,8 +347,8 @@ ul .gray-out .folder-item:after {
 
 .fm-header p {
   line-height: var(--header-height);
-  background: var(--header-background);
-  color: var(--color-gs00);
+  background: var(--color-gs00);
+  color: var(--color-orange);
   font-weight: 300;
   padding: 0 1rem;
   text-align: center;
