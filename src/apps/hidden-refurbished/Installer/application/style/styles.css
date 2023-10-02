@@ -1,0 +1,237 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  font-size: 10px;
+}
+
+html, body, #root, .container {
+  background-color: transparent;
+}
+
+#root, .container {
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.content:after {
+  display: block;
+  height: 2rem;
+}
+
+.hide {
+  display: none;
+}
+
+.softkey-control {
+  background-color: var(--color-gs00);
+  color: var(--color-gs90);
+  font-family: "OpenSans-Semibold";
+  height: var(--softkeybar-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+}
+
+.softkey-left, .softkey-center, .softkey-right {
+  width: 7.2rem;
+  height: 1.9rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.softkey-left, .softkey-right {
+  font-size: 1.4em;
+  text-transform: capitalize;
+}
+
+.softkey-left {
+  margin-left: 0.5rem;
+}
+
+.softkey-right {
+  margin-right: 0.5rem;
+  text-align: right;
+}
+
+.softkey-center {
+  font-family: "OpenSans-Bold";
+  font-size: 1.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  margin-right: 0.7rem;
+}
+
+/*
+ * Loading Page
+ */
+
+.loading {
+  height: calc(100% - var(--softkeybar-height));
+  padding-top: var(--statusbar-height);
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+  background-color: var(--color-gs00);
+}
+
+.loading-image {
+  margin: 13rem 9.2rem 10.4rem;
+  width: 5.6rem;
+  height: 5.6rem;
+  background-image: url('/resources/icons/img_loader_s.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/*
+ * Main Page
+ */
+
+.installer-main {
+  /*! height: calc(100% - var(--softkeybar-height)); */
+  padding-top: var(--statusbar-height);
+  background-color: var(--color-gs00);
+  color: var(--color-gs90);
+  font-size: 1.2rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
+}
+
+.app-logo {
+  width: 12.8rem;
+  height: 12.8rem;
+  background-image: url('/resources/icons/installer_112.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.app-info-box {
+  margin: 1rem 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.app-info-box > p {
+  margin: 0rem 0.5rem 1.5rem;
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.app-info-item > span {
+  /*! display: inline-block; */
+}
+
+.app-version {
+  font-weight: 600;
+}
+
+.app-info-box > button {
+  border-radius: 3rem;
+  width: 100%;
+  height: 3.6rem;
+  font-size: 1.7rem;
+  font-weight: bold;
+  font-family: "OpenSans-Semibold";
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  border: none;
+  background: var(--color-gs90);
+}
+
+/*
+ * Help Page
+ */
+
+.help-info {
+  background-color: var(--color-gs00);
+  padding-top: 2rem;
+}
+
+.help-info-content-box {
+  margin: 1rem 1rem 3rem;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.4rem;
+  min-height: 0px;
+}
+
+.help-info-content-box > hr {
+  width: 100%;
+  height: 0.1rem;
+  margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
+  color: var(--color-gs20);
+}
+
+.what-is-otp-title {
+  margin: 1rem;
+  text-align: center;
+  font-family: "OpenSans-Semibold";
+}
+
+.how-to-use-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: "OpenSans-Semibold";
+}
+
+.help-info-content-box > p {
+  color: var(--color-gs70);
+  margin: 0 auto 0;
+}
+
+/*
+ * Landscape
+ */
+ @media only screen and (orientation: landscape) {
+  .loading-image {
+    margin: 6.6rem 13.2rem 9.2rem;
+  }
+
+  .installer-main {
+    flex-direction: row;
+  }
+
+  .app-logo-box {
+    margin: 2rem 1rem 6.6rem;
+  }
+
+  .app-info-box {
+    margin: 2.6rem 1.5rem 4.6rem 0rem;
+  }
+
+  .softkey-left {
+    margin-left: 0.7rem;
+  }
+
+  .softkey-center {
+    margin-right: 0.9rem;
+  }
+
+  .softkey-right {
+    margin-right: 0.7rem;
+  }
+
+}

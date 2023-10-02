@@ -1,0 +1,38 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  font-size: 10px;
+}
+
+html, body, #root, .container {
+  background-color: var(--color-gs00);
+}
+
+.loading {
+  height: calc(100% - var(--softkeybar-height));
+  padding-top: var(--statusbar-height);
+}
+
+.loading-image {
+  margin: 13rem 9.2rem 10.4rem;
+  width: 5.6rem;
+  height: 5.6rem;
+  background-image: url('/resources/icons/img_loader_s.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.softkey-placeholder {
+  background-color: var(--color-gs20);
+  height: var(--softkeybar-height);
+}
+
+@media only screen and (orientation: landscape) {
+  .loading-image {
+    margin: 6.6rem 13.2rem 9.2rem;
+  }
+}

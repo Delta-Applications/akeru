@@ -1,0 +1,22 @@
+{
+	"name": "Installer",
+	"description": "Sideloading Service",
+	"theme_color": "#006BFF",
+	"type": "certified",
+	"permissions": {
+		"tcp-socket": {},
+		"engmode-extension": {},
+		"device-storage:sdcard": {
+			"access": "readwrite"
+		},
+		"device-storage:sdcard1": {
+			"access": "readwrite"
+		}
+	},
+	"launch_path": "/index.html",
+	"icons": {
+		"56": "/img/installer_56.png",
+		"112": "/img/installer_112.png"
+	},
+	"origin": "app://installer.gaiamobile.org"
+}
