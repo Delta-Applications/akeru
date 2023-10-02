@@ -18,16 +18,37 @@
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 }
+/* Set default font to all elements */
 * {
   font-family: "Open Sans";
 }
+
 input {
   font-variant-numeric: nominal;
 }
+
+/*
+Gaia theme variables
+*/
+
 :root {
+
+  /** Grey Colors
+   ---------------------------------------------------------*/
+
+  /* KaiOS Colors 
+
+  --color-gs100: #000000;
+  --color-gs90: #181818;
+  --color-gs70: #6a6a6a;
+  --color-gs45: #8c8c8c;
+  --color-gs20: #cccccc;
+  --color-gs10: #e6e6e6;
+  --color-gs00: var(--color-gs00);
+  
   
   --color-alpha: #333333;
-  --color-beta: #ffffff;
+  --color-beta: var(--color-gs00);
   --color-gamma: #4d4d4d;
   --color-delta: #5f5f5f;
   --color-epsilon: #858585;
@@ -36,6 +57,33 @@ input {
   --color-theta: #e7e7e7;
   --color-iota: #f4f4f4;
   --color-white: #ffffff;
+
+  */
+
+   /* KaiOS Dark-mode edited color scale */
+  --color-gs100: #ffffff;
+  --color-gs90: #e6e6e6;
+  --color-gs70: #cccccc;
+  --color-gs45: #8c8c8c;
+  --color-gs20: #6a6a6a;
+  --color-gs10: #181818;
+  --color-gs00: #000000;
+
+  --color-alpha: #cccccc;
+  --color-beta: #000000;
+  --color-gamma: #b2b2b2;
+  --color-delta: #a0a0a0;
+  --color-epsilon: #7a7a7a;
+  --color-zeta: #595959;
+  --color-eta: #383838;
+  --color-theta: #181818;
+  --color-iota: #0b0b0b;
+  --color-white: #000000;
+
+
+/** Brand Colors
+ ---------------------------------------------------------*/
+
   --color-darkblue: #00539f;
   --color-blue: #00caf2;
   --color-turquoise: #27c8c2;
@@ -45,20 +93,17 @@ input {
   --color-violet: #c40c84;
   --color-carrotorange: #eb9423;
   --color-wathetblue: #005da5;
-  
+
+  /* gold */
   --color-gold: #ffa000;
   --color-gold-pressed: #cc8000;
+
   --color-warning: #fbbd3c;
   --color-destructive: #e2443a;
   --color-preffered: #00ba91;
-  
-  --color-gs100: #000000;
-  --color-gs90: #181818;
-  --color-gs70: #6a6a6a;
-  --color-gs45: #8c8c8c;
-  --color-gs20: #cccccc;
-  --color-gs10: #e6e6e6;
-  --color-gs00: #ffffff;
+
+
+
   --color-purple: #8000ff;
   --color-pink: #e60060;
   --color-lime: #00bf60;
@@ -66,6 +111,7 @@ input {
   --color-blue: #0073e6;
   --color-orange: #ff4f1a;
   --color-red: #d90036;
+
   --color-purple-pressed: #5900b3;
   --color-pink-pressed: #990040;
   --color-lime-pressed: #007339;
@@ -73,27 +119,48 @@ input {
   --color-blue-pressed: #004d99;
   --color-orange-pressed: #cc5310;
   --color-red-pressed: #b4002d;
-  
+
+  /** Background
+   ---------------------------------------------------------*/
+
   --background: var(--color-beta);
   --background-plus: var(--color-theta);
   --background-minus: var(--color-zeta);
-  
+
+  /** Text Color
+   ---------------------------------------------------------*/
+
   --text-color: var(--color-gamma);
   --text-color-minus: var(--color-eta);
-  
+
+  /** Button
+   ---------------------------------------------------------*/
+
   --button-background: var(--color-iota);
-  
+
+  /** Links
+   ---------------------------------------------------------*/
+
   --link-color: var(--highlight-color);
-  
+
+  /** Inputs
+   ---------------------------------------------------------*/
+
   --input-background: var(--color-beta);
   --input-color: var(--color-alpha);
   --input-clear-background: #909ca7;
-  
+
+  /** Buttons
+   ---------------------------------------------------------*/
+
   --button-box-shadow:
     inset 0 -1px 0 #d8d8d8,
     inset 0 1px 0 #eeeeee;
   --button-box-shadow-active: var(--button-box-shadow);
-  
+
+  /** Header
+   ---------------------------------------------------------*/
+
   --header-purple-background: #2a0361;
   --header-pink-background: #3d041c;
   --header-lime-background: #00462c;
@@ -101,8 +168,12 @@ input {
   --header-blue-background: #012b68;
   --header-orange-background: #381e0d;
   --header-red-background: #530015;
+
   --header-disabled-button-color: rgba(255,255,255,0.3);
-  
+
+  /** Statusbar, Softkeybar and ClientHeight
+   *  Should update to proper value according to device size
+   ---------------------------------------------------------*/
   --statusbar-height: 2.6rem;
   --softkeybar-height: 3rem;
   --header-height: 2.8rem;
@@ -111,116 +182,221 @@ input {
   --rocketbar-urlbar-height: 3.6rem;
   --statusbar-softkeybar-height: 5.6rem;
   --header-tabbar-height: 5.8rem;
+
   --client-height: calc(100% - var(--statusbar-softkeybar-height));
 }
+
 :root .large-text {
   --rocketbar-urlbar-height: 4.2rem;
 }
+
 .theme-system,
 .theme-launcher {
-  
+
+  /** Brand Color
+   ---------------------------------------------------------*/
+
   --highlight-color: var(--color-purple);
   --highlight-color-pressed: var(--color-purple-pressed);
-  
+
+  /** Header
+   ---------------------------------------------------------*/
+
   --header-background: var(--header-purple-background);
+
   --header-color: var(--color-beta);
 }
+
 .theme-browser,
 .theme-service {
-  
+
+  /** Brand Color
+   ---------------------------------------------------------*/
+
   --highlight-color: var(--color-cyan);
   --highlight-color-pressed: var(--color-cyan-pressed);
-  
+
+  /** Header
+   ---------------------------------------------------------*/
+
   --header-background: var(--header-cyan-background);
+
   --header-color: var(--color-beta);
 }
+
 .theme-productivity {
-  
+
+  /** Brand Color
+   ---------------------------------------------------------*/
+
   --highlight-color: var(--color-orange);
   --highlight-color-pressed: var(--color-orange-pressed);
-  
+
+  /** Header
+   ---------------------------------------------------------*/
+
   --header-background: var(--header-orange-background);
+
   --header-color: var(--color-beta);
 }
+
 .theme-calendar {
-  
+
+  /** Brand Color
+   ---------------------------------------------------------*/
+
   --highlight-color: var(--color-orange);
   --highlight-color-pressed: var(--color-orange-pressed);
-  
-  --header-background: #F5F5F5;
+
+  /** Header
+   ---------------------------------------------------------*/
+
+  --header-background: var(--color-gs00);
+
   --header-color: var(--color-orange-pressed);
 }
+
 .theme-communications {
-  
+
+  /** Brand Color
+   ---------------------------------------------------------*/
+
   --highlight-color: var(--color-lime);
   --highlight-color-pressed: var(--color-lime-pressed);
-  
+
+  /** Links
+   ---------------------------------------------------------*/
+
   --link-color: #177874;
-  
+
+  /** Header
+   ---------------------------------------------------------*/
+
   --header-background: var(--header-lime-background);
   --header-color: var(--color-beta);
   --header-icon-color: var(--color-beta);
   --header-button-color: var(--link-color);
 }
+
 .theme-settings {
-  
+
+  /** Background
+   ---------------------------------------------------------*/
+
   --background: var(--color-iota);
   --background-plus: var(--color-beta);
   --background-minus: var(--color-epsilon);
   --background-minus-minus: var(--color-zeta);
-  
+
+  /** Highlight
+   ---------------------------------------------------------*/
+
   --highlight-color: var(--color-blue);
   --highlight-color-pressed: var(--color-blue-pressed);
-  
+
+  /** Borders
+   ---------------------------------------------------------*/
+
   --border-color: var(--color-theta);
-  
+
+  /** Titles
+   ---------------------------------------------------------*/
+
   --title-color: var(--background-minus);
-  
+
+  /** Buttons
+   ---------------------------------------------------------*/
+
   --button-background: var(--background-plus);
-  
+
+  /** Switch
+   ---------------------------------------------------------*/
+
   --switch-background: var(--background-minus-minus);
-  
+
+  /** Checkbox
+   ---------------------------------------------------------*/
+
   --checkbox-border-color: var(--background-minus-minus);
-  
+
+  /** Header
+   ---------------------------------------------------------*/
+
   --header-color: var(--title-color);
   --header-background: var(--color-white);
   --header-button-color: var(--highlight-color);
   --header-disabled-button-color: var(--color-theta);
   --header-action-button-color: var(--title-color);
 }
+
 .theme-media {
-  
+
+  /** Highlight Color
+   ---------------------------------------------------------*/
+
   --highlight-color: var(--color-pink);
   --highlight-color-pressed: var(--color-pink-pressed);
-  
+
+  /** Background
+   ---------------------------------------------------------*/
+
   --background: var(--color-alpha);
   --background-plus: var(--color-gamma);
   --background-minus: #2B2B2B;
   --background-minus-minus: #1a1a1a;
-  
+
+  /** Text Color
+   ---------------------------------------------------------*/
+
   --text-color: var(--color-beta);
-  
+
+  /** Button
+   ---------------------------------------------------------*/
+
   --button-background: var(--background-plus);
-  
+
+  /** Header
+   ---------------------------------------------------------*/
+
   --header-background: var(--header-pink-background);
   --header-icon-color: var(--text-color);
   --header-button-color: var(--highlight-color);
+
   --action-header-background: var(--header-background);
-  
+
+  /** Borders
+   ---------------------------------------------------------*/
+
   --border-color: var(--color-gamma);
-  
+
+  /** Inputs
+   ---------------------------------------------------------*/
+
   --input-background: var(--background-plus);
-  
+
+  /** Text Input
+   ---------------------------------------------------------*/
+
   --text-input-background: var(--background-minus);
-  
+
+  /** Switch
+   ---------------------------------------------------------*/
+
   --switch-head-border-color: var(--background-minus-minus);
   --switch-background: var(--background-minus-minus);
-  
+
+  /** Checkbox
+   ---------------------------------------------------------*/
+
   --checkbox-border-color: var(--background-minus-minus);
-  
+
+  /** Buttons
+   ---------------------------------------------------------*/
+
    --button-box-shadow: none;
    --button-box-shadow-active: none;
 }
+
 h1, .h1 {
   
   font-weight: 300;
@@ -339,7 +515,7 @@ ul, .ul {
   bottom: 0;
   width: 100%;
   right: 0;
-  background-color: var(--color-gs20, #dadada);
+  background-color: var(--color-gs00, #dadada);
   color: var(--color-gs90, #323232);
   border: 0;
   z-index: 99999;
@@ -482,7 +658,7 @@ form[role="dialog"][data-subtype="menu"].visible {
   line-height: 0px;
   
   font-size: 0;
-  color: #fff;
+  color: var(--color-gs00);
 }
 [role="dialog"][data-type="action"]:before {
   content: '';
@@ -524,7 +700,7 @@ body > [role="dialog"][data-type="action"] header {
   font-size: 1.6rem;
   line-height: 4.9rem;
   text-align: left;
-  color: #fff;
+  color: var(--color-gs00);
   white-space: nowrap;
   text-overflow: ellipsis;
   display: block;
@@ -564,7 +740,7 @@ body > [role="dialog"][data-type="action"] header {
   font-weight: 400;
   font-size: 1.5rem;
   line-height: 1.1em;
-  color: #fff;
+  color: var(--color-gs00);
   border-radius: 0;
   text-decoration: none;
 }
@@ -636,7 +812,7 @@ body > [role="dialog"][data-type="action"] header {
   height: 4.9rem;
 }
 [role="dialog"][data-type="action"] > section {
-  color: #fff;
+  color: var(--color-gs00);
   position: absolute;
   top: 7rem;
   left: 1.5rem;
@@ -699,7 +875,7 @@ body > [role="dialog"][data-type="action"] header {
 }
 [role="dialog"][data-type="action"] > menu > button:active {
   background: #00aacc;
-  color: #fff;
+  color: var(--color-gs00);
 }
 [role="dialog"][data-type="action"] > menu > button[disabled] {
   background-color: rgba(87, 87, 87, 0.8);
@@ -762,7 +938,7 @@ html[dir="rtl"] [role="dialog"][data-type="action"] > menu > button:last-child:b
 [role="dialog"][data-type="action"] > menu > button.focus {
   
   background: #00aacc;
-  color: #fff;
+  color: var(--color-gs00);
 }
 [role="dialog"][data-type="action"].softkey {
   background: rgba(0, 0, 0, 0.8);
@@ -826,7 +1002,7 @@ section[role="status"] {
   left: 0;
   right: 0;
   bottom: 0;
-  color: #fff;
+  color: var(--color-gs00);
   text-align: left;
 }
 section[role="status"] p {
@@ -870,7 +1046,7 @@ html[dir="rtl"] section[role="status"] p {
   margin: 0;
   padding: 0;
   height: 4.5rem;
-  background-color: #ffffff;
+  background-color: var(--color-gs00);
   list-style: none;
   pointer-events: all;
   flex: 1 1 0;
@@ -936,7 +1112,7 @@ html[dir="rtl"] section[role="status"] p {
 }
 .bb-tablist.skin-dark > li > a,
 .bb-tablist.skin-dark > li > button {
-  color: #ffffff;
+  color: var(--color-gs00);
   background-color: transparent;
 }
 .bb-tablist.skin-dark > li > a:active,
@@ -972,7 +1148,7 @@ html[dir="rtl"] section[role="status"] p {
 .bb-tablist.skin-dark > li > a[aria-selected="true"]:active,
 .bb-tablist.skin-dark > li > button[aria-selected="true"]:active {
   background-color: #00aacc;
-  color: #fff;
+  color: var(--color-gs00);
 }
 .bb-tablist > li[aria-disabled="true"] > a,
 .bb-tablist > li[aria-disabled="true"] > button,
@@ -1013,7 +1189,7 @@ html[dir="rtl"] section[role="status"] p {
   display: flex;
   position: relative;
   height: 3rem;
-  background: #fff;
+  background: var(--color-gs00);
   border-bottom: 0.1rem solid #e7e7e7;
   box-sizing: border-box;
 }
@@ -1061,7 +1237,7 @@ html[dir="rtl"] section[role="status"] p {
   display: none;
 }
 .bb-tablist[data-type="filter"] > li:active {
-  color: #ffffff;
+  color: var(--color-gs00);
   background-color: #b2f2ff;
 }
 .bb-tablist[data-type="filter"] > li > a[aria-selected="true"],
@@ -1175,7 +1351,7 @@ label.pack-checkbox-large input ~ span:after,
 .foccus label.pack-checkbox input ~ span:after,
 .foccus label.pack-checkbox-large input ~ span:after {
   content: "check-off";
-  color: var(--color-gs45);
+  color: var(--color-gs00);
 }
 label.pack-checkbox input:checked ~ span:after,
 label.pack-checkbox-large input:checked ~ span:after {
@@ -1192,7 +1368,7 @@ label.pack-radio-large input ~ span:after,
 .foccus label.pack-radio input ~ span:after,
 .foccus label.pack-radio-large input ~ span:after {
   content: "radio-off";
-  color: var(--color-gs45);
+  color: var(--color-gs00);
 }
 label.pack-radio input:checked ~ span:after,
 label.pack-radio-large input:checked ~ span:after {
@@ -1260,7 +1436,7 @@ html[dir="rtl"] label.pack-switch input:checked ~ span:after {
 }
 *.focus,
  .hasfocused {
-  color: var(--highlight-text-color, #ffffff);
+  color: var(--highlight-text-color, var(--color-gs00));
   
   background-color: var(--highlight-color, #00B965) !important;
 }
@@ -1347,7 +1523,7 @@ label.pack-checkbox-large input ~ span:after,
 .foccus label.pack-checkbox input ~ span:after,
 .foccus label.pack-checkbox-large input ~ span:after {
   content: "check-off";
-  color: var(--color-gs45);
+  color: var(--color-gs00);
 }
 label.pack-checkbox input:checked ~ span:after,
 label.pack-checkbox-large input:checked ~ span:after {
@@ -1364,7 +1540,7 @@ label.pack-radio-large input ~ span:after,
 .foccus label.pack-radio input ~ span:after,
 .foccus label.pack-radio-large input ~ span:after {
   content: "radio-off";
-  color: var(--color-gs45);
+  color: var(--color-gs00);
 }
 label.pack-radio input:checked ~ span:after,
 label.pack-radio-large input:checked ~ span:after {
@@ -1462,12 +1638,12 @@ button,
 button.recommend,
 .bb-button.recommend {
   background-color: #00caf2;
-  color: #fff;
+  color: var(--color-gs00);
 }
 button.danger,
 .danger.bb-button {
   background-color: #e51e1e;
-  color: #fff;
+  color: var(--color-gs00);
 }
 button:active,
 .bb-button:active,
@@ -1498,7 +1674,7 @@ button[data-icon]:before,
 button[data-icon]:active:before,
 .bb-button[data-icon]:active:before,
 .button[data-icon]:active:before {
-  color: #fff;
+  color: var(--color-gs00);
 }
 .skin-dark button:active,
 .skin-dark .bb-button:active,
@@ -1654,7 +1830,7 @@ li .button[aria-disabled="true"].icon-dialog:before {
 .skin-dark li .button {
   background-color: #454545;
   border: none;
-  color: #fff;
+  color: var(--color-gs00);
   font-weight: normal;
 }
 .skin-dark li button:active,
@@ -1703,14 +1879,14 @@ select {
 .skin-dark select {
   background-color: rgba(87, 87, 87, 0.8);
   border: none;
-  color: #fff;
+  color: var(--color-gs00);
 }
 select:-moz-focusring {
   color: transparent;
   text-shadow: 0 0 0 #333;
 }
 .skin-dark select:-moz-focusring {
-  text-shadow: 0 0 0 #fff;
+  text-shadow: 0 0 0 var(--color-gs00);
 }
 .bb-button.icon select,
 .button.icon select,
@@ -1750,7 +1926,7 @@ select:-moz-focusring {
 .skin-dark .button.icon select,
 .skin-dark .bb-button[data-icon] select,
 .skin-dark .button[data-icon] select {
-  text-shadow: 1rem 0.5rem 0 #fff;
+  text-shadow: 1rem 0.5rem 0 var(--color-gs00);
 }
 html[dir="rtl"] button[data-icon]:before,
 html[dir="rtl"] .bb-button[data-icon]:before,
@@ -1867,14 +2043,14 @@ body.hidden *[data-l10n-id] {
 header h1, .view-header h1 {
   line-height: var(--header-height);
   background: var(--header-background);
-  color: #a72600;
+  color: var(--color-orange);
   padding: 0 1rem;
   text-align: center;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   font-weight: 600;
-  background: #f5f5f5;
+  background: var(--color-gs00);
 }
 @media only screen and (orientation: landscape) {
   .clock-header {
@@ -1959,7 +2135,7 @@ ul.compact li {
   margin-left: 0;
   width: 100%;
   border-color: #737D80;
-  background: #ffffff;
+  background: var(--color-gs00);
 }
 ul.compact li.alarm-name {
   padding-top: .5rem;
@@ -1992,10 +2168,10 @@ ul.compact li label:active {
 }
 ul.compact li.focus > label {
   margin-left: 1rem;
-  color: #fff;
+  color: var(--color-gs00);
 }
 ul.compact li.focus > #alarm-name {
-  color: #fff;
+  color: var(--color-gs00);
 }
 .large-text ul.compact li label.value {
   font-size: 1.8rem;
@@ -2051,7 +2227,7 @@ ul.alarmNewSound li.focus div.clsSoundBackIcon {
 }
 ul.compact li.focus div > #sound-label,
 ul.compact li.focus div > #new-alarm-sound-label {
-  color: #fff !important;
+  color: var(--color-gs00) !important;
 }
 #alarm-settings {
   display: none;
@@ -2116,7 +2292,7 @@ ul.compact li.focus div > #new-alarm-sound-label {
   border-radius: 0.6rem 0.6rem 0.6rem 0.6rem;
 }
 #settings-alarm-volume-control.focus #settings-system-alarm-volume-active{
-  background: #ffffff;
+  background: var(--color-gs00);
 }
 #settings-alarm-volume-control.focus #settings-system-alarm-volume-volume-bar{
   width: calc(100% - 2rem);
@@ -2234,7 +2410,7 @@ a.alarm-item > .repeat {
   color: var(--color-gs70);
 }
 .focus a.alarm-item > .time, .focus a.alarm-item > .label, .focus a.alarm-item > .repeat{
-  color: #fff;
+  color: var(--color-gs00);
 }
 #digital-clock.visible ~ #alarms.count4 li:first-child {
   background: none;
@@ -2406,7 +2582,7 @@ html[dir=rtl] ul.compact li label {
   line-height: 4.2rem;
   color: var(--color-gs70);
   text-decoration: none;
-  background: #ffffff;
+  background: var(--color-gs00);
 }
 .stopwatch-laps li.focus,
 .stopwatch-laps li.focus .lap-duration {
@@ -2575,7 +2751,7 @@ html[dir=rtl] .lap-name {
 #timer-create {
   text-align: center;
   background-color: #00caf2;
-  color: #fff;
+  color: var(--color-gs00);
   border-radius: 2rem;
 }
 ul li > label.pack-switch {
@@ -2705,7 +2881,7 @@ body {
   padding: 0;
   pointer-events: none;
   z-index: 0;
-  background-color: #f5f5f5;
+  background-color: var(--color-gs00);
 }
 .tab-right {
   right: 0;
@@ -2728,7 +2904,7 @@ html[dir=rtl] .tab-left {
   height: var(--tabbar-height);
   list-style: outside none none;
   pointer-events: all;
-  background-color: #f5f5f5;
+  background-color: var(--color-gs00);
 }
 .custom-tablist.skin-dark > li {
   background-color: transparent;
@@ -2820,7 +2996,7 @@ html[dir=rtl] .tab-left {
   font-weight: 400;
   font-size: 1.9rem;
   line-height: 4.8rem;
-  color: #fff;
+  color: var(--color-gs00);
   border-bottom: 0.1rem solid #616262;
   background: rgba(0 ,0, 0, .2);
   margin: 0;
@@ -2935,7 +3111,7 @@ html[dir=rtl] .tab-left {
 [data-type="picker"]  .picker-unit {
   position: relative;
   font: 2.2rem/5.6rem Sans-serif;
-  color: #fff;
+  color: var(--color-gs00);
   text-align: center;
   vertical-align: middle;
   width: 100%;
