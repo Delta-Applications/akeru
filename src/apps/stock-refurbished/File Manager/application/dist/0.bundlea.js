@@ -4496,7 +4496,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }, {
                 key: "checkFileSupport",
                 value: function () {
-                    var e = v.a.getDisplayName(this.props.path),
+                    var e = v.a.default.getDisplayName(this.props.path),
                     t = MimeMapper.guessTypeFromFileProperties(e, this.props.type);
                     return !(0 === t.length 
                     || !(MimeMapper._fileTypeMap.photo.includes(t) 
@@ -4506,14 +4506,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                     || MimeMapper._fileTypeMap.app.includes(t) 
                     || MimeMapper._fileTypeMap.other.includes(t)))
                 }
-            }/*,{
-                key: "checkFileSupport",
-                value: function() {
-                    var e = v.a.getDisplayName(this.props.path),
-                        t = MimeMapper.guessTypeFromFileProperties(e, this.props.type);
-                    return !(0 === t.length || !(y.a.photo.includes(t) || y.a.audio.includes(t) || y.a.video.includes(t) || y.a.other.includes(t)))
-                }
-            }*/, {
+            }, {
                 key: "openFile",
                 value: function (e) {
                   MimeMapper.openFile(e);
@@ -4601,7 +4594,12 @@ webpackJsonp([0], [, , , function(e, t, n) {
         }(h.a)
 }, function(e, t, n) {
     "use strict";
-    var o = MimeMapper._fileTypeMap;
+    var o = {
+        audio: ["audio/mpeg", "audio/mp4", "audio/ogg", "audio/webm", "audio/3gpp", "audio/amr", "audio/amr-wb", "audio/x-wav", "audio/aac", "audio/x-midi"],
+        video: ["video/mp4", "video/mpeg", "video/ogg", "video/webm", "video/3gpp", "video/3gpp2"],
+        photo: ["image/png", "image/jpeg", "image/gif", "image/bmp"],
+        other: ["text/vcard", "text/kai_plain"]
+    };
     t.a = o
 }, function(e, t, n) {
     "use strict";

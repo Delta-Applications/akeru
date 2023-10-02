@@ -109,19 +109,24 @@ html {
     width: 100%;
     height: calc(100% - var(--statusbar-height));
     top: var(--statusbar-height);
-    margin: 0; }
+    margin: 0; 
+    background-color: var(--color-gs00);
+}
     html body #root,
     html body #app,
     html body #ssr {
       height: 100%;
       width: 100%;
+      background-color: var(--color-gs00);
 }
 
 #root,
 #ssr {
   position: absolute;
   top: 0;
-  left: 0; }
+  left: 0; 
+  background-color: var(--color-gs00);
+}
 
 #root {
   z-index: 1; }
@@ -137,7 +142,9 @@ html {
   height: calc(100% - var(--softkeybar-height));
   width: 100%;
   position: relative;
-  overflow: hidden; }
+  overflow: hidden; 
+  background-color: var(--color-gs00);
+}
   .app-content > div {
     height: 100%;
     width: 100%;
@@ -248,7 +255,7 @@ ul {
     max-height: 100%; }
     .option-menu-container .option-menu .header {
       padding: 0.5rem 1rem;
-      background-color: var(--color-gs20);
+      background-color: var(--color-gs00);
       color: var(--color-gs90);
       text-align: center; }
     .option-menu-container .option-menu .content {
@@ -287,7 +294,9 @@ ul {
           color: var(--highlight-color); }
         .option-menu-container .option-menu .content .menu-item:focus {
           background-color: var(--highlight-color);
-          color: white; }
+          color: white; 
+          outline: 0;
+}
           .option-menu-container .option-menu .content .menu-item:focus .content,
           .option-menu-container .option-menu .content .menu-item:focus .checked[data-icon]:after {
             color: var(--color-gs00); }
@@ -540,7 +549,9 @@ html[dir="rtl"] .option-menu-container .option-menu .content .menu-item [data-ic
   outline: none;
   word-wrap: break-word; }
   #detail-container .header {
-    display: block; }
+    display: block; 
+    color: var(--color-gs90);
+}
   #detail-container .value {
     color: var(--color-gs70); }
 #search-container > ul li p {
@@ -588,7 +599,9 @@ input.search-input {
   border-radius: 0.2rem;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  font-size: var(--font-p-pri); }
+  font-size: var(--font-p-pri); 
+  color: var(--color-gs90);
+}
 
 .highlight {
   font-weight: bold; }

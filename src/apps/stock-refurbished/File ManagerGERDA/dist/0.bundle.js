@@ -11183,8 +11183,6 @@ webpackJsonp([0], [, , function (e, exports, t) {
                     case "type-audio":
                     case "type-photo":
                     case "type-video":
-                        n.type = MimeMapper.guessTypeFromExtension(MimeMapper._parseExtension(e.name))
-                        break;
                     case "type-app":
                     case "type-pkg":
                     case "type-other":

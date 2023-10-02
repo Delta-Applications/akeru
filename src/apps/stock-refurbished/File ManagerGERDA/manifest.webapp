@@ -1,6 +1,6 @@
 {
 	"name": "Files",
-	"description": "GerdaOS file manager",
+	"description": "File manager",
 	"launch_path": "/index.html",
 	"type": "certified",
 	"default_locale": "en-US",
@@ -27,7 +27,7 @@
 			"href": "/pick.html"
 		}
 	},
-	"theme_color": "#fbba32",
+	"theme_color": "#FF9500",
 	"locales": {
 		"af": {
 			"name": "Lêerbestuurder",

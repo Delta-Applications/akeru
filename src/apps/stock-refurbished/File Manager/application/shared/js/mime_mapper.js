@@ -30,7 +30,7 @@ var MimeMapper = {
 
         // Non-chad default MozActivity Fallback
         return new MozActivity({
-            name: "open",
+            name: "text/vcard" === t ? "import" : "open",
             data: {
                 type: t,
                 filename: e.name,
