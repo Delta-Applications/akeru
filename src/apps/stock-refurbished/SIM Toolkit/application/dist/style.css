@@ -23,7 +23,7 @@
   white-space: nowrap;
   color: var(--softkey-color);
   direction: ltr;
-  background-color: var(--softkeybar-background-color); }
+  background-color: var(--color-gs00); }
   .skbar:not(.visible) {
     display: none; }
   .skbar > * {
@@ -100,7 +100,9 @@
 .item-title {
   font-size: 1.4rem;
   line-height: 1.9rem;
-  margin: 1rem; }
+  margin: 1rem; 
+  color: var(--color-gs90);
+}
 
 .large-text .item-title {
   font-size: 1.8rem; }
@@ -212,7 +214,7 @@
   100% {
     transform: translateX(0); } }
 .x-window > div {
-  background-color: white; }
+  background-color: var(--color-gs00); }
 
 .shadow-window > div {
   height: 100%; }
@@ -335,7 +337,7 @@ input {
     text-overflow: ellipsis; }
   .list-item:focus {
     background-color: var(--highlight-color);
-    color: white; }
+    /*! color: white; */ }
     .list-item:focus a {
       color: var(--color-gs00); }
   .list-item[data-multi-line="true"] {
