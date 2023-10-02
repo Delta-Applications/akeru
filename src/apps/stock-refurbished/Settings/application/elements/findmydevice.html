@@ -1,0 +1,78 @@
+<element name="findmydevice" extends="section">
+  <template>
+
+    <gaia-header data-href="#root">
+      <h1 data-l10n-id="findmydevice"></h1>
+    </gaia-header>
+
+    <div>
+      <div id="findmydevice-signin" hidden>
+        <ul>
+          <li class="description non-focus">
+            <p data-l10n-id="findmydevice-signup-description">
+              FindMyDevice allows you to locate, lock or erase your phone.
+            </p>
+          </li>
+          <li id="findmydevice-login">
+            <button id="findmydevice-login-btn"
+              data-l10n-id="findmydevice-create-account" disabled>
+              Create account or sign in
+            </button>
+          </li>
+          <li class="description" id="findmydevice-fxa-unverified-error" hidden>
+            <p data-l10n-id="fxa-please-verify"></p>
+          </li>
+        </ul>
+      </div>
+
+      <div id="findmydevice-settings" hidden>
+        <ul>
+          <li class="non-focus">
+            <p data-l10n-id="">
+              Find My Device allows you to locate, lock, or erase your phone.
+            </p>
+          </li>
+        </ul>
+        <ul>
+         <li>
+           <label class="pack-radio-large my_radio">
+             <input name="findmydevice-enabled" value="1" type="radio">
+             <span data-l10n-id="enable">Enable</span>
+           </label>
+         </li>
+         <li>
+          <label class="pack-radio-large my_radio">
+             <input name="findmydevice-enabled" value="0" type="radio">
+             <span data-l10n-id="disable">Disable</span>
+           </label>
+         </li>
+        </ul>
+
+        <ul class="hidden">
+          <li class="description">
+            <p id="findmydevice-tracking"></p>
+          </li>
+        </ul>
+
+        <header class="hidden">
+          <h2 data-l10n-id="findmydevice-about">About Find My Device</h2>
+        </header>
+        <ul class="hidden">
+          <li class="description">
+            <p>
+              <span data-l10n-id="findmydevice-settings-description">FindMyDevice allows you to locate, lock or erase your phone from a web site:</span>
+              <br>
+              <br>
+              <a class="link-text" href="https://find.firefox.com">find.firefox.com</a>
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="shared/js/settings_helper.js"></script>
+    <script src="shared/js/findmydevice_iac_api.js"></script>
+    <script src="js/findmydevice.js"></script>
+
+  </template>
+</element>

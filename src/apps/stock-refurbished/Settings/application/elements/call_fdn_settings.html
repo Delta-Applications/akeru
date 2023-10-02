@@ -1,0 +1,49 @@
+<element name="call-fdnSettings" extends="section">
+  <template>
+
+    <gaia-header action="back" data-href="#call">
+      <h1 data-l10n-id="fdnSettings-header"></h1>
+    </gaia-header>
+
+    <div>
+      <ul>
+        <li class="none-select text-paragraph">
+          <span data-l10n-id="fdn-explanation1">
+            Restrict which numbers can be dialed from this phone.
+          </span>
+          <small data-l10n-id="fdn-explanation2">
+            (Emergency numbers will always be dialable)
+          </small>
+        </li>
+        <li aria-disabled="true" role="menuitem">
+          <span data-l10n-id="fdn">Fixed dialing numbers</span>
+          <div class="button icon icon-dialog">
+            <select id="fdn-enabled" data-value-type="boolean">
+              <option data-l10n-id="on" value="true">On</option>
+              <option data-l10n-id="off" value="false">Off</option>
+            </select>
+          </div>
+        </li>
+        <li class="call-fdn-list" aria-disabled="true">
+          <a class="menu-item">
+            <span data-l10n-id="fdn-authorizedNumbers">
+              Authorized numbers
+            </span>
+            <small data-l10n-id="fdn-authorizedNumbers-desc">
+              List of numbers that can be called
+            </small>
+          </a>
+        </li>
+        <li id="fdn-resetPIN2" class="button" aria-disabled="true">
+          <button data-l10n-id="fdnReset">Reset PIN2 code</button>
+        </li>
+        <li class="puk2-locked-info non-focus" hidden>
+          <span data-l10n-id="puk2-locked"></span>
+        </li>
+      </ul>
+    </div>
+
+    <panel data-path="panels/call_fdn_settings/panel"></panel>
+
+  </template>
+</element>

@@ -1,0 +1,77 @@
+.pin-dialog {
+  -moz-box-sizing: padding-box;
+  font-size: var(--font-p-sec);
+}
+.pin-dialog > div {
+  margin-top: 1rem;
+}
+.pin-dialog .error,
+.pin-dialog .sim-triesLeft {
+  font-size: var(--font-p-sec);
+  padding-left: 1rem;
+  line-height: 1.9rem;
+  white-space: normal;
+}
+.pin-dialog .error .sim-messageHeader {
+  color: red;
+}
+.pin-dialog .sim-code-area {
+  font-size: var(--font-p-pri);
+}
+.sim-card {
+  padding-top: 0;
+  display: block;
+}
+.sim-card {
+  clear: both;
+}
+.sim-card .information-container {
+  padding-top: 1rem;
+}
+.sim-card-icon {
+  float: left;
+  width: 3rem;
+  height: 3rem;
+  margin: 1.5rem 1rem;
+}
+.sim-card-icon:before {
+  font-family: "gaia-icons";
+  content: "sim-card";
+  font-size: 3rem;
+  color: var(--color-blue);
+}
+.focus .sim-card-icon:before {
+  color: var(--color-gs00);
+}
+.sim-card-name {
+  display: inline-block;
+  font-size: var(--font-p-pri);
+  font-size: var(--font-p-pri);
+  padding: 0;
+}
+.sim-card-operator {
+  font-size: var(--font-p-sec);
+  line-height: var(--font-p-sec);
+  padding: 0;
+}
+html[dir="rtl"] .sim-card-icon {
+  float: right;
+}
+.pin-dialog ul li[hidden] {
+  display: none;
+}
+.pin-dialog ul li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.6rem 1.5rem;
+}
+.sim-code-info-area {
+  display: inline;
+  font-size: var(--font-p-sec);
+  margin: 0;
+  padding: 0;
+}
+.sim-code-info-area > span {
+  color: red;
+}

@@ -1,0 +1,24 @@
+<element name="homeClockFace" extends="section">
+  <template>
+    <gaia-header data-href="#dateTime">
+      <h1 data-l10n-id="home-screen-clock">Homescreen clock</h1>
+    </gaia-header>
+    <div>
+      <div style="display:flex;margin:2rem 0;">
+        <a class="arrow-left"></a>
+        <span class="clock-title"></span>
+        <a class="arrow-right"></a>
+      </div>
+      <gaia-clock id="clock-panel"></gaia-clock>
+      <ul style="position:absolute;bottom:7rem;width:100%;">
+        <li>
+          <label class="pack-checkbox my_checkbox">
+            <input name="displayDate" type="checkbox">
+            <span data-l10n-id="display-date">Display date</span>
+          </label>
+        </li>
+      </ul>
+    </div>
+    <panel data-path="panels/home_clock_face/panel"></panel>
+  </template>
+</element>

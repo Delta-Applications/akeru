@@ -1,0 +1,29 @@
+<element name="call-cf-vt-unconditional-settings" extends="section">
+  <template>
+
+    <gaia-header data-href="#call-cfsettings-vt">
+      <h1 class="call-cf-subSettings-header"></h1>
+    </gaia-header>
+
+    <div>
+      <ul role="menu">
+        <li role="menuitem">
+          <span class="full-string" data-l10n-id="callForwardingUnconditional"></span>
+          <div class="button icon icon-dialog">
+            <select data-value-type="boolean">
+              <option data-l10n-id="enable" value="true"></option>
+              <option data-l10n-id="disable" value="false"></option>
+            </select>
+          </div>
+        </li>
+        <li role="menuitem" aria-disabled="true">
+          <span class="long-string input-description" data-l10n-id="cf-alwaysUseThisNumber"></span>
+          <input type="tel" data-setting="ril.cf.vt.unconditional.number" maxlength="20"/>
+        </li>
+      </ul>
+    </div>
+
+    <panel data-path="panels/call_cf_details/panel"></panel>
+
+  </template>
+</element>

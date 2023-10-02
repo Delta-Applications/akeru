@@ -1,0 +1,22 @@
+<element name="simnck" extends="section">
+  <template>
+
+    <gaia-header data-href="carrier">
+      <h1 data-l10n-id="simnck-header"></h1>
+    </gaia-header>
+
+    <div>
+      <ul role="menu">
+        <li role="menuitem" class="sim-nck none-large-text">
+          <span data-l10n-id="simnck-description"></span>
+          <span id="sim-tries-left" hidden></span>
+          <input x-inputmode="digit" size="16" maxlength="16" type="password">
+          <span id="sim-code-error" data-l10n-id="nckAttemptMsg" hidden></span>
+        </li>
+      </ul>
+    </div>
+
+    <panel data-path="panels/simnck/panel"></panel>
+
+  </template>
+</element>

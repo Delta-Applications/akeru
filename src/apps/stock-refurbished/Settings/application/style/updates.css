@@ -1,0 +1,14 @@
+.update-status {
+  display: none;
+  height: 4.1rem;
+}
+.update-status.visible {
+  display: block;
+}
+.update-status .general-information {
+  display: none;
+}
+.update-status.checking .general-information {
+  display: block;
+  margin-top: 0.7rem;
+}

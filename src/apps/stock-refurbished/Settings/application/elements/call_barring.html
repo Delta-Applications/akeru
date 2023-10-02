@@ -1,0 +1,83 @@
+<element name="call-cbSettings" extends="section">
+  <template>
+
+    <gaia-header id="call-cb-header">
+      <h1 data-l10n-id="callBarring-header"></h1>
+    </gaia-header>
+
+    <div>
+      <header id="header-cb-outgoing">
+        <h2 data-l10n-id="callBarring-outgoing"></h2>
+      </header>
+      <ul role="menu" id="list-callBarring-outgoing">
+        <li role="menuitem" id="li-cb-baoc">
+          <span data-l10n-id="callBarring-baoc"></span>
+          <small class="long-string"></small>
+          <div class="button icon icon-dialog">
+            <select name="baoc" data-value-type="boolean" hidden>
+              <option data-l10n-id="enable" value="true"></option>
+              <option data-l10n-id="disable" value="false"></option>
+            </select>
+          </div>
+        </li>
+        <li role="menuitem" id="li-cb-boic">
+          <span data-l10n-id="callBarring-boic"></span>
+          <small class="long-string"></small>
+          <div class="button icon icon-dialog">
+            <select name="boic" data-value-type="boolean" hidden>
+              <option data-l10n-id="enable" value="true"></option>
+              <option data-l10n-id="disable" value="false"></option>
+            </select>
+          </div>
+        </li>
+        <li role="menuitem" id="li-cb-boicExhc" class="auto-height">
+          <span data-l10n-id="callBarring-boicExhc"></span>
+          <small class="long-string"></small>
+          <div class="button icon icon-dialog">
+            <select name="boicExhc" data-value-type="boolean" hidden>
+              <option data-l10n-id="enable" value="true"></option>
+              <option data-l10n-id="disable" value="false"></option>
+            </select>
+          </div>
+        </li>
+      </ul>
+
+      <header id="header-cb-incoming">
+        <h2 data-l10n-id="callBarring-incoming"></h2>
+      </header>
+      <ul role="menu" id="list-callBarring-incoming">
+        <li role="menuitem" id="li-cb-baic">
+          <span data-l10n-id="callBarring-baic"></span>
+          <small class="long-string"></small>
+          <div class="button icon icon-dialog">
+            <select name="baic" data-value-type="boolean" hidden>
+              <option data-l10n-id="enable" value="true"></option>
+              <option data-l10n-id="disable" value="false"></option>
+            </select>
+          </div>
+        </li>
+        <li role="menuitem" id="li-cb-baicR">
+          <span class="long-string" data-l10n-id="callBarring-baicR"></span>
+          <small class="long-string"></small>
+          <div class="button icon icon-dialog">
+            <select name="baicR" data-value-type="boolean" hidden>
+              <option data-l10n-id="enable" value="true"></option>
+              <option data-l10n-id="disable" value="false"></option>
+            </select>
+          </div>
+        </li>
+      </ul>
+
+      <header id="header-cb-passcode">
+        <h2 data-l10n-id="callBarring-passcode"></h2>
+      </header>
+      <ul role="menu" id="list-callBarring-passcode">
+        <li role="menuitem" id="li-cb-pswd" class="button">
+          <button data-l10n-id="callBarring-change-passcode"></button>
+        </li>
+      </ul>
+    </div>
+
+    <panel data-path="panels/call_barring/panel"></panel>
+  </template>
+</element>

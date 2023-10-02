@@ -1,0 +1,50 @@
+<element name="accounts" extends="section">
+  <template>
+    <gaia-header  data-href="#root">
+      <h1 data-l10n-id="accounts"></h1>
+    </gaia-header>
+
+    <div>
+      <ul>
+        <li>
+          <a id="menuItem-fxa" class="menu-item" href="#fxa">
+            <span data-l10n-id="fxa-accounts-item"></span>
+            <small id="fxa-desc" class="menu-item-desc"></small>
+          </a>
+        </li>
+      </ul>
+      <header>
+        <h2 data-l10n-id="antitheft-services"></h2>
+      </header>
+      <ul>
+        <li role="menuitem" id="antitheft_mode_switch" aria-disabled="true" class="none-select">
+          <span data-l10n-id="antitheft"></span>
+          <span class="button icon icon-dialog">
+                <select id="antitheft-mode-select" data-value-type="boolean">
+                  <option value="true" data-l10n-id="on"></option>
+                  <option value="false" data-l10n-id="off"></option>
+                </select>
+              </span>
+        </li>
+        <li id="menuItem-antitheft-note1" role="menuitem" class="description none-select hidden">
+          <span data-l10n-id="antitheft-note1"></span>
+        </li>
+        <li id="menuItem-antitheft-note2" role="menuitem" class="description none-select hidden">
+          <span data-l10n-id="antitheft-note2"></span>
+          <span data-l10n-id="antitheft-note3"></span>
+          <span data-l10n-id="antitheft-note4"></span>
+        </li>
+      </ul>
+      <header>
+        <h2 data-l10n-id="other-accounts"></h2>
+      </header>
+      <ul class="other-accounts">
+        <li class="add-account-button button" role="menuitem">
+          <button data-l10n-id="add-account"></button>
+        </li>
+      </ul>
+    </div>
+
+    <panel data-path="panels/accounts/panel"></panel>
+  </template>
+</element>

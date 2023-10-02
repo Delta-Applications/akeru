@@ -1,0 +1,19 @@
+<element name="wifi-available-networks" extends="section">
+  <template>
+
+    <gaia-header data-href="#wifi">
+      <h1 data-l10n-id="available-networks-header"></h1>
+    </gaia-header>
+    <div class="no-wifi-network hidden">
+      <span id="no-networks" data-l10n-id="noNetworksFound"></span>
+    </div>
+    <div role="menu">
+      <div class="searching_icon">
+        <span class="searching-text" data-l10n-id="scanning"></span>
+      </div>
+      <ul class="wifi-availableNetworks"></ul>
+    </div>
+        <panel data-path="panels/wifi_available_networks/panel"></panel>
+
+  </template>
+</element>

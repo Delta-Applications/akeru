@@ -1,0 +1,29 @@
+<element name="wifi-manageNetworks" extends="section">
+  <template>
+     <gaia-header data-href="#wifi-advanced-settings">
+      <h1 data-l10n-id="manageNetworks-header"></h1>
+    </gaia-header>
+
+    <div>
+      <ul role="menu">
+        <li role="menuitem" class="knownNetworks">
+          <a class="menu-item" href="#wifi-known-networks">
+            <span data-l10n-id="known-networks-item"></span>
+          </a>
+        </li>
+        <li role="menuitem">
+          <a class="menu-item joinHidden" href="#wifi-joinHidden">
+            <span data-l10n-id="join-hidden-network-item"></span>
+          </a>
+        </li>
+        <li role="menuitem" class="none-select">
+          <span data-l10n-id="macAddress"></span>
+          <small data-name="deviceinfo.mac"></small>
+        </li>
+      </ul>
+    </div>
+
+    <panel data-path="panels/wifi_manage_networks/panel"></panel>
+
+  </template>
+</element>

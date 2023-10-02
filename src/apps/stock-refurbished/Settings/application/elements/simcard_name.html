@@ -1,0 +1,20 @@
+<element name="simcard-name" extends="section">
+  <template>
+
+    <gaia-header data-href="#sim-manager">
+      <h1 id="simcard-id"></h1>
+    </gaia-header>
+
+    <div>
+      <ul role="menu">
+        <li role="menuitem" id="simcard">
+          <span class="sim-card-name" data-l10n-id="name"></span>
+          <small id="current-simcard-name" class="menu-item-desc"></small>
+          <a class="menu-item" href="#change-simcard-name"></a>
+        </li>
+      </ul>
+    </div>
+
+    <panel data-path="panels/simcard_name/panel"></panel>
+  </template>
+</element>

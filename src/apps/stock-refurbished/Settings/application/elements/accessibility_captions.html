@@ -1,0 +1,133 @@
+<element name="accessibility-captions" extends="section">
+  <template>
+
+    <gaia-header data-href="#accessibility">
+      <h1 data-l10n-id="accessibility-captions-header"></h1>
+    </gaia-header>
+
+    <div>
+      <ul>
+        <li role="menuitem">
+          <span data-l10n-id="accessibility-captions-enable"></span>
+          <span class="button icon icon-dialog">
+            <select id="captions-enable" name="accessibility.captions" data-value-type="boolean">
+              <option value="true" data-l10n-id="on"></option>
+              <option value="false" data-l10n-id="off" selected="selected"></option>
+            </select>
+          </span>
+        </li>
+
+        <li role="menuitem" data-show-name="accessibility.captions" id="caption-preview-li" class="none-select">
+          <div id="caption-preview">
+            <div id="captions-preview-example" data-l10n-id="captions-preview-example">This is caption example</div>
+            <div id="captions-preview-border"></div>
+          </div>
+        </li>
+        <li role="menuitem" data-show-name="accessibility.captions" hidden>
+          <span data-l10n-id="accessibility-captions-text-size"></span>
+          <span class="button icon icon-dialog">
+            <select name="accessibility.caption.font-size">
+              <option value="0.05" data-l10n-id="font-size-small">small</option>
+              <option value="0.08" data-l10n-id="font-size-medium" selected>medium</option>
+              <option value="0.11" data-l10n-id="font-size-large">large</option>
+            </select>
+          </span>
+        </li>
+        <li role="menuitem" data-show-name="accessibility.captions" hidden>
+          <span data-l10n-id="accessibility-captions-caption-style"></span>
+          <span class="button icon icon-dialog">
+            <select id="captions-theme">
+              <option value="font-color:white;box-color:black;font-shadow:none;" data-l10n-id="white-on-black">White on black</option>
+              <option value="font-color:black;box-color:white;font-shadow:none;" data-l10n-id="black-on-white">Black on white</option>
+              <option value="font-color:yellow;box-color:black;font-shadow:none;" data-l10n-id="yellow-on-black">Yellow on black</option>
+              <option value="font-color:yellow;box-color:blue;font-shadow:none;" data-l10n-id="yellow-on-blue">Yellow on blue</option>
+              <option value="custom" data-l10n-id="captions-custom">Custom</option>
+            </select>
+          </span>
+        </li>
+        <li role="menuitem" data-show-name="accessibility.captions.theme.custom" hidden>
+          <span data-l10n-id="accessibility-captions-text-color"></span>
+          <span class="button icon icon-dialog">
+            <select id="captions-font-color">
+              <option value="white" data-l10n-id="color-white" selected>White</option>
+              <option value="black" data-l10n-id="color-black">Black</option>
+              <option value="red" data-l10n-id="color-red">Red</option>
+              <option value="yellow" data-l10n-id="color-yellow">Yellow</option>
+              <option value="green" data-l10n-id="color-green">Green</option>
+              <option value="cyan" data-l10n-id="color-cyan">Cyan</option>
+              <option value="blue" data-l10n-id="color-blue">Blue</option>
+              <option value="magenta" data-l10n-id="color-magenta">Magenta</option>
+            </select>
+          </span>
+        </li>
+        <li role="menuitem" data-show-name="accessibility.captions.theme.custom" hidden>
+          <span data-l10n-id="accessibility-captions-text-opacity"></span>
+          <span class="button icon icon-dialog">
+            <select id="captions-font-opacity">
+              <option value="0.25">25%</option>
+              <option value="0.50">50%</option>
+              <option value="0.75">75%</option>
+              <option value="1" selected>100%</option>
+            </select>
+          </span>
+        </li>
+        <li role="menuitem" data-show-name="accessibility.captions.theme.custom" hidden>
+          <span data-l10n-id="accessibility-captions-edge-type"></span>
+          <span class="button icon icon-dialog">
+            <select id="captions-edge-type">
+              <option value="none" data-l10n-id="none" selected>None</option>
+              <option value="outline" data-l10n-id="edge-type-outline">Outline</option>
+              <option value="dropshadow" data-l10n-id="edge-type-dropshadow">Drop Shadow</option>
+              <option value="raised" data-l10n-id="edge-type-raised">Raised</option>
+              <option value="depressed" data-l10n-id="edge-type-depressed">Depressed</option>
+            </select>
+          </span>
+        </li>
+        <li role="menuitem" data-show-name="accessibility.captions.theme.custom" hidden>
+          <span data-l10n-id="accessibility-captions-edge-color"></span>
+          <span class="button icon icon-dialog">
+            <select id="captions-edge-color">
+              <option value="white" data-l10n-id="color-white">White</option>
+              <option value="black" data-l10n-id="color-black" selected>Black</option>
+              <option value="red" data-l10n-id="color-red">Red</option>
+              <option value="yellow" data-l10n-id="color-yellow">Yellow</option>
+              <option value="green" data-l10n-id="color-green">Green</option>
+              <option value="cyan" data-l10n-id="color-cyan">Cyan</option>
+              <option value="blue" data-l10n-id="color-blue">Blue</option>
+              <option value="magenta" data-l10n-id="color-magenta">Magenta</option>
+            </select>
+          </span>
+        </li>
+        <li role="menuitem" data-show-name="accessibility.captions.theme.custom" hidden>
+          <span data-l10n-id="accessibility-captions-background-color"></span>
+          <span class="button icon icon-dialog">
+            <select id="captions-background-color">
+              <option value="transparent" data-l10n-id="none">None</option>
+              <option value="white" data-l10n-id="color-white">White</option>
+              <option value="black" data-l10n-id="color-black" selected>Black</option>
+              <option value="red" data-l10n-id="color-red">Red</option>
+              <option value="yellow" data-l10n-id="color-yellow">Yellow</option>
+              <option value="green" data-l10n-id="color-green">Green</option>
+              <option value="cyan" data-l10n-id="color-cyan">Cyan</option>
+              <option value="blue" data-l10n-id="color-blue">Blue</option>
+              <option value="magenta" data-l10n-id="color-magenta">Magenta</option>
+            </select>
+          </span>
+        </li>
+        <li role="menuitem" data-show-name="accessibility.captions.theme.custom" hidden>
+          <span data-l10n-id="accessibility-captions-background-opacity"></span>
+          <span class="button icon icon-dialog">
+            <select id="captions-background-opacity">
+              <option value="0.25">25%</option>
+              <option value="0.50">50%</option>
+              <option value="0.75">75%</option>
+              <option value="1" selected>100%</option>
+            </select>
+          </span>
+        </li>
+      </ul>
+    </div>
+
+    <panel data-path="panels/accessibility_captions/panel"></panel>
+  </template>
+</element>

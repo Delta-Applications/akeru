@@ -1,0 +1,41 @@
+<element name="wifi-status" extends="section">
+  <template>
+
+    <gaia-header>
+     <button type="reset" hidden=""><span data-icon="close"></span></button>
+      <h1 data-ssid=""> Network Status </h1>
+      <button type="submit" hidden=""><span data-l10n-id="forget"></span></button>
+    </gaia-header>
+
+    <div>
+      <ul role="menu">
+        <li role="menuitem" class="wifi-security">
+          <a>
+            <span data-l10n-id="security"></span>
+            <small data-security=""></small>
+          </a>
+        </li>
+        <li role="menuitem">
+          <a>
+            <span data-l10n-id="signalStrength"></span>
+            <small data-signal=""></small>
+          </a>
+        </li>
+        <li role="menuitem" class="wifi-ip-address">
+          <a>
+            <span data-l10n-id="ipAddress"></span>
+            <small data-ip=""></small>
+          </a>
+        </li>
+        <li role="menuitem" class="wifi-link-speed">
+          <a>
+            <span data-l10n-id="linkSpeed"></span>
+            <small data-speed=""></small>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <panel data-path="panels/wifi_status/panel"></panel>
+
+  </template>
+</element>

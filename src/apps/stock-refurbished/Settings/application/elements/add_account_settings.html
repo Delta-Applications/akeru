@@ -1,0 +1,47 @@
+<element name="add-account-settings" extends="section">
+  <template>
+    <gaia-header data-href="#root">
+      <h1 id="account-header"></h1>
+    </gaia-header>
+
+    <div>
+      <header>
+        <h2 data-l10n-id="apps-using-this-account"></h2>
+      </header>
+      <ul>
+        <li role="menuitem">
+          <label class="pack-checkbox">
+            <input data-ignore name="sync-canlendar" type="checkbox"/>
+            <span data-l10n-id="calendar"></span>
+          </label>
+        </li>
+        <li role="menuitem">
+          <label class="pack-checkbox">
+            <input data-ignore name="sync-contacts" type="checkbox"/>
+            <span data-l10n-id="contacts"></span>
+          </label>
+        </li>
+        <li role="menuitem">
+          <label class="pack-checkbox">
+            <input data-ignore name="sync-email" type="checkbox"/>
+            <span data-l10n-id="email"></span>
+          </label>
+        </li>
+      </ul>
+
+      <header>
+        <h2 data-l10n-id="account-information" id="account-info-header"></h2>
+      </header>
+      <ul>
+        <li role="menuitem" id="account-info">
+          <a class="menu-item">
+            <span data-l10n-id="username-and-password"></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <panel data-path="panels/add_account_settings/panel"></panel>
+
+  </template>
+</element>

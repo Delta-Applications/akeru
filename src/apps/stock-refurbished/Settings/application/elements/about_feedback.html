@@ -1,0 +1,48 @@
+<element name="about-feedback" extends="section">
+  <template>
+    <gaia-header data-href="#about">
+      <h1 data-l10n-id="feed-back-header"></h1>
+    </gaia-header>
+    <div class="feedback noScore">
+      <ul class="feedback-ul">
+        <li class="score-hint non-focus">
+          <p data-l10n-id="feedback-description"></p>
+          <p data-l10n-id="feedback-likely"></p>
+          <p data-l10n-id="feedback-notlikely"></p>
+        </li>
+        <li role="menuitem" id="volume-alarm" class="slider-container slider-score">
+          <label class="volume alarm">
+            <p data-l10n-id="feedback-givescore"></p>
+            <div class="score-wrapper">
+              <span>0</span>
+              <span>10</span>
+            </div>
+            <div class="score"><span class="before p-sec">8</span></div>
+            <input step="1" min="0" max="10" type="range" name="score" value="8">
+          </label>
+        </li>
+        <li>
+          <p data-l10n-id="feedback-mood-explain"></p>
+          <textarea id="feedback-description" name="description" x-inputmode="latin-prose" dir="auto" maxlength="1000"></textarea>
+        </li>
+        <li>
+          <div data-l10n-id="feedback-contactrequest"></div>
+          <label class="pack-checkbox special height-auto">
+            <input id="email-enable" name="email-enable" type="checkbox"/>
+            <span data-l10n-id="feedback-contactyou" id="feedback-contactyou"></span>
+          </label>
+        </li>
+        <li id="feedback-emailbar">
+          <p data-l10n-id="email-address1"></p>
+          <input id="feedback-email" type="email" name="email"/>
+        </li>
+        <li data-l10n-id="feedback-attention"></li>
+      </ul>
+    </div>
+    <div class="feedback-sending" hidden>
+      <span data-l10n-id="feedback-sending" class="p-sec feedback-hint"></span>
+      <gaia-progress id="gaia-progress"></gaia-progress>
+    </div>
+    <panel data-path="panels/about_feedback/panel"></panel>
+  </template>
+</element>

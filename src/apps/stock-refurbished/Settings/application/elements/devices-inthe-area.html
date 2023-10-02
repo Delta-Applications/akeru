@@ -1,0 +1,18 @@
+<element name="devices-inthe-area" extends="section">
+  <template>
+      <gaia-header data-href="#bluetooth">
+         <h1 data-l10n-id="bluetooth-devices-nearby-header"></h1>
+       </gaia-header>
+       <div class="panel">
+          <ul role="menu" id="bluetooth-devices" class="devices">
+          </ul>
+          <div id="nodevices-nearby">
+            <h2 id="bluetooth-nearby-desc" data-l10n-id="bt-nodevices-nearby" class="bt-explanation"></h2>
+          </div>
+          <div role="menuitem" id="bluetooth-searching" data-l10n-id="search-for-device" class="explanation">
+             Searching for devices…
+          </div>
+        </div>
+      <panel data-path="panels/bluetooth/device_in_area/panel"></panel>
+  </template>
+</element>

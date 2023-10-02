@@ -1,0 +1,21 @@
+<element name="cell-channel-detail" extends="section">
+  <template>
+    <gaia-header data-href="#cell-channels-config">
+      <h1></h1>
+    </gaia-header>
+    <div>
+      <ul role="menu">
+        <li role="menuitem">
+          <span data-l10n-id="channel-title"></span>
+          <input class="channel-title" type="text" maxlength="100"/>
+        </li>
+        <li role="menuitem">
+          <span data-l10n-id="channel-index"></span>
+          <input class="channel-index" x-inputmode="number" type="text" maxlength="11"/>
+          <small data-l10n-id="channel-desc"></small>
+        </li>
+      </ul>
+    </div>
+    <panel data-path="panels/cell_channel_detail/panel"></panel>
+  </template>
+</element>

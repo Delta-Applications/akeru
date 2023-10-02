@@ -1,0 +1,34 @@
+#clock_time{
+  width:100%;
+}
+#clock_time,#clock_date{
+  text-align:center;
+}
+#clock_time span,#clock_time small,#clock_date span{
+  pointer-events: none;
+  color: white;
+  text-shadow: 0.1em 0.1em 0.2em black;
+  font-weight: 300;
+  font-size: 11rem;
+}
+#clock_time small{
+  text-transform: uppercase;
+  font-size: 3.7rem;
+}
+#clock_date span{
+  font-size: 2.5rem;
+}
+.bold_clock span,.bold_clock small{
+  font-weight: 500 !important;
+}
+hr {
+  background-color: white;
+  display: block;
+  width:calc(100% - 2rem);
+  position: fixed;
+  left: 1rem;
+  right: 1rem;
+  bottom: 156px;
+  height: 1px;
+  border: none;
+}

@@ -1,0 +1,40 @@
+<element name="tones" extends="section">
+  <template>
+
+    <gaia-header data-href="#sound">
+      <h1 data-l10n-id="tones"></h1>
+    </gaia-header>
+    <div aria-labelledby="tones">
+      <ul role="menu">
+        <li role="textbox">
+          <span data-l10n-id="vibrate"></span>
+          <div class="button icon icon-dialog">
+            <select name="vibration.enabled" data-value-type="boolean">
+              <option data-l10n-id="on" value="true"></option>
+              <option data-l10n-id="off" value="false"></option>
+            </select>
+          </div>
+        </li>
+        <li role="menuitem" class="ringer" hidden>
+          <a class="menu-item ring-tone-selection" href="#">
+            <span data-l10n-id="ringtones"></span>
+            <small class="desc"></small>
+          </a>
+        </li>
+        <li role="menuitem" id="alerts">
+          <a class="menu-item alert-tone-selection" href="#">
+            <span data-l10n-id="notice-alerts"></span>
+            <small class="desc"></small>
+          </a>
+        </li>
+        <li role="menuitem" id="manage-tones">
+          <a class="manage-tones-button menu-item" href="#manageTones">
+            <span data-l10n-id="manage-tones"></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <panel data-path="panels/tones/panel"></panel>
+
+  </template>
+</element>

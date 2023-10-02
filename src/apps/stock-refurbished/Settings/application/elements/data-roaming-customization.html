@@ -1,0 +1,35 @@
+<!-- Modified for task 5346471/5110457 by yingsen.zhang@t2mobile.com begin -->
+<!-- Display three roaming options: Roaming International, Roaming Domestic, Roaming Not Allowed -->
+<element name="data-roaming-customization" extends="section">
+  <template>
+      <gaia-header data-href="#carrier">
+      <h1 data-l10n-id="dataRoaming"> Data Roaming</h1>
+    </gaia-header>
+
+    <div class="panel">
+      <ul role="menu">
+        <li role="menuitem">
+          <label class="pack-radio-large my_radio">
+            <input name="data_roaming_switch" value="0" type="radio">
+            <span data-l10n-id="dataRoamingNotAllowed">OFF</span>
+          </label>
+        </li>
+        <li role="menuitem">
+          <label class="pack-radio-large my_radio">
+            <input name="data_roaming_switch" value="1" type="radio">
+            <span data-l10n-id="dataRoamingDomestic">Domestic Roaming</span>
+          </label>
+        </li>
+        <li role="menuitem">
+          <label class="pack-radio-large my_radio">
+            <input name="data_roaming_switch" value="2" type="radio">
+            <span data-l10n-id="dataRoamingInternational">All networks</span>
+          </label>
+        </li>
+      </ul>
+      <p data-l10n-id="dataRoaming-attention-message" class="ums-confirm description"></p>
+    </div>
+    <panel data-path="panels/mobile_network_data/data_roaming/panel"></panel>
+  </template>
+</element>
+<!-- Modified for task 5346471/5110457 by yingsen.zhang@t2mobile.com end -->

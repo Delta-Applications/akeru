@@ -1,0 +1,50 @@
+<element name="display" extends="section">
+  <template>
+
+    <gaia-header data-href="#root">
+      <h1 data-l10n-id="display-header"></h1>
+    </gaia-header>
+    <div>
+      <div class="wallpaper">
+        <img class="wallpaper-preview">
+      </div>
+      <ul role="menu">
+        <li role="menuitem" class="wallpaper-select">
+          <span data-l10n-id="wallpaper"></span>
+        </li>
+
+        <li role="menuitem" class="slider-container none-select">
+          <label>
+            <p><span data-l10n-id="brightness"></span><span class="level"></span></p>
+            <input type="range" step="10" min="0" max="100" aria-hidden="true">
+          </label>
+        </li>
+        <li role="menuitem" id="screen-timeout">
+          <span data-l10n-id="screen-timeout" class="screen-timeout-title"></span>
+          <span class="button icon icon-dialog">
+            <select name="screen.timeout" data-value-type="integer" data-track-class="screen-timeout-title">
+              <option value="30" data-l10n-id="thirty-seconds"></option>
+              <option value="60" data-l10n-id="one-minute"></option>
+              <option value="120" data-l10n-id="two-minutes"></option>
+              <option value="300" data-l10n-id="five-minutes"></option>
+              <option value="600" data-l10n-id="ten-minutes"></option>
+              <option value="0" data-l10n-id="never"></option>
+            </select>
+          </span>
+        </li>
+        <li role="menuitem" id="auto-lock" class="auto-height">
+          <span data-l10n-id="auto-keypad-lock"></span>
+          <span class="button icon icon-dialog">
+            <select name="pocketmode.autolock.enabled" data-value-type="boolean">
+              <option value="true" data-l10n-id="on">On</option>
+              <option value="false" data-l10n-id="off">Off</option>
+            </select>
+          </span>
+        </li>
+      </ul>
+    </div>
+
+    <panel data-path="panels/display/panel"></panel>
+
+  </template>
+</element>

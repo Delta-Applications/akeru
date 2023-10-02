@@ -1,0 +1,33 @@
+<element name="accessibility-rtt" extends="section">
+  <template>
+
+    <gaia-header data-href="#accessibility">
+      <h1 data-l10n-id="accessibility-rtt"></h1>
+    </gaia-header>
+    <div class="panel">
+      <ul role="menu">
+        <li role="menuitem">
+          <span data-l10n-id="accessibility-rtt"></span>
+          <div class="button icon icon-dialog">
+            <select id="rtt-enable" name="ril.rtt.enabled" data-value-type="boolean">
+              <option data-l10n-id="on" value="true"></option>
+              <option data-l10n-id="off" value="false" selected ="selected"></option>
+            </select>
+          </div>
+        </li>
+        <li role="menuitem" id="accessaccessibility-rtt-preference" hidden>
+            <span data-l10n-id="accessibility-rtt-preference"></span>
+            <div class="button icon icon-dialog">
+              <select name="ril.rtt.preferredSettings" id="rtt-select">
+                <option value="visible-during-calls" data-l10n-id="visible-during-calls"></option>
+                <option value="always-visible-manual" data-l10n-id="always-visible-manual"></option>
+                <option value="always-visible-automatic" data-l10n-id="always-visible-automatic"></option>
+              </select>
+            </div>
+        </li>
+      </ul>
+    </div>
+    <panel data-path="panels/accessibility_rtt/panel"></panel>
+
+  </template>
+</element>

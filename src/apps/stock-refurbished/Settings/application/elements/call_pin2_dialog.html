@@ -1,0 +1,42 @@
+<element name="call-pin2-dialog" extends="section">
+  <template>
+
+    <gaia-header action="back" data-href="#call-fdnSettings">
+      <h1></h1>
+      <button data-l10n-id="done" type="submit">Done</button>
+    </gaia-header>
+
+    <div class="pin-dialog">
+      <div role="menuitem" class="sim-errorMsg error" hidden>
+        <div class="sim-messageHeader"></div>
+        <span class="sim-messageBody"></span>
+      </div>
+      <div role="menuitem" class="sim-triesLeft" data-l10n-id="inputCodeRetriesLeft" hidden></div>
+
+      <div role="menuitem" class="sim-code-area sim-pinArea">
+        <div data-l10n-id="simPin2">SIM PIN2</div>
+        <input type="password" x-inputmode="digit" size="8" maxlength="8" />
+      </div>
+
+      <div role="menuitem" class="sim-code-area sim-pukArea">
+        <div data-l10n-id="puk2Code">SIM PUK2 (at least 4 digits)</div>
+        <input type="password" x-inputmode="digit" size="8" maxlength="8" />
+      </div>
+
+      <div role="menuitem" class="sim-code-area sim-newPinArea">
+        <div data-l10n-id="newSimPin2Msg">
+          Create PIN2 (must contain 4 to 8 digits)
+        </div>
+        <input type="password" x-inputmode="digit" size="8" maxlength="8" />
+      </div>
+
+      <div role="menuitem" class="sim-code-area sim-confirmPinArea">
+        <div data-l10n-id="confirmNewSimPin2Msg">
+          Confirm New PIN2
+        </div>
+        <input type="password" x-inputmode="digit" size="8" maxlength="8" />
+      </div>
+    </div>
+
+  </template>
+</element>

@@ -1,0 +1,1 @@
+define(["require","shared/async_storage"],function(t){var e=t("shared/async_storage");return{getItem:function(t){return new Promise(function(n){e.getItem(t,n)})},setItem:function(t,n){return new Promise(function(i){e.setItem(t,n,i)})}}});

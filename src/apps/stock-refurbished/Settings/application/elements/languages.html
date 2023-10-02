@@ -1,0 +1,31 @@
+<element name="languages" extends="section">
+  <template>
+
+    <gaia-header data-href="#root">
+      <h1 data-l10n-id="language-header">Language</h1>
+    </gaia-header>
+
+    <div>
+      <ul role="menu">
+        <li role="menuitem" class="focus">
+          <span data-l10n-id="language" class="language-title">Language</span>
+          <span class="button icon icon-dialog">
+            <select name="language.current" data-track-class="language-title"></select>
+          </span>
+        </li>
+      </ul>
+
+      <header>
+        <h2 data-l10n-id="sample-format">Sample Format</h2>
+      </header>
+      <ul role="menu">
+        <li role="menuitem" class="description none-select">
+          <p id="region-date"></p>
+          <p id="region-time"></p>
+        </li>
+      </ul>
+    </div>
+
+    <panel data-path="panels/languages/panel"></panel>
+  </template>
+</element>

@@ -1,0 +1,24 @@
+<element name="colorFilter_contrast" extends="section">
+  <template>
+       <gaia-header data-href="#accessibility">
+         <h1 data-l10n-id="colorFilter-contrast"></h1>
+       </gaia-header>
+       <div>
+        <div class="volumeWrap">
+          <div data-focusable="true" class="progressContainer">
+            <div class="icon arrowUp"></div>
+            <div class="volumeContainer">
+              <div style="margin-top: 30%;font-size:2rem;padding:1.1rem;display:flex;">
+                <div data-icon="o" style="width:40%;text-align:left;"></div>
+                <div class="progress-desc" style="transform:rotate(90deg);width:20%;"></div>
+                <div data-icon="brightness" style="width:40%;text-align:right;"></div>
+              </div>
+              <progress id="contrast-progress" class="volumeProgress" value="0.5" max="1" ></progress>
+            </div>
+            <div class="icon arrowDown"></div>
+          </div>
+        </div>
+       </div>
+       <panel data-path="panels/accessibility_colorfilter_contrast/panel"></panel>
+  </template>
+</element>

@@ -1,0 +1,25 @@
+<element name="custom-handle-channels" extends="section">
+  <template>
+    <gaia-header>
+      <button type="reset" class="" hidden=""><span data-icon="close"></span></button>
+      <h1 data-l10n-id="add-cell-channel"></h1>
+      <button type="submit" class="recommend" hidden=""><span data-l10n-id="ok"></span></button>
+    </gaia-header>
+
+    <div>
+      <ul role="menu">
+        <li role="menuitem">
+          <p data-l10n-id="channel-title" class="input-description"></p>
+          <input type="text" class="channel-title" value="CB channel">
+        </li>
+        <li role="menuitem">
+          <p data-l10n-id="channel-index" class="input-description"></p>
+          <input type="text" class="channel-index" x-inputmode="number" size="11" maxlength="11" required="required" pattern="(^\d+[-]\d+$|^\d+$)">
+          <small data-l10n-id="channel-desc"></small>
+        </li>
+      </ul>
+    </div>
+
+    <panel data-path="panels/cell_broadcast_message/custom_handle_channels"></panel>
+  </template>
+</element>

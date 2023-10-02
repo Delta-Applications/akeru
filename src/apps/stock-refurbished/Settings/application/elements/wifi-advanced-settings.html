@@ -1,0 +1,35 @@
+<element name="wifi-advanced-settings" extends="section">
+  <template>
+
+     <gaia-header data-href="#wifi">
+          <h1 data-l10n-id="advanced-settings-header"></h1>
+        </gaia-header>
+        <div>
+           <ul role="menu">
+           <li role="menuitem">
+             <a class="menu-item" href="#wifi-manageNetworks">
+               <span data-l10n-id="manageNetworks"></span>
+               <small></small>
+             </a>
+            </li>
+            <li role="menuitem">
+              <a class="menu-item" href="#wifi-manageCertificates">
+                <span data-l10n-id="manageCertificates"></span>
+                <small></small>
+              </a>
+            </li>
+            <li role="menuitem">
+               <span data-l10n-id="publicNetworksNotices"></span>
+               <span class="button icon icon-dialog">
+              <select id="pnn-select" data-track-class="pnn" data-value-type="boolean">
+                <option value="true" data-l10n-id="on"></option>
+                <option value="false" data-l10n-id="off"></option>
+              </select>
+            </span>
+            </li>
+           </ul>
+        </div>
+
+      <panel data-path="panels/wifi_advanced_settings/panel"></panel>
+  </template>
+</element>

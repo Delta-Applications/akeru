@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="240" height="320" viewBox="0 0 240 320">
+    <defs>
+        <linearGradient id="ev6zazt03b" x1="30.519%" x2="67.54%" y1="10.125%" y2="89.049%">
+            <stop offset="0%" stop-color="#8743FF"/>
+            <stop offset="87.282%" stop-color="#5121E1"/>
+            <stop offset="87.622%" stop-color="#5121E1"/>
+            <stop offset="100%" stop-color="#491CDD"/>
+        </linearGradient>
+        <path id="4dz8rgq9aa" d="M0 0H240V320H0z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <mask id="narkt9u9uc" fill="#fff">
+            <use xlink:href="#4dz8rgq9aa"/>
+        </mask>
+        <use fill="url(#ev6zazt03b)" xlink:href="#4dz8rgq9aa"/>
+        <g fill="#E9E9F2" mask="url(#narkt9u9uc)" opacity=".2">
+            <g transform="rotate(-41 216.485 219.112)">
+                <circle cx="36.09" cy="88.16" r="35.5"/>
+                <path fill-rule="nonzero" d="M203.202 170.69c46.944 0 85-38.056 85-85 0-46.945-38.056-85-85-85s-85 38.055-85 85c0 46.944 38.056 85 85 85zm0-31.225c-29.7 0-53.775-24.076-53.775-53.776 0-29.699 24.076-53.775 53.775-53.775 29.7 0 53.776 24.076 53.776 53.775 0 29.7-24.077 53.776-53.776 53.776z"/>
+            </g>
+        </g>
+    </g>
+</svg>

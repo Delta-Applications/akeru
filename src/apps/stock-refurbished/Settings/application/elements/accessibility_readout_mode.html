@@ -1,0 +1,48 @@
+<element name="accessibility-readout-mode" extends="section">
+  <template>
+
+    <gaia-header data-href="#accessibility">
+      <h1 data-l10n-id="readoutmode">Readout Mode</h1>
+    </gaia-header>
+    <div class="panel">
+      <ul role="menu">
+        <li role="menuitem">
+          <span data-l10n-id="readoutmode"></span>
+          <div class="button icon icon-dialog">
+            <select name="accessibility.screenreader" data-value-type="boolean">
+              <option data-l10n-id="on" value="true"></option>
+              <option data-l10n-id="off" value="false" selected ="selected"></option>
+            </select>
+          </div>
+        </li>
+        <li role="menuitem" class="description none-select text-paragraph">
+          <span data-l10n-id="accessibility-readout-mode-description"></span>
+        </li>
+        <li role="menuitem" hidden>
+            <span data-l10n-id="accessibility-readout-caller-id"></span>
+            <div class="button icon icon-dialog">
+              <select id="calleridselect" name="callerid.mode.enabled">
+                <option value="ring-only" data-l10n-id="ring-only">Ring only</option>
+                <option value="caller-id-ring" data-l10n-id="caller-id-ring" selected ="selected">Caller ID + ring</option>
+                <option value="name-repeat" data-l10n-id="name-repeat">Name repeat</option>
+              </select>
+            </div>
+        </li>
+        <li role="menuitem" data-show-name="accessibility.screenreader" >
+          <span data-l10n-id="screen-reader-speech-rate"></span>
+          <div class="button icon icon-dialog">
+            <select id="speech-rate-select">
+              <option value="-0.5">50%</option>
+              <option value="-0.25">75%</option>
+              <option value="0">100%</option>
+              <option value="0.5">150%</option>
+              <option value="1">200%</option>
+            </select>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <panel data-path="panels/accessibility_readout_mode/panel"></panel>
+
+  </template>
+</element>

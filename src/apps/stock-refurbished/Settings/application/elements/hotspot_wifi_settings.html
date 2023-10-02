@@ -1,0 +1,36 @@
+<element name="hotspot-wifiSettings" extends="section">
+  <template>
+
+    <gaia-header>
+      <h1 data-l10n-id="hotspotSettings-header" data-href="#hotspot"></h1>
+      <button class="save-hotspotSettings" type="submit" hidden></button>
+    </gaia-header>
+
+    <div>
+      <ul role="menu">
+        <li role="menuitem">
+          <span data-l10n-id="ssid-name">SSID Network Name</span>
+          <input type="text" data-setting="tethering.wifi.ssid" maxlength="32" dir="auto"/>
+        </li>
+        <li role="menuitem">
+          <span data-l10n-id="wifi-security">Security</span>
+          <div class="button icon icon-dialog">
+            <select class="security-selector" data-setting="tethering.wifi.security.type"
+            name="tethering.wifi.security.type"></select>
+          </div>
+        </li>
+
+        <li role="menuitem" class="password input auto-height">
+          <span data-l10n-id="wifi-password">Password</span>
+          <input type="text" name="password" maxlength="63"
+                 x-inputmode="plain"
+                 data-setting="tethering.wifi.security.password"/>
+          <p data-l10n-id="hotspot-password-desc"></p>
+        </li>
+      </ul>
+    </div>
+
+    <panel data-path="panels/hotspot_wifi_settings/panel"></panel>
+
+  </template>
+</element>

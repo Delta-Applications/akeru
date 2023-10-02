@@ -1,0 +1,1 @@
+navigator.mozId&&LazyLoader.load(["/shared/js/fxa_iac_client.js","/shared/js/text_normalizer.js","js/firefox_accounts/panel.js"],function(){FxaPanel.init(FxAccountsIACHelper)});

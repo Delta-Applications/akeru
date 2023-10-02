@@ -1,0 +1,322 @@
+
+.menu-item {
+  position: static;
+}
+.menu-item[data-icon] {
+  -moz-padding-start: 3.5rem;
+  width:20.5rem;
+}
+a.menu-item:after {
+  font-family: "gaia-icons";
+  content: "forward";
+  position: absolute;
+  top: calc(50% - 1.5rem);
+  right: 0.5rem;
+  font-size: 3.2rem;
+  color: var(--color-gs45);
+}
+a.menu-item.disabled:after {
+  display: none;
+}
+a.menu-item.alert:after {
+  content: "alertforward";
+}
+.focus a.menu-item:after {
+  color: var(--color-gs00);
+}
+.focus a.menu-item.disabled:after {
+  display: none;
+}
+a.menu-item:active:after {
+  color: #91aab0;
+}
+.focus .menu-item::before {
+  color: var(--color-gs00) !important;
+}
+.menu-item::before {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  width: 3rem;
+  text-align: center;
+  line-height: 0;
+  color: var(--highlight-color);
+  font-size: 3.2rem !important;
+}
+label > .menu-item::before {
+  left: 1.5rem;
+}
+label > .menu-item + small {
+  margin: 0;
+  -moz-margin-start: 4rem;
+  padding: 0;
+}
+.menu-item-desc {
+  left: 4rem;
+}
+#suggestions-desc {
+  left: 0;
+}
+#menuItem-suggestions {
+  -moz-padding-start: 1.5rem;
+}
+#menuItem-suggestions::before {
+  background: none;
+}
+div.wifi-icon {
+  font-weight: 500;
+  font-style: normal;
+  text-decoration: inherit;
+  text-transform: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  background-repeat: no-repeat;
+  background-position: 0 center;
+  background-size: 16rem;
+  width: 3.2rem;
+  height: 3.2rem;
+}
+.wifi-icon-level::before,
+.wifi-icon::before,
+.wifi-icon::after {
+  font-family: "gaia-icons";
+  display: inline-block;
+  width: 3.2rem;
+  height: 3.2rem;
+  font-size: 3.2rem;
+  position: absolute;
+  top: 25%;
+  left: 0.8rem;
+  right: 0;
+  bottom: 0;
+}
+html[dir="rtl"] .wifi-icon-level::before,
+html[dir="rtl"] .wifi-icon::before,
+html[dir="rtl"] .wifi-icon::after {
+  left: 0;
+  right: 0.8rem;
+}
+.connected.wifi-icon.secured::after {
+  color: var(--color-gs90);
+}
+.connected.wifi-icon::before,
+.connected .wifi-icon-level::before {
+  color: var(--color-blue);
+}
+.connected .wifi-icon-level::before {
+  opacity: 1;
+}
+.focus .wifi-icon::before,
+.focus .connected.wifi-icon::before,
+.focus .connected.wifi-icon.secured::after {
+  color: var(--color-gs00);
+}
+.focus .connected .wifi-icon-level::before {
+  color: var(--color-gs00);
+  opacity: 1;
+}
+.wifi-icon::before {
+  content: attr(data-icon);
+  color: var(--color-gs90);
+  opacity: 0.3;
+}
+.wifi-icon-level::before {
+  content: 'wifi-'attr(singal-level)'-32px';
+  color: var(--color-gs90);
+  opacity: 1;
+}
+.wifi-icon-level[singal-level="4"]::before {
+  content: "wifi-32px";
+}
+.focus .wifi-icon-level::before {
+  color: var(--color-gs00);
+  opacity: 0.7;
+}
+.wifi-icon.secured::after {
+  content: "wifi-locked-32px";
+  color: var(--color-gs90);
+}
+.focus .wifi-icon.secured::after {
+  color: var(--color-gs00);
+  opacity: 0.7;
+}
+.connected.wifi-icon.secured.nointernet::after,
+.connected.wifi-icon.nointernet::after {
+  content: "wifi-error-32px";
+  color: var(--color-gs90);
+}
+.focus .connected.wifi-icon.secured.nointernet::after,
+.focus .connected.wifi-icon.nointernet::after {
+  color: var(--color-gs00);
+  opacity: 1;
+}
+#menuItem-callWaiting .alert-label > span {
+  position: absolute;
+  right: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+  background-image: url(images/call_waiting_disabled.png);
+  background-size: 3rem;
+  background-repeat: no-repeat;
+}
+.bluetooth-device {
+  background-repeat: no-repeat;
+  background-position: right 3rem top 50%;
+  -moz-padding-end: 2rem;
+}
+.bluetooth-device:before {
+  content: "";
+  width: 3rem;
+  height: 3rem;
+  background-image: url(images/ic_bluetooth_sprite_normal.png);
+  background-size: 42rem auto;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  margin-top: -1.5rem;
+}
+.focus.bluetooth-device:before {
+  background-image: url(images/ic_bluetooth_sprite_focused.png);
+}
+.bluetooth-type-audio-card:before {
+  background-position: 0 0;
+}
+.bluetooth-type-audio-input-microphone:before {
+  background-position: -3rem 0;
+}
+.bluetooth-type-battery:before {
+  background-position: -6rem 0;
+}
+.bluetooth-type-camera-photo:before {
+  background-position: -9rem 0;
+}
+.bluetooth-type-camera-video:before {
+  background-position: -12rem 0;
+}
+.bluetooth-type-camera-web:before {
+  background-position: -15rem 0;
+}
+.bluetooth-type-computer:before {
+  background-position: -18rem 0;
+}
+.bluetooth-type-drive-harddisk:before {
+  background-position: -21rem 0;
+}
+.bluetooth-type-drive-optical:before {
+  background-position: -24rem 0;
+}
+.bluetooth-type-drive-removable-media:before {
+  background-position: -27rem 0;
+}
+.bluetooth-type-input-gaming:before {
+  background-position: -30rem 0;
+}
+.bluetooth-type-input-keyboard:before {
+  background-position: -33rem 0;
+}
+.bluetooth-type-input-mouse:before {
+  background-position: -36rem 0;
+}
+.bluetooth-type-unknown:before {
+  background-position: -39rem 0;
+}
+.bluetooth-type-input-tablet:before {
+  background-position: 0 -3rem;
+}
+.bluetooth-type-media-flash:before {
+  background-position: -3rem -3rem;
+}
+.bluetooth-type-media-floppy:before {
+  background-position: -6rem -3rem;
+}
+.bluetooth-type-media-optical:before {
+  background-position: -9rem -3rem;
+}
+.bluetooth-type-media-tape:before {
+  background-position: -12rem -3rem;
+}
+.bluetooth-type-modem:before {
+  background-position: -15rem -3rem;
+}
+.bluetooth-type-multimedia-player:before {
+  background-position: -18rem -3rem;
+}
+.bluetooth-type-network-wired:before {
+  background-position: -21rem -3rem;
+}
+.bluetooth-type-network-wireless:before {
+  background-position: -24rem -3rem;
+}
+.bluetooth-type-pda:before,
+.bluetooth-type-phone:before {
+  background-position: -27rem -3rem;
+}
+.bluetooth-type-printer:before {
+  background-position: -30rem -3rem;
+}
+.bluetooth-type-scanner:before {
+  background-position: -33rem -3rem;
+}
+.bluetooth-type-video-display:before {
+  background-position: -36rem -3rem;
+}
+.privacy-menuitem {
+  -moz-padding-start: 7.4rem;
+  background-repeat: no-repeat;
+  background-position: 1.4rem center;
+}
+.privacy-menuitem:before {
+  content: "";
+  width: 3.2rem;
+  height: 3.3rem;
+  background: url(/shared/resources/branding/privacy_sprite.png) no-repeat 3rem 3rem / 9.6rem;
+  position: absolute;
+  left: 1.5rem;
+  top: 50%;
+  margin-top: -1.5rem;
+}
+.privacy-browserOS:before {
+  background-position: 0 0;
+}
+.privacy-everythingME:before {
+  background-position: -3.2rem 0;
+}
+.privacy-marketPlace:before {
+  background-position: -6.4rem 0;
+}
+html[dir="rtl"] a.menu-item:after {
+  left: 0;
+  right: unset;
+  content: "backward";
+}
+html[dir="rtl"] .menu-item::before {
+  left: unset;
+  right: 0;
+}
+html[dir="rtl"] label > .menu-item::before {
+  left: unset;
+  right: 1.5rem;
+}
+html[dir="rtl"] .menu-item-desc {
+  left: unset;
+  right: 4rem;
+}
+html[dir="rtl"] #suggestions-desc {
+  left: unset;
+  right: 0;
+}
+html[dir="rtl"] aside.pack-end {
+  right: 1rem;
+}
+html[dir="rtl"] #menuItem-callWaiting .alert-label > span {
+  left: 1.5rem;
+  right: unset;
+}
+html[dir="rtl"] .bluetooth-device:before {
+  right: 1rem;
+}
+html[dir="rtl"] .privacy-menuitem:before {
+  left: unset;
+  right: 1.5rem;
+}

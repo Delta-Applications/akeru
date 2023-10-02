@@ -1,0 +1,89 @@
+<element name="about" extends="section">
+  <template>
+
+    <gaia-header id="adbout-header" data-href="#root">
+      <h1 data-l10n-id="deviceInfo-header"></h1>
+    </gaia-header>
+
+    <div id="about-deviceInfo" role="heading" aria-labelledby="adbout-header">
+      <ul role="menu">
+        <li class="deviceinfo-phone-num none-select" role="menuitem">
+          <span data-l10n-id="deviceInfo-MSISDN"></span>
+          <small class="deviceInfo-msisdns multiline"></small>
+        </li>
+        <li role="menuitem" class="none-select">
+          <span id="model-name" data-l10n-id="model-name"></span>
+          <small data-name="deviceinfo.product_model"></small>
+        </li>
+        <li role="menuitem" class="none-select">
+          <span id="os-version" data-l10n-id="software"></span>
+          <small data-name="deviceinfo.software"></small>
+        </li>
+        <li role="menuitem" hidden>
+          <span data-l10n-id="last-updated"></span>
+          <small class="last-update-date"></small>
+        </li>
+        <!--<li role="menuitem" id="fota-settings" hidden>
+          <a class="menu-item">
+            <span data-l10n-id="software-update"></span>
+          </a>
+        </li>
+        <li role="menuitem" class="feed-back">
+          <span id="feed-back" data-l10n-id="feed-back"></span>
+        </li>-->
+        <li role="menuitem">
+          <a class="menu-item" href="#about-moreInfo">
+            <span data-l10n-id="more-info"></span>
+          </a>
+        </li>
+        <li class="about-legal-info" role="menuitem" hidden>
+          <a class="menu-item" href="#about-legal">
+            <span data-l10n-id="about-legal-info"></span>
+          </a>
+        </li>
+        <li class="customer-support" role="menuitem" hidden>
+          <a class="menu-item" href="#">
+            <span data-l10n-id="customer-support"></span>
+          </a>
+        </li>
+      </ul>
+
+      <header hidden>
+        <h2 data-l10n-id="softwareUpdates"></h2>
+      </header>
+      <ul role="menu" hidden>
+        <li role="menuitem">
+          <p data-l10n-id="check-for-updates" class="check_updates"></p>
+          <span class="button icon icon-dialog">
+            <select name="app.update.interval" data-track-class="check_updates">
+              <option value="86400" data-l10n-id="check-update-daily" selected=""></option>
+              <option value="604800" data-l10n-id="check-update-weekly"></option>
+              <option value="2592000" data-l10n-id="check-update-monthly"></option>
+            </select>
+          </span>
+        </li>
+        <li role="menuitem">
+          <a class="check-update-now" data-l10n-id="check-update-now"></a>
+        </li>
+        <li class="update-status description update-status" hidden="" role="menuitem">
+          <p>
+            <span class="general-information" data-l10n-id="checking-for-update"></span>
+            <span class="system-update-status"></span>
+          </p>
+        </li>
+      </ul>
+
+      <header>
+        <h2 data-l10n-id="reset-head"></h2>
+      </header>
+      <ul role="menu">
+        <li class="reset-phone button" role="menuitem">
+          <button data-l10n-id="reset-device"></button>
+        </li>
+      </ul>
+    </div>
+
+    <panel data-path="panels/about/panel"></panel>
+
+  </template>
+</element>

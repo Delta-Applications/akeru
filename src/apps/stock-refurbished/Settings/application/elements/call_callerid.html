@@ -1,0 +1,26 @@
+<element name="call-caller-id" extends="section">
+  <template>
+
+    <gaia-header data-href="#call">
+      <h1 data-l10n-id="callerId"></h1>
+    </gaia-header>
+
+    <div>
+      <ul role="menu">
+        <li role="menuitem" id="menuItem-caller-id" aria-disabled="true" class="none-select">
+          <span data-l10n-id="callerId">Caller ID</span>
+          <div class="button icon icon-dialog">
+            <select id="ril-callerId" data-setting="ril.callerId" data-track-class="ril-caller-id-title">
+              <option value="CLIR_DEFAULT" data-l10n-id="callerId-default">Network default</option>
+              <option value="CLIR_INVOCATION" data-l10n-id="callerId-hide">Hide number</option>
+              <option value="CLIR_SUPPRESSION" data-l10n-id="callerId-show">Show number</option>
+            </select>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <panel data-path="panels/call_callerid/panel"></panel>
+
+  </template>
+</element>

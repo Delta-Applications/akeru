@@ -1,0 +1,35 @@
+<element name="volte-vowifi" extends="section">
+  <template>
+    <gaia-header data-href="#root">
+      <h1 id="volte-vowifi-h1" data-l10n-id="volte-header" hidden></h1>
+    </gaia-header>
+
+    <div>
+      <ul role="menu">
+        <li role="menuitem" id="volte" aria-disabled="false" class="hidden">
+          <span data-l10n-id="volte"></span>
+          <div class="button icon icon-dialog">
+            <select id="volte-switch" data-value-type="boolean">
+              <option value="true" data-l10n-id="on">On</option>
+              <option value="false" data-l10n-id="off">Off</option>
+            </select>
+          </div>
+        </li>
+
+        <li role="menuitem" id="vowifi" aria-disabled="false" class="hidden">
+          <span data-l10n-id="vowifi"></span>
+          <div class="button icon icon-dialog">
+            <select id="vowifi-switch" data-value-type="boolean">
+              <option value="true" data-l10n-id="on">On</option>
+              <option value="false" data-l10n-id="off">Off</option>
+            </select>
+            <span id="vowifi-status-desc" class="vowifi-status-desc"></span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <panel data-path="panels/volte_vowifi/panel"></panel>
+
+  </template>
+</element>

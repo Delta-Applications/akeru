@@ -1,0 +1,34 @@
+<element name="volume" extends="section">
+  <template>
+
+    <gaia-header data-href="#sound">
+      <h1 data-l10n-id="volume-header"></h1>
+    </gaia-header>
+
+    <div aria-labelledby="volume-header">
+      <ul role="menu">
+        <li role="menuitem" id="volume-media" class="slider-container">
+          <label class="volume media">
+            <p><span data-l10n-id="media-sound"></span><span class="level"></span></p>
+            <input type="range" step="1" min="0" max="15" aria-hidden="true">
+          </label>
+        </li>
+        <li role="menuitem" id="volume-notification" class="slider-container">
+          <label class="volume notification">
+            <p><span data-l10n-id="ringtone-and-notification-sound"></span><span class="level"></span></p>
+            <input type="range" step="1" min="0" max="15" aria-hidden="true">
+          </label>
+        </li>
+        <li role="menuitem" id="volume-alarm" class="slider-container">
+          <label class="volume alarm">
+            <p><span data-l10n-id="alarm-sound"></span><span class="level"></span></p>
+            <input type="range" step="1" min="0" max="15" aria-hidden="true">
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <panel data-path="panels/volume/panel"></panel>
+
+  </template>
+</element>

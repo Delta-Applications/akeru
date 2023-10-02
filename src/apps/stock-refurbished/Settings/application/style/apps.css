@@ -1,0 +1,56 @@
+
+#app-notices ul li img,
+#homescreens ul li img,
+#themes ul li img,
+#multifunction_any ul li img,
+#appPermissions ul li img{
+  -moz-margin-end: 1.4rem;
+  width: 3rem;
+  height: 3rem;
+  filter: url('shadow.svg#drop-shadow');
+  padding-right: unset;
+}
+#app-notices ul li > a,
+#homescreens ul li > a,
+#homescreens ul li > label,
+#themes ul li > a,
+#themes ul li > label,
+#multifunction_any ul li > a,
+#multifunction_any ul li > label,
+#appPermissions ul li > a{
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.uninstall-app {
+  margin: 1rem 1.5rem 0;
+  padding: 1.5rem 0 0.5rem;
+  border-top: 0.1rem solid #E6E6E3;
+}
+#homescreens .cb-alert,
+#themes .cb-alert,
+#multifunction_any .cb-alert,
+#appPermissions .cb-alert {
+  position: fixed;
+}
+.developer-infos > a > small {
+  color: #00e;
+}
+#homescreens label.menu-item:after,
+#homescreens a.menu-item:after,
+#themes label.menu-item:after,
+#themes a.menu-item:after,
+#multifunction_any label.menu-item:after,
+#multifunction_any a.menu-item:after,
+#appPermissions a.menu-item:after {
+  content: unset;
+}
+.accessibility-hac {
+  height: auto;
+}
+#empty-list {
+  font-size: var(--font-p-pri);
+  text-align: center;
+  margin-top: 40%;
+  color: var(--color-gs70);
+}

@@ -1,0 +1,40 @@
+<element name="aboutKaios" extends="section">
+  <template>
+
+    <gaia-header data-href="#root">
+      <h1 class="aboutKaios-header" data-l10n-id="aboutKaios-header"></h1>
+    </gaia-header>
+
+    <div>
+      <ul>
+        <li role="menuitem" class="more-description-container">
+          <a href="#kaios-more-about">
+            <p data-l10n-id="aboutKaiosP1" class="more-description-msg1"></p>
+            <p data-l10n-id="aboutKaiosP2" class="more-description-msg2"></p>
+            <p data-l10n-id="more" class="more-description"></p>
+          </a>
+        </li>
+        <li role="menuitem">
+          <label class="pack-checkbox">
+            <input type="checkbox" name="eventlogger.age.consent">
+            <span data-l10n-id="about-kaios-age"></span>
+          </label>
+        </li>
+        <li id="liItem-dataShared" role="menuitem">
+          <label class="pack-checkbox">
+            <input type="checkbox" name="eventlogger.telemetry.consent">
+            <span data-l10n-id="aboutKaiosAgree"></span>
+          </label>
+        </li>
+        <li role="menuitem">
+          <label class="pack-checkbox">
+            <input type="checkbox" name="eventlogger.targeting.consent">
+            <span data-l10n-id="about-target"></span>
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <panel data-path="panels/about_kaios/panel"></panel>
+  </template>
+</element>

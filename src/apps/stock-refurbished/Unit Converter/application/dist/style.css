@@ -142,7 +142,7 @@
   white-space: nowrap;
   color: var(--softkey-color);
   direction: ltr;
-  background-color: var(--softkeybar-background-color); }
+  background-color: var(--color-gs00); }
   .skbar:not(.visible) {
     display: none; }
   .skbar > * {
@@ -233,7 +233,9 @@ body {
   #app .app-content {
     position: relative;
     height: 100%;
-    overflow: hidden; }
+    overflow: hidden; 
+    /* DARK MODE filter: invert(100%);*/
+  }
   #app .x-window {
     position: absolute;
     left: 0;
@@ -337,7 +339,9 @@ ul {
     position: relative;
     height: var(--hint-height);
     justify-content: space-between;
-    background-color: var(--color-gs10); }
+    background-color: var(--color-gs90); 
+    filter: invert(100%);
+  }
     .calculate + .hint:before, .calculate + .hint:after {
       content: '';
       display: inline-block;
@@ -401,7 +405,8 @@ header h1 {
   text-overflow: ellipsis;
   white-space: nowrap;
   font-size: 1.7rem;
-  font-weight: normal; }
+  font-weight: normal;
+  background-color: var(--color-gs00); }
 
 @media only screen and (orientation: landscape) {
   .calculate > li {

@@ -1,0 +1,79 @@
+<element name="hotspot" extends="section">
+  <template>
+    <gaia-header>
+      <h1 data-l10n-id="internetSharing-header" data-href="#root"></h1>
+    </gaia-header>
+    <div>
+      <header id="hotspot-wifi-header">
+        <h2 data-l10n-id="internetSharing-wifi"></h2>
+      </header>
+      <ul role="menu" id="hotspot-wifi-switch">
+        <li role="menuitem" id="wifi-hotspot">
+          <span data-l10n-id="wifi-hotspot"></span>
+          <div class="button icon icon-dialog">
+            <select data-value-type="boolean">
+              <option data-l10n-id="on" value="true"></option>
+              <option data-l10n-id="off" value="false"></option>
+            </select>
+          </div>
+        </li>
+        <li role="menuitem" class="none-select text-paragraph auto-height">
+          <span data-l10n-id="internetSharing-wifi-desc"></span>
+        </li>
+      </ul>
+      <ul  id="hotspot-wifi-info">
+        <li role="menuitem" class="none-select">
+          <span data-l10n-id="wifi-name"></span>
+          <small id="network-name-desc"></small>
+        </li>
+        <li role="menuitem" class="none-select">
+          <span data-l10n-id="wifi-security"></span>
+          <small id="wifi-security-desc"></small>
+        </li>
+        <li role="menuitem" class="none-select wifi-password">
+          <span data-l10n-id="wifi-password"></span>
+          <small id="wifi-password-desc"></small>
+        </li>
+        <li role="menuitem" id="hotspot-settings-section">
+          <a class="menu-item" href="#" data-l10n-id="hotspotSettings"></a>
+        </li>
+        <li role="menuitem">
+          <span data-l10n-id="auto-turnOff"></span>
+          <span class="button icon icon-dialog">
+            <select name="tethering.wifi.timeout" data-value-type="integer">
+              <option value="0" data-l10n-id="never"></option>
+              <option value="300" data-l10n-id="five-minutes"></option>
+              <option value="600" data-l10n-id="ten-minutes"></option>
+              <option value="1200" data-l10n-id="twenty-minutes"></option>
+              <option value="1800" data-l10n-id="thirty-minutes"></option>
+              <option value="3600" data-l10n-id="sixty-minutes"></option>
+            </select>
+          </span>
+        </li>
+        <li role="menuitem" class="none-select text-paragraph auto-height">
+          <span data-l10n-id="auto-turnOff-desc"></span>
+        </li>
+      </ul>
+      <header id="usb-tethering-header">
+        <h2 data-l10n-id="internetSharing-usb"></h2>
+      </header>
+      <ul role="menu" id="usb-tethering-area">
+        <li role="menuitem" id="usb-tethering">
+          <span data-l10n-id="usb-tethering"></span>
+          <div class="button icon icon-dialog">
+            <select data-value-type="boolean">
+              <option data-l10n-id="on" value="true"></option>
+              <option data-l10n-id="off" value="false"></option>
+            </select>
+          </div>
+        </li>
+        <li role="menuitem" class="none-select text-paragraph auto-height">
+          <span data-l10n-id="internetSharing-usb-desc"></span>
+        </li>
+      </ul>
+    </div>
+
+    <panel data-path="panels/hotspot/panel"></panel>
+
+  </template>
+</element>

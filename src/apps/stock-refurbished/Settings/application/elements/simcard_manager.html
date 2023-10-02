@@ -1,0 +1,55 @@
+<element name="sim-manager" extends="section">
+  <template>
+    <gaia-header data-href="#root">
+      <h1 data-l10n-id="simManager-header"></h1>
+    </gaia-header>
+
+    <div>
+      <ul role="menu" class="sim-card-container"></ul>
+
+      <header class="sim-manager-settings-header">
+        <h2 data-l10n-id="simSettings"></h2>
+      </header>
+
+      <ul role="menu" class="sim-manager-select-list">
+        <li role="menuitem" id="outgoing-calls-container">
+          <span data-l10n-id="sim-manager-outgoing-calls"></span>
+          <span class="button icon icon-dialog">
+            <select class="sim-manager-outgoing-call-select"></select>
+          </span>
+        </li>
+        <li role="menuitem" id="outgoing-messages-container">
+          <span data-l10n-id="sim-manager-outgoing-messages"></span>
+          <span class="button icon icon-dialog">
+            <select class="sim-manager-outgoing-messages-select"></select>
+          </span>
+        </li>
+        <li role="menuitem" id="outgoing-data-container">
+          <span data-l10n-id="sim-manager-outgoing-data"></span>
+          <span class="button icon icon-dialog">
+            <select class="sim-manager-outgoing-data-select"></select>
+          </span>
+        </li>
+        <li role="menuitem">
+          <a class="menu-item" href="#simpin">
+            <span data-l10n-id="simSecurity"></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <panel data-path="panels/simcard_manager/panel"></panel>
+    <div class="sim-card-tmpl" hidden>
+      <!--
+      <li role="menuitem" class="sim-card sim-card-${sim-index}">
+        <div class="sim-card-icon"></div>
+        <div class="information-container">
+          <span class="sim-card-name"></span>
+          <p class="sim-card-operator"></p>
+        </div>
+        <a class="menu-item"></a>
+      </li>
+      -->
+    </div>
+  </template>
+</element>

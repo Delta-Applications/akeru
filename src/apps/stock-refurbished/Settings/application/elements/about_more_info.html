@@ -1,0 +1,69 @@
+<element name="about-moreInfo" extends="section">
+  <template>
+
+     <gaia-header data-href="#about">
+      <h1 data-l10n-id="more-info-header"></h1>
+    </gaia-header>
+
+    <div>
+      <ul role="menu">
+        <li role="menuitem" id="os-version-li">
+          <span data-l10n-id="os-version"></span>
+          <small data-name="deviceinfo.os"></small>
+        </li>
+        <li role="menuitem">
+          <span data-l10n-id="software-tag"></span>
+          <small data-name="deviceinfo.software_tag"></small>
+        </li>
+        <li role="menuitem">
+          <span data-l10n-id="vendor-base-version"></span>
+          <small data-name="deviceinfo.base_version"></small>
+        </li>
+        <li role="menuitem">
+          <span data-l10n-id="firmware_revision"></span>
+          <small data-name="deviceinfo.firmware_revision"></small>
+        </li>
+        <li role="menuitem">
+          <span data-l10n-id="hardware_revision"></span>
+          <small data-name="deviceinfo.hardware"></small>
+        </li>
+        <li role="menuitem" class="list-mac">
+          <span data-l10n-id="macAddress"></span>
+          <small data-name="deviceinfo.mac"></small>
+        </li>
+        <li role="menuitem" class="list-imeis">
+          <span data-l10n-id="deviceInfo-IMEI"></span>
+          <small class="deviceInfo-imeis multiline"></small>
+        </li>
+        <li role="menuitem" class="list-meids" hidden>
+          <span data-l10n-id="deviceInfo-MEID"></span>
+          <small class="deviceInfo-meids multiline"></small>
+        </li>
+        <li role="menuitem">
+          <span data-l10n-id="build_number"></span>
+          <small data-name="deviceinfo.build_number"></small>
+        </li>
+        <li role="menuitem" class="list-iccids">
+          <span data-l10n-id="deviceInfo-ICCID"></span>
+          <small class="deviceInfo-iccids multiline"></small>
+        </li>
+        <li role="menuitem">
+          <span data-l10n-id="platform_version"></span>
+          <small data-name="deviceinfo.platform_version"></small>
+        </li>
+        <li role="menuitem">
+          <span data-l10n-id="build-id"></span>
+          <small data-name="deviceinfo.platform_build_id"></small>
+        </li>
+        <li role="menuitem" class="list-bluetooth">
+          <span data-l10n-id="bluetooth-address"></span>
+          <small data-name="deviceinfo.bt_address"></small>
+        </li>
+      </ul>
+
+    </div>
+
+    <panel data-path="panels/about_more_info/panel"></panel>
+
+  </template>
+</element>

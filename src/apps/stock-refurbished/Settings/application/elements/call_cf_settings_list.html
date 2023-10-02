@@ -1,0 +1,25 @@
+<element name="call-cfsettings-list" extends="section">
+  <template>
+    <gaia-header data-href="#call">
+      <h1 data-l10n-id="callForwarding-header"></h1>
+    </gaia-header>
+
+    <div>
+      <ul role="menu">
+        <li role="menuitem" id="li-voice-call">
+          <a class="menu-item" data-href="#call-cfSettings">
+            <span data-l10n-id="voice-call"></span>
+          </a>
+        </li>
+        <li role="menuitem" id="li-video-call">
+          <a class="menu-item" data-href="#call-cfsettings-vt">
+            <span data-l10n-id="video-call"></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <panel data-path="panels/call_cf_settings_list/panel"></panel>
+
+  </template>
+</element>

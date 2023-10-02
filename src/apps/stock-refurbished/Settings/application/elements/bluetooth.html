@@ -1,0 +1,57 @@
+<element name="bluetooth" extends="section">
+  <template>
+
+    <gaia-header data-href="#root">
+      <h1 data-l10n-id="bluetooth-header"></h1>
+    </gaia-header>
+
+    <div>
+      <ul role="menu">
+        <li role="menuitem">
+           <label class="pack-radio-large my_radio">
+             <input name="bluetooth-enabled" value="true" type="radio">
+             <span data-l10n-id="on"></span>
+           </label>
+        </li>
+        <li role="menuitem">
+          <label class="pack-radio-large my_radio">
+             <input name="bluetooth-enabled" value="false" type="radio">
+             <span data-l10n-id="off"></span>
+           </label>
+        </li>
+        <li id="device-visible" hidden>
+          <a class="menu-item">
+            <span data-l10n-id="bluetooth-visible-to-all" class="bluetooth-visible-to-all-title"></span>
+            <span class="button icon icon-dialog">
+              <select data-track-class="bluetooth-visible-to-all-title">
+                <option value="true" data-l10n-id="on"></option>
+                <option value="false" data-l10n-id="off"></option>
+              </select>
+            </span>
+          </a>
+        </li>
+        <li role="menuitem" id="myPhone-name" hidden>
+          <a href="#changePhonename" class="menu-item">
+            <span data-l10n-id="myphonename"></span>
+            <small id="bluetooth-device-name" class="break-all"></small>
+          </a>
+        </li>
+        <li role="menuitem" id="bluetooth-devices-nearby" hidden>
+          <a href="#devicesInthearea" class="menu-item">
+            <span data-l10n-id="bluetooth-devices-nearby"></span>
+            <small></small>
+          </a>
+        </li>
+        <li role="menuitem" id="bluetooth-paired-device" hidden>
+          <a href="#paired-device" class="menu-item">
+            <span data-l10n-id="bluetooth-paired-devices"></span>
+            <small></small>
+          </a>
+        </li>
+      </ul>
+       <p data-l10n-id="bluetooth-enable-msg" id="bluetooth-enable-msg" class="ums-confirm description"></p>
+     </div>
+    <panel data-path="panels/bluetooth/bluetooth/panel"></panel>
+
+  </template>
+</element>

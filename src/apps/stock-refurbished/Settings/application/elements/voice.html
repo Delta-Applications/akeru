@@ -1,0 +1,26 @@
+<element name="voice" extends="section">
+  <template>
+
+    <gaia-header data-href="#root">
+      <h1 data-l10n-id="voice"></h1>
+    </gaia-header>
+    <div aria-labelledby="voice">
+      <ul role="menu">
+        <li role="menuitem">
+          <span data-l10n-id="always-on-voice"></span>
+          <span class="button icon icon-dialog">
+            <select name="settings.aov.enabled" data-value-type="boolean">
+              <option value="true" data-l10n-id="on"></option>
+              <option value="false" data-l10n-id="off"></option>
+            </select>
+          </span>
+        </li>
+        <li role="menuitem" id="manage-profiles">
+          <span data-l10n-id="manage-profiles"></span>
+        </li>
+      </ul>
+    </div>
+    <panel data-path="panels/voice/panel"></panel>
+
+  </template>
+</element>

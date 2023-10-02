@@ -1,0 +1,2 @@
+
+!function(){function t(){}function e(t,e){var n=t;if(e&&(n+=JSON.stringify(e)),dump){var r=document.location.hostname.replace(/\..*$/,"");dump("["+r+"] "+n+"\n")}else console.log(n)}window.DUMP=t;var n=window.navigator.mozSettings,r=n.createLock().get("debug.gaia.enabled");r.onsuccess=function(){window.DUMP=r.result["debug.gaia.enabled"]?e:t},n.addObserver("debug.gaia.enabled",function(n){window.DUMP=n.settingValue?e:t,e(n.settingValue?"Enabling DUMP":"Disabling DUMP")})}();

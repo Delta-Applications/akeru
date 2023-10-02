@@ -1,0 +1,48 @@
+<element name="wifi" extends="section">
+  <template>
+
+    <gaia-header data-href="#root">
+      <h1 data-l10n-id="wifi-header"></h1>
+    </gaia-header>
+
+    <div>
+      <ul role="menu">
+        <li role="menuitem" class="wifi-on" hidden>
+          <label class="pack-radio-large my_radio">
+            <input name="wifi-enabled" class="wifi-input-on" type="radio">
+            <span data-l10n-id="on">On</span>
+          </label>
+        </li>
+
+        <li role="menuitem" class="wifi-off" hidden>
+          <label class="pack-radio-large my_radio">
+            <input name="wifi-enabled" class="wifi-input-off" type="radio">
+            <span data-l10n-id="off">Off</span>
+          </label>
+        </li>
+
+        <li role="menuitem" class="availableNetworks" hidden>
+          <a class="menu-item" href="#wifi-available-networks">
+            <span data-l10n-id="availableNetworks"></span>
+          </a>
+        </li>
+
+        <li role="menuitem" class="wps-column" hidden>
+          <a class="menu-item">
+            <span data-l10n-id="wpsMessage"></span>
+            <small data-l10n-id="wpsDescription2"></small>
+          </a>
+        </li>
+
+        <li role="menuitem" class="advancedSettings" hidden>
+          <a class="menu-item" href="#wifi-advanced-settings">
+            <span data-l10n-id="advancedSettings"></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <panel data-path="panels/wifi/panel"></panel>
+
+  </template>
+</element>

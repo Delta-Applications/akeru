@@ -1,0 +1,25 @@
+<element name="answer-mode" extends="section">
+  <template>
+
+  <gaia-header>
+    <h1 data-l10n-id="answerMode-header" data-href="#root"></h1>
+  </gaia-header>
+
+  <div>
+    <ul role="menu">
+      <li role="menuitem">
+        <span data-l10n-id="answerMode-flipopen"></span>
+        <div class="button icon icon-dialog">
+          <select id="answer-flipopen" name="phone.answer.flipopen.enabled" data-value-type="boolean">
+            <option data-l10n-id="on" value="true"></option>
+            <option data-l10n-id="off" value="false"></option>
+          </select>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <panel data-path="panels/answer_mode/panel"></panel>
+
+  </template>
+</element>

@@ -1,0 +1,37 @@
+<element name="connectivity-settings" extends="section">
+  <template>
+
+    <gaia-header data-href="#root">
+      <h1 data-l10n-id="networkAndConnectivity"></h1>
+    </gaia-header>
+    <div>
+      <ul role="menu">
+        <li role="menuitem" data-category="connectivity" class="airplane_mode_switch" hidden>
+          <span data-l10n-id="airplaneMode"></span>
+          <span class="button icon icon-dialog">
+            <select data-value-type="boolean" class="airplaneMode-select" name="airplaneMode.enabled" hidden>
+              <option value="true" data-l10n-id="on"></option>
+              <option value="false" data-l10n-id="off"></option>
+            </select>
+          </span>
+        </li>
+
+        <li role="menuitem" id="data-connectivity" data-category="connectivity" hidden>
+          <a id="menuItem-mobileNetworkAndData" class="menu-item" href="#carrier">
+            <span data-l10n-id="cellularAndData"></span>
+          </a>
+        </li>
+
+        <li role="menuitem" data-category="connectivity" id="connectivity-wifi-menu" hidden>
+          <a id="menuItem-wifi" class="menu-item" href="#wifi">
+            <span data-l10n-id="wifi"></span>
+            <small id="wifi-desc" class="menu-item-desc"></small>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <panel data-path="panels/connectivity_settings/panel"></panel>
+
+  </template>
+</element>

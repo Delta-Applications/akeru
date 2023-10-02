@@ -1,0 +1,25 @@
+<element name="sound" extends="section">
+  <template>
+
+    <gaia-header data-href="#root">
+      <h1 data-l10n-id="sound-header"></h1>
+    </gaia-header>
+
+    <div aria-labelledby="sound-header">
+      <ul role="menu">
+        <li role="menuitem">
+          <a data-l10n-id="volume" href="#volume" class="menu-item"></a>
+        </li>
+        <li role="menuitem">
+          <a data-l10n-id="tones" href="#tones" class="menu-item"></a>
+        </li>
+        <li role="menuitem">
+          <a data-l10n-id="other-sounds" href="#other-sounds" class="menu-item"></a>
+        </li>
+      </ul>
+    </div>
+
+    <panel data-path="panels/sound/panel"></panel>
+
+  </template>
+</element>

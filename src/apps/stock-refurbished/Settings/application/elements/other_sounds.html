@@ -1,0 +1,43 @@
+<element name="other-sounds" extends="section">
+  <template>
+
+    <gaia-header data-href="#sound">
+      <h1 data-l10n-id="other-sounds-header">Other Sounds</h1>
+    </gaia-header>
+    <div aria-labelledby="other-sounds">
+     <ul role="menu">
+      <li role="menuitem">
+        <span data-l10n-id="dialpad">Dial Pad</span>
+        <div class="button icon icon-dialog">
+          <select id="dial-pad" name="phone.ring.keypad" data-value-type="boolean">
+            <option data-l10n-id="on" value="true">On</option>
+            <option data-l10n-id="off" value="false">Off</option>
+          </select>
+        </div>
+      </li>
+
+      <li role="menuitem" id="camera-li">
+        <span data-l10n-id="camera">Camera</span>
+        <div class="button icon icon-dialog">
+          <select id="camera" name="camera.sound.enabled" data-value-type="boolean">
+            <option data-l10n-id="on" value="true">On</option>
+            <option data-l10n-id="off" value="false">Off</option>
+          </select>
+        </div>
+      </li>
+
+      <li role="menuitem" hidden>
+        <span data-l10n-id="sent-message">Sent Message</span>
+        <div class="button icon icon-dialog">
+          <select id="sent-message" name="message.sent-sound.enabled" data-value-type="boolean">
+            <option data-l10n-id="on" value="true">On</option>
+            <option data-l10n-id="off" value="false">Off</option>
+          </select>
+        </div>
+      </li>
+     </ul>
+    </div>
+    <panel data-path="panels/other_sounds/panel"></panel>
+
+  </template>
+</element>

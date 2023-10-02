@@ -1,0 +1,23 @@
+[role="status_toaster"].toast-visible {
+  background: var(--color-gs20) !important;
+  position: fixed !important;
+  top: 0;
+  z-index: 16386 !important;
+  width: 100% !important;
+  font-size: 1.7rem !important;
+  padding-left: 1rem !important;
+  color: var(--color-gs90) !important;
+  display: block !important;
+  border-bottom: 0.1rem solid var(--color-gs45);
+}
+[role="status_toaster"].toast-invisible {
+  display: none;
+}
+[role="status_toaster"].toast-visible > p {
+  font-size: 1.7rem !important;
+  margin-left: 0rem !important;
+  margin-right: 0rem !important;
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+  text-align: left !important;
+}

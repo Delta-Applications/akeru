@@ -1,0 +1,35 @@
+<element name="doNotTrack" extends="section">
+  <template>
+
+    <gaia-header data-href="#root">
+      <h1 data-l10n-id="doNotTrack-header"></h1>
+    </gaia-header>
+
+    <div class="listContainer">
+      <ul role="menu" class="optionsList">
+        <li role="menuitem" class="doNotTrack-setting-DoNotTrack description longRadioText" data-focusable="true">
+          <label class="pack-radio-large my_radio">
+            <input value="true" type="radio">
+            <span data-l10n-id="doNotTrackActions">Tell websites and apps that I do not want to be tracked</span>
+          </label>
+        </li>
+        <li role="menuitem" class="doNotTrack-setting-Track description longRadioText" data-focusable="true">
+          <label class="pack-radio-large my_radio">
+            <input value="false" type="radio">
+            <span data-l10n-id="allowTracking">Tell websites and apps that I want to be tracked</span>
+          </label>
+        </li>
+      </ul>
+      <header>
+        <h2 data-l10n-id="doNotTrack-dt">How does Do Not Track work?</h2>
+      </header>
+       <ul role="menu">
+        <li role="menuitem" class="description none-select text-paragraph">
+          <span data-l10n-id="doNotTrack-dd1" data-focusable="true" />
+        </li>
+      </ul>
+    </div>
+
+    <panel data-path="panels/do_not_track/panel"></panel>
+  </template>
+</element>

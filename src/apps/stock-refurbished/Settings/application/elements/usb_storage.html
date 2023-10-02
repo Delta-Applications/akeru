@@ -1,0 +1,29 @@
+<element name="usbStorage" extends="section">
+  <template>
+    <gaia-header data-href="#root">
+      <h1 data-l10n-id="enable-USBStorage1-header"></h1>
+    </gaia-header>
+
+    <div class="panel">
+      <ul role="menu">
+        <li role="menuitem">
+          <label class="pack-radio-large my_radio" >
+            <input name="ums.enabled" value="true" type="radio" data-value-type="boolean">
+            <span data-l10n-id="enabled">Enabled</span>
+          </label>
+        </li>
+        <li role="menuitem">
+          <label class="pack-radio-large my_radio">
+            <input name="ums.enabled" value="false" type="radio" data-value-type="boolean">
+            <span data-l10n-id="disabled">Disabled</span>
+          </label>
+        </li>
+      </ul>
+
+      <p data-l10n-id="ums-confirm" class="ums-confirm description"></p>
+    </div>
+
+    <panel data-path="panels/ums_enabled/panel"></panel>
+
+</template>
+</element>

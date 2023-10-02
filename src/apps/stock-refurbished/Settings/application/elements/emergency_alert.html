@@ -1,0 +1,397 @@
+<element name="emergency-alert" extends="section">
+  <template>
+    <gaia-header data-href="#root">
+      <h1 data-l10n-id="emergency-alert-header"></h1>
+    </gaia-header>
+    <div id="loading-progress-item">
+      <ul role="menu">
+        <li id="loading-progress" class="non-focus">
+          <progress class="alert-progress"></progress>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <ul role="menu">
+        <li role="menuitem" id="alert-inbox" hidden>
+          <a class="menu-item" href="#">
+            <span data-l10n-id="alert-inbox"></span>
+          </a>
+        </li>
+      </ul>
+      <ul role="menu" id="receive-alert-body" hidden>
+        <header>
+          <h2 data-l10n-id="receive-alert"></h2>
+        </header>
+        <li role="menuitem" class="none-select" id="cmas-presidential-menu">
+          <label class="pack-checkbox">
+            <input type="checkbox" name="cmas.presidential.enabled" disabled="true">
+            <span data-l10n-id="presidential-alert"></span>
+          </label>
+        </li>
+
+        <li role="menuitem" id="emergency-alert-tw-menu" hidden>
+          <label class="pack-checkbox">
+            <input type="checkbox" name="emergency.alert.tw.enabled">
+            <span data-l10n-id="emergency-alert-tw"></span>
+          </label>
+        </li>
+        <li role="menuitem" id="emergency-message-tw-menu" hidden>
+          <label class="pack-checkbox">
+            <input type="checkbox" name="emergency.message.tw.enabled">
+            <span data-l10n-id="emergency-message-tw"></span>
+          </label>
+        </li>
+
+        <li role="menuitem" class="none-select" id="national-emergency-alert-uae-menu" hidden>
+          <label class="pack-checkbox">
+            <input type="checkbox" name="cmas.presidential.enabled" disabled="true">
+            <span data-l10n-id="national-emergency-alert-uae"></span>
+          </label>
+        </li>
+        <li role="menuitem" id="emergency-alert-uae-menu" hidden>
+          <label class="pack-checkbox">
+            <input type="checkbox" name="cmas.severe.enabled" disabled="true">
+            <span data-l10n-id="emergency-alert-uae"></span>
+          </label>
+        </li>
+        <li role="menuitem" id="warning-alert-uae-menu" hidden>
+          <label class="pack-checkbox">
+            <input type="checkbox" name="cmas.amber.enabled">
+            <span data-l10n-id="qtn_cb_uae_msgsetting_warning"></span>
+          </label>
+        </li>
+        <li role="menuitem" id="test-alert-uae-menu" hidden>
+          <label class="pack-checkbox">
+            <input type="checkbox" name="cmas.monthlytest.enabled">
+            <span data-l10n-id="test-alert-uae"></span>
+          </label>
+        </li>
+        <li role="menuitem" id="exercise-uae-menu" hidden>
+          <label class="pack-checkbox">
+            <input type="checkbox" name="cmas.exercise.enabled" disabled="true">
+            <span data-l10n-id="exercise-uae"></span>
+          </label>
+        </li>
+        <li role="menuitem" id="cmas-safety-uae-menu" hidden>
+          <label class="pack-checkbox">
+            <input type="checkbox" name="cmas.safety.enabled">
+            <span data-l10n-id="qtn_cb_uae_msgsetting_public"></span>
+          </label>
+        </li>
+
+
+        <li role="menuitem" class="none-select" id="extreme-alert-il-menu" hidden>
+          <label class="pack-checkbox">
+            <input type="checkbox" name="cmas.presidential.enabled" disabled="true">
+            <span data-l10n-id="extreme-alert-il"></span>
+          </label>
+        </li>
+        <li role="menuitem" id="warning-notification-il-menu" hidden>
+          <label class="pack-checkbox">
+            <input type="checkbox" name="cmas.severe.enabled">
+            <span data-l10n-id="warning-notification-il"></span>
+          </label>
+        </li>
+        <li role="menuitem" id="informational-il-menu" hidden>
+          <label class="pack-checkbox">
+            <input type="checkbox" name="cmas.amber.enabled">
+            <span data-l10n-id="informational-il"></span>
+          </label>
+        </li>
+        <li role="menuitem" id="test-alert-il-menu" hidden>
+          <label class="pack-checkbox">
+            <input type="checkbox" name="cmas.monthlytest.enabled">
+            <span data-l10n-id="test-il"></span>
+          </label>
+        </li>
+        <li role="menuitem" id="exercise-il-menu" hidden>
+          <label class="pack-checkbox">
+            <input type="checkbox" name="cmas.exercise.enabled">
+            <span data-l10n-id="exercise-il"></span>
+          </label>
+        </li>
+        <li role="menuitem" id="assistance-il-menu" hidden>
+          <label class="pack-checkbox">
+            <input type="checkbox" name="cmas.assistance.il.enabled">
+            <span data-l10n-id="assistance-il"></span>
+          </label>
+        </li>
+
+
+        <li role="menuitem" class="none-select" id="presidential-alert-ro-menu" hidden>
+          <label class="pack-checkbox">
+            <input type="checkbox" name="cmas.presidential.enabled" disabled="true">
+            <span data-l10n-id="presidential-alert-ro"></span>
+          </label>
+        </li>
+        <li role="menuitem" id="extreme-alert-ro-menu" hidden>
+          <label class="pack-checkbox">
+            <input type="checkbox" name="cmas.extreme.enabled">
+            <span data-l10n-id="extreme-alert-ro"></span>
+          </label>
+        </li>
+        <li role="menuitem" id="severe-alert-ro-menu" hidden>
+          <label class="pack-checkbox">
+            <input type="checkbox" name="cmas.severe.enabled">
+            <span data-l10n-id="severe-alert-ro"></span>
+          </label>
+        </li>
+        <li role="menuitem" id="amber-alert-ro-menu" hidden>
+          <label class="pack-checkbox">
+            <input type="checkbox" name="cmas.amber.enabled">
+            <span data-l10n-id="orange-alert-ro"></span>
+		  </label>
+		</li>
+		<li role="menuitem" id="exercise-alert-ro-menu" hidden>
+		  <label class="pack-checkbox">
+		    <input type="checkbox" name="cmas.exercise.enabled">
+		    <span data-l10n-id="exercise-alert-ro"></span>
+		  </label>
+		</li>
+
+
+		<li role="menuitem" class="none-select" id="national-emergency-alert-lt-menu" hidden>
+		  <label class="pack-checkbox">
+		    <input type="checkbox" name="cmas.presidential.enabled" disabled="true">
+		    <span data-l10n-id="national-emergency-alert-lt"></span>
+		  </label>
+		</li>
+		<li role="menuitem" id="emergency-alert-lt-menu" hidden>
+		  <label class="pack-checkbox">
+		    <input type="checkbox" name="cmas.severe.enabled">
+		    <span data-l10n-id="emergency-alert-lt"></span>
+		  </label>
+		</li>
+		<li role="menuitem" id="warning-alert-lt-menu" hidden>
+		  <label class="pack-checkbox">
+		    <input type="checkbox" name="cmas.amber.enabled">
+		    <span data-l10n-id="warning-alert-lt"></span>
+		  </label>
+		</li>
+		<li role="menuitem" id="test-alert-lt-menu" hidden>
+		  <label class="pack-checkbox">
+		    <input type="checkbox" name="cmas.monthlytest.enabled">
+		    <span data-l10n-id="test-lt"></span>
+		  </label>
+		</li>
+
+
+		<li role="menuitem" id="alert-nl-menu" hidden>
+		  <label class="pack-checkbox">
+		    <input type="checkbox" name="cmas.nl.alert.enabled">
+		    <span data-l10n-id="alert-nl"></span>
+		  </label>
+		</li>
+
+		<li role="menuitem" id="emergency-alert-it-menu" hidden>
+		  <label class="pack-checkbox">
+		    <input type="checkbox" name="cmas.it.alert.enabled">
+		    <span data-l10n-id="cb-ita-IT-Alert"></span>
+		  </label>
+		</li>
+		<li role="menuitem" id="test-alert-it-menu" hidden>
+		  <label class="pack-checkbox">
+		    <input type="checkbox" name="cmas.monthlytest.enabled">
+		    <span data-l10n-id="cb-ita-Test-setting"></span>
+		  </label>
+		</li>
+
+		<li role="menuitem" id="emergency-alert-omn-menu" hidden>
+		  <label class="pack-checkbox">
+		    <input type="checkbox" name="cmas.presidential.enabled" disabled="true">
+		    <span data-l10n-id="qtn_cb_omn_setting_emergency_en"></span>
+		  </label>
+		</li>
+
+		<li role="menuitem" id="warning-alert-omn-menu" hidden>
+		  <label class="pack-checkbox">
+		    <input type="checkbox" name="cmas.extreme.enabled" disabled="true">
+		    <span data-l10n-id="qtn_cb_omn_setting_warning_en"></span>
+		  </label>
+		</li>
+		<li role="menuitem" id="exercise-alert-omn-menu" hidden>
+		  <label class="pack-checkbox">
+		    <input type="checkbox" name="cmas.exercise.enabled">
+		    <span data-l10n-id="qtn_cb_omn_setting_exercises_en"></span>
+		  </label>
+		</li>
+
+		<li role="menuitem" id="emergency-alert-ksa-menu" hidden>
+		  <label class="pack-checkbox">
+		    <input type="checkbox" name="cmas.presidential.enabled" disabled="true">
+		    <span data-l10n-id="qtn_cb_ksa_national_warn_setting"></span>
+		  </label>
+		</li>
+		<li role="menuitem" id="extreme-alert-ksa-menu" hidden>
+		  <label class="pack-checkbox">
+		    <input type="checkbox" name="cmas.extreme.enabled" disabled="true">
+		    <span data-l10n-id="qtn_cb_ksa_extreme_emer_setting"></span>
+		  </label>
+		</li>
+		<li role="menuitem" id="warning-alert-ksa-menu" hidden>
+		  <label class="pack-checkbox">
+		    <input type="checkbox" name="cmas.severe.enabled" disabled="true">
+		    <span data-l10n-id="qtn_cb_ksa_emergency_warn_setting"></span>
+		  </label>
+		</li>
+		<li role="menuitem" id="amber-alert-ksa-menu" hidden>
+		  <label class="pack-checkbox">
+		    <input type="checkbox" name="cmas.amber.enabled">
+		    <span data-l10n-id="qtn_cb_ksa_alerts_setting"></span>
+		  </label>
+		</li>
+		<li role="menuitem" id="test-alert-ksa-menu" hidden>
+		  <label class="pack-checkbox">
+		    <input type="checkbox" name="cmas.monthlytest.enabled">
+		    <span data-l10n-id="qtn_cb_ksa_test_setting"></span>
+		  </label>
+		</li>
+		<li role="menuitem" id="exercise-alert-ksa-menu" hidden>
+		  <label class="pack-checkbox">
+		    <input type="checkbox" name="cmas.exercise.enabled">
+		    <span data-l10n-id="qtn_cb_ksa_exercises_setting"></span>
+		  </label>
+		</li>
+
+		<li role="menuitem" id="test-alert-cl-menu" hidden>
+		  <label class="pack-checkbox">
+		    <input type="checkbox" name="cmas.monthlytest.enabled">
+		    <span data-l10n-id="test_alert_cl_setting"></span>
+		  </label>
+		</li>
+
+		<li role="menuitem" class="none-select" id="national-emergency-alert-HK-menu" hidden>
+		  <label class="pack-checkbox">
+		    <input type="checkbox" name="cmas.presidential.enabled" disabled="true">
+		    <span data-l10n-id="national-emergency-alert-HK"></span>
+		  </label>
+		</li>
+		<li role="menuitem" id="emergency-alert-HK-menu" hidden>
+		  <label class="pack-checkbox">
+		    <input type="checkbox" name="cmas.extreme.enabled">
+		    <span data-l10n-id="emergency-alert-HK"></span>
+		  </label>
+		</li>
+
+		<li role="menuitem" id="test-alert-HK-menu" hidden>
+		  <label class="pack-checkbox">
+		    <input type="checkbox" name="cmas.monthlytest.enabled">
+		    <span data-l10n-id="test-alert-HK"></span>
+		  </label>
+		</li>
+
+		<li role="menuitem" class="none-select" id="national-emergency-alert-UK-menu" hidden>
+		  <label class="pack-checkbox">
+		    <input type="checkbox" name="cmas.presidential.enabled" disabled="true">
+		    <span data-l10n-id="national-emergency-alert-UK"></span>
+		  </label>
+		</li>
+
+    <li role="menuitem" id="exercise-alert-menu">
+		  <label class="pack-checkbox">
+		    <input type="checkbox" name="cmas.exercise.enabled" >
+		    <span data-l10n-id="exercise-alert"></span>
+		  </label>
+		</li>
+
+		<li role="menuitem" id="cmas-extreme-menu">
+		  <label class="pack-checkbox">
+		    <input type="checkbox" name="cmas.extreme.enabled" data-relatedkey="cmas.severe.enabled">
+		    <span data-l10n-id="extreme-alert"></span>
+		  </label>
+		</li>
+	
+	<li role="menuitem" id="cmas-severe-menu">
+          <label class="pack-checkbox">
+            <input type="checkbox" name="cmas.severe.enabled">
+            <span data-l10n-id="severe-alert"></span>
+          </label>
+        </li>
+        <li role="menuitem" id="cmas-amber-menu">
+          <label class="pack-checkbox">
+            <input type="checkbox" name="cmas.amber.enabled">
+            <span data-l10n-id="amber-alert"></span>
+          </label>
+        </li>
+        <li role="menuitem" id="cmas-safety-menu">
+          <label class="pack-checkbox">
+            <input type="checkbox" name="cmas.safety.enabled">
+            <span data-l10n-id="public-safety-alert"></span>
+          </label>
+        </li>
+        <li role="menuitem" id="cmas-weatest-menu">
+          <label class="pack-checkbox">
+            <input type="checkbox" name="cmas.weatest.enabled">
+            <span data-l10n-id="wea-test"></span>
+          </label>
+        </li>
+
+        <li role="menuitem" id="required-monthly-test-menu">
+          <label class="pack-checkbox">
+            <input type="checkbox" name="cmas.monthlytest.enabled">
+            <span data-l10n-id="required-monthly-test"></span>
+          </label>
+        </li>
+
+        <li role="menuitem" id="vzw-spanish-alert-menu" hidden>
+          <label class="pack-checkbox">
+            <input type="checkbox" name="cmas.spanish.alert.enabled">
+            <span data-l10n-id="vzw-spanish-alert"></span>
+          </label>
+        </li>
+        <li role="menuitem" id="test-alert-UK-menu" hidden>
+          <label class="pack-checkbox">
+            <input type="checkbox" name="cmas.uk.test.alert.enabled">
+            <span data-l10n-id="test-alert-uae"></span>
+          </label>
+        </li>
+
+        <li role="menuitem" id="opertor-alert-UK-menu" hidden>
+          <label class="pack-checkbox">
+            <input type="checkbox" name="cmas.operator.enabled">
+            <span data-l10n-id="operator-alert-UK"></span>
+          </label>
+        </li>
+
+        <li role="menuitem" class="none-select" id="local-emergency-alert-EU-menu" hidden>
+          <label class="pack-checkbox">
+            <input type="checkbox" name="cmas.presidential.enabled" disabled="true">
+            <span data-l10n-id="local-emergency-alert-EU"></span>
+          </label>
+        </li>
+
+        <li role="menuitem" class="none-select" id="information-alert-EU-menu" hidden>
+          <label class="pack-checkbox">
+            <input type="checkbox" name="cmas.info.alert.enabled">
+            <span data-l10n-id="information-alert-EU"></span>
+          </label>
+        </li>
+
+        <li role="menuitem" class="none-select" id="test-alert-EU-menu" hidden>
+          <label class="pack-checkbox">
+            <input type="checkbox" name="cmas.monthlytest.enabled">
+            <span data-l10n-id="test-alert-EU"></span>
+          </label>
+        </li>
+
+        <li role="menuitem" class="none-select" id="exercise-alert-EU-menu" hidden>
+          <label class="pack-checkbox">
+            <input type="checkbox" name="cmas.exercise.enabled">
+            <span data-l10n-id="exercise-alert-EU"></span>
+          </label>
+        </li
+      </ul>
+      <ul role="menu" id="wea-ringtone-preview" hidden>
+        <header>
+          <h2 data-l10n-id="wea-ringtone-preview"></h2>
+        </header>
+        <li role="menuitem">
+          <a class="menu-item" href="#ringtone-preview">
+            <span data-l10n-id="wea-ring"></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <panel data-path="panels/emergency_alert/panel"></panel>
+  </template>
+</element>

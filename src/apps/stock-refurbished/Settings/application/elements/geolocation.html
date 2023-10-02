@@ -1,0 +1,36 @@
+<element name="geolocation" extends="section">
+  <template>
+
+    <gaia-header data-href="#root">
+      <h1 data-l10n-id="geolocation-header"></h1>
+    </gaia-header>
+
+    <div>
+      <ul role="menu">
+        <li role="menuitem">
+          <label class="pack-radio-large my_radio">
+            <input id="geolocation_switch_on" value="true" type="radio">
+            <span data-l10n-id="on"></span>
+          </label>
+        </li>
+
+        <li role="menuitem">
+          <label class="pack-radio-large my_radio">
+            <input id="geolocation_switch_off" value="false" type="radio">
+            <span data-l10n-id="off"></span>
+          </label>
+        </li>
+
+        <li role="menuitem" class="more-description-container">
+          <a href="#geolocation-more-about">
+            <p id="geolcation_description" data-l10n-id="geolocation-privacy-description-1" class="more-description-msg1"></p>
+            <p data-l10n-id="geolocation-privacy-description-2" class="more-description-msg2"></p>
+            <p data-l10n-id="more" class="more-description"></p>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <panel data-path="panels/geolocation/panel"></panel>
+  </template>
+</element>

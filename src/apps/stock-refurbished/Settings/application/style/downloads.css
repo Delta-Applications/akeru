@@ -1,0 +1,268 @@
+#download-list-empty {
+  position: absolute;
+  width: 100%;
+  height: calc(100% - var(--statusbar-softkeybar-height) - var(--header-height));
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+#download-list-empty.hidden {
+  display: none !important;
+}
+#dle-vertical {
+  height: 100%;
+  display: inline-block;
+  width: 0;
+  vertical-align: middle;
+}
+#dle-text {
+  font-size: var(--font-p-pri);
+  color: var(--color-gs100);
+  word-wrap: break-word;
+  width: 100%;
+}
+#downloadList {
+  font-weight: 400;
+  padding: 0;
+  overflow: hidden;
+}
+#downloads .pack-checkbox {
+  display: none;
+}
+#downloads-edit-header {
+  display: none !important; 
+}
+#downloads.edit #downloads-edit-header {
+  display: block !important; 
+}
+#downloads.edit #downloads-header {
+  display: none !important; 
+}
+#downloads.edit ul {
+  height: calc(100% - 0.0rem);
+}
+#downloads.edit .pack-checkbox span {
+  z-index: 100;
+}
+#downloads.edit .pack-checkbox:active span {
+  background: none;
+}
+#downloads.edit .pack-checkbox {
+  display: block;
+}
+#downloads.edit #downloadList li {
+  pointer-events: all;
+}
+#downloadList ul{
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 100%;
+}
+#downloadList strong {
+  font-weight: 500;
+}
+.fileName {
+  display: flex;
+}
+.download-filename {
+  max-width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.file-ext.hide {
+  display: none;
+}
+.file-ext {
+  margin-left: 0.2rem;
+}
+#downloadList ul > li[data-state="failed"] .fileName {
+  margin-left: 2.1rem;
+}
+#downloadList .date {
+  padding-bottom: 0.5rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.size {
+  font-size: var(--font-p-sec);
+  padding: 0;
+  -moz-box-sizing: border-box;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.size.hidden {
+  display: none;
+}
+.percent {
+  font-size: var(--font-p-sec);
+  padding: 0;
+  -moz-box-sizing: border-box;
+}
+.downloadedSize {
+  font-size: var(--font-p-sec);
+  padding: 0;
+  -moz-box-sizing: border-box;
+}
+.sizeContainer {
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% - 0.5rem);
+}
+.sizeContainer.hidden {
+  display: none;
+}
+#downloadList ul > li[data-state="downloading"] .date {
+  display: none;
+}
+#downloadList li {
+  margin: 0;
+  position: relative;
+  pointer-events: none;
+  height: 9.1rem;
+}
+#downloadList li * {
+  pointer-events: none;
+}
+#downloadList ul li progress {
+  width: 100%;
+}
+#downloadList aside {
+  margin: 1.75rem 0.5rem 0 0;
+  background-position: center;
+  position: absolute;
+}
+#downloadList .edit-check {
+  margin: 0;
+  position: absolute;
+  width: 3rem;
+  height: 100%;
+  text-align: center;
+  -moz-box-sizing: border-box;
+  padding-top: 1rem;
+}
+#downloadList aside.pack-end {
+  padding: 1.4rem;
+  margin: 0;
+  pointer-events: all;
+  right: 0;
+}
+#downloadList ul > li progress[value] {
+  width: calc(100% - 0.5rem);
+  height: 0.5rem;
+  background: #e7e7e7;
+  border: 0.1rem solid #b6b6b6;
+  margin-top: 0.2rem;
+  margin-bottom: 0.3rem;
+}
+#downloadList ul > li progress[value]::-moz-progress-bar {
+  margin: .1rem;
+  height: calc(100% - 0.2rem);
+  border-radius: 0.2rem;
+  background-color: #01c5ed;
+}
+#downloadList progress[value].pack-activity {
+  background-image: url(images/activity.png);
+  background-repeat: repeat;
+  background-size: auto 100%;
+  animation: 0.5s move infinite steps(15);
+}
+#downloadList ul > li[data-state="stopped"] progress,
+#downloadList ul > li[data-state="succeeded"] progress {
+  display: none;
+}
+#downloadList li[data-state="succeeded"] {
+  pointer-events: all;
+}
+#downloadList ul li progress .hidden {
+  display: none;
+}
+#downloadList ul > li[data-state="downloading"] .download-status,
+#downloadList ul > li[data-state="succeeded"] .download-status,
+#downloadList ul > li[data-state="stopped"] .download-status {
+  display: none;
+}
+#downloadList ul > li[data-state="failed"] .download-status {
+  width: 1.7rem;
+  height: 1.7rem;
+  background: url('images/ic_exclamation.png') no-repeat center center;
+  margin-top: 0;
+}
+#downloadList ul > li[data-state="failed"] progress{
+  display: none;
+}
+#downloadList aside.pack-end {
+  width: 2.6rem;
+  height: 2.3rem;
+  padding: 0;
+  margin: 1.2rem;
+  pointer-events: all;
+  right: 0;
+}
+.large-text #downloadList li {
+  height: auto;
+}
+#downloadList ul > li[data-state="downloading"] .pack-end {
+  background-image: url('images/download_close.png');
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 2.2rem;
+}
+#downloadList ul > li[data-state="succeeded"] .pack-end {
+  display: none;
+}
+#downloadList ul > li[data-state="stopped"] .pack-end,
+#downloadList ul > li[data-state="failed"] .pack-end {
+  background-image: url('images/download_refresh.png');
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 2.5rem 2.2rem;
+}
+html:-moz-dir(rtl) #downloadList aside.download-status {
+  margin: 1.75rem 0 0 0.5rem;
+  right: 0.2rem;
+  left: unset;
+}
+html:-moz-dir(rtl) #downloadList aside.pack-end {
+  right: unset;
+  left: 0;
+}
+html:-moz-dir(rtl) #downloads-edit-button::before {
+  transform: initial;
+}
+.sk-download-button {
+  color: #FFFFFF;
+  font-size: 25px;
+  background: transparent;
+  border-style: solid;
+  border-color: #F00;
+  border: 2px;
+  padding: 1px 5%;
+  padding-right: 15.0rem;
+}
+.list-item {
+  flex-direction: row !important;
+  justify-content: left !important;
+}
+.list-item > .pack-checkbox {
+  width: 2.5rem;
+  height: 6rem;
+  margin: 0 .1rem;
+}
+html:-moz-dir(rtl) .list-item > .pack-checkbox {
+  width: 4rem;
+  height: 6rem;
+  margin: 0 .1rem;
+}
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: calc(100% - 0.5rem);
+  overflow: hidden;
+}
+#downloadList .hidden {
+  display: none !important;
+}

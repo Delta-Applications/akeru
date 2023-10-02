@@ -1,0 +1,26 @@
+<element name="data-roaming" extends="section">
+  <template>
+      <gaia-header data-href="#carrier">
+      <h1 data-l10n-id="data-roaming-header"> Data Roaming</h1>
+    </gaia-header>
+
+    <div class="panel">
+      <ul role="menu">
+        <li role="menuitem">
+          <label class="pack-radio-large my_radio">
+            <input name="data_roaming_switch" value="1" type="radio">
+            <span data-l10n-id="on">On</span>
+          </label>
+        </li>
+        <li role="menuitem">
+          <label class="pack-radio-large my_radio">
+            <input name="data_roaming_switch" value="0" type="radio">
+            <span data-l10n-id="off">Off</span>
+          </label>
+        </li>
+      </ul>
+      <p data-l10n-id="dataRoaming-attention-message" class="ums-confirm description"></p>
+    </div>
+    <panel data-path="panels/mobile_network_data/data_roaming/panel"></panel>
+  </template>
+</element>

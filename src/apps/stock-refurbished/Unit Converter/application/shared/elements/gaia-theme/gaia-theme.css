@@ -16,6 +16,17 @@ Gaia theme variables
   /** Grey Colors
    ---------------------------------------------------------*/
 
+  /* KaiOS Colors 
+
+  --color-gs100: #000000;
+  --color-gs90: #181818;
+  --color-gs70: #6a6a6a;
+  --color-gs45: #8c8c8c;
+  --color-gs20: #cccccc;
+  --color-gs10: #e6e6e6;
+  --color-gs00: #ffffff;
+  
+  
   --color-alpha: #333333;
   --color-beta: #ffffff;
   --color-gamma: #4d4d4d;
@@ -26,6 +37,29 @@ Gaia theme variables
   --color-theta: #e7e7e7;
   --color-iota: #f4f4f4;
   --color-white: #ffffff;
+
+  */
+
+   /* KaiOS Dark-mode edited color scale */
+  --color-gs100: #ffffff;
+  --color-gs90: #e6e6e6;
+  --color-gs70: #cccccc;
+  --color-gs45: #8c8c8c;
+  --color-gs20: #6a6a6a;
+  --color-gs10: #181818;
+  --color-gs00: #000000;
+
+  --color-alpha: #cccccc;
+  --color-beta: #000000;
+  --color-gamma: #b2b2b2;
+  --color-delta: #a0a0a0;
+  --color-epsilon: #7a7a7a;
+  --color-zeta: #595959;
+  --color-eta: #383838;
+  --color-theta: #181818;
+  --color-iota: #0b0b0b;
+  --color-white: #000000;
+
 
 /** Brand Colors
  ---------------------------------------------------------*/
@@ -48,15 +82,7 @@ Gaia theme variables
   --color-destructive: #e2443a;
   --color-preffered: #00ba91;
 
-  /* KaiOS Colors */
 
-  --color-gs100: #000000;
-  --color-gs90: #181818;
-  --color-gs70: #6a6a6a;
-  --color-gs45: #8c8c8c;
-  --color-gs20: #cccccc;
-  --color-gs10: #e6e6e6;
-  --color-gs00: #ffffff;
 
   --color-purple: #8000ff;
   --color-pink: #e60060;

@@ -1,0 +1,59 @@
+<element name="simpin-dialog" extends="section">
+  <template>
+
+    <gaia-header data-href="#simpin" id="simpin-header">
+      <h1></h1>
+    </gaia-header>
+
+    <div id="sim-pin-info" role="heading" aria-labelledby="simpin-header">
+      <ul role="menu" aria-relevant="all" aria-atomic="true" aria-live="assertive">
+        <li role="menuitem" class="pin simpin-item">
+          <div class="sim-code-area sim-pinArea">
+            <span data-l10n-id="simPin"></span>
+            <div class="sim-code-info-area">
+              <span class="pin left-bracket" data-l10n-id="left-bracket" hidden></span>
+              <span class="pin sim-code-error" hidden></span>
+              <span class="pin sim-tries-left" hidden></span>
+              <span class="pin right-bracket" data-l10n-id="right-bracket" hidden></span>
+            </div>
+            <input x-inputmode="digit" size="8" maxlength="8" type="password">
+          </div>
+        </li>
+        <li role="menuitem" class="puk simpin-item">
+          <div class="sim-code-area sim-pukArea">
+            <span data-l10n-id="pukCode"></span>
+            <div class="sim-code-info-area">
+              <span class="puk left-bracket" data-l10n-id="left-bracket" hidden></span>
+              <span class="puk sim-code-error" hidden></span>
+              <span class="puk sim-tries-left" hidden></span>
+              <span class="puk right-bracket" data-l10n-id="right-bracket" hidden></span>
+            </div>
+            <input x-inputmode="digit" size="8" maxlength="8" type="password">
+          </div>
+        </li>
+        <li role="menuitem" class="simpin-item">
+          <div class="sim-code-area sim-newPinArea">
+            <span data-l10n-id="newSimPinMsg"></span>
+            <input x-inputmode="digit" size="8" maxlength="8" type="password">
+          </div>
+        </li>
+        <li role="menuitem" class="simpin-item">
+          <div class="sim-code-area sim-confirmPinArea">
+            <span data-l10n-id="confirmNewSimPinMsg"></span>
+            <div class="sim-code-info-area">
+              <span class="code-mismatch-error" hidden></span>
+            </div>
+            <input x-inputmode="digit" size="8" maxlength="8" type="password">
+          </div>
+        </li>
+      </ul>
+
+      <ul role="menuitem" class="sim-errorMsg error" hidden>
+        <li role="menuitem" class="description">
+          <p class="sim-messageBody"></p>
+        </li>
+      </ul>
+    </div>
+
+  </template>
+</element>

@@ -1,0 +1,25 @@
+<element name="about-legal" extends="section">
+  <template>
+    <gaia-header data-href="#about">
+      <h1 data-l10n-id="about-legal-info-header"></h1>
+    </gaia-header>
+
+    <div>
+      <ul role="menu">
+        <li role="menuitem">
+          <a class="menu-item" href="#about-source-code">
+            <span data-l10n-id="open-source-licenses"></span>
+          </a>
+        </li>
+        <li role="menuitem" id="_health_Legal" class="hidden">
+          <a class="menu-item" href="#about-health-safety">
+            <span data-l10n-id="health-legal-notices"></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <panel data-path="panels/about_legal/panel"></panel>
+
+  </template>
+</element>

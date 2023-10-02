@@ -1,0 +1,42 @@
+<element name="call-cfSettings" extends="section">
+  <template>
+    <gaia-header id="call-cf-header">
+      <h1></h1>
+    </gaia-header>
+
+    <div>
+      <ul role="menu" id="list-callForwarding">
+        <li role="menuitem" id="fdnSettingsBlocked" class="description" hidden>
+          <p data-l10n-id="fdn-enabled-warning"></p>
+        </li>
+        <li role="menuitem" id="li-cfu-desc">
+          <a class="menu-item">
+            <span data-l10n-id="callForwardingUnconditional"></span>
+            <small id="cfu-desc"></small>
+          </a>
+        </li>
+        <li role="menuitem" id="li-cfmb-desc">
+          <a class="menu-item">
+            <span data-l10n-id="callForwardingMobileBusy"></span>
+            <small id="cfmb-desc"></small>
+          </a>
+        </li>
+        <li role="menuitem" class="auto-height" id="li-cfnrep-desc">
+          <a class="menu-item">
+            <span class="full-string" data-l10n-id="callForwardingNoReply"></span>
+            <small id="cfnrep-desc"></small>
+          </a>
+        </li>
+        <li role="menuitem" class="auto-height" id="li-cfnrea-desc">
+          <a class="menu-item">
+            <span class="full-string" data-l10n-id="callForwardingNotReachable"></span>
+            <small id="cfnrea-desc"></small>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <panel data-path="panels/call_cf_settings/panel"></panel>
+
+  </template>
+</element>

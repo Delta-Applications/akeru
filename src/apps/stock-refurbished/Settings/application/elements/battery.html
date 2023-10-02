@@ -1,0 +1,51 @@
+<element name="battery" extends="section">
+  <template>
+
+    <gaia-header data-href="#root">
+      <h1 data-l10n-id="battery-header"></h1>
+    </gaia-header>
+
+    <div>
+      <ul role="menu">
+        <li role="menuitem" class="none-select">
+          <span data-l10n-id="batteryLevel"></span>
+          <small id="battery-level" class="battery-desc menu-item-desc"></small>
+        </li>
+      </ul>
+
+      <header>
+        <h2 data-l10n-id="powerSaveModeTitle"></h2>
+      </header>
+      <ul role="menu">
+        <li role="menuitem" id="power-save-mode" class="auto-height">
+          <span data-l10n-id="powerSaveMode"></span>
+          <div class="button icon icon-dialog">
+            <select name="powersave.enabled" data-value-type="boolean">
+              <option value="true" data-l10n-id="on"></option>
+              <option value="false" data-l10n-id="off"></option>
+            </select>
+          </div>
+        </li>
+
+        <li role="menuitem" id="auto-saving-container">
+          <span data-l10n-id="turnOnAuto" class="long-string"></span>
+          <span class="button icon icon-dialog">
+            <select name="powersave.threshold">
+              <option value="0.05" data-l10n-id="powerSave-threshold" data-l10n-args='{"level": "5"}'></option>
+              <option value="0.1" data-l10n-id="powerSave-threshold" data-l10n-args='{"level": "10"}'></option>
+              <option value="0.15" data-l10n-id="powerSave-threshold" data-l10n-args='{"level": "15"}'></option>
+              <option value="-1" data-l10n-id="never"></option>
+            </select>
+          </span>
+        </li>
+
+        <li role="menuitem" class="power-save-description none-select text-paragraph">
+          <span id="power-save-info" data-l10n-id="powerSave-explanation"></span>
+        </li>
+      </ul>
+    </div>
+
+    <panel data-path="panels/battery/panel"></panel>
+
+  </template>
+</element>

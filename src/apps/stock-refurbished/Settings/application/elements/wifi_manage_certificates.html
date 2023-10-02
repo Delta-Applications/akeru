@@ -1,0 +1,35 @@
+<element name="wifi-manageCertificates" extends="section">
+  <template>
+
+    <gaia-header data-href="#wifi-advanced-settings">
+      <h1 data-l10n-id="manageCert"></h1>
+    </gaia-header>
+
+    <div>
+      <ul role="menu" class="operate-certificate">
+        <li role="menuitem">
+          <a class="menu-item importCertificate" href="#wifi-selectCertificateFile">
+            <span data-l10n-id="importCertificate"></span>
+          </a>
+        </li>
+      </ul>
+      <header>
+        <h2 role="heading" data-l10n-id="certificateList"></h2>
+      </header>
+      <ul role="menu" class="wifi-certificateList"></ul>
+    </div>
+
+    <form role="dialog" data-type="confirm" class="certificate-deletion-failed" hidden>
+      <section>
+        <h1 data-l10n-id="certificate-deletion-failed"></h1>
+        <p data-l10n-id="certificate-deletion-failed-description"></p>
+      </section>
+      <menu>
+        <button data-l10n-id="ok" class="full danger" id="certificate-deletion-failed-confirm"></button>
+      </menu>
+    </form>
+
+    <panel data-path="panels/wifi_manage_certificates/panel"></panel>
+
+  </template>
+</element>

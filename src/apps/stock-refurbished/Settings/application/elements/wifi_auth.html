@@ -1,0 +1,110 @@
+<element name="wifi-auth" extends="section">
+  <template>
+
+    <gaia-header>
+      <button type="reset" hidden=""><span data-icon="close"></span></button>
+      <h1 data-ssid=""> Network Authentication </h1>
+      <button type="submit"  hidden=""><span data-l10n-id="ok">OK</span></button>
+    </gaia-header>
+
+    <div>
+      <ul role="menu">
+        <li role="menuitem" class="wifi-security">
+          <span data-l10n-id="security">security</span>
+          <small data-security="">WPA-PSK</small>
+        </li>
+        <li role="menuitem" class="wifi-signal-strength">
+          <span data-l10n-id="signalStrength">signal strength</span>
+          <small data-signal="">good</small>
+        </li>
+        <li role="menuitem" class="hexmode">
+          <label class="pack-checkbox">
+            <input data-ignore name="hexmode" id="hexmode-join-hidden" type="checkbox">
+            <span data-l10n-id="wapi-psk-hexmode"></span>
+          </label>
+        </li>
+        <li role="menuitem" class="ASU-Certificate">
+          <a class="menu-item">
+            <span data-l10n-id="ASU-Certificate"></span>
+            <small data-l10n-id="ASU-Certificate-file"></small>
+          </a>
+        </li>
+        <li role="menuitem" class="User-Certificate">
+          <a class="menu-item">
+            <span data-l10n-id="User-Certificate"></span>
+            <small data-l10n-id="User-Certificate-file"></small>
+          </a>
+        </li>
+        <li role="menuitem" class="eap">
+          <span data-l10n-id="eap" class="eap-title">EAP method</span>
+          <span class="button icon icon-dialog" data-eapmethod="">
+            <select data-track-class="eap-title">
+              <option data-l10n-id="eap-peap" value="PEAP"></option>
+              <option data-l10n-id="eap-ttls" value="TTLS"></option>
+              <option data-l10n-id="eap-sim" value="SIM"></option>
+              <option data-l10n-id="eap-aka" value="AKA"></option>
+              <option data-l10n-id="eap-akae" value="AKA'"></option>
+            </select>
+          </span>
+        </li>
+        <li role="menuitem" class="authenticate">
+          <span data-l10n-id="authenticate" class="authenticate-title"></span>
+          <span class="button icon icon-dialog" data-eapmethod>
+            <select name="authenticate" data-track-class="authenticate-title">
+              <option data-l10n-id="sim1" value="SIM1"></option>
+              <option data-l10n-id="sim2" value="SIM2"></option>
+            </select>
+          </span>
+        </li>
+        <li role="menuitem" class="auth-phase2">
+          <p data-l10n-id="auth-phase2" class="auth-phase2-title">Phase 2 authentication</p>
+          <span class="button icon icon-dialog">
+            <select data-track-class="auth-phase2-title">
+              <option data-l10n-id="auth-phase2-mschapv2" value="MSCHAPV2"></option>
+              <option data-l10n-id="auth-phase2-no" value="No"></option>
+              <option data-l10n-id="auth-phase2-pap" value="PAP"></option>
+              <option data-l10n-id="auth-phase2-mschap" value="MSCHAP"></option>
+              <option data-l10n-id="auth-phase2-gtc" value="GTC"></option>
+            </select>
+          </span>
+        </li>
+        <li role="menuitem" class="identity">
+          <p data-l10n-id="wifi-auth-username">Username</p>
+          <input data-ignore="" name="identity" dir="auto" type="text"/>
+        </li>
+        <li role="menuitem" class="password">
+          <p data-l10n-id="wifi-auth-password">Password</p>
+          <input data-ignore="" name="password" maxlength="63" x-inputmode="plain" type="password"/>
+        </li>
+        <li role="menuitem" class="show-password">
+          <label class="pack-checkbox">
+            <input data-ignore name="show-pwd" id="pwd-auth" type="checkbox"/>
+            <span data-l10n-id="showPassword"></span>
+          </label>
+        </li>
+        <li role="menuitem" class="key-index">
+          <span data-l10n-id="key-index" class="keyIndex-title">key index</span>
+          <span class="button icon icon-dialog">
+            <select data-track-class="keyIndex-title">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </span>
+        </li>
+        <li role="menuitem" class="server-certificate">
+          <p data-l10n-id="server-certificate" class="server-certificate-title">Server certificate</p>
+          <span class="button icon icon-dialog">
+            <select data-track-class="server-certificate-title">
+              <option data-l10n-id="server-certificate-none" value="none"></option>
+            </select>
+          </span>
+        </li>
+      </ul>
+    </div>
+
+    <panel data-path="panels/wifi_auth/panel"></panel>
+
+  </template>
+</element>

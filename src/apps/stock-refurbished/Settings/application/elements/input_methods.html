@@ -1,0 +1,40 @@
+<element name="input-methods" extends="section">
+  <template>
+
+    <gaia-header data-href="#root">
+      <h1 data-l10n-id="input-methods-header"></h1>
+    </gaia-header>
+
+    <div>
+      <ul role="menu">
+        <li role="menuitem">
+          <span data-l10n-id="use-predictive"></span>
+          <div class="button icon icon-dialog">
+            <select name='keypad.t9-enabled' data-value-type="boolean">
+              <option data-l10n-id="on" value="true">On</option>
+              <option data-l10n-id="off" value="false">Off</option>
+            </select>
+          </div>
+        </li>
+        <li role="menuitem">
+          <span data-l10n-id="next-word-suggestion"></span>
+          <div class="button icon icon-dialog">
+            <select name='keypad.wordsuggestion' data-value-type="boolean">
+              <option data-l10n-id="on" value="true">On</option>
+              <option data-l10n-id="off" value="false">Off</option>
+            </select>
+          </div>
+        </li>
+        <li role="menuitem">
+          <a class="menu-item" href="#">
+            <span data-l10n-id="select-input-languages"></span>
+            <small id="input-languages-desc"></small>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <panel data-path="panels/input_methods/panel"></panel>
+
+  </template>
+</element>

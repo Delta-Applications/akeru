@@ -1,0 +1,33 @@
+<element name="cell-broadcast-message" extends="section">
+  <template>
+    <gaia-header data-href="#root">
+      <h1 data-l10n-id="cellBroadcastMessageTitle"></h1>
+    </gaia-header>
+    <div>
+      <ul role="menu">
+        <li role="menuitem" id="cellBroadcast_mode_switch" hidden>
+          <span data-l10n-id="cellBroadcastMessage"></span>
+          <span class="button icon icon-dialog">
+            <select id="cellBroadcast-mode-select" data-value-type="boolean" name="ril.cellbroadcast.disabled" hidden>
+              <option value="true" data-l10n-id="on"></option>
+              <option value="false" data-l10n-id="off"></option>
+            </select>
+          </span>
+        </li>
+      </ul>
+
+      <ul role="menu" id="cell-broadcast-settings">
+        <header>
+          <h2 data-l10n-id="cell-broadcast-settings"></h2>
+        </header>
+
+        <li role="menuitem" id="cell-broadcast-config">
+          <a class="menu-item" data-hash="#cell-channels-config" href="#cell-channels-config">
+            <span data-l10n-id="cell-broadcast-config"></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <panel data-path="panels/cell_broadcast_message/panel"></panel>
+  </template>
+</element>

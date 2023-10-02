@@ -1,0 +1,89 @@
+<element name="carrier" extends="section">
+  <template>
+    <gaia-header data-href="#root">
+      <h1 data-l10n-id="cellular-and-data-header"></h1>
+    </gaia-header>
+    <div>
+      <ul role="menu" class="carrier-info" hidden>
+        <li role="menuitem">
+          <a class="menu-item" href="#carrier-operatorSettings">
+            <span data-l10n-id="dataNetwork">Carrier</span>
+            <small id="dataNetwork-desc"></small>
+          </a>
+        </li>
+      </ul>
+      <ul role="menu" class="carrier-settings" hidden>
+        <li role="menuitem" id="menuItem-carrier-sim1" aria-disabled="true" class="none-select">
+          <a class="menu-item" href="#carrier-operatorSettings">
+            <span data-l10n-id="carrier-sim1">Carrier - SIM1</span>
+            <small></small>
+          </a>
+        </li>
+        <li role="menuitem" id="menuItem-carrier-sim2" aria-disabled="true" class="none-select">
+          <a class="menu-item" href="#carrier-operatorSettings">
+            <span data-l10n-id="carrier-sim2">Carrier - SIM2</span>
+            <small></small>
+          </a>
+        </li>
+      </ul>
+
+      <header>
+        <h2 role="heading" data-l10n-id="dataConnectivity">Data</h2>
+      </header>
+      <ul role="menu">
+        <li role="menuitem" id="liItem-dataConnection" class="liItem-dataConnection">
+          <span data-l10n-id="dataConnection" class="data_connection_switch">Data Connection</span>
+          <span class="button icon icon-dialog">
+            <select data-value-type="boolean" name="ril.data.enabled" class="dataConnection-select" data-track-class="data_connection_switch">
+              <option value="true" data-l10n-id="on">On</option>
+              <option value="false" data-l10n-id="off">Off</option>
+            </select>
+          </span>
+        </li>
+        <p class="ums-confirm description" data-l10n-id="dataConnection-warning-message"></p>
+        <li role="menuitem" id="liItem-dataRoaming" class="liItem-dataRoaming" data-nav-reset-type="self">
+          <a id="menuItem-dataRoaming" class="menu-item"  href="#data-roaming">
+            <span data-l10n-id="dataRoaming">Data Roaming</span>
+            <small id="data-roaming-desc" class="menu-item-desc"></small>
+          </a>
+        </li>
+        <p class="ums-confirm description" id="dataRoaming-description" data-l10n-id="dataRoaming-warning-message"></p>
+        <li role="menuitem" id="operator-roaming-preference" hidden>
+          <span data-l10n-id="operator-roamingPreference" class="operator-roaming-preference-title">Roaming preference</span>
+          <span class="button icon icon-dialog">
+            <select id="operator-roaming-preference-selector" data-track-class="operator-roaming-preference-title">
+              <option data-l10n-id="operator-roamingPreference-home" value="home">Home</option>
+              <option data-l10n-id="operator-roamingPreference-any" value="any">Any</option>
+            </select>
+          </span>
+        </li>
+      </ul>
+      <header>
+        <h2 role="heading" data-l10n-id="advancedSettings">Advanced Settings</h2>
+      </header>
+      <ul role="menu"  class="carrier-advancedSettings" hidden>
+        <li role="menuitem">
+          <a class="menu-item" href="#apn-settings">
+            <span data-l10n-id="apnSettings">APN Settings</span>
+          </a>
+        </li>
+        </ul>
+      <ul role="menu" class="apn-settings" hidden>
+        <li role="menuitem" id="menuItem-apn-sim1" aria-disabled="true" class="none-select">
+          <a class="menu-item" href="#apn-settings">
+            <span data-l10n-id="apn-sim1">APN Settings - SIM1</span>
+            <small></small>
+          </a>
+        </li>
+        <li role="menuitem" id="menuItem-apn-sim2" aria-disabled="true" class="none-select">
+          <a class="menu-item" href="#apn-settings">
+            <span data-l10n-id="apn-sim2">APN Settings - SIM2</span>
+            <small></small>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <panel data-path="panels/carrier/panel"></panel>
+  </template>
+</element>

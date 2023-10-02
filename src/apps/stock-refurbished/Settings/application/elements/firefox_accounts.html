@@ -1,0 +1,81 @@
+<element name="fxa" extends="section" id="fxa-container">
+  <template>
+
+    <gaia-header id="fxa-header" data-href="#root" hidden>
+      <h1 data-l10n-id="fxa-accounts-header" id="fxa-accounts-header"></h1>
+    </gaia-header>
+
+    <div id="phone-unverified" class="focus" hidden>
+      <ul>
+        <li class="description non-focus" role="menuitem">
+          <p data-l10n-id="phone-verification-message" id="phone-unverified-description">
+          </p>
+        </li>
+      </ul>
+    </div>
+    <div id="fxa-logged-out" hidden>
+      <ul>
+        <a href="#account-more-about" id="account-about">
+        </a>
+        <p class="kaios-logo"></p>
+        <p class="kaios-logo-account" data-l10n-id="accounts">
+          Account
+        </p>
+        <li class="li-fxa-about fxa-button button button-below-button" role="menuitem">
+          <a href="#fxa-about">
+          </a>
+          <button id="fxa-create-account-btn" data-l10n-id="fxa-CreateAccount">Create Account</button>
+        </li>
+        <li class="fxa-button button button-below-button" role="menuitem">
+          <button id="fxa-login-number" data-l10n-id="fxa-SignIn-number">Sign In With Phone</button>
+        </li>
+        <li class="fxa-button button button-below-button" role="menuitem">
+          <button id="fxa-login-email" data-l10n-id="fxa-SignIn-email">Sign In With Email</button>
+        </li>
+      </ul>
+    </div>
+    <div id="fxa-logged-in" hidden>
+      <header>
+        <h2 data-l10n-id="fxa-account-info-label">Your Account</h2>
+      </header>
+      <ul>
+        <li id="phone-info" role="menuitem" class="none-select">
+           <span data-l10n-id="fxa-phone-number-label"></span>
+           <small id="fxa-phone-number" class="menu-item-desc"></small>
+        </li>
+      </ul>
+      <ul>
+        <li id="email-info" role="menuitem" class="none-select">
+           <span id="fxa-email-label" data-l10n-id="fxa-email-label"></span>
+           <small id="fxa-email" class="menu-item-desc"></small>
+        </li>
+      </ul>
+      <ul id="fxa-resend-mail" hidden>
+        <li id="email-button" class="fxa-button button" role="menuitem">
+          <button id="fxa-resend-mail-btn" data-l10n-id="fxa-resend-mail">
+          </button>
+        </li>
+      </ul>
+      <ul>
+        <li id="alt-phone-info" role="menuitem" class="none-select">
+           <span id="fxa-alt-phone-label" data-l10n-id="fxa-alt-phone-label" class="no-wrap"></span>
+           <small id="fxa-alt-phone" class="menu-item-desc"></small>
+        </li>
+      </ul>
+      <ul id="fxa-send-altphone-otp" hidden>
+        <li id="alt-phone-button" class="fxa-button button" role="menuitem">
+          <button id="fxa-send-altphone-otp-btn" data-l10n-id="fxa-send-altphone-otp">
+          </button>
+        </li>
+      </ul>
+      <ul>
+        <li id="personal-info" role="menuitem" class="none-select">
+           <span data-l10n-id="fxa-personal-info-header"></span>
+           <small id="fxa-personal-info-birthday" class="menu-item-desc"></small>
+        </li>
+      </ul>
+    </div>
+    <script defer src="../shared/js/settings_helper.js"></script>
+    <script defer src="js/firefox_accounts/panel_loader.js"></script>
+  </template>
+</element>

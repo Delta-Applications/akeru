@@ -1,0 +1,1 @@
+window.GaiaButtons=function(){var t=Object.create(HTMLElement.prototype),e=window.GaiaButtonsBaseurl||"/shared/elements/gaia_buttons/";return t.createdCallback=function(){ComponentUtils.style.call(this,e)},document.registerElement("gaia-buttons",{prototype:t})}(window);

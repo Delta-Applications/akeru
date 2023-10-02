@@ -1,0 +1,20 @@
+<element name="change-phonename" extends="section">
+  <template>
+    <gaia-header data-href="#bluetooth">
+      <h1 data-l10n-id="rename-device-header">Rename My Phone</h1>
+    </gaia-header>
+    <div>
+      <ul role="menu">
+        <li role="menuitem">
+          <span data-l10n-id="myphone-name">My Phone Name</span>
+          <input id="update-device-name-input" value="" dir="auto" type="text" maxlength="20">
+        </li>
+        <li id="change-phone-name-desc" class="non-focus">
+          <p class="ums-confirm description" data-l10n-id="change-phone-name-desc"></p>
+        </li>
+      </ul>
+    </div>
+
+    <panel data-path="panels/bluetooth/change_device_name/panel"></panel>
+  </template>
+</element>

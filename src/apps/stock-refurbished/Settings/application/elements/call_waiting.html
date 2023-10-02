@@ -1,0 +1,26 @@
+<element name="call-waiting" extends="section">
+  <template>
+
+    <gaia-header data-href="#call">
+      <h1 data-l10n-id="call-waiting-header"></h1>
+    </gaia-header>
+
+    <div>
+      <ul role="menu">
+        <li role="menuitem" id="menuItem-call-waiting" data-state="off" aria-disabled="true">
+          <span data-l10n-id="callWaiting">Call Waiting</span>
+          <small class="long-string"></small>
+          <div class="button icon icon-dialog">
+            <select data-value-type="boolean" hidden>
+              <option data-l10n-id="enable" value="true">Enable</option>
+              <option data-l10n-id="disable" value="false">Disable</option>
+            </select>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <panel data-path="panels/call_waiting/panel"></panel>
+
+  </template>
+</element>

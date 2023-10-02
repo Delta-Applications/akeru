@@ -1,0 +1,50 @@
+<element name="call-barring-passcode-change" extends="section">
+  <template>
+    <gaia-header id="change-passcode-header">
+      <h1 data-l10n-id="callBarring-change-passcode"></h1>
+    </gaia-header>
+
+    <div class="passcode-overlay" id="passcode-container">
+      <div class="call-barring-passcode-container" id="call-barring-current-passcode">
+        <label data-l10n-id="callBarring-current-passcode"></label>
+        <div class="passcode">
+          <span class="passcode-digit"></span>
+          <span class="passcode-digit"></span>
+          <span class="passcode-digit"></span>
+          <span class="passcode-digit"></span>
+        </div>
+      </div>
+      <div class="call-barring-passcode-container" id="call-barring-create-passcode">
+        <label data-l10n-id="callBarring-create-passcode"></label>
+        <div class="passcode">
+          <span class="passcode-digit"></span>
+          <span class="passcode-digit"></span>
+          <span class="passcode-digit"></span>
+          <span class="passcode-digit"></span>
+        </div>
+      </div>
+      <div class="call-barring-passcode-container" id="call-barring-confirm-passcode">
+        <label data-l10n-id="callBarring-confirm-passcode"></label>
+        <div class="passcode">
+          <span class="passcode-digit"></span>
+          <span class="passcode-digit"></span>
+          <span class="passcode-digit"></span>
+          <span class="passcode-digit"></span>
+        </div>
+      </div>
+    </div>
+
+    <div id="updating-container">
+      <ul role="menu">
+        <li role="menuitem" class="non-focus"  data-l10n-id="CallBarring-Changing-passcode">
+        </li>
+        <li role="menuitem" class="non-focus" data-state="on">
+          <progress id="updating-progress" class="pack-activity" value="0" max="100"></progress>
+        </li>
+      </ul>
+    </div>
+
+    <panel data-path="panels/call_barring_passcode_change/panel"></panel>
+
+  </template>
+</element>

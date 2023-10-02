@@ -1,0 +1,83 @@
+<element name="dateTime" extends="section">
+  <template>
+
+    <gaia-header data-href="#root">
+      <h1 data-l10n-id="dateAndTime-header"></h1>
+    </gaia-header>
+
+    <div class="panel">
+      <ul role="menu" class="time-auto" data-state="auto" hidden>
+        <li role="menuitem" class="auto-height">
+          <span data-l10n-id="time-auto-sync"></span>
+          <small></small>
+          <div class="button icon icon-dialog">
+            <select name="time.clock.automatic-update.enabled" data-value-type="boolean">
+              <option data-l10n-id="on" value="true"></option>
+              <option data-l10n-id="off" value="false"></option>
+            </select>
+          </div>
+        </li>
+      </ul>
+
+      <header class="time-header" hidden>
+        <h2 data-l10n-id="time-header"></h2>
+      </header>
+
+      <ul role="menu" class="time-manual" hidden>
+        <li role="menuitem">
+          <input class="date-picker" min="1970-1-1" max="2035-12-31" type="date">
+          <span data-l10n-id="dateMessage"></span>
+          <small class="clock-date"></small>
+        </li>
+        <li role="menuitem">
+          <input class="time-picker" type="time">
+          <span data-l10n-id="timeMessage"></span>
+          <small class="clock-time"></small>
+        </li>
+      </ul>
+
+      <header class="timezone-header">
+        <h2 data-l10n-id="timezoneMessage"></h2>
+      </header>
+
+      <ul role="menu" class="timezone">
+        <li role="menuitem" class="timezone-info">
+          <a>
+            <span></span>
+            <small class="button icon icon-dialog"></small>
+          </a>
+        </li>
+      </ul>
+
+      <header>
+        <h2 data-l10n-id="time-format"></h2>
+      </header>
+      <ul role="menu" class="timeformat">
+        <li role="menuitem">
+           <span data-l10n-id="time-format-time" class="time-format-time-title"></span>
+           <span class="button icon icon-dialog">
+             <select class="time-format-time" data-track-class="time-format-time-title"></select>
+           </span>
+        </li>
+      </ul>
+
+      <header>
+        <h2 data-l10n-id="home-screen-clock"></h2>
+      </header>
+      <ul role="menu">
+        <li role="menuitem">
+          <span data-l10n-id="clocks"></span>
+          <div class="button icon icon-dialog">
+            <select class="homescreenclock-available" data-value-type="boolean">
+              <option data-l10n-id="clocks-show" value="true"></option>
+              <option data-l10n-id="clocks-hide" value="false"></option>
+            </select>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <panel data-path="panels/date_time/panel"></panel>
+
+  </template>
+</element>

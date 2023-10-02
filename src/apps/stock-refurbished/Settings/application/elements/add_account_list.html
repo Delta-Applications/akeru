@@ -1,0 +1,33 @@
+<element name="add-account-list" extends="section">
+  <template>
+    <gaia-header id="header" data-href="#root">
+      <h1 data-l10n-id="add-account"></h1>
+    </gaia-header>
+
+    <div id="login-progress" hidden>
+      <ul role="menu">
+        <li role="menuitem" class="non-focus" data-state="on">
+          <progress id="updating-progress" class="pack-activity" value="0" max="100"></progress>
+        </li>
+      </ul>
+    </div>
+
+    <div id="account-list">
+      <ul role="menu" id="list-google">
+        <li role="menuitem" id="li-google">
+          <a class="menu-item">
+            <span data-l10n-id="google"></span>
+          </a>
+        </li>
+        <li role="menuitem" id="li-activesync" hidden>
+          <a class="menu-item">
+            <span data-l10n-id="activesync"></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <panel data-path="panels/add_account_list/panel"></panel>
+
+  </template>
+</element>

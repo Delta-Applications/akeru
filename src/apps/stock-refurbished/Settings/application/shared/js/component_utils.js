@@ -1,0 +1,2 @@
+
+!function(t){t.ComponentUtils={style:function(t){var e=document.createElement("style"),n=t+"style.css",o=this;e.setAttribute("scoped",""),e.innerHTML="@import url("+n+");",this.appendChild(e),this.style.visibility="hidden",e.addEventListener("load",function(){o.shadowRoot&&o.shadowRoot.appendChild(e.cloneNode(!0)),o.style.visibility=""})}}}(window);

@@ -1,0 +1,25 @@
+<element name="manageTones" extends="section">
+  <template>
+
+    <gaia-header data-href="#tones">
+      <h1 data-l10n-id="manage-tones-header">Manage Tones</h1>
+    </gaia-header>
+
+    <div id="manage-tones-panel" aria-labelledby="manage-tones">
+      <ul role="menu">
+        <li role="menuitem" id="system-ringtones">
+          <a data-l10n-id="system-ringtones" class="menu-item system-ringtones-button" data-type="systemRingtones"></a>
+        </li>
+        <li role="menuitem" id="my-ringtones">
+          <a data-l10n-id="my-ringtones" class="my-ringtones-button menu-item" data-type="myRingtones"></a>
+        </li>
+        <li role="menuitem" id="system-alerts">
+          <a data-l10n-id="notice-alerts" class="menu-item system-alerts-button" data-type="systemAlerts"></a>
+        </li>
+      </ul>
+    </div>
+
+    <panel data-path="panels/manage_tones/panel"></panel>
+
+  </template>
+</element>

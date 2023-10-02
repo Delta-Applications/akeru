@@ -1,0 +1,25 @@
+<element name="wifi-enterCertificateNickname" extends="section">
+  <template>
+
+    <gaia-header>
+      <button type="reset" hidden></button>
+      <h1 data-l10n-id="enterCertificateNickname"></h1>
+      <button type="submit" hidden></button>
+    </gaia-header>
+
+    <div>
+      <ul role="menu">
+        <li role="menuitem" class="nickname">
+          <p data-l10n-id="nickname"></p>
+          <input class="certificate-file-nickname" dir="auto" type="text">
+        </li>
+        <li role="menuitem" class="description">
+          <p data-l10n-id="enter-certificate-name-msg"></p>
+        </li>
+      </ul>
+    </div>
+
+    <panel data-path="panels/wifi_enter_certificate_nickname/panel"></panel>
+
+  </template>
+</element>

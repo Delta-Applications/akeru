@@ -1,0 +1,40 @@
+<element name="change-account-info" extends="section">
+  <template>
+    <gaia-header data-href="#root">
+      <h1 id="account-header"></h1>
+    </gaia-header>
+    <div id="save-password-progress">
+      <ul role="menu">
+        <li role="menuitem" class="non-focus"  data-l10n-id="checking">
+        </li>
+        <li role="menuitem" class="non-focus" data-state="on">
+          <progress id="updating-progress" class="pack-activity" value="0" max="100"></progress>
+        </li>
+      </ul>
+    </div>
+    <div id="change-password-page">
+      <ul>
+        <li role="menuitem" class="user-name non-focus">
+          <span data-l10n-id="username"></span>
+          <small class="account-username"></small>
+        </li>
+        <li role="menuitem" class="incorrect-name-desc non-focus" hidden>
+          <p data-l10n-id="incorrect-password-description"></span>
+        </li>
+        <li role="menuitem" class="password">
+          <p data-l10n-id="password"></p>
+          <input data-ignore="" name="password" maxlength="63" x-inputmode="plain" type="password"/>
+        </li>
+        <li role="menuitem" class="show-password" hidden>
+          <label class="pack-checkbox">
+            <input data-ignore name="show-pwd" id="pwd-auth" type="checkbox"/>
+            <span data-l10n-id="showPassword"></span>
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <panel data-path="panels/change_account_info/panel"></panel>
+
+  </template>
+</element>

@@ -1,0 +1,139 @@
+section[role="region"]#screenLock-passcode > div {
+  width: 100%;
+  height: calc(100% - var(--statusbar-softkeybar-height));
+  overflow-y: scroll;
+  will-change: scroll-position;
+  position: absolute;
+  overflow-x: hidden;
+}
+#screenLock li.lockscreen-enabled {
+  display: none;
+}
+#screenLock[data-lockscreen-enabled="true"] li.lockscreen-enabled {
+  display: block;
+}
+#screenLock[data-lockscreen-enabled="true"][data-passcode-enabled="true"] li.passcode-enabled {
+  display: block;
+}
+#screenLock-passcode .passcode-error {
+  clear: both;
+  display: none;
+  height: 4.2rem;
+  color: #d90036;
+  font-size: var(--font-p-sec);
+  padding: 0 0.5rem;
+  margin-top: 1.5rem;
+  text-align: center !important;
+}
+#screenLock-passcode[data-passcode-status="error"][data-mode="confirm"] div.passcode-error,
+#screenLock-passcode[data-passcode-status="error"][data-mode="confirmLock"] div.passcode-error,
+#screenLock-passcode[data-passcode-status="error"][data-mode="edit"] div.passcode-error,
+#screenLock-passcode[data-passcode-status="error"][data-mode="new"] div.passcode-error,
+#screenLock-passcode[data-passcode-status="error"][data-mode="create"] div.passcode-error {
+  display: block;
+}
+#screenLock-passcode .passcode-error.error {
+  display: block;
+}
+.passcode-change div.passcode-overlay {
+  position: relative;
+}
+#screenLock-passcode .input-passcode-field {
+  height: auto;
+  margin: 0rem 0 0.4rem;
+  font-size: var(--font-p-pri);
+  text-align: center;
+}
+#passcode-pseudo-input div {
+  padding-bottom: 1rem;
+}
+#screenLock-passcode [data-mode] {
+  display: none !important; 
+}
+#screenLock-passcode menu[type="toolbar"] {
+  width: 9rem;
+}
+#screenLock-passcode menu[type="toolbar"] button {
+  width: 100%;
+}
+#screenLock-passcode[data-mode="create"]  [data-mode*="create"],
+#screenLock-passcode[data-mode="confirm"] [data-mode*="confirm"],
+#screenLock-passcode[data-mode="confirmLock"] [data-mode*="confirmLock"],
+#screenLock-passcode[data-mode="edit"]    [data-mode*="edit"],
+#screenLock-passcode[data-mode="new"]     [data-mode*="new"] {
+  display: block !important; 
+}
+#screenLock-passcode[data-mode="confirm"] [data-mode*="confirm"].hidden{
+  visibility: hidden;
+}
+.passcode-container.input-passcode-field {
+  top: 0.5rem;
+  position: absolute;
+}
+.passcode-input {
+  z-index: -1;
+  position: absolute;
+  top: -5rem;
+  left: 0;
+}
+.passcode-container {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  top: var(--header-height);
+  left: 0;
+  background: url(images/document-bg.png);
+  height: auto !important;
+}
+#passcode-pseudo-input {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.large-text #passcode-pseudo-input {
+  font-size: 2.4rem;
+}
+#passcode-pseudo-confirm-input h3{
+  color: var(--color-gs70);
+}
+.passcode {
+  overflow: hidden;
+  padding: 0.5rem;
+}
+.passcode-digit.highlight {
+  border: solid 0.4rem var(--color-blue);
+  margin: 0.2rem 0.2rem 0 0.2rem;
+}
+span.passcode-digit[data-dot].error::before {
+  background-color: #d90036;
+}
+span.passcode-digit[data-dot].correct::before {
+  background-color: var(--color-blue);
+}
+.passcode-digit {
+  position: relative;
+  float: left;
+  left: 2rem;
+  width: 3.6rem;
+  height: 3.6rem;
+  margin: 0.5rem 0.5rem 0.3rem 0.5rem;
+  border: solid 0.1rem #aaaaaa;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 0.2rem;
+}
+span.passcode-digit[data-dot]::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 0.6rem;
+  height: 0.6rem;
+  background-color: var(--color-gs90);
+  border-radius: 0.6rem;
+  top: 60%;
+  left: 60%;
+  margin-left: -0.6rem;
+  margin-top: -0.6rem;
+}
+html[dir="rtl"] #screenLock-passcode[data-mode="create"] [data-mode*="create"] {
+  text-align: right;
+}

@@ -1,0 +1,45 @@
+<element name="wifi-wps" extends="section">
+  <template>
+
+    <gaia-header data-href="#wifi">
+      <button type="reset" hidden></button>
+      <h1 data-l10n-id="wpsMethodSelection"></h1>
+      <button type="submit" hidden></button>
+    </gaia-header>
+
+    <div>
+      <ul role="menu">
+        <li role="menuitem" class="button-connect-item" aria-labelledby="button-connect">
+          <label class="pack-radio-large my_radio">
+            <input data-setting="wifi.wps.method" name="wpsMethodSelection" value="pbc" type="radio" checked>
+            <span id="button-connect" data-l10n-id="wpsPbcLabel">Button connection</span>
+          </label>
+        </li>
+        <li role="menuitem" aria-labelledby="pin-connect">
+          <label class="pack-radio-large my_radio">
+            <input data-setting="wifi.wps.method" name="wpsMethodSelection" value="myPin" type="radio">
+            <span id="pin-connect" data-l10n-id="wpsMyPinLabel">My PIN connection</span>
+          </label>
+        </li>
+        <li role="menuitem" hidden>
+          <label class="pack-radio-large my_radio">
+            <input data-setting="wifi.wps.method" name="wpsMethodSelection" value="apPin" type="radio">
+            <span data-l10n-id="wpsApPinLabel">AP PIN connection</span>
+          </label>
+        </li>
+        <li role="menuitem" class="wifi-wps-pin-area">
+          <p data-l10n-id="wpsPinDescription">PIN is 4 or 8 digits</p>
+          <input x-inputmode="digit" size="8" maxlength="8" type="password"></li>
+        <li role="menuitem" class="wifi-wps-pin-aps">
+          <span data-l10n-id="wpsPinAps" class="wps-pin-aps-title">Select an opposite device</span>
+          <small class="button icon icon-dialog">
+            <select data-track-class="wps-pin-aps-title"></select>
+          </small>
+        </li>
+      </ul>
+    </div>
+
+    <panel data-path="panels/wifi_wps/panel"></panel>
+
+  </template>
+</element>

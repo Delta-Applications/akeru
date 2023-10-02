@@ -1,0 +1,50 @@
+<element name="simpin" extends="section">
+  <template>
+
+    <gaia-header class="simpin-header" data-href="#root">
+      <h1 data-l10n-id="simSecurity-header"></h1>
+    </gaia-header>
+
+    <div>
+      <ul role="menu" class="simpin-container"></ul>
+
+      <header>
+        <h2 role="heading" data-l10n-id="whatIsSimPin"></h2>
+      </header>
+      <ul role="menu">
+        <li role="menuitem" class="more-description-container">
+          <a href="#simpin-description">
+            <p data-l10n-id="simPinIntro1" class="more-description-msg1"></p>
+            <p data-l10n-id="more" class="more-description"></p>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <panel data-path="panels/simpin/panel"></panel>
+
+    <div class="simpin-tmpl" hidden="">
+    <!--
+      <li role="menuitem" class="simpin-${sim-index} simpin-enabled-${sim-index} simpin-enabled">
+        <span class="simPin" data-l10n-args='{"index": "${simPinIndex}"}' data-l10n-id="simPinWithIndex"></span>
+        <span class="icon icon-dialog button">
+          <select data-sim-index="${sim-index}" data-track-class="simPin" data-value-type="boolean">
+            <option data-l10n-id="on" value="true">On</option>
+            <option data-l10n-id="off" value="false" selected>Off</option>
+          </select>
+        </span>
+      </li>
+      <li role="menuitem" class="simpin-change simpin-${sim-index} simpin-change-${sim-index}" hidden>
+        <a data-sim-index="${sim-index}" data-type="changeSimPin" class="menu-item" href="#">
+          <span data-l10n-args='{"index": "${simPinIndex}"}' data-l10n-id="changeSimPinWithIndex"></span>
+        </a>
+      </li>
+      <li role="menuitem" class="simpin-validate simpin-${sim-index} simpin-validate-${sim-index}" hidden>
+        <a data-sim-index="${sim-index}" data-type="validateSimPin" class="menu-item" href="#">
+          <span data-l10n-args='{"index": "${simPinIndex}"}' data-l10n-id="validateSimPinWithIndex"></span>
+        </a>
+      </li>
+    -->
+  </div>
+
+</template>
+</element>

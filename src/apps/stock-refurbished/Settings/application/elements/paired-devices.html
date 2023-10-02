@@ -1,0 +1,17 @@
+<element name="paired-devices" extends="section">
+  <template>
+      <gaia-header data-href="#bluetooth">
+         <h1 data-l10n-id="bluetooth-paired-devices-header"></h1>
+       </gaia-header>
+       <div class="panel">
+         <ul id="bluetooth-paired-devices" class="devices">
+         </ul>
+         <div id="nopaired-devices">
+           <h2 data-l10n-id="bt-status-nopaired" class="bt-explanation"></h2>
+           <p data-l10n-id="bt-status-nopaired-desc" class="bt-explanation"></p>
+         </div>
+       </div>
+
+       <panel data-path="panels/bluetooth/paired_device/panel"></panel>
+  </template>
+</element>

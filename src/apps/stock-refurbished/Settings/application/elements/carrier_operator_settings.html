@@ -1,0 +1,53 @@
+<element name="carrier-operatorSettings" extends="section">
+  <template>
+
+    <gaia-header data-href="#carrier">
+      <h1 data-l10n-id="dataNetwork"></h1>
+    </gaia-header>
+
+    <div id="carrier-operatorSettings-content">
+      <ul role="menu">
+        <li role="menuitem" id="network-type" class="menu-item none-select">
+          <p data-l10n-id="operator-networkType" class="operator-network-type-title">Network Type</p>
+          <span class="button icon icon-dialog">
+            <select id="preferredNetworkType"></select>
+          </span>
+        </li>
+        <li role="menuitem" id="operator-autoSelect" class="menu-item none-select" aria-disabled="true" hidden>
+          <span data-l10n-id="operator-autoSelect">Automatic</span>
+          <div class="button icon icon-dialog">
+            <select id="auto-select-options" data-value-type="boolean">
+              <option value="true" data-l10n-id="on">On</option>
+              <option value="false" data-l10n-id="off">Off</option>
+            </select>
+          </div>
+        </li>
+      </ul>
+
+      <header id="availableOperatorsHeader" hidden>
+        <h2 role="heading" data-l10n-id="availableOperators">Network Operators in the Area</h2>
+      </header>
+      <ul role="menu" id="availableOperators" data-state="off" hidden>
+        <li role="menuitem" id="operators-info" class="description explanation non-focus" data-state="on" data-l10n-id="operator-turnAutoSelectOff">
+        </li>
+        <li role="menuitem" class="non-focus" data-state="on">
+          <progress id="searching-progress" class="pack-activity" value="0" max="100"></progress>
+         </li>
+        <li role="menuitem" id="search-again" data-state="ready" class="button" aria-disabled="true" hidden>
+          <button data-l10n-id="scanNetworks">Search Again</button>
+        </li>
+      </ul>
+    </div>
+
+    <form role="dialog" data-type="confirm" id="preferredNetworkTypeAlert" hidden>
+      <section>
+        <h1 data-l10n-id="preferredNetworkTypeAlertTitle">Preferred network type</h1>
+        <p> <strong id="preferredNetworkTypeAlertMessage"></strong>
+        </p>
+      </section>
+    </form>
+
+    <script src="shared/js/settings_helper.js"></script>
+    <panel data-path="panels/carrier_operator_settings/panel"></panel>
+  </template>
+</element>

@@ -1,0 +1,34 @@
+<element name="screenLock" extends="section">
+  <template>
+    <gaia-header data-href="#root">
+      <h1 data-l10n-id="screenLock-header"></h1>
+    </gaia-header>
+
+    <div>
+      <ul role="menu">
+        <li role="menuitem">
+          <p data-l10n-id="screenLock" class="screenLock">Screen Lock</p>
+          <span id="screen-lock" class="button icon icon-dialog">
+            <select  data-value-type="boolean" data-track-class="screenLock">
+              <option value="true" data-l10n-id="on">On</option>
+              <option value="false" data-l10n-id="off">Off</option>
+            </select>
+          </span>
+        </li>
+        <li role="menuitem" class="passcode-edit passcode-enabled" data-show-name="lockscreen.passcode-lock.enabled" hidden>
+          <span data-l10n-id="change-passcode">Change Passcode</span>
+        </li>
+        <li role="menuitem" class="more-description-container" hidden>
+          <a href="#screenLock-description">
+            <p data-l10n-id="screenlock-introduction_1" class="more-description-msg1"></p>
+            <p data-l10n-id="screenlock-introduction_2" class="more-description-msg2"></p>
+            <p data-l10n-id="more" class="more-description"></p>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <panel data-path="panels/screen_lock/panel"></panel>
+
+  </template>
+</element>

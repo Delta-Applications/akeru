@@ -1,0 +1,47 @@
+<element name="notifications" extends="section">
+  <template>
+
+    <gaia-header data-href="#root">
+      <h1 data-l10n-id="notifications-header"></h1>
+    </gaia-header>
+
+    <div>
+      <ul role="menu">
+        <li role="menuitem" class="auto-height">
+          <span data-l10n-id="lockscreen-notifications"></span>
+          <div id="backscreen-notifications" class="button icon icon-dialog">
+            <select name="lockscreen.notifications-preview.enabled" data-value-type="boolean">
+              <option value="true" data-l10n-id="yes"></option>
+              <option value="false" data-l10n-id="no"></option>
+            </select>
+          </div>
+        </li>
+        <li role="menuitem" class="auto-height" id="backscreen-content-notifications-item" hidden>
+          <span data-l10n-id="lockscreen-content-notifications"></span>
+          <div class="button icon icon-dialog">
+            <select name="lockscreen.notifications.content.enabled" data-value-type="boolean">
+              <option value="true" data-l10n-id="yes"></option>
+              <option value="false" data-l10n-id="no"></option>
+            </select>
+          </div>
+        </li>
+        <li role="menuitem" hidden>
+          <span data-l10n-id="notifications-resend"></span>
+          <div id="notifications-resend" class="button icon icon-dialog">
+            <select name="notifications.resend" data-value-type="boolean">
+              <option value="true" data-l10n-id="yes"></option>
+              <option value="false" data-l10n-id="no"></option>
+            </select>
+          </div>
+        </li>
+        <li role="menuitem">
+          <a id="menuItem-app-notices" class="menu-item" href="#app-notices">
+            <span data-l10n-id="app-notices"></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <panel data-path="panels/notifications/panel"></panel>
+
+  </template>
+</element>

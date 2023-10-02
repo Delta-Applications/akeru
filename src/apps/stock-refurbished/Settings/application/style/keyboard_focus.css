@@ -1,0 +1,30 @@
+
+a:focus,
+input:focus,
+textarea:focus,
+button:focus,
+select:focus,
+.button:focus {
+  outline: none;
+}
+a.mouse-focus:focus,
+input.mouse-focus:focus,
+textarea.mouse-focus:focus,
+button.mouse-focus:focus,
+select.mouse-focus:focus,
+.button.mouse-focus:focus {
+  outline: none;
+}
+li.selected {outline: none; }
+.focus {
+  background-color: #0c99d5;
+}
+.focus:not([type='text']):not([type='password']):not(textarea),
+.focus a,
+.focus button,
+.focus p,
+.focus select,
+.focus small,
+.focus span{
+  color: #fff !important;
+}

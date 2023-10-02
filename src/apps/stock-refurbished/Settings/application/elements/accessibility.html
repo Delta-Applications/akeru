@@ -1,0 +1,118 @@
+<element name="accessibility" extends="section">
+  <template>
+
+    <gaia-header data-href="#root">
+      <h1 data-l10n-id="accessibility-header"></h1>
+    </gaia-header>
+
+    <div>
+      <ul role="menu">
+        <header role="header">
+          <h2 data-l10n-id="display"></h2>
+        </header>
+        <li role="menuitem">
+          <span data-l10n-id="colorFilter-invert" class="invert-colors"></span>
+          <span class="button icon icon-dialog">
+            <select name="accessibility.colors.invert" data-value-type="boolean">
+              <option value="true" data-l10n-id="on"></option>
+              <option value="false" data-l10n-id="off"></option>
+            </select>
+          </span>
+        </li>
+
+        <li role="menuitem">
+          <span data-l10n-id="backlight"></span>
+          <div class="button icon icon-dialog">
+            <select name="accessibility.backlight" data-value-type="boolean">
+              <option value="true" data-l10n-id="on"></option>
+              <option value="false" data-l10n-id="off"></option>
+            </select>
+          </div>
+        </li>
+        <li role="menuitem">
+          <span data-l10n-id="accessibility-large-text"></span>
+          <div class="button icon icon-dialog">
+            <select name="accessibility.large_text" data-value-type="boolean">
+              <option data-l10n-id="on" value="true"></option>
+              <option data-l10n-id="off" value="false"></option>
+            </select>
+          </div>
+        </li>
+        <li role="menuitem">
+          <a class="captions" href="#accessibility-captions">
+            <span data-l10n-id="accessibility-captions"></span>
+            <small></small>
+          </a>
+        </li>
+        <header role="header">
+          <h2 data-l10n-id="sounds"></h2>
+        </header>
+        <li role="menuitem" class="hidden">
+          <a class="readout-mode" href="#accessibility-readout-mode">
+            <span data-l10n-id="readoutmode"></span>
+            <small></small>
+          </a>
+        </li>
+        <li role="menuitem">
+          <span data-l10n-id="accessibility-mono-audio"></span>
+          <div class="button icon icon-dialog">
+            <select name="accessibility.force_mono_audio" data-value-type="boolean">
+              <option data-l10n-id="on" value="true"></option>
+              <option data-l10n-id="off" value="false"></option>
+            </select>
+          </div>
+        </li>
+        <li role="menuitem" class="slider-container none-select">
+          <label>
+            <p><span data-l10n-id="accessibility-volume-balance"></span><span class="level"></span></p>
+            <input type="range" step="10" min="0" max="100" aria-hidden="true">
+          </label>
+        </li>
+        <header>
+          <h2 data-l10n-id="accessibility-devices"></h2>
+        </header>
+        <li role="menuitem">
+          <span data-l10n-id="accessibility-keypad-vibration"></span>
+          <div class="button icon icon-dialog">
+            <select name="keyboard.vibration" data-value-type="boolean">
+              <option data-l10n-id="on" value="true"></option>
+              <option data-l10n-id="off" value="false"></option>
+            </select>
+          </div>
+        </li>
+        <li id="tty" role="menuitem">
+          <span data-l10n-id="accessibility-tty"></span>
+          <div class="button icon icon-dialog">
+            <select id="ttyselect" name="tty.mode.enabled">
+              <option value="off" data-l10n-id="off"></option>
+              <option value="full" data-l10n-id="full"></option>
+              <option value="vco" data-l10n-id="vco"></option>
+              <option value="hco" data-l10n-id="hco"></option>
+            </select>
+          </div>
+        </li>
+        <li id="hac" role="menuitem" class="accessibility-hac">
+          <span class="menu-item" data-l10n-id="accessibility-hac"></span>
+          <div class="button icon icon-dialog">
+            <select name="accessibility.hac_mode" data-value-type="boolean">
+              <option data-l10n-id="on" value="true"></option>
+              <option data-l10n-id="off" value="false"></option>
+            </select>
+          </div>
+        </li>
+        <header role="header" id="rtt-header" hidden>
+          <h2 data-l10n-id="accessibility-rtt"></h2>
+        </header>
+        <li role="menuitem" id="rtt-item" hidden>
+          <a class="menu-item" href="#accessibility-rtt">
+            <span data-l10n-id="accessibility-rtt"></span>
+            <small id="rtt-desc" class="menu-item-desc"></small>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <panel data-path="panels/accessibility/panel"></panel>
+
+  </template>
+</element>

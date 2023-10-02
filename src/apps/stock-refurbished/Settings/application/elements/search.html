@@ -1,0 +1,30 @@
+<element name="search" extends="section">
+  <template>
+    <gaia-header data-href="#root">
+      <h1 data-l10n-id="search-header"></h1>
+    </gaia-header>
+
+    <div>
+      <ul role="menu">
+        <li role="menuitem" class="focus">
+          <span data-l10n-id="search-engine" class="search-engine-title"></span>
+          <div class="button icon icon-dialog">
+            <select name="search.provider" data-track-class="search-engine-title">
+            </select>
+          </div>
+        </li>
+        <li role="menuitem">
+          <span data-l10n-id="search-suggestions" class="search-suggestions-title"></span>
+          <div class="button icon icon-dialog">
+            <select name="search.suggestions.enabled" data-value-type="boolean" data-track-class="search-suggestions-title" hidden>
+              <option value="true" data-l10n-id="yes"></option>
+              <option value="false" data-l10n-id="no"></option>
+            </select>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <panel data-path="panels/search/panel"></panel>
+  </template>
+</element>

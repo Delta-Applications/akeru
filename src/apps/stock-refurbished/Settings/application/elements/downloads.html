@@ -1,0 +1,21 @@
+<element name="downloads" extends="section">
+  <template>
+    <gaia-header id="downloads-header" data-href="#root">
+      <h1 data-l10n-id="downloads"></h1>
+    </gaia-header>
+    <gaia-header id="downloads-edit-header" hidden="hidden">
+      <h1 class="selectnumber" data-l10n-id="downloads-selected"></h1>
+    </gaia-header>
+    <section id="download-list-empty" class="hidden">
+      <span id="dle-text"></span>
+    </section>
+    <section id="download-confirm-dialog" hidden="hidden">
+      <p id="dle-text" data-l10n-id="no-downloads"></p>
+    </section>
+    <div id="downloadList" data-type="list">
+      <ul role="menu">
+      </ul>
+    </div>
+    <script src="js/downloads/downloads_list.js"></script>
+  </template>
+</element>

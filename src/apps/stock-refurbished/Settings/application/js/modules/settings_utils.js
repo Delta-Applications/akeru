@@ -1,0 +1,1 @@
+define(["require"],function(){var t={loadTemplate:function(t,e){var n=document.getElementById(t);n?LazyLoader.load([n],function(){e(n.innerHTML)}):e(null)},runHeaderFontFit:function(t){var e=t.querySelectorAll("h1");[].forEach.call(e,function(t){t.textContent=t.textContent})}};return t});

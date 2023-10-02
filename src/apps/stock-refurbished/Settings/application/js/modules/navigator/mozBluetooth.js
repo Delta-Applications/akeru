@@ -1,0 +1,1 @@
+define([],function(){return navigator.mozBluetooth?navigator.mozBluetooth:null});
