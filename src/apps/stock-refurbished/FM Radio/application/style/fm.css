@@ -89,6 +89,7 @@ a:active {
 */
 #fm-container.dim {
   opacity: 1;
+  filter: brightness(20%);
 }
 #fm-container.dim::before {
   content: '';
@@ -186,11 +187,12 @@ a:active {
   font-size: 5rem;
   font-weight: normal;
   background-image: url(images/channel-background.png);
-  color: var(--color-gs100);
+  color: var(--color-gs20);
+  background-color: var(--color-gs10);
 }
 
 #frequency.focus {
-  color: var(--color-gs00);
+  color: var(--color-gs90);
   background-image: url(images/channel-background-select.png);
   background-color: var(--highlight-color, #00B965);
 }
@@ -421,12 +423,12 @@ div#frequency-list-container > div {
 }
 
 div#frequency-list-container > div.focus {
-  color: var(--color-gs00);
+  color: var(--color-gs90);
   background-color: var(--highlight-color, #00B965);
 }
 
 div#frequency-list-container > div.focus.rename {
-  color: var(--color-gs00);
+  color: var(--color-gs90);
   background-color: var(--highlight-color, #00B965);
 }
 
@@ -717,7 +719,7 @@ header h1 {
   position: fixed;
   border: 0;
   text-align: center;
-  background-color: var(--color-gs20, #dadada);
+  background-color: var(--color-gs00, #dadada);
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   direction: ltr;
