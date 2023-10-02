@@ -45,7 +45,7 @@ button {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  background: #d8d8d8;
+  background: var(--color-gs00);
   border: none;
   border-radius: 2rem;
   font-weight: normal;

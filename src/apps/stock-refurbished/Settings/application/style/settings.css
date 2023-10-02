@@ -116,7 +116,7 @@ section[role="region"] > div.root {
 }
 section[role="region"],
 section[role="region"] > div > ul {
-  background-color: #ffffff;
+  background-color: var(--color-gs00);
 }
 section[id="wifi-wps"],
 section[id="wifi-status"],

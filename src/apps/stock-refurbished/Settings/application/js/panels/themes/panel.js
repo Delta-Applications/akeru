@@ -108,7 +108,7 @@ define('panels/themes/themes', ['require', 'modules/settings_service', 'shared/m
             if (evt.target.dataset && evt.target.dataset.appIndex) {
                 var app = this._apps[evt.target.dataset.appIndex]
                 const manifestURL = app.manifestURL,
-                    key = "homescreen.manifestURL",
+                    key = "theme.selected",
                     name = app.manifest.name;
                 getSystemSetting(
                     key,
@@ -128,7 +128,6 @@ define('panels/themes/themes', ['require', 'modules/settings_service', 'shared/m
                     (a) => alert(a)
                 );
                 this.refresh();
-                this.renderList();
             }
         },
 
@@ -223,7 +222,7 @@ define('panels/themes/themes', ['require', 'modules/settings_service', 'shared/m
             radio.name = 'multifunction-enabled';
             radio.type = 'radio';
 
-            getSystemSetting("homescreen.manifestURL", (a) => {
+            getSystemSetting("theme.selected", (a) => {
                 radio.checked = a == itemData.manifestURL
             }, (a) => {});
                 

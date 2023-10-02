@@ -128,7 +128,6 @@ define('panels/homescreens/homescreens', ['require', 'modules/settings_service',
                     (a) => alert(a)
                 );
                 this.refresh();
-                this.renderList();
             }
         },
 

@@ -62,6 +62,7 @@ section[role="region"]#screenLock-passcode > div {
 #screenLock-passcode[data-mode="edit"]    [data-mode*="edit"],
 #screenLock-passcode[data-mode="new"]     [data-mode*="new"] {
   display: block !important; 
+  color: var(--color-gs90);
 }
 #screenLock-passcode[data-mode="confirm"] [data-mode*="confirm"].hidden{
   visibility: hidden;
@@ -116,10 +117,10 @@ span.passcode-digit[data-dot].correct::before {
   width: 3.6rem;
   height: 3.6rem;
   margin: 0.5rem 0.5rem 0.3rem 0.5rem;
-  border: solid 0.1rem #aaaaaa;
+  border: solid 0.15rem var(--color-gs90);
   text-align: center;
-  background-color: #fff;
-  border-radius: 0.2rem;
+  background-color: var(--color-gs00);
+  border-radius: 1rem;
 }
 span.passcode-digit[data-dot]::before {
   content: '';
