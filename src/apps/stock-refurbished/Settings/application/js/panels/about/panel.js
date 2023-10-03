@@ -605,7 +605,7 @@ define('panels/about/panel',['require','modules/settings_panel','panels/about/ha
           return;
         }
         var activity = new MozActivity({
-          name: 'launch-fota',
+          name: 'installer',
           data: { param: 'startFromSettings' }
         });
       }

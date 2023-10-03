@@ -9,7 +9,7 @@ body {
 }
 
 html, body, #root, .container {
-  background-color: transparent;
+  background-color: var(--color-gs00);
 }
 
 #root, .container {
