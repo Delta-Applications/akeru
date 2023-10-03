@@ -1,0 +1,15 @@
+header.header-title {
+  top: var(--statusbar-height);
+  width: 100%;
+}
+header h1 {
+  line-height: var(--header-height);
+  background: var(--header-background);
+  color: var(--color-gs90);
+  margin: 0;
+  padding: 0 1rem;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

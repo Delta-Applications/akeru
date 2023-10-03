@@ -108,7 +108,7 @@
   100% {
     transform: translateX(0); } }
 .x-window > div {
-  background-color: white; }
+  background-color: var(--color-gs00); }
 
 .shadow-window > div {
   height: 100%; }
@@ -120,7 +120,7 @@
   width: 100%;
   height: 100%; }
 :root {
-  --softkeybar-background-color: var(--color-gs20, #ccc);
+  --softkeybar-background-color: var(--color-gs00, #ccc);
   --softkey-color: var(--color-gs90, #323232);
   --softkey-color--icon: var(--color-gs70, #6a6a6a);
   --softkey-color--disabled: var(--color-eta, #c7c7c7);
@@ -218,7 +218,7 @@
     max-height: 100%; }
     .option-menu-container .option-menu .header {
       padding: 0.5rem 1rem;
-      background-color: var(--color-gs20);
+      background-color: var(--color-gs00);
       color: var(--color-gs90);
       text-align: center; }
     .option-menu-container .option-menu .content {
@@ -318,7 +318,9 @@ body {
   padding: 0;
   margin: 0;
   font-size: 10px;
-  overflow: hidden; }
+  overflow: hidden; 
+  background-color: var(--color-gs00);
+}
 
 body {
   position: absolute;
@@ -371,9 +373,9 @@ body {
     height: calc(100% - var(--softkeybar-height)) !important; }
 
 .note-header {
-  color: #381e0d;
+  color: var(--color-gs90);
   height: var(--header-height);
-  background: rgb(245, 245, 245);;
+  background: var(--color-gs00);;
   text-align: center; }
 
 .highlight {
@@ -474,7 +476,7 @@ ul {
 
 #edit-time {
   text-align: center;
-  background-color: #f1e2c1;
+  background-color: var(--color-gs00);
   color: var(--color-gs90);
   position: absolute;
   width: 100%;
@@ -484,7 +486,10 @@ textarea.p-pri {
   width: calc(100% - 2rem);
   height: calc(100% - 2rem);
   padding: 1rem;
-  border-style: none; }
+  border-style: none; 
+  background-color: var(--color-gs00);
+  color: var(--color-gs90);
+}
 
 #search {
   height: 3.6rem;

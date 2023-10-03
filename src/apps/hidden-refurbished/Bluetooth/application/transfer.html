@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+    <meta charset="utf-8">
+    <title>Bluetooth</title>
+    <!-- Localization -->
+    <meta name="defaultLanguage" content="en-US">
+    <meta name="availableLanguages" content="af-ZA:202107131655, ar-SA:202107131655, az-Latn-AZ:202107131655, be-BY:202107131655, bg-BG:202107131655, bn-BD:202107131655, bn-IN:202107131655, bs-BA:202107131655, cs-CZ:202107131655, da-DK:202107131655, de-DE:202107131655, el-GR:202107131655, en-GB:202107131655, en-US:202107131655, es-ES:202107131655, es-US:202107131655, en-NG:202107131655, et-EE:202107131655, fi-FI:202107131655, fr-FR:202107131655, fr-CA:202107131655, he-IL:202107131655, hi-IN:202107131655, hr-HR:202107131655, hu-HU:202107131655, hy-AM:202107131655, id-ID:202107131655, it-IT:202107131655, km-KH:202107131655, kk-KZ:202107131655, lt-LT:202107131655, lv-LV:202107131655, lo-LA:202107131655, ka-GE:202107131655, mk-MK:202107131655, ms-MY:202107131655, nb-NO:202107131655, ne-IN:202107131655, nl-NL:202107131655, pl-PL:202107131655, pt-BR:202107131655, pt-PT:202107131655, ro-RO:202107131655, ru-RU:202107131655, si-LK:202107131655, sk-SK:202107131655, sl-SI:202107131655, sq-AL:202107131655, sr-Latn-CS:202107131655, sv-SE:202107131655, sw-ZA:202107131655, ta-IN:202107131655, th-TH:202107131655, fil-PH:202107131655, tr-TR:202107131655, uk-UA:202107131655, ur-PK:202107131655, vi-VN:202107131655, xh-ZA:202107131655, zh-CN:202107131655, zh-TW:202107131655, zh-HK:202107131655, is-IS:202107131655, zu-ZA:202107131655, mo-RO:202107131655, fa-IR:202107131655, ps-AF:202107131655, uz-Cyrl-UZ:202107131655">
+    <meta name="theme-color" content="rgb(0,0,0)">
+    <link rel="localization" href="/locales-obj/{locale}.json">
+    <script type="application/javascript" src="shared/js/l10n.js"></script>
+    <!-- Common style -->
+    <!-- <link rel="stylesheet" type="text/css" href="shared/elements/gaia-icons/gaia-icons.css" /> -->
+    <link rel="stylesheet" type="text/css" href="shared/elements/gaia-theme/gaia-font.css">
+    <link rel="stylesheet" type="text/css" href="shared/elements/gaia-theme/gaia-theme.css">
+    <link rel="stylesheet" type="text/css" href="shared/style/navigation.css">
+    <link rel="stylesheet" type="text/css" href="shared/style/softkey.css">
+
+    <!-- Shared code -->
+    <script type="text/javascript" src="shared/js/l10n.js"></script>
+    <!-- Specific style -->
+    <link rel="stylesheet" type="text/css" href="style/transfer.css">
+    <link rel="stylesheet" type="text/css" href="style/lists.css">
+    <link rel="stylesheet" type="text/css" href="style/icons.css">
+    <link rel="stylesheet" type="text/css" href="style/settings.css">
+    <link rel="stylesheet" type="text/css" href="style/header.css">
+    <link rel="stylesheet" type="text/css" href="shared/style/toaster.css">
+
+    <!-- <script defer src="/shared/js/component_utils.js"></script> -->
+    <!-- <script defer src="/shared/elements/gaia_confirm/script.js"></script> -->
+    <script defer="" src="shared/js/lazy_loader.js"></script>
+    <script defer="" src="shared/js/softkey_panel.js"></script>
+    <script defer="" src="shared/js/softkey_panel_helper.js"></script>
+    <script defer="" src="shared/js/navigation_handler.js"></script>
+    <script defer="" src="shared/js/navigation_helper.js"></script>
+    <script defer="" src="js/utils.js"></script>
+    <script defer="" src="js/softkey_helper.js"></script>
+    <script defer="" src="js/view_helper.js"></script>
+    <script defer="" src="shared/js/custom_dialog.js"></script>
+    <script defer="" src="shared/js/homescreens/confirm_dialog_helper.js"></script>
+    <script defer="" src="shared/js/toaster.js"></script>
+  <meta content="2.2" name="appVersion"></head>
+
+  <body role="application" class="theme-settings">
+    <!-- Enable Bluetooth View -->
+    <form role="dialog" data-type="confirm" id="enable-bluetooth-view" hidden="">
+      <section role="menuitem" id="enable-bluetooth-view-section">
+        <header>
+          <h1 data-l10n-id="turn-bluetooth-on-title">Turn On Bluetooth</h1>
+        </header>
+        <h2 data-l10n-id="turn-bluetooth-on">Bluetooth is disabled. Turn Bluetooth on?</h2>
+      </section>
+    </form>
+    <!-- Bluetooth File Transfer Failed View -->
+    <form role="dialog" data-type="confirm" id="alert-view" hidden="">
+      <section>
+        <h1 data-l10n-id="error-transfer-title">Bluetooth file transfer failed</h1>
+        <p data-l10n-id="error-transfer-settings">Bluetooth file transfer failed. Check that the Bluetooth settings are correct.</p>
+      </section>
+    </form>
+    <!-- Bluetooth File Pair Failed View -->
+    <form role="dialog" data-type="confirm" id="unable-pair-view" hidden="">
+      <section>
+        <h1 data-l10n-id="error-pair-title">Unable To Pair Device</h1>
+        <p data-l10n-id="error-pair-title" id="error-pair-desc">Unable To Pair Device</p>
+      </section>
+    </form>
+    <!-- Devices List View -->
+    <section role="region" id="devices-list-view" data-rendered="true" hidden="">
+      <header id="devices-list-header">
+        <h1 data-l10n-id="select-device">Select Device</h1>
+      </header>
+      <div>
+        <!-- Devices List View :: Found Devices List -->
+        <!-- Devices List View :: Search Button -->
+        <ul id="bluetooth-search">
+          <li id="search-for-devices" hidden="">
+            <!--<button id="search-device" data-l10n-id="search-device" disabled>Search for Devices</button>-->
+            <a>
+              <span data-l10n-id="search-device">Search for devices</span>
+            </a>
+          </li>
+        </ul>
+        <!-- Devices List View :: Paired Devices List -->
+        <ul id="bluetooth-paired-devices" class="devices" data-neednav="true">
+        </ul>
+      </div>
+    </section>
+    <section role="region" id="search-devices-list-view" data-rendered="true" hidden="">
+      <header id="devices-list-header">
+        <h1 data-l10n-id="bluetooth-devices-nearby">Nearby Devices</h1>
+      </header>
+      <div>
+        <ul role="menu" id="bluetooth-devices" class="devices" data-neednav="true">
+        </ul>
+        <div id="nodevices-nearby">
+          <h2 data-l10n-id="bt-nodevices-nearby" class="bt-explanation">No devices found nearby.</h2>
+        </div>
+        <div role="menuitem" id="bluetooth-searching" data-l10n-id="search-for-device" class="explanation">Searching for devices…</div>
+      </div>
+    </section>
+    <div id="app-confirmation-dialog" data-z-index-level="app-confirmation-dialog"></div>
+    <script data-main="js/startup_transfer.js" src="js/vendor/alameda.js"></script>
+  </body>
+
+</html>

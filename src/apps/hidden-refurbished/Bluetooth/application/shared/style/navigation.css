@@ -1,0 +1,9 @@
+*.focus,
+ .hasfocused {
+  color: var(--highlight-text-color, #ffffff);
+  
+  background-color: var(--highlight-color, #00B965) !important;
+}
+*.focus1 {
+  background-color: var(--highlight-color, #00B965) !important;
+}

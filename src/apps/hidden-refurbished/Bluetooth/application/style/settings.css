@@ -1,0 +1,97 @@
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 10px;
+  overflow: hidden;
+  background-color: var(--color-gs00);
+}
+:root {
+  --font-p-pri: 1.7rem;
+  --font-p-sec: 1.4rem;
+}
+.large-text {
+  --font-p-pri: 2.2rem;
+  --font-p-sec: 1.8rem;
+}
+section[role="menuitem"], section[role="region"] {
+  position: fixed;
+  top: var(--statusbar-height);
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background-color: var(--color-gs00);
+  overflow: hidden;
+}
+section[role="region"] > div {
+  position: absolute;
+  width: 100%;
+  height: calc(100% - var(--statusbar-softkeybar-height) - var(--header-height));
+  overflow-y: scroll;
+  will-change: scroll-position;
+}
+.explanation {
+  padding: 0.5rem 3rem;
+  font-style: italic;
+  font-size: var(--font-p-sec);
+  color: #505859;
+}
+.description {
+  padding: 1rem 1.5rem;
+  font-size: var(--font-p-pri);
+  line-height: 2.3rem;
+  white-space: normal;
+  -moz-hyphens: auto;
+}
+.description p {
+  padding: 0 0 1rem;
+  line-height: 1.9rem;
+  white-space: normal;
+}
+.description a {
+  font-size: var(--font-p-pri);
+}
+.hint label span {
+  top: 2.9rem !important;
+}
+.hint .explanation {
+  font-style: normal;
+  position: relative;
+  margin-top: -2rem;
+  padding: 0.5rem 4rem 1.3rem 1.5rem;
+  white-space: normal;
+}
+.hint > label:not([for]) ~ .explanation {
+  padding-right: 8rem;
+}
+.hint .explanation[hidden] {
+  display: none;
+}
+#update-device-name > section input {
+  margin: 1rem 0;
+}
+#nodevices-nearby {
+  height: 100%;
+  width: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+#nodevices-nearby.visible {
+  display: flex;
+}
+.bt-explanation {
+  color: var(--color-gs90);
+}
+.hidden {
+  display: none !important;
+}
+ul#bluetooth-paired-devices span, ul#bluetooth-devices span  {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 2.5rem;
+}
