@@ -568,7 +568,7 @@ body[data-path="/settings/"] #time-views {
   right: 0;
   width: 100%;
   color: var(--color-gs90);
-  background-color: var(--color-gs20);
+  background-color: var(--color-gs00);
   height: var(--softkeybar-height);
   font-size: 1.6rem;
   font-weight: 700;

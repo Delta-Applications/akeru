@@ -120,7 +120,7 @@
   width: 100%;
   height: 100%; }
 :root {
-  --softkeybar-background-color: var(--color-gs20, #ccc);
+  --softkeybar-background-color: var(--color-gs00, #ccc);
   --softkey-color: var(--color-gs90, #323232);
   --softkey-color--icon: var(--color-gs70, #6a6a6a);
   --softkey-color--disabled: var(--color-eta, #c7c7c7);

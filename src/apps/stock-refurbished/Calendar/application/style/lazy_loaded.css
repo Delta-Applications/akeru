@@ -869,7 +869,7 @@ label.pack-checkbox-large input ~ span:after,
 .foccus label.pack-checkbox input ~ span:after,
 .foccus label.pack-checkbox-large input ~ span:after {
   content: "check-off";
-  color: var(--color-gs45);
+  color: var(--color-gs00);
 }
 label.pack-checkbox input:checked ~ span:after,
 label.pack-checkbox-large input:checked ~ span:after {
@@ -886,7 +886,7 @@ label.pack-radio-large input ~ span:after,
 .foccus label.pack-radio input ~ span:after,
 .foccus label.pack-radio-large input ~ span:after {
   content: "radio-off";
-  color: var(--color-gs45);
+  color: var(--color-gs00);
 }
 label.pack-radio input:checked ~ span:after,
 label.pack-radio-large input:checked ~ span:after {
@@ -1402,7 +1402,7 @@ html[dir="rtl"] #modify-event-view .focus #note-pad {
   color: var(--color-gs90);
   background-color: var(--color-gs00);
   -moz-user-select: text;
-  border: 0.1rem solid var(--color-gs45);
+  border: 0.1rem solid var(--color-gs00);
   padding: 1rem;
   box-sizing: border-box;
   height: auto;
@@ -1518,7 +1518,7 @@ html[dir="rtl"] #modify-event-view li.allday > label > span:after {
   line-height: 1.2;
   position: absolute;
   height: 3rem;
-  color: var(--color-gs45);
+  color: var(--color-gs00);
   padding-top: 1.7rem;
   font-size: 1.3rem;
 }

@@ -21,12 +21,12 @@ var MimeMapper = {
         // Support for other files without mozActivity can be added here
         var t = MimeMapper.guessTypeFromFileProperties(e.name, e.type);
         // if (t == "text/html") return thing
-        if (t == "application/openwebapp+zip") return navigator.mozApps.mgmt.import(e).then(function(){
+        /*if (t == "application/openwebapp+zip") return navigator.mozApps.mgmt.import(e).then(function(){
             
           }).catch(function(e){
            alert("Failed to import Openwebapp Package: "+e.name)
            console.error(e)
-          })
+          })*/
 
         // Non-chad default MozActivity Fallback
         return new MozActivity({

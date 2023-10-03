@@ -31,7 +31,7 @@
   right:0;
   z-index: 10;
   color: var(--color-gs90);
-  background: var(--color-gs20);
+  background: var(--color-gs00);
   white-space: nowrap;
   text-overflow: ellipsis;
   display: block;

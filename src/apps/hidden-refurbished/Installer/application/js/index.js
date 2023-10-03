@@ -24,12 +24,23 @@ const Installer = {
         switch (option.data.type) {
             case "application/zip":
             case "application/openwebapp+zip":
-                // mgmt.import
-                this.activityRequest.postError('NO PROVIDER');
+                this.mozAppsImport(blob, (success, name, message) => {if (!success) window.alert('Installation error: ' + name + ' ' + message) })
+                window.close();
+                break;
+            default:
+                window.alert("Package unsupported")
                 window.close();
                 break;
         }
-    }
+    },
+    //mozApps.mgmt.import
+    mozAppsImport(blob, callback) {
+        navigator.mozApps.mgmt.import(blob).then(function(){
+            callback(true)
+          }).catch(e=>{
+            callback(false, e.name, e.message)
+          })
+    },
 };
 window.installer = Installer;
 Installer.init();
