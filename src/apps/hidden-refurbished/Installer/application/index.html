@@ -15,6 +15,7 @@
     <!-- opt-parser landing js -->
     <script defer="" src="js/view-manager.js"></script>
     <script defer="" src="js/screen.js"></script>
+    <script defer="" src="js/index.js"></script>
   <meta content="2.2" name="appVersion"></head>
   <body role="application" class="theme-system">
     <div id="root" class="">
@@ -30,24 +31,33 @@
             <div id="app-info-box" class="app-info-box">
               <p id="app-info-item" class="app-info-item">
                 <span class="app-version">App Installer</span>
-                
+                </br>
+                <span style="font-size: 1.5rem;" class="app-version">v1.2.3</span>
               </p>
-              <button>OK</button>
+              <!--<button>OK</button>-->
             </div>
           </div>
           <div id="help-info" class="help-info hide">
             <div id="help-info-content-box" class="help-info-content-box">
-              <h2 id="what-is-otp-title" class="what-is-otp-title">What is Auth Assistant?</h2>
-              <p id="what-is-otp-desc" class="what-is-otp-desc">Auth Assistant serving the purpose of assisting user to complete the authentication in a simple and effortless fashion.</p>
+              <h2 id="help-title" class="help-title">Installer</h2>
+              <p id="help-desc" class="help-desc">Community-made App Package Installer for KaiOS</p>
               <hr>
               <h5 id="how-to-use-title" class="how-to-use-title">How to use?</h5>
-              <p id="how-to-use-desc" class="how-to-use-desc">With this app installed in your device, then you are good to go. When our supported application needs identity authentication, the Auth Assistant interface will launch automatically to handle the necessary process.</p>
+              <p id="how-to-use-desc" class="how-to-use-desc">Open this app with a valid installation package (OpenWebApp, OmniSD, AIB or .zip) from an enabled file manager app to sideload apps.
+              </p>
+              <hr>
+              <p id="how-to-use-desc" class="how-to-use-desc">
+                The app first attempts to use device APIs, before attemtping self-debug, and ultimately data patching to install packages.</p>
+              <hr>
+              <h5 id="how-to-use-title" class="how-to-use-title">Curated by the community</h5>
+              <p id="how-to-use-desc" class="how-to-use-desc">Credits here</p>
+
             </div>
           </div>
         </div>
         <div id="softkey-control" class="softkey-control">
           <div id="softkey-left" class="softkey-left"></div>
-          <div id="softkey-center" class="softkey-center"></div>
+          <div id="softkey-center" class="softkey-center">pick</div>
           <div id="softkey-right" class="softkey-right">info</div>
         </div>
       </div>

@@ -1,22 +1,59 @@
 {
-	"name": "Installer",
-	"description": "Sideloading Service",
-	"theme_color": "#006BFF",
-	"type": "certified",
-	"permissions": {
-		"tcp-socket": {},
-		"engmode-extension": {},
-		"device-storage:sdcard": {
-			"access": "readwrite"
-		},
-		"device-storage:sdcard1": {
-			"access": "readwrite"
-		}
-	},
-	"launch_path": "/index.html",
-	"icons": {
-		"56": "/img/installer_56.png",
-		"112": "/img/installer_112.png"
-	},
-	"origin": "app://installer.gaiamobile.org"
+    "name": "Installer",
+    "description": "Sideloading Service",
+    "theme_color": "#006BFF",
+    "type": "certified",
+    "permissions": {
+        "tcp-socket": {},
+        "engmode-extension": {},
+        "device-storage:sdcard": {
+            "access": "readwrite"
+        },
+        "device-storage:sdcard1": {
+            "access": "readwrite"
+        },
+        "engmode-extension": {
+            "description": "Handle KaiOS 2.5.1+ devices"
+        },
+        "external-api": {
+            "description": "Handle KaiOS 2.5.1+ devices"
+        },
+        "kaiosextension": {
+            "description": "Handle KaiOS 2.5 devices"
+        },
+        "jrdextension": {
+            "description": "Handle KaiOS 1.0 devices by TCL"
+        },
+        "device-storage:apps": {
+            "access": "readwrite",
+            "description": "Support package installation"
+        },
+        "webapps-manage": {
+            "description": "Support package installation"
+        }
+    },
+    "activities": {
+        "install": {
+            "href": "./index.html#sideload",
+            "disposition": "inline",
+            "filters": {
+                "type": ["application/zip", "application/x-install-bundle", "application/x-gerda-bundle", "application/openwebapp+zip"]
+            },
+            "returnValue": true
+        },
+        "open": {
+            "href": "./index.html#sideload",
+            "disposition": "inline",
+            "filters": {
+                "type": ["application/x-install-bundle", "application/x-gerda-bundle", "application/openwebapp+zip"]
+            },
+            "returnValue": true
+        }
+    },
+    "launch_path": "/index.html",
+    "icons": {
+        "56": "/resources/icons/installer_56.png",
+        "112": "/resources/icons/installer_112.png"
+    },
+    "origin": "app://installer.gaiamobile.org"
 }

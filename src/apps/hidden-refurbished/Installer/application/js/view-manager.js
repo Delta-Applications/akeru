@@ -19,7 +19,7 @@ const ViewManager = {
         switch (key) {
             case 'Enter':
                 if (this._currentActivePage === ACTIVE_PAGE.MAIN) {
-                    window.close();
+                    Installer.pickActivity();
                 }
                 break;
             case 'SoftRight':
@@ -56,7 +56,7 @@ const ViewManager = {
                 this.togglePage(ACTIVE_PAGE.MAIN);
                 this.updateSoftKey({
                     left: ' ',
-                    center: '',
+                    center: 'pick',
                     right: 'info'
                 });
                 break;

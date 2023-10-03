@@ -3,12 +3,14 @@ const Installer = {
     filetypes: ["application/zip", "application/x-install-bundle", "application/x-gerda-bundle", "application/openwebapp+zip"],
     init() {
         navigator.mozSetMessageHandler('activity', this.activityHandler.bind(this));
-        navigator.mozSetMessageHandler('sms-received', this.onMessageReceived.bind(this));
     },
     activityHandler(request) {
         if (request.source.name === "open" | request.source.name === "install") {
             this.install(request.source)
         }
+    },
+    pickActivity() {
+
     },
     install(source) {
         // Replace confirm with gaia-confirm

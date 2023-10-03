@@ -185,16 +185,19 @@ html, body, #root, .container {
   color: var(--color-gs20);
 }
 
-.what-is-otp-title {
+.help-title {
   margin: 1rem;
   text-align: center;
-  font-family: "OpenSans-Semibold";
+  /*! font-family: "OpenSans-Semibold"; */
+  color: var(--color-gs90);
+  font-size: 2.3rem;
 }
 
 .how-to-use-title {
   margin-top: 0;
   margin-bottom: 0;
   font-family: "OpenSans-Semibold";
+  color: var(--color-gs90);
 }
 
 .help-info-content-box > p {

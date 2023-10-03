@@ -10,20 +10,25 @@ body {
 
 html, body, #root, .container {
   background-color: var(--color-gs00);
+  overflow: hidden;
+  position: fixed;
 }
 
 .loading {
   height: calc(100% - var(--softkeybar-height));
   padding-top: var(--statusbar-height);
+  filter: invert(27%) sepia(79%) saturate(4699%) hue-rotate(210deg) brightness(105%) contrast(105%);
 }
 
 .loading-image {
-  margin: 13rem 9.2rem 10.4rem;
-  width: 5.6rem;
-  height: 5.6rem;
+  margin: 11rem 8.2rem 10.4rem;
+  width: 7rem;
+  height: 7rem;
   background-image: url('/resources/icons/img_loader_s.png');
   background-size: contain;
   background-repeat: no-repeat;
+  /*! color: rgb(0, 107, 255); */
+  filter: saturate(0%);
 }
 
 .softkey-placeholder {

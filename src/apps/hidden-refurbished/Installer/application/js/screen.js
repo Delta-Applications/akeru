@@ -22,8 +22,8 @@ const Screen = {
     },
     prepareHelpPage() {
         const pairs = [
-            ['#what-is-otp-title', 'what-is-installer-title'],
-            ['#what-is-otp-desc', 'what-is-installer-desc'],
+            ['#help-title', 'what-is-installer-title'],
+            ['#help-desc', 'what-is-installer-desc'],
             ['#how-to-use-title', 'how-to-use-title'],
             ['#how-to-use-desc', 'how-to-use-desc']
         ];

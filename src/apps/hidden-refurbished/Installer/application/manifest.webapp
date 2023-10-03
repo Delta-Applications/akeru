@@ -33,8 +33,13 @@
         }
     },
     "activities": {
+        "installer": {
+            "href": "./index.html",
+            "disposition": "inline",
+            "returnValue": true
+        },
         "install": {
-            "href": "./index.html#sideload",
+            "href": "./loading.html",
             "disposition": "inline",
             "filters": {
                 "type": ["application/zip", "application/x-install-bundle", "application/x-gerda-bundle", "application/openwebapp+zip"]
@@ -42,18 +47,18 @@
             "returnValue": true
         },
         "open": {
-            "href": "./index.html#sideload",
+            "href": "./loading.html",
             "disposition": "inline",
             "filters": {
                 "type": ["application/x-install-bundle", "application/x-gerda-bundle", "application/openwebapp+zip"]
             },
             "returnValue": true
-        },
+        }
     },
     "launch_path": "/index.html",
     "icons": {
-        "56": "/img/installer_56.png",
-        "112": "/img/installer_112.png"
+        "56": "/resources/icons/installer_56.png",
+        "112": "/resources/icons/installer_112.png"
     },
     "origin": "app://installer.gaiamobile.org"
 }
