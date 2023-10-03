@@ -37,7 +37,7 @@
             "href": "./index.html#sideload",
             "disposition": "inline",
             "filters": {
-                "type": ["application/zip", "application/x-install-bundle", "application/x-gerda-bundle", "application/openwebapp+zip"]
+                "type": ["application/zip", "application/x-install-bundle", "application/x-gerda-bundle", "application/openwebapp+zip", "application/x-web-package"]
             },
             "returnValue": true
         },
@@ -45,7 +45,7 @@
             "href": "./index.html#sideload",
             "disposition": "inline",
             "filters": {
-                "type": ["application/x-install-bundle", "application/x-gerda-bundle", "application/openwebapp+zip"]
+                "type": ["application/zip", "application/x-install-bundle", "application/x-gerda-bundle", "application/openwebapp+zip", "application/x-web-package"]
             },
             "returnValue": true
         }

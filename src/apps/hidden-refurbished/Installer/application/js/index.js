@@ -1,6 +1,6 @@
 'use strict';
 const Installer = {
-    filetypes: ["application/zip", "application/x-install-bundle", "application/x-gerda-bundle", "application/openwebapp+zip"],
+    filetypes: ["application/zip", "application/x-install-bundle", "application/x-gerda-bundle", "application/openwebapp+zip", "application/x-web-package"],
     init() {
         navigator.mozSetMessageHandler('activity', this.activityHandler.bind(this));
     },
@@ -10,21 +10,32 @@ const Installer = {
         }
     },
     pickActivity() {
-
+        this.activityHandler(new MozActivity({
+            name: "pick",
+          }));
     },
     install(source) {
         // Replace confirm with gaia-confirm
-        let blob = option.data.blob
+        let blob = source.data.blob
         let fileName = blob.name
 
         if(!window.confirm('Do you wish to install this package: '+fileName+'?')) {
             activityRequest.postResult(false)
         }
 
-        switch (option.data.type) {
+        switch (source.data.type) {
+            case "application/x-web-package":
+                // WebIDE/KaiOS Store Format: self-debug > mozAppsImport > patching&reboot
+            case "application/x-install-bundle":
+                break;
             case "application/zip":
             case "application/openwebapp+zip":
-                this.mozAppsImport(blob, (success, name, message) => {if (!success) window.alert('Installation error: ' + name + ' ' + message) })
+                // OmniSD Format: mozAppsImport > self-debug > patching&reboot
+                this.mozAppsImport(blob, (success, name, message) => {
+                    // Attempt self-debug if unsuccessful
+                    // Ask user before attempting patch & reboot if self-debug fails
+                    if (!success) window.alert('Installation error: ' + name + ' ' + message) 
+                })
                 window.close();
                 break;
             default:
@@ -43,21 +54,5 @@ const Installer = {
     },
 };
 window.installer = Installer;
+window.Installer = Installer;
 Installer.init();
-
-navigator.mozSetMessageHandler('activity', function(activityRequest) {
-    let option = activityRequest.source
-    if(option.name === 'open' && option.data.type === 'application/zip') {
-      document.body.style.background = 'var(--accent-color)'
-      document.querySelector("#header").style.display = 'none'
-      document.querySelector("#finder").style.background = 'var(--accent-color)'
-      document.querySelector("#finder").style.display = 'none'
-      let blob = option.data.blob
-      let fileName = blob.name
-      if(window.confirm('Install '+fileName+' package?')) {
-          KaiRoot.internal.sideload(blob, function(result) {
-            activityRequest.postResult(result)
-          })
-      }else activityRequest.postResult(true)
-    }
-  })

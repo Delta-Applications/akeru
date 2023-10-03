@@ -5,7 +5,7 @@ var MimeMapper = {
      video: ["video/mp4", "video/mpeg", "video/ogg", "video/webm", "video/3gpp", "video/3gpp2"],
      photo: ["image/png", "image/jpeg", "image/gif", "image/bmp"],
      package: ["application/zip","application/java-archive"], // Extract archives in the future
-     app: ["application/x-install-bundle","application/x-gerda-bundle","application/openwebapp+zip"],
+     app: ["application/x-install-bundle","application/x-gerda-bundle","application/openwebapp+zip", "application/x-web-package"],
      other: ["text/vcard", "application/json","text/plain", "unknown/unknown", "text/html", "application/x-chip8-image", "application/x-bin-image", "application/x-gb-image", "application/x-gbc-image", "application/x-nes-image"]
     },
     getFileTypeFromType: function(e){
