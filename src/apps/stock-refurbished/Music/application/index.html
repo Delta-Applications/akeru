@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
     <meta charset="utf-8">
-    <meta name="theme-color" content="rgb(255, 255, 255)">
+    <meta name="theme-color" content="rgb(0,0,0)">
     <title>Music</title>
     <!-- Include shared building blocks -->
     <!--<link rel="stylesheet" type="text/css" href="shared/elements/gaia-icons/gaia-icons.css"/>-->
@@ -121,6 +121,7 @@
         <div id="views-player" class="view hidden" tabindex="-1">
           <div id="player-readout"></div>
           <div id="player-cover">
+            <div><canvas style="position: absolute; width: 100%; height: 100%; background-size: cover; background-position: center center; z-index: 1;" class="fadeIn" id="player-cover-visualizer"></canvas></div>
             <div id="player-cover-image"></div>
           </div>
           <div id="player-seek">
