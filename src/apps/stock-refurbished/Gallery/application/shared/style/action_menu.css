@@ -367,7 +367,7 @@ html[dir="rtl"] [role="dialog"][data-type="action"] > menu > button:last-child:b
   line-height: 1;
   padding: 0.5rem 1.2rem;
   font-size: 1.8rem;
-  background: var(--color-gs20);
+  background: var(--color-gs00);
   color: var(--color-gs90);
 }
 
@@ -397,7 +397,7 @@ html[dir="rtl"] [role="dialog"][data-type="action"] > menu > button:last-child:b
 [role="dialog"][data-type="action"].softkey h1 {
   margin: 0;
   color: var(--color-gs90);
-  background: var(--color-gs20);
+  background: var(--color-gs00);
   width: 100%;
   text-align: center;
   position: fixed;

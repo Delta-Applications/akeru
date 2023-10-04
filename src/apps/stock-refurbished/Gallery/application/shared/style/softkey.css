@@ -3,7 +3,7 @@
   bottom: 0;
   width: 100%;
   right: 0;
-  background-color: var(--color-gs20, #dadada);
+  background-color: var(--color-gs00, #dadada);
   color: var(--color-gs90, #323232);
   border: 0;
   z-index: 99999;
