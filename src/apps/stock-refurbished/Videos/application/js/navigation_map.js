@@ -940,9 +940,9 @@
       var control = getCurControl();
 
       if (to === LAYOUT_MODE.fullscreenPlayer) {
-        setControlsColor('rgb(0, 0, 0)');
+        setControlsColor('rgba(0, 0, 0, 0.5)');
       } else {
-        setControlsColor('rgb(255, 255, 255)');
+        setControlsColor('rgb(0,0,0)');
       }
 
       if (isDonglePickMultiple) {
