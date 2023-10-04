@@ -40,7 +40,7 @@
   right:0;
   z-index: 10;
   color: var(--color-gs90);
-  background: var(--color-gs20);
+  background: var(--color-gs00);
   white-space: nowrap;
   text-overflow: ellipsis;
   display: block;
@@ -397,7 +397,7 @@ html[dir="rtl"] [role="dialog"][data-type="action"] > menu > button:last-child:b
 [role="dialog"][data-type="action"].softkey h1 {
   margin: 0;
   color: var(--color-gs90);
-  background: var(--color-gs20);
+  background: var(--color-gs00);
   width: 100%;
   text-align: center;
   position: fixed;

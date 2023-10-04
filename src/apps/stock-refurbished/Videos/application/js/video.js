@@ -80,7 +80,7 @@ return;}
 var text;let title;if(id==='nocard'){text='nocard3-text';}else{if(VideoUtils.fromActivity){text=id+'-text';title='pick-title'}else{text=id+'-content';}}
 title&&dom.overlayTitle.setAttribute('data-l10n-id',title);dom.overlayText.setAttribute('data-l10n-id',text);dom.overlay.classList.remove('hidden');document.body.classList.add(SUB_MODE.overlay);dom.noVideo.classList.remove('hidden');});}
 function setControlsColor(color){document.getElementsByTagName('meta')['theme-color'].setAttribute('content',color);}
-function setControlsVisibility(visible){dom.playerView.classList[visible?'remove':'add']('video-controls-hidden');controlShowing=visible;if(visible){document.body.classList.remove('video-controls-hidden');setControlsColor('rgb(0, 0, 0)');}else{document.body.classList.add('video-controls-hidden');setControlsColor('');}
+function setControlsVisibility(visible){dom.playerView.classList[visible?'remove':'add']('video-controls-hidden');controlShowing=visible;if(visible){document.body.classList.remove('video-controls-hidden');setControlsColor('rgb(0, 0, 0)');}else{document.body.classList.add('video-controls-hidden');setControlsColor('rgb(0,0,0)');}
 dom.videoContainer.setAttribute('data-l10n-id',controlShowing?'hide-controls-button':'show-controls-button');if(controlShowing){updateVideoControlSlider();}}
 function movePlayHead(percent){dom.playHead.style.left=percent;}
 function updateVideoControlSlider(){if(dom.player.seeking){return;}
