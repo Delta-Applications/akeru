@@ -20,8 +20,8 @@ var AlbumArt = function() {
     function n(e) {
         var t = e.metadata,
             n = t.album || t.artist ? t.album + t.artist : t.title,
-            i = Math.abs(r(n)) % 4 + 1;
-        return "/style/images/albumart_0" + i + ".jpg" //transparent so we can show our beautiful visualizer
+            i = Math.abs(r(n)) % 11 + 1;
+        return "/style/images/albumart_" + i + ".jpg" //transparent so we can show our beautiful visualizer
     }
 
     function r(e) {

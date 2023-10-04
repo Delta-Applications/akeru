@@ -152,13 +152,15 @@ var PlayerView = {
           ctx.clearRect(0, 0, WIDTH, HEIGHT);
     
           for (var i = 0; i < bufferLength; i++) {
-            barHeight = dataArray[i] * 1.65;
+            barHeight = dataArray[i] * .75;
             
             var r = 0;//barHeight + (15 * (i/bufferLength));
             var g = 0;//250 * (i/bufferLength);
             var b = 0;//50;
+
+            var t = Math.round((HEIGHT - barHeight)/HEIGHT * 10) + 2
             
-            ctx.fillStyle = "rgba(" + r + "," + g + "," + b + ", 0.5)";
+            ctx.fillStyle = "rgba(" + r + "," + g + "," + b + ", 0."+t+")";
             ctx.lineCap = "round";
             ctx.fillRect(x, HEIGHT - barHeight, barWidth, barHeight);
             //ctx.fill()
