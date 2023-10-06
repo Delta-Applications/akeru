@@ -10,7 +10,8 @@ Refurbished KaiOS Apps, Media & Builds by Delta
 - [x] [Extract & categorize 3.0 style media (icon font, app icons, boot anims, etc.)](https://github.com/Delta-Applications/akeru/tree/main/src/media)
 - [x] Refurbish all Gaia apps (taken from <2.5.4+ and modified to fit 3.0 design)
 - [x] Modified 2.5.4 Settings app (with homescreen setting, sideloading & other dev features)
-- [ ] Add app management features to Settings & move permissions there
+- [ ] **Add app management features to Settings & move permissions there**
+- [ ] **Fix File Manager opening instead of returning files in Pick Activity**
 - [ ] De-kaiad TO-DO List app & add to official-refurbished
 - [ ] **Theme all refurbished apps to gaia-theme dark**
 - [ ] **Update Bluetooth service icons to reflect 2.5.4 gaia-icons**
