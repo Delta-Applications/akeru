@@ -1,0 +1,455 @@
+.sb-icon {
+  position: relative;
+  width: var(--statusbar-icon-size);
+  height: var(--statusbar-icon-size);
+  font-size: var(--statusbar-icon-size);
+  line-height: var(--statusbar-icon-size);
+}
+
+.sb-icon-wificall[data-state="error"] {
+  color: red;
+}
+
+.sb-icon-wificall[data-onCall="true"] {
+  color: var(--color-lime);
+}
+
+.sb-icon-wifi[data-level]::before,
+.sb-icon-wifi[data-level]::after,
+.sb-icon-signal:not([data-level])::after,
+.sb-icon-signal::before,
+.sb-icon-battery::after {
+  font-family: 'gaia-icons';
+  font-weight: 500;
+  font-style: normal;
+  text-decoration: inherit;
+  text-transform: none;
+  text-rendering: optimizelegibility;
+}
+
+/* icons group wrapper */
+.sb-icon-group:not([hidden]) {
+  display: contents;
+}
+
+.sb-icon-group:not([hidden]) > * {
+  margin-left: var(--statusbar-icon-gap-x);
+  margin-right: var(--statusbar-icon-gap-x);
+}
+
+.sb-icon-connections .sb-icon-network-activity {
+  margin-left: -2px;
+}
+
+/* enabled & inactive */
+.sb-icon-geolocation,
+.sb-icon-bluetooth,
+.sb-icon-tethering {
+  opacity: 0.3;
+}
+
+/* enabled & active */
+.sb-icon-geolocation[data-active="true"],
+.sb-icon-bluetooth[data-active="true"],
+.sb-icon-tethering[data-active="true"] {
+  opacity: 1;
+}
+
+#screen.rocketbar-focused #left-panel,
+#screen.rocketbar-focused #right-panel {
+  pointer-events: none;
+}
+
+#statusbar {
+  --statusbar-icon-gap-x: 0.2rem;
+
+  position: fixed;
+  width: 100%;
+  height: var(--statusbar-height);
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.statusbar > div,
+.statusbar > img {
+  pointer-events: auto;
+}
+
+#statusbar.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#screen #statusbar.maximized:not(.fullscreen):not(.fullscreen-layout) #statusbar-maximized-wrapper {
+  opacity: 1;
+  visibility: visible;
+}
+
+#screen:not(.locked):not(.minimized-tray):not(.rocketbar-focused) #statusbar.fullscreen:not(.overlap),
+#screen:not(.locked):not(.minimized-tray):not(.rocketbar-focused) #statusbar.fullscreen-layout,
+#screen.locked.secure-app:not(.minimized-tray):not(.rocketbar-focused).fullscreen-app #statusbar,
+#screen.locked.secure-app:not(.minimized-tray):not(.rocketbar-focused).fullscreen-layout-app #statusbar {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#screen.locked #statusbar {
+  visibility: visible;
+  filter: none;
+}
+
+#screen.locked #statusbar-maximized-wrapper {
+  opacity: 1;
+  visibility: visible;
+}
+
+#screen.attention #statusbar {
+  top: 0;
+  background-color: transparent;
+}
+
+#screen:-moz-full-screen-ancestor #statusbar {
+  opacity: 0;
+  visibility: hidden;
+}
+
+body #statusbar {
+  transition: transform 0.2s linear;
+}
+
+/* Hiding the black background while the homescreen is in foreground but not
+ * utility tray or attention screen */
+#screen.lockscreen-camera > #statusbar {
+  transform: scaleY(0);
+  transform-origin: left top;
+}
+
+#screen.locked:not(.attention) #statusbar {
+  background-color: transparent;
+  display: block;
+  transform: scaleY(1);
+}
+
+#screen.attention.locked #statusbar-time {
+  display: block;
+}
+
+.statusbar {
+  --statusbar-icon-size: 1.6rem;
+
+  position: absolute;
+  top: calc((var(--statusbar-height) - var(--statusbar-icon-size)) / 2);
+  right: 0;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  height: var(--statusbar-icon-size);
+  margin: 0;
+  padding: 0 0.3rem;
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  color: var(--color-gs00);
+  font-family: 'Open Sans Regular';
+  font-weight: 400;
+}
+
+.statusbar--left {
+  display: flex;
+  margin-inline-end: auto;
+}
+
+.statusbar--right {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  height: var(--statusbar-icon-size);
+  overflow: hidden;
+}
+
+.statusbar--left > *,
+.statusbar--right > * {
+  margin-left: var(--statusbar-icon-gap-x);
+  margin-right: var(--statusbar-icon-gap-x);
+}
+
+#statusbar-title.hidden {
+  visibility: visible;
+  transform: translateY(var(--statusbar-height));
+}
+
+/* label */
+.sb-icon-label {
+  width: unset;
+  max-width: 6.8rem;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* time */
+.sb-icon-time {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+/* am, pm */
+.sb-icon-time span {
+  font-size: 1.2rem;
+}
+
+/* signal and data icons */
+.sb-icon-signal::before,
+.sb-icon-signal::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* sim card slot indicator, shown when multiple sim card & has data-level attribute */
+.sb-icon-connections[data-multiple="true"] .sb-icon-signal[data-level]::after {
+  content: attr(data-index);
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.sb-icon-signal:not([data-level])::after {content: 'signal-0'; }
+.sb-icon-signal:not([data-level])::before { opacity: 0.3; }
+
+.sb-icon-signal[data-level="0"]::before {content: 'signal-0'; } /* No Network with data-level="0" */
+.sb-icon-signal[data-level="1"]::before {content: 'signal-1'; }
+.sb-icon-signal[data-level="2"]::before {content: 'signal-2'; }
+.sb-icon-signal[data-level="3"]::before {content: 'signal-3'; }
+.sb-icon-signal[data-level="4"]::before {content: 'signal-4'; }
+.sb-icon-signal[data-level="5"]::before {content: 'signal-5'; }
+
+.sb-icon-signal-bg {
+  z-index: -1;
+  opacity: 0;
+}
+
+.sb-icon-signal[data-level] .sb-icon-signal-bg {
+  opacity: 0.4;
+}
+
+/* roaming icon overlaps with .sb-icon-signal(DOM parent) */
+.sb-icon-roaming {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.sb-icon-signal[data-roaming="true"] .sb-icon-roaming {
+  display: block;
+}
+
+.sb-icon-signal[data-roaming="true"]::after {
+  opacity: 0;
+}
+
+/* hacks for css-animation doesn't work in svg */
+@keyframes sb-icon-clip-5 {
+  0%, 100% { clip: rect(0rem, 0.32rem, 1.6rem, 0rem); }
+  20% { clip: rect(0rem, 0.64rem, 1.6rem, 0.32rem); }
+  40% { clip: rect(0rem, 0.96rem, 1.6rem, 0.64rem); }
+  60% { clip: rect(0rem, 1.28rem, 1.6rem, 0.96rem); }
+  80% { clip: rect(0rem, 1.6rem, 1.6rem, 1.28rem); }
+}
+
+.sb-icon-signal[data-level="0"][data-searching="true"]::before {
+  content: 'signal-5';
+  animation: sb-icon-clip-5 2.5s step-end infinite;
+}
+
+/* call forwarding icons */
+.sb-icon-call-forwardings[data-multiple="true"] .sb-icon-call-forwarding::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  font-size: 0.8rem;
+  line-height: 1;
+}
+
+.sb-icon-call-forwardings[data-multiple="true"] .sb-icon-call-forwarding[data-index]::after {
+  content: attr(data-index);
+}
+
+/* battery stroke */
+.sb-icon-battery::before {
+  z-index: 1;
+}
+/* battery value */
+.sb-icon-battery[data-level]::after {
+  content: 'battery-' attr(data-level);
+  display: inline-block;
+}
+.sb-icon-battery::before,
+.sb-icon-battery::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+/* low battery  */
+.sb-icon-battery[data-level="0"]::after,
+.sb-icon-battery[data-level="1"]::after {
+  color: var(--color-red);
+}
+/* battery status: charging */
+.sb-icon-battery[data-charging="true"][data-full="true"]::before {
+  content: 'battery-plugged-ac' !important;
+}
+.sb-icon-battery[data-charging="true"]::before {
+  content: 'battery-charging';
+}
+.sb-icon-battery[data-charging="true"]::after {
+  opacity: .35;
+  color: inherit;
+}
+/* battery status: unknown */
+.sb-icon-battery:not([data-level])::before {
+  content: 'battery-unknown' !important;
+}
+
+.sb-icon-wifi[data-level="0"][data-connecting="true"] {
+  background: url('images/wifi-connecting.png') no-repeat 0 0 / var(--statusbar-icon-size);
+}
+
+/* hide front icon */
+.sb-icon-wifi[data-level="0"]::before {
+  opacity: 0;
+}
+
+/* level: 0, 1 ~ 4 */
+.sb-icon-wifi[data-level]::after,
+.sb-icon-wifi[data-level]::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.sb-icon-wifi[data-level]::before {
+  content: 'wifi-' attr(data-level);
+}
+
+.sb-icon-wifi::after {
+  content: 'wifi-4';
+  opacity: 0.3;
+}
+
+.sb-icon-network-activity {
+  background: url('images/network-activity.png') no-repeat 0 0 / 0.7rem;
+  width: 0.7rem;
+  height: 1.6rem;
+  /* HACK: This enforces allocation of a dedicated layer just for this animated
+   * icon, remove after bug 717872 gets fixed. */
+  display: block;
+}
+
+.sb-icon-network-activity[hidden] {
+  display: none;
+}
+
+/* for vibration status */
+.sb-icon-mute.vibration::before {
+  content: 'vibrate';
+}
+
+.sb-icon-recording {
+  opacity: 0.3;
+}
+
+.sb-icon-recording[data-active] {
+  opacity: 1;
+}
+
+.sb-icon-recording[data-active="true"] {
+  color: var(--color-red);
+}
+
+.sb-icon-system-downloads {
+  width: 1.6rem;
+  height: 1.6rem;
+  /* HACK: This enforces allocation of a dedicated layer just for this animated
+   * icon, remove after bug 717872 gets fixed. */
+  display: block;
+  transform: perspective(0.1rem);
+}
+
+.sb-icon-system-downloads[hidden] {
+  display: none;
+}
+
+/* notification */
+.sb-icon-notification {
+  position: relative;
+}
+
+.notification-counts {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: inline-flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.notification-counts::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  letter-spacing: unset;
+  visibility: visible;
+  font-size: var(--statusbar-icon-size);
+}
+
+.is-notification-counts--overload .notification-counts {
+  visibility: hidden;
+}
+
+.is-notification-counts--overload .notification-counts::before {
+  display: block;
+}
+
+/* ime */
+.sb-icon-ime {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+/* RTL View */
+html[dir="rtl"] #screen.lockscreen-camera > #statusbar {
+  transform-origin: right top;
+}
+
+html[dir="rtl"] .statusbar {
+  left: 0;
+  right: unset;
+}
+
+html[dir="rtl"] .sb-icon-signal-bg::before,
+html[dir="rtl"] .sb-icon-signal[data-level]::before {
+  transform: rotateY(180deg);
+}
+
+html[dir="rtl"] .sb-icon-roaming {
+  left: calc(var(--statusbar-icon-size) * 0.6);
+}

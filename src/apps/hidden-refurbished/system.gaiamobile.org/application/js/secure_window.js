@@ -1,6 +1,0 @@
-'use strict';(function(exports){var AppWindow=self.AppWindow;var SecureWindow=function(configs){AppWindow.call(this,configs);};SecureWindow.prototype=Object.create(AppWindow.prototype);SecureWindow.prototype.eventPrefix='secure-app';SecureWindow.prototype.openAnimation='fade-in';SecureWindow.prototype.closeAnimation='fade-out';SecureWindow.prototype.CLASS_LIST='appWindow secureAppWindow';SecureWindow.prototype.softKill=function sw_softKill(delay){if(delay===0){this.kill();return;}
-if(this.isSoftKillPending()){return;}
-delay=delay||5000;this.close();var self=this;this.softKillTimeout=setTimeout(function(){console.log('[SecureWindow] softKill() - Killing now: '+
-self.manifestURL);self.kill();delete self.softKillTimeout;},delay);console.log('[SecureWindow] softKill() - Scheduled for kill in '+
-delay+'ms: '+this.manifestURL);};SecureWindow.prototype.cancelSoftKill=function sw_cancelSoftKill(){if(this.softKillTimeout){clearTimeout(this.softKillTimeout);delete this.softKillTimeout;console.log('[SecureWindow] cancelSoftKill() - Cancelled kill: '+
-this.manifestURL);}};SecureWindow.prototype.isSoftKillPending=function sw_isSoftKillPending(){return!!this.softKillTimeout;};exports.SecureWindow=SecureWindow;})(self);

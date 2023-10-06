@@ -1,0 +1,262 @@
+/* zIndex of important system app parts
+ * is gathered here to clearly specify all system-app hierarchy */
+
+/* Reset zIndex */
+#screen > *:not([data-z-index-level]) {
+  z-index: 0;
+}
+
+/* Level 1 */
+/**
+ * Top layer, covers all of the screen no matter what's the height
+ * of the status bar.
+ * System overlay > Sleep menu > Card view
+ */
+
+/* Find the same code in system/index.html
+#screen > [data-z-index-level="initlogo"] {
+  z-index: 65538;
+}
+*/
+
+
+#screen > *[data-z-index-level="poweroff-splash"] {
+  z-index: 65540;
+}
+
+#screen > [data-z-index-level="notification-toaster"],
+#screen > [data-z-index-level="app"] > .appWindow.attentionWindow.toaster-mode {
+  z-index: 65539;
+}
+
+#screen > [data-z-index-level="keyboards"] {
+  z-index: 65538;
+}
+
+/* System developer HUD should be above everything */
+#screen > .developer-hud {
+  z-index: 2147483647;
+}
+
+#screen > [data-z-index-level="debug-ttl"] {
+  z-index: 65536;
+}
+
+#screen > [data-z-index-level="system-overlay"] {
+  z-index: 65536;
+}
+
+#screen > [data-z-index-level="hardware-buttons"] {
+  z-index: 65536;
+}
+
+#screen > [data-z-index-level="system-option-menu"] {
+  z-index: 4098;
+}
+
+/* system notification banner will overlap soft-key */
+#screen > [data-z-index-level="system-notification-banner"] {
+  z-index: 65537;
+}
+
+#screen > [data-z-index-level="soft-key"] {
+  z-index: 65537;
+}
+
+#screen > [data-z-index-level="attention-indicator"] {
+  z-index: 32769;
+}
+
+/* Level 2: Notification toaster */
+
+
+/* Level 3: Statusbar*/
+#screen > [data-z-index-level="statusbar"] {
+  z-index: 16385;
+}
+
+#screen > [data-z-index-level="utility-tray-notifications"] {
+  z-index: 16384;
+}
+
+/* Level 4: Attention */
+/*
+ * Promote keyboards to stk message screen level even
+ * when device is locked
+ */
+#screen.icc > [data-z-index-level="keyboards"],
+#screen.icc.locked > [data-z-index-level="keyboards"] {
+ z-index: 8196;
+}
+
+#screen > [data-z-index-level="icc-view"] {
+  z-index: 8195;
+}
+
+#screen > [data-z-index-level="notification-dialog"],
+#screen > [data-z-index-level="dialog-service"] {
+  z-index: 8194;
+}
+
+#screen > [data-z-index-level="app"] > .appWindow.attentionWindow.active.top-most {
+  z-index: 8193;
+}
+
+#screen > [data-z-index-level="app"] > .appWindow.attentionWindow {
+  z-index: 8192;
+}
+
+/* Level 5: Activity menu, context menu, system-dialog, value selector */
+/* The action menu goes over the gesture-panel so that gestures are not
+   triggered when the action menu is visible. */
+#screen > [data-z-index-level="action-menu"],
+#screen > [data-z-index-level="system-dialog"] {
+  z-index: 4098;
+  bottom:3rem;
+}
+
+/* Level 6: Lock Screen */
+
+#screen > [data-z-index-level="app"] > .secureAppWindow.active:not(.homescreen)
+{
+  /* Or the .appWindow one would be first adopted.*/
+  z-index: 4098 !important;
+}
+
+#screen > [data-z-index-level="lockscreen"]
+{
+  /* Or the .appWindow one would be first adopted.*/
+  z-index: 2048 !important;
+}
+
+#screen > [data-z-index-level="lockscreen-camera"] {
+  z-index: 2046;
+}
+
+/* Keep system dialogs under lockscreen when locked */
+#screen.locked > [data-z-index-level="system-dialog"] {
+  z-index: 2045;
+}
+
+/* Keep keyboard and edges zones under lockscreen when locked */
+#screen.locked > [data-z-index-level="keyboards"] {
+  z-index: 2044;
+}
+
+#screen > [data-z-index-level="rocketbar-results"] {
+  z-index: 2043;
+}
+
+/*
+ * In order to display a context menu on top of the search input
+ * the z-indexes needs to be updated.
+ * The real issue is that the search input is part of the statusbar.
+ */
+#screen.rocketbar-focused > [data-z-index-level="statusbar"] {
+  z-index: 2042;
+}
+
+#screen > [data-z-index-level="rocketbar-backdrop"] {
+  z-index: 2041;
+}
+
+/* Level 7: Dialog Module */
+#screen > [data-z-index-level="dialog-overlay"],
+#screen > [data-z-index-level="app"] > .appWindow.active > [data-z-index-level="value-selector"],
+#screen > [data-z-index-level="instant-settings"],
+#screen > [data-z-index-level="emergency-callback-dialog"] {
+  z-index: 1024;
+}
+
+/* Level 8 */
+/**
+ *#screen > [data-z-index-level="app"] {
+ *  Should not specify z-index here
+ *  Keyboard should be kept upon #windows
+ *  and beneath #windows > .appWindow
+ *}
+ */
+
+/* The below z-index numbers are used to meet the following conditions:
+ * - active ones must be on top of inactive ones
+ * - keyboard frame must be below active ones
+ * - keyboard frame must be above inactive ones
+ * - during an edge gesture a new app coming from the right needs to be on top
+ * - app frame must be on top of homescreen frame, inactive or active.
+ * - finally, everything else needs to be on top of them (hence the lowest nums)
+ */
+#screen > [data-z-index-level="payment"] {
+  z-index: 9;
+}
+
+#screen > [data-z-index-level="app"] > .appWindow.out-to-right {
+  z-index: 8;
+}
+
+#screen > [data-z-index-level="app"] > .appWindow.transition-opening:not(.homescreen):not(.attentionWindow) {
+  z-index: 7;
+}
+
+#screen > [data-z-index-level="app"] > .appWindow.transition-closing:not(.homescreen):not(.attentionWindow) {
+  z-index: 6;
+}
+
+#screen > [data-z-index-level="app"] > .appWindow.active:not(.homescreen):not(.attentionWindow),
+#screen > [data-z-index-level="app"] > .appWindow:not(.homescreen):not(.attentionWindow),
+#screen > [data-z-index-level="app"] > .appWindow.will-become-active {
+  z-index: 6;
+}
+
+#screen > [data-z-index-level="app"] > .appWindow.in-from-left {
+  z-index: 5;
+}
+
+#screen > [data-z-index-level="app"] > .appWindow.homescreen.active {
+  z-index: 4;
+}
+
+#screen > [data-z-index-level="app"] > .appWindow:not(.attentionWindow) {
+  z-index: 3;
+}
+
+#screen > [data-z-index-level="app"] > .appWindow.homescreen {
+  z-index: 2;
+}
+
+#screen > [data-z-index-level="app"] > .appWindow.homescreen.transition-opening,
+#screen > [data-z-index-level="app"] > .appWindow.homescreen.transition-closing {
+  z-index: 0;
+}
+
+/* This rule is moved from ua.css as a temporary workaround to keep the current
+ * behavior in gaia. This, as well as the overlay promoting code below, should
+ * be removed in the future. See bug 1235470, bug 1235471, and bug 1235472. */
+*|*:-moz-full-screen:not(:root) {
+  z-index: 2147483647 !important;
+}
+
+/* We promote the following overlays on top of the fullscreen web content. */
+#screen:-moz-full-screen-ancestor > [data-z-index-level="system-option-menu"],
+#screen:-moz-full-screen-ancestor > [data-z-index-level="action-menu"],
+#screen.locked:-moz-full-screen-ancestor > [data-z-index-level="statusbar"],
+#screen:-moz-full-screen-ancestor > [data-z-index-level="lockscreen-camera"],
+#screen:-moz-full-screen-ancestor > [data-z-index-level="system-dialog"],
+
+#screen:-moz-full-screen-ancestor > [data-z-index-level="app"] > .appWindow.active > [data-z-index-level="value-selector"],
+#screen:-moz-full-screen-ancestor > [data-z-index-level="system-overlay"],
+#screen:-moz-full-screen-ancestor > [data-z-index-level="dialog-overlay"],
+#screen:-moz-full-screen-ancestor > [data-z-index-level="dialog-service"],
+#screen:-moz-full-screen-ancestor > [data-z-index-level="app"] > .appWindow.attentionWindow,
+#screen:-moz-full-screen-ancestor > [data-z-index-level="app"] > .appWindow.active > .modal-dialog,
+#screen:-moz-full-screen-ancestor > [data-z-index-level="keyboards"],
+
+#screen:-moz-full-screen-ancestor > [data-z-index-level="notification-toaster"],
+#screen:-moz-full-screen-ancestor > [data-z-index-level="notification-dialog"],
+#screen:-moz-full-screen-ancestor > [data-z-index-level="attention-indicator"],
+#screen:-moz-full-screen-ancestor > [data-z-index-level="global-overlays"],
+#screen:-moz-full-screen-ancestor > [data-z-index-level="soft-key"],
+#screen:-moz-full-screen-ancestor .permission-root,
+:-moz-full-screen-ancestor > [data-z-index-level="softkeyPanel"] {
+  z-index: 2147483647;
+}
+

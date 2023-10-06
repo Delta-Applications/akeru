@@ -1,4 +1,0 @@
-'use strict';(function(exports){var FxAccountsDialog=function FxAccountsDialog(options){if(options){this.options=options;}
-this.render();this.publish('created');};FxAccountsDialog.prototype=Object.create(window.SystemDialog.prototype);FxAccountsDialog.prototype.customID='fxa-dialog';FxAccountsDialog.prototype.DEBUG=false;FxAccountsDialog.prototype.view=function fxad_view(){return`<div id="${this.instanceID}" role="dialog"
-           class="generic-dialog" data-z-index-level="system-dialog"
-           hidden></div>`;};FxAccountsDialog.prototype.getView=function fxad_view(){return document.getElementById(this.instanceID);};FxAccountsDialog.prototype._fetchElements=function fxad__fetchElements(){};FxAccountsDialog.prototype._registerEvents=function fxad__registerEvents(){};exports.FxAccountsDialog=FxAccountsDialog;}(window));

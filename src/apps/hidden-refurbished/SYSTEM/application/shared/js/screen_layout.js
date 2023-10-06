@@ -1,0 +1,8 @@
+'use strict';var ScreenLayout={defaultQueries:{tiny:'(max-width: 767px)',small:'(min-width: 768px) and (max-width: 991px)',medium:'(min-width: 992px) and (max-width: 1200px)',large:'(min-width: 1201px)',hardwareHomeButton:'(-moz-physical-home-button)'},init:function sl_init(){this.queries=(function(qs){var result={};for(var key in qs){result[key]=window.matchMedia(qs[key]);}
+return result;})(this.defaultQueries);},_isOnRealDevice:undefined,isOnRealDevice:function sl_isOnRealDevice(){if(typeof(this._isOnRealDevice)!=='undefined'){return this._isOnRealDevice;}
+if(window.innerWidth===screen.availWidth){this._isOnRealDevice=true;}else{this._isOnRealDevice=false;}
+return this._isOnRealDevice;},getCurrentLayout:function sl_getCurrentLayout(type){if(type===undefined){for(var name in this.defaultQueries){if(this.queries[name]&&this.queries[name].matches){return name;}}}
+if(typeof this.queries[type]!=='undefined'){return this.queries[type].matches;}
+return false;},watch:function sl_watch(name,media){var mediaString=media||this.queries[name].media;if(!mediaString){return;}
+this.unwatch(name);this.queries[name]=window.matchMedia(mediaString);this.boundHandleChange=this.handleChange.bind(this);this.queries[name].addListener(this.boundHandleChange);},unwatch:function sl_unwatch(name){if(this.queries[name]){this.queries[name].removeListener(this.boundHandleChange);}},handleChange:function sl_handleChange(evt){for(var key in this.queries){if(this.queries[key].media!==evt.media){continue;}
+window.dispatchEvent(new CustomEvent('screenlayoutchange',{detail:{name:key,status:evt.matches}}));}}};ScreenLayout.init();

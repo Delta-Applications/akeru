@@ -1,6 +1,0 @@
-'use strict';var DownloadManager=(function(){var mozDownloadManager=navigator.mozDownloadManager;if(!mozDownloadManager){console.error('navigator.mozDownloadManager not supported!');return;}
-mozDownloadManager.clearAllDone();var notifications={};var started=false;var loadOldDownloads=false;function onDownloadStart(ev){if(started&&loadOldDownloads){createDownloadNotification(ev.download);}else{LazyLoader.load(['shared/js/download/download_formatter.js','shared/js/download/download_ui.js','shared/js/download/download_store.js','shared/js/download/download_helper.js','js/download/download_notification.js'],function(){started=true;if(!loadOldDownloads){return;}
-createDownloadNotification(ev.download);window.addEventListener('will-shutdown',function onShutdown(){ev.download.pause();});});}}
-function getDownloads(){mozDownloadManager.getDownloads().then((downloads)=>{if(downloads&&downloads.length>0){for(let i=0;i<downloads.length;i++){if(downloads[i].state!=='finalized'){createDownloadNotification(downloads[i]);}}}
-loadOldDownloads=true;});window.removeEventListener('logohidden',getDownloads);}
-mozDownloadManager.addEventListener('downloadstart',onDownloadStart);window.addEventListener('logohidden',getDownloads);function createDownloadNotification(download){var id=DownloadFormatter.getUUID(download);return new DownloadNotification(download);}}());

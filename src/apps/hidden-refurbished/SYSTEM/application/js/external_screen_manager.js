@@ -1,0 +1,1 @@
+'use strict';(function(exports){exports.ExternalScreenManager={send:function(evt){if('BroadcastChannel'in window){var bc=new BroadcastChannel('ExternalScreen');bc.postMessage({type:evt.type,detail:evt.detail});bc.close();}}};}(window));

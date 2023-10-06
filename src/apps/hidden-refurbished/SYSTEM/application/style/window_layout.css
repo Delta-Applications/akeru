@@ -1,0 +1,264 @@
+/*****************************************************************************\
+| Window Layout
+|
+| By default all windows are positioned at coordinates:
+| {
+|   top: 0;
+|   bottom: 0;
+|   width: 100%;
+|   height: 100%;
+| }
+|
+| As a result, windows covered 100% of the screen.
+| It is tempting to use right: 0; and bottom: 0; to automatically adjust the
+| height of elements, but because windows contains some iframes, which are
+| replaced element it does not work as expected as the width/height needs to
+| be added as css rules for iframes.
+| This would be doable once bug 527585 is resolved, by using:
+|   iframe {
+|     width: -moz-available; (already works)
+|     height: -moz-available; (bug 527585)
+|   }
+|
+| The window position/geometry is usually static, but some System app changes
+| may affect those.
+| The list here try to cover all the possible cases:
+|
+|   * Navigation toolbar
+|     Some apps and the system browser use a navigation helper at rendered
+|     outside the app window.
+|
+\*****************************************************************************/
+
+.appWindow,
+.activityWindow,
+.popupWindow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  border: 0;
+  margin: 0;
+  padding: 0;
+
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  overflow: hidden;
+}
+
+#screen.fullscreen-layout-app #windows > .appWindow {
+  height: 100%;
+}
+
+#screen.fullscreen-layout-app.active-statusbar #windows > .appWindow {
+  height: calc(100% - 4rem);
+}
+
+/*****************************************************************************\
+| Childs Layout
+\*****************************************************************************/
+
+/* Regular windows */
+
+.appWindow > div {
+  position: absolute;
+  top: var(--statusbar-height);
+  left: 0;
+  width: 100%;
+  height: calc(100% - var(--statusbar-height));
+}
+
+.popupWindow > div {
+  top: 0;
+}
+
+.fullscreen-app > .popupWindow > div {
+  height: 100%;
+}
+
+.option-menu-root .option-menu-container .option-menu {
+  max-height: calc(100vh - 2rem - var(--softkeybar-height) - var(--statusbar-height));
+}
+
+.appWindow.statusbar-overlapped .browser-container, /* for nested app */
+.appWindow.statusbar-overlapped > div {
+  height: 100%;
+  top: 0;
+}
+
+.appWindow > div.popupWindow {
+  top: var(--statusbar-height);
+}
+
+.appWindow.browser > div.popupWindow,
+.appWindow.statusbar-overlapped > div.popupWindow {
+  top: 0;
+  margin-top: var(--statusbar-height);
+}
+
+.appWindow.browser.popupWindow > div.popupWindow { /* for nested popupWindow */
+  margin-top: 0;
+}
+
+.appWindow.browser > div.popupWindow.has-activity,
+.appWindow.statusbar-overlapped > div.popupWindow.has-activity {
+  margin-top: 0;
+}
+
+/* The loading indicator is part of .chrome and needs to animate with it
+ so do not apply overflow: hidden to it */
+.appWindow > div:not(.chrome) {
+  overflow: hidden;
+}
+
+.appWindow > div > iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.appWindow.collapsible:not(.scrollable) > div > iframe {
+  height: calc(100% - var(--rocketbar-urlbar-height));
+}
+
+.appWindow.searchWindow > div {
+  top: 0;
+  height: 100%;
+}
+
+.appWindow.searchWindow > .value-selector {
+  top: calc(-1 * (var(--rocketbar-urlbar-height) + var(--statusbar-height)));
+  height: calc(100% + var(--rocketbar-urlbar-height) + var(--statusbar-height));
+}
+
+/* Fullscreen windows */
+
+#screen:-moz-full-screen-ancestor .appWindow > div,
+.appWindow.fullscreen-app > div:not(.titlebar):not(.maximized) {
+  top: 0;
+  height: 100%;
+}
+
+#screen:-moz-full-screen-ancestor .popupWindow > div.chrome {
+  display: none !important;
+}
+
+#screen:-moz-full-screen-ancestor .popupWindow > div.titlebar {
+  display: none !important;
+}
+
+#screen:-moz-full-screen-ancestor .appWindow > .titlebar,
+.appWindow.fullscreen-app > .titlebar {
+  transform: translateY(calc(var(--statusbar-height) * -1));
+  /* Same z-index as: https://github.com/mozilla-b2g/gaia/pull/22174/files#diff-889fcaf0800608d5aaa275a452c7492fR23 */
+  z-index: 1001;
+}
+
+#screen:-moz-full-screen-ancestor .appWindow > .titlebar.dragged,
+.appWindow.fullscreen-app > .titlebar.dragged {
+  transform: translateY(0);
+}
+
+#screen .appWindow.fullscreen-app > .chrome.dragged {
+  transform: scaleY(1) translateY(0);
+}
+
+/* Nested Windows */
+.appWindow > .appWindow {
+  top: 0;
+  height: 100%;
+}
+
+/* The popup window does not collapse the rocketbar and has a static header. */
+.popupWindow > .browser-container {
+  top: var(--header-height) !important;
+  height: calc(100% - var(--statusbar-height) - var(--header-height) - var(--softkeybar-height)) !important;
+}
+
+.fullscreen-app > .popupWindow > .browser-container {
+  height: calc(100% - var(--header-height) - var(--softkeybar-height)) !important;
+}
+
+/*****************************************************************************\
+| Scrollable Layout
+\*****************************************************************************/
+
+.appWindow.collapsible > div.browser-container {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.appWindow.collapsible > div.browser-container > iframe {
+  top: var(--rocketbar-urlbar-height);
+  height: calc(100% - var(--softkeybar-height) - var(--rocketbar-urlbar-height));
+}
+
+.appWindow.collapsible > div.browser-container > iframe.browser {
+  height: calc(100% - var(--rocketbar-urlbar-height));
+}
+
+.appWindow.collapsible > div.browser-container > iframe.browser:not([mozapp="app://search.gaiamobile.org/manifest.webapp"]) {
+  height: calc(100% - var(--softkeybar-height) - var(--rocketbar-urlbar-height));
+}
+
+/*****************************************************************************\
+| Search Window Layout
+\*****************************************************************************/
+
+/*
+ * Because the search input lives in the system app, while the search app
+ * lives into its own window, activities windows attached to the search app
+ * does not cover the whole screen.
+ * In order to cover the whole screen, the activityWindow is positioned to the
+ * top of the screen and expanded to cover the whole screen.
+ */
+.appWindow.searchWindow .activityWindow,
+.appWindow.searchWindow .popupWindow {
+  height: calc(100% + 7rem + var(--statusbar-height));
+  top: calc(-7rem - var(--statusbar-height));
+}
+
+.appWindow.searchWindow > .titlebar {
+  height: 0;
+}
+
+/*
+ * Attention window layout.
+ */
+.attentionWindow > div.browser-container > iframe {
+  border: 0;
+}
+
+.appWindow.attentionWindow.callscreenWindow,
+.appWindow.attentionWindow[transition-state="closed"] {
+  transform: translateY(calc(-100%));
+  opacity: 1;
+}
+
+.appWindow.attentionWindow[transition-state="closed"].toaster-mode {
+  transition: transform .3s ease-in-out;
+}
+
+.appWindow.attentionWindow[transition-state="closed"] > .chrome,
+.appWindow.attentionWindow[transition-state="closed"] > .titlebar {
+  display: none;
+}
+
+.appWindow.attentionWindow[transition-state="closed"] > div.browser-container {
+  height: 100%;
+  top: 0;
+}
+
+.appWindow.attentionWindow[transition-state="closed"].displayed {
+  transform: translateY(0);
+}
+
+.appWindow.attentionWindow[transition-state="closed"].toaster-mode[toaster-transition-state="opened"] {
+  transition: transform .2s linear;
+}

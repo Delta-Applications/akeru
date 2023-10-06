@@ -1,3 +1,0 @@
-
-(function(){'use strict';if(window.navigator.mozHour12||window.navigator.hour12){return;}
-window.navigator.mozHour12=null;var _setMozHour12=function(result){if(window.navigator.mozHour12!==result){window.navigator.mozHour12=result;window.dispatchEvent(new CustomEvent('timeformatchange'));}};var _hour12Handler=function(event){_setMozHour12(event.settingValue);};var _kLocaleTime='locale.hour12';var req=window.navigator.mozSettings.createLock().get(_kLocaleTime);req.onsuccess=function(){_setMozHour12(req.result[_kLocaleTime]);};window.navigator.mozSettings.addObserver(_kLocaleTime,_hour12Handler);})();

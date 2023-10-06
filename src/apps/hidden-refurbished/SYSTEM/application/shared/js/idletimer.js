@@ -1,0 +1,5 @@
+
+(function idleTimerAsAIdleObserverWrapper(win){'use strict';var idleTimerRegistry=[undefined];win.setIdleTimeout=function setIdleTimeout(idleCallback,activeCallback,ms){var idleFired=false;var idleTimer={};var triggerIdleCallback=function(){idleTimer.clearTimer();idleFired=true;idleCallback();};idleTimer.timer=setTimeout(triggerIdleCallback,ms);idleTimer.clearTimer=function clearIdleTimer(){if(this.timer){clearTimeout(this.timer);this.timer=undefined;}};idleTimer.observer={onidle:function observerReportIdle(){if(idleTimer.timer){return;}
+var time=ms-1000;idleTimer.timer=setTimeout(triggerIdleCallback,time<0?0:time);},onactive:function observerReportActive(){idleTimer.clearTimer();if(!idleFired){return;}
+activeCallback();idleFired=false;},time:1};navigator.addIdleObserver(idleTimer.observer);idleTimerRegistry.push(idleTimer);return(idleTimerRegistry.length-1);};win.clearIdleTimeout=function clearIdleTimeout(id){if(!idleTimerRegistry[id]){return;}
+var idleTimer=idleTimerRegistry[id];idleTimerRegistry[id]=undefined;navigator.removeIdleObserver(idleTimer.observer);idleTimer.clearTimer();};})(this);

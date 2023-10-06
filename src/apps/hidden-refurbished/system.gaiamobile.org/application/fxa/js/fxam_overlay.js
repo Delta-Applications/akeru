@@ -1,2 +1,0 @@
-'use strict';var FxaModuleOverlay={init:function fxam_overlay_init(){if(this.initialized){return;}
-HtmlHelper.importElements(this,'fxa-overlay','fxa-overlay-msg');this.initialized=true;},show:function fxam_overlay_show(l10nId){this.init();this.fxaOverlayMsg.setAttribute('data-l10n-id',l10nId);this.fxaOverlay.classList.add('show');},hide:function fxam_overlay_hide(){this.init();this.fxaOverlay.classList.remove('show');}};

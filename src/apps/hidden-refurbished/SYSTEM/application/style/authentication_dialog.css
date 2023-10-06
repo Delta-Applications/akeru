@@ -1,0 +1,113 @@
+.authentication-dialog {
+  display: block;
+  position: absolute;
+  overflow-y: auto;
+  top: var(--statusbar-height);
+  left: 0;
+  width: 100%;
+  height: var(--client-height);
+  background-color: #EEEEEE;
+  font-weight: normal;
+}
+
+.authentication-dialog h1 {
+  display: block;
+  height: var(--header-height);
+  line-height: var(--header-height);
+  color: var(--header-color);
+  background-color: var(--header-background);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-align: center;
+  position: relative;
+  top: -1.4rem;
+}
+
+.authentication-dialog-http-authentication-message {
+  display: block;
+  height: auto;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  color: var(--color-gs90);
+  margin-top: -2.2rem;
+  position: relative;
+}
+
+.authentication-dialog label {
+  display: block;
+  height: 7.4rem;
+  font-size: 1.4rem;
+  color: var(--color-gs70);
+}
+
+.authentication-dialog label.checkbox {
+  display: flex;
+  height: 6rem;
+}
+
+.authentication-dialog label.focused {
+  background-color: var(--highlight-color);
+}
+
+.authentication-dialog label span {
+  display: block;
+  height: 1.4rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1rem;
+  color: var(--color-gs70);
+}
+
+.authentication-dialog label.focused span {
+  color: var(--color-gs00);
+}
+
+.authentication-dialog label.checkbox span {
+  height: 4rem;
+  align-items: center;
+  line-height: 4rem;
+}
+
+.authentication-dialog label.checkbox input {
+  width: 3.2rem;
+  height: 3.2rem;
+  color: var(--color-gs45);
+  right: 1rem;
+  display: inline-block;
+  position: absolute;
+  opacity: 0;
+}
+
+.authentication-dialog label.checkbox input:checked ~ [data-icon='check-off'],
+.authentication-dialog label.checkbox input ~ [data-icon='check-on'] {
+  display: none;
+}
+
+.authentication-dialog label.checkbox input:checked ~ [data-icon='check-on'],
+.authentication-dialog label.checkbox input ~ [data-icon='check-off'] {
+  display: block;
+  margin-left: auto;
+  font-size: 3.2rem;
+}
+
+.authentication-dialog label input:not([type='checkbox']) {
+  height: 3.4rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  line-height: 3.4rem;
+  background-color: var(--color-gs00);
+  border: 0.1rem solid var(--color-gs45);
+  border-radius: 0.2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  width: auto;
+  margin-top: 0.5rem;
+  color: var(--color-gs45);
+  box-shadow: unset;
+}
+
+.authentication-dialog label input:focus {
+  color: var(--color-gs90);
+  border: 0.1rem solid var(--highlight-color);
+  box-shadow: unset;
+}

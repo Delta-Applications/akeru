@@ -1,0 +1,27 @@
+<element name="fxa-enter-account-info" extends="section">
+  <template>
+    <section class="vertical">
+      <p class="fxa-intro" data-l10n-id="fxa-enter-your-infomation">
+      </p>
+      <ul class="tcl-nav-box info-picker">
+        <li role="menuitem" class="focusable">
+          <label for="fxa-birthday-input" data-l10n-id="fxa-birthday-label">Birthday</label>
+          <input id="fxa-birthday-input" type="date" value="1993-01-01"  min="1900-01-01" max="2035-12-31" />
+          <p id="fxa-birthday-date"></p>
+        </li>
+
+        <li role="menuitem" class="focusable">
+          <label for="fxa-gender-select" data-l10n-id="fxa-gender-label">Gender</label>
+          <p id="fxa-gender-text"></p>
+          <select id="fxa-gender-select" data-track-class="fxa-gender-select">
+            <option value="Select" data-l10n-id="fxa-gender-select" selected="selected">Select</option>
+            <option value="Male" data-l10n-id="fxa-gender-male">Male</option>
+            <option value="Female" data-l10n-id="fxa-gender-female">Female</option>
+            <option value="Confidential" data-l10n-id="fxa-gender-confidential">Confidential</option>
+          </select>
+        </li>
+      </ul>
+    </section>
+    <script src="js/screens/fxam_enter_account_info.js"></script>
+  </template>
+</element>

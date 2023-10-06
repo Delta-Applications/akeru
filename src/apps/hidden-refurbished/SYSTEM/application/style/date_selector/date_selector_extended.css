@@ -1,0 +1,7 @@
+@media (orientation: landscape) {
+  [role="dialog"][data-type="date-selector"] {
+    height: calc(100% - var(--statusbar-height));
+    top: auto;
+    bottom: var(--softkeybar-height);
+  }
+}

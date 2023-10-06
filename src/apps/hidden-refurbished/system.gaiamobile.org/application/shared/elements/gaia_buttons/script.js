@@ -1,1 +1,0 @@
-'use strict';window.GaiaButtons=(function(win){var proto=Object.create(HTMLElement.prototype);var baseurl=window.GaiaButtonsBaseurl||'/shared/elements/gaia_buttons/';proto.createdCallback=function(){ComponentUtils.style.call(this,baseurl);};return document.registerElement('gaia-buttons',{prototype:proto});})(window);
