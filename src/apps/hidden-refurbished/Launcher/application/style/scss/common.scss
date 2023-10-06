@@ -1,0 +1,67 @@
+* {
+  box-sizing: border-box;
+}
+
+.h1 {
+  font-size: 1.7rem;
+  font-weight: 300;
+
+  .large-text & {
+    font-size: 2.2rem;
+  }
+}
+
+.h2 {
+  font-size: 1.7rem;
+  font-weight: 400;
+}
+
+.h3 {
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.h4 {
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.h5 {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.p-ul {
+  font-size: 1.7rem;
+  font-weight: 400;
+
+  .large-text & {
+    font-size: 2.2rem;
+  }
+}
+
+.primary {
+  font-size: 1.7rem;
+  line-height: 1.7rem;
+}
+
+.secondary {
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+}
+
+.third {
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+}
+
+.readout-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  border: 0 !important;
+}

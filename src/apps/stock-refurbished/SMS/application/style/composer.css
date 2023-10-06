@@ -1,0 +1,415 @@
+
+#composer-container {
+  position: relative;
+}
+
+.new .article-list {
+  z-index: 5;
+  padding: 0;
+}
+
+/*
+ * Flex layout is wrapped by 'flex-composer'. Our flex layout has
+ * 2 well differentiated:
+ * - 'messages-container'
+ * - 'messages-compose-form'
+ */
+
+.flex-composer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  top: 0;
+  overflow: hidden;
+}
+
+.new .flex-composer {
+  position: relative;
+  top: 0;
+  height: 100%;
+}
+
+#messages-container {
+  /* We'll set flex-basis with a shrink factor of 0 to do min-height.
+   * formula: flex-basis = a % + b)
+   * a = (gap2 - gap1) / keyboard_height
+   * b = gap2 - (gap2 - gap1) * (buri_height - header) / keyboard_height + subheader + time_header
+   *
+   * with :
+   * gap1 = 4rem
+   *   minimal visible part of a thread when the keyboard is displayed, on buri
+   * gap2 = 8rem
+   *   minimal visible part of a thread when the keyboard is hidden, on a buri
+   * keyboard_height = 26rem
+   *   measured on a buri, standard english keyboard with suggestions
+   * header = 5rem
+   * subheader = 2rem
+   * buri_height = 48rem
+   * time_header = 2rem
+   *
+   * See https://bugzilla.mozilla.org/show_bug.cgi?id=1015867#c12 for more
+   * information
+   */
+  flex: 1 0 calc(15.4% + 5.38rem);
+  overflow: auto;
+  background-color: var(--color-gs00);
+}
+
+.new #messages-container {
+  flex-basis: 0;
+  background-color: var(--color-gs00);
+}
+
+#messages-compose-form {
+  display: flex;
+  flex-direction: column;
+  height: auto; /* overrides building blocks */
+  min-height: 4rem;
+  padding: 0 0 0.5rem 0;
+  background: var(--color-gs00);
+}
+
+#messages-compose-form.item-focus {
+  background-color: var(--color-lime);
+}
+
+/* Overwrite. No more fixed height */
+form[role="search"] p input,
+form[role="search"] p textarea,
+form[role="search"] button[type="submit"] + p > textarea {
+  height: auto;
+}
+
+/*
+ * Input now are contentEditable containers. We define
+ * placeholder management here as well.
+ */
+
+#messages-input {
+  position: relative; /* to position its generated content */
+  overflow: auto;
+  box-sizing: border-box;
+  height: 100%;
+  color: var(--color-gs90);
+  background-color: var(--color-gs00) !important;
+  line-height: 2rem;
+  border-radius: 0.2rem;
+  margin: 0 1rem;
+  padding: 0.5rem 1rem;
+  white-space: pre-wrap;
+  unicode-bidi: -moz-plaintext;
+  max-height: 25vh;
+  word-break: break-all;
+  border: 0.5px solid var(--color-gs45);
+}
+
+html[dir="rtl"] #messages-input {
+    text-align: right;
+}
+
+#messages-input.placeholder {
+  unicode-bidi: unset;
+}
+
+#messages-input:after {
+  content: attr(data-placeholder);
+  position: absolute;
+  top: 0.5rem;
+  left: 1rem;
+  color: var(--color-gs90);
+  opacity: 0.5;
+  white-space: nowrap;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+#messages-input.placeholder:after {
+  visibility: visible;
+}
+
+/* Overwrite BB because of the previous rule */
+form[role="search"] button[type="submit"]:after {
+    content: "";
+    background: none;
+}
+
+.mms-label-line {
+  background-color: var(--color-gs00);
+}
+
+#messages-compose-form.subject-focus .mms-label-line .subject-composer {
+  background-color: var(--color-lime);
+}
+
+#messages-compose-form .mms-label-line .attachment-composer:focus {
+  background-color: var(--color-lime);
+}
+
+.subject-composer {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  padding: 0.3rem 0 0.3rem 1rem;
+  justify-content: flex-end;
+  align-items: stretch;
+}
+
+.attachment-composer {
+  position: relative;
+  min-width: 0;
+  justify-content: flex-end;
+  align-items: stretch;
+  white-space: nowrap;
+  color: var(--color-gs70);
+  height: 3.2rem;
+}
+
+.extra-number {
+  display: inline-grid;
+  margin-bottom: 0.5rem;
+  margin-left: -0.8rem;
+  font-size: 1.5rem;
+}
+
+/**
+ * 1. "MMS" label is displayed near the subject field when subject input is
+ *    visible and message type is MMS;
+ * 2. Remaining characters counter is displayed in bottom section if character
+ *    count exceeds predefined threshold and message type is SMS.
+ */
+ .message-type-line {
+  display: flex;
+  color: var(--color-gs70);
+ }
+
+ .message-type-line-empty {
+  height: 0.5rem;
+ }
+
+.mms-label,
+.sms-label {
+  display: none;
+  width: 50%;
+  margin-left: 1rem;
+  font-size: 1.2rem !important;
+}
+
+.letter-counter {
+  font-size: 1.2rem;
+  width: 90%;
+  text-align: right;
+  margin-right: 1rem;
+}
+
+[data-message-type='mms'] .mms-label,
+[data-message-type='sms'] .sms-label,
+[data-message-type='sms'] .letter-counter:not(:empty) {
+  display: block;
+}
+
+.item-focus .letter-counter,
+.item-focus .sms-label,
+.item-focus .mms-label {
+  color: var(--color-gs00);
+}
+
+.content-composer {
+  display: flex;
+  flex-direction: row;
+  min-height: 0;
+}
+
+input.subject-composer-input.focus {
+  border: 0.2rem solid var(--highlight-color);
+  background-color: #FFF !important;
+  box-shadow: none
+}
+
+input.subject-composer-input {
+  flex-grow: 1;
+  width: 0;
+  margin: 0 0.8rem 0 0;
+  border: 0.2rem solid var(--color-gs20);
+  border-radius: 0.2rem;
+  padding: 0 0 0 0.5rem;
+  color: var(--color-gs90);
+  box-sizing: border-box;
+  height: 2.8rem;
+}
+
+input.subject-composer-input::-moz-placeholder {
+  font-style: normal;
+}
+
+.large-text input.subject-composer-input {
+  height: 3.3rem;
+  font-size: 2rem;
+}
+
+.large-text .subject-composer-title {
+  line-height: 2.9rem;
+}
+
+.subject-composer-title {
+  margin-left: 1rem;
+  margin-right: 0.5rem;
+  color: var(--color-gs70);
+  line-height: 2.4rem;
+}
+
+.attachment-composer-title {
+  margin-right: 0.5rem;
+  line-height: 3rem;
+  display: inline-block;
+  width: 85%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1.5rem;
+}
+
+.attachment-composer label[data-icon="file-attached"]:before {
+  font-style: italic;
+  padding-left: 1rem;
+  font-size: 2rem;
+  height: 2.5rem;
+  display: inline-grid;
+}
+
+.attachment-composer-title-with-adding {
+  width: 65% !important;
+}
+
+.composer-message-input-container {
+  position: relative;
+  flex: auto;
+  box-sizing: border-box;
+  min-width: 0;
+  height: 100%;
+  min-height: 3rem;
+  padding: 0.3rem 0;
+}
+
+.composer-button-container {
+  position: relative;
+  display: flex;
+  flex: none;
+  flex-direction: row;
+  justify-content: center;
+  align-content: space-between;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 6rem;
+  -moz-user-select: none; /* without this, tapping on the element selects its content */
+}
+
+.messages-attach-container {
+  display: flex;
+}
+
+#messages-send-button {
+  height: 4rem;
+  overflow: visible;
+  background: #fff url(images/icons/actionicon_sms_send_30x30.png)
+              no-repeat center center / 3rem;
+
+  align-self: flex-end;
+
+  /* When we put the icon at the center, an optical illusion makes it look to be
+   * slightly to the left, so we offset the button by 2px to the right to
+   * counteract this illusion */
+  transform: translate(.2rem);
+}
+
+#messages-send-button:after {
+  display: none
+}
+
+#messages-send-button[disabled] {
+  background-blend-mode: luminosity;
+  opacity: 0.625;
+}
+
+#messages-input.ignoreEvents {
+  pointer-events: none;
+}
+
+#messages-attach-button {
+  align-self: flex-end;
+  flex: none;
+  box-sizing: content-box;
+  width: 3rem;
+  margin: 0;
+  padding: 0;
+  -moz-padding-start: 0.5rem;
+  -moz-padding-end: 1rem;
+  background: transparent
+              url('images/icons/actionicon_sms_add_attachment_30x30.png')
+              no-repeat center / 3rem;
+}
+
+#messages-attach-button[disabled] {
+  background-blend-mode: luminosity;
+  opacity: 0.3;
+}
+
+/*
+  DSDS
+*/
+
+.sim-indication {
+  position: absolute;
+  right: 1.8rem;
+  bottom: 0.4rem;
+  display: none;
+  line-height: 1;
+  color: #5f5f5f;
+  font-size: 1.4rem;
+  font-style: normal;
+}
+
+.sim-indication:before {
+  position: absolute;
+  right: .8rem; /* 2.6rem from the right; means .8rem from .sim-indication */
+  bottom: -0.1rem;
+  content: '...';
+  color: #b2b2b2;
+  font-size: 1.6rem;
+}
+
+button[disabled] .sim-indication {
+  color: inherit;
+}
+
+.has-preferred-sim .sim-indication {
+  display: block;
+}
+
+/* RTL modifications */
+/* No translation by 2px because I don't see the illusion when it's on the left */
+html[dir=rtl] #messages-send-button {
+  transform: scaleX(-1);
+}
+
+/* The sim-indication is mirrored twice so that it's back at the right place */
+html[dir=rtl] .sim-indication {
+  transform: scaleX(-1);
+  right: 1.9rem;
+}
+
+html[dir=rtl] .sim-indication:before {
+  right: unset;
+  left: .8rem;
+}
+
+#messages-subheader {
+  height: 100%;
+}
+
+#messages-recipient-suggestions {
+  max-height: calc(100% - var(--header-height) - 4rem);
+  overflow: hidden;
+}
+
+.large-text #messages-input {
+  line-height: 3.2rem;
+}

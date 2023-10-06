@@ -1,0 +1,36 @@
+<!-- need this section element to keep building blocks happy. Too bad it
+  expects a section element -->
+<section class="form-card bbshim" role="region">
+  <header class="sup-account-header">
+    <h1 id="add-account-header" class="sup-account-header-label"
+        data-l10n-id="setup-account-header3"></h1>
+  </header>
+  <div data-prop="scrollBelowNode" class="scrollregion-below-header"
+       role="heading" aria-labelledby="add-account-header">
+    <div data-prop="errorRegionNode" class="sup-error-region collapsed">
+      <div data-prop="errorMessageNode"  class="sup-error-message"></div>
+    </div>
+    <form data-prop="formNode" class="sup-form sup-account-form">
+      <li class="sup-account-li" role="menuitem">
+        <!-- x-inputmode is a temporary v1 B2G stop-gap -->
+        <span class="input-title" data-l10n-id="settings-account-name"></span>
+        <input data-prop="nameNode"
+               data-event="input:onInfoInput"
+               class="sup-info-name" type="text"
+               x-inputmode="verbatim"
+               inputmode="verbatim"
+               maxlength="50"
+               dir="auto"
+               required />
+      </li>
+      <li class="sup-account-li" role="menuitem">
+        <span class="input-title" data-l10n-id="welcome-header"></span>
+        <input data-prop="emailNode"
+               data-event="input:onInfoInput"
+               class="sup-info-email" type="email" maxlength="255"
+               dir="auto"
+               required />
+      </li>
+    </form>
+  </div>
+</section>

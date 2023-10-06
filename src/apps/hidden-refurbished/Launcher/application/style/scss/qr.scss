@@ -1,0 +1,183 @@
+@import "helper/mixins";
+
+@mixin ellipsismy() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin bar1_border {
+  border-left: 1px solid black;
+}
+
+@mixin bar2_border {
+  border-left: 2px solid black;
+}
+
+@mixin bar3_border {
+  border-left: 3px solid black;
+}
+
+@mixin bar4_border {
+  border-left: 4px solid black;
+}
+
+@mixin float_left_bar {
+  float: left;
+}
+
+@mixin space0_margin {
+  margin-right: 0;
+}
+
+@mixin space1_margin {
+  margin-right: 1px;
+}
+
+@mixin space2_margin {
+  margin-right: 2px;
+}
+
+@mixin space3_margin {
+  margin-right: 3px;
+}
+
+@mixin space4_margin {
+  margin-right: 4px;
+}
+
+@mixin barcode_in {
+  padding: 10px;
+  overflow: auto;
+  text-align: center;
+  display: inline-block;
+  background-color: white;
+}
+
+@mixin barcode_one {
+  clear: both;
+}
+
+@mixin right_float {
+  float: right;
+}
+
+@mixin barcode_label {
+  clear: both;
+  display: block;
+  text-align: center;
+}
+
+.qrcode-input {
+  @include fill('full', fixed);
+  @include ellipsismy;
+
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  border: unset;
+  color: white;
+  text-align: center;
+  text-overflow: ellipsis ellipsis;
+  background: linear-gradient(rgba(#000, 1), rgba(#000, 0.7)) no-repeat;
+}
+
+.container {
+  width: 100%;
+  background-color: white;
+}
+
+.titleqr {
+  width: 100%;
+  padding-left: 19px;
+  padding-top: 4px;
+  margin-top: 20rem;
+  text-align: left;
+  color: black;
+  background-color: white;
+}
+
+.titleqrone {
+  width: 100%;
+  padding-left: 19px;
+  padding-top: 4px;
+  margin-top: 12rem;
+  text-align: left;
+  color: black;
+  background-color: white;
+}
+
+.titleqrtwo {
+  width: 100%;
+  padding-left: 19px;
+  text-align: left;
+  color: black;
+  background-color: white;
+}
+
+.numberqr {
+  width: 100%;
+  padding-left: 19px;
+  text-align: left;
+  color: black;
+  background-color: white;
+}
+
+.barcode {
+  height: 0.5in;
+  @include barcode_in;
+}
+
+.right {
+  @include right_float;
+}
+
+.barcode + * {
+  @include barcode_one;
+}
+
+.barcode div {
+  height: 0.35in;
+  @include float_left_bar;
+}
+
+.barcode .bar1 {
+  @include bar1_border;
+}
+
+.barcode .bar2 {
+  @include bar2_border;
+}
+
+.barcode .bar3 {
+  @include bar3_border;
+}
+
+.barcode .bar4 {
+  @include bar4_border;
+}
+
+.barcode .space0 {
+  @include space0_margin;
+}
+
+.barcode .space1 {
+  @include space1_margin;
+}
+
+.barcode .space2 {
+  @include space2_margin;
+}
+
+.barcode .space3 {
+  @include space3_margin;
+}
+
+.barcode .space4 {
+  @include space4_margin;
+}
+
+.barcode label {
+  font: 0.125in/100% helvetica;
+  @include barcode_label;
+}

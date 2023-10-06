@@ -1,0 +1,37 @@
+<section data-statuscolor="default" role="region">
+  <header>
+    <h1 class="title" data-prop="pickerTitle" id="picker-header">
+    </h1>
+  </header>
+</section>
+<!-- Backing semi-opaque layer for everything below the header so that
+     anything that the folder drawer does not cover looks inactive-ish.
+     Clicking on this makes the drawer go away. -->
+<div data-event="click:_closeCard" class="fld-shield"></div>
+<!-- This exists to clip fld-content so that when it animates in/out using
+     translateY it doesn't paint over-top of the header. -->
+<div class="fld-content-container">
+  <!-- This is the actual drawer thing that slides up/down using translateY.
+       -->
+  <div class="fld-content">
+    <!-- Scrollable container holds everything but the non-scrolling settings
+         button. -->
+    <div class="fld-acct-scrollouter">
+      <div data-prop="fldAcctScrollInner" class="fld-acct-scrollinner">
+        <!-- The list of all accounts and the folders for the current account.
+             As noted above, translateY is used to hide the list of accounts
+             when we don't want to be displaying it. -->
+        <div data-prop="fldAcctContainer" class="fld-acct-container" aria-labelledby="picker-header" role="heading">
+          <!-- The list of accounts -->
+          <div data-prop="accountListContainer"
+               class="fld-accountlist-container">
+          </div>
+          <!-- The list of folders for the current account. -->
+          <div data-prop="foldersContainer"
+               class="fld-folders-container">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

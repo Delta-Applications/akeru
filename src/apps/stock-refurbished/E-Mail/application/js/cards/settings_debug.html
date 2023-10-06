@@ -1,0 +1,70 @@
+<!-- Secret developer debug page; for those in the know.  This page can only be
+     reached by tapping 5 times on some whitespace on the main settings page or
+     press the * button 5 times continuously on no-touch device.
+
+     NOTE NOTE NOTE NOTE NOTE
+
+     This page is intentionally unlocalized.  There's a few reasons for this:
+     - The intended users are Kai OS developers for which English is
+       currently a pre-requisite.
+     - It allows us to change these settings without being particularly
+       concerned about string freeze.
+     - We don't have to worry about the localized strings not capturing the
+       risk of enabling this logging.
+
+     This raises the question: Should this be shipped in non-developer builds if
+     we think it's not worth localizing?  Our current rationale is that it is
+     useful.  We (the developers) have had bug reporters enable the logging and
+     worked with us to fix bugs using the functionality.  Especially given our
+     limited ability to provide updated versions of the app or have users
+     side-load versions of our certified app.
+  -->
+<!-- This section element is needed by building blocks, would be nice if
+  bb used a class instead of a section element target -->
+<section class="skin-organic bbshim" role="region">
+  <header class="tng-account-header">
+    <h1 class="header-label">Debug Magic</h1>
+  </header>
+  <section class="scrollregion-below-header skin-organic" role="region">
+    <header><h2>Reset</h2></header>
+    <button data-event="click:resetApp"
+            class="tng-dbg-reset debug">Reset App</button>
+    <header><h2>Logging</h2></header>
+    <ul class="tng-list">
+      <li class="select-item debug" role="menuitem">
+        <label class="logging-mode-label list-text">Logging Mode</label>
+        <select data-prop="loggingSelect"
+                data-event="change:onChangeLogging"
+                class="mail-select"
+                data-track-class="logging-mode-label">
+          <!-- Circular: Safe data: no passwords or message contents logged
+               Circular: Dangerous data: passwords and message contents logged
+               Realtime + Circular: Dangerous data: passwords and message
+               contents logged-->
+          <option value="">
+            No logging
+          </option>
+          <option value="safe">
+            Circular: Safe data
+          </option>
+          <option value="dangerous">
+            Circular: Dangerous data
+          </option>
+          <option value="realtime-dangerous">
+            Realtime + Circular
+          </option>
+        </select>
+      </li>
+    </ul>
+    <button data-event="click:dumpLog"
+            class="tng-dbg-dump-storage debug">
+      Dump circular log buffer to sdcard
+    </button>
+    <header><h2>More Settings!</h2></header>
+    <button data-event="click:fastSync"
+            class="tng-dbg-fastsync debug">Enable faster sync options</button>
+
+    <button data-event="click:resetStartupCache"
+            class="debug">Reset startup cache</button>
+  </section>
+</section>

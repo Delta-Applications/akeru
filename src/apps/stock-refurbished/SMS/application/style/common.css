@@ -1,0 +1,33 @@
+
+/*
+  Common styles. Shared by apps
+*/
+
+/*
+  Structure of app
+*/
+
+.header-group {
+  width: 100%;
+  height: 5rem;
+  overflow: hidden;
+}
+
+.view-body {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: calc(100% - var(--header-height));
+  width: 100%;
+  /* This box-sizing is necessary to prevent vertical scrolling in views that
+   * specify vertical paddings and/or borders. */
+  -moz-box-sizing: border-box;
+  will-change: scroll-position;
+}
+
+/*
+  Style of hightlight text.
+*/
+.highlight {
+  color: var(--color-gs00);
+  background-color: var(--highlight-color, #b2f2ff);
+}

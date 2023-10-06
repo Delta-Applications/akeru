@@ -1,0 +1,431 @@
+.message.incoming {
+  -moz-padding-start: 1rem;
+  -moz-padding-end: 3rem;
+}
+
+.message.outgoing {
+  -moz-padding-start: 3rem;
+  -moz-padding-end: 1rem;
+}
+
+.message .bubble {
+  box-sizing: border-box;
+  height: 100%;
+  max-width: 100%;
+  padding: 1rem 0.1rem 0;
+  overflow: visible;
+}
+
+.message-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.incoming .message-content {
+  align-items: flex-start;
+}
+
+.outgoing .message-content {
+  align-items: flex-end;
+}
+
+.message-content-body-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+}
+
+.outgoing.error .message-content-body-container {
+  position: relative;
+  flex-direction: row-reverse;
+}
+
+.bubble .message-content-body:focus {
+  -moz-user-select: text;
+}
+
+.bubble .message-content-body {
+  border-radius: 1.2rem;
+  padding: 1rem !important;
+  min-width: 10%;
+  max-width: 100%;
+  overflow: unset;
+  direction: initial !important;
+}
+
+.incoming .bubble .message-content-body {
+  background-color: var(--color-gs20);
+  color: var(--color-gs00);
+}
+
+.outgoing .bubble .message-content-body {
+  background-color: var(--color-lime-pressed);
+  color: var(--color-gs00);
+}
+
+.incoming.focus .bubble .message-content-body,
+.outgoing.focus .bubble .message-content-body {
+  background-color: var(--color-lime);
+  color: var(--color-gs00);
+}
+
+li.message.current-focus .bubble .message-content-body {
+  background-color: rgba(0, 191, 96, 0.3);
+}
+
+.next-focus #messages-compose-form {
+  opacity: 0.3;
+}
+
+.message-list li[class~="focus"],
+.message-list li[class~="hasfocused"] {
+  background: var(--color-gs00) !important;
+  outline: none;
+}
+
+.message.outgoing .bubble,
+.message.outgoing a:active {
+  color: #333;
+}
+
+.message.incoming .bubble,
+.message.incoming a:active {
+  color: #fff;
+}
+
+.message p.message-content-body {
+  white-space: pre-wrap;
+  text-align: start;
+  unicode-bidi: -moz-plaintext;
+  outline: none;
+  font-size: var(--font-p-pri) !important;
+}
+
+/* BB overrides */
+.message.outgoing p:first-of-type:last-of-type,
+.message.incoming p:first-of-type:last-of-type {
+  padding-top: 0.5rem;
+
+  line-height: calc(var(--font-p-pri) + 0.5rem);
+}
+
+.message.incoming p:first-of-type {
+  color: #000;
+}
+
+.message.sending p:first-of-type {
+  color: #bfbfbf;
+}
+
+/* End of BB overrides */
+
+.outgoing.error .bubble {
+  background: none;
+}
+
+.incoming.error .bubble {
+  background: none;
+}
+
+.message.sending .bubble,
+.message.sending a,
+.message.sending a:active {
+  color: #bfbfbf;
+}
+
+.message.sending .attachment-container {
+  opacity: 0.5;
+}
+
+.message .message-sender {
+  max-width: 100%;
+  display: none;
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.7rem;
+}
+
+.incoming.isGroup .message-sender {
+  display: block;
+  color: var(--color-gs70);
+}
+
+/* Message Subject */
+.message .message-subject {
+  max-width: 100%;
+  display: none;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.7rem;
+  unicode-bidi: -moz-plaintext;
+  text-transform: none;
+}
+
+.message.has-subject .message-subject {
+  display: block;
+  color: var(--color-gs70);
+}
+
+/* Message content styles */
+.message-content a {
+  color: var(--header-lime-background);
+  text-decoration: underline;
+  direction: initial !important;
+  font-weight: bold;
+}
+
+.message-content a.focus {
+  color: var(--color-gs00);
+}
+
+.message-content > p {
+  unicode-bidi: -moz-plaintext;
+}
+
+.message-details {
+  line-height: 2rem;
+  color: var(--color-gs70);
+}
+
+.message.sending time,
+.message.sending .message-sim-information {
+  display: none;
+}
+
+.message-sim-information {
+  -moz-margin-end: 0.4rem;
+}
+
+.message-sim-information::after {
+  content: ' ‧ ';
+}
+
+/* Message status aside panel */
+.message .message-status {
+  height: 2rem;
+  min-width: 3rem;
+  background: no-repeat center center / 1.6rem;
+  font-size: 1.4rem;
+  line-height: 2rem;
+}
+
+.message.error .message-status {
+  position: absolute;
+  top: 0px;
+  left: -3rem;
+  background-image: url('images/ic_exclamation.png');
+}
+
+.message.delivered .message-status {
+  font-size: 1.2rem;
+  font-weight: 200;
+  font-family: "Open Sans", sans-serif;
+}
+
+.message.read .message-status {
+  background-image: url('images/icons/message_read.png');
+}
+
+.message.pending .message-status,
+.message.sending .message-status {
+  background: none;
+}
+
+
+/* Message download button */
+.message .download {
+  display: block;
+  font-size: 1.4rem;
+
+  min-height: initial;
+  width: auto;
+  padding: 0;
+  /* Eliminating container paragraph line-height */
+  margin: -1.5rem 0 0;
+
+  background: none;
+  color: #fff;
+  border: none;
+  /* We're using border-bottom instead of just underline style as line is too
+     close to the text and doesn't look similar to visual spec. */
+  border-bottom: 1px solid #fff;
+}
+
+.message .download:active {
+  opacity: 0.85;
+}
+
+/* hide download button via css on expired messages */
+.message.expired .download {
+  display: none;
+}
+
+.message.pending .download {
+  border-color: transparent;
+  opacity: 0.8;
+}
+
+/* RTL for message bubble float direction and border-radius*/
+.message.outgoing .bubble:-moz-dir(rtl) {
+  float: left;
+
+  border-radius: 0 1.5rem 1.5rem 1.5rem;
+}
+
+.message.incoming .bubble:-moz-dir(rtl) {
+  float: right;
+
+  border-radius: 1.5rem 0 1.5rem 1.5rem;
+}
+
+#thread-messages gaia-header .contact-photo.has-picture {
+  width: 3rem;
+  height: 3rem;
+  margin: 0.5rem;
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+#messages-report-header, #block-contact-header,
+#attachment-messaege-header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.block-contact-li {
+  padding-top: 0.5rem;
+  padding-left: 2rem;
+  border-bottom: solid 0.1rem !important;
+}
+
+.block-contact-p {
+  padding-top: 0 !important;
+  line-height: 2.6rem !important;
+  height: auto;
+}
+
+/* item title */
+[data-type="list"] li.focus * .summary,
+[data-type=list] li.focus * .threadlist-item-title,
+[data-type=list] li.focus * .thread-header-title,
+[data-type=list] li.focus * .group-icon::before {
+  color: #FFF !important;
+}
+
+[data-type="list"] li p.threadlist-item-title {
+  font-size: var(--font-p-pri);
+  color: #333;
+  font-weight: 600;
+  height: 2.5rem;
+}
+
+body.large-text p.threadlist-item-title {
+  line-height: 1;
+}
+
+.threadlist-item-title .ellipsis-dir-fix {
+  direction: initial !important;
+}
+
+[data-type="list"] li p.summary {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border: medium none;
+  margin: 0;
+  padding: 0;
+  color: var(--color-gs70);
+  font-size: var(--font-p-pri);
+  line-height: 2rem;
+  width: 94%;
+}
+
+[data-type="list"] li div.name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+[data-type="list"] li p.summary .body-text,
+[data-type="list"] li p.summary .mms-icon {
+  height: 2.5rem;
+}
+
+.skin-comms [data-type="list"] header {
+    color: #4D4D4D;
+}
+
+.width-adjust {
+  width: 85% !important;
+}
+
+.width-has-count {
+  width: 70% !important;
+}
+
+@media only screen and (orientation: landscape) {
+
+  .bubble .message-content-body {
+    border-radius: 0.9rem;
+    padding: 1rem !important;
+    min-width: 10%;
+    max-width: 90%;
+    overflow: unset;
+  }
+
+  [data-type="list"] li p.summary {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: medium none;
+    margin: 0;
+    padding: 0;
+    color: var(--color-gs70);
+    font-size: var(--font-p-sec);
+    line-height: 1.5rem;
+    width: 94%;
+    height: 1.7rem;
+  }
+
+  .message.outgoing p:first-of-type:last-of-type, .message.incoming p:first-of-type:last-of-type {
+    padding-top: 0.5rem;
+    line-height: calc(var(--font-p-sec));
+  }
+
+  .message p.message-content-body {
+    white-space: pre-wrap;
+    outline: none;
+    font-size: var(--font-p-sec) !important;
+  }
+
+  #composer-container .flex-composer .article-list ~ form[role="search"] {
+    background: none !important;
+  }
+
+  #composer-container .flex-composer .article-list ~ form[role="search"].item-focus {
+    background: var(--highlight-color) !important;
+  }
+
+  #messages-compose-form .content-composer .composer-message-input-container #messages-input  {
+  border: 1px solid var(--color-gs70);
+  }
+
+  form[role="search"] .letter-counter,
+  form[role="search"] .sms-label,
+  form[role="search"] .mms-label {
+    color: var(--color-gs70);
+  }
+
+  form[role="search"].item-focus .letter-counter,
+  form[role="search"].item-focus .sms-label,
+  form[role="search"].item-focus .mms-label {
+    color: var(--color-gs00);
+  }
+
+  .message.outgoing {
+    -moz-padding-start: 4rem;
+    -moz-padding-end: 0.5rem;
+  }
+}

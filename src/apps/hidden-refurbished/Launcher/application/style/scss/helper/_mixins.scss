@@ -1,0 +1,121 @@
+$new-install-opacity: 0.3;
+$light-new-install-opacity: 0.03;
+
+@mixin fill($dir: 'full', $type: absolute) {
+  position: $type;
+  @if $dir != 'bottom' { top: 0; }
+  @if $dir != 'right' { left: 0; }
+  @if $dir != 'left' { right: 0; }
+  @if $dir != 'top' { bottom: 0; }
+}
+
+@mixin ellipsis() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin appNotices {
+  width: 1.6rem;
+  height: 1.6rem;
+  background: #ff3232;
+  border-radius: 1rem 1rem 1rem 0px;
+  visibility: visible;
+  position: absolute;
+  left: 4.3rem;
+  top: 0.3rem;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+  transition-timing-function: cubic-bezier (0, 0, 0.25, 1);
+  opacity: 0.7;
+  animation: noticesFadeIn 0.12s forwards, noticesScaleUp 0.25s forwards;
+  z-index: 9;
+}
+
+@keyframes noticesFadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes noticesScaleUp {
+  0% { transform: scale(0.7); }
+  100% { transform: scale(1); }
+}
+
+@mixin newInstall {
+  @include fill;
+
+  width: 6.2rem;
+  height: 6.2rem;
+  top: -0.3rem;
+  left: -0.3rem;
+  border-radius: 50%;
+  border: 0.4rem solid var(--color-gs00);
+  visibility: visible;
+  opacity: 0;
+  z-index: -9;
+
+  &::before {
+    content: "";
+    width: 7.8rem;
+    height: 7.8rem;
+    border: 0.4rem solid var(--color-gs00);
+    top: -1.2rem;
+    left: -1.2rem;
+    position: absolute;
+    border-radius: 50%;
+    box-sizing: border-box;
+    opacity: 0.33;
+  }
+}
+
+@mixin flickerEffect($name: '.new__install') {
+  &.first-flicker {
+    #{$name} { @include flickerAtFirstTime; }
+  }
+  &.flicker {
+    #{$name} { @include flickerAfterFirstTime; }
+  }
+}
+
+@mixin flickerAtFirstTime {
+  // Set the opacity to zero at beginning
+  // to make transition smoother.
+  opacity: 0;
+  animation:
+    opacityFirstFadeIn 1s,
+    opacityFadeOut 0.8s 1s,
+    opacityFadeIn 1s 1.8s,
+    opacityFadeOut 0.8s 2.8s,
+    // Keep the style from the last frame.
+    opacityLastFadeIn 1s 3.6s forwards;
+}
+
+@mixin flickerAfterFirstTime {
+  animation:
+    opacityFadeOut 0.8s,
+    opacityFadeIn 1s 0.8s,
+    opacityFadeOut 0.8s 1.8s,
+    opacityFadeIn 1s 2.6s,
+    opacityFadeOut 0.8s 3.6s,
+    opacityLastFadeIn 1s 4.4s;
+}
+
+@keyframes opacityFirstFadeIn {
+  0% { opacity: 0; }
+  100% { opacity: $new-install-opacity; }
+}
+
+@keyframes opacityFadeIn {
+  0% { opacity: $light-new-install-opacity; }
+  100% { opacity: $new-install-opacity; }
+}
+
+@keyframes opacityFadeOut {
+  0% { opacity: $new-install-opacity; }
+  100% { opacity: $light-new-install-opacity; }
+}
+
+@keyframes opacityLastFadeIn {
+  0% { opacity: $light-new-install-opacity; }
+  100% { opacity: $new-install-opacity; }
+}

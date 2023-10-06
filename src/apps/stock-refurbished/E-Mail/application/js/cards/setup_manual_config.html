@@ -1,0 +1,222 @@
+<!-- need this section element to keep building blocks happy. Too bad it
+  expects a section element -->
+<section class="skin-organic form-card bbshim" role="region">
+  <header class="sup-account-header">
+    <h1 id="manual-config-header" class="sup-account-header-label header-label"
+        data-l10n-id="setup-manual-config-header"></h1>
+  </header>
+  <div data-prop="scrollBelowNode" class="scrollregion-below-header"
+       role="heading" aria-labelledby="manual-config-header">
+    <div data-prop="errorRegionNode" class="sup-error-region collapsed">
+      <div data-prop="errorMessageNode" class="sup-error-message"></div>
+    </div>
+    <header class="collapsed"></header>
+    <form data-prop="formNode" class="sup-manual-form">
+      <div class="sup-manual-common sup-form" role="menu">
+        <li class="sup-manual-li" data-prop="accountName" role="menuitem">
+          <!-- x-inputmode is a temporary v1 B2G stop-gap -->
+          <span class="input-title" data-l10n-id="settings-account-name"></span>
+          <input class="sup-info-name sup-manual-input" type="text"
+                 x-inputmode="verbatim"
+                 inputmode="verbatim"
+                 maxlength="50"
+                 dir="auto"
+                 required />
+        </li>
+        <li class="sup-manual-li" role="menuitem">
+          <span class="input-title" data-l10n-id="welcome-header"></span>
+          <input class="sup-info-email sup-manual-input" type="email"
+                 maxlength="255"
+                 dir="auto"
+                 required />
+        </li>
+        <li class="sup-manual-li sup-manual-password-wrapper" role="menuitem">
+          <span class="input-title" data-l10n-id="settings-password"></span>
+          <input class="sup-manual-activesync-password sup-info-password" type="password"
+                 dir="auto" x-inputmode="verbatim" maxlength="50"
+                 required />
+        </li>
+        <li class="sup-account-li sup-manual-activesync-showpassword">
+            <label class="pack-checkbox list-pack-checkbox setup-account-checkbox">
+              <input data-prop="showpasswordActiveSyncInputNode" type="checkbox">
+              <span class="list-text list-pack-checkbox-text setup-account-checkbox"
+                    data-l10n-id="show-password"></span>
+            </label>
+          </li>
+      </div>
+
+      <header>
+        <h2 data-prop="accountTypeHeader"
+            data-l10n-id="setup-manual-account-type-header"></h2>
+      </header>
+      <div class="sup-form sup-form-item" role="menu">
+        <!-- These don't need L10N as they are protocol names. -->
+        <li class="sup-manual-account-type-container"
+            data-prop="accountType" role="menuitem">
+          <label class="sup-manual-account-type-label list-text"
+                 data-l10n-id="setup-manual-account-type"></label>
+            <select data-prop="accountTypeNode"
+                    data-event="change:onChangeAccountType"
+                    data-l10n-id="setup-manual-account-type-select"
+                    class="mail-select" data-track-class="sup-manual-account-type-label">
+              <option value="imap+smtp">IMAP+SMTP</option>
+              <option value="pop3+smtp">POP3+SMTP</option>
+              <option value="activesync">ActiveSync</option>
+            </select>
+        </li>
+      </div>
+
+      <section data-prop="compositeSection"
+               class="sup-manual-composite" role="region">
+        <header class="collapsed"></header>
+        <header>
+          <h2 data-prop="manualImapTitle"  class="sup-manual-imap-title"
+              data-l10n-id="setup-manual-imap-header"></h2>
+          <h2 data-prop="manualPop3Title" class="sup-manual-pop3-title"
+              data-l10n-id="setup-manual-pop3-header"></h2>
+        </header>
+        <div class="sup-form" role="menu">
+          <li class="sup-manual-li" role="menuitem">
+            <span class="input-title" data-l10n-id="settings-hostname"></span>
+            <input class="sup-manual-composite-hostname sup-manual-input" type="text"
+                   x-inputmode="verbatim"
+                   inputmode="verbatim"
+                   maxlength="255"
+                   dir="auto"
+                   data-maybe-required />
+          </li>
+          <li class="sup-manual-li" role="menuitem">
+            <span class="input-title" data-l10n-id="welcome-header"></span>
+            <input class="sup-manual-composite-username sup-manual-input" type="text"
+                   x-inputmode="verbatim"
+                   inputmode="verbatim"
+                   maxlength="255"
+                   dir="auto"
+                   data-maybe-required />
+          </li>
+          <li class="sup-manual-li" role="menuitem">
+            <span class="input-title" data-l10n-id="settings-password"></span>
+            <input class="sup-manual-composite-password sup-manual-input" type="password"
+                   dir="auto" x-inputmode="verbatim" maxlength="50"
+                   data-maybe-required />
+          </li>
+          <li class="sup-account-li">
+            <label class="pack-checkbox list-pack-checkbox setup-account-checkbox">
+              <input data-prop="showpasswordImapInputNode" type="checkbox">
+              <span class="list-text list-pack-checkbox-text setup-account-checkbox"
+                    data-l10n-id="show-password"></span>
+            </label>
+          </li>
+          <li class="sup-socket-select-container" role="menuitem">
+            <label class="sup-manual-composite-socket-label list-text"
+                   data-l10n-id="security"></label>
+              <select class="mail-select sup-manual-composite-socket"
+                      data-l10n-id="setup-manual-socket-select" data-track-class="sup-manual-composite-socket-label">
+                <option value="SSL" data-l10n-id="setup-manual-socket-ssl">
+                  SsL</option>
+                <option value="STARTTLS" data-l10n-id="setup-manual-socket-starttls">
+                  StarttlS</option>
+                <option value="PLAIN" data-l10n-id="setup-manual-socket-plain">
+                  PlaiN</option>
+              </select>
+            </span>
+          </li>
+          <li class="sup-manual-li" role="menuitem">
+            <span class="input-title" data-l10n-id="port-number"></span>
+            <input class="sup-manual-composite-port sup-manual-input" type="text"
+                   x-inputmode="digit"
+                   maxlength="5"
+                   value="993"
+                   dir="auto"
+                   data-maybe-required />
+          </li>
+        </div>
+
+        <header>
+          <h2 data-l10n-id="setup-manual-smtp-header"></h2>
+        </header>
+        <div class="sup-form" role="menu">
+          <li class="sup-manual-li" role="menuitem">
+            <span class="input-title" data-l10n-id="settings-hostname"></span>
+            <input class="sup-manual-smtp-hostname sup-manual-input" type="text"
+                   x-inputmode="verbatim"
+                   inputmode="verbatim"
+                   maxlength="255"
+                   dir="auto"
+                   data-maybe-required />
+          </li>
+          <li class="sup-manual-li" role="menuitem">
+            <span class="input-title" data-l10n-id="welcome-header"></span>
+            <input class="sup-manual-smtp-username sup-manual-input" type="text"
+                   x-inputmode="verbatim"
+                   inputmode="verbatim"
+                   maxlength="255"
+                   dir="auto"
+                   data-maybe-required />
+          </li>
+          <li class="sup-manual-li" role="menuitem">
+            <span class="input-title" data-l10n-id="settings-password"></span>
+            <input class="sup-manual-smtp-password sup-manual-input" type="password"
+                   dir="auto" x-inputmode="verbatim" maxlength="50"
+                   data-maybe-required />
+          </li>
+          <li class="sup-account-li">
+            <label class="pack-checkbox list-pack-checkbox setup-account-checkbox">
+              <input data-prop="showpasswordSmtpInputNode" type="checkbox">
+              <span class="list-text list-pack-checkbox-text setup-account-checkbox"
+                    data-l10n-id="show-password"></span>
+            </label>
+          </li>
+          <li class="sup-socket-select-container" role="menuitem">
+            <label class="sup-manual-smtp-socket-label list-text"
+                   data-l10n-id="security"></label>
+              <select class="mail-select sup-manual-smtp-socket"
+                      data-l10n-id="setup-manual-socket-select" data-track-class="sup-manual-smtp-socket-label">
+                <option value="SSL" data-l10n-id="setup-manual-socket-ssl">
+                  SsL</option>
+                <option value="STARTTLS" data-l10n-id="setup-manual-socket-starttls">
+                  StarttlS</option>
+                <option value="PLAIN" data-l10n-id="setup-manual-socket-plain">
+                  PlaiN</option>
+              </select>
+          </li>
+          <li class="sup-manual-li" role="menuitem">
+            <span class="input-title" data-l10n-id="port-number"></span>
+            <input class="sup-manual-smtp-port sup-manual-input" type="text"
+                   x-inputmode="digit"
+                   maxlength="5"
+                   value="465"
+                   dir="auto"
+                   data-maybe-required />
+          </li>
+        </div>
+      </section>
+
+      <section data-prop="activeSyncSection"
+               class="sup-manual-activesync collapsed" role="region">
+        <header class="collapsed"></header>
+        <header>
+          <h2 data-l10n-id="setup-manual-activesync-header">
+            ActivesynC SettingS</h2>
+        </header>
+        <div class="sup-form" role="menu">
+          <li class="sup-manual-li collapsed" role="menuitem">
+            <span class="input-title" data-l10n-id="settings-hostname"></span>
+            <input class="sup-manual-activesync-hostname" type="text"
+                   x-inputmode="verbatim"
+                   inputmode="verbatim"
+                   maxlength="255"
+                   dir="auto"
+                   data-maybe-required />
+          </li>
+          <li class="sup-manual-li collapsed" role="menuitem">
+            <span class="input-title" data-l10n-id="domain-username"></span>
+            <input class="sup-manual-activesync-username" type="text"
+                   dir="auto"
+                   data-maybe-required />
+          </li>
+        </div>
+      </section>
+    </form>
+  </div>
+</section>

@@ -1,0 +1,34 @@
+<!-- Per-account server settings menu -->
+<!-- need this section element to keep building blocks happy. Too bad it
+  expects a section element -->
+<section class="skin-organic bbshim" role="region">
+  <header class="tng-account-server-header">
+    <h1 id="settings-account-servers-header" data-prop="headerLabel"
+        class="tng-account-header-label header-label"
+        style="margin-left:0px">
+      AccounT NamE</h1>
+  </header>
+  <section class="scrollregion-below-header skin-organic" role="region">
+    <header class="collapsed"></header>
+    <header>
+      <h2 data-prop="serverLabel"
+          class="tng-account-server-label header-text"></h2>
+    </header>
+    <div class="tng-form" data-prop="formNode" role="textbox" tabindex="-1"
+         aria-describedby="host-title host-name port-title port-number">
+      <li class="tng-account-server-hostname settings-input-list">
+        <h2 data-l10n-id="settings-hostname" id="host-title"
+          class="tng-server-hostname-title" aria-level="3">
+            HostnamE</h2>
+        <span data-prop="hostnameNodeSpan" id="host-name"
+              class="tng-server-hostname-span"></span>
+      </li>
+      <li class="tng-account-server-port settings-input-list">
+        <h2 data-l10n-id="settings-port" id="port-title"
+          class="tng-server-port-title" aria-level="3"></h2>
+        <span data-prop="portNodeSpan" id="port-number"
+              class="tng-server-port-span"></span>
+      </li>
+    </div>
+  </section>
+</section>

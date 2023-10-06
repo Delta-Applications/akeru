@@ -1,0 +1,106 @@
+/* ----------------------------------
+ * Time selector
+ * ---------------------------------- */
+
+/* Main dialog setup */
+[role="dialog"][data-type="time-selector"] {
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+  position: absolute;
+  z-index: 100;
+  top: var(--statusbar-height);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: var(--color-gs70);
+  font-size: 1.8rem;
+}
+
+.value-selector:not(.use-gaia-header) [role="dialog"][data-type="time-selector"] h1 {
+  color: var(--color-gs90);
+  background: var(--color-gs20);
+  line-height: 3rem;
+  text-align: center;
+  margin: 6.7rem 0 0;
+}
+
+.value-selector.use-gaia-header .value-selector-time-picker-popup > h1 {
+  display: none;
+}
+
+[role="dialog"][data-type="time-selector"] .hours-minutes-separator {
+  display: none;
+}
+
+[role="dialog"][data-type="time-selector"] .value-selector-time-picker-container {
+  height: 16.5rem;
+  background-color: var(--color-gs10);
+  display: flex;
+  direction: ltr;
+}
+
+[role="dialog"][data-type="time-selector"] .value-picker-wrapper {
+  width: 33%;
+  box-shadow: 0.1rem 0 var(--color-gs45);
+  float: left;
+  margin: 1.5rem 0;
+}
+
+[role="dialog"][data-type="time-selector"] .format24h .value-picker-wrapper {
+  width: 49%;
+}
+
+[role="dialog"][data-type="time-selector"] .up,
+[role="dialog"][data-type="time-selector"] .down,
+[role="dialog"][data-type="time-selector"] .content {
+  margin: auto;
+  width: 100%;
+  height: 4.5rem;
+  line-height: 4.5rem;
+  text-align: center;
+  padding: 0;
+}
+
+[role="dialog"][data-type="time-selector"] .content {
+  color: var(--highlight-color);
+  font-size: 2.7rem;
+  font-weight: 400;
+  border: none;
+}
+
+[role="dialog"][data-type="time-selector"] .focused > .content {
+  background: var(--highlight-color);
+  color: var(--color-gs00);
+}
+
+[role="dialog"][data-type="time-selector"] .focused > .content.invalid {
+  background-color: var(--color-red);
+  color: var(--color-gs00);
+}
+
+[role="dialog"][data-type="time-selector"] .wrapper-word {
+  font-size: 1.4rem;
+}
+
+[role="dialog"][data-type="time-selector"] .wrapper-word .content {
+  font-size: 1.8rem;
+}
+
+html[dir="rtl"] .value-selector-time-picker-container .wrapper-word {
+  order: -1;
+}
+
+/* ----------------------------------
+ * Font for large text mode
+ * ---------------------------------- */
+.large-text [role="dialog"][data-type="time-selector"] {
+  font-size: 2.2rem;
+}
+
+.large-text [role="dialog"][data-type="time-selector"] .wrapper-word {
+  font-size: 1.8rem;
+}
+
+.large-text [role="dialog"][data-type="time-selector"] .wrapper-word .content {
+  font-size: 2.2rem;
+}

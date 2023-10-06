@@ -1,0 +1,159 @@
+#experience-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  color: var(--color-gs00);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 1%, var(--color-gs100));
+
+  .text-warp {
+    height: calc(100% - var(--softkeybar-height) - var(--statusbar-height) - 11.2rem);
+    margin-top: calc(var(--statusbar-height) + 2rem);
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
+  .not-connect-internet {
+    display: none;
+    height: 100%;
+    animation: pointOpacityInto 0.3s forwards;
+    .online {
+      background: url(../images/experience_offline.svg) no-repeat 50% 50%;
+    }
+  }
+
+  .not-data-plan {
+    display: none;
+    height: 100%;
+    animation: pointOpacityInto 0.3s forwards;
+    .offline {
+      background: url(../images/experience_online.svg) no-repeat 50% 50%;
+    }
+  }
+
+  .connect-internet {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0 1rem;
+    display: none;
+    animation: pointOpacityInto 0.3s forwards;
+
+    .internet-text-warp {
+      height: calc(100% - var(--softkeybar-height) - var(--statusbar-height));
+      margin-top: 5rem;
+      overflow-y: scroll;
+      overflow-x: hidden;
+    }
+
+    .animation-png {
+      width: 24rem;
+      height: 9rem;
+      margin-left: -1rem;
+    }
+
+    .connect-internet-title {
+      font-size: 1.7rem;
+      font-weight: bold;
+      text-align: center;
+      color: var(--color-gs00);
+      .large-text & {
+        font-size: 2.2rem;
+      }
+    }
+
+    .purple-indicator-png {
+      position: absolute;
+      left: 50%;
+      bottom: -2.4rem;
+      width: 7.8rem;
+      height: 7.8rem;
+      margin-left: -3.9rem;
+      background: url(../images/experience_purple_indicator.svg) no-repeat 50% 50%;
+    }
+  }
+
+  // Common style
+  .svg-icon {
+    width: 6.4rem;
+    height: 6.4rem;
+    margin-left: 7.8rem;
+    object-fit: contain;
+    background-size: 100%;
+    pointer-events: none;
+  }
+
+  .experience-text {
+    margin: 0.2rem 0 2rem;
+    font-size: 1.6rem;
+    text-align: center;
+    .large-text & {
+      font-size: 2rem;
+    }
+  }
+
+  .up-button,
+  .down-button {
+    width: 22rem;
+    height: 3.6rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    border-radius: 1.8rem;
+    font-size: 1.7rem;
+    font-weight: 600;
+    line-height: 3.1rem; // 3.6(height) - 0.4(border) - 0.1(top0.6, bottom 0.1)
+    border: solid 0.2rem var(--color-gs70);
+    background-color: var(--color-gs100);
+  }
+
+  .activite-button {
+    line-height: 3.5rem;
+    border: 0;
+    background-color: var(--color-purple);
+  }
+
+  &.step1 {
+    .not-connect-internet {
+      display: block;
+    }
+  }
+
+  &.step2 {
+    .connect-internet {
+      display: block;
+    }
+  }
+
+  &.step3 {
+    .not-data-plan {
+      display: block;
+    }
+  }
+}
+
+.experience-step2 {
+  #softkeyPanel {
+    #software-keys-left,
+    #software-keys-right {
+      opacity: 0.3;
+    }
+  }
+}
+
+@keyframes pointOpacityInto {
+  0% {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

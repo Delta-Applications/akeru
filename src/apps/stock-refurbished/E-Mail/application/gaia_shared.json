@@ -1,0 +1,24 @@
+{
+  "js": [
+    "font_size_utils.js",
+    "date_time_helper.js",
+    "mime_mapper.js",
+    "notification_helper.js"
+  ],
+  "style": [
+    "input_areas.css",
+    "headers.css",
+    "switches.css",
+    "buttons.css",
+    "status.css",
+    "confirm.css",
+    "action_menu.css",
+    "progress_activity.css",
+    "tabs.css",
+    "value_selector.css",
+    "toaster.css",
+    "softkey.css",
+    "navigation.css"
+  ],
+  "style_unstable": []
+}

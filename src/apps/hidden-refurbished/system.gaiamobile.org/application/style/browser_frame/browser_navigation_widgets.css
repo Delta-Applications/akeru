@@ -1,0 +1,120 @@
+.appWindow > .browser-zoom-indicator {
+  position: absolute;
+  width: 100%;
+  height: calc(100% - var(--statusbar-height) - var(--softkeybar-height));
+  top: auto;
+  bottom: var(--softkeybar-height);
+  visibility: hidden;
+  text-align: center;
+  pointer-events: none;
+}
+
+.appWindow.popupWindow > .browser-zoom-indicator {
+  height: calc(100% - var(--header-height) - var(--softkeybar-height) - var(--statusbar-height));
+  top: var(--header-height);
+}
+
+.fullscreen-app > .popupWindow > .browser-zoom-indicator {
+  height: calc(100% - var(--header-height) - var(--softkeybar-height));
+}
+
+.appWindow > .browser-zoom-indicator.visible {
+  visibility: visible;
+}
+
+.appWindow > .browser-zoom-indicator > .toast-container {
+  position: absolute;
+  bottom: 1rem;
+  width: 20.8rem;
+  height: 2.4rem;
+  line-height: 2.4rem;
+  margin-left: calc((100% - 23.6rem) / 2);
+  background-color: var(--color-gs00);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+  border: 0px solid var(--color-gs00);
+  border-radius: 5rem;
+  opacity: 0;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 1.4rem;
+  padding-right: 1.4rem;
+}
+
+.appWindow > .browser-zoom-indicator > .toast-container.visible {
+  opacity: 0.9;
+  transition: opacity 0.5s;
+}
+
+.appWindow > .browser-zoom-indicator > .toast-container:not(.visible) {
+  transition: opacity 0.5s;
+}
+
+.widgets {
+  width: 3.2rem;
+  height: 2.4rem;
+  display: inline-flex;
+}
+
+.widgets > .icon,
+.widgets > .text {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.widgets > .icon {
+  font-size: 1.6rem;
+  color: var(--color-gs100);
+}
+
+.widgets > .text {
+  line-height: 2.2rem;
+  color: var(--color-blue);
+  font-weight: 600;
+}
+
+.scroll-direction-indicator.hidden {
+  display: none;
+}
+
+.scroll-direction-icon {
+  position: absolute;
+  background-image: url('images/img_dir_up.png');
+  background-repeat: no-repeat;
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+.scroll-direction-icon.top {
+  top: var(--rocketbar-urlbar-height);
+  left: calc((100% - 1.4rem)/2);
+}
+
+.scroll-direction-icon.left {
+  top: calc((100% + var(--rocketbar-urlbar-height) - 1.4rem)/2);
+  left: 0;
+  transform: rotate(-90deg);
+}
+
+.scroll-direction-icon.right {
+  top: calc((100% + var(--rocketbar-urlbar-height) - 1.4rem)/2);
+  right: 0;
+  transform: rotate(90deg);
+}
+
+.scroll-direction-icon.bottom {
+  bottom: 0;
+  left: calc((100% - 1.4rem)/2);
+  transform: rotate(180deg);
+}
+
+.appWindow.popupWindow > .browser-zoom-indicator > .scroll-direction-indicator > .scroll-direction-icon.top {
+  top: unset;
+}
+
+.appWindow.popupWindow > .browser-zoom-indicator > .scroll-direction-indicator > .scroll-direction-icon.left {
+  top: calc((100% - 1.4rem)/2);
+}
+
+.appWindow.popupWindow > .browser-zoom-indicator > .scroll-direction-indicator > .scroll-direction-icon.right {
+  top: calc((100% - 1.4rem)/2);
+}

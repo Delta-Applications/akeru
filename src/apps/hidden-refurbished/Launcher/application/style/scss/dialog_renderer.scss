@@ -1,0 +1,54 @@
+@import "helper/mixins";
+
+.dialog-root {
+  @include fill();
+
+  .dialog {
+    bottom: var(--softkeybar-height);
+    background-color: var(--color-gs00);
+    .header {
+      text-align: center;
+    }
+    .additional-content {
+      $font-size: 1.7rem;
+      // Reserve extra room for line-height
+      // to prevent from clipping letters with descender like g, p, or y.
+      $safe-line-height: $font-size + 0.4rem;
+      $number-of-lines: 3;
+
+      color: var(--color-gs70);
+      font-size: $font-size;
+      line-height: $safe-line-height;
+      max-height: $safe-line-height * $number-of-lines;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      margin: 1rem;
+    }
+  }
+
+  &.is-loading {
+    .content:first-child {
+      display: flex;
+      align-items: center;
+
+      &::before {
+        content: '';
+        width: 3.2rem;
+        height: 3.2rem;
+        margin-right: 1rem;
+        background: url('../images/loading.png');
+      }
+    }
+  }
+}
+
+.dialog-container {
+  background: rgba(#000, 0.85) linear-gradient(transparent, rgba(#000, 0.5) 75%) no-repeat;
+  &.prompt {
+    .content {
+      color: var(--color-gs00);
+      background-color: var(--highlight-color) !important;
+      padding-top: 0.5rem !important;
+    }
+  }
+}

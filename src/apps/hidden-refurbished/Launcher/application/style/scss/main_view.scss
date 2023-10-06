@@ -1,0 +1,41 @@
+#main-view {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 0.8rem;
+  padding-left: 1.3rem;
+  padding-right: 1.2rem;
+  box-sizing: border-box;
+  opacity: 0;
+  transition: opacity 0s, transform 0.3s;
+  transition-timing-function: cubic-bezier(0.3, 0, 0.3, 1);
+
+  @media only screen and (orientation: landscape) {
+    flex-direction: row;
+    padding-top: unset;
+  }
+
+  &.is-focus {
+    opacity: 1;
+  }
+
+  &.to-force-display {
+    opacity: 1;
+  }
+
+  .app-workspace.panel-sidemenu--opened & {
+    opacity: 0;
+    transform: translateX(12rem);
+    transition-duration: 0.3s;
+  }
+}
+
+.quick-app-indicator {
+  position: absolute;
+  right: 0.8rem;
+  bottom: 1.8rem;
+  font-size: 3.2rem;
+  color: var(--color-gs00);
+  text-shadow: 0 0.2rem 0.4rem rgba(#000, 0.3);
+}

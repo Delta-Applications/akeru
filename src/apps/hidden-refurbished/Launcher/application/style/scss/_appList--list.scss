@@ -1,0 +1,82 @@
+.appList[data-view-mode="list"] {
+  --listview-items-per-page: 4;
+
+  @media only screen and (orientation: landscape) {
+    --listview-items-per-page: 3;
+  }
+
+  .appList__container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: auto;
+  }
+
+  .app-wall {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .app {
+    flex-shrink: 0;
+    height: calc((100vh - var(--softkeybar-height) - var(--statusbar-height)) / var(--listview-items-per-page));
+    padding-left: 1rem;
+    padding-right: 1rem;
+    overflow: hidden;
+
+    &.is-focus-app,
+    &:focus {
+      background-color: var(--highlight-color);
+    }
+  }
+
+  .app {
+    .app__icon {
+      @include flickerEffect;
+
+      .new__install {
+        @include newInstall;
+      }
+    }
+
+    &.new-install {
+      .new__install {
+        opacity: $new-install-opacity;
+        z-index: 9;
+      }
+      &:focus {
+        .new__install {
+          border-color: var(--color-gs00);
+          &::before {
+            border-color: var(--color-gs00);
+          }
+        }
+      }
+    }
+
+    &.has-notices {
+      .app__notices {
+        @include appNotices;
+      }
+    }
+  }
+
+  .app__name {
+    @include ellipsis;
+
+    margin-inline-start: 1rem;
+    line-height: 1;
+    max-height: 1.1 * 2em; // max 2 lines. don't use overflow, it'll clip text
+    min-height: 1.2em;
+  }
+
+  &.is-reordering .app:focus {
+    background-image:
+      linear-gradient(
+        transparent 0.3rem,
+        rgba(#000, 0.4) 0,
+        rgba(#000, 0.4) calc(100% - 0.3rem),
+        transparent 0
+      );
+  }
+}

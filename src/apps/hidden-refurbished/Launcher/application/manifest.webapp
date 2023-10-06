@@ -1,0 +1,75 @@
+{
+    "name": "Gaia Launcher",
+    "description": "Gaia Launcher",
+    "launch_path": "/index.html",
+    "type": "certified",
+    "role": "homescreen",
+     "icons": {
+        "56": "/style/icons/launcher_56.png",
+        "84": "/style/icons/launcher_84.png",
+        "112": "/style/icons/launcher_112.png"
+    },
+    "permissions": {
+        "audio-channel-notification": {},
+        "feature-detection": {},
+        "flashlight": {},
+        "themeable": {},
+        "mobileconnection": {},
+        "storage": {},
+        "webapps-manage": {},
+        "contacts": {
+            "access": "readwrite"
+        },
+        "telephony": {},
+        "voicemail": {},
+        "softkey": {},
+        "power": {},
+        "settings": {
+            "access": "readwrite"
+        },
+        "kaios-accounts": {},
+        "account-manager": {},
+        "wifi-manage": {},
+        "customization": {},
+        "datacall": {},
+        "engmode-extension": {}
+    },
+    "default_locale": "en-US",
+    "orientation": "default",
+    "activities": {
+        "dial": {
+            "filters": {
+                "type": "webtelephony/number",
+                "number": {
+                    "pattern": "[\\d\\s+#*().-]{0,50}"
+                }
+            },
+            "href": "/dial-activity.html",
+            "disposition": "inline"
+        }
+    },
+    "messages": [{
+        "ussd-received": "/index.html"
+    }],
+    "chrome": {
+        "statusbar": "overlap"
+    },
+    "datastores-owned": {
+        "bookmarks": {
+            "access": "readwrite"
+        },
+        "cards_data": {
+            "access": "readwrite"
+        },
+        "cards_status": {
+            "access": "readwrite"
+        }
+    },
+    "background_color": "transparent",
+    "datastores-access": {
+        "eventlogger_event": {
+            "readonly": false
+        }
+    },
+    "version": "2.2"
+}

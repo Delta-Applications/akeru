@@ -1,0 +1,319 @@
+/* ----------------------------------
+ * Confirm
+ * ---------------------------------- */
+
+/* Main dialog setup */
+form[role="dialog"][data-type="confirm"] {
+  background: #fff;
+  overflow: hidden;
+  position: fixed; /* scrolling does not affect position of dialog in the screen */
+  z-index: 110;
+  top: var(--statusbar-height);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-size: 0;
+  padding-top: 0;
+  /* Using font-size: 0; we avoid the unwanted visual space (about 3px)
+  created by white-spaces and break lines in the code betewen inline-block elements */
+  color: #fff;
+  text-align: left;
+}
+
+form[role="dialog"][data-type="confirm"]:before {
+  display: none;
+}
+
+form[role="dialog"][data-type="confirm"] > section {
+  font-weight: 300;
+  font-size: 2.2rem;
+  color: #fff;
+  -moz-box-sizing: padding-box;
+  width: 100%;
+  display: inline-block;
+  overflow-y: scroll;
+  max-height: 100%;
+  white-space: normal;
+  padding-top: 0;
+}
+
+form[role="dialog"][data-type="confirm"] h1 {
+  line-height: 1.5em;
+  margin: 0;
+  padding: 0rem 1.5rem;
+  word-wrap: break-word;
+  color: #000;
+  background-color: rgb(240, 240, 240);
+}
+
+/* Menu & buttons setup */
+form[role="dialog"][data-type="confirm"] menu {
+  white-space: nowrap;
+  margin: 0;
+  padding: 1.5rem;
+  background: #4d4d4d;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+form[role="dialog"][data-type="confirm"] menu button::-moz-focus-inner {
+  border: none;
+  outline: none;
+  margin-top: -0.2rem; /* To fix line-height bug (697451) */
+}
+
+form[role="dialog"][data-type="confirm"] menu button {
+  font-family: sans-serif;
+  font-style: italic;
+  width: 100%;
+  height: 4rem;
+  margin: 0 0 1rem;
+  padding: 0 0.2rem;
+  -moz-box-sizing: border-box;
+  display: inline-block;
+  vertical-align: middle;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  background: #d8d8d8;
+  border: none;
+  border-radius: 2rem;
+  font-weight: normal;
+  font-size: 1.6rem;
+  line-height: 4rem;
+  color: #fff;
+  text-align: center;
+  text-shadow: none;
+  text-decoration: none;
+  outline: none;
+}
+
+/* Recommend */
+form[role="dialog"][data-type="confirm"] menu button.recommend {
+  background-color: #00caf2;
+  color: #fff;
+}
+
+/* Danger */
+form[role="dialog"][data-type="confirm"] menu button.danger {
+  background-color: #e51e1e;
+  color: #fff;
+}
+
+/* Pressed */
+form[role="dialog"][data-type="confirm"] menu button:active {
+  background: #00aacc;
+  color: #fff;
+}
+
+/* Disabled */
+form[role="dialog"][data-type="confirm"] > menu > button[disabled] {
+  background-color: #565656;
+  color: rgba(255,255,255,0.4);
+  pointer-events: none;
+}
+
+form[role="dialog"][data-type="confirm"] > menu > button[disabled].recommend {
+  background-color: #006579;
+}
+
+form[role="dialog"][data-type="confirm"] > menu > button[disabled].danger {
+  background-color: #730f0f;
+}
+
+button[disabled]::-moz-selection {
+  -moz-user-select: none;
+}
+
+form[role="dialog"][data-type="confirm"] menu button {
+  margin: 0;
+  -moz-margin-end: 1rem;
+}
+
+form[role="dialog"][data-type="confirm"] menu button:last-child {
+  -moz-margin-end: 0;
+}
+
+/*
+** Specific component code
+**
+** 1. Text in confirm dialog should not be selectable.
+ */
+form[role="dialog"][data-type="confirm"] p {
+  font-weight: normal;
+  word-wrap: break-word;
+  margin: 0rem 0 0;
+  padding: 1rem 1.5rem;
+  line-height: 2rem;
+  font-size: 2rem;
+  color: #000000;
+}
+
+form[role="dialog"][data-type="confirm"] p.white-font {
+  color: #fff;
+}
+
+form[role="dialog"][data-type="confirm"] p.noborder {
+  border:none;
+}
+
+form[role="dialog"][data-type="confirm"] p > span {
+  font-size: 1.5rem;
+  display: block;
+  line-height: 1.7rem;
+  color: rgba(255,255,255,0.6);
+}
+
+form[role="dialog"][data-type="confirm"] p img {
+  left: 2rem;
+  right: auto;
+}
+
+form[role="dialog"][data-type="confirm"] p strong {
+  font-weight: 300;
+}
+
+form[role="dialog"][data-type="confirm"] p small {
+  font-size: 1.4rem;
+  font-weight: normal;
+  color: #cbcbcb;
+  display: block;
+}
+
+form[role="dialog"][data-type="confirm"] dl {
+  border-top: 0.2rem solid #a6a6a6;
+  margin: 0rem 1.5rem;
+  overflow: hidden;
+  padding-top: 1rem;
+  font-size: 3rem;
+  line-height: 2.2rem;
+  color: #fff;
+}
+
+form[role="dialog"][data-type="confirm"] dl > dt {
+  clear: both;
+  width: 7rem;
+  font-weight: 500;
+  text-align: left;
+  font-size: 2rem;
+}
+
+form[role="dialog"][data-type="confirm"] dl.noborder {
+  border: none;
+}
+
+form[role="dialog"][data-type="confirm"] dl > dt.confirmmsg {
+  width: auto;
+  font-weight: normal;
+  word-wrap: break-word;
+  margin: 0;
+  line-height: 2.4rem;
+  font-size: 2.4rem;
+  color: #fff;
+}
+
+form[role="dialog"][data-type="confirm"] dl > dd {
+  font-weight: 500;
+  text-overflow: ellipsis;
+  vertical-align: top;
+  overflow: hidden;
+  margin-left: 0;
+  color: #fff;
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+}
+
+form[role="dialog"][data-type="confirm"] dl > dd > div {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+form[role="dialog"][data-type="confirm"] figure {
+  margin: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+form[role="dialog"][data-type="confirm"] figure img {
+  padding-right: 1.5rem;
+  flex-shrink: 0;
+}
+
+form[role="dialog"][data-type="confirm"] figure figcaption {
+  font-size: 2.1rem;
+  font-weight: 300;
+}
+
+form[role="dialog"][data-type="confirm"] ul {
+  margin: 0;
+  padding: 2rem 1.5rem;
+  border-top: 0.1rem solid #686868;
+  list-style: none;
+  font-size: 1.6rem;
+  font-weight: normal;
+}
+
+form[role="dialog"][data-type="confirm"] ul li {
+  word-wrap: break-word;
+  line-height: 2rem;
+  padding-bottom: 1.5rem;
+}
+
+form[role="dialog"][data-type="confirm"] ul li:last-child {
+  padding-bottom: 0;
+}
+
+form[role="dialog"][data-type="confirm"] ul li ul {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Right to left View
+ */
+
+html[dir="rtl"] form[role="dialog"][data-type="confirm"] {
+  text-align: right;
+}
+
+html[dir="rtl"] form[role="dialog"][data-type="confirm"]:before {
+  margin-left: auto;
+  margin-right: -0.1rem;
+}
+
+html[dir="rtl"] form[role="dialog"][data-type="confirm"] p img {
+  right: 2rem;
+  left: auto;
+}
+
+html[dir="rtl"] form[role="dialog"][data-type="confirm"] dl > dt {
+  float: right;
+  padding-left: inherit;
+  padding-right: 1.5rem;
+  text-align: right;
+}
+
+html[dir="rtl"] form[role="dialog"][data-type="confirm"] dl > dd {
+  padding-left: 1.5rem;
+  padding-right: inherit;
+}
+
+html[dir="rtl"] form[role="dialog"][data-type="confirm"] figure img {
+  padding-left: 1.5rem;
+  padding-right: inherit;
+}
+
+/**
+  *blutooth request from pin code
+  */
+#pair-view h2 {
+  color:#000;
+}
+#pair-view #passkey{
+  color:#000;
+}

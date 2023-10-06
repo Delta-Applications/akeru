@@ -1,0 +1,224 @@
+.fld-content-container {
+  position: absolute;
+  top: var(--header-height, 5rem);
+  width: 100%;
+  height: calc(100% - var(--statusbar-softkeybar-height) - var(--header-height));
+  overflow: hidden;
+}
+.fld-content {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transform: translateY(-100%);
+  transition-property: transform;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+}
+cards-folder-picker.opened .fld-content,
+cards-account-picker.opened .fld-content {
+  transform: translateY(0);
+}
+.fld-shield {
+  position: absolute;
+  top: 5rem;
+  width: 100%;
+  
+  height: calc(100% - 5rem);
+  background-color: black;
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+}
+cards-folder-picker.opened .fld-shield,
+cards-account-picker.opened .fld-shield {
+  opacity: .6;
+}
+.fld-shield.transparent,
+.fld-shield.hidden {
+  opacity: 0;
+}
+.fld-acct-scrollouter {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: white;
+}
+.fld-acct-scrollinner {
+  overflow: hidden;
+}
+.fld-acct-container {
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.fld-acct-container.animated {
+  transition-property: transform;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+}
+.fld-nav-toolbar.bottom-toolbar {
+  text-align: center;
+  background: white;
+  color: black;
+  bottom: 0;
+  height: 4.5rem;
+  line-height: 4.5rem;
+}
+.fld-arrow {
+  position: absolute;
+  right: 1rem;
+}
+.fld-accounts-header-label {
+  color: red;
+}
+.fld-account-item,
+.fld-folder-item,
+.fld-folder-list-header {
+  position: relative;
+  display: block;
+  line-height: 3.6rem;
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.fld-account-item {
+  -moz-padding-start: 1.5rem;
+  border-bottom: 0.1rem solid #dfdfdf;
+  line-height: 4.5rem;
+  color: #5f5f5f;
+}
+.fld-account-name {
+  font-size: 1.4rem;
+  padding: 0 0 0.5rem;
+  line-height: 2rem;
+  color: var(--color-gs70);
+  overflow: hidden;
+}
+.fld-account-label {
+  line-height: 3rem;
+  padding-left: 0;
+  font-size: 1.7rem;
+  overflow: hidden;
+}
+.fld-account-radio {
+  position: absolute !important;
+  width: 0 !important;
+}
+.fld-account-radio label.pack-checkbox input ~ span::after, label.pack-radio input ~ span::after {
+  -moz-margin-start: 20rem;
+  top: 25%;
+}
+@media only screen and (orientation: landscape) {
+  .fld-account-radio label.pack-checkbox input ~ span::after,
+  label.pack-radio input ~ span::after {
+    -moz-margin-start:  27rem;
+  }
+}
+.fld-account-lastsync {
+  color: #c7c7c7;
+  font-size: 150%;
+  font-weight: normal;
+  padding: 0 1rem;
+}
+.fld-folder-item .selected-indicator,
+.fld-account-item .selected-indicator {
+  position: absolute;
+  top: 2rem;
+  left: 1.1rem;
+  display: none;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 0.8rem;
+  background-color: var(--highlight-color);
+}
+.focus.fld-folder-item .selected-indicator,
+.focus.fld-account-item .selected-indicator {
+  background-color: var(--color-gs00);
+}
+html:-moz-dir(rtl) .fld-folder-item .selected-indicator,
+html:-moz-dir(rtl) .fld-account-item .selected-indicator {
+  right: 1.1rem;
+  left: auto;
+}
+.fld-folder-item .fld-folder-selected-icon {
+  display: none;
+  float: left;
+  font-size: 3.2rem;
+  color: var(--color-gs70);
+}
+.focus.fld-folder-item .fld-folder-selected-icon {
+  color: var(--color-gs00);
+}
+.fld-folder-item.fld-folder-selected .fld-folder-selected-icon {
+  display: block;
+}
+html[dir="rtl"] .fld-folder-item.fld-folder-selected .fld-folder-selected-icon {
+  position: absolute;
+}
+.fld-folders-container .fld-folder-depth0 {
+  -moz-padding-start: 1rem;
+}
+.fld-folders-container .fld-folder-depth1 {
+  -moz-padding-start: 4.5rem;
+}
+.fld-folders-container .fld-folder-depth2 {
+  -moz-padding-start: 6rem;
+}
+.fld-folders-container .fld-folder-depth3 {
+  -moz-padding-start: 7.5rem;
+}
+.fld-folders-container .fld-folder-depth4 {
+  -moz-padding-start: 9rem;
+}
+.fld-folders-container .fld-folder-depth5 {
+  -moz-padding-start: 10.5rem;
+}
+.fld-folders-container .fld-folder-depthmax {
+  -moz-padding-start: 12rem;
+}
+.fld-acct-header:active,
+.fld-account-item:active,
+.fld-folder-item:active,
+.fld-folder-list-header:active,
+.fld-settings-link:active,
+.fld-nav-toolbar:active,
+.fld-nav-toolbar:active .fld-settings-link {
+  color: white;
+  border-color: #00caf2;
+  background: #00caf2;
+}
+.fld-folder-name {
+  font-size: 1.7rem;
+}
+.fld-folder-unread {
+  font-size: 1.7rem;
+}
+.fld-folder-name {
+  background: url(images/icons/ic_folder.png) no-repeat center left / 3.2rem auto;
+  
+  padding-left: 4rem;
+}
+.focus .fld-folder-name {
+  background: url(images/icons/ic_folder_focused.png) no-repeat center left / 3.2rem auto;
+}
+.fld-folder-item.fld-folder-selected .fld-folder-name {
+  background: none;
+  padding-left: 1rem;
+}
+html:-moz-dir(rtl) .fld-folder-name {
+  padding-right: 3.4rem;
+  padding-left: 0;
+  background-position: right center;
+}
+.fld-folder-name:active{
+  background-image: url('images/icons/folder_icon_press.png');
+}

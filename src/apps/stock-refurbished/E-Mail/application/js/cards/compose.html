@@ -1,0 +1,101 @@
+<section class="cmp-compose-header" role="region" data-statuscolor="default">
+  <header data-prop="headerNode">
+    <h1 id="compose-header" class="cmp-compose-header-label" data-prop="cmpTitle"></h1>
+  </header>
+</section>
+<div data-prop="scrollContainer" class="scrollregion-below-header"
+     role="heading" aria-labelledby="compose-header">
+  <div data-prop="addrBar" class="cmp-envelope-bar">
+    <div class="cmp-addr-bar">
+      <div data-event="keydown:onContainerKeydown"
+           class="cmp-envelope-line cmp-combo focusable"
+           role="textbox" data-prop="cmp_to">
+        <span class="cmp-to-label cmp-addr-label"
+              data-l10n-id="compose-to" aria-hidden="true"></span>
+        <div class="cmp-to-container cmp-addr-container">
+          <div class="cmp-bubble-container" data-prop="toContainer">
+              <input data-prop="toNode"
+                     data-event="keydown:onAddressKeydown,input:onAddressInput,focus:onAddressFocus"
+                     dir="auto" maxlength="255"
+                     class="cmp-to-text cmp-addr-text" type="email" />
+          </div>
+        </div>
+      </div>
+      <!-- XXX: spec calls for showing cc/bcc merged until selected,
+           but there is also the case where replying itself might need
+           to expand, so we are deferring that feature -->
+      <div data-event="keydown:onContainerKeydown"
+           class="cmp-envelope-line cmp-combo collapsed"
+           role="textbox" data-l10n-id="cc-group" data-prop="cmp_cc">
+        <span class="cmp-cc-label cmp-addr-label"
+               data-l10n-id="compose-cc" aria-hidden="true"></span>
+        <div class="cmp-cc-container cmp-addr-container">
+          <div class="cmp-bubble-container" data-prop="ccContainer">
+            <input data-prop="ccNode"
+                   data-event="keydown:onAddressKeydown,input:onAddressInput,focus:onAddressFocus"
+                   dir="auto" maxlength="255"
+                   class="cmp-cc-text cmp-addr-text" type="email" />
+          </div>
+        </div>
+      </div>
+      <div data-event="keydown:onContainerKeydown"
+           class="cmp-envelope-line cmp-combo collapsed"
+           role="textbox" data-l10n-id="bcc-group" data-prop="cmp_bcc">
+        <span class="cmp-bcc-label cmp-addr-label"
+               data-l10n-id="compose-bcc" aria-hidden="true"></span>
+        <div class="cmp-bcc-container cmp-addr-container">
+          <div class="cmp-bubble-container" data-prop="bccContainer">
+            <input data-prop="bccNode"
+                   data-event="keydown:onAddressKeydown,input:onAddressInput,focus:onAddressFocus"
+                   dir="auto" maxlength="255"
+                   class="cmp-bcc-text cmp-addr-text" type="email" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cmp-envelope-line cmp-subject focusable">
+      <span class="cmp-subject-label"
+            data-l10n-id="compose-subject" aria-hidden="true"></span>
+      <input data-prop="subjectNode"
+             data-event="keydown:onSubjectKeydown"
+             dir="auto" maxlength="255"
+             class="cmp-subject-text" type="text" data-l10n-id="subject" />
+    </div>
+    <div data-prop="errorMessage" class="cmp-error-message collapsed"></div>
+    <div data-prop="loadingAttachments" class="cmp-loading-attachments collapsed">
+      <span data-prop="loadingAttachmentsInfo"
+            class="cmp-loading-progress p-pri"
+            data-l10n-id="compose-attachment-loading"></span>
+      <progress></progress>
+    </div>
+    <div data-prop="attachmentTotal"
+         class="cmp-envelope-line cmp-attachment-total collapsed"
+         data-event="click:goAttachmentsList">
+      <span data-prop="attachmentLabel"
+            class="cmp-attachment-label cmp-addr-label p-sec"></span>
+      <span class="cmp-attachment-info">
+        <span data-prop="attachmentsName" class="cmp-attachment-name p-pri"></span>
+        <span data-prop="attachmentsSize" class="cmp-attachment-size p-pri"></span>
+      </span>
+    </div>
+    <div data-prop="attachmentsContainer" class="cmp-attachment-container collapsed">
+    </div>
+    <div> </div>
+  </div>
+  <li class="cmp-body-li focusable">
+    <div data-prop="textBodyNode" class="cmp-body-text p-pri"
+         contenteditable="true" role="textbox" aria-multiline="true"
+         data-l10n-id="compose-text" data-event="keydown:onBodyNodeKeydown"></div>
+  </li>
+  <div data-prop="htmlBodyContainer"
+       dir="auto"
+       class="cmp-body-html collapsed"
+       data-l10n-id="message-body-container">
+  </div>
+  <section id="suggestionsContainer" class="email-suggestion"
+           data-type="list" data-prop="suggestionsContainer">
+    <ul data-prop="suggestionsList" class="contact-list contact-suggestions-list"
+        role="listbox">
+    </ul>
+  </section>
+</div>

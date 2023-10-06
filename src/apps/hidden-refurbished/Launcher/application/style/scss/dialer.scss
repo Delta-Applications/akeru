@@ -1,0 +1,188 @@
+$suggestion-item-gap: 0.5rem;
+
+@import "helper/mixins";
+
+@mixin telNumberStyle {
+  direction: ltr;
+  font-variant-numeric: normal;
+}
+
+.app.grid.dialer {
+  background: unset;
+}
+
+.dialerBox {
+  @include fill('full', fixed);
+
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  background: linear-gradient(rgba(#000, 1), rgba(#000, 0.7)) no-repeat;
+
+  [data-transition-state="opened"] & {
+    animation: fade-in 0.16s;
+
+    @keyframes fade-in {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  }
+
+  &::after {
+    @include fill('bottom');
+
+    content: '';
+    height: 6rem;
+    background: linear-gradient(rgba(#000, 0), rgba(#000, 0.5)) no-repeat;
+
+    [data-transition-state="opened"] & {
+      animation: fade-in 0.3s linear;
+    }
+  }
+}
+
+.dialer-header {
+  padding: calc(0.5rem + var(--statusbar-height)) 1rem 0.5rem;
+  text-align: center;
+  color: var(--color-gs00);
+  background-color: var(--color-gs100);
+}
+
+.dialer-state {
+  height: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-gs20);
+}
+
+.dialer-info {
+  height: 1.2rem;
+  @include ellipsis;
+}
+
+.dialer-input {
+  @include ellipsis;
+  @include telNumberStyle;
+
+  display: block;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  border: unset;
+  color: inherit;
+  text-align: center;
+  font-size: 3rem;
+  line-height: 3rem;
+  text-overflow: ellipsis ellipsis;
+  background-color: unset;
+}
+
+.dialerSuggestions {
+  --color-dialer-suggestion-bgc: var(--color-gs00);
+  --color-dialer-suggestion-header: var(--color-gs90);
+  --color-dialer-suggestion-detail: var(--color-gs45);
+  --color-dialer-suggestion-mark: var(--color-gs70);
+
+  flex-grow: 1;
+  margin: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  overflow-y: scroll;
+  list-style-type: none;
+}
+
+.dialer-focusable {
+  // negative margin-bottom for scrollIntoView({ block: 'start' })
+  margin-bottom: calc(#{- $suggestion-item-gap} - var(--softkeybar-height));
+  padding-top: $suggestion-item-gap;
+  padding-bottom: calc(var(--softkeybar-height) + #{$suggestion-item-gap});
+
+  &:first-child {
+    padding-top: 1rem;
+  }
+
+  &:focus {
+    --color-dialer-suggestion-bgc: var(--color-lime);
+    --color-dialer-suggestion-header: var(--color-gs00);
+    --color-dialer-suggestion-detail: var(--color-gs00);
+    --color-dialer-suggestion-mark: var(--color-gs00);
+  }
+
+  // for performance, to choice top four items to apply animation
+  // 4: magic number for number of items in viewpart
+  &:nth-of-type(-n + 4) {
+    animation: dialer-bottomToUp 0.5s cubic-bezier(0, 0, 0, 1);
+
+    @keyframes dialer-bottomToUp {
+      from {
+        transform: translateY(3rem);
+        opacity: 0;
+      }
+
+      to {
+        transform: none;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.dialerSuggestion {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 5.2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.2rem;
+  background-color: var(--color-dialer-suggestion-bgc);
+
+  > *:empty {
+    display: none;
+  }
+
+  .large-text & {
+    height: 6rem;
+  }
+}
+
+.dialerSuggestion__header {
+  height: 2rem;
+  color: var(--color-dialer-suggestion-header);
+  @include ellipsis;
+
+  .large-text & {
+    height: 2.5rem;
+  }
+}
+
+.dialerSuggestion__detail {
+  color: var(--color-dialer-suggestion-detail);
+  @include ellipsis;
+
+  .large-text & {
+    height: 2.5rem;
+  }
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+
+  mark {
+    font-weight: bolder;
+    background-color: unset;
+    color: var(--color-dialer-suggestion-mark);
+  }
+}
+
+.dialerSuggestion__telNum {
+  @include telNumberStyle;
+}
+
+.with-dialer-stay-effect {
+  z-index: 3;
+  display: block !important;
+  animation: dialer-stay-effect 5s step-end;
+
+  @keyframes dialer-stay-effect {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+}

@@ -1,0 +1,26 @@
+
+li .button.icon-dialog{
+  margin: 0;
+  padding: 0;
+  height: auto;
+}
+li .button.icon-dialog,
+li .button.icon select{
+  color: #5f5f5f;
+  line-height: normal;
+  background: none;
+  border: none;
+  width: 100%;
+  min-height: 0;
+  font-size: 1.8rem;
+  font-style: normal;
+  text-shadow: none;
+}
+li .button.icon-dialog::before{
+  border: none !important;
+}
+li .button.icon select{
+  position: initial;
+  margin-left: 0.4rem;
+  height: 2.2rem;
+}

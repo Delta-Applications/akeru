@@ -1,0 +1,86 @@
+html {
+  font-size: 10px;
+  background-color: white;
+}
+
+#net-error.hidden {
+  display: none;
+}
+
+#net-error #actions {
+  display: none;
+}
+
+#net-error.no-frame #actions {
+  display: flex;
+}
+
+#net-error.framed form[role="dialog"] {
+  background-image: none;
+  color: black;
+  padding-bottom: 0;
+}
+
+#net-error.no-frame.alert .close {
+  width: 100%;
+}
+
+#net-error.no-frame.alert .reload {
+  display: none;
+}
+
+#net-error form[role="dialog"] > section {
+  text-align: center;
+}
+
+#failed-logo {
+  display: inline-block;
+  width: 9.6rem;
+  height: 9.6rem;
+  background-image: url(net_error/no_connectivity.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#failed-logo.no-logo {
+  height: 4rem;
+}
+
+#net-error h2 {
+  margin-top: 0.1rem;
+}
+
+#net-error p {
+  text-align: left;
+  margin-top: -1.4rem;
+}
+
+#net-error button {
+  margin-top: -1rem;
+  margin-left: 0rem;
+}
+
+#net-error button#refresh-btn,
+#net-error button#quit-btn {
+  margin-top: -0.4rem;
+}
+
+#net-error button.hidden {
+  display: none;
+}
+
+@media screen and (orientation: landscape) {
+  #net-error button {
+    font-size: 17px;
+  }
+
+  #failed-logo {
+    width: 5.4rem;
+    height: 5.4rem;
+  }
+
+  #net-error p {
+    text-align: center;
+  }
+
+}

@@ -1,0 +1,192 @@
+{
+  "232": {
+    "triggerNumbers": "122,128,144,140,141",
+    "allowSMSTech": true,
+    "allowHTTPTech": true,
+    "AllowTriggerBySMS112": false,
+    "shortNumber": "144",
+    "longNumber": "",
+    "allowWhenRoaming": false,
+    "amlServerAddress": ""
+  },
+  "206": {
+    "triggerNumbers": "112,100,101",
+    "allowSMSTech": true,
+    "allowHTTPTech": false,
+    "AllowTriggerBySMS112": true,
+    "shortNumber": "",
+    "longNumber": "",
+    "allowWhenRoaming": false,
+    "amlServerAddress": ""
+  },
+  "248": {
+    "triggerNumbers": "112",
+    "allowSMSTech": true,
+    "allowHTTPTech": false,
+    "AllowTriggerBySMS112": false,
+    "shortNumber": "",
+    "longNumber": "",
+    "allowWhenRoaming": false,
+    "amlServerAddress": ""
+  },
+  "244": {
+    "triggerNumbers": "112",
+    "allowSMSTech": true,
+    "allowHTTPTech": false,
+    "AllowTriggerBySMS112": true,
+    "shortNumber": "",
+    "longNumber": "",
+    "allowWhenRoaming": false,
+    "amlServerAddress": ""
+  },
+  "274": {
+    "triggerNumbers": "112",
+    "allowSMSTech": true,
+    "allowHTTPTech": false,
+    "AllowTriggerBySMS112": true,
+    "shortNumber": "",
+    "longNumber": "",
+    "allowWhenRoaming": false,
+    "amlServerAddress": ""
+  },
+  "272": {
+    "triggerNumbers": "112,999",
+    "allowSMSTech": true,
+    "allowHTTPTech": false,
+    "AllowTriggerBySMS112": false,
+    "shortNumber": "",
+    "longNumber": "",
+    "allowWhenRoaming": false,
+    "amlServerAddress": ""
+  },
+  "246": {
+    "triggerNumbers": "112,101,011,102,022",
+    "allowSMSTech": true,
+    "allowHTTPTech": false,
+    "AllowTriggerBySMS112": true,
+    "shortNumber": "112",
+    "longNumber": "",
+    "allowWhenRoaming": false,
+    "amlServerAddress": ""
+  },
+  "259": {
+    "triggerNumbers": "112,901,902,903",
+    "allowSMSTech": true,
+    "allowHTTPTech": false,
+    "AllowTriggerBySMS112": true,
+    "shortNumber": "",
+    "longNumber": "",
+    "allowWhenRoaming": false,
+    "amlServerAddress": ""
+  },
+  "204": {
+    "triggerNumbers": "112",
+    "allowSMSTech": true,
+    "allowHTTPTech": false,
+    "AllowTriggerBySMS112": false,
+    "shortNumber": "111",
+    "longNumber": "",
+    "allowWhenRoaming": false,
+    "amlServerAddress": ""
+  },
+  "503": {
+    "triggerNumbers": "111,000,112,999,911,117",
+    "allowSMSTech": true,
+    "allowHTTPTech": false,
+    "AllowTriggerBySMS112": true,
+    "shortNumber": "",
+    "longNumber": "",
+    "allowWhenRoaming": false,
+    "amlServerAddress": ""
+  },
+  "242": {
+    "triggerNumbers": "110,112,113",
+    "allowSMSTech": true,
+    "allowHTTPTech": false,
+    "AllowTriggerBySMS112": true,
+    "shortNumber": "",
+    "longNumber": "",
+    "allowWhenRoaming": false,
+    "amlServerAddress": ""
+  },
+  "293": {
+    "triggerNumbers": "112,911",
+    "allowSMSTech": true,
+    "allowHTTPTech": false,
+    "AllowTriggerBySMS112": false,
+    "shortNumber": "112",
+    "longNumber": "",
+    "allowWhenRoaming": false,
+    "amlServerAddress": ""
+  },
+  "424": {
+    "triggerNumbers": "999,112,911",
+    "allowSMSTech": true,
+    "allowHTTPTech": false,
+    "AllowTriggerBySMS112": true,
+    "shortNumber": "",
+    "longNumber": "",
+    "allowWhenRoaming": false,
+    "amlServerAddress": ""
+  },
+  "430": {
+    "triggerNumbers": "999,112,911",
+    "allowSMSTech": true,
+    "allowHTTPTech": false,
+    "AllowTriggerBySMS112": true,
+    "shortNumber": "",
+    "longNumber": "",
+    "allowWhenRoaming": false,
+    "amlServerAddress": ""
+  },
+  "431": {
+    "triggerNumbers": "999,112,911",
+    "allowSMSTech": true,
+    "allowHTTPTech": false,
+    "AllowTriggerBySMS112": true,
+    "shortNumber": "",
+    "longNumber": "",
+    "allowWhenRoaming": false,
+    "amlServerAddress": ""
+  },
+  "234": {
+    "triggerNumbers": "112,999",
+    "allowSMSTech": true,
+    "allowHTTPTech": false,
+    "AllowTriggerBySMS112": true,
+    "shortNumber": "999",
+    "longNumber": "",
+    "allowWhenRoaming": true,
+    "amlServerAddress": ""
+  },
+  "235": {
+    "triggerNumbers": "112,999",
+    "allowSMSTech": true,
+    "allowHTTPTech": false,
+    "AllowTriggerBySMS112": true,
+    "shortNumber": "999",
+    "longNumber": "",
+    "allowWhenRoaming": true,
+    "amlServerAddress": ""
+  },
+  "238": {
+    "triggerNumbers": "112,114",
+    "allowSMSTech": true,
+    "allowHTTPTech": false,
+    "AllowTriggerBySMS112": true,
+    "shortNumber": "",
+    "longNumber": "",
+    "allowWhenRoaming": false,
+    "amlServerAddress": ""
+  },
+  "240": {
+    "triggerNumbers": "112",
+    "allowSMSTech": true,
+    "allowHTTPTech": false,
+    "AllowTriggerBySMS112": true,
+    "shortNumber": "",
+    "longNumber": "",
+    "allowWhenRoaming": false,
+    "amlServerAddress": ""
+  }
+}

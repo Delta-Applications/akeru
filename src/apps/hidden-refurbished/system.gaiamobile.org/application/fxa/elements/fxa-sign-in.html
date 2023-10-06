@@ -1,0 +1,23 @@
+<element name="fxa-sign-in" extends="section">
+  <template>
+    <section class="vertical">
+      <ul class="tcl-nav-box">
+        <li>
+          <label for="fxa-email-input" data-l10n-id="fxa-signin-email">Account Name</label>
+          <input id="fxa-email-input" data-l10n-id="fxa-enter-email-input" type="email" x-inputmode="plain" maxlength="100">
+        </li>
+        <li>
+          <label for="fxa-pw-set-input" data-l10n-id="fxa-signin-password">Password</label>
+          <input id="fxa-pw-input" data-l10n-id="fxa-password" type="password" x-inputmode="plain" maxlength="20">
+        </li>
+        <li>
+          <label class="pack-checkbox" for="fxa-show-pw">
+            <input id="fxa-show-pw" type="checkbox">
+            <span data-l10n-id="fxa-show-password"></span>
+          </label>
+        </li>
+      </ul>
+    </section>
+    <script src="js/screens/fxam_sign_in.js"></script>
+  </template>
+</element>

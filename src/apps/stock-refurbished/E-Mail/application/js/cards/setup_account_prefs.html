@@ -1,0 +1,84 @@
+<!-- need this section element to keep building blocks happy. Too bad it
+  expects a section element -->
+<section class="skin-organic bbshim settings-account-common" role="region">
+  <header class="sup-account-header">
+    <h1 id="setup-pref-header" class="sup-account-header-label"
+        data-l10n-id="setup-account-header3"
+        style="margin-left:0px"></h1>
+  </header>
+  <section class="scrollregion-below-header skin-organic" role="heading" aria-labelledby="setup-pref-header">
+    <ul class="tng-list">
+      <li class="settings-account-label-li sup-account-li" role="menuitem">
+        <span class="input-title" data-l10n-id="account-label"></span>
+        <input data-prop="prefAccountLabelNode" class="pref-account-label no-select"
+               type="text"
+               data-event="input:onInfoInput"
+               maxlength="50"
+               x-inputmode="verbatim"
+               inputmode="verbatim"/>
+      </li>
+      <li class="syncinterval-setting select-item" role="menuitem">
+        <label data-l10n-id="settings-account-check-mail" class="tng-account-check-interval-label list-text">
+          ChecK FoR NeW MessageS</label>
+        <select class="tng-account-check-interval mail-select"
+                data-l10n-id="settings-account-check-mail-select" data-track-class="tng-account-check-interval-label">
+          <option value="0" data-l10n-id="settings-check-every-manual">
+            ManuallY</option>
+          <option value="300000" data-l10n-id="settings-check-every-5min">
+            5 MinuteS</option>
+          <option value="600000" data-l10n-id="settings-check-every-10min">
+            10 MinuteS</option>
+          <option value="900000" data-l10n-id="settings-check-every-15min">
+            15 MinuteS</option>
+          <option value="1800000" data-l10n-id="settings-check-every-30min">
+            30 MinuteS</option>
+          <option value="3600000" data-l10n-id="settings-check-every-60min">
+            60 MinuteS</option>
+        </select>
+      </li>
+      <li role="menuitem">
+        <label class="tng-notify-mail-label list-text" data-l10n-id="settings-account-display-notifications">
+          Display New Email Notifications
+        </label>
+        <select class="tng-notify-mail mail-select" data-track-class="tng-notify-mail-label">
+          <option value="true" data-l10n-id="select-option-on">
+            On</option>
+          <option value="false" data-l10n-id="select-option-off">
+            Off</option>
+        </select>
+      </li>
+      <li role="menuitem">
+        <label class="tng-sound-onsend-label list-text" data-l10n-id="settings-account-play-sound-onsend">
+          PlaY SounD AfteR MessagE SenT
+        </label>
+        <select class="tng-sound-onsend mail-select" data-track-class="tng-sound-onsend-label">
+          <option value="true" data-l10n-id="select-option-on">
+            On</option>
+          <option value="false" data-l10n-id="select-option-off">
+            Off</option>
+        </select>
+      </li>
+    </ul>
+    <header class="tng-main-accounts-label">
+      <h2 data-l10n-id="settings-account-signature-label"></h2>
+    </header>
+    <ul class="tng-list">
+      <li role="menuitem">
+        <label class="tng-signature-enable-label list-text" data-l10n-id="settings-account-signature-label">
+          SignaturE
+        </label>
+        <select class="tng-signature-enable mail-select" data-track-class="tng-signature-enable-label">
+          <option value="true" data-l10n-id="select-option-on">
+            On</option>
+          <option value="false" data-l10n-id="select-option-off">
+            Off</option>
+        </select>
+      </li>
+      <li class="settings-account-signature settings-input-list">
+        <div data-prop="signatureNodePref" class="signature-box focusable no-select" contenteditable="true"
+          role="textbox" aria-multiline="true"
+          data-event="keydown:onBodyNodeKeydown"></div>
+      </li>
+    </ul>
+  </section>
+</section>

@@ -1,0 +1,114 @@
+
+h1, .h1 {
+  
+  font-weight: 300;
+  font-size: 1.7rem;
+}
+h2, .h2 {
+  
+  font-weight: 600;
+  font-size: 1.7rem;
+}
+h3, .h3 {
+  
+  font-weight: 400;
+  font-size: 1.4rem;
+}
+h4, .h4 {
+  
+  font-weight: 400;
+  font-size: 1.4rem;
+}
+h5, .h5 {
+  
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+.p-pri {
+  
+  font-weight: 400;
+  font-size: 1.7rem;
+}
+.p-sec {
+  
+  font-weight: 400;
+  font-size: 1.4rem;
+}
+.p-thi {
+  
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+p, .p,
+ul, .ul {
+  
+  font-weight: 400;
+  font-size: 1.7rem;
+}
+.p-link {
+  
+  font-weight: 700;
+  font-size: 1.7rem;
+  text-decoration: underline;
+}
+.p-btn {
+  
+  font-weight: 400;
+  font-size: 1.7rem;
+  text-transform: capitalize;
+}
+.large-text h1,
+.large-text .h1 {
+  
+  font-size: 2.2rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.large-text h2,
+.large-text .h2 {
+  
+  font-size: 2.2rem;
+}
+.large-text h3,
+.large-text .h3 {
+  
+  font-size: 1.8rem;
+}
+.large-text h4,
+.large-text .h4 {
+  
+  font-size: 1.8rem;
+}
+.large-text h5,
+.large-text .h5 {
+  
+  font-size: 1.8rem;
+}
+.large-text .p-pri {
+  
+  font-size: 2.2rem;
+}
+.large-text .p-sec {
+  
+  font-size: 1.8rem;
+}
+.large-text .p-thi {
+  
+  font-size: 1.6rem;
+}
+.large-text p,
+.large-text .p,
+.large-text ul,
+.large-text .ul {
+  
+  font-size: 2.2rem;
+}
+.large-text .p-link {
+  
+  font-size: 2.2rem;
+}
+.large-text .p-btn {
+  
+  font-size: 2.2rem;
+}

@@ -1,0 +1,156 @@
+#messaging-settings-container .container-header {
+  padding: 0 1rem;
+  line-height: 2.4rem
+}
+
+#messaging-settings-container header {
+  background-color: var(--color-gs10);
+}
+
+#messaging-settings-container li {
+  min-height: 6rem;
+}
+
+#messaging-settings-container li > a {
+  color: var(--color-gs90);
+  display: inline-block;
+  padding: 0.6rem 1rem;
+}
+
+#messaging-settings-container li > a > small {
+  color: var(--color-gs70);
+  display: block;
+  margin-top: 0.5rem;
+  padding-top: 0.3rem;
+  height: 50%;
+}
+
+#messaging-settings-container li.focus > a,
+#messaging-settings-container li.focus > a > small,
+#messaging-settings-container li.focus > a > select {
+  color: var(--color-gs00);
+}
+
+.input-dialog {
+  display: contents !important;
+  width: 90% !important;
+  line-height: 2rem;
+  margin: 0 1rem 1rem 1rem;
+}
+
+.h1-dialog {
+  text-align: center;
+}
+
+.div-dialog {
+  background-color: white;
+  height: auto;
+}
+
+.p-dialog {
+  background-color: white !important;
+  font-size: 1.4rem;
+}
+
+.span-dialog {
+  font-size: 1rem;
+  padding-left: 1rem;
+  color: black;
+  margin-top: -0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.dialog-hide {
+  display: none !important;
+}
+
+/**
+ * Emergency Alert Panel View
+ */
+
+ul {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  list-style: none;
+}
+
+ul li {
+  -moz-box-sizing: border-box;
+  position: relative;
+  height: 100%;
+  margin: 0;
+  color: #000;
+  background: var(--color-gs00);
+}
+
+ul li,
+ul li > a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+ul li > a.menu-item > * {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-right: 1.8rem;
+}
+
+html[dir=rtl] ul li > a.menu-item > * {
+  padding-right: 0;
+}
+
+html[dir=ltr] li#emergency-alert-item > a.menu-item:after {
+  font-family: "gaia-icons";
+  content: "forward";
+  position: absolute;
+  top: calc(50% - 1.5rem);
+  right: 0.5rem;
+  font-size: 3.2rem;
+  color: var(--color-gs45);
+}
+
+html[dir=ltr] li#emergency-alert-item > a.menu-item.alert:after {
+  content: "alertforward";
+}
+
+html[dir=rtl] li#emergency-alert-item > a.menu-item:before {
+  font-family: "gaia-icons";
+  content: "forward";
+  position: absolute;
+  top: calc(50% - 1.5rem);
+  left: 0;
+  font-size: 3.2rem;
+  color: var(--color-gs45);
+  transform: rotate(180deg);
+}
+	
+html[dir=rtl] li#emergency-alert-item > a.menu-item.alert:before {
+  content: "alertforward";
+}
+	
+html[dir=ltr] li.focus#emergency-alert-item > a.menu-item:after,
+html[dir=rtl] li.focus#emergency-alert-item > a.menu-item:before {
+  color: var(--color-gs00) !important;
+}
+
+.settings-select {
+  background: none;
+  border: transparent;
+  color: var(--color-gs70);
+  margin-left: -0.3rem;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+/* << [LIO-2157]: BDC kanxj 20210107 The service center of SMS was displayed incorrect in Arabic >> */
+.smscnumber {
+  direction: initial !important;
+}
+
+.large-text .settings-select {
+  font-size: 1.8rem;
+}

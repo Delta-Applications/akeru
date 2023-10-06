@@ -1,0 +1,30 @@
+'use strict';var DownloadStore=(function(){var datastore;const DATASTORE_NAME='download_store';var downloadListDB;var downloadList=[];var lastRevisionId;const LIST_DB='download_list';const LIST_STORE='download_list';const LIST_KEY=0;const REVISION_KEY=1;var Request=function(){this.done=function(result){if(typeof this.onsuccess==='function'){this.result=result;window.setTimeout(function(){this.onsuccess({target:this});}.bind(this),0);}};this.failed=function(error){if(typeof this.onerror==='function'){this.error=error;window.setTimeout(function(){this.onerror({target:this});}.bind(this),0);}};};function promisify(request){return new Promise(function(resolve,reject){request.onsuccess=(event)=>{resolve(event.target.result);};request.onerror=(event)=>{reject(event.target.errorCode);};});}
+var readyState;function init(success,fail){if(readyState==='initialized'){success();return;}
+if(readyState==='initializing'){document.addEventListener('ds-initialized',function oninitalized(){document.removeEventListener('ds-initialized',oninitalized);success();});return;}
+readyState='initializing';if(!navigator.getDataStores){var messageError='Data store: DataStore API is not working';console.error(messageError);fail({message:messageError});return;}
+navigator.getDataStores(DATASTORE_NAME).then(function(ds){var messageError='Download Store: Cannot get access to the DataStore';if(ds.length<1){console.error(messageError);throw({message:messageError});}
+datastore=ds[0];}).then(function(){return openDownloadListIndexedDB();}).then(function(db){downloadListDB=db;var listStore=downloadListDB.transaction(LIST_STORE,'readonly').objectStore(LIST_STORE);return Promise.all([promisify(listStore.get(LIST_KEY)).then((value)=>{downloadList=value;}),promisify(listStore.get(REVISION_KEY)).then((value)=>{lastRevisionId=value;})]);}).then(function(){notifyOpenSuccess(success);}).catch(function(e){console.error('Error while opening the Download Store: ',e.message);fail(e);});}
+function openDownloadListIndexedDB(){return new Promise(function(resolve,reject){var request=indexedDB.open(LIST_DB);request.onsuccess=function(event){var db=event.target.result;resolve(db);};request.onerror=function(event){reject(event.target.errorCode);};request.onupgradeneeded=function(event){var db=event.target.result;promisify(db.createObjectStore(LIST_STORE)).then(()=>{var listStore=db.transaction(LIST_STORE,'readwrite').objectStore(LIST_STORE);return Promise.all([promisify(listStore.add([],LIST_KEY)),promisify(listStore.add(0,REVISION_KEY))]);}).catch(reject);};request.onblocked=function(event){reject(event.target.errorCode);};});}
+function notifyOpenSuccess(cb){readyState='initialized';window.setTimeout(cb,0);document.dispatchEvent(new CustomEvent('ds-initialized'));}
+var fieldsToPropagate=['url','path','totalBytes','contentType','startTime','state','storageName','storagePath'];function cookDownload(download){var ret=Object.create(null);fieldsToPropagate.forEach(function(field){ret[field]=download[field];});ret.finalizeTime=new Date();return ret;}
+function defaultError(req){return defaultErrorCb.bind(null,req);}
+function defaultErrorCb(request,error){request.failed(error);}
+function defaultSuccess(req){return defaultSuccessCb.bind(null,req);}
+function defaultSuccessCb(request,result){request.done(result);}
+function updateDownloadList(){var cursor=datastore.sync(lastRevisionId);function cursorResolve(task){switch(task.operation){case'done':lastRevisionId=task.revisionId;var listStore=downloadListDB.transaction(LIST_STORE,'readwrite').objectStore(LIST_STORE);return Promise.all([promisify(listStore.put(downloadList,LIST_KEY)),promisify(listStore.put(lastRevisionId,REVISION_KEY))]);case'clear':downloadList=[];break;case'add':downloadList.push(task.id);break;case'update':break;case'remove':var i=downloadList.indexOf(task.id);if(i>=0){downloadList.splice(i,1);}
+break;}
+return cursor.next().then(cursorResolve);}
+return cursor.next().then(cursorResolve);}
+function doAdd(download,req){var downloadCooked=cookDownload(download);datastore.add(downloadCooked).then(function(id){downloadCooked.id=id;datastore.put(downloadCooked,id).then(function(){req.done(downloadCooked);},defaultError(req));},defaultError(req));}
+function add(download){var req=new Request();window.setTimeout(function(){init(doAdd.bind(null,download,req),req.failed.bind(req));});return req;}
+function doGet(id,req){datastore.get(id).then(function(download){req.done(download);},defaultError(req));}
+function get(id){var req=new Request();window.setTimeout(function(){init(doGet.bind(null,id,req),req.failed.bind(req));});return req;}
+function doGetAll(req){updateDownloadList().then(function(){datastore.get.apply(datastore,downloadList).then(defaultSuccess(req),defaultError(req));},defaultError(req));}
+function getAll(){var req=new Request();window.setTimeout(function(){init(doGetAll.bind(null,req),req.failed.bind(req));});return req;}
+function doRemove(id,req){datastore.remove(id).then(function(success){if(success){defaultSuccess(req);}else{req.failed({message:'The download with id: '+id+'does not exist'});}},defaultError(req));}
+function remove(download){var req=new Request();window.setTimeout(function(){init(doRemove.bind(null,download.id,req),req.failed.bind(req));});return req;}
+function doAddListener(listener){datastore.addEventListener('change',listener);}
+function addListener(listener){var req=new Request();window.setTimeout(function(){init(doAddListener.bind(null,listener),req.failed.bind(req));});return req;}
+function doRemoveListener(listener){datastore.removeEventListener('change',listener);}
+function removeListener(listener){var req=new Request();window.setTimeout(function(){init(doRemoveListener.bind(null,listener),req.failed.bind(req));});return req;}
+return{get:get,getAll:getAll,add:add,remove:remove,addListener:addListener,removeListener:removeListener};}());

@@ -1,0 +1,9 @@
+<svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 52 104">
+  <title>ic_launcher_add</title>
+  <style>.icon{fill:#e0e0e0;fill-rule:evenodd;opacity:.35}.lighter{opacity:.2}</style>
+  <symbol id="ic_launcher_add" viewBox="0 0 52 52">
+    <path class="cls-1" d="M34,0H18A18,18,0,0,0,0,18V34A18,18,0,0,0,18,52H34A18,18,0,0,0,52,34V18A18,18,0,0,0,34,0Zm2,28H28V36H25V28H17V25h8V17H28v8h8Z"/>
+  </symbol>
+  <use class="icon lighter" xlink:href="#ic_launcher_add" y="-26" />
+  <use class="icon" xlink:href="#ic_launcher_add" y="26" />
+</svg>

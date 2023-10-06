@@ -1,0 +1,5 @@
+'use strict';var NavigationMap={currentActivatedLength:0,dialogId:null,focusedElement:null,focusedMenuElement:null,focusedDialogElement:null,focusedControls:[],navType:null,init:function(){this.start();},start:function(){},create:function(){var self=this;self.focusedElement=NavigationHelper.reset(ViewManager.navigator,ViewManager.getControls,ViewManager.focus,ViewManager.curViewId,false);},scrollToElement:function(el,evt){function isVisible(el){if(el.offsetWidth===0||el.offsetHeight===0){return false;}
+var height=document.documentElement.clientHeight-30,rects=el.getClientRects();for(var i=0,l=rects.length;i<l;i++){var r=rects[i];var inView=false;if((r.bottom>0&&r.bottom<=height)&&(r.top>0&&r.top>=50)){inView=true;}
+if(inView){return true;}}
+return false;}
+if(!isVisible(el)){if(evt){if(evt.key==='ArrowDown'||el.getAttribute('data-nav-id')==='0'){el.scrollIntoView(false);}else if(evt.key==='ArrowUp'){el.scrollIntoView(true);}}else{el.scrollIntoView(false);}}}};

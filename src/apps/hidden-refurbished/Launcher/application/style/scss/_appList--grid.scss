@@ -1,0 +1,175 @@
+.appList[data-view-mode="grid"] {
+  $title-height: 5.5rem;
+
+  $app-wall-width: var(--app-wall-width);
+  $app-wall-height: var(--app-wall-height);
+
+  --app-grid-padding-bottom: 1rem;
+  --app-wall-width: calc(100vw - 2.1rem * 2);
+  --app-wall-height: var(--app-wall-width);
+
+  padding:
+    calc(var(--statusbar-height) + #{$title-height})
+    2.1rem
+    calc(var(--softkeybar-height) + var(--app-grid-padding-bottom));
+
+  @media only screen and (orientation: landscape) {
+    --app-grid-padding-bottom: 1rem * 0;
+    --app-wall-height: 12.9rem;
+  }
+
+  .pagination {
+    @include fill('right');
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    &:-moz-dir(rtl) {
+      left: 0;
+      right: unset;
+    }
+  }
+
+  .page-indicator {
+    width: 0.4rem;
+    height: 0.4rem;
+    margin: 0.25rem 0.4rem;
+    border-radius: 50%;
+    background-color: var(--color-gs00);
+    opacity: 0.2;
+    transition: opacity 0.2s;
+
+    &.active {
+      transform: scale(1.5);
+      opacity: 1;
+    }
+  }
+
+  .appList__container {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    visibility: hidden; // hacks for hide scrollbar with `visibility: visible` children
+
+    > * {
+      visibility: visible;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      width: $grid-size;
+      height: 100%;
+      visibility: hidden;
+      margin-top: - $grid-size;
+    }
+  }
+
+  .app-wall {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin:
+      calc((#{$grid-size} * #{$row} - #{$app-wall-height}) / (2 * (#{$row} - 1)))
+      calc((#{$grid-size} * #{$col} - #{$app-wall-width}) / (2 * (#{$col} - 1)));
+
+    &::after {
+      content: '';
+      flex-grow: 1;
+      order: 100000; // keep it as last one
+    }
+  }
+
+  .app-tile {
+    width: $grid-size;
+    height: $grid-size;
+    margin:
+      calc((#{$grid-size} * #{$row} - #{$app-wall-height}) / (-2 * (#{$row} - 1)))
+      calc((#{$grid-size} * #{$col} - #{$app-wall-width}) / (-2 * (#{$col} - 1)));
+  }
+
+  .app {
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    visibility: visible;
+    transition: opacity 0.4s;
+    .app__icon {
+      @include flickerEffect;
+
+      .new__install {
+        @include newInstall;
+      }
+    }
+
+    &.has-notices {
+      .app__notices {
+        @include appNotices;
+      }
+    }
+
+    &.new-install {
+      .new__install {
+        opacity: $new-install-opacity;
+      }
+    }
+  }
+
+  .app__icon {
+    color: var(--default-grid-highlight-color);
+
+    // highlight
+    &::before {
+      @include fill;
+
+      content: '';
+      z-index: -1;
+      margin: ($icon-size - $highlight-size) / 2;
+      border-radius: $highlight-radius;
+      // background-color: currentColor;
+      visibility: visible;
+      opacity: 0;
+      border: 0.2rem solid currentColor;
+    }
+  }
+
+  .app__name {
+    @include ellipsis;
+
+    position: fixed;
+    top: var(--statusbar-height);
+    left: 0;
+    right: 0;
+    height: $title-height;
+    line-height: 3.5rem;
+    padding: 1rem;
+    text-align: center;
+    visibility: hidden;
+
+    .large-text & {
+      font-size: 2.8rem;
+    }
+  }
+
+  .app.is-focus-app,
+  .app:focus {
+    .app__icon::before {
+      opacity: 1;
+    }
+    .app__name {
+      visibility: visible;
+    }
+    .app__notices {
+      color: var(--color-gs00);
+    }
+  }
+
+  // highlight
+  &.is-reordering .app:focus .app__icon::before {
+    box-shadow:
+      inset 0 0 0 0.3rem,
+      inset 0 0 0 $icon-size rgba(0, 0, 0, 0.4);
+  }
+}

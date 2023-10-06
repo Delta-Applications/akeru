@@ -1,0 +1,149 @@
+@import "helper/mixins";
+
+$row: var(--grid-row, 3);
+$col: var(--grid-col, 3);
+
+$grid-size: 6.2rem;
+$icon-size: 5.6rem;
+$favicon-size: 2.2rem;
+$highlight-size: $grid-size;
+$highlight-radius: percentage(1.8rem / $icon-size);
+
+$title-height: 5.5rem;
+
+$app-wall-width: var(--app-wall-width);
+$app-wall-height: var(--app-wall-height);
+
+.appList {
+  --app-grid-padding-bottom: 1rem;
+  --app-wall-width: calc(100vw - 2.1rem * 2);
+  --app-wall-height: var(--app-wall-width);
+  @include fill('full', fixed);
+
+  padding-top: var(--statusbar-height);
+  padding-bottom: var(--softkeybar-height);
+  animation: fadeIn 0.15s cubic-bezier(0, 0, 0, 1);
+
+  &.is-reordering {
+    background-color: var(--color-gs100);
+
+    .app:not(:focus) {
+      opacity: 0.3;
+    }
+  }
+}
+
+.large-text .appList[data-view-mode="list"].folder header h1 {
+  font-size: 2.8rem;
+}
+
+.appList[data-view-mode="list"].folder {
+  $font-size-header: 2.2rem;
+  $font-size-app-name: 2.1rem;
+
+  --header-height: 5.6rem;
+
+  @media only screen and (orientation: landscape) {
+    --header-height: 0rem;
+  }
+
+  background-color: var(--color-gs100);
+  padding-top: 0;
+
+  header {
+    height: calc(var(--statusbar-height) + var(--header-height));
+    padding-top: var(--statusbar-height);
+    background-color: var(--header-purple-background);
+    h1 {
+      font-size: $font-size-header;
+      font-weight: 700;
+      text-align: center;
+      color: var(--color-gs00);
+      padding: 1rem 0;
+      margin: 0;  // Eliminate the default margin for h1 element.
+    }
+  }
+
+  .appList__container {
+    height: calc(100vh - var(--statusbar-height) - var(--header-height) - var(--softkeybar-height));
+    background-color: var(--color-gs00);
+    .app-wall {
+      background-color: var(--color-gs00);
+      .app {
+        font-size: $font-size-app-name;
+        height: 6.2rem;
+        color: var(--color-gs100);
+        &:focus {
+          color: var(--color-gs00);
+        }
+      }
+    }
+  }
+
+  .app {
+    &.new-install {
+      .new__install {
+        border-color: #8a8a8a;
+        &::before {
+          border-color: #8a8a8a;
+        }
+      }
+    }
+
+    &.has-notices {
+      .app__notices {
+        @include appNotices;
+      }
+    }
+  }
+}
+
+.app {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: $grid-size;
+}
+
+.app__icon {
+  --icon-size: $icon-size;
+
+  position: relative;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  flex-shrink: 0;
+  visibility: hidden;
+
+  // icon
+  &--hq,
+  &--favicon,
+  &::after {
+    @include fill;
+
+    content: '';
+    background-image: inherit;
+    background-size: var(--icon-size) var(--icon-size);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    visibility: visible;
+  }
+
+  &--favicon {
+    transform: scale($favicon-size / $icon-size);
+    z-index: 2;
+  }
+
+  &--hq {
+    display: none;
+  }
+}
+
+.app {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--color-gs00);
+}
+
+@import 'appList--grid';
+@import 'appList--list';
+@import 'appList--single';

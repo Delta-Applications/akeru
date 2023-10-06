@@ -1,0 +1,81 @@
+/*
+ * Added for pre-pay/post-pay selection for BTS-1113
+ * Porting by wangzhigang 20190423
+ */
+p {
+  padding: 0 1rem 0 1rem;
+}
+ section[role="region"] {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+
+header h1 {
+  line-height: var(--header-height);
+  background: var(--header-background);
+  color: var(--color-gs00);
+  padding: 0 1rem;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 0;
+}
+
+.apnheader {
+    background-color: var(--header-background);
+    position: absolute;
+    width: 100%;
+    color: white;
+}
+
+#apnconfig-list {
+  padding:0;
+  margin:0;
+}
+#apnconfig-list li {
+  position: relative;
+  line-height: 6rem;
+  list-style: none;
+}
+
+#apnconfig-list li p {
+  width: calc(100% - (2rem + 3rem));
+  margin:0;
+}
+
+.apnselection-key {
+  position: absolute;
+  box-sizing: border-box;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+}
+
+.list-item {
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  .icon {
+    min-width: 3.2rem;
+  }
+
+  [data-icon] {
+    font-size: 3.2rem;
+    height: 100%;
+    color: var(--highlight-color);
+  }
+
+  &:focus {
+    & {
+      background-color:var(--highlight-color);
+      color: var(--color-gs00);
+    }
+    [data-icon] {
+      color: var(--color-gs00);
+    }
+  }
+}

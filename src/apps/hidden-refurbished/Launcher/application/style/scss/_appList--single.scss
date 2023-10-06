@@ -1,0 +1,143 @@
+.appList[data-view-mode="single"] {
+  $title-height: 3.8rem;
+
+  --singleview-gap-top: 5.5rem;
+  --singleview-gap-bottom: 3.2rem;
+  --singleview-gap-left: 1rem;
+  --focus-height: 9.6rem;
+
+  @media only screen and (orientation: landscape) {
+    --singleview-gap-top: 0.8rem;
+    --singleview-gap-bottom: 0.8rem;
+    --singleview-gap-left: 2rem;
+    --focus-height: 5.6rem;
+  }
+
+  padding: unset;
+
+  .appList__container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  .app-wall {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto;
+    visibility: hidden;
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      height: $grid-size * 2;
+      flex-shrink: 0;
+    }
+  }
+
+  .app {
+    position: relative;
+    height: 100vh;
+    margin-top: calc((100vh - #{$icon-size}) / -2);
+    margin-bottom: calc((100vh - #{$icon-size}) / -2);
+    justify-content: center;
+    visibility: visible;
+    opacity: 0.15;
+
+    .app__icon {
+      @include flickerEffect;
+    }
+
+    &.has-notices {
+      .app__notices {
+        @include appNotices;
+
+        width: 3rem;
+        height: 3rem;
+        border-radius: 1.5rem 1.5rem 1.5rem 0;
+        box-shadow: 0 0.4rem 0.8rem 0 rgba(0, 0, 0, 0.5);
+        left: 8rem;
+        top: 0.2rem;
+      }
+    }
+
+    &.is-focus-app,
+    &:focus {
+      height: 100vh;
+      margin-top: calc((100vh - var(--focus-height)) / -2);
+      margin-bottom: calc((100vh - var(--focus-height)) / -2);
+      opacity: 1;
+
+      .app__icon {
+        $offsetY: calc(#{$grid-size} + var(--statusbar-height) + var(--singleview-gap-top) - 50vh);
+        // reset scale and offsetY
+        transform: translateY($offsetY);
+
+        &::before {
+          opacity: 1;
+        }
+
+        &--hq {
+          display: block;
+          z-index: 1;
+        }
+      }
+
+      .app__name {
+        opacity: 1;
+      }
+    }
+  }
+
+  .app__icon {
+    --icon-size: $icon-size * 2;
+
+    position: relative;
+    width: var(--icon-size);
+    height: var(--icon-size);
+    transform: translateX(calc(var(--singleview-gap-left) + #{$icon-size / 2} - 50vw)) scale(0.5);
+    color: var(--default-grid-highlight-color);
+
+    &:-moz-dir(rtl) {
+      transform: translateX(calc(-1 * (var(--singleview-gap-left) + #{$icon-size / 2} - 50vw))) scale(0.5);
+    }
+
+    // highlight
+    &::before {
+      @include fill;
+
+      content: '';
+      z-index: -1;
+      margin: $icon-size - $grid-size;
+      border-radius: $highlight-radius;
+      background-color: currentColor;
+      visibility: visible;
+      opacity: 0;
+    }
+  }
+
+  .app__name {
+    @include ellipsis;
+
+    cursor: pointer;
+    position: fixed;
+    left: 1rem;
+    right: 1rem;
+    bottom: calc(var(--softkeybar-height) + var(--singleview-gap-bottom));
+    font-size: 2.8rem;
+    line-height: $title-height;
+    text-align: center;
+    opacity: 0;
+  }
+
+  // highlight
+  &.is-reordering .app:focus .app__icon::before {
+    box-shadow:
+      inset 0 0 0 0.4rem,
+      inset 0 0 0 $icon-size rgba(0, 0, 0, 0.4);
+  }
+}

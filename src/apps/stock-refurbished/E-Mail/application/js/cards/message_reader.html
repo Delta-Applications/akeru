@@ -1,0 +1,76 @@
+<section class="msg-reader-header" role="region" data-statuscolor="default">
+  <header>
+    <h1 class="msg-reader-header-label">
+      <menu class="msg-reader-menu" type="toolbar">
+        <div data-prop="previousBtn" class="msg-left-btn">
+          <span data-prop="previousIcon" class="icon icon-previous"></span>
+        </div>
+        <div id="msg-reader-all-header">
+          <div id="msg-reader-header-text-item">
+            <div dir="auto" id="msg-reader-header-label"></div>
+          </div>
+        </div>
+        <div data-prop="nextBtn" class="msg-right-btn">
+          <span data-prop="nextIcon" class="icon icon-next"></span>
+        </div>
+      </menu>
+    </h1>
+    <h2 class="msg-reader-header-datetime">
+      <span dir="auto" id="msg-reader-header-date-time"></span>
+    </h2>
+  </header>
+</section>
+<div data-prop="scrollContainer"
+     class="scrollregion-below-header scrollregion-horizontal-too"
+     role="heading" aria-labelledby="message-reader-header">
+  <div data-prop="envelopeBar" class="msg-envelope-bar">
+    <div class="msg-envelope-line msg-envelope-from-line focusable"
+         role="menuitem">
+      <span class="msg-envelope-key"
+            data-event="click:viewSender"
+            data-l10n-id="envelope-from"></span>
+    </div>
+    <!-- the details starts out collapsed, but can be toggled -->
+    <div class="msg-envelope-details">
+      <div class="msg-envelope-line msg-envelope-to-line focusable"
+           role="menuitem">
+        <span class="msg-envelope-key"
+              data-event="click:viewRecipients"
+              data-l10n-id="envelope-to"></span>
+      </div>
+      <div class="msg-envelope-line msg-envelope-cc-line focusable"
+           role="menuitem">
+        <span class="msg-envelope-key"
+              data-event="click:viewCc"
+              data-l10n-id="envelope-cc"></span>
+      </div>
+      <div class="msg-envelope-line msg-envelope-bcc-line focusable"
+           role="menuitem">
+        <span class="msg-envelope-key"
+              data-event="click:viewBcc"
+              data-l10n-id="envelope-bcc"></span>
+      </div>
+    </div>
+    <div class="msg-envelope-subject-container focusable" role="menuitem">
+      <div data-prop ="starMsg" class ="msg-star-btn collapsed"></div>
+      <span class="msg-envelope-key"
+            data-l10n-id="msg-display-subject"></span>
+      <span aria-level="2" class="msg-envelope-subject p-pri"
+          data-l10n-id="subject" dir="auto"></span>
+    </div>
+  </div>
+  <div data-prop="attachmentsContainer"
+        class="msg-reader-attachments-container focusable collapsed"
+        data-event="click:viewReaderAttachment" role="menuitem">
+  </div>
+  <!-- Tells us about remote/not downloaded images, asks to show -->
+  <div data-prop="loadBar" class="msg-reader-load-infobar focusable collapsed"
+       role="button">
+    <p data-prop="loadBarText" class="msg-reader-load-infobar-text"></p>
+  </div>
+  <div data-prop="rootBodyNode"
+       class="msg-body-container focusable"
+       data-l10n-id="message-body-container" role="menuitem">
+    <progress data-l10n-id="message-body-container-progress"></progress>
+  </div>
+</div>

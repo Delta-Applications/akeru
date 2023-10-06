@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../shared/elements/gaia-icons/gaia-icons.css">
+    <link rel="stylesheet" type="text/css" href="../shared/elements/gaia-theme/gaia-font.css">
+    <link rel="stylesheet" type="text/css" href="../shared/elements/gaia-theme/gaia-theme.css">
+
+    <link rel="stylesheet" type="text/css" href="../shared/style/headers.css">
+    <link href="../shared/style/navigation.css" rel="stylesheet" type="text/css">
+    <link href="../shared/style/option_menu.css" rel="stylesheet" type="text/css">
+    <link href="../style/action_menu.css" rel="stylesheet" type="text/css">
+    <link href="../shared/style/softkey.css" rel="stylesheet" type="text/css">
+    <link href="../shared/style/toaster.css" rel="stylesheet" type="text/css">
+    <link href="../shared/style/value_selector.css" rel="stylesheet" type="text/css">
+    <link href="../shared/style/switches.css" rel="stylesheet" type="text/css">
+    <link href="../shared/style/buttons.css" rel="stylesheet" type="text/css">
+    <link href="../shared/style/confirm.css" rel="stylesheet" type="text/css">
+    <link href="../shared/style/input_areas.css" rel="stylesheet" type="text/css">
+    <link href="../shared/style/progress_activity.css" rel="stylesheet" type="text/css">
+    <link href="style/fxa.css" rel="stylesheet" type="text/css">
+    <link href="style/buttons.css" rel="stylesheet" type="text/css">
+    <link href="style/fxa_lists.css" rel="stylesheet" type="text/css">
+
+    <meta name="defaultLanguage" content="en-US">
+    <meta name="availableLanguages" content="af-ZA:201911070909, ar-SA:201911070909, az-Latn-AZ:201911070909, be-BY:201911070909, bg-BG:201911070909, bn-BD:201911070909, bn-IN:201911070909, bs-BA:201911070909, cs-CZ:201911070909, da-DK:201911070909, de-DE:201911070909, el-GR:201911070909, en-GB:201911070909, en-US:201911070909, es-ES:201911070909, es-US:201911070909, et-EE:201911070909, fi-FI:201911070909, fr-FR:201911070909, fr-CA:201911070909, he-IL:201911070909, hi-IN:201911070909, hr-HR:201911070909, hu-HU:201911070909, hy-AM:201911070909, id-ID:201911070909, it-IT:201911070909, km-KH:201911070909, kk-KZ:201911070909, lt-LT:201911070909, lv-LV:201911070909, lo-LA:201911070909, ka-GE:201911070909, mk-MK:201911070909, ms-MY:201911070909, nb-NO:201911070909, ne-IN:201911070909, nl-NL:201911070909, pl-PL:201911070909, pt-BR:201911070909, pt-PT:201911070909, ro-RO:201911070909, ru-RU:201911070909, si-LK:201911070909, sk-SK:201911070909, sl-SI:201911070909, sq-AL:201911070909, sr-Latn-CS:201911070909, sv-SE:201911070909, sw-ZA:201911070909, ta-IN:201911070909, th-TH:201911070909, fil-PH:201911070909, tr-TR:201911070909, uk-UA:201911070909, ur-PK:201911070909, vi-VN:201911070909, xh-ZA:201911070909, zh-CN:201911070909, zh-TW:201911070909, zh-HK:201911070909, is-IS:201911070909, zu-ZA:201911070909, mo-RO:201911070909, fa-IR:201911070909, ps-AF:201911070909, uz-Cyrl-UZ:201911070909">
+    <link rel="localization" href="/locales-obj/{locale}.json">
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    <script defer="" src="../js/service.js"></script>
+    <script defer="" src="../js/ftu_launcher.js"></script>
+    <script defer="" src="../js/browser_frame.js"></script>
+    <script defer="" src="../shared/js/lazy_loader.js"></script>
+    <script defer="" src="../shared/js/l10n.js"></script>
+    <script defer="" src="../shared/js/l10n_date.js"></script>
+    <script defer="" src="../shared/js/settings_helper.js"></script>
+    <script defer="" src="../shared/js/utilities.js"></script>
+    <script defer="" src="../shared/js/toaster.js"></script>
+    <!-- Gaia Components -->
+    <script defer="" src="../shared/elements/config.js"></script>
+    <script defer="" src="../shared/elements/gaia-header/dist/gaia-header.js"></script>
+    <script defer="" src="../shared/elements/gaia-slider/dist/gaia-slider.js"></script>
+    <script defer="" src="js/value_selector.js"></script>
+    <script defer="" src="js/utils.js"></script>
+    <script defer="" src="js/fxam_server_request.js"></script>
+    <script defer="" src="js/fxam_overlay.js"></script>
+    <script defer="" src="js/fxam_error_overlay.js"></script>
+    <script defer="" src="js/fxam_navigation.js"></script>
+    <script defer="" src="js/fxam_ui.js"></script>
+    <script defer="" src="js/fxam_manager.js"></script>
+    <script defer="" src="js/fxam_states.js"></script>
+    <script defer="" src="js/fxam_module.js"></script>
+    <!-- softkey & nav -->
+    <script defer="" src="../shared/js/option_menu.js"></script>
+    <script defer="" src="../shared/js/softkey_panel.js"></script>
+    <script defer="" src="../shared/js/navigation_handler.js"></script>
+    <script defer="" src="../shared/js/navigation_helper.js"></script>
+    <script defer="" src="js/view_manager.js"></script>
+    <script defer="" src="js/navigation_map.js"></script>
+    <script defer="" src="../shared/elements/gaia_confirm/script.js"></script>
+    <script defer="" src="../shared/js/homescreens/confirm_dialog_helper.js"></script>
+  <meta content="2.2" name="appVersion"></head>
+  <body class="theme-settings">
+    <section role="region">
+      <gaia-header id="fxa-module-header">
+        <h1 data-l10n-id="firefox-accounts-title">KaiOS Accounts</h1>
+      </gaia-header>
+      <article id="step-container">
+        <section id="fxa-enter-account-info" class="screen"><!--
+    <section class="vertical">
+      <p class="fxa-intro" data-l10n-id="fxa-enter-your-infomation">
+      </p>
+      <ul class="tcl-nav-box info-picker">
+        <li role="menuitem" class="focusable">
+          <label for="fxa-birthday-input" data-l10n-id="fxa-birthday-label">Birthday</label>
+          <input id="fxa-birthday-input" value="1993-01-01" min="1900-01-01" max="2035-12-31" type="date">
+          <p id="fxa-birthday-date"></p>
+        </li>
+
+        <li role="menuitem" class="focusable">
+          <label for="fxa-gender-select" data-l10n-id="fxa-gender-label">Gender</label>
+          <p id="fxa-gender-text"></p>
+          <select id="fxa-gender-select" data-track-class="fxa-gender-select">
+            <option value="Select" data-l10n-id="fxa-gender-select" selected="selected">Select</option>
+            <option value="Male" data-l10n-id="fxa-gender-male">Male</option>
+            <option value="Female" data-l10n-id="fxa-gender-female">Female</option>
+            <option value="Confidential" data-l10n-id="fxa-gender-confidential">Confidential</option>
+          </select>
+        </li>
+      </ul>
+    </section>
+    <script src="js/screens/fxam_enter_account_info.js"></script>
+  --></section>
+        <section id="fxa-enter-phone-number" class="screen"><!--
+    <section class="vertical">
+      <p class="fxa-intro" data-l10n-id="fxa-enter-phone-number-message">
+      </p>
+      <ul class="tcl-nav-box">
+        <li>
+          <input id="fxa-phone-number-input" required="" type="tel">
+        </li>
+      </ul>
+    </section>
+    <script src="js/screens/fxam_enter_phone_number.js"></script>
+  --></section>
+        <section id="fxa-enter-otp" class="screen"><!--
+    <section class="vertical">
+      <p class="fxa-intro" data-l10n-id="fxa-sms-has-been-sent-message">
+      </p>
+      <div class="fxa-time-remaining-container">
+        <div class="fxa-time-remaining-message p-sec" data-l10n-id="fxa-time-remaining"></div>
+        <div id="fxa-time-remaining" class="fxa-time-remaining p-sec">2:00</div>
+      </div>
+      <ul class="tcl-nav-box">
+        <div id="fxa-otp-container" class="fxa-otp-container"></div>
+      </ul>
+    </section>
+    <script src="js/screens/fxam_enter_otp.js"></script>
+  --></section>
+        <section id="fxa-email" class="screen"><!--
+    <section class="vertical">
+      <p class="fxa-intro" data-l10n-id="fxa-use-email-to-sign-in">
+      </p>
+      <ul class="tcl-nav-box">
+        <li>
+          <label for="fxa-email-input" data-l10n-id="fxa-signin-email">Account Name</label>
+          <input id="fxa-email-input" data-l10n-id="fxa-enter-email-input" x-inputmode="verbatim" maxlength="100" type="email">
+        </li>
+        <li>
+          <label class="pack-checkbox" for="fxa-show-age">
+            <input id="fxa-show-age" type="checkbox">
+            <span data-l10n-id="fxa-show-age-title">I am over the age of 13</span>
+          </label>
+        </li>
+      </ul>
+    </section>
+    <script src="js/screens/fxam_enter_email.js"></script>
+  --></section>
+        <section id="fxa-set-password" class="screen fxa-password"><!--
+    <section class="vertical">
+      <h3 data-l10n-id="fxa-create-password-title">Create A Password</h3>
+      <p id="fxa-hello-user">Hello, <a id="fxa-user-set-email">holaSET@email.com</a></p>
+      <ul class="tcl-nav-box">
+      <li>
+      <label for="fxa-pw-set-input" data-l10n-id="">Password</label>
+      <input id="fxa-pw-set-input" placeholder="Password" required="" pattern=".{8,}" data-l10n-id="fxa-password" x-inputmode="plain" type="password">
+      </li>
+      <p class="fine-print" data-l10n-id="fxa-password-length-requirement">
+        Your password must be at least 8 characters long.
+      </p>
+      <li>
+      <div id="show-pw-wrapper">
+        <label class="pack-checkbox" for="fxa-show-pw-set">
+          <input id="fxa-show-pw-set" type="checkbox">
+          <span></span>
+        </label>
+        <p data-l10n-id="fxa-show-password">Show password</p>
+      </div>
+      </li>
+      </ul>
+      <script src="js/screens/fxam_set_password.js"></script>
+    </section>
+  --></section>
+        <section id="fxa-enter-password" class="screen fxa-password"><!--
+    <section class="vertical">
+      <p data-l10n-id="fxa-enter-password-title-1"></p>
+      <ul class="tcl-nav-box">
+        <li role="menuitem" scroll-into-view="bottom">
+          <label for="fxa-pw-input" data-l10n-id="fxa-password">Password</label>
+          <input id="fxa-pw-input" maxlength="20" data-l10n-id="fxa-password" x-inputmode="plain" type="password">
+        </li>
+        <li role="menuitem">
+          <label for="fxa-confirm-pw-input" data-l10n-id="fxa-confirm-password">Confirm Password</label>
+          <input id="fxa-confirm-pw-input" maxlength="20" data-l10n-id="fxa-password" x-inputmode="plain" type="password">
+        </li>
+      </ul>
+      <script src="js/screens/fxam_enter_password.js"></script>
+    </section>
+  --></section>
+        <section id="fxa-signup-success" class="screen"><!--
+    <section class="vertical">
+      <p data-l10n-id="fxa-will-send-email" role="menuitem">
+      </p>
+      <p id="fxa-will-send-email-content" role="menuitem" data-l10n-id="fxa-signup-click-verification-link-in-email">
+      </p>
+      <p id="fxa-will-send-email-timeframe" role="menuitem" data-l10n-id="fxa-access-manage-account-settings">
+      </p>
+    </section>
+    <script src="js/screens/fxam_signup_success.js"></script>
+  --></section>
+        <section id="fxa-send-success" class="screen"><!--
+    <section class="vertical">
+      <div id="fxa-logo" class="fxa-logo"></div>
+      <p data-l10n-id="tcl-verification-mail-has-been-sent" class="email-sent">
+        A verification link has been sent to
+      </p>
+      <p id="mailaddress" class="email-sent">
+      </p>
+      <script src="js/screens/fxam_send_success.js"></script>
+    </section>
+  --></section>
+        <section id="fxa-tos" class="screen" data-navigation="back"><!--
+    <section role="region">
+      <h3 data-l10n-id="fxa-tos-header">Terms of Service</h3>
+      <p data-l10n-id="fxa-tos1">
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequ at. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+  </p>
+      <p data-l10n-id="fxa-tos2">
+Excepteur sint occaecat qui of fi cia deserunt mollit anim id est lab orum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. D uis aute irure dolor in.
+      </p>
+    </section>
+  --></section>
+        <section id="fxa-pp" class="screen" data-navigation="back"><!--
+    <section role="region">
+      <h3 data-l10n-id="fxa-pp-header">Privacy Policy</h3>
+      <p data-l10n-id="fxa-pp1">
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequ at. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      </p>
+      <p data-l10n-id="fxa-pp2">
+Excepteur sint occaecat qui of fi cia deserunt mollit anim id est lab orum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. D uis aute irure dolor in.
+      </p>
+    </section>
+  --></section>
+        <section id="fxa-refresh-auth" class="screen fxa-password"><!--
+    <section class="vertical">
+      <p id="fxa-password-refresh" data-l10n-id="fxa-password-refresh">Please enter your Account password to continue.</p>
+      <input id="fxa-pw-input-refresh" x-inputmode="plain" placeholder="Password" required="" pattern=".{8,}" data-l10n-id="fxa-password" type="password">
+      <p class="fine-print"><a id="fxa-forgot-password-refresh" data-l10n-id="fxa-forgot-your-password">Forgot your password?</a></p>
+      <div id="show-pw-wrapper">
+        <label class="pack-checkbox" for="fxa-show-pw-refresh">
+          <input id="fxa-show-pw-refresh" type="checkbox">
+          <span></span>
+        </label>
+        <p data-l10n-id="fxa-show-password">Show password</p>
+      </div>
+      <script src="js/screens/fxam_refresh_auth.js"></script>
+    </section>
+  --></section>
+        <section id="fxa-about" class="screen fxa-about"><!--
+    <section class="vertical">
+      <div id="fxa-logged-in">
+        <p class="fine-print" data-l10n-id="about-kaios-account-text1">
+        </p>
+        <p class="fine-print" data-l10n-id="about-kaios-account-text2">
+        </p>
+        <p class="fine-print" data-l10n-id="about-kaios-account-text3">
+      </p></div>
+    </section>
+    <script src="js/screens/fxam_about.js"></script>
+  --></section>
+        <section id="fxa-sign-in" class="screen"><!--
+    <section class="vertical">
+      <ul class="tcl-nav-box">
+        <li>
+          <label for="fxa-email-input" data-l10n-id="fxa-signin-email">Account Name</label>
+          <input id="fxa-email-input" data-l10n-id="fxa-enter-email-input" x-inputmode="plain" maxlength="100" type="email">
+        </li>
+        <li>
+          <label for="fxa-pw-set-input" data-l10n-id="fxa-signin-password">Password</label>
+          <input id="fxa-pw-input" data-l10n-id="fxa-password" x-inputmode="plain" maxlength="20" type="password">
+        </li>
+        <li>
+          <label class="pack-checkbox" for="fxa-show-pw">
+            <input id="fxa-show-pw" type="checkbox">
+            <span data-l10n-id="fxa-show-password"></span>
+          </label>
+        </li>
+      </ul>
+    </section>
+    <script src="js/screens/fxam_sign_in.js"></script>
+  --></section>
+        <section id="fxa-forgot-password" class="screen"><!--
+    <section class="vertical">
+      <div id="fxa-forgot-password">
+        <p class="fine-print" data-l10n-id="fxa-enter-email-to-reset-password-1">
+        </p>
+        <ul class="tcl-nav-box">
+          <li>
+            <label for="fxa-reset-email-input" data-l10n-id="fxa-signin-email">Account Name</label>
+            <input id="fxa-reset-email-input" data-l10n-id="fxa-enter-email-input" x-inputmode="plain" type="email">
+          </li>
+        </ul>
+      </div>
+    </section>
+    <script src="js/screens/fxam_forgot_password.js"></script>
+  --></section>
+        <section id="fxa-forgot-password-success" class="screen"><!--
+    <section class="vertical">
+      <p data-l10n-id="fxa-reset-password-succcess-content" class="email-sent">
+      </p>
+      <p data-l10n-id="fxa-reset-password-succcess-content-part2" class="email-sent">
+      </p>
+      <script src="js/screens/fxam_forgot_password_success.js"></script>
+    </section>
+  --></section>
+        <section id="fxa-sign-out" class="screen"><!--
+      <section class="vertical">
+        <p class="fxa-intro" data-l10n-id="fxa-sign-out-intro-1">Please confirm that you would like turn anti-theft off and sign out.</p>
+        <ul class="tcl-nav-box">
+          <li>
+            <label for="fxa-email-input" data-l10n-id="fxa-signout-email">You Account</label>
+            <span id="fxa-email-input" class="fxa-email-box"></span>
+          </li>
+          <li class="focusable">
+            <label for="fxa-pw-set-input" data-l10n-id="fxa-password">Password</label>
+            <input id="fxa-pw-input" x-inputmode="plain" placeholder="Password" data-l10n-id="fxa-password" type="password">
+          </li>
+          <li class="focusable">
+            <label class="pack-checkbox" for="fxa-show-pw">
+              <input id="fxa-show-pw" type="checkbox">
+              <span data-l10n-id="fxa-show-password"></span>
+            </label>
+          </li>
+        </ul>
+      </section>
+      <script src="js/screens/fxam_sign_out.js"></script>
+    --></section>
+        <section id="fxa-check-password" class="screen"><!--
+    <section class="vertical">
+      <p class="fxa-intro" id="fxa-intro" role="menuitem">
+        You need to enter you password.
+      </p>
+      <ul class="tcl-nav-box">
+        <li role="menuitem">
+          <label for="fxa-email-input" data-l10n-id="fxa-signout-email">You Account</label>
+          <span id="fxa-email-input" class="fxa-email-box"></span>
+        </li>
+        <li class="focusable" role="menuitem">
+          <label for="fxa-pw-input" data-l10n-id="fxa-password">Password</label>
+          <input id="fxa-pw-input" placeholder="Password" x-inputmode="plain" data-l10n-id="fxa-password" type="password">
+        </li>
+        <li class="focusable" role="menuitem">
+          <label class="pack-checkbox" for="fxa-show-pw">
+            <input id="fxa-show-pw" type="checkbox">
+            <span data-l10n-id="fxa-show-password"></span>
+          </label>
+        </li>
+      </ul>
+    </section>
+    <script src="js/screens/fxam_check_password.js"></script>
+  --></section>
+        <section id="fxa-change-password" class="screen"><!--
+    <section class="vertical">
+      <p data-l10n-id="fxa-change-password-description"></p>
+      <ul class="tcl-nav-box">
+        <li role="menuitem">
+          <label for="fxa-pw-input" data-l10n-id="fxa-password">Password</label>
+          <input id="fxa-pw-input" maxlength="20" data-l10n-id="fxa-password" x-inputmode="plain" type="password">
+        </li>
+        <li role="menuitem">
+          <label for="fxa-new-pw-input" data-l10n-id="fxa-new-password">New Password</label>
+          <input id="fxa-new-pw-input" maxlength="20" data-l10n-id="fxa-password" x-inputmode="plain" type="password">
+        </li>
+        <li role="menuitem">
+          <label for="fxa-confirm-pw-input" data-l10n-id="fxa-confirm-password">Confirm Password</label>
+          <input id="fxa-confirm-pw-input" maxlength="20" data-l10n-id="fxa-password" x-inputmode="plain" type="password">
+        </li>
+        <li role="menuitem">
+          <label class="pack-checkbox" for="fxa-show-pw">
+            <input id="fxa-show-pw" type="checkbox">
+            <span data-l10n-id="fxa-show-password"></span>
+          </label>
+        </li>
+      </ul>
+      <script src="js/screens/fxam_change_password.js"></script>
+    </section>
+  --></section>
+        <section id="fxa-multiple-sign-in-attempts" class="screen"><!--
+    <section class="vertical">
+      <p data-l10n-id="fxa-multiple-sign-in-attempts-content-1" role="menuitem"></p>
+      <p data-l10n-id="fxa-multiple-sign-in-attempts-content-retry" role="menuitem"></p>
+      <script src="js/screens/fxam_multiple_sign_in_attempts.js"></script>
+    </section>
+  --></section>
+      </article>
+      <nav role="navigation" class="horizontal navigation navigation-single-button" id="fxa-module-navigation">
+        <button id="fxa-module-back" class="left" data-l10n-id="fxa-back">Back</button>
+         <button id="fxa-module-next" class="recommend right" data-l10n-id="fxa-next">Next</button>
+        <button id="fxa-module-done" class="recommend right" data-l10n-id="fxa-done">Done</button>
+      </nav>
+    </section>
+    <!-- Progress overlay -->
+    <section id="fxa-overlay" role="dialog">
+      <div class="pannel">
+        <p id="fxa-overlay-msg" data-l10n-id="fxa-connecting" class="title">Connecting</p>
+        <div class="progress"></div>
+      </div>
+    </section>
+    <!-- Error message overlay -->
+    <form role="dialog" data-type="confirm" id="fxa-error-overlay" class="fade-in">
+      <section>
+        <h1 id="fxa-error-title">Error message</h1>
+        <p><small id="fxa-error-msg">Error message.</small></p>
+      </section>
+      <menu>
+        <button class="full" data-l10n-id="fxa-ok" id="fxa-error-ok">OK</button>
+      </menu>
+    </form>
+    <div id="fxa-valueselector" role="dialog" class="value-selector hidden">
+      <form role="dialog" data-type="value-selector" class="show">
+        <section class="scrollable">
+          <h3></h3>
+          <ol role="listbox" class="value-selector-options-container valueSelector_single">
+          </ol>
+        </section>
+      </form>
+    </div>
+    <div id="fxa-toaster"></div>
+    <div id="app-confirmation-dialog"></div>
+  </body>
+
+</html>

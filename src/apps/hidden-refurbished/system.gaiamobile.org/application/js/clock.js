@@ -1,0 +1,3 @@
+'use strict';(function(exports){function Clock(){this.timeoutID=null;this.timerID=null;this.start=function cl_start(refresh){var date=new Date();var self=this;refresh(date);if(this.timeoutID==null){this.timeoutID=window.setTimeout(function cl_setClockInterval(){refresh(new Date());if(self.timerID==null){refresh(new Date());self.timerID=window.setInterval(function cl_clockInterval(){refresh(new Date());},60000);}},(60-date.getSeconds())*1000);}};this.stop=function cl_stop(){if(this.timeoutID!=null){window.clearTimeout(this.timeoutID);this.timeoutID=null;}
+if(this.timerID!=null){window.clearInterval(this.timerID);this.timerID=null;}};}
+exports.Clock=Clock;})(window);
