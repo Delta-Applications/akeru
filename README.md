@@ -12,14 +12,15 @@ Refurbished KaiOS Apps, Media & Builds by Delta
 - [x] Modified 2.5.4 Settings app (with homescreen setting, sideloading & other dev features)
 - [ ] **Add app management features to Settings & move permissions there**
 - [ ] **Fix File Manager opening instead of returning files in Pick Activity**
-- [ ] De-kaiad TO-DO List app & add to official-refurbished
+- [ ] De-kaiad TO-DO List, Magnifying Lens & Books & add to official-refurbished
+- [ ] SYSTEM: Holding shortcuts button while pressing either UP or DOWN acts as a volume key while media is being played
 - [ ] **Theme all refurbished apps to gaia-theme dark**
 - [ ] **Update Bluetooth service icons to reflect 2.5.4 gaia-icons**
 - [ ] **Add gaia confirmation dialogs to Installer app, along with affe null self-debug**
-- [ ] Modified hardware key handler (SYSTEM) to make 800T shortcut key do anything (and configurable via our settings app)
+- [ ] SYSTEM: Modified hardware key handler to make 800T shortcut key do anything (and configurable via our settings app)
 - [ ] Additional refurbished apps (debloated weather, network tester, etc. with no ads)
-- [ ] Configurable Status Bar to allow for additional info (precise percentage, battery temperature, satellites, etc.)
-- [ ] Bring Gerda Task Manager to 800T 2.5.2
+- [ ] SYSTEM: Configurable Status Bar to allow for additional info (precise percentage, battery temperature, satellites, etc.)
+- [ ] SYSTEM: Bring Gerda Task Manager to 800T 2.5.2
 
 ## 🫂 Contribute
 

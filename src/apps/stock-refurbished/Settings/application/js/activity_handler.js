@@ -24,7 +24,7 @@
                 else if ("call" === e) {
                     var r = navigator.mozMobileConnections;
                     r && r.length > 1 && (e = "call-iccs")
-                } else "display" === e ? n.dataset.brightness = !0 : "dateTime" === e && "ftu" === t.data.caller ? n.dataset.ftu = !0 : "appPermissions-details" === e ? n.dataset.caller = t.data.caller : n.dataset.dialog = !0;
+                } else "display" === e ? n.dataset.brightness = !0 : "dateTime" === e && "ftu" === t.data.caller ? n.dataset.ftu = !0 : "appDetails" === e ? n.dataset.caller = t.data.caller : n.dataset.dialog = !0;
                 return "downloads" === e && t.data.downloadFileName && (n.dataset.downloadFileName = t.data.downloadFileName), "connectivity-settings" === e && LazyLoader.load(["shared/js/mobile_operator.js"]), e
             }
         },

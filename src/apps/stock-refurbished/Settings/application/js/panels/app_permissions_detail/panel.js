@@ -1,11 +1,10 @@
+define('modules/navigator/mozApps', [], function () {
 
-define('modules/navigator/mozApps',[],function() {
-  
   return window.navigator.mozApps;
 });
 
-define('modules/navigator/mozPermissionSettings',[],function() {
-  
+define('modules/navigator/mozPermissionSettings', [], function () {
+
   return window.navigator.mozPermissionSettings;
 });
 
@@ -13,8 +12,8 @@ define('modules/navigator/mozPermissionSettings',[],function() {
  * Handle app_permissions_detail panel's functionality.
  */
 
-define('panels/app_permissions_detail/app_permissions_detail',['require','shared/manifest_helper','modules/settings_service','modules/navigator/mozApps','modules/navigator/mozPermissionSettings'],function(require) {
-  
+define('panels/app_permissions_detail/app_permissions_detail', ['require', 'shared/manifest_helper', 'modules/settings_service', 'modules/navigator/mozApps', 'modules/navigator/mozPermissionSettings'], function (require) {
+
 
   var ManifestHelper = require('shared/manifest_helper');
   var SettingsService = require('modules/settings_service');
@@ -78,14 +77,21 @@ define('panels/app_permissions_detail/app_permissions_detail',['require','shared
       var manifest = new ManifestHelper(app.manifest ?
         app.manifest : app.updateManifest);
 
+      console.log(manifest)
+
+      elements.icon.src = this._getBestIconURL(app, manifest.icons);
+      elements.name.innerText = manifest.name || manifest.short_name;
+      elements.subtitle.innerText = manifest.subtitle || manifest.version;
+      console.log(manifest.developer)
       elements.detailTitle.textContent = manifest.short_name || manifest.name;
+     /* elements.desc.textContent = manifest.description;*/
 
       if (!mozPerms) {
         elements.list.hidden = true;
         return;
       } else {
         elements.list.hidden = false;
-        elements.list.innerHTML = '';
+        elements.list.innerHTML = ``;
       }
 
       if (manifest.permissions) {
@@ -96,17 +102,17 @@ define('panels/app_permissions_detail/app_permissions_detail',['require','shared
             var mode = manifest.permissions[perm].access;
 
             switch (mode) {
-              case 'readonly' :
+              case 'readonly':
                 composedPermissions.push(perm + '-' + 'read');
                 break;
-              case 'createonly' :
+              case 'createonly':
                 composedPermissions.push(perm + '-' + 'create');
                 break;
-              case 'readcreate' :
+              case 'readcreate':
                 composedPermissions.push(perm + '-' + 'read');
                 composedPermissions.push(perm + '-' + 'create');
                 break;
-              case 'readwrite' :
+              case 'readwrite':
                 composedPermissions.push(perm + '-' + 'read');
                 composedPermissions.push(perm + '-' + 'create');
                 composedPermissions.push(perm + '-' + 'write');
@@ -174,8 +180,8 @@ define('panels/app_permissions_detail/app_permissions_detail',['require','shared
         app.connect('application-data-comms').then(function onAccepted(ports) {
           ports.forEach((port) => {
             port.postMessage(info);
-            port.onmessage = function(evt) {
-              console.log('evt '+ JSON.stringify(evt.data));
+            port.onmessage = function (evt) {
+              console.log('evt ' + JSON.stringify(evt.data));
             }
           });
         });
@@ -257,7 +263,8 @@ define('panels/app_permissions_detail/app_permissions_detail',['require','shared
       fakeSelect.appendChild(select);
       item.appendChild(content);
       item.appendChild(fakeSelect);
-      this._elements.list.appendChild(item);
+      this._elements.menu.appendChild(item);
+      this._elements.list.after(item);
     },
 
     /**
@@ -275,6 +282,42 @@ define('panels/app_permissions_detail/app_permissions_detail',['require','shared
         } else {
           SettingsService.navigate('appPermissions');
         }
+      }
+    },
+
+    _getBestIconURL: function pl__getBestIconURL(app, icons) {
+      if (!icons || !Object.keys(icons).length) {
+        return '../style/images/default.png';
+      }
+
+      // The preferred size is 30 by the default. If we use HDPI device, we may
+      // use the image larger than 30 * 1.5 = 45 pixels.
+      var preferredIconSize = 30 * (window.devicePixelRatio || 1);
+      var preferredSize = Number.MAX_VALUE;
+      var max = 0;
+
+      for (var size in icons) {
+        size = parseInt(size, 10);
+        if (size > max) {
+          max = size;
+        }
+
+        if (size >= preferredIconSize && size < preferredSize) {
+          preferredSize = size;
+        }
+      }
+      // If there is an icon matching the preferred size, we return the result,
+      // if there isn't, we will return the maximum available size.
+      if (preferredSize === Number.MAX_VALUE) {
+        preferredSize = max;
+      }
+
+      var url = icons[preferredSize];
+
+      if (url) {
+        return !(/^(http|https|data):/.test(url)) ? app.origin + url : url;
+      } else {
+        return '../style/images/default.png';
       }
     },
 
@@ -320,8 +363,8 @@ define('panels/app_permissions_detail/app_permissions_detail',['require','shared
   };
 });
 
-define('panels/app_permissions_detail/panel',['require','shared/settings_listener','modules/settings_panel','panels/app_permissions_detail/app_permissions_detail','modules/apps_cache'],function(require) {
-  
+define('panels/app_permissions_detail/panel', ['require', 'shared/settings_listener', 'modules/settings_panel', 'panels/app_permissions_detail/app_permissions_detail', 'modules/apps_cache'], function (require) {
+
 
   var SettingsListener = require('shared/settings_listener');
   var SettingsPanel = require('modules/settings_panel');
@@ -333,28 +376,41 @@ define('panels/app_permissions_detail/panel',['require','shared/settings_listene
     var elements = {};
     var permissionDetailModule = PermissionDetail();
 
-    function showConfirmDialog(manifest) {
+    function showConfirmDialog(manifest, kill) {
       var dialogConfig = {
-        title: {id: 'uninstall', args: {}},
-        body: {id: 'uninstall-app-body', args: {appName: manifest.name}},
-        desc: {id: 'uninstall-app-body-2', args: {}},
+        title: {
+          id: 'uninstall',
+          args: {}
+        },
+        body: {
+          id: 'uninstall-app-body',
+          args: {
+            appName: manifest.name
+          }
+        },
+        desc: {
+          id: 'uninstall-app-body-2',
+          args: {}
+        },
         cancel: {
           l10nId: 'cancel',
           priority: 1,
-          callback: function() {
+          callback: function () {
             dialog.destroy();
           },
         },
         confirm: {
           l10nId: 'uninstall',
           priority: 3,
-          callback: function() {
+          callback: function () {
             dialog.destroy();
             permissionDetailModule.uninstall(function (obj) {
               console.log("***app is uninstalled***");
               var _ = window.navigator.mozL10n.get;
               new Notification(
-                _('uninstall-notification', { 'appName': obj.appName })
+                _('uninstall-notification', {
+                  'appName': obj.appName
+                })
               ).close();
             });
           },
@@ -368,7 +424,9 @@ define('panels/app_permissions_detail/panel',['require','shared/settings_listene
       if (!app.removable) {
         var params = {
           menuClassName: 'menu-button',
-          header: { l10nId:'message' },
+          header: {
+            l10nId: 'message'
+          },
           items: [{
             name: 'Select',
             l10nId: 'select',
@@ -380,8 +438,18 @@ define('panels/app_permissions_detail/panel',['require','shared/settings_listene
           app.manifest : app.updateManifest);
         var params = {
           menuClassName: 'menu-button',
-          header: { l10nId:'message' },
-          items: [
+          header: {
+            l10nId: 'message'
+          },
+          items: [{
+              name: 'Close',
+              l10nId: 'close',
+              priority: 1,
+              method: function () {
+                // Add user confirmation is app has system role or is hidden
+                this.killApp();
+              }
+            },
             {
               name: 'Select',
               l10nId: 'select',
@@ -391,10 +459,11 @@ define('panels/app_permissions_detail/panel',['require','shared/settings_listene
               name: 'Uninstall',
               l10nId: 'uninstall',
               priority: 3,
-              method: function() {
+              method: function () {
                 showConfirmDialog(manifest);
               }
-            }]
+            }
+          ]
         };
       }
       SettingsSoftkey.init(params);
@@ -402,23 +471,28 @@ define('panels/app_permissions_detail/panel',['require','shared/settings_listene
     }
 
     return SettingsPanel({
-      onInit: function(panel, options) {
+      onInit: function (panel, options) {
         this._verbose = null;
         this._panel = panel;
         elements = {
-          list: panel.querySelector('.permissionsListHeader + ul'),
+          list: panel.querySelector('#appdetails-list'),
           header: panel.querySelector('.permissionsListHeader'),
-          detailTitle: panel.querySelector('.detail-title')
+          detailTitle: panel.querySelector('.detail-title'),
+          name: panel.querySelector('#app-name'),
+          subtitle: panel.querySelector('#app-subtitle'),
+          icon: panel.querySelector('#app-icon'),
+          desc: panel.querySelector('#app-desc'),
+          menu: panel.querySelector('#appdetails-menu')
         };
         SettingsListener.observe('debug.verbose_app_permissions', false,
-          function(enabled) {
+          function (enabled) {
             this._verbose = enabled;
           }.bind(this));
         permissionDetailModule.init(elements);
       },
 
-      onBeforeShow: function(panel, options) {
-        let appChosen = new Promise(function(resolve, reject) {
+      onBeforeShow: function (panel, options) {
+        let appChosen = new Promise(function (resolve, reject) {
           if (panel.dataset.caller) {
             AppsCache.apps().then((apps) => {
               return apps.find((app) =>
@@ -448,7 +522,7 @@ define('panels/app_permissions_detail/panel',['require','shared/settings_listene
         });
       },
 
-      onBeforeHide: function() {
+      onBeforeHide: function () {
         permissionDetailModule.hide();
       }
     });

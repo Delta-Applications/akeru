@@ -77,7 +77,7 @@
             case '#icc':
             case '#apn-editor':
             case '#browsingPrivacy':
-            case '#appPermissions-details':
+            case '#appDetails':
             case '#wifi-available-networks':
             case '#wifi-selectCertificateFile':
             case '#call-barring-passcode-change':

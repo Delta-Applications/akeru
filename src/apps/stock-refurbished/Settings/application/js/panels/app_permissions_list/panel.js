@@ -108,7 +108,7 @@ define('panels/app_permissions_list/app_permissions_list',['require','modules/se
      */
     _onAppChoose: function pl__onAppChoose(evt) {
       if (evt.target.dataset && evt.target.dataset.appIndex) {
-        SettingsService.navigate('appPermissions-details', {
+        SettingsService.navigate('appDetails', {
           app: this._apps[evt.target.dataset.appIndex]
         });
       }

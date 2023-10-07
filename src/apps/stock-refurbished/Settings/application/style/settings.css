@@ -1220,6 +1220,7 @@ section > div {
 }
 #app-notices .app-list > li > a.menu-item,
 #homescreens .app-list > li > a.menu-item,
+#appDetails .app-list > li > a.menu-item,
 #themes .app-list > li > a.menu-item,
 #appPermissions .app-list > li > a.menu-item {
   padding-right: 0.4rem;

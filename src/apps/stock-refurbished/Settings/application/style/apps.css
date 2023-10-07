@@ -1,6 +1,7 @@
 
 #app-notices ul li img,
 #homescreens ul li img,
+#appDetails ul li img,
 #themes ul li img,
 #multifunction_any ul li img,
 #appPermissions ul li img{
@@ -12,7 +13,9 @@
 }
 #app-notices ul li > a,
 #homescreens ul li > a,
+#appDetails ul li > a,
 #homescreens ul li > label,
+#appDetails ul li > label,
 #themes ul li > a,
 #themes ul li > label,
 #multifunction_any ul li > a,
@@ -28,6 +31,7 @@
   border-top: 0.1rem solid #E6E6E3;
 }
 #homescreens .cb-alert,
+#appDetails .cb-alert,
 #themes .cb-alert,
 #multifunction_any .cb-alert,
 #appPermissions .cb-alert {
@@ -38,6 +42,8 @@
 }
 #homescreens label.menu-item:after,
 #homescreens a.menu-item:after,
+#appDetails label.menu-item:after,
+#appDetails a.menu-item:after,
 #themes label.menu-item:after,
 #themes a.menu-item:after,
 #multifunction_any label.menu-item:after,

@@ -645,7 +645,7 @@ a#frequency-op-seekup:active {
 
 .dialog-container .dialog > .header {
   padding: .5rem 1rem;
-  background-color: var(--color-gs20);
+  background-color: var(--color-gs00);
   color: var(--color-gs90);
   text-align: center;
 }
@@ -813,7 +813,7 @@ button#fm-softkey-right {
   padding: .5rem 1rem;
   text-align: center;
   color: var(--color-gs90);
-  background: var(--color-gs20);
+  background: var(--color-gs00);
 }
 
 .fm-softkey-menu-item {

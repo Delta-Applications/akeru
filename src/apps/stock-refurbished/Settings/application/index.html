@@ -3835,6 +3835,15 @@
 
     <panel data-path="panels/screen_lock_description/panel"></panel>
   --></section>
+  <section role="region" id="app-description-more"><!--
+     <gaia-header data-href="#appDetails"></gaia-header>
+
+    <div role="menuitem" class="more-description-content">
+      <p id="app-desc"></p>
+    </div>
+
+    <panel data-path="panels/app_description_more/panel"></panel>
+  --></section>
     <!-- Security :: SIM Security :: SIM PIN Input -->
     <section role="region" id="simnck"><!--
 
@@ -4033,17 +4042,28 @@
     <panel data-path="panels/simpin_description/panel"></panel>
   --></section>
     <!-- Security :: Application Permissions :: Details -->
-    <section role="region" id="appPermissions-details"><!--
+    <section role="region" id="appDetails"><!--
 
     <gaia-header data-href="appPermissions">
       <h1 class="detail-title"></h1>
     </gaia-header>
 
     <div>
+      <ul role="menu" id="appdetails-menu">
+        <li class="focus" tabindex="0" style="--nav-left: 111; --nav-right: 111; --nav-down: 112; --nav-up: 110;" data-nav-id="111" role="menuitem">
+              <a class="menu-item" href="#app-description-more" data-app-index="3">
+                <img id="app-icon" style="width: 5.5rem; height: 5.5rem;" src="app://{d0dd0750-045e-4883-9f81-a013290c4078}/icons/GeoYell_56.png">
+                <span id="app-name" class="menu-item">App Name</span>
+                <small id="app-subtitle" class="menu-item-desc">App Subtitle</small>
+              </a>
+        </li>
+     
+     
       <header id="permissionsListHeader" class="permissionsListHeader">
-        <h2 data-l10n-id="permissions"></h2>
-      </header>
-      <ul role="menu">
+      <h2 data-l10n-id="permissions"></h2>
+    </header>
+        <div id="appdetails-list">
+          </div>
       </ul>
     </div>
 
@@ -6238,7 +6258,7 @@
             </li>
             <li role="menuitem">
               <a id="menuItem-appPermissions" class="menu-item" href="#appPermissions">
-                <span data-l10n-id="appPermissions">App permissions</span>
+                <span>Applications</span>
               </a>
             </li>
             <li role="menuitem">
