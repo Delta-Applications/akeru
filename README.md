@@ -10,11 +10,11 @@ Refurbished KaiOS Apps, Media & Builds by Delta
 - [x] [Extract & categorize 3.0 style media (icon font, app icons, boot anims, etc.)](https://github.com/Delta-Applications/akeru/tree/main/src/media)
 - [x] Refurbish all Gaia apps (taken from <2.5.4+ and modified to fit 3.0 design)
 - [x] Modified 2.5.4 Settings app (with homescreen setting, sideloading & other dev features)
-- [ ] **Add app management features to Settings & move permissions there**
+- [x] Add app management features to Settings & move permissions there
 - [ ] **Fix File Manager opening instead of returning files in Pick Activity**
 - [ ] De-kaiad TO-DO List, Magnifying Lens & Books & add to official-refurbished
 - [ ] SYSTEM: Holding shortcuts button while pressing either UP or DOWN acts as a volume key while media is being played
-- [ ] **Theme all refurbished apps to gaia-theme dark**
+- [ ] **Theme all refurbished apps to gaia-theme dark (email, sms, downloads?)**
 - [ ] **Update Bluetooth service icons to reflect 2.5.4 gaia-icons**
 - [ ] **Add gaia confirmation dialogs to Installer app, along with affe null self-debug**
 - [ ] SYSTEM: Modified hardware key handler to make 800T shortcut key do anything (and configurable via our settings app)
