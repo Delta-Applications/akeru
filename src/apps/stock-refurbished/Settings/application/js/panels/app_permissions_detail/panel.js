@@ -71,6 +71,8 @@ define('panels/app_permissions_detail/app_permissions_detail', ['require', 'shar
      * Show app detail page.
      */
     showAppDetails: function pd_show_app_details(app, verbose) {
+      try {
+
       this.show();
       this._isValidPerm = verbose ? this._isValidVerbosePerm : this._isExplicitPerm;
       this._app = app;
@@ -78,14 +80,13 @@ define('panels/app_permissions_detail/app_permissions_detail', ['require', 'shar
       var manifest = new ManifestHelper(app.manifest ?
         app.manifest : app.updateManifest);
 
-      console.log(manifest)
+      console.log(manifest, app)
 
       elements.icon.src = this._getBestIconURL(app, manifest.icons);
       elements.name.innerText = manifest.name || manifest.short_name;
-      elements.subtitle.innerText = (manifest.version == null && manifest.version == null && manifest.description.length <= 15 ? manifest.description : "") + (manifest.version == !null ? manifest.version : "") + (manifest.developer !== null && manifest.developer.name !== null ? (manifest.version == !null ? " · " : "") + manifest.developer.name : "");
-      console.log(manifest.developer)
-      elements.detailTitle.style.display = "none" //textContent = manifest.short_name || manifest.name;
-      /* elements.desc.textContent = manifest.description;*/
+      elements.subtitle.innerText = (!!manifest.version ? manifest.version : "") + (!!manifest.developer && !!manifest.developer.name ? (!!manifest.version ? " · " : "") + manifest.developer.name : "") || ((!!manifest.description && manifest.description.length <= 20) ? manifest.description : "") ;
+      elements.detailTitle.style.display = "none" 
+      document.querySelector("#app-uninstall").style.display = app.removable
 
       /*if (!mozPerms) {
         elements.list.hidden = true;
@@ -154,6 +155,9 @@ define('panels/app_permissions_detail/app_permissions_detail', ['require', 'shar
       };
       elements.header.hidden = elements.menu.children.length < 6
       NavigationMap.refresh();
+    } catch (err) {
+        console.error(err)
+    }
     },
 
     _isExplicitPerm: function pd_shouldDisplayPerm(app, perm, value) {
@@ -273,7 +277,6 @@ define('panels/app_permissions_detail/app_permissions_detail', ['require', 'shar
       item.appendChild(content);
       item.appendChild(fakeSelect);
       this._elements.menu.appendChild(item);
-      this._elements.list.after(item);
     },
 
     showConfirmDialog: function showConfirmDialog(manifest) {
@@ -329,10 +332,8 @@ define('panels/app_permissions_detail/app_permissions_detail', ['require', 'shar
           text: manifest.description,
           args: {}
         },
-        /* desc: {
-           id: 'uninstall-app-body-2',
-           args: {}
-         },*/
+       
+        
         cancel: {
           l10nId: 'cancel',
           priority: 1,
@@ -340,14 +341,7 @@ define('panels/app_permissions_detail/app_permissions_detail', ['require', 'shar
             dialog.destroy();
           },
         },
-        /*confirm: {
-          l10nId: 'open',
-          priority: 3,
-          callback: function () {
-            dialog.destroy();
-          
-          },
-        },*/
+       
       };
       var dialog = new ConfirmDialogHelper(dialogConfig);
       dialog.show(document.getElementById('app-confirmation-dialog'));
@@ -396,6 +390,10 @@ define('panels/app_permissions_detail/app_permissions_detail', ['require', 'shar
         this.updateSKs(this._app, select.id === "app-badge");
 
         switch (evt.key) {
+          case "Backspace":
+          case "BrowserBack":
+            if (!this.uninstallDialogShow) SettingsService.navigate('appPermissions');
+          break;
           case "Enter":
           case "Accept":
             if (select.id === "app-uninstall") {
