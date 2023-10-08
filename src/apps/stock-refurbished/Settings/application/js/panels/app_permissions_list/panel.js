@@ -307,10 +307,10 @@ define('panels/app_permissions_list/app_permissions_list',['require','modules/se
               display = (permInfo !== 'unknown');
             }
 
-            if (display) {
+            //if (display) {
               this._apps.push(app);
               break;
-            }
+           // }
           }
         }
       }.bind(this));

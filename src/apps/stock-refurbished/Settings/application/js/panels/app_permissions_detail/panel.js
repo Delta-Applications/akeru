@@ -82,9 +82,9 @@ define('panels/app_permissions_detail/app_permissions_detail', ['require', 'shar
 
       elements.icon.src = this._getBestIconURL(app, manifest.icons);
       elements.name.innerText = manifest.name || manifest.short_name;
-      elements.subtitle.innerText = manifest.version + (manifest.developer !== null && manifest.developer.name !== null ? " · " + manifest.developer.name : "");
+      elements.subtitle.innerText = (manifest.version == null && manifest.version == null && manifest.description.length <= 15 ? manifest.description : "") + (manifest.version == !null ? manifest.version : "") + (manifest.developer !== null && manifest.developer.name !== null ? (manifest.version == !null ? " · " : "") + manifest.developer.name : "");
       console.log(manifest.developer)
-      elements.detailTitle.style.display = "none"//textContent = manifest.short_name || manifest.name;
+      elements.detailTitle.style.display = "none" //textContent = manifest.short_name || manifest.name;
       /* elements.desc.textContent = manifest.description;*/
 
       /*if (!mozPerms) {
@@ -151,8 +151,8 @@ define('panels/app_permissions_detail/app_permissions_detail', ['require', 'shar
             }
           }
         }
-      }
-      elements.header.hidden = !elements.list.children.length;
+      };
+      elements.header.hidden = elements.menu.children.length < 6
       NavigationMap.refresh();
     },
 
@@ -277,138 +277,139 @@ define('panels/app_permissions_detail/app_permissions_detail', ['require', 'shar
     },
 
     showConfirmDialog: function showConfirmDialog(manifest) {
-    var dialogConfig = {
-      title: {
-        id: 'uninstall',
-        args: {}
-      },
-      body: {
-        id: 'uninstall-app-body',
-        args: {
-          appName: manifest.name
-        }
-      },
-      desc: {
-        id: 'uninstall-app-body-2',
-        args: {}
-      },
-      cancel: {
-        l10nId: 'cancel',
-        priority: 1,
-        callback: function () {
-          dialog.destroy();
+      var dialogConfig = {
+        title: {
+          id: 'uninstall',
+          args: {}
         },
-      },
-      confirm: {
-        l10nId: 'uninstall',
-        priority: 3,
-        callback: function () {
-          dialog.destroy();
-          permissionDetailModule.uninstall(function (obj) {
-            console.log("***app is uninstalled***");
-            var _ = window.navigator.mozL10n.get;
-            new Notification(
-              _('uninstall-notification', {
-                'appName': obj.appName
-              })
-            ).close();
-          });
-        },
-      },
-    };
-    var dialog = new ConfirmDialogHelper(dialogConfig);
-    dialog.show(document.getElementById('app-confirmation-dialog'));
-  },
-  showAppDesc: function showConfirmDialog(manifest) {
-    var dialogConfig = {
-      title: {
-        text: manifest.name,
-        args: {}
-      },
-      body: {
-        text: manifest.description,
-        args: {}
-      },
-     /* desc: {
-        id: 'uninstall-app-body-2',
-        args: {}
-      },*/
-      cancel: {
-        l10nId: 'cancel',
-        priority: 1,
-        callback: function () {
-          dialog.destroy();
-        },
-      },
-      /*confirm: {
-        l10nId: 'open',
-        priority: 3,
-        callback: function () {
-          dialog.destroy();
-        
-        },
-      },*/
-    };
-    var dialog = new ConfirmDialogHelper(dialogConfig);
-    dialog.show(document.getElementById('app-confirmation-dialog'));
-  },
-
-  updateSKs: function updateSKs(app, isbadgeselected) {
-    var manifest = new ManifestHelper(app.manifest ?
-      app.manifest : app.updateManifest);
-    var params = {
-      menuClassName: 'menu-button',
-      header: {
-        l10nId: 'message'
-      },
-      items: [isbadgeselected ? {
-          name: 'Close',
-          l10nId: 'close',
-          priority: 1,
-          method: function () {
-            // Add user confirmation is app has system role or is hidden
+        body: {
+          id: 'uninstall-app-body',
+          args: {
+            appName: manifest.name
           }
-        } : { name: '', l10nId: '', priority: 1, method: function () {}},
-        {
-          name: isbadgeselected ? '' : 'Select',
-          l10nId: isbadgeselected ? '' : 'select',
-          priority: 2
         },
-        isbadgeselected ? {
-          name: 'Uninstall',
+        desc: {
+          id: 'uninstall-app-body-2',
+          args: {}
+        },
+        cancel: {
+          l10nId: 'cancel',
+          priority: 1,
+          callback: function () {
+            dialog.destroy();
+          },
+        },
+        confirm: {
           l10nId: 'uninstall',
           priority: 3,
-          method: function () {
+          callback: function () {
+            dialog.destroy();
+            permissionDetailModule.uninstall(function (obj) {
+              console.log("***app is uninstalled***");
+              var _ = window.navigator.mozL10n.get;
+              new Notification(
+                _('uninstall-notification', {
+                  'appName': obj.appName
+                })
+              ).close();
+            });
+          },
+        },
+      };
+      var dialog = new ConfirmDialogHelper(dialogConfig);
+      dialog.show(document.getElementById('app-confirmation-dialog'));
+    },
+    showAppDesc: function showConfirmDialog(manifest) {
+      var dialogConfig = {
+        title: {
+          text: manifest.name,
+          args: {}
+        },
+        body: {
+          text: manifest.description,
+          args: {}
+        },
+        /* desc: {
+           id: 'uninstall-app-body-2',
+           args: {}
+         },*/
+        cancel: {
+          l10nId: 'cancel',
+          priority: 1,
+          callback: function () {
+            dialog.destroy();
+          },
+        },
+        /*confirm: {
+          l10nId: 'open',
+          priority: 3,
+          callback: function () {
+            dialog.destroy();
+          
+          },
+        },*/
+      };
+      var dialog = new ConfirmDialogHelper(dialogConfig);
+      dialog.show(document.getElementById('app-confirmation-dialog'));
+    },
+
+    updateSKs: function updateSKs(app, isbadgeselected) {
+      var manifest = new ManifestHelper(app.manifest ?
+        app.manifest : app.updateManifest);
+      var params = {
+        menuClassName: 'menu-button',
+        header: {
+          l10nId: 'message'
+        },
+        items: [
+          {
+            name: '',
+            l10nId: '',
+            priority: 1,
+            method: function () {}
+          },
+          {
+            name: 'Select',
+            l10nId: 'select',
+            priority: 2
+          },
+    
+          {
+            name: '',
+            l10nId: '',
+            priority: 3,
+            method: function () {}
           }
-        } : { name: '', l10nId: '', priority: 3, method: function () {}}
-      ]
-    };
-  SettingsSoftkey.init(params);
-  SettingsSoftkey.show();
-},
+        ]
+      };
+      SettingsSoftkey.init(params);
+      SettingsSoftkey.show();
+    },
     /**
      * Handle keydown to make select get focus
      */
     _handleKeydown: function pd__handleKeydown(evt) {
       var select = document.querySelector('.current li.focus');
-      console.log("check")
-      if (select !== null) this.updateSKs(this._app, select.id == "app-badge");
+     
 
-      console.log(select !== null, select.id === "app-badge", this._app.manifest, evt.key)
+      if (select !== null) {
+        this.updateSKs(this._app, select.id === "app-badge");
 
-      if (select !== null && select.id === "app-badge") {
-        console.log("checkee")
-          if (evt.key === "SoftRight") this.showConfirmDialog(this._app.manifest);
-          if (evt.key === "SoftLeft") this.killApp();
-          if (evt.key === "Enter") this.showAppDesc(this._app.manifest);
-      }
-
-      if (evt.key === 'Enter' || evt.key === 'Accept') {
-        if (select !== null) {
-          console.log(select)
-          select.focus();
+        switch (evt.key) {
+          case "Enter":
+          case "Accept":
+            if (select.id === "app-uninstall") {
+              this.showConfirmDialog(this._app.manifest)
+            } else if (select.id === "app-badge") {
+              this.showAppDesc(this._app.manifest)
+            } else if (select.id === "app-launch") {
+              this._app.launch();
+            } else select.focus();
+            break;
         }
-      } else if (evt.key === 'BrowserBack' || evt.key == 'Backspace') {
+      }
+  
+      if (evt.key === 'BrowserBack' || evt.key == 'Backspace') {
         if (this.uninstallDialogShow === true) {
           this.uninstallDialogShow = false;
         } else {
