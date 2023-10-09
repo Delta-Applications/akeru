@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Terminal</title>
+		<link rel="stylesheet" href="app.css" />
+	</head>
+	<body>
+		<pre id="text"></pre>
+		<div id="options" style="display: none;">
+			<button id="bgpick">Background Color<span
+				class="color-preview"></span></button>
+			<button id="fgpick">Foreground Color<span
+				class="color-preview"></span></button>
+		</div>
+		<div id="colorpicker-overlay" style="display: none;"></div>
+		<div id="colorpicker" style="display: none;">
+			<p>Select a color:</p>
+			<button class="colorblock" style="background: black"></button>
+			<button class="colorblock" style="background: #900"></button>
+			<button class="colorblock" style="background: #090"></button>
+			<button class="colorblock" style="background: #f90"></button>
+			<button class="colorblock" style="background: #009"></button>
+			<button class="colorblock" style="background: #909"></button>
+			<button class="colorblock" style="background: #099"></button>
+			<button class="colorblock" style="background: #999"></button>
+			<button class="colorblock" style="background: #444"></button>
+			<button class="colorblock" style="background: #f44"></button>
+			<button class="colorblock" style="background: #4f4"></button>
+			<button class="colorblock" style="background: #ff4"></button>
+			<button class="colorblock" style="background: #44f"></button>
+			<button class="colorblock" style="background: #f4f"></button>
+			<button class="colorblock" style="background: #4ff"></button>
+			<button class="colorblock" style="background: white"></button>
+		<script src="fetch-special-characters.js"></script>
+		<script src="colorpicker.js"></script>
+		<script src="options.js"></script>
+		<script src="app.js"></script>
+		<script src="launch-telnet.js"></script>
+	</body>
+</html>
+

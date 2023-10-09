@@ -1,0 +1,20 @@
+{
+	"name": "Terminal",
+	"description": "A terminal emulator for KaiOS",
+	"type": "certified",
+	"role":"system",
+	"origin": "app://terminal.affe.null",
+	"permissions": {
+		"engmode-extension": {},
+		"tcp-socket": {"description": "Connect to BusyBox"}
+	},
+	"icons": {
+		"48": "/kaidev_48.png",
+		"60": "/kaidev_60.png",
+		"128": "/kaidev_128.png"
+	},
+	"theme_color": "#ff4411",
+	"launch_path": "/index.html",
+	"fullscreen": true
+}
+

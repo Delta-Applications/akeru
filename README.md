@@ -12,6 +12,7 @@ Refurbished KaiOS Apps, Media & Builds by Delta
 - [x] Modified 2.5.4 Settings app (with homescreen setting, sideloading & other dev features)
 - [x] Add app management features to Settings & move permissions there
 - [x] **Fix File Manager opening instead of returning files in Pick Activity**
+- [ ] **Terminal/busybox app with bash file mozActivity support**
 - [ ] Calendar Gaia iCal File Support
 - [ ] De-kaiad TO-DO List, Magnifying Lens & Books & add to official-refurbished
 - [ ] SYSTEM: Holding shortcuts button while pressing either UP or DOWN acts as a volume key while media is being played
