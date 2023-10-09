@@ -99,6 +99,7 @@ SPECIAL FOLDER others */
         }
     },
     _typeToExtensionMap: {
+        'application/x-sh': 'sh',
         'font/otf': 'otf',
         'font/ttf': 'ttf',
         'font/woff': 'woff',
@@ -149,6 +150,7 @@ SPECIAL FOLDER others */
         "unknown/unknown": "unknown",
     },
     _extensionToTypeMap: {
+        'sh': 'application/x-sh',
         'otf': 'font/otf',
         'ttf': 'font/ttf',
         'woff': 'font/woff',
