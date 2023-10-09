@@ -64,9 +64,10 @@ SPECIAL FOLDER DCIM  mime_mapper.js:51:13
 SPECIAL FOLDER downloads  mime_mapper.js:51:13
 SPECIAL FOLDER others */
             console.log("SPECIAL FOLDER "+e)
+            if (e == "audio") return "sound-max";
             if (e == "music") return "music";
-            if (e == "photos") return "launcher-gallery";
-            if (e == "videos") return "launcher-videos";
+            if (e == "photos") return "file-photo";
+            if (e == "videos") return "file-video";
             if (e == "DCIM") return "camera";
             if (e == "downloads") return "file-download-01";
             if (e == "others") return "duck"; // :)
