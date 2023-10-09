@@ -177,7 +177,8 @@ ul {
         color: var(--highlight-color, var(--color-pink)); }
     ul li .file-icon,
     ul li .folder-icon {
-      margin: 0 1rem; }
+      margin: 0 1rem; 
+    min-width: 33px; }
       ul li .file-icon:before,
       ul li .folder-icon:before {
         font-size: 3.2rem;

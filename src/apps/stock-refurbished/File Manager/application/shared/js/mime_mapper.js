@@ -24,7 +24,7 @@ var MimeMapper = {
 
     /* 🎵 */ font: ["font/otf", "font/ttf", "font/woff", "font/woff2"],
 
-    /* 🦆 */ other: ["application/x-sh", "application/msword","application/pdf", "text/vcard", "application/json", "text/plain", "unknown/unknown", "text/html", 
+    /* 🦆 */ other: ["application/geo+json", "application/gpx+xml", "application/x-sh", "application/msword","application/pdf", "text/vcard", "application/json", "text/plain", "unknown/unknown", "text/html", 
                  "application/x-chip8-image", "application/x-bin-image", "application/x-gb-image", "application/x-gbc-image", "application/x-nes-image"]
     },
     getFileTypeFromType: function (e) {
@@ -70,6 +70,10 @@ SPECIAL FOLDER others */
             if (e == "videos") return "file-video";
             if (e == "DCIM") return "camera";
             if (e == "downloads") return "file-download-01";
+            if (e == "callrecording") return "call";
+            if (e == "screenshots") return "mobile-phone";
+            if (e == "LOST.DIR") return "delete";
+            if (e == "whatsapp") return "messages";
             if (e == "others") return "duck"; // :)
             return "email-move"
 
@@ -85,6 +89,8 @@ SPECIAL FOLDER others */
             if (e == "application/pdf") return "file-pdf"
             if (e == "application/msword") return "file-doc"
             if (e == "application/x-sh") return "puzzle"
+            if (e == "application/gpx+xml") return "poi"
+            if (e == "application/geo+json") return "poi"
 
             // Categories
             if (MimeMapper._fileTypeMap.photo.includes(e)) return "file-photo"
@@ -93,12 +99,15 @@ SPECIAL FOLDER others */
             if (MimeMapper._fileTypeMap.compressed.includes(e)) return "file-compress"
             if (MimeMapper._fileTypeMap.font.includes(e)) return "browser-type"
             if (MimeMapper._fileTypeMap.app.includes(e)) return "rocket"
+            if (MimeMapper._fileTypeMap.other.includes(e)) return "file"
 
         } else {
             return "file"
         }
     },
     _typeToExtensionMap: {
+        "application/gpx+xml": "gpx",
+        "application/geo+json" : "geojson",
         'application/x-sh': 'sh',
         'font/otf': 'otf',
         'font/ttf': 'ttf',
@@ -150,6 +159,8 @@ SPECIAL FOLDER others */
         "unknown/unknown": "unknown",
     },
     _extensionToTypeMap: {
+        "gpx": "application/gpx+xml",
+        "geojson": "application/geo+json",
         'sh': 'application/x-sh',
         'otf': 'font/otf',
         'ttf': 'font/ttf',
