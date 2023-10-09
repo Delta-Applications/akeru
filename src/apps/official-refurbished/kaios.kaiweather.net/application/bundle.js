@@ -37363,7 +37363,7 @@
                     }), 2, {
                         id: "item2"
                     }), (0, s.createVNode)(1, "div", null, (0, s.createComponentVNode)(2, f.Item, {
-                        name: this.locale("version") + " " + a + " bHackers",
+                        name: this.locale("version") + " " + a + " akeru",
                         isSelected: 3 === r
                     }), 2, {
                         id: "item3"

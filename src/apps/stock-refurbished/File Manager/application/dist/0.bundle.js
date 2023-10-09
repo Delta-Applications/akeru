@@ -1,10 +1,10 @@
-webpackJsonp([0], [, , , function(e, t, n) {
+webpackJsonp([0], [, , , function (e, t, n) {
     "use strict";
 
     function o(e) {
-        return (o = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+        return (o = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
             return typeof e
-        } : function(e) {
+        } : function (e) {
             return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
         })(e)
     }
@@ -34,7 +34,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
 
     function c(e) {
-        return (c = Object.setPrototypeOf ? Object.getPrototypeOf : function(e) {
+        return (c = Object.setPrototypeOf ? Object.getPrototypeOf : function (e) {
             return e.__proto__ || Object.getPrototypeOf(e)
         })(e)
     }
@@ -51,13 +51,13 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
 
     function p(e, t) {
-        return (p = Object.setPrototypeOf || function(e, t) {
+        return (p = Object.setPrototypeOf || function (e, t) {
             return e.__proto__ = t, e
         })(e, t)
     }
     Object.defineProperty(t, "__esModule", {
         value: !0
-    }), n.d(t, "default", function() {
+    }), n.d(t, "default", function () {
         return S
     });
     var f = n(9),
@@ -74,23 +74,23 @@ webpackJsonp([0], [, , , function(e, t, n) {
         C = n(194),
         w = n(199);
     window.performance.mark("navigationLoaded");
-    var S = function(e) {
+    var S = function (e) {
         function t() {
             return r(this, t), s(this, c(t).apply(this, arguments))
         }
         return l(t, e), a(t, [{
             key: "componentWillMount",
-            value: function() {
+            value: function () {
                 window.performance.mark("contentInteractive")
             }
         }, {
             key: "componentDidMount",
-            value: function() {
+            value: function () {
                 E.a.openActivityMode ? (b.a.request("push", "/list/".concat(E.a.openPath)), window.dispatchEvent(new CustomEvent("fullyloaded"))) : E.a.pickActivityMode && b.a.request("push", "/")
             }
         }, {
             key: "render",
-            value: function() {
+            value: function () {
                 return d.a.createElement("div", {
                     id: "app",
                     tabIndex: "-1"
@@ -105,7 +105,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         }]), t
     }(h.a);
     y.a.render(d.a.createElement(S, null), document.getElementById("root"))
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e, t, n, r, i, a, s, u) {
@@ -115,16 +115,16 @@ webpackJsonp([0], [, , , function(e, t, n) {
             else {
                 var l = [n, r, i, a, s, u],
                     p = 0;
-                c = new Error(t.replace(/%s/g, function() {
+                c = new Error(t.replace(/%s/g, function () {
                     return l[p++]
                 })), c.name = "Invariant Violation"
             }
             throw c.framesToPop = 1, c
         }
     }
-    var o = function(e) {};
+    var o = function (e) {};
     e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
@@ -134,12 +134,12 @@ webpackJsonp([0], [, , , function(e, t, n) {
         throw r.name = "Invariant Violation", r.framesToPop = 1, r
     }
     e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     var n = t(13),
         o = n;
     e.exports = o
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
@@ -149,23 +149,23 @@ webpackJsonp([0], [, , , function(e, t, n) {
     var o = Object.getOwnPropertySymbols,
         r = Object.prototype.hasOwnProperty,
         i = Object.prototype.propertyIsEnumerable;
-    e.exports = function() {
+    e.exports = function () {
         try {
             if (!Object.assign) return !1;
             var e = new String("abc");
             if (e[5] = "de", "5" === Object.getOwnPropertyNames(e)[0]) return !1;
             for (var t = {}, n = 0; n < 10; n++) t["_" + String.fromCharCode(n)] = n;
-            if ("0123456789" !== Object.getOwnPropertyNames(t).map(function(e) {
+            if ("0123456789" !== Object.getOwnPropertyNames(t).map(function (e) {
                     return t[e]
                 }).join("")) return !1;
             var o = {};
-            return "abcdefghijklmnopqrst".split("").forEach(function(e) {
+            return "abcdefghijklmnopqrst".split("").forEach(function (e) {
                 o[e] = e
             }), "abcdefghijklmnopqrst" === Object.keys(Object.assign({}, o)).join("")
         } catch (e) {
             return !1
         }
-    }() ? Object.assign : function(e, t) {
+    }() ? Object.assign : function (e, t) {
         for (var a, s, u = n(e), c = 1; c < arguments.length; c++) {
             a = Object(arguments[c]);
             for (var l in a) r.call(a, l) && (u[l] = a[l]);
@@ -176,7 +176,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         }
         return u
     }
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
@@ -249,16 +249,16 @@ webpackJsonp([0], [, , , function(e, t, n) {
             uncacheNode: r
         };
     e.exports = m
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     e.exports = t(137)
-}, function(e, t, n) {
+}, function (e, t, n) {
     "use strict";
 
     function o(e) {
-        return (o = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+        return (o = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
             return typeof e
-        } : function(e) {
+        } : function (e) {
             return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
         })(e)
     }
@@ -288,7 +288,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
 
     function c(e) {
-        return (c = Object.setPrototypeOf ? Object.getPrototypeOf : function(e) {
+        return (c = Object.setPrototypeOf ? Object.getPrototypeOf : function (e) {
             return e.__proto__ || Object.getPrototypeOf(e)
         })(e)
     }
@@ -305,7 +305,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
 
     function p(e, t) {
-        return (p = Object.setPrototypeOf || function(e, t) {
+        return (p = Object.setPrototypeOf || function (e, t) {
             return e.__proto__ = t, e
         })(e, t)
     }
@@ -317,7 +317,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
     function d(e) {
         if ("function" != typeof e) throw new Error("Handler should be a function!")
     }
-    n.d(t, "a", function() {
+    n.d(t, "a", function () {
         return E
     });
     var h = n(9),
@@ -326,18 +326,18 @@ webpackJsonp([0], [, , , function(e, t, n) {
         v = n.n(y),
         g = n(12),
         b = n(202),
-        E = (n.n(b), function(e) {
+        E = (n.n(b), function (e) {
             function t() {
                 return r(this, t), s(this, c(t).apply(this, arguments))
             }
             return l(t, e), a(t, [{
                 key: "setHierarchy",
-                value: function(e) {
+                value: function (e) {
                     e && v.a.findDOMNode(this).focus()
                 }
             }, {
                 key: "handleEvent",
-                value: function(e) {
+                value: function (e) {
                     if ("function" == typeof this._pre_handleEvent) {
                         if (!1 === this._pre_handleEvent(e)) return
                     } else this.debug("no handle event pre found. skip");
@@ -345,48 +345,48 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "open",
-                value: function(e) {}
+                value: function (e) {}
             }, {
                 key: "close",
-                value: function(e) {}
+                value: function (e) {}
             }, {
                 key: "show",
-                value: function() {
+                value: function () {
                     v.a.findDOMNode(this).classList.remove("hidden"), this.focus(), this.emit("opened")
                 }
             }, {
                 key: "hide",
-                value: function() {
+                value: function () {
                     v.a.findDOMNode(this).classList.add("hidden"), this.emit("closed")
                 }
             }, {
                 key: "focus",
-                value: function() {
+                value: function () {
                     v.a.findDOMNode(this).focus()
                 }
             }, {
                 key: "respondToHierarchyEvent",
-                value: function(e) {
+                value: function (e) {
                     return !this.isActive()
                 }
             }, {
                 key: "_changeState",
-                value: function(e, t) {
+                value: function (e, t) {
                     v.a.findDOMNode(this).setAttribute(e + "-state", t.toString())
                 }
             }, {
                 key: "isHidden",
-                value: function() {
+                value: function () {
                     return v.a.findDOMNode(this).classList.contains("hidden")
                 }
             }, {
                 key: "isActive",
-                value: function() {
+                value: function () {
                     return !v.a.findDOMNode(this).classList.contains("hidden")
                 }
             }, {
                 key: "publish",
-                value: function(e, t, n) {
+                value: function (e, t, n) {
                     this.broadcast(e, t);
                     var o = new CustomEvent(n ? e : this.EVENT_PREFIX + e, {
                         bubbles: !0,
@@ -396,7 +396,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "broadcast",
-                value: function(e, t) {
+                value: function (e, t) {
                     if (v.a.findDOMNode(this)) {
                         var n = new CustomEvent("_" + e, {
                             bubbles: !1,
@@ -407,26 +407,26 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "debug",
-                value: function() {
+                value: function () {
                     this.DEBUG ? this.TRACE : window.DUMP && DUMP("[" + this.name + "][" + g.a.currentTime() + "] " + Array.prototype.slice.call(arguments).concat())
                 }
             }, {
                 key: "on",
-                value: function(e, t) {
+                value: function (e, t) {
                     f(e), d(t), this.listeners || (this.listeners = new Map);
                     var n = this.listeners.get(e);
                     n || (n = new Set, this.listeners.set(e, n)), n.add(t)
                 }
             }, {
                 key: "off",
-                value: function(e, t) {
+                value: function (e, t) {
                     f(e), d(t);
                     var n = this.listeners.get(e);
                     n && (n.delete(t), n.size || this.listeners.delete(e))
                 }
             }, {
                 key: "offAll",
-                value: function(e) {
+                value: function (e) {
                     if (void 0 === e) return void this.listeners.clear();
                     f(e);
                     var t = this.listeners.get(e);
@@ -434,16 +434,16 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "observe",
-                value: function(e, t) {
+                value: function (e, t) {
                     this._settings || (this._settings = {}), this._settings[e] = t, "function" == typeof this["_observe_" + e] && this["_observe_" + e](t)
                 }
             }, {
                 key: "emit",
-                value: function(e) {
+                value: function (e) {
                     for (var t = arguments.length, n = new Array(t > 1 ? t - 1 : 0), o = 1; o < t; o++) n[o - 1] = arguments[o];
                     f(e), this.listeners || (this.listeners = new Map);
                     var r = this.listeners.get(e);
-                    r && r.forEach(function(e) {
+                    r && r.forEach(function (e) {
                         try {
                             e.apply(null, n)
                         } catch (e) {}
@@ -451,7 +451,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }]), t
         }(m.a.Component))
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     var n = !("undefined" == typeof window || !window.document || !window.document.createElement),
         o = {
@@ -462,21 +462,21 @@ webpackJsonp([0], [, , , function(e, t, n) {
             isInWorker: !n
         };
     e.exports = o
-}, function(e, t, n) {
+}, function (e, t, n) {
     "use strict";
     var o = {
         _providers: new Map,
         _services: new Map,
         _requestsByService: new Map,
         _requestsByProvider: new Map,
-        request: function(e) {
+        request: function (e) {
             var t = e.split(":"),
                 n = Array.prototype.slice.call(arguments, 1),
                 o = this;
             if (this.debug(t), t.length > 1) {
                 var r = t[0],
                     i = t[1];
-                return this._providers.get(r) ? (this.debug("service: " + i + " is online, perform the request with " + n.concat()), Promise.resolve(this._providers.get(r)[i].apply(o._providers.get(r), n))) : new Promise(function(t, a) {
+                return this._providers.get(r) ? (this.debug("service: " + i + " is online, perform the request with " + n.concat()), Promise.resolve(this._providers.get(r)[i].apply(o._providers.get(r), n))) : new Promise(function (t, a) {
                     o.debug("service: " + e + " is offline, queue the task."), o._requestsByProvider.has(r) || o._requestsByProvider.set(r, []), o._requestsByProvider.get(r).push({
                         service: i,
                         resolve: t,
@@ -488,7 +488,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 var a = this._services.get(e);
                 return this.debug("service [" + e + "] provider [" + a.name + "] is online, perform the task."), Promise.resolve(a[e].apply(a, n))
             }
-            return this.debug("service: " + e + " is offline, queue the task."), new Promise(function(t, r) {
+            return this.debug("service: " + e + " is offline, queue the task."), new Promise(function (t, r) {
                 o.debug("storing the requests..."), o._requestsByService.has(e) || o._requestsByService.set(e, []), o._requestsByService.get(e).push({
                     service: e,
                     resolve: t,
@@ -496,33 +496,33 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 })
             })
         },
-        register: function(e, t) {
+        register: function (e, t) {
             var n = this;
-            if (this._providers.has(t.name) || this._providers.set(t.name, t), this.debug((t.name || "(Anonymous)") + " is registering service: [" + e + "]"), this.debug("checking awaiting requests by server.."), this._requestsByProvider.has(t.name) && (this._requestsByProvider.get(t.name).forEach(function(e) {
+            if (this._providers.has(t.name) || this._providers.set(t.name, t), this.debug((t.name || "(Anonymous)") + " is registering service: [" + e + "]"), this.debug("checking awaiting requests by server.."), this._requestsByProvider.has(t.name) && (this._requestsByProvider.get(t.name).forEach(function (e) {
                     n.debug("resolving..", t, t.name, e.service, e.args);
                     var o = "function" == typeof t[e.service] ? t[e.service].apply(t, e.args) : t[e.service];
                     e.resolve(o)
                 }), this._requestsByProvider.delete(t.name)), this._services.has(e)) return void this.debug("the service [" + e + "] has already been registered by other server:", this._services.get(e).name);
-            this._services.set(e, t), this.debug("checking awaiting requests by service.."), this._requestsByService.has(e) && (this._requestsByService.get(e).forEach(function(e) {
+            this._services.set(e, t), this.debug("checking awaiting requests by service.."), this._requestsByService.has(e) && (this._requestsByService.get(e).forEach(function (e) {
                 n.debug("resolving..", t, e.service);
                 var o = t[e.service].apply(t, e.args);
                 e.resolve(o)
             }), this._requestsByService.delete(e))
         },
-        unregister: function(e, t) {
+        unregister: function (e, t) {
             this._providers.delete(t.name);
             var n = this._services.get(e);
             n && t === n && this._services.delete(e)
         },
         _states: new Map,
         _statesByState: new Map,
-        registerState: function(e, t) {
+        registerState: function (e, t) {
             this._states.set(t.name, t), t.name, this._statesByState.set(e, t)
         },
-        unregisterState: function(e, t) {
+        unregisterState: function (e, t) {
             this._states.delete(t.name), this._statesByState.get(e) === t && this._statesByState.delete(e)
         },
-        query: function(e) {
+        query: function (e) {
             this.debug(e);
             var t, n, o = e.split(".");
             if (o.length > 1 ? (n = this._states.get(o[0]), t = o[1]) : (t = o[0], n = this._statesByState.get(t)), !n) return void this.debug("Provider not ready, return undefined state.");
@@ -533,39 +533,39 @@ webpackJsonp([0], [, , , function(e, t, n) {
             return n[t]
         },
         _start: (new Date).getTime() / 1e3,
-        currentTime: function() {
+        currentTime: function () {
             return ((new Date).getTime() / 1e3 - this._start).toFixed(3)
         },
-        debug: function() {}
+        debug: function () {}
     };
     t.a = o
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
-        return function() {
+        return function () {
             return e
         }
     }
-    var o = function() {};
-    o.thatReturns = n, o.thatReturnsFalse = n(!1), o.thatReturnsTrue = n(!0), o.thatReturnsNull = n(null), o.thatReturnsThis = function() {
+    var o = function () {};
+    o.thatReturns = n, o.thatReturnsFalse = n(!1), o.thatReturnsTrue = n(!0), o.thatReturnsNull = n(null), o.thatReturnsThis = function () {
         return this
-    }, o.thatReturnsArgument = function(e) {
+    }, o.thatReturnsArgument = function (e) {
         return e
     }, e.exports = o
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     var n = null;
     e.exports = {
         debugTool: n
     }
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
-        return (n = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+        return (n = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
             return typeof e
-        } : function(e) {
+        } : function (e) {
             return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
         })(e)
     }
@@ -587,7 +587,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             __self: !0,
             __source: !0
         },
-        l = function(e, t, n, o, r, i, a) {
+        l = function (e, t, n, o, r, i, a) {
             var s = {
                 $$typeof: u,
                 type: e,
@@ -598,7 +598,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             };
             return s
         };
-    l.createElement = function(e, t, n) {
+    l.createElement = function (e, t, n) {
         var i, u = {},
             p = null,
             f = null;
@@ -617,12 +617,12 @@ webpackJsonp([0], [, , , function(e, t, n) {
             for (i in y) void 0 === u[i] && (u[i] = y[i])
         }
         return l(e, p, f, 0, 0, a.current, u)
-    }, l.createFactory = function(e) {
+    }, l.createFactory = function (e) {
         var t = l.createElement.bind(null, e);
         return t.type = e, t
-    }, l.cloneAndReplaceKey = function(e, t) {
+    }, l.cloneAndReplaceKey = function (e, t) {
         return l(e.type, t, e.ref, e._self, e._source, e._owner, e.props)
-    }, l.cloneElement = function(e, t, n) {
+    }, l.cloneElement = function (e, t, n) {
         var u, p = i({}, e.props),
             f = e.key,
             d = e.ref,
@@ -640,10 +640,10 @@ webpackJsonp([0], [, , , function(e, t, n) {
             p.children = v
         }
         return l(e.type, f, d, 0, 0, h, p)
-    }, l.isValidElement = function(e) {
+    }, l.isValidElement = function (e) {
         return "object" === n(e) && null !== e && e.$$typeof === u
     }, l.REACT_ELEMENT_TYPE = u, e.exports = l
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n() {
@@ -699,34 +699,34 @@ webpackJsonp([0], [, , , function(e, t, n) {
         b = !1,
         E = null,
         _ = {
-            initialize: function() {
+            initialize: function () {
                 this.dirtyComponentsLength = y.length
             },
-            close: function() {
+            close: function () {
                 this.dirtyComponentsLength !== y.length ? (y.splice(0, this.dirtyComponentsLength), w()) : y.length = 0
             }
         },
         k = {
-            initialize: function() {
+            initialize: function () {
                 this.callbackQueue.reset()
             },
-            close: function() {
+            close: function () {
                 this.callbackQueue.notifyAll()
             }
         },
         C = [_, k];
     l(o.prototype, m.Mixin, {
-        getTransactionWrappers: function() {
+        getTransactionWrappers: function () {
             return C
         },
-        destructor: function() {
+        destructor: function () {
             this.dirtyComponentsLength = null, p.release(this.callbackQueue), this.callbackQueue = null, O.ReactReconcileTransaction.release(this.reconcileTransaction), this.reconcileTransaction = null
         },
-        perform: function(e, t, n) {
+        perform: function (e, t, n) {
             return m.Mixin.perform.call(this, this.reconcileTransaction.perform, this.reconcileTransaction, e, t, n)
         }
     }), f.addPoolingTo(o);
-    var w = function() {
+    var w = function () {
             for (; y.length || b;) {
                 if (y.length) {
                     var e = o.getPooled();
@@ -740,10 +740,10 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }
         },
         S = {
-            injectReconcileTransaction: function(e) {
+            injectReconcileTransaction: function (e) {
                 e || c("126"), O.ReactReconcileTransaction = e
             },
-            injectBatchingStrategy: function(e) {
+            injectBatchingStrategy: function (e) {
                 e || c("127"), "function" != typeof e.batchedUpdates && c("128"), "boolean" != typeof e.isBatchingUpdates && c("129"), E = e
             }
         },
@@ -756,10 +756,10 @@ webpackJsonp([0], [, , , function(e, t, n) {
             asap: u
         };
     e.exports = O
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     e.exports = t(141)
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     var n = t(34),
         o = n({
@@ -841,7 +841,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             PropagationPhases: o
         };
     e.exports = i
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e, t, n, o) {
@@ -865,51 +865,51 @@ webpackJsonp([0], [, , , function(e, t, n) {
             eventPhase: null,
             bubbles: null,
             cancelable: null,
-            timeStamp: function(e) {
+            timeStamp: function (e) {
                 return e.timeStamp || Date.now()
             },
             defaultPrevented: null,
             isTrusted: null
         };
     o(n.prototype, {
-        preventDefault: function() {
+        preventDefault: function () {
             this.defaultPrevented = !0;
             var e = this.nativeEvent;
             e && (e.preventDefault ? e.preventDefault() : "unknown" != typeof e.returnValue && (e.returnValue = !1), this.isDefaultPrevented = i.thatReturnsTrue)
         },
-        stopPropagation: function() {
+        stopPropagation: function () {
             var e = this.nativeEvent;
             e && (e.stopPropagation ? e.stopPropagation() : "unknown" != typeof e.cancelBubble && (e.cancelBubble = !0), this.isPropagationStopped = i.thatReturnsTrue)
         },
-        persist: function() {
+        persist: function () {
             this.isPersistent = i.thatReturnsTrue
         },
         isPersistent: i.thatReturnsFalse,
-        destructor: function() {
+        destructor: function () {
             var e = this.constructor.Interface;
             for (var t in e) this[t] = null;
             for (var n = 0; n < a.length; n++) this[a[n]] = null
         }
-    }), n.Interface = s, n.augmentClass = function(e, t) {
+    }), n.Interface = s, n.augmentClass = function (e, t) {
         var n = this,
-            i = function() {};
+            i = function () {};
         i.prototype = n.prototype;
         var a = new i;
         o(a, e.prototype), e.prototype = a, e.prototype.constructor = e, e.Interface = o({}, n.Interface, t), e.augmentClass = n.augmentClass, r.addPoolingTo(e, r.fourArgumentPooler)
     }, r.addPoolingTo(n, r.fourArgumentPooler), e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
-    var n = function(e) {
+    var n = function (e) {
         var t;
         for (t in e)
             if (e.hasOwnProperty(t)) return t;
         return null
     };
     e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     var n = t(5),
-        o = (t(4), function(e) {
+        o = (t(4), function (e) {
             var t = this;
             if (t.instancePool.length) {
                 var n = t.instancePool.pop();
@@ -917,7 +917,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }
             return new t(e)
         }),
-        r = function(e, t) {
+        r = function (e, t) {
             var n = this;
             if (n.instancePool.length) {
                 var o = n.instancePool.pop();
@@ -925,7 +925,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }
             return new n(e, t)
         },
-        i = function(e, t, n) {
+        i = function (e, t, n) {
             var o = this;
             if (o.instancePool.length) {
                 var r = o.instancePool.pop();
@@ -933,7 +933,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }
             return new o(e, t, n)
         },
-        a = function(e, t, n, o) {
+        a = function (e, t, n, o) {
             var r = this;
             if (r.instancePool.length) {
                 var i = r.instancePool.pop();
@@ -941,7 +941,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }
             return new r(e, t, n, o)
         },
-        s = function(e, t, n, o, r) {
+        s = function (e, t, n, o, r) {
             var i = this;
             if (i.instancePool.length) {
                 var a = i.instancePool.pop();
@@ -949,12 +949,12 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }
             return new i(e, t, n, o, r)
         },
-        u = function(e) {
+        u = function (e) {
             var t = this;
             e instanceof t || n("25"), e.destructor(), t.instancePool.length < t.poolSize && t.instancePool.push(e)
         },
         c = o,
-        l = function(e, t) {
+        l = function (e, t) {
             var n = e;
             return n.instancePool = [], n.getPooled = t || c, n.poolSize || (n.poolSize = 10), n.release = u, n
         },
@@ -967,19 +967,19 @@ webpackJsonp([0], [, , , function(e, t, n) {
             fiveArgumentPooler: s
         };
     e.exports = p
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     var n = {
         current: null
     };
     e.exports = n
-}, function(e, t, n) {
+}, function (e, t, n) {
     "use strict";
 
     function o(e) {
-        return (o = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+        return (o = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
             return typeof e
-        } : function(e) {
+        } : function (e) {
             return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
         })(e)
     }
@@ -1009,7 +1009,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
 
     function c(e) {
-        return (c = Object.setPrototypeOf ? Object.getPrototypeOf : function(e) {
+        return (c = Object.setPrototypeOf ? Object.getPrototypeOf : function (e) {
             return e.__proto__ || Object.getPrototypeOf(e)
         })(e)
     }
@@ -1026,12 +1026,12 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
 
     function p(e, t) {
-        return (p = Object.setPrototypeOf || function(e, t) {
+        return (p = Object.setPrototypeOf || function (e, t) {
             return e.__proto__ = t, e
         })(e, t)
     }
     var f = n(99),
-        d = function(e) {
+        d = function (e) {
             function t() {
                 var e, n;
                 r(this, t);
@@ -1040,38 +1040,38 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }
             return l(t, e), a(t, [{
                 key: "start",
-                value: function() {
+                value: function () {
                     this.currentKeys = {}, this.registeredDOMMap = new Map
                 }
             }, {
                 key: "register",
-                value: function(e, t) {
+                value: function (e, t) {
                     var n = this.registeredDOMMap.get(t),
                         o = this;
                     n ? n.updateKeys(e) : (n = {
-                        start: function() {
+                        start: function () {
                             t.addEventListener("focus", this, !0), this.updateKeys(e)
                         },
-                        stop: function() {
+                        stop: function () {
                             t.removeEventListener("focus", this, !0)
                         },
-                        handleEvent: function() {
+                        handleEvent: function () {
                             this.check()
                         },
-                        check: function() {
+                        check: function () {
                             if (document.activeElement === t || t.contains(document.activeElement)) {
                                 var e = o.recount();
                                 o.store(e)
                             }
                         },
-                        updateKeys: function(e) {
+                        updateKeys: function (e) {
                             this.keys = e, this.check()
                         }
                     }, this.registeredDOMMap.set(t, n), n.start())
                 }
             }, {
                 key: "generateKeysInfo",
-                value: function(e) {
+                value: function (e) {
                     var t = [];
                     for (var n in e) {
                         var o = {};
@@ -1093,18 +1093,18 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "registerSoftkeys",
-                value: function(e) {
+                value: function (e) {
                     var t = this.generateKeysInfo(e);
                     t.length && navigator.softkeyManager && navigator.softkeyManager.registerKeys(t)
                 }
             }, {
                 key: "store",
-                value: function(e) {
+                value: function (e) {
                     this.currentKeys = e, this.registerSoftkeys(e), this.emit("change")
                 }
             }, {
                 key: "recount",
-                value: function() {
+                value: function () {
                     for (var e = {}, t = document.activeElement; t !== document.body;) {
                         var n = this.registeredDOMMap.get(t);
                         if (n) {
@@ -1117,7 +1117,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "unregister",
-                value: function(e) {
+                value: function (e) {
                     var t = this.registeredDOMMap.get(e);
                     t && (t.stop(), this.registeredDOMMap.delete(e), this.store(this.recount()))
                 }
@@ -1125,7 +1125,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         }(f.a),
         h = new d;
     h.start(), t.a = h
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
@@ -1172,11 +1172,11 @@ webpackJsonp([0], [, , , function(e, t, n) {
         p = t(57),
         f = t(95),
         d = "undefined" != typeof document && "number" == typeof document.documentMode || "undefined" != typeof navigator && "string" == typeof navigator.userAgent && /\bEdge\/\d/.test(navigator.userAgent),
-        h = p(function(e, t, o) {
+        h = p(function (e, t, o) {
             11 === t.node.nodeType || 1 === t.node.nodeType && "object" === t.node.nodeName.toLowerCase() && (null == t.node.namespaceURI || t.node.namespaceURI === c.html) ? (n(t), e.insertBefore(t.node, o)) : (e.insertBefore(t.node, o), n(t))
         });
     u.insertTreeBefore = h, u.replaceChildWithTree = o, u.queueChild = r, u.queueHTML = i, u.queueText = a, e.exports = u
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e, t) {
@@ -1189,7 +1189,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             HAS_NUMERIC_VALUE: 8,
             HAS_POSITIVE_NUMERIC_VALUE: 24,
             HAS_OVERLOADED_BOOLEAN_VALUE: 32,
-            injectDOMPropertyConfig: function(e) {
+            injectDOMPropertyConfig: function (e) {
                 var t = r,
                     i = e.Properties || {},
                     s = e.DOMAttributeNamespaces || {},
@@ -1229,7 +1229,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             properties: {},
             getPossibleStandardName: null,
             _isCustomAttributeFunctions: [],
-            isCustomAttribute: function(e) {
+            isCustomAttribute: function (e) {
                 for (var t = 0; t < a._isCustomAttributeFunctions.length; t++) {
                     if ((0, a._isCustomAttributeFunctions[t])(e)) return !0
                 }
@@ -1238,7 +1238,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             injection: r
         };
     e.exports = a
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n() {
@@ -1246,39 +1246,39 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
     var o = t(165),
         r = (t(14), t(6), {
-            mountComponent: function(e, t, o, r, i, a) {
+            mountComponent: function (e, t, o, r, i, a) {
                 var s = e.mountComponent(t, o, r, i, a);
                 return e._currentElement && null != e._currentElement.ref && t.getReactMountReady().enqueue(n, e), s
             },
-            getHostNode: function(e) {
+            getHostNode: function (e) {
                 return e.getHostNode()
             },
-            unmountComponent: function(e, t) {
+            unmountComponent: function (e, t) {
                 o.detachRefs(e, e._currentElement), e.unmountComponent(t)
             },
-            receiveComponent: function(e, t, r, i) {
+            receiveComponent: function (e, t, r, i) {
                 var a = e._currentElement;
                 if (t !== a || i !== e._context) {
                     var s = o.shouldUpdateRefs(a, t);
                     s && o.detachRefs(e, a), e.receiveComponent(t, r, i), s && e._currentElement && null != e._currentElement.ref && r.getReactMountReady().enqueue(n, e)
                 }
             },
-            performUpdateIfNecessary: function(e, t, n) {
+            performUpdateIfNecessary: function (e, t, n) {
                 e._updateBatchNumber === n && e.performUpdateIfNecessary(t)
             }
         });
     e.exports = r
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     var n = {};
     e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
-        return (n = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+        return (n = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
             return typeof e
-        } : function(e) {
+        } : function (e) {
             return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
         })(e)
     }
@@ -1290,16 +1290,16 @@ webpackJsonp([0], [, , , function(e, t, n) {
         u = t(89),
         c = (t(4), {}),
         l = null,
-        p = function(e, t) {
+        p = function (e, t) {
             e && (i.executeDispatchesInOrder(e, t), e.isPersistent() || e.constructor.release(e))
         },
-        f = function(e) {
+        f = function (e) {
             return p(e, !0)
         },
-        d = function(e) {
+        d = function (e) {
             return p(e, !1)
         },
-        h = function(e) {
+        h = function (e) {
             return "." + e._rootNodeID
         },
         m = {
@@ -1307,19 +1307,19 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 injectEventPluginOrder: r.injectEventPluginOrder,
                 injectEventPluginsByName: r.injectEventPluginsByName
             },
-            putListener: function(e, t, i) {
+            putListener: function (e, t, i) {
                 "function" != typeof i && o("94", t, n(i));
                 var a = h(e);
                 (c[t] || (c[t] = {}))[a] = i;
                 var s = r.registrationNameModules[t];
                 s && s.didPutListener && s.didPutListener(e, t, i)
             },
-            getListener: function(e, t) {
+            getListener: function (e, t) {
                 var n = c[t],
                     o = h(e);
                 return n && n[o]
             },
-            deleteListener: function(e, t) {
+            deleteListener: function (e, t) {
                 var n = r.registrationNameModules[t];
                 n && n.willDeleteListener && n.willDeleteListener(e, t);
                 var o = c[t];
@@ -1327,7 +1327,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                     delete o[h(e)]
                 }
             },
-            deleteAllListeners: function(e) {
+            deleteAllListeners: function (e) {
                 var t = h(e);
                 for (var n in c)
                     if (c.hasOwnProperty(n) && c[n][t]) {
@@ -1335,7 +1335,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                         o && o.willDeleteListener && o.willDeleteListener(e, n), delete c[n][t]
                     }
             },
-            extractEvents: function(e, t, n, o) {
+            extractEvents: function (e, t, n, o) {
                 for (var i, a = r.plugins, u = 0; u < a.length; u++) {
                     var c = a[u];
                     if (c) {
@@ -1345,22 +1345,22 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
                 return i
             },
-            enqueueEvents: function(e) {
+            enqueueEvents: function (e) {
                 e && (l = s(l, e))
             },
-            processEventQueue: function(e) {
+            processEventQueue: function (e) {
                 var t = l;
                 l = null, e ? u(t, f) : u(t, d), l && o("95"), a.rethrowCaughtError()
             },
-            __purge: function() {
+            __purge: function () {
                 c = {}
             },
-            __getListenerBank: function() {
+            __getListenerBank: function () {
                 return c
             }
         };
     e.exports = m
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e, t, n) {
@@ -1427,24 +1427,24 @@ webpackJsonp([0], [, , , function(e, t, n) {
             accumulateEnterLeaveDispatches: l
         };
     e.exports = b
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     var n = {
-        remove: function(e) {
+        remove: function (e) {
             e._reactInternalInstance = void 0
         },
-        get: function(e) {
+        get: function (e) {
             return e._reactInternalInstance
         },
-        has: function(e) {
+        has: function (e) {
             return void 0 !== e._reactInternalInstance
         },
-        set: function(e, t) {
+        set: function (e, t) {
             e._reactInternalInstance = t
         }
     };
     e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e, t, n, r) {
@@ -1453,31 +1453,31 @@ webpackJsonp([0], [, , , function(e, t, n) {
     var o = t(19),
         r = t(60),
         i = {
-            view: function(e) {
+            view: function (e) {
                 if (e.view) return e.view;
                 var t = r(e);
                 if (t.window === t) return t;
                 var n = t.ownerDocument;
                 return n ? n.defaultView || n.parentWindow : window
             },
-            detail: function(e) {
+            detail: function (e) {
                 return e.detail || 0
             }
         };
     o.augmentClass(n, i), e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     var n = t(5),
         o = (t(4), {
-            reinitializeTransaction: function() {
+            reinitializeTransaction: function () {
                 this.transactionWrappers = this.getTransactionWrappers(), this.wrapperInitData ? this.wrapperInitData.length = 0 : this.wrapperInitData = [], this._isInTransaction = !1
             },
             _isInTransaction: !1,
             getTransactionWrappers: null,
-            isInTransaction: function() {
+            isInTransaction: function () {
                 return !!this._isInTransaction
             },
-            perform: function(e, t, o, r, i, a, s, u) {
+            perform: function (e, t, o, r, i, a, s, u) {
                 this.isInTransaction() && n("27");
                 var c, l;
                 try {
@@ -1493,7 +1493,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
                 return l
             },
-            initializeAll: function(e) {
+            initializeAll: function (e) {
                 for (var t = this.transactionWrappers, n = e; n < t.length; n++) {
                     var o = t[n];
                     try {
@@ -1505,7 +1505,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                     }
                 }
             },
-            closeAll: function(e) {
+            closeAll: function (e) {
                 this.isInTransaction() || n("28");
                 for (var t = this.transactionWrappers, o = e; o < t.length; o++) {
                     var i, a = t[o],
@@ -1526,7 +1526,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             OBSERVED_ERROR: {}
         };
     e.exports = r
-}, function(e, t, n) {
+}, function (e, t, n) {
     "use strict";
 
     function o(e, t) {
@@ -1543,10 +1543,10 @@ webpackJsonp([0], [, , , function(e, t, n) {
     function i(e, t, n) {
         return t && r(e.prototype, t), n && r(e, n), e
     }
-    n.d(t, "a", function() {
+    n.d(t, "a", function () {
         return a
     });
-    var a = function() {
+    var a = function () {
         function e(t, n, r, i) {
             o(this, e), this.loopable = !0, this.selector = t, this.element = n, this.scrollSelector = r, this.initialFocusIndex = i || 0, this.element.addEventListener("keydown", this), this._mutationObserver = new MutationObserver(this.refresh.bind(this)), this._mutationObserver.observe(this.element, {
                 childList: !0,
@@ -1556,22 +1556,22 @@ webpackJsonp([0], [, , , function(e, t, n) {
         }
         return i(e, [{
             key: "setFocus",
-            value: function(e, t) {
+            value: function (e, t) {
                 this._currentFocus = e, this.element.activeElement = e, t || (this.scrollIntoView(e), this.element.contains(document.activeElement) && e.focus())
             }
         }, {
             key: "destroy",
-            value: function() {
+            value: function () {
                 this.element.removeEventListener("keydown", this), this.element.removeEventListener("focus", this), this._candidates = [], this._mutationObserver.disconnect(), this._currentFocus = null, this.element.activeElement = null, this.element = null
             }
         }, {
             key: "updateCandidates",
-            value: function() {
+            value: function () {
                 this._candidates = Array.from(this.element.querySelectorAll(this.selector))
             }
         }, {
             key: "isAriaHiddenByAncestor",
-            value: function() {
+            value: function () {
                 for (var e = !1, t = this.element; t !== document.body;) {
                     if ("true" === t.getAttribute("aria-hidden")) {
                         e = !0;
@@ -1583,13 +1583,13 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }
         }, {
             key: "refresh",
-            value: function(e) {
+            value: function (e) {
                 var t = this,
                     n = !1,
                     o = this.initialFocusIndex,
                     r = !1;
-                if (e.forEach(function(e) {
-                        [].slice.call(e.removedNodes).forEach(function(e) {
+                if (e.forEach(function (e) {
+                        [].slice.call(e.removedNodes).forEach(function (e) {
                             e.contains(t._currentFocus) && (n = !0, o = t.getElementIndex(t._currentFocus))
                         }), e.addedNodes.length > 0 && (n = !0, r = !0)
                     }), this.updateCandidates(), r && (o = this.getElementIndex(this._currentFocus)), n || (!this._currentFocus || this._currentFocus === this.element) && this._candidates.length || this.element === document.activeElement) {
@@ -1600,7 +1600,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }
         }, {
             key: "handleEvent",
-            value: function(e) {
+            value: function (e) {
                 if ("keydown" === e.type) this.onKeyDown(e);
                 else if ("focus" === e.type) {
                     if (this._currentFocus && this._currentFocus !== this.element) return this.scrollIntoView(this._currentFocus), void this._currentFocus.focus();
@@ -1610,7 +1610,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }
         }, {
             key: "onKeyDown",
-            value: function(e) {
+            value: function (e) {
                 var t = null,
                     n = !1;
                 switch (e.key) {
@@ -1624,7 +1624,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }
         }, {
             key: "scrollIntoView",
-            value: function(e) {
+            value: function (e) {
                 if (this.scrollSelector) {
                     for (var t = e, n = !1; t !== document.body;) {
                         if (t.matches(this.scrollSelector)) {
@@ -1638,56 +1638,56 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }
         }, {
             key: "getInitialFocus",
-            value: function() {
+            value: function () {
                 var e = this._candidates;
                 return e.length ? e[this.initialFocusIndex] : null
             }
         }, {
             key: "getElementIndex",
-            value: function(e) {
+            value: function (e) {
                 var t = this._candidates;
                 if (!t || !t.length || !e) return 0;
                 var n = 0;
-                return t.some(function(o, r) {
+                return t.some(function (o, r) {
                     return o === e && (n = r % t.length, !0)
                 }), n
             }
         }, {
             key: "findNext",
-            value: function(e) {
+            value: function (e) {
                 e = e || document.activeElement;
                 var t = this._candidates;
                 if (!t.length) return null;
                 var n = 0;
-                return t.some(function(o, r) {
+                return t.some(function (o, r) {
                     return o === e && (n = (r + 1) % t.length, !0)
                 }), t[n] || this.loopable ? t[n] || t[this.initialFocusIndex] : null
             }
         }, {
             key: "findPrev",
-            value: function(e) {
+            value: function (e) {
                 var t = this;
                 e = e || document.activeElement;
                 var n = this._candidates;
                 if (!n.length) return null;
                 var o = null;
-                return n.some(function(r, i) {
+                return n.some(function (r, i) {
                     return r === e && (o = (n.length + i - 1) % n.length, t.loopable || 0 !== i || (o = null), !0)
                 }), n[o] || this.loopable ? n[o] || n[this.initialFocusIndex] : null
             }
         }]), e
     }()
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     var n = t(4),
-        o = function(e) {
+        o = function (e) {
             var t, o = {};
             e instanceof Object && !Array.isArray(e) || n(!1);
             for (t in e) e.hasOwnProperty(t) && (o[t] = t);
             return o
         };
     e.exports = o
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     var n = {
             onClick: !0,
@@ -1702,7 +1702,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             onMouseUpCapture: !0
         },
         o = {
-            getHostProps: function(e, t) {
+            getHostProps: function (e, t) {
                 if (!t.disabled) return t;
                 var o = {};
                 for (var r in t) !n[r] && t.hasOwnProperty(r) && (o[r] = t[r]);
@@ -1710,7 +1710,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }
         };
     e.exports = o
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
@@ -1796,34 +1796,34 @@ webpackJsonp([0], [, , , function(e, t, n) {
         y = r({}, s, {
             ReactEventListener: null,
             injection: {
-                injectReactEventListener: function(e) {
+                injectReactEventListener: function (e) {
                     e.setHandleTopLevel(y.handleTopLevel), y.ReactEventListener = e
                 }
             },
-            setEnabled: function(e) {
+            setEnabled: function (e) {
                 y.ReactEventListener && y.ReactEventListener.setEnabled(e)
             },
-            isEnabled: function() {
+            isEnabled: function () {
                 return !(!y.ReactEventListener || !y.ReactEventListener.isEnabled())
             },
-            listenTo: function(e, t) {
+            listenTo: function (e, t) {
                 for (var o = t, r = n(o), s = a.registrationNameDependencies[e], u = i.topLevelTypes, c = 0; c < s.length; c++) {
                     var p = s[c];
                     r.hasOwnProperty(p) && r[p] || (p === u.topWheel ? l("wheel") ? y.ReactEventListener.trapBubbledEvent(u.topWheel, "wheel", o) : l("mousewheel") ? y.ReactEventListener.trapBubbledEvent(u.topWheel, "mousewheel", o) : y.ReactEventListener.trapBubbledEvent(u.topWheel, "DOMMouseScroll", o) : p === u.topScroll ? l("scroll", !0) ? y.ReactEventListener.trapCapturedEvent(u.topScroll, "scroll", o) : y.ReactEventListener.trapBubbledEvent(u.topScroll, "scroll", y.ReactEventListener.WINDOW_HANDLE) : p === u.topFocus || p === u.topBlur ? (l("focus", !0) ? (y.ReactEventListener.trapCapturedEvent(u.topFocus, "focus", o), y.ReactEventListener.trapCapturedEvent(u.topBlur, "blur", o)) : l("focusin") && (y.ReactEventListener.trapBubbledEvent(u.topFocus, "focusin", o), y.ReactEventListener.trapBubbledEvent(u.topBlur, "focusout", o)), r[u.topBlur] = !0, r[u.topFocus] = !0) : h.hasOwnProperty(p) && y.ReactEventListener.trapBubbledEvent(p, h[p], o), r[p] = !0)
                 }
             },
-            trapBubbledEvent: function(e, t, n) {
+            trapBubbledEvent: function (e, t, n) {
                 return y.ReactEventListener.trapBubbledEvent(e, t, n)
             },
-            trapCapturedEvent: function(e, t, n) {
+            trapCapturedEvent: function (e, t, n) {
                 return y.ReactEventListener.trapCapturedEvent(e, t, n)
             },
-            supportsEventPageXY: function() {
+            supportsEventPageXY: function () {
                 if (!document.createEvent) return !1;
                 var e = document.createEvent("MouseEvent");
                 return null != e && "pageX" in e
             },
-            ensureScrollValueMonitoring: function() {
+            ensureScrollValueMonitoring: function () {
                 if (void 0 === o && (o = y.supportsEventPageXY()), !o && !f) {
                     var e = u.refreshScrollValues;
                     y.ReactEventListener.monitorScrollValue(e), f = !0
@@ -1831,7 +1831,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }
         });
     e.exports = y
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e, t, n, r) {
@@ -1850,23 +1850,23 @@ webpackJsonp([0], [, , , function(e, t, n) {
             altKey: null,
             metaKey: null,
             getModifierState: i,
-            button: function(e) {
+            button: function (e) {
                 var t = e.button;
                 return "which" in e ? t : 2 === t ? 2 : 4 === t ? 1 : 0
             },
             buttons: null,
-            relatedTarget: function(e) {
+            relatedTarget: function (e) {
                 return e.relatedTarget || (e.fromElement === e.srcElement ? e.toElement : e.fromElement)
             },
-            pageX: function(e) {
+            pageX: function (e) {
                 return "pageX" in e ? e.pageX : e.clientX + r.currentScrollLeft
             },
-            pageY: function(e) {
+            pageY: function (e) {
                 return "pageY" in e ? e.pageY : e.clientY + r.currentScrollTop
             }
         };
     o.augmentClass(n, a), e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
@@ -1906,14 +1906,14 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
     var r = /["'&<>]/;
     e.exports = o
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     var n, o = t(11),
         r = t(43),
         i = /^[ \r\n\t\f]/,
         a = /<(!--|link|noscript|meta|script|style)[ \r\n\t\f\/>]/,
         s = t(57),
-        u = s(function(e, t) {
+        u = s(function (e, t) {
             if (e.namespaceURI !== r.svg || "innerHTML" in e) e.innerHTML = t;
             else {
                 n = n || document.createElement("div"), n.innerHTML = "<svg>" + t + "</svg>";
@@ -1922,7 +1922,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         });
     if (o.canUseDOM) {
         var c = document.createElement("div");
-        c.innerHTML = " ", "" === c.innerHTML && (u = function(e, t) {
+        c.innerHTML = " ", "" === c.innerHTML && (u = function (e, t) {
             if (e.parentNode && e.parentNode.replaceChild(e, e), i.test(t) || "<" === t[0] && a.test(t)) {
                 e.innerHTML = String.fromCharCode(65279) + t;
                 var n = e.firstChild;
@@ -1931,13 +1931,13 @@ webpackJsonp([0], [, , , function(e, t, n) {
         }), c = null
     }
     e.exports = u
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
-        return (n = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+        return (n = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
             return typeof e
-        } : function(e) {
+        } : function (e) {
             return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
         })(e)
     }
@@ -1958,7 +1958,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
     var i = Object.prototype.hasOwnProperty;
     e.exports = r
-}, function(e, exports) {
+}, function (e, exports) {
     function t() {
         throw new Error("setTimeout has not been defined")
     }
@@ -2017,7 +2017,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
 
     function u() {}
     var c, l, p = e.exports = {};
-    ! function() {
+    ! function () {
         try {
             c = "function" == typeof setTimeout ? setTimeout : t
         } catch (e) {
@@ -2032,25 +2032,25 @@ webpackJsonp([0], [, , , function(e, t, n) {
     var f, d = [],
         h = !1,
         m = -1;
-    p.nextTick = function(e) {
+    p.nextTick = function (e) {
         var t = new Array(arguments.length - 1);
         if (arguments.length > 1)
             for (var n = 1; n < arguments.length; n++) t[n - 1] = arguments[n];
         d.push(new s(e, t)), 1 !== d.length || h || o(a)
-    }, s.prototype.run = function() {
+    }, s.prototype.run = function () {
         this.fun.apply(null, this.array)
-    }, p.title = "browser", p.browser = !0, p.env = {}, p.argv = [], p.version = "", p.versions = {}, p.on = u, p.addListener = u, p.once = u, p.off = u, p.removeListener = u, p.removeAllListeners = u, p.emit = u, p.prependListener = u, p.prependOnceListener = u, p.listeners = function(e) {
+    }, p.title = "browser", p.browser = !0, p.env = {}, p.argv = [], p.version = "", p.versions = {}, p.on = u, p.addListener = u, p.once = u, p.off = u, p.removeListener = u, p.removeAllListeners = u, p.emit = u, p.prependListener = u, p.prependOnceListener = u, p.listeners = function (e) {
         return []
-    }, p.binding = function(e) {
+    }, p.binding = function (e) {
         throw new Error("process.binding is not supported")
-    }, p.cwd = function() {
+    }, p.cwd = function () {
         return "/"
-    }, p.chdir = function(e) {
+    }, p.chdir = function (e) {
         throw new Error("process.chdir is not supported")
-    }, p.umask = function() {
+    }, p.umask = function () {
         return 0
     }
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e, t) {
@@ -2100,14 +2100,14 @@ webpackJsonp([0], [, , , function(e, t, n) {
         f = (t(8), t(14), t(57)),
         d = t(39),
         h = t(95),
-        m = f(function(e, t, n) {
+        m = f(function (e, t, n) {
             e.insertBefore(t, n)
         }),
         y = l.dangerouslyReplaceNodeWithMarkup,
         v = {
             dangerouslyReplaceNodeWithMarkup: y,
             replaceDelimitedText: u,
-            processUpdates: function(e, t) {
+            processUpdates: function (e, t) {
                 for (var a = 0; a < t.length; a++) {
                     var s = t[a];
                     switch (s.type) {
@@ -2130,7 +2130,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }
         };
     e.exports = v
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     var n = {
         html: "http://www.w3.org/1999/xhtml",
@@ -2138,7 +2138,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         svg: "http://www.w3.org/2000/svg"
     };
     e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n() {
@@ -2179,10 +2179,10 @@ webpackJsonp([0], [, , , function(e, t, n) {
             registrationNameModules: {},
             registrationNameDependencies: {},
             possibleRegistrationNames: null,
-            injectEventPluginOrder: function(e) {
+            injectEventPluginOrder: function (e) {
                 a && i("101"), a = Array.prototype.slice.call(e), n()
             },
-            injectEventPluginsByName: function(e) {
+            injectEventPluginsByName: function (e) {
                 var t = !1;
                 for (var o in e)
                     if (e.hasOwnProperty(o)) {
@@ -2190,7 +2190,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                         s.hasOwnProperty(o) && s[o] === r || (s[o] && i("102", o), s[o] = r, t = !0)
                     } t && n()
             },
-            getPluginModuleForEvent: function(e) {
+            getPluginModuleForEvent: function (e) {
                 var t = e.dispatchConfig;
                 if (t.registrationName) return u.registrationNameModules[t.registrationName] || null;
                 for (var n in t.phasedRegistrationNames)
@@ -2199,7 +2199,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                         if (o) return o
                     } return null
             },
-            _resetEventPlugins: function() {
+            _resetEventPlugins: function () {
                 a = null;
                 for (var e in s) s.hasOwnProperty(e) && delete s[e];
                 u.plugins.length = 0;
@@ -2210,7 +2210,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }
         };
     e.exports = u
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
@@ -2269,10 +2269,10 @@ webpackJsonp([0], [, , , function(e, t, n) {
         h = t(18),
         m = t(51),
         y = (t(4), t(6), {
-            injectComponentTree: function(e) {
+            injectComponentTree: function (e) {
                 p = e
             },
-            injectTreeTraversal: function(e) {
+            injectTreeTraversal: function (e) {
                 f = e
             }
         }),
@@ -2285,31 +2285,31 @@ webpackJsonp([0], [, , , function(e, t, n) {
             executeDispatchesInOrder: a,
             executeDispatchesInOrderStopAtTrue: u,
             hasDispatches: l,
-            getInstanceFromNode: function(e) {
+            getInstanceFromNode: function (e) {
                 return p.getInstanceFromNode(e)
             },
-            getNodeFromInstance: function(e) {
+            getNodeFromInstance: function (e) {
                 return p.getNodeFromInstance(e)
             },
-            isAncestor: function(e, t) {
+            isAncestor: function (e, t) {
                 return f.isAncestor(e, t)
             },
-            getLowestCommonAncestor: function(e, t) {
+            getLowestCommonAncestor: function (e, t) {
                 return f.getLowestCommonAncestor(e, t)
             },
-            getParentInstance: function(e) {
+            getParentInstance: function (e) {
                 return f.getParentInstance(e)
             },
-            traverseTwoPhase: function(e, t, n) {
+            traverseTwoPhase: function (e, t, n) {
                 return f.traverseTwoPhase(e, t, n)
             },
-            traverseEnterLeave: function(e, t, n, o, r) {
+            traverseEnterLeave: function (e, t, n, o, r) {
                 return f.traverseEnterLeave(e, t, n, o, r)
             },
             injection: y
         };
     e.exports = g
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
@@ -2317,7 +2317,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             "=": "=0",
             ":": "=2"
         };
-        return "$" + ("" + e).replace(/[=:]/g, function(e) {
+        return "$" + ("" + e).replace(/[=:]/g, function (e) {
             return t[e]
         })
     }
@@ -2328,7 +2328,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 "=0": "=",
                 "=2": ":"
             };
-        return ("" + ("." === e[0] && "$" === e[1] ? e.substring(2) : e.substring(1))).replace(t, function(e) {
+        return ("" + ("." === e[0] && "$" === e[1] ? e.substring(2) : e.substring(1))).replace(t, function (e) {
             return n[e]
         })
     }
@@ -2337,7 +2337,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         unescape: o
     };
     e.exports = r
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
@@ -2373,17 +2373,17 @@ webpackJsonp([0], [, , , function(e, t, n) {
             submit: !0
         }),
         p = {
-            value: function(e, t, n) {
+            value: function (e, t, n) {
                 return !e[t] || l[e.type] || e.onChange || e.readOnly || e.disabled ? null : new Error("You provided a `value` prop to a form field without an `onChange` handler. This will render a read-only field. If the field should be mutable use `defaultValue`. Otherwise, set either `onChange` or `readOnly`.")
             },
-            checked: function(e, t, n) {
+            checked: function (e, t, n) {
                 return !e[t] || e.onChange || e.readOnly || e.disabled ? null : new Error("You provided a `checked` prop to a form field without an `onChange` handler. This will render a read-only field. If the field should be mutable use `defaultChecked`. Otherwise, set either `onChange` or `readOnly`.")
             },
             onChange: s.func
         },
         f = {},
         d = {
-            checkPropTypes: function(e, t, n) {
+            checkPropTypes: function (e, t, n) {
                 for (var o in p) {
                     if (p.hasOwnProperty(o)) var r = p[o](t, o, e, u.prop, null, c);
                     if (r instanceof Error && !(r.message in f)) {
@@ -2392,24 +2392,24 @@ webpackJsonp([0], [, , , function(e, t, n) {
                     }
                 }
             },
-            getValue: function(e) {
+            getValue: function (e) {
                 return e.valueLink ? (o(e), e.valueLink.value) : e.value
             },
-            getChecked: function(e) {
+            getChecked: function (e) {
                 return e.checkedLink ? (r(e), e.checkedLink.value) : e.checked
             },
-            executeOnChange: function(e, t) {
+            executeOnChange: function (e, t) {
                 return e.valueLink ? (o(e), e.valueLink.requestChange(t.target.value)) : e.checkedLink ? (r(e), e.checkedLink.requestChange(t.target.checked)) : e.onChange ? e.onChange.call(void 0, t) : void 0
             }
         };
     e.exports = d
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
-        return (n = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+        return (n = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
             return typeof e
-        } : function(e) {
+        } : function (e) {
             return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
         })(e)
     }
@@ -2421,13 +2421,13 @@ webpackJsonp([0], [, , , function(e, t, n) {
         i = t(52),
         a = (t(88), t(27));
     t(4), t(6);
-    o.prototype.isReactComponent = {}, o.prototype.setState = function(e, t) {
+    o.prototype.isReactComponent = {}, o.prototype.setState = function (e, t) {
         "object" !== n(e) && "function" != typeof e && null != e && r("85"), this.updater.enqueueSetState(this, e), t && this.updater.enqueueCallback(this, t, "setState")
-    }, o.prototype.forceUpdate = function(e) {
+    }, o.prototype.forceUpdate = function (e) {
         this.updater.enqueueForceUpdate(this), e && this.updater.enqueueCallback(this, e, "forceUpdate")
     };
     e.exports = o
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     var n = t(5),
         o = (t(4), !1),
@@ -2435,19 +2435,19 @@ webpackJsonp([0], [, , , function(e, t, n) {
             replaceNodeWithMarkup: null,
             processChildrenUpdates: null,
             injection: {
-                injectEnvironment: function(e) {
+                injectEnvironment: function (e) {
                     o && n("104"), r.replaceNodeWithMarkup = e.replaceNodeWithMarkup, r.processChildrenUpdates = e.processChildrenUpdates, o = !0
                 }
             }
         };
     e.exports = r
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
-        return (n = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+        return (n = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
             return typeof e
-        } : function(e) {
+        } : function (e) {
             return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
         })(e)
     }
@@ -2554,7 +2554,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
     C ? (v = new Map, g = new Set) : (b = {}, E = {});
     var w = [],
         S = {
-            onSetChildren: function(e, t) {
+            onSetChildren: function (e, t) {
                 a(e).childIDs = t;
                 for (var o = 0; o < t.length; o++) {
                     var r = t[o],
@@ -2562,22 +2562,22 @@ webpackJsonp([0], [, , , function(e, t, n) {
                     i || _("140"), null == i.childIDs && "object" === n(i.element) && null != i.element && _("141"), i.isMounted || _("71"), null == i.parentID && (i.parentID = e), i.parentID !== e && _("142", r, i.parentID, e)
                 }
             },
-            onBeforeMountComponent: function(e, t, n) {
+            onBeforeMountComponent: function (e, t, n) {
                 u(e, t, n)
             },
-            onBeforeUpdateComponent: function(e, t) {
+            onBeforeUpdateComponent: function (e, t) {
                 var n = a(e);
                 n && n.isMounted && (n.element = t)
             },
-            onMountComponent: function(e) {
+            onMountComponent: function (e) {
                 var t = a(e);
                 t.isMounted = !0, 0 === t.parentID && c(e)
             },
-            onUpdateComponent: function(e) {
+            onUpdateComponent: function (e) {
                 var t = a(e);
                 t && t.isMounted && t.updateCount++
             },
-            onUnmountComponent: function(e) {
+            onUnmountComponent: function (e) {
                 var t = a(e);
                 if (t) {
                     t.isMounted = !1;
@@ -2585,7 +2585,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
                 w.push(e)
             },
-            purgeUnmountedComponents: function() {
+            purgeUnmountedComponents: function () {
                 if (!S._preventPurging) {
                     for (var e = 0; e < w.length; e++) {
                         d(w[e])
@@ -2593,11 +2593,11 @@ webpackJsonp([0], [, , , function(e, t, n) {
                     w.length = 0
                 }
             },
-            isMounted: function(e) {
+            isMounted: function (e) {
                 var t = a(e);
                 return !!t && t.isMounted
             },
-            getCurrentStackAddendum: function(e) {
+            getCurrentStackAddendum: function (e) {
                 var t = "";
                 if (e) {
                     var n = e.type,
@@ -2609,40 +2609,40 @@ webpackJsonp([0], [, , , function(e, t, n) {
                     a = i && i._debugID;
                 return t += S.getStackAddendumByID(a)
             },
-            getStackAddendumByID: function(e) {
+            getStackAddendumByID: function (e) {
                 for (var t = ""; e;) t += y(e), e = S.getParentID(e);
                 return t
             },
-            getChildIDs: function(e) {
+            getChildIDs: function (e) {
                 var t = a(e);
                 return t ? t.childIDs : []
             },
-            getDisplayName: function(e) {
+            getDisplayName: function (e) {
                 var t = S.getElement(e);
                 return t ? m(t) : null
             },
-            getElement: function(e) {
+            getElement: function (e) {
                 var t = a(e);
                 return t ? t.element : null
             },
-            getOwnerID: function(e) {
+            getOwnerID: function (e) {
                 var t = S.getElement(e);
                 return t && t._owner ? t._owner._debugID : null
             },
-            getParentID: function(e) {
+            getParentID: function (e) {
                 var t = a(e);
                 return t ? t.parentID : null
             },
-            getSource: function(e) {
+            getSource: function (e) {
                 var t = a(e),
                     n = t ? t.element : null;
                 return null != n ? n._source : null
             },
-            getText: function(e) {
+            getText: function (e) {
                 var t = S.getElement(e);
                 return "string" == typeof t ? t : "number" == typeof t ? "" + t : null
             },
-            getUpdateCount: function(e) {
+            getUpdateCount: function (e) {
                 var t = a(e);
                 return t ? t.updateCount : 0
             },
@@ -2650,7 +2650,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             getRootIDs: f
         };
     e.exports = S
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e, t, n, r) {
@@ -2664,7 +2664,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         r = {
             invokeGuardedCallback: n,
             invokeGuardedCallbackWithCatch: n,
-            rethrowCaughtError: function() {
+            rethrowCaughtError: function () {
                 if (o) {
                     var e = o;
                     throw o = null, e
@@ -2672,23 +2672,23 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }
         };
     e.exports = r
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     var n = (t(6), {
-        isMounted: function(e) {
+        isMounted: function (e) {
             return !1
         },
-        enqueueCallback: function(e, t) {},
-        enqueueForceUpdate: function(e) {},
-        enqueueReplaceState: function(e, t) {},
-        enqueueSetState: function(e, t) {}
+        enqueueCallback: function (e, t) {},
+        enqueueForceUpdate: function (e) {},
+        enqueueReplaceState: function (e, t) {},
+        enqueueSetState: function (e, t) {}
     });
     e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     var n = {};
     e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     var n = t(34),
         o = n({
@@ -2697,16 +2697,16 @@ webpackJsonp([0], [, , , function(e, t, n) {
             childContext: null
         });
     e.exports = o
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     e.exports = "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED"
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
-        return (n = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+        return (n = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
             return typeof e
-        } : function(e) {
+        } : function (e) {
             return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
         })(e)
     }
@@ -2734,52 +2734,52 @@ webpackJsonp([0], [, , , function(e, t, n) {
         s = (t(22), t(30)),
         u = (t(14), t(16)),
         c = (t(4), t(6), {
-            isMounted: function(e) {
+            isMounted: function (e) {
                 var t = s.get(e);
                 return !!t && !!t._renderedComponent
             },
-            enqueueCallback: function(e, t, n) {
+            enqueueCallback: function (e, t, n) {
                 c.validateCallback(t, n);
                 var r = i(e);
                 if (!r) return null;
                 r._pendingCallbacks ? r._pendingCallbacks.push(t) : r._pendingCallbacks = [t], o(r)
             },
-            enqueueCallbackInternal: function(e, t) {
+            enqueueCallbackInternal: function (e, t) {
                 e._pendingCallbacks ? e._pendingCallbacks.push(t) : e._pendingCallbacks = [t], o(e)
             },
-            enqueueForceUpdate: function(e) {
+            enqueueForceUpdate: function (e) {
                 var t = i(e, "forceUpdate");
                 t && (t._pendingForceUpdate = !0, o(t))
             },
-            enqueueReplaceState: function(e, t) {
+            enqueueReplaceState: function (e, t) {
                 var n = i(e, "replaceState");
                 n && (n._pendingStateQueue = [t], n._pendingReplaceState = !0, o(n))
             },
-            enqueueSetState: function(e, t) {
+            enqueueSetState: function (e, t) {
                 var n = i(e, "setState");
                 if (n) {
                     (n._pendingStateQueue || (n._pendingStateQueue = [])).push(t), o(n)
                 }
             },
-            enqueueElementInternal: function(e, t, n) {
+            enqueueElementInternal: function (e, t, n) {
                 e._pendingElement = t, e._context = n, o(e)
             },
-            validateCallback: function(e, t) {
+            validateCallback: function (e, t) {
                 e && "function" != typeof e && a("122", t, r(e))
             }
         });
     e.exports = c
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
-    var n = function(e) {
-        return "undefined" != typeof MSApp && MSApp.execUnsafeLocalFunction ? function(t, n, o, r) {
-            MSApp.execUnsafeLocalFunction(function() {
+    var n = function (e) {
+        return "undefined" != typeof MSApp && MSApp.execUnsafeLocalFunction ? function (t, n, o, r) {
+            MSApp.execUnsafeLocalFunction(function () {
                 return e(t, n, o, r)
             })
         } : e
     };
     e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
@@ -2787,7 +2787,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         return "charCode" in e ? 0 === (t = e.charCode) && 13 === n && (t = 13) : t = n, t >= 32 || 13 === t ? t : 0
     }
     e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
@@ -2808,7 +2808,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         Shift: "shiftKey"
     };
     e.exports = o
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
@@ -2816,7 +2816,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         return t.correspondingUseElement && (t = t.correspondingUseElement), 3 === t.nodeType ? t.parentNode : t
     }
     e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e, t) {
@@ -2831,13 +2831,13 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
     var o, r = t(11);
     r.canUseDOM && (o = document.implementation && document.implementation.hasFeature && !0 !== document.implementation.hasFeature("", "")), e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
-        return (n = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+        return (n = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
             return typeof e
-        } : function(e) {
+        } : function (e) {
             return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
         })(e)
     }
@@ -2851,13 +2851,13 @@ webpackJsonp([0], [, , , function(e, t, n) {
         return "string" === i || "number" === i ? "string" === a || "number" === a : "object" === a && e.type === t.type && e.key === t.key
     }
     e.exports = o
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
-        return (n = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+        return (n = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
             return typeof e
-        } : function(e) {
+        } : function (e) {
             return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
         })(e)
     }
@@ -2903,18 +2903,18 @@ webpackJsonp([0], [, , , function(e, t, n) {
         l = (t(6), "."),
         p = ":";
     e.exports = i
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     var n = (t(7), t(13)),
         o = (t(6), n);
     e.exports = o
-}, function(e, t, n) {
+}, function (e, t, n) {
     "use strict";
 
     function o(e) {
-        return (o = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+        return (o = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
             return typeof e
-        } : function(e) {
+        } : function (e) {
             return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
         })(e)
     }
@@ -2944,7 +2944,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
 
     function c(e) {
-        return (c = Object.setPrototypeOf ? Object.getPrototypeOf : function(e) {
+        return (c = Object.setPrototypeOf ? Object.getPrototypeOf : function (e) {
             return e.__proto__ || Object.getPrototypeOf(e)
         })(e)
     }
@@ -2961,11 +2961,11 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
 
     function p(e, t) {
-        return (p = Object.setPrototypeOf || function(e, t) {
+        return (p = Object.setPrototypeOf || function (e, t) {
             return e.__proto__ = t, e
         })(e, t)
     }
-    n.d(t, "a", function() {
+    n.d(t, "a", function () {
         return v
     });
     var f = n(9),
@@ -2973,7 +2973,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         h = n(10),
         m = n(12),
         y = n(0),
-        v = function(e) {
+        v = function (e) {
             function t(e) {
                 var n;
                 return r(this, t), n = s(this, c(t).call(this, e)), n.state = {
@@ -2982,7 +2982,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }
             return l(t, e), a(t, [{
                 key: "updateCheckList",
-                value: function(e) {
+                value: function (e) {
                     e ? y.a.pushSelectorItem({
                         path: this.props.path,
                         isFolder: !0
@@ -2993,16 +2993,16 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "onKeyDown",
-                value: function(e) {
+                value: function (e) {
                     var t, n = this;
                     switch (e.key) {
                         case "Enter":
                             if (this.props.gray || y.a.transforming) return;
-                            if (this.props.selector) return void this.setState(function(e) {
+                            if (this.props.selector) return void this.setState(function (e) {
                                 return {
                                     checked: !e.checked
                                 }
-                            }, function() {
+                            }, function () {
                                 n.updateSoftkey()
                             });
                             y.a.transforming = !0, y.a.focusIndexs.push(this.props.index), t = y.a.fixPath(this.props.path), "sdcard" === this.props.path || "sdcard1" === this.props.path ? m.a.request("push", "/list/".concat(t)) : "searchItem" === this.props.search ? "root-storage" === y.a.currentFolder ? (m.a.request("back"), m.a.request("back"), m.a.request("push", "/list/".concat(t))) : (m.a.request("updatePath", t), m.a.request("back"), m.a.request("back")) : m.a.request("updatePath", t)
@@ -3010,7 +3010,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "updateSoftkey",
-                value: function() {
+                value: function () {
                     "sdcard" === this.props.path || "sdcard1" === this.props.path ? m.a.request("updateSoftkeyMain", {
                         path: this.props.path,
                         exist: this.props.gray
@@ -3023,26 +3023,26 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "componentWillReceiveProps",
-                value: function(e) {
+                value: function (e) {
                     e.checked !== this.state.checked && this.setState({
                         checked: e.checked
                     })
                 }
             }, {
                 key: "componentDidUpdate",
-                value: function() {
+                value: function () {
                     this.props.selector && this.updateCheckList(this.state.checked)
                 }
             }, {
                 key: "render",
-                value: function() {
+                value: function () {
                     var e = this,
                         t = this.props.gray ? "list-item gray-out" : "list-item",
                         n = y.a.getDisplayName(this.props.path),
                         o = this.props.selector,
                         r = "";
                     o && this.state.checked ? r = "check-on" : o && !this.state.checked && (r = "check-off");
-                    var i = function(e, t, o) {
+                    var i = function (e, t, o) {
                         if (t && -1 !== e.indexOf(t)) {
                             var r = e.substring(0, e.indexOf(t)),
                                 i = e.slice(e.indexOf(t) + t.length);
@@ -3064,15 +3064,15 @@ webpackJsonp([0], [, , , function(e, t, n) {
                         "aria-labelledby": y.a.isInCopyOrMove() ? "list-header ".concat(n) : "",
                         className: t,
                         tabIndex: "-1",
-                        onKeyDown: function(t) {
+                        onKeyDown: function (t) {
                             e.onKeyDown(t)
                         },
                         role: "menuitem",
                         "data-path": this.props.path,
-                        ref: function(t) {
+                        ref: function (t) {
                             e.element = t
                         },
-                        onFocus: function() {
+                        onFocus: function () {
                             e.updateSoftkey()
                         }
                     }, d.a.createElement("div", {
@@ -3089,34 +3089,34 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }]), t
         }(h.a)
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     var n = t(13),
         o = {
-            listen: function(e, t, n) {
+            listen: function (e, t, n) {
                 return e.addEventListener ? (e.addEventListener(t, n, !1), {
-                    remove: function() {
+                    remove: function () {
                         e.removeEventListener(t, n, !1)
                     }
                 }) : e.attachEvent ? (e.attachEvent("on" + t, n), {
-                    remove: function() {
+                    remove: function () {
                         e.detachEvent("on" + t, n)
                     }
                 }) : void 0
             },
-            capture: function(e, t, o) {
+            capture: function (e, t, o) {
                 return e.addEventListener ? (e.addEventListener(t, o, !0), {
-                    remove: function() {
+                    remove: function () {
                         e.removeEventListener(t, o, !0)
                     }
                 }) : {
                     remove: n
                 }
             },
-            registerDefault: function() {}
+            registerDefault: function () {}
         };
     e.exports = o
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
@@ -3125,7 +3125,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         } catch (e) {}
     }
     e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
@@ -3137,18 +3137,18 @@ webpackJsonp([0], [, , , function(e, t, n) {
         }
     }
     e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     exports.__esModule = !0;
-    exports.addLeadingSlash = function(e) {
+    exports.addLeadingSlash = function (e) {
         return "/" === e.charAt(0) ? e : "/" + e
-    }, exports.stripLeadingSlash = function(e) {
+    }, exports.stripLeadingSlash = function (e) {
         return "/" === e.charAt(0) ? e.substr(1) : e
-    }, exports.stripPrefix = function(e, t) {
+    }, exports.stripPrefix = function (e, t) {
         return 0 === e.indexOf(t) ? e.substr(t.length) : e
-    }, exports.stripTrailingSlash = function(e) {
+    }, exports.stripTrailingSlash = function (e) {
         return "/" === e.charAt(e.length - 1) ? e.slice(0, -1) : e
-    }, exports.parsePath = function(e) {
+    }, exports.parsePath = function (e) {
         var t = e || "/",
             n = "",
             o = "",
@@ -3159,14 +3159,14 @@ webpackJsonp([0], [, , , function(e, t, n) {
             search: "?" === n ? "" : n,
             hash: "#" === o ? "" : o
         }
-    }, exports.createPath = function(e) {
+    }, exports.createPath = function (e) {
         var t = e.pathname,
             n = e.search,
             o = e.hash,
             r = encodeURI(t || "/");
         return n && "?" !== n && (r += "?" === n.charAt(0) ? n : "?" + n), o && "#" !== o && (r += "#" === o.charAt(0) ? o : "#" + o), r
     }
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e, t) {
@@ -3209,8 +3209,8 @@ webpackJsonp([0], [, , , function(e, t, n) {
             strokeWidth: !0
         },
         r = ["Webkit", "ms", "Moz", "O"];
-    Object.keys(o).forEach(function(e) {
-        r.forEach(function(t) {
+    Object.keys(o).forEach(function (e) {
+        r.forEach(function (t) {
             o[n(t, e)] = o[e]
         })
     });
@@ -3271,7 +3271,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             shorthandPropertyExpansions: i
         };
     e.exports = a
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n() {
@@ -3282,10 +3282,10 @@ webpackJsonp([0], [, , , function(e, t, n) {
         i = t(21);
     t(4);
     r(n.prototype, {
-        enqueue: function(e, t) {
+        enqueue: function (e, t) {
             this._callbacks = this._callbacks || [], this._contexts = this._contexts || [], this._callbacks.push(e), this._contexts.push(t)
         },
-        notifyAll: function() {
+        notifyAll: function () {
             var e = this._callbacks,
                 t = this._contexts;
             if (e) {
@@ -3294,20 +3294,20 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 e.length = 0, t.length = 0
             }
         },
-        checkpoint: function() {
+        checkpoint: function () {
             return this._callbacks ? this._callbacks.length : 0
         },
-        rollback: function(e) {
+        rollback: function (e) {
             this._callbacks && (this._callbacks.length = e, this._contexts.length = e)
         },
-        reset: function() {
+        reset: function () {
             this._callbacks = null, this._contexts = null
         },
-        destructor: function() {
+        destructor: function () {
             this.reset()
         }
     }), i.addPoolingTo(n), e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
@@ -3323,19 +3323,19 @@ webpackJsonp([0], [, , , function(e, t, n) {
         s = {},
         u = {},
         c = {
-            createMarkupForID: function(e) {
+            createMarkupForID: function (e) {
                 return r.ID_ATTRIBUTE_NAME + "=" + i(e)
             },
-            setAttributeForID: function(e, t) {
+            setAttributeForID: function (e, t) {
                 e.setAttribute(r.ID_ATTRIBUTE_NAME, t)
             },
-            createMarkupForRoot: function() {
+            createMarkupForRoot: function () {
                 return r.ROOT_ATTRIBUTE_NAME + '=""'
             },
-            setAttributeForRoot: function(e) {
+            setAttributeForRoot: function (e) {
                 e.setAttribute(r.ROOT_ATTRIBUTE_NAME, "")
             },
-            createMarkupForProperty: function(e, t) {
+            createMarkupForProperty: function (e, t) {
                 var n = r.properties.hasOwnProperty(e) ? r.properties[e] : null;
                 if (n) {
                     if (o(n, t)) return "";
@@ -3344,10 +3344,10 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
                 return r.isCustomAttribute(e) ? null == t ? "" : e + "=" + i(t) : null
             },
-            createMarkupForCustomAttribute: function(e, t) {
+            createMarkupForCustomAttribute: function (e, t) {
                 return n(e) && null != t ? e + "=" + i(t) : ""
             },
-            setValueForProperty: function(e, t, n) {
+            setValueForProperty: function (e, t, n) {
                 var i = r.properties.hasOwnProperty(t) ? r.properties[t] : null;
                 if (i) {
                     var a = i.mutationMethod;
@@ -3363,15 +3363,15 @@ webpackJsonp([0], [, , , function(e, t, n) {
                     }
                 } else if (r.isCustomAttribute(t)) return void c.setValueForAttribute(e, t, n)
             },
-            setValueForAttribute: function(e, t, o) {
+            setValueForAttribute: function (e, t, o) {
                 if (n(t)) {
                     null == o ? e.removeAttribute(t) : e.setAttribute(t, "" + o)
                 }
             },
-            deleteValueForAttribute: function(e, t) {
+            deleteValueForAttribute: function (e, t) {
                 e.removeAttribute(t)
             },
-            deleteValueForProperty: function(e, t) {
+            deleteValueForProperty: function (e, t) {
                 var n = r.properties.hasOwnProperty(t) ? r.properties[t] : null;
                 if (n) {
                     var o = n.mutationMethod;
@@ -3384,7 +3384,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }
         };
     e.exports = c
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
@@ -3452,9 +3452,9 @@ webpackJsonp([0], [, , , function(e, t, n) {
         v = d.twoArgumentPooler,
         g = d.fourArgumentPooler,
         b = /\/+/g;
-    o.prototype.destructor = function() {
+    o.prototype.destructor = function () {
         this.func = null, this.context = null, this.count = 0
-    }, d.addPoolingTo(o, v), a.prototype.destructor = function() {
+    }, d.addPoolingTo(o, v), a.prototype.destructor = function () {
         this.result = null, this.keyPrefix = null, this.func = null, this.context = null, this.count = 0
     }, d.addPoolingTo(a, g);
     var E = {
@@ -3465,13 +3465,13 @@ webpackJsonp([0], [, , , function(e, t, n) {
         toArray: f
     };
     e.exports = E
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
-        return (n = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+        return (n = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
             return typeof e
-        } : function(e) {
+        } : function (e) {
             return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
         })(e)
     }
@@ -3526,7 +3526,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
 
     function s(e, t) {
-        return function() {
+        return function () {
             var n = e.apply(this, arguments),
                 o = t.apply(this, arguments);
             if (null == n) return o;
@@ -3537,7 +3537,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
 
     function u(e, t) {
-        return function() {
+        return function () {
             e.apply(this, arguments), t.apply(this, arguments)
         }
     }
@@ -3592,42 +3592,42 @@ webpackJsonp([0], [, , , function(e, t, n) {
             updateComponent: E.OVERRIDE_BASE
         },
         C = {
-            displayName: function(e, t) {
+            displayName: function (e, t) {
                 e.displayName = t
             },
-            mixins: function(e, t) {
+            mixins: function (e, t) {
                 if (t)
                     for (var n = 0; n < t.length; n++) r(e, t[n])
             },
-            childContextTypes: function(e, t) {
+            childContextTypes: function (e, t) {
                 e.childContextTypes = f({}, e.childContextTypes, t)
             },
-            contextTypes: function(e, t) {
+            contextTypes: function (e, t) {
                 e.contextTypes = f({}, e.contextTypes, t)
             },
-            getDefaultProps: function(e, t) {
+            getDefaultProps: function (e, t) {
                 e.getDefaultProps ? e.getDefaultProps = s(e.getDefaultProps, t) : e.getDefaultProps = t
             },
-            propTypes: function(e, t) {
+            propTypes: function (e, t) {
                 e.propTypes = f({}, e.propTypes, t)
             },
-            statics: function(e, t) {
+            statics: function (e, t) {
                 i(e, t)
             },
-            autobind: function() {}
+            autobind: function () {}
         },
         w = {
-            replaceState: function(e, t) {
+            replaceState: function (e, t) {
                 this.updater.enqueueReplaceState(this, e), t && this.updater.enqueueCallback(this, t, "replaceState")
             },
-            isMounted: function() {
+            isMounted: function () {
                 return this.updater.isMounted(this)
             }
         },
-        S = function() {};
+        S = function () {};
     f(S.prototype, d.prototype, w);
     var O = {
-        createClass: function(e) {
+        createClass: function (e) {
             var t = function e(t, o, r) {
                 this.__reactAutoBindPairs.length && l(this), this.props = t, this.context = o, this.refs = y, this.updater = r || m, this.state = null;
                 var i = this.getInitialState ? this.getInitialState() : null;
@@ -3638,19 +3638,19 @@ webpackJsonp([0], [, , , function(e, t, n) {
             return t
         },
         injection: {
-            injectMixin: function(e) {
+            injectMixin: function (e) {
                 _.push(e)
             }
         }
     };
     e.exports = O
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     var n = {
         hasCachedChildNodes: 1
     };
     e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n() {
@@ -3689,13 +3689,13 @@ webpackJsonp([0], [, , , function(e, t, n) {
         c = t(16),
         l = (t(6), !1),
         p = {
-            getHostProps: function(e, t) {
+            getHostProps: function (e, t) {
                 return i({}, a.getHostProps(e, t), {
                     onChange: e._wrapperState.onChange,
                     value: void 0
                 })
             },
-            mountWrapper: function(e, t) {
+            mountWrapper: function (e, t) {
                 var n = s.getValue(t);
                 e._wrapperState = {
                     pendingUpdate: !1,
@@ -3705,10 +3705,10 @@ webpackJsonp([0], [, , , function(e, t, n) {
                     wasMultiple: Boolean(t.multiple)
                 }, void 0 === t.value || void 0 === t.defaultValue || l || (l = !0)
             },
-            getSelectValueContext: function(e) {
+            getSelectValueContext: function (e) {
                 return e._wrapperState.initialValue
             },
-            postUpdateWrapper: function(e) {
+            postUpdateWrapper: function (e) {
                 var t = e._currentElement.props;
                 e._wrapperState.initialValue = void 0;
                 var n = e._wrapperState.wasMultiple;
@@ -3718,26 +3718,26 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }
         };
     e.exports = p
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     var n, o = {
-            injectEmptyComponentFactory: function(e) {
+            injectEmptyComponentFactory: function (e) {
                 n = e
             }
         },
         r = {
-            create: function(e) {
+            create: function (e) {
                 return n(e)
             }
         };
     r.injection = o, e.exports = r
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     var n = {
         logTopLevelRenders: !1
     };
     e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
@@ -3757,13 +3757,13 @@ webpackJsonp([0], [, , , function(e, t, n) {
         u = {},
         c = null,
         l = {
-            injectGenericComponentClass: function(e) {
+            injectGenericComponentClass: function (e) {
                 s = e
             },
-            injectTextComponentClass: function(e) {
+            injectTextComponentClass: function (e) {
                 c = e
             },
-            injectComponentClasses: function(e) {
+            injectComponentClasses: function (e) {
                 a(u, e)
             }
         },
@@ -3774,7 +3774,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             injection: l
         };
     e.exports = p
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
@@ -3785,24 +3785,24 @@ webpackJsonp([0], [, , , function(e, t, n) {
         i = t(67),
         a = t(68),
         s = {
-            hasSelectionCapabilities: function(e) {
+            hasSelectionCapabilities: function (e) {
                 var t = e && e.nodeName && e.nodeName.toLowerCase();
                 return t && ("input" === t && "text" === e.type || "textarea" === t || "true" === e.contentEditable)
             },
-            getSelectionInformation: function() {
+            getSelectionInformation: function () {
                 var e = a();
                 return {
                     focusedElem: e,
                     selectionRange: s.hasSelectionCapabilities(e) ? s.getSelection(e) : null
                 }
             },
-            restoreSelection: function(e) {
+            restoreSelection: function (e) {
                 var t = a(),
                     o = e.focusedElem,
                     r = e.selectionRange;
                 t !== o && n(o) && (s.hasSelectionCapabilities(o) && s.setSelection(o, r), i(o))
             },
-            getSelection: function(e) {
+            getSelection: function (e) {
                 var t;
                 if ("selectionStart" in e) t = {
                     start: e.selectionStart,
@@ -3820,7 +3820,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                     end: 0
                 }
             },
-            setSelection: function(e, t) {
+            setSelection: function (e, t) {
                 var n = t.start,
                     r = t.end;
                 if (void 0 === r && (r = n), "selectionStart" in e) e.selectionStart = n, e.selectionEnd = Math.min(r, e.value.length);
@@ -3831,7 +3831,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }
         };
     e.exports = s
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e, t) {
@@ -3914,34 +3914,34 @@ webpackJsonp([0], [, , , function(e, t, n) {
         R = 11,
         A = {},
         L = 1,
-        F = function() {
+        F = function () {
             this.rootID = L++
         };
-    F.prototype.isReactComponent = {}, F.prototype.render = function() {
+    F.prototype.isReactComponent = {}, F.prototype.render = function () {
         return this.props
     };
     var j = {
         TopLevelWrapper: F,
         _instancesByReactRootID: A,
-        scrollMonitor: function(e, t) {
+        scrollMonitor: function (e, t) {
             t()
         },
-        _updateRootComponent: function(e, t, n, o, r) {
-            return j.scrollMonitor(o, function() {
+        _updateRootComponent: function (e, t, n, o, r) {
+            return j.scrollMonitor(o, function () {
                 w.enqueueElementInternal(e, t, n), r && w.enqueueCallbackInternal(e, r)
             }), e
         },
-        _renderNewRootComponent: function(e, t, n, o) {
+        _renderNewRootComponent: function (e, t, n, o) {
             c(t) || f("37"), m.ensureScrollValueMonitoring();
             var r = P(e, !1);
             S.batchedUpdates(a, r, t, n, o);
             var i = r._instance.rootID;
             return A[i] = r, r
         },
-        renderSubtreeIntoContainer: function(e, t, n, o) {
+        renderSubtreeIntoContainer: function (e, t, n, o) {
             return null != e && _.has(e) || f("38"), j._renderSubtreeIntoContainer(e, t, n, o)
         },
-        _renderSubtreeIntoContainer: function(e, t, n, i) {
+        _renderSubtreeIntoContainer: function (e, t, n, i) {
             w.validateCallback(i, "ReactDOM.render"), b.isValidElement(t) || f("39", "string" == typeof t ? " Instead of passing a string like 'div', pass React.createElement('div') or <div />." : "function" == typeof t ? " Instead of passing a class like Foo, pass React.createElement(Foo) or <Foo />." : null != t && void 0 !== t.props ? " This may be caused by unintentionally loading two independent copies of React." : "");
             var a, s = b(F, null, null, null, null, null, t);
             if (e) {
@@ -3954,7 +3954,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                     h = d.props;
                 if (M(h, t)) {
                     var m = l._renderedComponent.getPublicInstance(),
-                        y = i && function() {
+                        y = i && function () {
                             i.call(m)
                         };
                     return j._updateRootComponent(l, s, a, n, y), m
@@ -3968,10 +3968,10 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 C = j._renderNewRootComponent(s, n, k, a)._renderedComponent.getPublicInstance();
             return i && i.call(C), C
         },
-        render: function(e, t, n) {
+        render: function (e, t, n) {
             return j._renderSubtreeIntoContainer(null, e, t, n)
         },
-        unmountComponentAtNode: function(e) {
+        unmountComponentAtNode: function (e) {
             c(e) || f("40");
             var t = p(e);
             if (!t) {
@@ -3980,7 +3980,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }
             return delete A[t._instance.rootID], S.batchedUpdates(s, t, e, !1), !0
         },
-        _mountImageIntoNode: function(e, t, r, i, a) {
+        _mountImageIntoNode: function (e, t, r, i, a) {
             if (c(t) || f("41"), i) {
                 var s = o(t);
                 if (k.canReuseMarkup(e, s)) return void y.precacheNode(r, s);
@@ -4000,7 +4000,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         }
     };
     e.exports = j
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     var n = t(34),
         o = n({
@@ -4011,7 +4011,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             TEXT_CONTENT: null
         });
     e.exports = o
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     var n = t(5),
         o = t(15),
@@ -4019,18 +4019,18 @@ webpackJsonp([0], [, , , function(e, t, n) {
             HOST: 0,
             COMPOSITE: 1,
             EMPTY: 2,
-            getType: function(e) {
+            getType: function (e) {
                 return null === e || !1 === e ? r.EMPTY : o.isValidElement(e) ? "function" == typeof e.type ? r.COMPOSITE : r.HOST : void n("26", e)
             }
         });
     e.exports = r
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
-        return (n = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+        return (n = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
             return typeof e
-        } : function(e) {
+        } : function (e) {
             return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
         })(e)
     }
@@ -4211,11 +4211,11 @@ webpackJsonp([0], [, , , function(e, t, n) {
             object: a("object"),
             string: a("string"),
             symbol: a("symbol"),
-            any: function() {
+            any: function () {
                 return i(_.thatReturns(null))
             }(),
             arrayOf: s,
-            element: function() {
+            element: function () {
                 function e(e, t, n, o, i) {
                     var a = e[t];
                     if (!g.isValidElement(a)) {
@@ -4226,7 +4226,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 return i(e)
             }(),
             instanceOf: u,
-            node: function() {
+            node: function () {
                 function e(e, t, n, o, i) {
                     if (!d(e[t])) {
                         return new r("Invalid " + b[o] + " `" + i + "` supplied to `" + n + "`, expected a ReactNode.")
@@ -4241,20 +4241,20 @@ webpackJsonp([0], [, , , function(e, t, n) {
             shape: f
         };
     r.prototype = Error.prototype, e.exports = w
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     e.exports = "15.3.2"
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     var n = {
         currentScrollLeft: 0,
         currentScrollTop: 0,
-        refreshScrollValues: function(e) {
+        refreshScrollValues: function (e) {
             n.currentScrollLeft = e.x, n.currentScrollTop = e.y
         }
     };
     e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e, t) {
@@ -4263,18 +4263,18 @@ webpackJsonp([0], [, , , function(e, t, n) {
     var o = t(5);
     t(4);
     e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     var n = !1;
     e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e, t, n) {
         Array.isArray(e) ? e.forEach(t, n) : e && t.call(n, e)
     }
     e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
@@ -4284,7 +4284,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
     var o = t(83);
     e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
@@ -4294,7 +4294,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
     var o = "function" == typeof Symbol && Symbol.iterator,
         r = "@@iterator";
     e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n() {
@@ -4303,13 +4303,13 @@ webpackJsonp([0], [, , , function(e, t, n) {
     var o = t(11),
         r = null;
     e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
-        return (n = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+        return (n = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
             return typeof e
-        } : function(e) {
+        } : function (e) {
             return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
         })(e)
     }
@@ -4340,14 +4340,14 @@ webpackJsonp([0], [, , , function(e, t, n) {
         u = t(140),
         c = t(77),
         l = t(79),
-        p = (t(4), t(6), function(e) {
+        p = (t(4), t(6), function (e) {
             this.construct(e)
         });
     s(p.prototype, u.Mixin, {
         _instantiateReactComponent: i
     });
     e.exports = i
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
@@ -4372,32 +4372,32 @@ webpackJsonp([0], [, , , function(e, t, n) {
         week: !0
     };
     e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     var n = t(11),
         o = t(38),
         r = t(39),
-        i = function(e, t) {
+        i = function (e, t) {
             if (t) {
                 var n = e.firstChild;
                 if (n && n === e.lastChild && 3 === n.nodeType) return void(n.nodeValue = t)
             }
             e.textContent = t
         };
-    n.canUseDOM && ("textContent" in document.documentElement || (i = function(e, t) {
+    n.canUseDOM && ("textContent" in document.documentElement || (i = function (e, t) {
         r(e, o(t))
     })), e.exports = i
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
-    var n = function() {};
+    var n = function () {};
     e.exports = n
-}, function(e, t, n) {
+}, function (e, t, n) {
     "use strict";
 
     function o(e) {
-        return (o = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+        return (o = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
             return typeof e
-        } : function(e) {
+        } : function (e) {
             return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
         })(e)
     }
@@ -4427,7 +4427,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
 
     function c(e) {
-        return (c = Object.setPrototypeOf ? Object.getPrototypeOf : function(e) {
+        return (c = Object.setPrototypeOf ? Object.getPrototypeOf : function (e) {
             return e.__proto__ || Object.getPrototypeOf(e)
         })(e)
     }
@@ -4444,11 +4444,11 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
 
     function p(e, t) {
-        return (p = Object.setPrototypeOf || function(e, t) {
+        return (p = Object.setPrototypeOf || function (e, t) {
             return e.__proto__ = t, e
         })(e, t)
     }
-    n.d(t, "a", function() {
+    n.d(t, "a", function () {
         return b
     });
     var f = n(9),
@@ -4458,7 +4458,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         y = n(98),
         v = n(0),
         g = n(1),
-        b = function(e) {
+        b = function (e) {
             function t(e) {
                 var n;
                 return r(this, t), n = s(this, c(t).call(this, e)), n.state = {
@@ -4466,144 +4466,151 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }, n
             }
             return l(t, e), a(t, [{
-                key: "updateCheckList",
-                value: function(e) {
-                    e ? v.a.pushSelectorItem({
-                        path: this.props.path,
-                        isFile: !0
-                    }) : v.a.removeSelectorItem({
-                        path: this.props.path,
-                        isFile: !0
-                    }), m.a.request("updateSelectHeader", v.a.selectorItems.length)
-                }
-            }, {
-                key: "onKeyDown",
-                value: function(e) {
-                    var t = this;
-                    switch (e.key) {
-                        case "Enter":
-                            if (this.props.gray || v.a.transforming) return;
-                            if (this.props.selector) return void this.setState(function(e) {
-                                return {
-                                    checked: !e.checked
-                                }
-                            }, function() {
-                                t.updateSoftkey()
-                            });
-                            this.checkFileSupport() && g.a.getFileInfo(this.props.path, this.openFile.bind(this))
+                    key: "updateCheckList",
+                    value: function (e) {
+                        e ? v.a.pushSelectorItem({
+                            path: this.props.path,
+                            isFile: !0
+                        }) : v.a.removeSelectorItem({
+                            path: this.props.path,
+                            isFile: !0
+                        }), m.a.request("updateSelectHeader", v.a.selectorItems.length)
+                    }
+                }, {
+                    key: "onKeyDown",
+                    value: function (e) {
+                        var t = this;
+                        switch (e.key) {
+                            case "Enter":
+                                if (this.props.gray || v.a.transforming) return;
+                                if (this.props.selector) return void this.setState(function (e) {
+                                    return {
+                                        checked: !e.checked
+                                    }
+                                }, function () {
+                                    t.updateSoftkey()
+                                });
+                                this.checkFileSupport() && g.a.getFileInfo(this.props.path, this.openFile.bind(this))
+                        }
+                    }
+                }, {
+                    key: "checkFileSupport",
+                    value: function () {
+                        var e = v.a.getDisplayName(this.props.path),
+                            t = MimeMapper.guessTypeFromFileProperties(e, this.props.type);
+                        return !(0 === t.length ||
+                            !(MimeMapper._fileTypeMap.photo.includes(t) ||
+                                MimeMapper._fileTypeMap.audio.includes(t) ||
+                                MimeMapper._fileTypeMap.video.includes(t) ||
+                                MimeMapper._fileTypeMap.package.includes(t) ||
+                                MimeMapper._fileTypeMap.app.includes(t) ||
+                                MimeMapper._fileTypeMap.other.includes(t)))
                     }
                 }
-            }, {
-                key: "checkFileSupport",
-                value: function () {
-                    var e = v.a.getDisplayName(this.props.path),
-                    t = MimeMapper.guessTypeFromFileProperties(e, this.props.type);
-                    return !(0 === t.length 
-                    || !(MimeMapper._fileTypeMap.photo.includes(t) 
-                    || MimeMapper._fileTypeMap.audio.includes(t) 
-                    || MimeMapper._fileTypeMap.video.includes(t) 
-                    || MimeMapper._fileTypeMap.package.includes(t)
-                    || MimeMapper._fileTypeMap.app.includes(t) 
-                    || MimeMapper._fileTypeMap.other.includes(t)))
-                }
-            }/*,{
-                key: "checkFileSupport",
-                value: function() {
-                    var e = v.a.getDisplayName(this.props.path),
-                        t = MimeMapper.guessTypeFromFileProperties(e, this.props.type);
-                    return !(0 === t.length || !(y.a.photo.includes(t) || y.a.audio.includes(t) || y.a.video.includes(t) || y.a.other.includes(t)))
-                }
-            }*/, {
-                key: "openFile",
-                value: function (e) {
-                  MimeMapper.openFile(e);
-                }
-            }, {
-                key: "getFileIcon",
-                value: function (e) { 
-                    return MimeMapper.getIconFromType(e)
-                }
-            }, {
-                key: "updateSoftkey",
-                value: function() {
-                    var e = {
-                        path: this.props.path,
-                        unsupport: !this.checkFileSupport(),
-                        isfile: !0,
-                        checked: this.state.checked
-                    };
-                    this.props.search ? m.a.request("updateSoftkeySearch", e) : m.a.request("updateSoftkeyList", e)
-                }
-            }, {
-                key: "componentWillReceiveProps",
-                value: function(e) {
-                    e.checked !== this.state.checked && this.setState({
-                        checked: e.checked
-                    })
-                }
-            }, {
-                key: "componentDidUpdate",
-                value: function() {
-                    this.props.selector && this.updateCheckList(this.state.checked)
-                }
-            }, {
-                key: "render",
-                value: function() {
-                    var e = this,
-                        t = this.props.gray ? "list-item gray-out" : "list-item",
-                        n = MimeMapper.getIconFromType(MimeMapper.guessTypeFromExtension(MimeMapper._parseExtension(this.props.path))),
-                        o = v.a.getDisplayName(this.props.path),
-                        r = v.a.parseFileName(o),
-                        i = this.props.selector,
-                        a = "file-ext";
-                    r.extension.length > 6 && (a = "file-ext hide", r.name = o);
-                    var s = "";
-                    i && this.state.checked ? s = "check-on" : i && !this.state.checked && (s = "check-off");
-                    var u = function(e, t) {
-                        if (t && -1 !== e.indexOf(t)) {
-                            var n = e.substring(0, e.indexOf(t)),
-                                o = e.slice(e.indexOf(t) + t.length);
+                /*,{
+                                key: "checkFileSupport",
+                                value: function() {
+                                    var e = v.a.getDisplayName(this.props.path),
+                                        t = MimeMapper.guessTypeFromFileProperties(e, this.props.type);
+                                    return !(0 === t.length || !(y.a.photo.includes(t) || y.a.audio.includes(t) || y.a.video.includes(t) || y.a.other.includes(t)))
+                                }
+                            }*/
+                , {
+                    key: "openFile",
+                    value: function (e) {
+                        if (v.a.pickActivityMode) return void v.a.activityObj.postResult({
+                            type: e.type,
+                            blob: e
+                        });
+                        MimeMapper.openFile(e);
+                    }
+                }, {
+                    key: "getFileIcon",
+                    value: function (e) {
+                        return MimeMapper.getIconFromType(e)
+                    }
+                }, {
+                    key: "updateSoftkey",
+                    value: function () {
+                        var e = {
+                            path: this.props.path,
+                            unsupport: !this.checkFileSupport(),
+                            isfile: !0,
+                            checked: this.state.checked
+                        };
+                        this.props.search ? m.a.request("updateSoftkeySearch", e) : m.a.request("updateSoftkeyList", e)
+                    }
+                }, {
+                    key: "componentWillReceiveProps",
+                    value: function (e) {
+                        e.checked !== this.state.checked && this.setState({
+                            checked: e.checked
+                        })
+                    }
+                }, {
+                    key: "componentDidUpdate",
+                    value: function () {
+                        this.props.selector && this.updateCheckList(this.state.checked)
+                    }
+                }, {
+                    key: "render",
+                    value: function () {
+                        var e = this,
+                            t = this.props.gray ? "list-item gray-out" : "list-item",
+                            n = MimeMapper.getIconFromType(MimeMapper.guessTypeFromExtension(MimeMapper._parseExtension(this.props.path))),
+                            o = v.a.getDisplayName(this.props.path),
+                            r = v.a.parseFileName(o),
+                            i = this.props.selector,
+                            a = "file-ext";
+                        r.extension.length > 6 && (a = "file-ext hide", r.name = o);
+                        var s = "";
+                        i && this.state.checked ? s = "check-on" : i && !this.state.checked && (s = "check-off");
+                        var u = function (e, t) {
+                            if (t && -1 !== e.indexOf(t)) {
+                                var n = e.substring(0, e.indexOf(t)),
+                                    o = e.slice(e.indexOf(t) + t.length);
+                                return d.a.createElement("p", {
+                                    className: "file-name"
+                                }, n, d.a.createElement("span", {
+                                    className: "highlight"
+                                }, t), o)
+                            }
                             return d.a.createElement("p", {
                                 className: "file-name"
-                            }, n, d.a.createElement("span", {
-                                className: "highlight"
-                            }, t), o)
-                        }
-                        return d.a.createElement("p", {
-                            className: "file-name"
-                        }, e)
-                    }(r.name, this.props.keyword);
-                    return d.a.createElement("li", {
-                        className: t,
-                        tabIndex: "-1",
-                        onKeyDown: function(t) {
-                            e.onKeyDown(t)
-                        },
-                        role: "menuitem",
-                        "data-path": this.props.path,
-                        ref: function(t) {
-                            e.element = t
-                        },
-                        onFocus: function() {
-                            e.updateSoftkey()
-                        }
-                    }, d.a.createElement("div", {
-                        "data-icon": s,
-                        className: i ? "selector-show" : "hide"
-                    }), d.a.createElement("div", {
-                        className: "file-icon",
-                        "data-icon": n
-                    }), u, d.a.createElement("bdi", null, d.a.createElement("p", {
-                        className: a
-                    }, r.extension)))
+                            }, e)
+                        }(r.name, this.props.keyword);
+                        return d.a.createElement("li", {
+                            className: t,
+                            tabIndex: "-1",
+                            onKeyDown: function (t) {
+                                e.onKeyDown(t)
+                            },
+                            role: "menuitem",
+                            "data-path": this.props.path,
+                            ref: function (t) {
+                                e.element = t
+                            },
+                            onFocus: function () {
+                                e.updateSoftkey()
+                            }
+                        }, d.a.createElement("div", {
+                            "data-icon": s,
+                            className: i ? "selector-show" : "hide"
+                        }), d.a.createElement("div", {
+                            className: "file-icon",
+                            "data-icon": n
+                        }), u, d.a.createElement("bdi", null, d.a.createElement("p", {
+                            className: a
+                        }, r.extension)))
+                    }
                 }
-            }]), t
+            ]), t
         }(h.a)
-}, function(e, t, n) {
+}, function (e, t, n) {
     "use strict";
     var o = MimeMapper._fileTypeMap;
     t.a = o
-}, function(e, t, n) {
+}, function (e, t, n) {
     "use strict";
 
     function o(e, t) {
@@ -4628,30 +4635,30 @@ webpackJsonp([0], [, , , function(e, t, n) {
     function s(e) {
         if ("function" != typeof e) throw new Error("Handler should be a function!")
     }
-    n.d(t, "a", function() {
+    n.d(t, "a", function () {
         return u
     });
-    var u = function() {
+    var u = function () {
         function e() {
             o(this, e)
         }
         return i(e, [{
             key: "on",
-            value: function(e, t) {
+            value: function (e, t) {
                 a(e), s(t), this.listeners || (this.listeners = new Map);
                 var n = this.listeners.get(e);
                 n || (n = new Set, this.listeners.set(e, n)), n.add(t)
             }
         }, {
             key: "off",
-            value: function(e, t) {
+            value: function (e, t) {
                 a(e), s(t);
                 var n = this.listeners.get(e);
                 n && (n.delete(t), n.size || this.listeners.delete(e))
             }
         }, {
             key: "offAll",
-            value: function(e) {
+            value: function (e) {
                 if (void 0 === e) return void this.listeners.clear();
                 a(e);
                 var t = this.listeners.get(e);
@@ -4659,11 +4666,11 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }
         }, {
             key: "emit",
-            value: function(e) {
+            value: function (e) {
                 for (var t = arguments.length, n = new Array(t > 1 ? t - 1 : 0), o = 1; o < t; o++) n[o - 1] = arguments[o];
                 a(e), this.listeners || (this.listeners = new Map);
                 var r = this.listeners.get(e);
-                r && r.forEach(function(e) {
+                r && r.forEach(function (e) {
                     try {
                         e.apply(null, n)
                     } catch (e) {}
@@ -4671,19 +4678,19 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }
         }]), e
     }()
-}, function(e, t, n) {
+}, function (e, t, n) {
     "use strict";
 
     function o(e) {
-        return (o = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+        return (o = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
             return typeof e
-        } : function(e) {
+        } : function (e) {
             return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
         })(e)
     }
 
     function r() {
-        return r = Object.assign || function(e) {
+        return r = Object.assign || function (e) {
             for (var t = 1; t < arguments.length; t++) {
                 var n = arguments[t];
                 for (var o in n) Object.prototype.hasOwnProperty.call(n, o) && (e[o] = n[o])
@@ -4717,7 +4724,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
 
     function l(e) {
-        return (l = Object.setPrototypeOf ? Object.getPrototypeOf : function(e) {
+        return (l = Object.setPrototypeOf ? Object.getPrototypeOf : function (e) {
             return e.__proto__ || Object.getPrototypeOf(e)
         })(e)
     }
@@ -4734,7 +4741,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
 
     function f(e, t) {
-        return (f = Object.setPrototypeOf || function(e, t) {
+        return (f = Object.setPrototypeOf || function (e, t) {
             return e.__proto__ = t, e
         })(e, t)
     }
@@ -4747,8 +4754,8 @@ webpackJsonp([0], [, , , function(e, t, n) {
         b = n(12),
         E = n(101),
         _ = n(203),
-        k = (n.n(_), function(e, t, n) {
-            return function(o) {
+        k = (n.n(_), function (e, t, n) {
+            return function (o) {
                 function a(e) {
                     var t;
                     return i(this, a), t = u(this, l(a).call(this, e)), t.state = {
@@ -4757,60 +4764,60 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
                 return p(a, o), s(a, [{
                     key: "componentDidMount",
-                    value: function() {
+                    value: function () {
                         var e = this;
-                        this.refs.composed.open = this.refs.composing.open.bind(this.refs.composing), this.refs.composed.close = this.refs.composing.close.bind(this.refs.composing), b.a.register("open", this.refs.composed), b.a.register("close", this.refs.composed), this.refs.composed.isActive = this.refs.composing.isActive.bind(this.refs.composing), this.refs.composing.on("closed", function() {
+                        this.refs.composed.open = this.refs.composing.open.bind(this.refs.composing), this.refs.composed.close = this.refs.composing.close.bind(this.refs.composing), b.a.register("open", this.refs.composed), b.a.register("close", this.refs.composed), this.refs.composed.isActive = this.refs.composing.isActive.bind(this.refs.composing), this.refs.composing.on("closed", function () {
                             e.refs.composed.emit("closed"), e.emit("closed")
-                        }), this.refs.composing.on("opened", function() {
+                        }), this.refs.composing.on("opened", function () {
                             e.refs.composed.emit("opened"), e.emit("opened")
                         })
                     }
                 }, {
                     key: "open",
-                    value: function(e) {
+                    value: function (e) {
                         this.refs.composing.open(e)
                     }
                 }, {
                     key: "focus",
-                    value: function() {
+                    value: function () {
                         var e = y.a.findDOMNode(this.refs.composed);
                         e.activeElement ? (e.activeElement.focus(), document.activeElement === document.body && e.focus()) : e.focus()
                     }
                 }, {
                     key: "close",
-                    value: function(e) {
+                    value: function (e) {
                         this.refs.composing.close(e)
                     }
                 }, {
                     key: "isClosed",
-                    value: function() {
+                    value: function () {
                         return "closed" === this.refs.composing.state.transition
                     }
                 }, {
                     key: "isTransitioning",
-                    value: function() {
+                    value: function () {
                         return this.refs.composing.isTransitioning()
                     }
                 }, {
                     key: "getTopMost",
-                    value: function() {
+                    value: function () {
                         return this.refs.popup.refs.popup ? this.refs.popup.refs.popup.getTopMost() : this
                     }
                 }, {
                     key: "openPopup",
-                    value: function(e) {
+                    value: function (e) {
                         this.refs.popup.setState({
                             popup: e
                         })
                     }
                 }, {
                     key: "componentDidUpdate",
-                    value: function() {
+                    value: function () {
                         this.refs.popup && this.refs.popup.open()
                     }
                 }, {
                     key: "render",
-                    value: function() {
+                    value: function () {
                         return h.a.createElement(v.a, {
                             ref: "composing",
                             openAnimation: t,
@@ -4825,13 +4832,13 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }(g.a)
         });
     t.a = k
-}, function(e, t, n) {
+}, function (e, t, n) {
     "use strict";
 
     function o(e) {
-        return (o = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+        return (o = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
             return typeof e
-        } : function(e) {
+        } : function (e) {
             return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
         })(e)
     }
@@ -4861,7 +4868,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
 
     function c(e) {
-        return (c = Object.setPrototypeOf ? Object.getPrototypeOf : function(e) {
+        return (c = Object.setPrototypeOf ? Object.getPrototypeOf : function (e) {
             return e.__proto__ || Object.getPrototypeOf(e)
         })(e)
     }
@@ -4878,7 +4885,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
 
     function p(e, t) {
-        return (p = Object.setPrototypeOf || function(e, t) {
+        return (p = Object.setPrototypeOf || function (e, t) {
             return e.__proto__ = t, e
         })(e, t)
     }
@@ -4887,7 +4894,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         h = n(17),
         m = n.n(h),
         y = n(10),
-        v = function(e) {
+        v = function (e) {
             function t(e) {
                 var n;
                 return r(this, t), n = s(this, c(t).call(this, e)), n.state = {
@@ -4896,22 +4903,22 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }
             return l(t, e), a(t, [{
                 key: "componentDidMount",
-                value: function() {}
+                value: function () {}
             }, {
                 key: "focus",
-                value: function() {
+                value: function () {
                     m.a.findDOMNode(this.refs.composed).focus()
                 }
             }, {
                 key: "open",
-                value: function(e) {
+                value: function (e) {
                     this.refs.popup && this.refs.popup.open(e)
                 }
             }, {
                 key: "componentDidUpdate",
-                value: function() {
+                value: function () {
                     var e = this;
-                    this.refs.popup && (this.refs.popup.open("bottom-to-up"), this.refs.popup.refs.composed.close = this.close.bind(this), this.refs.popup.refs.composing.on("closing", function() {
+                    this.refs.popup && (this.refs.popup.open("bottom-to-up"), this.refs.popup.refs.composed.close = this.close.bind(this), this.refs.popup.refs.composing.on("closing", function () {
                         e.setState({
                             popup: null
                         })
@@ -4919,7 +4926,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "render",
-                value: function() {
+                value: function () {
                     var e = this.state.popup ? d.a.cloneElement(this.state.popup, {
                         ref: "popup"
                     }) : null;
@@ -4930,17 +4937,17 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }]), t
         }(y.a);
     t.a = v
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
-        return e.replace(o, function(e, t) {
+        return e.replace(o, function (e, t) {
             return t.toUpperCase()
         })
     }
     var o = /-(.)/g;
     e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
@@ -4949,7 +4956,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
     var o = t(102),
         r = /^-ms-/;
     e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e, t) {
@@ -4957,13 +4964,13 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
     var o = t(112);
     e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
-        return (n = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+        return (n = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
             return typeof e
-        } : function(e) {
+        } : function (e) {
             return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
         })(e)
     }
@@ -4986,7 +4993,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
     var a = t(4);
     e.exports = i
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
@@ -5015,7 +5022,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         u = r.canUseDOM ? document.createElement("div") : null,
         c = /^\s*<(\w+)/;
     e.exports = o
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
@@ -5046,10 +5053,10 @@ webpackJsonp([0], [, , , function(e, t, n) {
             td: c,
             th: c
         };
-    ["circle", "clipPath", "defs", "ellipse", "g", "image", "line", "linearGradient", "mask", "path", "pattern", "polygon", "polyline", "radialGradient", "rect", "stop", "text", "tspan"].forEach(function(e) {
+    ["circle", "clipPath", "defs", "ellipse", "g", "image", "line", "linearGradient", "mask", "path", "pattern", "polygon", "polyline", "radialGradient", "rect", "stop", "text", "tspan"].forEach(function (e) {
         p[e] = l, a[e] = !0
     }), e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
@@ -5062,7 +5069,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         }
     }
     e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
@@ -5070,7 +5077,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
     var o = /([A-Z])/g;
     e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
@@ -5079,13 +5086,13 @@ webpackJsonp([0], [, , , function(e, t, n) {
     var o = t(109),
         r = /^ms-/;
     e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
-        return (n = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+        return (n = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
             return typeof e
-        } : function(e) {
+        } : function (e) {
             return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
         })(e)
     }
@@ -5096,7 +5103,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         return !(!e || !("function" == typeof o.Node ? e instanceof o.Node : "object" === n(e) && "number" == typeof e.nodeType && "string" == typeof e.nodeName))
     }
     e.exports = o
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
@@ -5104,36 +5111,36 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
     var o = t(111);
     e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
         var t = {};
-        return function(n) {
+        return function (n) {
             return t.hasOwnProperty(n) || (t[n] = e.call(this, n)), t[n]
         }
     }
     e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     exports.__esModule = !0;
-    exports.canUseDOM = !("undefined" == typeof window || !window.document || !window.document.createElement), exports.addEventListener = function(e, t, n) {
+    exports.canUseDOM = !("undefined" == typeof window || !window.document || !window.document.createElement), exports.addEventListener = function (e, t, n) {
         return e.addEventListener ? e.addEventListener(t, n, !1) : e.attachEvent("on" + t, n)
-    }, exports.removeEventListener = function(e, t, n) {
+    }, exports.removeEventListener = function (e, t, n) {
         return e.removeEventListener ? e.removeEventListener(t, n, !1) : e.detachEvent("on" + t, n)
-    }, exports.getConfirmation = function(e, t) {
+    }, exports.getConfirmation = function (e, t) {
         return t(window.confirm(e))
-    }, exports.supportsHistory = function() {
+    }, exports.supportsHistory = function () {
         var e = window.navigator.userAgent;
         return (-1 === e.indexOf("Android 2.") && -1 === e.indexOf("Android 4.0") || -1 === e.indexOf("Mobile Safari") || -1 !== e.indexOf("Chrome") || -1 !== e.indexOf("Windows Phone")) && (window.history && "pushState" in window.history)
-    }, exports.supportsPopStateOnHashChange = function() {
+    }, exports.supportsPopStateOnHashChange = function () {
         return -1 === window.navigator.userAgent.indexOf("Trident")
-    }, exports.supportsGoWithoutReloadUsingHash = function() {
+    }, exports.supportsGoWithoutReloadUsingHash = function () {
         return -1 === window.navigator.userAgent.indexOf("Firefox")
-    }, exports.isExtraneousPopstateEvent = function(e) {
+    }, exports.isExtraneousPopstateEvent = function (e) {
         return void 0 === e.state && -1 === navigator.userAgent.indexOf("CriOS")
     }
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
@@ -5142,7 +5149,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         }
     }
     exports.__esModule = !0, exports.locationsAreEqual = exports.createLocation = void 0;
-    var o = Object.assign || function(e) {
+    var o = Object.assign || function (e) {
             for (var t = 1; t < arguments.length; t++) {
                 var n = arguments[t];
                 for (var o in n) Object.prototype.hasOwnProperty.call(n, o) && (e[o] = n[o])
@@ -5154,13 +5161,13 @@ webpackJsonp([0], [, , , function(e, t, n) {
         a = t(193),
         s = n(a),
         u = t(69);
-    exports.createLocation = function(e, t, n, r) {
+    exports.createLocation = function (e, t, n, r) {
         var a = void 0;
         return "string" == typeof e ? (a = (0, u.parsePath)(e), a.state = t) : (a = o({}, e), void 0 === a.pathname && (a.pathname = ""), a.search ? "?" !== a.search.charAt(0) && (a.search = "?" + a.search) : a.search = "", a.hash ? "#" !== a.hash.charAt(0) && (a.hash = "#" + a.hash) : a.hash = "", void 0 !== t && void 0 === a.state && (a.state = t)), a.key = n, r && (a.pathname ? "/" !== a.pathname.charAt(0) && (a.pathname = (0, i.default)(a.pathname, r.pathname)) : a.pathname = r.pathname), a
-    }, exports.locationsAreEqual = function(e, t) {
+    }, exports.locationsAreEqual = function (e, t) {
         return e.pathname === t.pathname && e.search === t.search && e.hash === t.hash && e.key === t.key && (0, s.default)(e.state, t.state)
     }
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
@@ -5169,7 +5176,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         }
     }
     exports.__esModule = !0;
-    var o = Object.assign || function(e) {
+    var o = Object.assign || function (e) {
             for (var t = 1; t < arguments.length; t++) {
                 var n = arguments[t];
                 for (var o in n) Object.prototype.hasOwnProperty.call(n, o) && (e[o] = n[o])
@@ -5187,10 +5194,10 @@ webpackJsonp([0], [, , , function(e, t, n) {
         f = t(114),
         d = {
             hashbang: {
-                encodePath: function(e) {
+                encodePath: function (e) {
                     return "!" === e.charAt(0) ? e : "!/" + (0, c.stripLeadingSlash)(e)
                 },
-                decodePath: function(e) {
+                decodePath: function (e) {
                     return "!" === e.charAt(0) ? e.substr(1) : e
                 }
             },
@@ -5203,19 +5210,19 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 decodePath: c.addLeadingSlash
             }
         },
-        h = function() {
+        h = function () {
             var e = window.location.href,
                 t = e.indexOf("#");
             return -1 === t ? "" : e.substring(t + 1)
         },
-        m = function(e) {
+        m = function (e) {
             return window.location.hash = e
         },
-        y = function(e) {
+        y = function (e) {
             var t = window.location.href.indexOf("#");
             window.location.replace(window.location.href.slice(0, t >= 0 ? t : 0) + "#" + e)
         },
-        v = function() {
+        v = function () {
             var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
             (0, s.default)(f.canUseDOM, "Hash history needs a DOM");
             var t = window.history,
@@ -5228,17 +5235,17 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 b = d[v],
                 E = b.encodePath,
                 _ = b.decodePath,
-                k = function() {
+                k = function () {
                     var e = _(h());
                     return g && (e = (0, c.stripPrefix)(e, g)), (0, c.parsePath)(e)
                 },
                 C = (0, p.default)(),
-                w = function(e) {
+                w = function (e) {
                     o(K, e), K.length = t.length, C.notifyListeners(K.location, K.action)
                 },
                 S = !1,
                 O = null,
-                P = function() {
+                P = function () {
                     var e = h(),
                         t = E(e);
                     if (e !== t) y(t);
@@ -5250,10 +5257,10 @@ webpackJsonp([0], [, , , function(e, t, n) {
                         O = null, x(n)
                     }
                 },
-                x = function(e) {
+                x = function (e) {
                     if (S) S = !1, w();
                     else {
-                        C.confirmTransitionTo(e, "POP", a, function(t) {
+                        C.confirmTransitionTo(e, "POP", a, function (t) {
                             t ? w({
                                 action: "POP",
                                 location: e
@@ -5261,7 +5268,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                         })
                     }
                 },
-                M = function(e) {
+                M = function (e) {
                     var t = K.location,
                         n = I.lastIndexOf((0, c.createPath)(t)); - 1 === n && (n = 0);
                     var o = I.lastIndexOf((0, c.createPath)(e)); - 1 === o && (o = 0);
@@ -5273,13 +5280,13 @@ webpackJsonp([0], [, , , function(e, t, n) {
             T !== N && y(N);
             var D = k(),
                 I = [(0, c.createPath)(D)],
-                R = function(e) {
+                R = function (e) {
                     return "#" + E(g + (0, c.createPath)(e))
                 },
-                A = function(e, t) {
+                A = function (e, t) {
                     (0, i.default)(void 0 === t, "Hash history cannot push state; it is ignored");
                     var n = (0, u.createLocation)(e, void 0, void 0, K.location);
-                    C.confirmTransitionTo(n, "PUSH", a, function(e) {
+                    C.confirmTransitionTo(n, "PUSH", a, function (e) {
                         if (e) {
                             var t = (0, c.createPath)(n),
                                 o = E(g + t);
@@ -5295,10 +5302,10 @@ webpackJsonp([0], [, , , function(e, t, n) {
                         }
                     })
                 },
-                L = function(e, t) {
+                L = function (e, t) {
                     (0, i.default)(void 0 === t, "Hash history cannot replace state; it is ignored");
                     var n = (0, u.createLocation)(e, void 0, void 0, K.location);
-                    C.confirmTransitionTo(n, "REPLACE", a, function(e) {
+                    C.confirmTransitionTo(n, "REPLACE", a, function (e) {
                         if (e) {
                             var t = (0, c.createPath)(n),
                                 o = E(g + t);
@@ -5310,32 +5317,32 @@ webpackJsonp([0], [, , , function(e, t, n) {
                         }
                     })
                 },
-                F = function(e) {
+                F = function (e) {
                     (0, i.default)(n, "Hash history go(n) causes a full page reload in this browser"), t.go(e)
                 },
-                j = function() {
+                j = function () {
                     return F(-1)
                 },
-                U = function() {
+                U = function () {
                     return F(1)
                 },
                 B = 0,
-                V = function(e) {
+                V = function (e) {
                     B += e, 1 === B ? (0, f.addEventListener)(window, "hashchange", P) : 0 === B && (0, f.removeEventListener)(window, "hashchange", P)
                 },
                 q = !1,
-                H = function() {
+                H = function () {
                     var e = arguments.length > 0 && void 0 !== arguments[0] && arguments[0],
                         t = C.setPrompt(e);
                     return q || (V(1), q = !0),
-                        function() {
+                        function () {
                             return q && (q = !1, V(-1)), t()
                         }
                 },
-                W = function(e) {
+                W = function (e) {
                     var t = C.appendListener(e);
                     return V(1),
-                        function() {
+                        function () {
                             V(-1), t()
                         }
                 },
@@ -5355,24 +5362,24 @@ webpackJsonp([0], [, , , function(e, t, n) {
             return K
         };
     exports.default = v
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     exports.__esModule = !0;
     var n = t(96),
-        o = function(e) {
+        o = function (e) {
             return e && e.__esModule ? e : {
                 default: e
             }
         }(n),
-        r = function() {
+        r = function () {
             var e = null,
-                t = function(t) {
+                t = function (t) {
                     return (0, o.default)(null == e, "A history supports only one prompt at a time"), e = t,
-                        function() {
+                        function () {
                             e === t && (e = null)
                         }
                 },
-                n = function(t, n, r, i) {
+                n = function (t, n, r, i) {
                     if (null != e) {
                         var a = "function" == typeof e ? e(t, n) : e;
                         "string" == typeof a ? "function" == typeof r ? r(a, i) : ((0, o.default)(!1, "A history needs a getUserConfirmation function in order to use a prompt message"), i(!0)) : i(!1 !== a)
@@ -5382,37 +5389,37 @@ webpackJsonp([0], [, , , function(e, t, n) {
             return {
                 setPrompt: t,
                 confirmTransitionTo: n,
-                appendListener: function(e) {
+                appendListener: function (e) {
                     var t = !0,
-                        n = function() {
+                        n = function () {
                             t && e.apply(void 0, arguments)
                         };
                     return r.push(n),
-                        function() {
-                            t = !1, r = r.filter(function(e) {
+                        function () {
+                            t = !1, r = r.filter(function (e) {
                                 return e !== n
                             })
                         }
                 },
-                notifyListeners: function() {
+                notifyListeners: function () {
                     for (var e = arguments.length, t = Array(e), n = 0; n < e; n++) t[n] = arguments[n];
-                    r.forEach(function(e) {
+                    r.forEach(function (e) {
                         return e.apply(void 0, t)
                     })
                 }
             }
         };
     exports.default = r
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
-    var n = function(e, t, n, o, r, i, a, s) {
+    var n = function (e, t, n, o, r, i, a, s) {
         if (!e) {
             var u;
             if (void 0 === t) u = new Error("Minified exception occurred; use the non-minified dev environment for the full error message and additional helpful warnings.");
             else {
                 var c = [n, o, r, i, a, s],
                     l = 0;
-                u = new Error(t.replace(/%s/g, function() {
+                u = new Error(t.replace(/%s/g, function () {
                     return c[l++]
                 })), u.name = "Invariant Violation"
             }
@@ -5420,16 +5427,16 @@ webpackJsonp([0], [, , , function(e, t, n) {
         }
     };
     e.exports = n
-}, function(e, exports) {
+}, function (e, exports) {
     var t = {}.toString;
-    e.exports = Array.isArray || function(e) {
+    e.exports = Array.isArray || function (e) {
         return "[object Array]" == t.call(e)
     }
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     function n(e) {
-        return (n = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+        return (n = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
             return typeof e
-        } : function(e) {
+        } : function (e) {
             return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
         })(e)
     }
@@ -5474,20 +5481,20 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
 
     function i(e) {
-        return encodeURI(e).replace(/[\/?#]/g, function(e) {
+        return encodeURI(e).replace(/[\/?#]/g, function (e) {
             return "%" + e.charCodeAt(0).toString(16).toUpperCase()
         })
     }
 
     function a(e) {
-        return encodeURI(e).replace(/[?#]/g, function(e) {
+        return encodeURI(e).replace(/[?#]/g, function (e) {
             return "%" + e.charCodeAt(0).toString(16).toUpperCase()
         })
     }
 
     function s(e) {
         for (var t = new Array(e.length), o = 0; o < e.length; o++) "object" === n(e[o]) && (t[o] = new RegExp("^(?:" + e[o].pattern + ")$"));
-        return function(n, o) {
+        return function (n, o) {
             for (var r = "", s = n || {}, u = o || {}, c = u.pretty ? i : encodeURIComponent, l = 0; l < e.length; l++) {
                 var p = e[l];
                 if ("string" != typeof p) {
@@ -5582,13 +5589,13 @@ webpackJsonp([0], [, , , function(e, t, n) {
     var v = t(119);
     e.exports = y, e.exports.parse = o, e.exports.compile = r, e.exports.tokensToFunction = s, e.exports.tokensToRegExp = m;
     var g = new RegExp(["(\\\\.)", "([\\/.])?(?:(?:\\:(\\w+)(?:\\(((?:\\\\.|[^\\\\()])+)\\))?|\\(((?:\\\\.|[^\\\\()])+)\\))([+*?])?|(\\*))"].join("|"), "g")
-}, function(e, t, n) {
+}, function (e, t, n) {
     "use strict";
 
     function o(e) {
-        return (o = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+        return (o = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
             return typeof e
-        } : function(e) {
+        } : function (e) {
             return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
         })(e)
     }
@@ -5607,7 +5614,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
 
     function s(e) {
-        return (s = Object.setPrototypeOf ? Object.getPrototypeOf : function(e) {
+        return (s = Object.setPrototypeOf ? Object.getPrototypeOf : function (e) {
             return e.__proto__ || Object.getPrototypeOf(e)
         })(e)
     }
@@ -5635,11 +5642,11 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
 
     function p(e, t) {
-        return (p = Object.setPrototypeOf || function(e, t) {
+        return (p = Object.setPrototypeOf || function (e, t) {
             return e.__proto__ = t, e
         })(e, t)
     }
-    n.d(t, "a", function() {
+    n.d(t, "a", function () {
         return b
     });
     var f = n(9),
@@ -5649,7 +5656,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         y = n(10),
         v = n(122),
         g = n(204),
-        b = (n.n(g), function(e) {
+        b = (n.n(g), function (e) {
             function t(e) {
                 var n;
                 return r(this, t), n = i(this, s(t).call(this, e)), n.state = {
@@ -5659,22 +5666,22 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }
             return l(t, e), c(t, [{
                 key: "isHidden",
-                value: function() {
+                value: function () {
                     return "opened" !== this.state.transition
                 }
             }]), c(t, [{
                 key: "isActive",
-                value: function() {
+                value: function () {
                     return "opened" === this.state.transition || "opening" === this.state.transition
                 }
             }, {
                 key: "isTransitioning",
-                value: function() {
+                value: function () {
                     return "opening" === this.state.transition || "closing" === this.state.transition
                 }
             }, {
                 key: "onAnimationEnd",
-                value: function(e) {
+                value: function (e) {
                     if (e.target === m.a.findDOMNode(this)) switch (this.state.transition) {
                         case "opening":
                             this.setState({
@@ -5691,12 +5698,12 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "componentDidMount",
-                value: function() {
+                value: function () {
                     m.a.findDOMNode(this).addEventListener("animationend", this.onAnimationEnd.bind(this), !1)
                 }
             }, {
                 key: "getActivatedState",
-                value: function() {
+                value: function () {
                     switch (this.state.transition) {
                         case "opening":
                             return "-activating";
@@ -5710,7 +5717,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "componentDidUpdate",
-                value: function() {
+                value: function () {
                     this.emit(this.state.transition), this.publish(this.getActivatedState());
                     var e = (d.a.Children.toArray(this.props.children)[0], m.a.findDOMNode(this.refs.shadow).firstChild);
                     if (!e) return void this.debug("no content");
@@ -5721,12 +5728,12 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "shouldComponentUpdate",
-                value: function(e, t) {
+                value: function (e, t) {
                     return t.transition !== this.state.transition || t.animation !== this.state.animation
                 }
             }, {
                 key: "open",
-                value: function(e) {
+                value: function (e) {
                     switch (e = e || this.props.openAnimation, this.state.transition) {
                         case "opened":
                             break;
@@ -5744,13 +5751,13 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "focus",
-                value: function() {
+                value: function () {
                     var e = m.a.findDOMNode(this.refs.shadow).firstChild;
                     e && e.focus()
                 }
             }, {
                 key: "close",
-                value: function(e) {
+                value: function (e) {
                     switch (e = e || this.props.closeAnimation, this.state.transition) {
                         case "closed":
                             break;
@@ -5768,7 +5775,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "render",
-                value: function() {
+                value: function () {
                     return d.a.createElement("div", {
                         tabIndex: "-1",
                         className: "x-window " + this.state.animation,
@@ -5791,13 +5798,13 @@ webpackJsonp([0], [, , , function(e, t, n) {
         closeAnimation: d.a.PropTypes.string,
         noFocus: d.a.PropTypes.bool
     }
-}, function(e, t, n) {
+}, function (e, t, n) {
     "use strict";
 
     function o(e) {
-        return (o = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+        return (o = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
             return typeof e
-        } : function(e) {
+        } : function (e) {
             return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
         })(e)
     }
@@ -5827,7 +5834,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
 
     function c(e) {
-        return (c = Object.setPrototypeOf ? Object.getPrototypeOf : function(e) {
+        return (c = Object.setPrototypeOf ? Object.getPrototypeOf : function (e) {
             return e.__proto__ || Object.getPrototypeOf(e)
         })(e)
     }
@@ -5844,39 +5851,39 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
 
     function p(e, t) {
-        return (p = Object.setPrototypeOf || function(e, t) {
+        return (p = Object.setPrototypeOf || function (e, t) {
             return e.__proto__ = t, e
         })(e, t)
     }
-    n.d(t, "a", function() {
+    n.d(t, "a", function () {
         return m
     });
     var f = n(9),
         d = n.n(f),
         h = n(17),
-        m = (n.n(h), function(e) {
+        m = (n.n(h), function (e) {
             function t() {
                 return r(this, t), s(this, c(t).apply(this, arguments))
             }
             return l(t, e), a(t, [{
                 key: "isOpening",
-                value: function(e) {
+                value: function (e) {
                     var t = e || this.props;
                     return "opening" === t.transition || "opened" === t.transition && "immediate" === t.animation
                 }
             }, {
                 key: "isClosed",
-                value: function(e) {
+                value: function (e) {
                     return "closed" === (e || this.props).transition
                 }
             }, {
                 key: "shouldComponentUpdate",
-                value: function(e, t) {
+                value: function (e, t) {
                     return !!this.isOpening(e)
                 }
             }, {
                 key: "render",
-                value: function() {
+                value: function () {
                     return d.a.createElement("div", {
                         className: "shadow-window"
                     }, this.props.children)
@@ -5890,13 +5897,13 @@ webpackJsonp([0], [, , , function(e, t, n) {
         transition: d.a.PropTypes.string.isRequired,
         animation: d.a.PropTypes.string.isRequired
     }
-}, function(e, t, n) {
+}, function (e, t, n) {
     "use strict";
 
     function o(e) {
-        return (o = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+        return (o = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
             return typeof e
-        } : function(e) {
+        } : function (e) {
             return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
         })(e)
     }
@@ -5926,7 +5933,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
 
     function c(e, t, n) {
-        return (c = "undefined" != typeof Reflect && Reflect.get ? Reflect.get : function(e, t, n) {
+        return (c = "undefined" != typeof Reflect && Reflect.get ? Reflect.get : function (e, t, n) {
             var o = l(e, t);
             if (o) {
                 var r = Object.getOwnPropertyDescriptor(o, t);
@@ -5941,7 +5948,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
 
     function p(e) {
-        return (p = Object.setPrototypeOf ? Object.getPrototypeOf : function(e) {
+        return (p = Object.setPrototypeOf ? Object.getPrototypeOf : function (e) {
             return e.__proto__ || Object.getPrototypeOf(e)
         })(e)
     }
@@ -5958,11 +5965,11 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
 
     function d(e, t) {
-        return (d = Object.setPrototypeOf || function(e, t) {
+        return (d = Object.setPrototypeOf || function (e, t) {
             return e.__proto__ = t, e
         })(e, t)
     }
-    n.d(t, "a", function() {
+    n.d(t, "a", function () {
         return C
     });
     var h = n(9),
@@ -5974,7 +5981,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         E = n(12),
         _ = n(205),
         k = (n.n(_), 0),
-        C = function(e) {
+        C = function (e) {
             function t() {
                 var e, n;
                 r(this, t);
@@ -5983,17 +5990,17 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }
             return f(t, e), a(t, [{
                 key: "componentDidUpdate",
-                value: function(e, t) {
+                value: function (e, t) {
                     "prompt" === this.props.type && (v.a.findDOMNode(this.refs.input).value = this.props.initialValue || "")
                 }
             }, {
                 key: "componentDidMount",
-                value: function() {
+                value: function () {
                     this.element = v.a.findDOMNode(this), this.content = this.element.querySelector(".content"), E.a.register("show", this), E.a.register("hide", this), this.updateSoftKeys()
                 }
             }, {
                 key: "scrollContent",
-                value: function(e) {
+                value: function (e) {
                     if (this.content) {
                         var t = this.content.scrollHeight - this.content.clientHeight;
                         if (0 == this.content.scrollTop && e < 0 || this.content.scrollTop == t && e > 0) return !1;
@@ -6003,7 +6010,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "updateSoftKeys",
-                value: function() {
+                value: function () {
                     if ("custom" !== this.props.type) "alert" === this.props.type ? b.a.register({
                         left: "",
                         center: "ok",
@@ -6042,27 +6049,27 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "focus",
-                value: function() {
+                value: function () {
                     this.focusIfPossible(), this.updateSoftKeys()
                 }
             }, {
                 key: "focusIfPossible",
-                value: function() {
+                value: function () {
                     this.isHidden() || ("custom" === this.props.type && this.refs.checkboxContainer ? v.a.findDOMNode(this.refs.checkboxContainer).focus() : "prompt" === this.props.type ? v.a.findDOMNode(this.refs.input).focus() : this.props.noFocus || (this.refs.content ? v.a.findDOMNode(this.refs.content).focus() : this.element.focus()))
                 }
             }, {
                 key: "hide",
-                value: function() {
+                value: function () {
                     "prompt" === this.props.type && (v.a.findDOMNode(this.refs.input).value = this.props.initialValue || ""), c(p(t.prototype), "hide", this).call(this)
                 }
             }, {
                 key: "getInstanceID",
-                value: function() {
+                value: function () {
                     return this._id || (this._id = k, k++), this._id
                 }
             }, {
                 key: "onKeyDown",
-                value: function(e) {
+                value: function (e) {
                     var t = (e.target, e.key);
                     switch (t) {
                         case "ArrowDown":
@@ -6122,7 +6129,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "render",
-                value: function() {
+                value: function () {
                     var e = this,
                         t = "";
                     return this.props.header && (t = this.props.translated ? m.a.createElement("div", {
@@ -6137,7 +6144,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                     })), m.a.createElement("div", {
                         className: "dialog-container",
                         tabIndex: "-1",
-                        onKeyDown: function(t) {
+                        onKeyDown: function (t) {
                             return e.onKeyDown(t)
                         }
                     }, m.a.createElement("div", {
@@ -6211,13 +6218,13 @@ webpackJsonp([0], [, , , function(e, t, n) {
         progressValue: m.a.PropTypes.string,
         progressMax: m.a.PropTypes.string
     }
-}, function(e, t, n) {
+}, function (e, t, n) {
     "use strict";
 
     function o(e) {
-        return (o = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+        return (o = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
             return typeof e
-        } : function(e) {
+        } : function (e) {
             return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
         })(e)
     }
@@ -6247,7 +6254,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
 
     function c(e, t, n) {
-        return (c = "undefined" != typeof Reflect && Reflect.get ? Reflect.get : function(e, t, n) {
+        return (c = "undefined" != typeof Reflect && Reflect.get ? Reflect.get : function (e, t, n) {
             var o = l(e, t);
             if (o) {
                 var r = Object.getOwnPropertyDescriptor(o, t);
@@ -6262,7 +6269,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
 
     function p(e) {
-        return (p = Object.setPrototypeOf ? Object.getPrototypeOf : function(e) {
+        return (p = Object.setPrototypeOf ? Object.getPrototypeOf : function (e) {
             return e.__proto__ || Object.getPrototypeOf(e)
         })(e)
     }
@@ -6279,11 +6286,11 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
 
     function d(e, t) {
-        return (d = Object.setPrototypeOf || function(e, t) {
+        return (d = Object.setPrototypeOf || function (e, t) {
             return e.__proto__ = t, e
         })(e, t)
     }
-    n.d(t, "a", function() {
+    n.d(t, "a", function () {
         return k
     });
     var h = n(9),
@@ -6294,44 +6301,44 @@ webpackJsonp([0], [, , , function(e, t, n) {
         b = n(23),
         E = n(33),
         _ = n(206),
-        k = (n.n(_), function(e) {
+        k = (n.n(_), function (e) {
             function t(e) {
                 var n;
                 return r(this, t), n = s(this, p(t).call(this, e)), n.name = "OptionMenu", n.FOCUS_SELECTOR = ".menu-item", n.state = {
                     header: "",
                     options: [],
-                    onCancel: function() {}
+                    onCancel: function () {}
                 }, n
             }
             return f(t, e), a(t, [{
                 key: "componentDidMount",
-                value: function() {
+                value: function () {
                     this.element = v.a.findDOMNode(this), this.navigator = new E.a(this.FOCUS_SELECTOR, this.element), this.updateSoftKeys()
                 }
             }, {
                 key: "componentWillUnmount",
-                value: function() {
+                value: function () {
                     this.navigator.destroy(), this.unregisterSoftKeys(), this.element = null
                 }
             }, {
                 key: "componentDidUpdate",
-                value: function() {
+                value: function () {
                     this.isActive() && document.activeElement === document.body && this.focus()
                 }
             }, {
                 key: "componentWillUpdate",
-                value: function() {
+                value: function () {
                     var e = this.element.querySelector('[data-index="0"]');
                     e && this.navigator.setFocus(e)
                 }
             }, {
                 key: "unregisterSoftKeys",
-                value: function() {
+                value: function () {
                     b.a.unregister(this.element)
                 }
             }, {
                 key: "updateSoftKeys",
-                value: function() {
+                value: function () {
                     b.a.register({
                         left: this.state.hasCancel ? "cancel" : "",
                         center: "select",
@@ -6340,24 +6347,24 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "clear",
-                value: function() {
+                value: function () {
                     this.setState({
                         header: "",
                         options: [],
-                        onCancel: function() {}
+                        onCancel: function () {}
                     })
                 }
             }, {
                 key: "show",
-                value: function(e) {
+                value: function (e) {
                     var n = this;
-                    this.clear(), this.setState(e, function() {
+                    this.clear(), this.setState(e, function () {
                         n.updateSoftKeys()
                     }), c(p(t.prototype), "show", this).call(this)
                 }
             }, {
                 key: "onKeyDown",
-                value: function(e) {
+                value: function (e) {
                     var t = (e.target, e.key),
                         n = null;
                     switch (t) {
@@ -6382,10 +6389,10 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "render",
-                value: function() {
+                value: function () {
                     var e = this,
                         t = [];
-                    this.state.options.forEach(function(e, n) {
+                    this.state.options.forEach(function (e, n) {
                         var o = "";
                         e.icon && (o = m.a.createElement("img", {
                             src: e.icon,
@@ -6410,7 +6417,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                         role: "heading",
                         "aria-labelledby": "option-menu-header",
                         className: n,
-                        onKeyDown: function(t) {
+                        onKeyDown: function (t) {
                             return e.onKeyDown(t)
                         }
                     }, m.a.createElement("div", {
@@ -6426,13 +6433,13 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }]), t
         }(g.a))
-}, function(e, t, n) {
+}, function (e, t, n) {
     "use strict";
 
     function o(e) {
-        return (o = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+        return (o = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
             return typeof e
-        } : function(e) {
+        } : function (e) {
             return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
         })(e)
     }
@@ -6457,7 +6464,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
 
     function u(e) {
-        return (u = Object.setPrototypeOf ? Object.getPrototypeOf : function(e) {
+        return (u = Object.setPrototypeOf ? Object.getPrototypeOf : function (e) {
             return e.__proto__ || Object.getPrototypeOf(e)
         })(e)
     }
@@ -6479,13 +6486,13 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
 
     function p(e, t) {
-        return (p = Object.setPrototypeOf || function(e, t) {
+        return (p = Object.setPrototypeOf || function (e, t) {
             return e.__proto__ = t, e
         })(e, t)
     }
 
     function f() {
-        return f = Object.assign || function(e) {
+        return f = Object.assign || function (e) {
             for (var t = 1; t < arguments.length; t++) {
                 var n = arguments[t];
                 for (var o in n) Object.prototype.hasOwnProperty.call(n, o) && (e[o] = n[o])
@@ -6505,7 +6512,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             "data-position": e.pos
         }, t), e.content.text)
     }
-    n.d(t, "a", function() {
+    n.d(t, "a", function () {
         return b
     });
     var h = n(9),
@@ -6513,7 +6520,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         y = n(10),
         v = n(23),
         g = n(207),
-        b = (n.n(g), function(e) {
+        b = (n.n(g), function (e) {
             function t(e) {
                 var n;
                 return r(this, t), n = s(this, u(t).call(this, e)), n.state = {
@@ -6524,25 +6531,25 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }
             return l(t, e), a(t, [{
                 key: "componentDidMount",
-                value: function() {
+                value: function () {
                     var e = this;
-                    v.a.on("change", function() {
+                    v.a.on("change", function () {
                         var t = v.a.currentKeys;
-                        e.softkeys.forEach(function(n) {
+                        e.softkeys.forEach(function (n) {
                             t[n] = e.uniformContent(t[n] || "")
                         }), e.setState(t)
                     })
                 }
             }, {
                 key: "componentWillUpdate",
-                value: function(e, t) {
-                    Array.from(this.element.getElementsByTagName("button")).forEach(function(e) {
+                value: function (e, t) {
+                    Array.from(this.element.getElementsByTagName("button")).forEach(function (e) {
                         t[e.dataset.position].text || (e.textContent = "")
                     })
                 }
             }, {
                 key: "uniformContent",
-                value: function(e) {
+                value: function (e) {
                     return "string" == typeof e && (e = e.startsWith("icon=") ? {
                         icon: e.replace("icon=", "")
                     } : {
@@ -6551,12 +6558,12 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "setRef",
-                value: function(e) {
+                value: function (e) {
                     this.element = e
                 }
             }, {
                 key: "render",
-                value: function() {
+                value: function () {
                     return m.a.createElement("form", {
                         className: "skbar none-paddings visible focused",
                         id: "softkeyPanel",
@@ -6575,13 +6582,13 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }]), t
         }(y.a))
-}, function(e, t, n) {
+}, function (e, t, n) {
     "use strict";
 
     function o(e) {
-        return (o = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+        return (o = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
             return typeof e
-        } : function(e) {
+        } : function (e) {
             return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
         })(e)
     }
@@ -6611,7 +6618,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
 
     function c(e) {
-        return (c = Object.setPrototypeOf ? Object.getPrototypeOf : function(e) {
+        return (c = Object.setPrototypeOf ? Object.getPrototypeOf : function (e) {
             return e.__proto__ || Object.getPrototypeOf(e)
         })(e)
     }
@@ -6628,11 +6635,11 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
 
     function p(e, t) {
-        return (p = Object.setPrototypeOf || function(e, t) {
+        return (p = Object.setPrototypeOf || function (e, t) {
             return e.__proto__ = t, e
         })(e, t)
     }
-    n.d(t, "a", function() {
+    n.d(t, "a", function () {
         return _
     });
     var f = n(116),
@@ -6644,7 +6651,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         g = n(12),
         b = n(10),
         E = n(127),
-        _ = function(e) {
+        _ = function (e) {
             function t(e) {
                 var n;
                 return r(this, t), n = s(this, c(t).call(this, e)), n.name = "ReactWindowManager", n.DEBUG = !1, n.state = {
@@ -6655,7 +6662,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }
             return l(t, e), a(t, [{
                 key: "componentWillUpdate",
-                value: function(e, t) {
+                value: function (e, t) {
                     var n = this;
                     if (this.state.activeRef && t.activeRef !== this.state.activeRef) {
                         var o = null;
@@ -6675,7 +6682,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                                     case "RECYCLE":
                                         return
                                 }
-                                i.close ? (i.on("closed", function() {
+                                i.close ? (i.on("closed", function () {
                                     n.recycleUnusedPanels()
                                 }), i.close(o)) : i.hide && i.hide();
                                 break
@@ -6685,7 +6692,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "componentDidUpdate",
-                value: function() {
+                value: function () {
                     this.debug("did update: activeRef, action:", this.state.activeRef, this.state.action);
                     var e = "";
                     for (var t in this.refs) {
@@ -6713,12 +6720,12 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "updatePanels",
-                value: function() {
+                value: function () {
                     var e = this;
                     this.debug("updatePanels:");
                     var t = this.history.location,
                         n = this.history.action;
-                    E.a.resolve(this.props.routes, t).then(function(t) {
+                    E.a.resolve(this.props.routes, t).then(function (t) {
                         if ("REPLACE" !== n) e.state.activeRef && t.ref !== e.state.activeRef && (e.parentRefs[t.ref] = e.state.activeRef);
                         else if (e.state.activeRef) {
                             var o = e.parentRefs[e.state.activeRef];
@@ -6727,7 +6734,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                         for (var r in e.refs)
                             if (t.ref === r) {
                                 var i = -1;
-                                e.state.panels.some(function(e, n) {
+                                e.state.panels.some(function (e, n) {
                                     return e.ref === t.ref && (i = n, !0)
                                 }), e.state.panels[i] = t;
                                 var a = {
@@ -6746,21 +6753,21 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "hasChildPanel",
-                value: function(e) {
+                value: function (e) {
                     for (var t in this.parentRefs)
                         if (e === this.parentRefs[t]) return !0;
                     return !1
                 }
             }, {
                 key: "recycleUnusedPanels",
-                value: function() {
+                value: function () {
                     this.debug("recycleUnusedPanels: activeRef:", this.state.activeRef);
                     var e = [];
                     for (var t in this.refs) {
                         var n = this.refs[t];
                         this.debug("try to remove:", n.name), !this.hasChildPanel(t) && n.isClosed() && (e.push(t), delete this.parentRefs[t])
                     }
-                    var o = this.state.panels.filter(function(t) {
+                    var o = this.state.panels.filter(function (t) {
                         return !(e.indexOf(t.ref) >= 0)
                     });
                     this.setState({
@@ -6770,18 +6777,18 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "componentDidMount",
-                value: function() {
+                value: function () {
                     var e = this;
                     this.debug("did mount");
                     var t = d()();
-                    this.history = t, t.listen(function(t, n) {
+                    this.history = t, t.listen(function (t, n) {
                         switch (n) {
                             case "PUSH":
                                 e.updatePanels();
                                 break;
                             case "POP":
                                 if (e.state.panels.length <= 1) return;
-                                E.a.resolve(e.props.routes, e.history.location).then(function(t) {
+                                E.a.resolve(e.props.routes, e.history.location).then(function (t) {
                                     for (var o in e.refs)
                                         if (t.ref === o) return void e.setState({
                                             activeRef: t.ref,
@@ -6796,18 +6803,18 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "isTransitioning",
-                value: function() {
+                value: function () {
                     var e = this,
-                        t = Object.values(this.refs).some(function(t) {
+                        t = Object.values(this.refs).some(function (t) {
                             return e.debug("check isTransitioning:", t.name), t.isTransitioning()
                         });
                     return this.debug("isTransitioning:", t), t
                 }
             }, {
                 key: "popup",
-                value: function(e, t) {
+                value: function (e, t) {
                     var n = this;
-                    return this.debug("popup: url, data:", e, t), new Promise(function(o) {
+                    return this.debug("popup: url, data:", e, t), new Promise(function (o) {
                         var r = {
                             pathname: e,
                             search: "",
@@ -6815,14 +6822,14 @@ webpackJsonp([0], [, , , function(e, t, n) {
                             state: void 0,
                             key: void 0
                         };
-                        E.a.resolve(n.props.routes, r).then(function(e) {
+                        E.a.resolve(n.props.routes, r).then(function (e) {
                             n.requestQueue.push(o), n.refs[n.state.activeRef].openPopup(m.a.cloneElement(e, t))
-                        }).catch(function(e) {})
-                    }).catch(function(e) {})
+                        }).catch(function (e) {})
+                    }).catch(function (e) {})
                 }
             }, {
                 key: "canGoBack",
-                value: function() {
+                value: function () {
                     var e = this.state.activeRef,
                         t = this.refs[e];
                     if (!t) return !1;
@@ -6831,7 +6838,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "back",
-                value: function() {
+                value: function () {
                     this.debug("back:");
                     var e = this.state.activeRef,
                         t = this.refs[e],
@@ -6845,7 +6852,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "focus",
-                value: function() {
+                value: function () {
                     for (var e in this.refs) {
                         var t = this.refs[e];
                         if (e === this.state.activeRef) {
@@ -6857,25 +6864,25 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "push",
-                value: function(e) {
+                value: function (e) {
                     var t = this,
                         n = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
-                    return this.debug("push: url, data:", e, n), new Promise(function(o) {
+                    return this.debug("push: url, data:", e, n), new Promise(function (o) {
                         t.requestQueue.push(o), t.history.push({
                             pathname: e,
                             search: JSON.stringify(n)
                         })
-                    }).catch(function(e) {})
+                    }).catch(function (e) {})
                 }
             }, {
                 key: "replace",
-                value: function(e, t) {
+                value: function (e, t) {
                     this.history.replace(e, t)
                 }
             }, {
                 key: "render",
-                value: function() {
-                    var e = this.state.panels.map(function(e) {
+                value: function () {
+                    var e = this.state.panels.map(function (e) {
                         return m.a.cloneElement(e, {
                             ref: e.ref,
                             key: e.ref,
@@ -6897,7 +6904,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         popAnimation: m.a.PropTypes.string,
         backAnimation: m.a.PropTypes.string
     }
-}, function(e, t, n) {
+}, function (e, t, n) {
     "use strict";
 
     function o(e, t) {
@@ -6910,7 +6917,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
 
     function r(e, t) {
-        return new Promise(function(n, r) {
+        return new Promise(function (n, r) {
             for (var i = 0; i < e.length; i++) {
                 var a = e[i],
                     s = t.error ? "/error" : t.pathname,
@@ -6928,23 +6935,23 @@ webpackJsonp([0], [, , , function(e, t, n) {
     t.a = {
         resolve: r
     }
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     var n = t(8),
         o = t(67),
         r = {
-            focusDOMComponent: function() {
+            focusDOMComponent: function () {
                 o(n.getNodeFromInstance(this))
             }
         };
     e.exports = r
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
-        return (n = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+        return (n = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
             return typeof e
-        } : function(e) {
+        } : function (e) {
             return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
         })(e)
     }
@@ -7053,7 +7060,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         _ = h.canUseDOM && "CompositionEvent" in window,
         k = null;
     h.canUseDOM && "documentMode" in document && (k = document.documentMode);
-    var C = h.canUseDOM && "TextEvent" in window && !k && ! function() {
+    var C = h.canUseDOM && "TextEvent" in window && !k && ! function () {
             var e = window.opera;
             return "object" === n(e) && "function" == typeof e.version && parseInt(e.version(), 10) <= 12
         }(),
@@ -7111,19 +7118,19 @@ webpackJsonp([0], [, , , function(e, t, n) {
         T = null,
         N = {
             eventTypes: x,
-            extractEvents: function(e, t, n, o) {
+            extractEvents: function (e, t, n, o) {
                 return [u(e, t, n, o), p(e, t, n, o)]
             }
         };
     e.exports = N
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     var n = t(70),
         o = t(11),
         r = (t(14), t(103), t(183)),
         i = t(110),
         a = t(113),
-        s = (t(6), a(function(e) {
+        s = (t(6), a(function (e) {
             return i(e)
         })),
         u = !1,
@@ -7138,7 +7145,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         void 0 === document.documentElement.style.cssFloat && (c = "styleFloat")
     }
     var p = {
-        createMarkupForStyles: function(e, t) {
+        createMarkupForStyles: function (e, t) {
             var n = "";
             for (var o in e)
                 if (e.hasOwnProperty(o)) {
@@ -7146,7 +7153,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                     null != i && (n += s(o) + ":", n += r(o, i, t) + ";")
                 } return n || null
         },
-        setValueForStyles: function(e, t, o) {
+        setValueForStyles: function (e, t, o) {
             var i = e.style;
             for (var a in t)
                 if (t.hasOwnProperty(a)) {
@@ -7162,7 +7169,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         }
     };
     e.exports = p
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
@@ -7263,16 +7270,16 @@ webpackJsonp([0], [, , , function(e, t, n) {
     var A = !1;
     E.canUseDOM && (A = S("input") && (!document.documentMode || document.documentMode > 11));
     var L = {
-            get: function() {
+            get: function () {
                 return I.get.call(this)
             },
-            set: function(e) {
+            set: function (e) {
                 D = "" + e, I.set.call(this, e)
             }
         },
         F = {
             eventTypes: M,
-            extractEvents: function(e, t, o, r) {
+            extractEvents: function (e, t, o, r) {
                 var i, a, c = t ? _.getNodeFromInstance(t) : window;
                 if (n(c) ? R ? i = s : a = u : O(c) ? A ? i = f : (i = h, a = d) : m(c) && (i = y), i) {
                     var l = i(e, t);
@@ -7285,7 +7292,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }
         };
     e.exports = F
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     var n = t(5),
         o = t(24),
@@ -7293,7 +7300,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         i = t(106),
         a = t(13),
         s = (t(4), {
-            dangerouslyReplaceNodeWithMarkup: function(e, t) {
+            dangerouslyReplaceNodeWithMarkup: function (e, t) {
                 if (r.canUseDOM || n("56"), t || n("57"), "HTML" === e.nodeName && n("58"), "string" == typeof t) {
                     var s = i(t, a)[0];
                     e.parentNode.replaceChild(s, e)
@@ -7301,7 +7308,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }
         });
     e.exports = s
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     var n = t(20),
         o = [n({
@@ -7320,7 +7327,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             BeforeInputEventPlugin: null
         })];
     e.exports = o
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     var n = t(18),
         o = t(29),
@@ -7344,7 +7351,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         },
         c = {
             eventTypes: u,
-            extractEvents: function(e, t, n, a) {
+            extractEvents: function (e, t, n, a) {
                 if (e === s.topMouseOver && (n.relatedTarget || n.fromElement)) return null;
                 if (e !== s.topMouseOut && e !== s.topMouseOver) return null;
                 var c;
@@ -7369,7 +7376,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }
         };
     e.exports = c
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
@@ -7379,13 +7386,13 @@ webpackJsonp([0], [, , , function(e, t, n) {
         r = t(21),
         i = t(92);
     o(n.prototype, {
-        destructor: function() {
+        destructor: function () {
             this._root = null, this._startText = null, this._fallbackText = null
         },
-        getText: function() {
+        getText: function () {
             return "value" in this._root ? this._root.value : this._root[i()]
         },
-        getData: function() {
+        getData: function () {
             if (this._fallbackText) return this._fallbackText;
             var e, t, n = this._startText,
                 o = n.length,
@@ -7398,7 +7405,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             return this._fallbackText = r.slice(e, s), this._fallbackText
         }
     }), r.addPoolingTo(n), e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     var n = t(25),
         o = n.injection.MUST_USE_PROPERTY,
@@ -7564,7 +7571,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             DOMPropertyNames: {}
         };
     e.exports = u
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     var n = t(7),
         o = t(73),
@@ -7596,7 +7603,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             PropTypes: c,
             createClass: a.createClass,
             createFactory: d,
-            createMixin: function(e) {
+            createMixin: function (e) {
                 return e
             },
             DOM: s,
@@ -7604,9 +7611,9 @@ webpackJsonp([0], [, , , function(e, t, n) {
             __spread: m
         };
     e.exports = y
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
-    (function(n) {
+    (function (n) {
         function o(e, t, n, o) {
             var r = void 0 === e[n];
             null != t && r && (e[n] = i(t, !0))
@@ -7618,12 +7625,12 @@ webpackJsonp([0], [, , , function(e, t, n) {
         t(6);
         void 0 !== n && n.env;
         var u = {
-            instantiateChildren: function(e, t, n, r) {
+            instantiateChildren: function (e, t, n, r) {
                 if (null == e) return null;
                 var i = {};
                 return s(e, o, i), i
             },
-            updateChildren: function(e, t, n, o, s, u, c, l, p) {
+            updateChildren: function (e, t, n, o, s, u, c, l, p) {
                 if (t || e) {
                     var f, d;
                     for (f in t)
@@ -7642,7 +7649,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                         } for (f in e) !e.hasOwnProperty(f) || t && t.hasOwnProperty(f) || (d = e[f], o[f] = r.getHostNode(d), r.unmountComponent(d, !1))
                 }
             },
-            unmountChildren: function(e, t) {
+            unmountChildren: function (e, t) {
                 for (var n in e)
                     if (e.hasOwnProperty(n)) {
                         var o = e[n];
@@ -7652,7 +7659,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         };
         e.exports = u
     }).call(exports, t(41))
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     var n = t(42),
         o = t(148),
@@ -7661,13 +7668,13 @@ webpackJsonp([0], [, , , function(e, t, n) {
             replaceNodeWithMarkup: n.dangerouslyReplaceNodeWithMarkup
         };
     e.exports = r
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
-        return (n = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+        return (n = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
             return typeof e
-        } : function(e) {
+        } : function (e) {
             return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
         })(e)
     }
@@ -7699,17 +7706,17 @@ webpackJsonp([0], [, , , function(e, t, n) {
             PureClass: 1,
             StatelessFunctional: 2
         });
-    o.prototype.render = function() {
+    o.prototype.render = function () {
         var e = f.get(this)._currentElement.type,
             t = e(this.props, this.context, this.updater);
         return t
     };
     var E = 1,
         _ = {
-            construct: function(e) {
+            construct: function (e) {
                 this._currentElement = e, this._rootNodeID = 0, this._compositeType = null, this._instance = null, this._hostParent = null, this._hostContainerInfo = null, this._updateBatchNumber = null, this._pendingElement = null, this._pendingStateQueue = null, this._pendingReplaceState = !1, this._pendingForceUpdate = !1, this._renderedNodeType = null, this._renderedComponent = null, this._context = null, this._mountOrder = 0, this._topLevelWrapper = null, this._pendingCallbacks = null, this._calledComponentWillUnmount = !1
             },
-            mountComponent: function(e, t, s, u) {
+            mountComponent: function (e, t, s, u) {
                 this._context = u, this._mountOrder = E++, this._hostParent = t, this._hostContainerInfo = s;
                 var c, p = this._currentElement.props,
                     d = this._processContext(u),
@@ -7724,14 +7731,14 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 var k;
                 return k = g.unstable_handleError ? this.performInitialMountWithErrorHandling(c, t, s, e, u) : this.performInitialMount(c, t, s, e, u), g.componentDidMount && e.getReactMountReady().enqueue(g.componentDidMount, g), k
             },
-            _constructComponent: function(e, t, n, o) {
+            _constructComponent: function (e, t, n, o) {
                 return this._constructComponentWithoutOwner(e, t, n, o)
             },
-            _constructComponentWithoutOwner: function(e, t, n, o) {
+            _constructComponentWithoutOwner: function (e, t, n, o) {
                 var r = this._currentElement.type;
                 return e ? new r(t, n, o) : r(t, n, o)
             },
-            performInitialMountWithErrorHandling: function(e, t, n, o, r) {
+            performInitialMountWithErrorHandling: function (e, t, n, o, r) {
                 var i, a = o.checkpoint();
                 try {
                     i = this.performInitialMount(e, t, n, o, r)
@@ -7740,7 +7747,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
                 return i
             },
-            performInitialMount: function(e, t, n, o, r) {
+            performInitialMount: function (e, t, n, o, r) {
                 var i = this._instance,
                     a = 0;
                 i.componentWillMount && (i.componentWillMount(), this._pendingStateQueue && (i.state = this._processPendingState(i.props, i.context))), void 0 === e && (e = this._renderValidatedComponent());
@@ -7751,10 +7758,10 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 var c = h.mountComponent(u, o, t, n, this._processChildContext(r), a);
                 return c
             },
-            getHostNode: function() {
+            getHostNode: function () {
                 return h.getHostNode(this._renderedComponent)
             },
-            unmountComponent: function(e) {
+            unmountComponent: function (e) {
                 if (this._renderedComponent) {
                     var t = this._instance;
                     if (t.componentWillUnmount && !t._calledComponentWillUnmount)
@@ -7765,7 +7772,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                     this._renderedComponent && (h.unmountComponent(this._renderedComponent, e), this._renderedNodeType = null, this._renderedComponent = null, this._instance = null), this._pendingStateQueue = null, this._pendingReplaceState = !1, this._pendingForceUpdate = !1, this._pendingCallbacks = null, this._pendingElement = null, this._context = null, this._rootNodeID = 0, this._topLevelWrapper = null, f.remove(t)
                 }
             },
-            _maskContext: function(e) {
+            _maskContext: function (e) {
                 var t = this._currentElement.type,
                     n = t.contextTypes;
                 if (!n) return y;
@@ -7773,11 +7780,11 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 for (var r in n) o[r] = e[r];
                 return o
             },
-            _processContext: function(e) {
+            _processContext: function (e) {
                 var t = this._maskContext(e);
                 return t
             },
-            _processChildContext: function(e) {
+            _processChildContext: function (e) {
                 var t, o = this._currentElement.type,
                     r = this._instance;
                 if (r.getChildContext && (t = r.getChildContext()), t) {
@@ -7787,18 +7794,18 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
                 return e
             },
-            _checkContextTypes: function(e, t, n) {
+            _checkContextTypes: function (e, t, n) {
                 m(e, t, n, this.getName(), null, this._debugID)
             },
-            receiveComponent: function(e, t, n) {
+            receiveComponent: function (e, t, n) {
                 var o = this._currentElement,
                     r = this._context;
                 this._pendingElement = null, this.updateComponent(t, o, e, r, n)
             },
-            performUpdateIfNecessary: function(e) {
+            performUpdateIfNecessary: function (e) {
                 null != this._pendingElement ? h.receiveComponent(this, this._pendingElement, e, this._context) : null !== this._pendingStateQueue || this._pendingForceUpdate ? this.updateComponent(e, this._currentElement, this._currentElement, this._context, this._context) : this._updateBatchNumber = null
             },
-            updateComponent: function(e, t, n, o, r) {
+            updateComponent: function (e, t, n, o, r) {
                 var i = this._instance;
                 null == i && a("136", this.getName() || "ReactCompositeComponent");
                 var s, u = !1;
@@ -7810,7 +7817,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                     f = !0;
                 this._pendingForceUpdate || (i.shouldComponentUpdate ? f = i.shouldComponentUpdate(l, p, s) : this._compositeType === b.PureClass && (f = !v(c, l) || !v(i.state, p))), this._updateBatchNumber = null, f ? (this._pendingForceUpdate = !1, this._performComponentUpdate(n, l, p, s, e, r)) : (this._currentElement = n, this._context = r, i.props = l, i.state = p, i.context = s)
             },
-            _processPendingState: function(e, t) {
+            _processPendingState: function (e, t) {
                 var n = this._instance,
                     o = this._pendingStateQueue,
                     r = this._pendingReplaceState;
@@ -7822,12 +7829,12 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
                 return i
             },
-            _performComponentUpdate: function(e, t, n, o, r, i) {
+            _performComponentUpdate: function (e, t, n, o, r, i) {
                 var a, s, u, c = this._instance,
                     l = Boolean(c.componentDidUpdate);
                 l && (a = c.props, s = c.state, u = c.context), c.componentWillUpdate && c.componentWillUpdate(t, n, o), this._currentElement = e, this._context = i, c.props = t, c.state = n, c.context = o, this._updateRenderedComponent(r, i), l && r.getReactMountReady().enqueue(c.componentDidUpdate.bind(c, a, s, u), c)
             },
-            _updateRenderedComponent: function(e, t) {
+            _updateRenderedComponent: function (e, t) {
                 var n = this._renderedComponent,
                     o = n._currentElement,
                     r = this._renderValidatedComponent(),
@@ -7844,14 +7851,14 @@ webpackJsonp([0], [, , , function(e, t, n) {
                     this._replaceNodeWithMarkup(a, c, n)
                 }
             },
-            _replaceNodeWithMarkup: function(e, t, n) {
+            _replaceNodeWithMarkup: function (e, t, n) {
                 u.replaceNodeWithMarkup(e, t, n)
             },
-            _renderValidatedComponentWithoutOwnerOrContext: function() {
+            _renderValidatedComponentWithoutOwnerOrContext: function () {
                 var e = this._instance;
                 return e.render()
             },
-            _renderValidatedComponent: function() {
+            _renderValidatedComponent: function () {
                 var e;
                 if (this._compositeType !== b.StatelessFunctional) {
                     c.current = this;
@@ -7863,21 +7870,21 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 } else e = this._renderValidatedComponentWithoutOwnerOrContext();
                 return null === e || !1 === e || l.isValidElement(e) || a("109", this.getName() || "ReactCompositeComponent"), e
             },
-            attachRef: function(e, t) {
+            attachRef: function (e, t) {
                 var n = this.getPublicInstance();
                 null == n && a("110");
                 var o = t.getPublicInstance();
                 (n.refs === y ? n.refs = {} : n.refs)[e] = o
             },
-            detachRef: function(e) {
+            detachRef: function (e) {
                 delete this.getPublicInstance().refs[e]
             },
-            getName: function() {
+            getName: function () {
                 var e = this._currentElement.type,
                     t = this._instance && this._instance.constructor;
                 return e.displayName || t && t.displayName || e.name || t && t.name || null
             },
-            getPublicInstance: function() {
+            getPublicInstance: function () {
                 var e = this._instance;
                 return this._compositeType === b.StatelessFunctional ? null : e
             },
@@ -7887,7 +7894,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             Mixin: _
         };
     e.exports = k
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     var n = t(8),
         o = t(156),
@@ -7911,7 +7918,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
     "undefined" != typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" == typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.inject && __REACT_DEVTOOLS_GLOBAL_HOOK__.inject({
         ComponentTree: {
             getClosestInstanceFromNode: n.getClosestInstanceFromNode,
-            getNodeFromInstance: function(e) {
+            getNodeFromInstance: function (e) {
                 return e._renderedComponent && (e = c(e)), e ? n.getNodeFromInstance(e) : null
             }
         },
@@ -7919,20 +7926,20 @@ webpackJsonp([0], [, , , function(e, t, n) {
         Reconciler: i
     });
     e.exports = p
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     var n = t(35),
         o = {
             getHostProps: n.getHostProps
         };
     e.exports = o
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
-        return (n = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+        return (n = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
             return typeof e
-        } : function(e) {
+        } : function (e) {
             return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
         })(e)
     }
@@ -8130,7 +8137,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         te = {}.hasOwnProperty,
         ne = 1;
     h.displayName = "ReactDOMComponent", h.Mixin = {
-        mountComponent: function(e, t, n, o) {
+        mountComponent: function (e, t, n, o) {
             this._rootNodeID = ne++, this._domID = n._idCounter++, this._hostParent = t, this._hostContainerInfo = n;
             var i = this._currentElement.props;
             switch (this._tag) {
@@ -8198,7 +8205,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }
             return f
         },
-        _createOpenTagMarkupAndPutListeners: function(e, t) {
+        _createOpenTagMarkupAndPutListeners: function (e, t) {
             var n = "<" + this._currentElement.type;
             for (var o in t)
                 if (t.hasOwnProperty(o)) {
@@ -8212,7 +8219,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                         }
                 } return e.renderToStaticMarkup ? n : (this._hostParent || (n += " " + k.createMarkupForRoot()), n += " " + k.createMarkupForID(this._domID))
         },
-        _createContentMarkup: function(e, t, o) {
+        _createContentMarkup: function (e, t, o) {
             var r = "",
                 i = t.dangerouslySetInnerHTML;
             if (null != i) null != i.__html && (r = i.__html);
@@ -8227,7 +8234,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }
             return Q[this._tag] && "\n" === r.charAt(0) ? "\n" + r : r
         },
-        _createInitialChildren: function(e, t, o, r) {
+        _createInitialChildren: function (e, t, o, r) {
             var i = t.dangerouslySetInnerHTML;
             if (null != i) null != i.__html && b.queueHTML(r, i.__html);
             else {
@@ -8238,11 +8245,11 @@ webpackJsonp([0], [, , , function(e, t, n) {
                     for (var u = this.mountChildren(s, e, o), c = 0; c < u.length; c++) b.queueChild(r, u[c])
             }
         },
-        receiveComponent: function(e, t, n) {
+        receiveComponent: function (e, t, n) {
             var o = this._currentElement;
             this._currentElement = e, this.updateComponent(t, o, e, n)
         },
-        updateComponent: function(e, t, n, o) {
+        updateComponent: function (e, t, n, o) {
             var i = t.props,
                 a = this._currentElement.props;
             switch (this._tag) {
@@ -8272,7 +8279,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                     e.getReactMountReady().enqueue(p, this)
             }
         },
-        _updateDOMProperties: function(e, t, n) {
+        _updateDOMProperties: function (e, t, n) {
             var o, r, a;
             for (o in e)
                 if (!t.hasOwnProperty(o) && e.hasOwnProperty(o) && null != e[o])
@@ -8299,7 +8306,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }
             a && g.setValueForStyles(B(this), a, this)
         },
-        _updateDOMChildren: function(e, t, o, r) {
+        _updateDOMChildren: function (e, t, o, r) {
             var i = H[n(e.children)] ? e.children : null,
                 a = H[n(t.children)] ? t.children : null,
                 s = e.dangerouslySetInnerHTML && e.dangerouslySetInnerHTML.__html,
@@ -8310,10 +8317,10 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 f = null != a || null != u;
             null != c && null == l ? this.updateChildren(null, o, r) : p && !f && this.updateTextContent(""), null != a ? i !== a && this.updateTextContent("" + a) : null != u ? s !== u && this.updateMarkup("" + u) : null != l && this.updateChildren(l, o, r)
         },
-        getHostNode: function() {
+        getHostNode: function () {
             return B(this)
         },
-        unmountComponent: function(e) {
+        unmountComponent: function (e) {
             switch (this._tag) {
                 case "audio":
                 case "form":
@@ -8334,11 +8341,11 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }
             this.unmountChildren(e), M.uncacheNode(this), w.deleteAllListeners(this), this._rootNodeID = 0, this._domID = 0, this._wrapperState = null
         },
-        getPublicInstance: function() {
+        getPublicInstance: function () {
             return B(this)
         }
     }, y(h.prototype, h.Mixin, R.Mixin), e.exports = h
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e, t) {
@@ -8354,16 +8361,16 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
     var o = (t(64), 9);
     e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     var n = t(7),
         o = t(24),
         r = t(8),
-        i = function(e) {
+        i = function (e) {
             this._currentElement = null, this._hostNode = null, this._hostParent = null, this._hostContainerInfo = null, this._domID = 0
         };
     n(i.prototype, {
-        mountComponent: function(e, t, n, i) {
+        mountComponent: function (e, t, n, i) {
             var a = n._idCounter++;
             this._domID = a, this._hostParent = t, this._hostContainerInfo = n;
             var s = " react-empty: " + this._domID + " ";
@@ -8374,15 +8381,15 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }
             return e.renderToStaticMarkup ? "" : "\x3c!--" + s + "--\x3e"
         },
-        receiveComponent: function() {},
-        getHostNode: function() {
+        receiveComponent: function () {},
+        getHostNode: function () {
             return r.getNodeFromInstance(this)
         },
-        unmountComponent: function() {
+        unmountComponent: function () {
             r.uncacheNode(this)
         }
     }), e.exports = i
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     var n = t(15),
         o = n.createFactory,
@@ -8521,24 +8528,24 @@ webpackJsonp([0], [, , , function(e, t, n) {
             tspan: o("tspan")
         };
     e.exports = r
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     var n = {
         useCreateElement: !0
     };
     e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     var n = t(42),
         o = t(8),
         r = {
-            dangerouslyProcessChildrenUpdates: function(e, t) {
+            dangerouslyProcessChildrenUpdates: function (e, t) {
                 var r = o.getNodeFromInstance(e);
                 n.processUpdates(r, t)
             }
         };
     e.exports = r
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n() {
@@ -8570,7 +8577,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         c = t(8),
         l = t(16),
         p = (t(4), t(6), {
-            getHostProps: function(e, t) {
+            getHostProps: function (e, t) {
                 var n = u.getValue(t),
                     o = u.getChecked(t);
                 return i({
@@ -8586,7 +8593,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                     onChange: e._wrapperState.onChange
                 })
             },
-            mountWrapper: function(e, t) {
+            mountWrapper: function (e, t) {
                 var n = t.defaultValue;
                 e._wrapperState = {
                     initialChecked: null != t.checked ? t.checked : t.defaultChecked,
@@ -8595,7 +8602,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                     onChange: o.bind(e)
                 }
             },
-            updateWrapper: function(e) {
+            updateWrapper: function (e) {
                 var t = e._currentElement.props,
                     n = t.checked;
                 null != n && s.setValueForProperty(c.getNodeFromInstance(e), "checked", n || !1);
@@ -8606,7 +8613,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                     i !== o.value && (o.value = i)
                 } else null == t.value && null != t.defaultValue && (o.defaultValue = "" + t.defaultValue), null == t.checked && null != t.defaultChecked && (o.defaultChecked = !!t.defaultChecked)
             },
-            postMountWrapper: function(e) {
+            postMountWrapper: function (e) {
                 var t = e._currentElement.props,
                     n = c.getNodeFromInstance(e);
                 switch (t.type) {
@@ -8630,12 +8637,12 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }
         });
     e.exports = p
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
         var t = "";
-        return r.forEach(e, function(e) {
+        return r.forEach(e, function (e) {
             null != e && ("string" == typeof e || "number" == typeof e ? t += e : s || (s = !0))
         }), t
     }
@@ -8645,7 +8652,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         a = t(76),
         s = (t(6), !1),
         u = {
-            mountWrapper: function(e, t, o) {
+            mountWrapper: function (e, t, o) {
                 var r = null;
                 if (null != o) {
                     var i = o;
@@ -8666,13 +8673,13 @@ webpackJsonp([0], [, , , function(e, t, n) {
                     selected: s
                 }
             },
-            postMountWrapper: function(e) {
+            postMountWrapper: function (e) {
                 var t = e._currentElement.props;
                 if (null != t.value) {
                     i.getNodeFromInstance(e).setAttribute("value", t.value)
                 }
             },
-            getHostProps: function(e, t) {
+            getHostProps: function (e, t) {
                 var r = o({
                     selected: void 0,
                     children: void 0
@@ -8683,7 +8690,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }
         };
     e.exports = u
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e, t, n, o) {
@@ -8764,7 +8771,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             setOffsets: l ? i : a
         };
     e.exports = p
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     var n = t(5),
         o = t(7),
@@ -8772,11 +8779,11 @@ webpackJsonp([0], [, , , function(e, t, n) {
         i = t(24),
         a = t(8),
         s = t(38),
-        u = (t(4), t(64), function(e) {
+        u = (t(4), t(64), function (e) {
             this._currentElement = e, this._stringText = "" + e, this._hostNode = null, this._hostParent = null, this._domID = 0, this._mountIndex = 0, this._closingComment = null, this._commentNodes = null
         });
     o(u.prototype, {
-        mountComponent: function(e, t, n, o) {
+        mountComponent: function (e, t, n, o) {
             var r = n._idCounter++,
                 u = " react-text: " + r + " ";
             if (this._domID = r, this._hostParent = t, e.useCreateElement) {
@@ -8789,7 +8796,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             var d = s(this._stringText);
             return e.renderToStaticMarkup ? d : "\x3c!--" + u + "--\x3e" + d + "\x3c!-- /react-text --\x3e"
         },
-        receiveComponent: function(e, t) {
+        receiveComponent: function (e, t) {
             if (e !== this._currentElement) {
                 this._currentElement = e;
                 var n = "" + e;
@@ -8800,7 +8807,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }
         },
-        getHostNode: function() {
+        getHostNode: function () {
             var e = this._commentNodes;
             if (e) return e;
             if (!this._closingComment)
@@ -8813,11 +8820,11 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             return e = [this._hostNode, this._closingComment], this._commentNodes = e, e
         },
-        unmountComponent: function() {
+        unmountComponent: function () {
             this._closingComment = null, this._commentNodes = null, a.uncacheNode(this)
         }
     }), e.exports = u
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n() {
@@ -8836,7 +8843,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         u = t(8),
         c = t(16),
         l = (t(4), t(6), {
-            getHostProps: function(e, t) {
+            getHostProps: function (e, t) {
                 return null != t.dangerouslySetInnerHTML && r("91"), i({}, a.getHostProps(e, t), {
                     value: void 0,
                     defaultValue: void 0,
@@ -8844,7 +8851,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                     onChange: e._wrapperState.onChange
                 })
             },
-            mountWrapper: function(e, t) {
+            mountWrapper: function (e, t) {
                 var n = s.getValue(t),
                     i = n;
                 if (null == n) {
@@ -8858,7 +8865,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                     onChange: o.bind(e)
                 }
             },
-            updateWrapper: function(e) {
+            updateWrapper: function (e) {
                 var t = e._currentElement.props,
                     n = u.getNodeFromInstance(e),
                     o = s.getValue(t);
@@ -8868,13 +8875,13 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
                 null != t.defaultValue && (n.defaultValue = t.defaultValue)
             },
-            postMountWrapper: function(e) {
+            postMountWrapper: function (e) {
                 var t = u.getNodeFromInstance(e);
                 t.value = t.textContent
             }
         });
     e.exports = l
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e, t) {
@@ -8926,7 +8933,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         traverseTwoPhase: i,
         traverseEnterLeave: a
     }
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n() {
@@ -8938,7 +8945,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         a = t(13),
         s = {
             initialize: a,
-            close: function() {
+            close: function () {
                 p.isBatchingUpdates = !1
             }
         },
@@ -8948,20 +8955,20 @@ webpackJsonp([0], [, , , function(e, t, n) {
         },
         c = [u, s];
     o(n.prototype, i.Mixin, {
-        getTransactionWrappers: function() {
+        getTransactionWrappers: function () {
             return c
         }
     });
     var l = new n,
         p = {
             isBatchingUpdates: !1,
-            batchedUpdates: function(e, t, n, o, r, i) {
+            batchedUpdates: function (e, t, n, o, r, i) {
                 var a = p.isBatchingUpdates;
                 p.isBatchingUpdates = !0, a ? e(t, n, o, r, i) : l.perform(e, null, t, n, o, r, i)
             }
         };
     e.exports = p
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n() {
@@ -8971,7 +8978,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             ChangeEventPlugin: r,
             SelectEventPlugin: b,
             BeforeInputEventPlugin: o
-        }), y.HostComponent.injectGenericComponentClass(c), y.HostComponent.injectTextComponentClass(d), y.DOMProperty.injectDOMPropertyConfig(s), y.DOMProperty.injectDOMPropertyConfig(g), y.EmptyComponent.injectEmptyComponentFactory(function(e) {
+        }), y.HostComponent.injectGenericComponentClass(c), y.HostComponent.injectTextComponentClass(d), y.DOMProperty.injectDOMPropertyConfig(s), y.DOMProperty.injectDOMPropertyConfig(g), y.EmptyComponent.injectEmptyComponentFactory(function (e) {
             return new p(e)
         }), y.Updates.injectReconcileTransaction(v), y.Updates.injectBatchingStrategy(h), y.Component.injectEnvironment(u))
     }
@@ -8997,7 +9004,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
     e.exports = {
         inject: n
     }
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
@@ -9005,12 +9012,12 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
     var o = t(28),
         r = {
-            handleTopLevel: function(e, t, r, i) {
+            handleTopLevel: function (e, t, r, i) {
                 n(o.extractEvents(e, t, r, i))
             }
         };
     e.exports = r
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
@@ -9046,7 +9053,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         f = t(60),
         d = t(108);
     a(o.prototype, {
-        destructor: function() {
+        destructor: function () {
             this.topLevelType = null, this.nativeEvent = null, this.ancestors.length = 0
         }
     }), c.addPoolingTo(o, c.twoArgumentPooler);
@@ -9054,28 +9061,28 @@ webpackJsonp([0], [, , , function(e, t, n) {
         _enabled: !0,
         _handleTopLevel: null,
         WINDOW_HANDLE: u.canUseDOM ? window : null,
-        setHandleTopLevel: function(e) {
+        setHandleTopLevel: function (e) {
             h._handleTopLevel = e
         },
-        setEnabled: function(e) {
+        setEnabled: function (e) {
             h._enabled = !!e
         },
-        isEnabled: function() {
+        isEnabled: function () {
             return h._enabled
         },
-        trapBubbledEvent: function(e, t, n) {
+        trapBubbledEvent: function (e, t, n) {
             var o = n;
             return o ? s.listen(o, t, h.dispatchEvent.bind(null, e)) : null
         },
-        trapCapturedEvent: function(e, t, n) {
+        trapCapturedEvent: function (e, t, n) {
             var o = n;
             return o ? s.capture(o, t, h.dispatchEvent.bind(null, e)) : null
         },
-        monitorScrollValue: function(e) {
+        monitorScrollValue: function (e) {
             var t = i.bind(null, e);
             s.listen(window, "scroll", t)
         },
-        dispatchEvent: function(e, t) {
+        dispatchEvent: function (e, t) {
             if (h._enabled) {
                 var n = o.getPooled(e, t);
                 try {
@@ -9087,7 +9094,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         }
     };
     e.exports = h
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     var n = t(25),
         o = t(28),
@@ -9110,24 +9117,24 @@ webpackJsonp([0], [, , , function(e, t, n) {
             Updates: l.injection
         };
     e.exports = p
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     var n = t(181),
         o = /\/?>/,
         r = /^<\!\-\-/,
         i = {
             CHECKSUM_ATTR_NAME: "data-react-checksum",
-            addChecksumToMarkup: function(e) {
+            addChecksumToMarkup: function (e) {
                 var t = n(e);
                 return r.test(e) ? e : e.replace(o, " " + i.CHECKSUM_ATTR_NAME + '="' + t + '"$&')
             },
-            canReuseMarkup: function(e, t) {
+            canReuseMarkup: function (e, t) {
                 var o = t.getAttribute(i.CHECKSUM_ATTR_NAME);
                 return o = o && parseInt(o, 10), n(e) === o
             }
         };
     e.exports = i
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e, t, n) {
@@ -9200,14 +9207,14 @@ webpackJsonp([0], [, , , function(e, t, n) {
         h = (t(13), t(185)),
         m = (t(4), {
             Mixin: {
-                _reconcilerInstantiateChildren: function(e, t, n) {
+                _reconcilerInstantiateChildren: function (e, t, n) {
                     return d.instantiateChildren(e, t, n)
                 },
-                _reconcilerUpdateChildren: function(e, t, n, o, r, i) {
+                _reconcilerUpdateChildren: function (e, t, n, o, r, i) {
                     var a, s = 0;
                     return a = h(t, s), d.updateChildren(e, a, n, o, r, this, this._hostContainerInfo, i, s), a
                 },
-                mountChildren: function(e, t, n) {
+                mountChildren: function (e, t, n) {
                     var o = this._reconcilerInstantiateChildren(e, t, n);
                     this._renderedChildren = o;
                     var r = [],
@@ -9220,22 +9227,22 @@ webpackJsonp([0], [, , , function(e, t, n) {
                             s._mountIndex = i++, r.push(c)
                         } return r
                 },
-                updateTextContent: function(e) {
+                updateTextContent: function (e) {
                     var t = this._renderedChildren;
                     d.unmountChildren(t, !1);
                     for (var n in t) t.hasOwnProperty(n) && c("118");
                     u(this, [a(e)])
                 },
-                updateMarkup: function(e) {
+                updateMarkup: function (e) {
                     var t = this._renderedChildren;
                     d.unmountChildren(t, !1);
                     for (var n in t) t.hasOwnProperty(n) && c("118");
                     u(this, [i(e)])
                 },
-                updateChildren: function(e, t, n) {
+                updateChildren: function (e, t, n) {
                     this._updateChildren(e, t, n)
                 },
-                _updateChildren: function(e, t, n) {
+                _updateChildren: function (e, t, n) {
                     var o = this._renderedChildren,
                         r = {},
                         i = [],
@@ -9255,47 +9262,47 @@ webpackJsonp([0], [, , , function(e, t, n) {
                         l && u(this, l), this._renderedChildren = a
                     }
                 },
-                unmountChildren: function(e) {
+                unmountChildren: function (e) {
                     var t = this._renderedChildren;
                     d.unmountChildren(t, e), this._renderedChildren = null
                 },
-                moveChild: function(e, t, n, r) {
+                moveChild: function (e, t, n, r) {
                     if (e._mountIndex < r) return o(e, t, n)
                 },
-                createChild: function(e, t, o) {
+                createChild: function (e, t, o) {
                     return n(o, t, e._mountIndex)
                 },
-                removeChild: function(e, t) {
+                removeChild: function (e, t) {
                     return r(e, t)
                 },
-                _mountChildAtIndex: function(e, t, n, o, r, i) {
+                _mountChildAtIndex: function (e, t, n, o, r, i) {
                     return e._mountIndex = o, this.createChild(e, n, t)
                 },
-                _unmountChild: function(e, t) {
+                _unmountChild: function (e, t) {
                     var n = this.removeChild(e, t);
                     return e._mountIndex = null, n
                 }
             }
         });
     e.exports = m
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     var n = t(5),
         o = (t(4), {
-            isValidOwner: function(e) {
+            isValidOwner: function (e) {
                 return !(!e || "function" != typeof e.attachRef || "function" != typeof e.detachRef)
             },
-            addComponentAsRefTo: function(e, t, r) {
+            addComponentAsRefTo: function (e, t, r) {
                 o.isValidOwner(r) || n("119"), r.attachRef(t, e)
             },
-            removeComponentAsRefFrom: function(e, t, r) {
+            removeComponentAsRefFrom: function (e, t, r) {
                 o.isValidOwner(r) || n("120");
                 var i = r.getPublicInstance();
                 i && i.refs[t] === e.getPublicInstance() && r.detachRef(t)
             }
         });
     e.exports = o
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e, t, n) {
@@ -9308,7 +9315,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         a = t(52),
         s = t(27);
     o.prototype = i.prototype, n.prototype = new o, n.prototype.constructor = n, r(n.prototype, i.prototype), n.prototype.isPureReactComponent = !0, e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
@@ -9326,45 +9333,45 @@ webpackJsonp([0], [, , , function(e, t, n) {
             close: s.restoreSelection
         },
         p = {
-            initialize: function() {
+            initialize: function () {
                 var e = a.isEnabled();
                 return a.setEnabled(!1), e
             },
-            close: function(e) {
+            close: function (e) {
                 a.setEnabled(e)
             }
         },
         f = {
-            initialize: function() {
+            initialize: function () {
                 this.reactMountReady.reset()
             },
-            close: function() {
+            close: function () {
                 this.reactMountReady.notifyAll()
             }
         },
         d = [l, p, f],
         h = {
-            getTransactionWrappers: function() {
+            getTransactionWrappers: function () {
                 return d
             },
-            getReactMountReady: function() {
+            getReactMountReady: function () {
                 return this.reactMountReady
             },
-            getUpdateQueue: function() {
+            getUpdateQueue: function () {
                 return c
             },
-            checkpoint: function() {
+            checkpoint: function () {
                 return this.reactMountReady.checkpoint()
             },
-            rollback: function(e) {
+            rollback: function (e) {
                 this.reactMountReady.rollback(e)
             },
-            destructor: function() {
+            destructor: function () {
                 r.release(this.reactMountReady), this.reactMountReady = null
             }
         };
     o(n.prototype, u.Mixin, h), i.addPoolingTo(n), e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e, t, n) {
@@ -9376,22 +9383,22 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
     var r = t(162),
         i = {};
-    i.attachRefs = function(e, t) {
+    i.attachRefs = function (e, t) {
         if (null !== t && !1 !== t) {
             var o = t.ref;
             null != o && n(o, e, t._owner)
         }
-    }, i.shouldUpdateRefs = function(e, t) {
+    }, i.shouldUpdateRefs = function (e, t) {
         var n = null === e || !1 === e,
             o = null === t || !1 === t;
         return n || o || t.ref !== e.ref || "string" == typeof t.ref && t._owner !== e._owner
-    }, i.detachRefs = function(e, t) {
+    }, i.detachRefs = function (e, t) {
         if (null !== t && !1 !== t) {
             var n = t.ref;
             null != n && o(n, e, t._owner)
         }
     }, e.exports = i
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
@@ -9403,48 +9410,48 @@ webpackJsonp([0], [, , , function(e, t, n) {
         a = (t(14), t(167)),
         s = [],
         u = {
-            enqueue: function() {}
+            enqueue: function () {}
         },
         c = {
-            getTransactionWrappers: function() {
+            getTransactionWrappers: function () {
                 return s
             },
-            getReactMountReady: function() {
+            getReactMountReady: function () {
                 return u
             },
-            getUpdateQueue: function() {
+            getUpdateQueue: function () {
                 return this.updateQueue
             },
-            destructor: function() {},
-            checkpoint: function() {},
-            rollback: function() {}
+            destructor: function () {},
+            checkpoint: function () {},
+            rollback: function () {}
         };
     o(n.prototype, i.Mixin, c), r.addPoolingTo(n), e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e, t) {
         if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function")
     }
     var o = t(56),
-        r = (t(32), t(6), function() {
+        r = (t(32), t(6), function () {
             function e(t) {
                 n(this, e), this.transaction = t
             }
-            return e.prototype.isMounted = function(e) {
+            return e.prototype.isMounted = function (e) {
                 return !1
-            }, e.prototype.enqueueCallback = function(e, t, n) {
+            }, e.prototype.enqueueCallback = function (e, t, n) {
                 this.transaction.isInTransaction() && o.enqueueCallback(e, t, n)
-            }, e.prototype.enqueueForceUpdate = function(e) {
+            }, e.prototype.enqueueForceUpdate = function (e) {
                 this.transaction.isInTransaction() && o.enqueueForceUpdate(e)
-            }, e.prototype.enqueueReplaceState = function(e, t) {
+            }, e.prototype.enqueueReplaceState = function (e, t) {
                 this.transaction.isInTransaction() && o.enqueueReplaceState(e, t)
-            }, e.prototype.enqueueSetState = function(e, t) {
+            }, e.prototype.enqueueSetState = function (e, t) {
                 this.transaction.isInTransaction() && o.enqueueSetState(e, t)
             }, e
         }());
     e.exports = r
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     var n = {
             xlink: "http://www.w3.org/1999/xlink",
@@ -9707,10 +9714,10 @@ webpackJsonp([0], [, , , function(e, t, n) {
             },
             DOMAttributeNames: {}
         };
-    Object.keys(o).forEach(function(e) {
+    Object.keys(o).forEach(function (e) {
         r.Properties[e] = 0, o[e] && (r.DOMAttributeNames[e] = o[e])
     }), e.exports = r
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
@@ -9783,7 +9790,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         }),
         C = {
             eventTypes: y,
-            extractEvents: function(e, t, n, r) {
+            extractEvents: function (e, t, n, r) {
                 if (!_) return null;
                 var i = t ? s.getNodeFromInstance(t) : window;
                 switch (e) {
@@ -9807,12 +9814,12 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
                 return null
             },
-            didPutListener: function(e, t, n) {
+            didPutListener: function (e, t, n) {
                 t === k && (_ = !0)
             }
         };
     e.exports = C
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
@@ -10531,7 +10538,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         P = {},
         x = {
             eventTypes: C,
-            extractEvents: function(e, t, n, r) {
+            extractEvents: function (e, t, n, r) {
                 var i = w[e];
                 if (!i) return null;
                 var s;
@@ -10626,14 +10633,14 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 var b = s.getPooled(i, t, n, r);
                 return a.accumulateTwoPhaseDispatches(b), b
             },
-            didPutListener: function(e, t, o) {
+            didPutListener: function (e, t, o) {
                 if (t === O) {
                     var r = n(e),
                         a = s.getNodeFromInstance(e);
                     P[r] || (P[r] = i.listen(a, "click", b))
                 }
             },
-            willDeleteListener: function(e, t) {
+            willDeleteListener: function (e, t) {
                 if (t === O) {
                     var o = n(e);
                     P[o].remove(), delete P[o]
@@ -10641,7 +10648,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }
         };
     e.exports = x
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e, t, n, r) {
@@ -10654,7 +10661,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             pseudoElement: null
         };
     o.augmentClass(n, r), e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e, t, n, r) {
@@ -10662,12 +10669,12 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
     var o = t(19),
         r = {
-            clipboardData: function(e) {
+            clipboardData: function (e) {
                 return "clipboardData" in e ? e.clipboardData : window.clipboardData
             }
         };
     o.augmentClass(n, r), e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e, t, n, r) {
@@ -10678,7 +10685,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             data: null
         };
     o.augmentClass(n, r), e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e, t, n, r) {
@@ -10689,7 +10696,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             dataTransfer: null
         };
     o.augmentClass(n, r), e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e, t, n, r) {
@@ -10700,7 +10707,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             relatedTarget: null
         };
     o.augmentClass(n, r), e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e, t, n, r) {
@@ -10711,7 +10718,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             data: null
         };
     o.augmentClass(n, r), e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e, t, n, r) {
@@ -10731,18 +10738,18 @@ webpackJsonp([0], [, , , function(e, t, n) {
             repeat: null,
             locale: null,
             getModifierState: a,
-            charCode: function(e) {
+            charCode: function (e) {
                 return "keypress" === e.type ? r(e) : 0
             },
-            keyCode: function(e) {
+            keyCode: function (e) {
                 return "keydown" === e.type || "keyup" === e.type ? e.keyCode : 0
             },
-            which: function(e) {
+            which: function (e) {
                 return "keypress" === e.type ? r(e) : "keydown" === e.type || "keyup" === e.type ? e.keyCode : 0
             }
         };
     o.augmentClass(n, s), e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e, t, n, r) {
@@ -10761,7 +10768,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             getModifierState: r
         };
     o.augmentClass(n, i), e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e, t, n, r) {
@@ -10774,7 +10781,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             pseudoElement: null
         };
     o.augmentClass(n, r), e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e, t, n, r) {
@@ -10782,17 +10789,17 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
     var o = t(37),
         r = {
-            deltaX: function(e) {
+            deltaX: function (e) {
                 return "deltaX" in e ? e.deltaX : "wheelDeltaX" in e ? -e.wheelDeltaX : 0
             },
-            deltaY: function(e) {
+            deltaY: function (e) {
                 return "deltaY" in e ? e.deltaY : "wheelDeltaY" in e ? -e.wheelDeltaY : "wheelDelta" in e ? -e.wheelDelta : 0
             },
             deltaZ: null,
             deltaMode: null
         };
     o.augmentClass(n, r), e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
@@ -10805,9 +10812,9 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
     var o = 65521;
     e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
-    (function(n) {
+    (function (n) {
         function o(e, t, n, o, u, c) {
             for (var l in e)
                 if (e.hasOwnProperty(l)) {
@@ -10830,7 +10837,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         var s = {};
         e.exports = o
     }).call(exports, t(41))
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e, t, n) {
@@ -10844,7 +10851,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
     var o = t(70),
         r = (t(6), o.isUnitlessNumber);
     e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
@@ -10860,13 +10867,13 @@ webpackJsonp([0], [, , , function(e, t, n) {
         a = t(90);
     t(4), t(6);
     e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
-    (function(n) {
+    (function (n) {
         function o(e) {
-            return (o = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+            return (o = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
                 return typeof e
-            } : function(e) {
+            } : function (e) {
                 return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
             })(e)
         }
@@ -10888,7 +10895,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         t(6);
         void 0 !== n && n.env, e.exports = i
     }).call(exports, t(41))
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
@@ -10956,7 +10963,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             224: "Meta"
         };
     e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
@@ -10984,7 +10991,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         }
     }
     e.exports = r
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e, t) {
@@ -11010,7 +11017,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         a = {},
         s = {};
     r.canUseDOM && (s = document.createElement("div").style, "AnimationEvent" in window || (delete i.animationend.animation, delete i.animationiteration.animation, delete i.animationstart.animation), "TransitionEvent" in window || delete i.transitionend.transition), e.exports = o
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
@@ -11020,7 +11027,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         r = t(15);
     t(4);
     e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
@@ -11028,11 +11035,11 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
     var o = t(38);
     e.exports = n
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
     var n = t(81);
     e.exports = n.renderSubtreeIntoContainer
-}, function(e, t, n) {
+}, function (e, t, n) {
     "use strict";
 
     function o(e) {
@@ -11070,26 +11077,26 @@ webpackJsonp([0], [, , , function(e, t, n) {
     Object.defineProperty(t, "__esModule", {
         value: !0
     }), t.default = i
-}, function(e, exports, t) {
+}, function (e, exports, t) {
     "use strict";
 
     function n(e) {
-        return (n = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+        return (n = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
             return typeof e
-        } : function(e) {
+        } : function (e) {
             return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
         })(e)
     }
     exports.__esModule = !0;
-    var o = "function" == typeof Symbol && "symbol" === n(Symbol.iterator) ? function(e) {
+    var o = "function" == typeof Symbol && "symbol" === n(Symbol.iterator) ? function (e) {
             return n(e)
-        } : function(e) {
+        } : function (e) {
             return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : n(e)
         },
         r = function e(t, n) {
             if (t === n) return !0;
             if (null == t || null == n) return !1;
-            if (Array.isArray(t)) return Array.isArray(n) && t.length === n.length && t.every(function(t, o) {
+            if (Array.isArray(t)) return Array.isArray(n) && t.length === n.length && t.every(function (t, o) {
                 return e(t, n[o])
             });
             var r = void 0 === t ? "undefined" : o(t);
@@ -11100,26 +11107,26 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 if (i !== t || a !== n) return e(i, a);
                 var s = Object.keys(t),
                     u = Object.keys(n);
-                return s.length === u.length && s.every(function(o) {
+                return s.length === u.length && s.every(function (o) {
                     return e(t[o], n[o])
                 })
             }
             return !1
         };
     exports.default = r
-}, function(e, t, n) {
+}, function (e, t, n) {
     "use strict";
 
     function o(e) {
-        return (o = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+        return (o = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
             return typeof e
-        } : function(e) {
+        } : function (e) {
             return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
         })(e)
     }
 
     function r() {
-        return r = Object.assign || function(e) {
+        return r = Object.assign || function (e) {
             for (var t = 1; t < arguments.length; t++) {
                 var n = arguments[t];
                 for (var o in n) Object.prototype.hasOwnProperty.call(n, o) && (e[o] = n[o])
@@ -11148,7 +11155,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
 
     function c(e) {
-        return (c = Object.setPrototypeOf ? Object.getPrototypeOf : function(e) {
+        return (c = Object.setPrototypeOf ? Object.getPrototypeOf : function (e) {
             return e.__proto__ || Object.getPrototypeOf(e)
         })(e)
     }
@@ -11170,11 +11177,11 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
 
     function f(e, t) {
-        return (f = Object.setPrototypeOf || function(e, t) {
+        return (f = Object.setPrototypeOf || function (e, t) {
             return e.__proto__ = t, e
         })(e, t)
     }
-    n.d(t, "a", function() {
+    n.d(t, "a", function () {
         return b
     });
     var d = n(9),
@@ -11183,7 +11190,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         y = n(12),
         v = n(123),
         g = n(210),
-        b = (n.n(g), function(e) {
+        b = (n.n(g), function (e) {
             function t(e) {
                 var n;
                 return i(this, t), n = u(this, c(t).call(this, e)), n.state = {
@@ -11193,41 +11200,41 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }
             return p(t, e), s(t, [{
                 key: "showDialog",
-                value: function(e) {
+                value: function (e) {
                     var t = this;
                     this.onFile = e.onFile, this.setState({
                         dialog: !0,
                         options: e
-                    }, function() {
+                    }, function () {
                         t.refs.dialog.show(), "new-folder" !== e.content && "rename" !== e.content || t.refs.dialog.element.querySelector("input").setAttribute("maxlength", "255")
                     })
                 }
             }, {
                 key: "hideDialog",
-                value: function() {
+                value: function () {
                     this.refs.dialog.hide()
                 }
             }, {
                 key: "updatePromptClass",
-                value: function() {
+                value: function () {
                     document.querySelector(".dialog-container").classList.toggle("prompt-dialog", "prompt" === this.state.options.type)
                 }
             }, {
                 key: "componentDidMount",
-                value: function() {
-                    this.refs.dialog.on("closed", function() {
-                        setTimeout(function() {
+                value: function () {
+                    this.refs.dialog.on("closed", function () {
+                        setTimeout(function () {
                             y.a.request("focus")
                         }, 100)
                     })
                 }
             }, {
                 key: "componentDidUpdate",
-                value: function() {
+                value: function () {
                     var e = this;
                     this.updatePromptClass();
                     var t = document.querySelector(".prompt-dialog");
-                    t && setTimeout(function() {
+                    t && setTimeout(function () {
                         var n = t.querySelector("input"),
                             o = n.value;
                         o.lastIndexOf(".") > 0 && n.setSelectionRange && e.onFile ? n.setSelectionRange(0, o.lastIndexOf(".")) : n.select()
@@ -11235,7 +11242,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "render",
-                value: function() {
+                value: function () {
                     return h.a.createElement("div", {
                         id: "dialog-root",
                         className: this.state.dialog ? "p-pri" : "p-pri hidden"
@@ -11245,13 +11252,13 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }]), t
         }(m.a))
-}, function(e, t, n) {
+}, function (e, t, n) {
     "use strict";
 
     function o(e) {
-        return (o = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+        return (o = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
             return typeof e
-        } : function(e) {
+        } : function (e) {
             return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
         })(e)
     }
@@ -11281,7 +11288,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
 
     function c(e) {
-        return (c = Object.setPrototypeOf ? Object.getPrototypeOf : function(e) {
+        return (c = Object.setPrototypeOf ? Object.getPrototypeOf : function (e) {
             return e.__proto__ || Object.getPrototypeOf(e)
         })(e)
     }
@@ -11298,11 +11305,11 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
 
     function p(e, t) {
-        return (p = Object.setPrototypeOf || function(e, t) {
+        return (p = Object.setPrototypeOf || function (e, t) {
             return e.__proto__ = t, e
         })(e, t)
     }
-    n.d(t, "a", function() {
+    n.d(t, "a", function () {
         return _
     });
     var f = n(9),
@@ -11314,7 +11321,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         g = n(98),
         b = n(0),
         E = n(209),
-        _ = (n.n(E), function(e) {
+        _ = (n.n(E), function (e) {
             function t(e) {
                 var n;
                 return r(this, t), n = s(this, c(t).call(this, e)), n.topOffset = 0, n.state = {
@@ -11323,9 +11330,9 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }
             return l(t, e), a(t, [{
                 key: "componentWillMount",
-                value: function() {
+                value: function () {
                     var e = this;
-                    v.a.getFileInfo("/".concat(this.props.path), function(t) {
+                    v.a.getFileInfo("/".concat(this.props.path), function (t) {
                         e.setState({
                             fileInfo: t
                         })
@@ -11333,7 +11340,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "componentDidUpdate",
-                value: function() {
+                value: function () {
                     m.a.register({
                         left: "cancel",
                         center: "",
@@ -11342,12 +11349,12 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "getFileType",
-                value: function(e) {
+                value: function (e) {
                     return e.length < 1 ? "type-other" : g.a.photo.includes(e) ? "type-photo" : g.a.audio.includes(e) ? "type-audio" : g.a.video.includes(e) ? "type-video" : "type-other"
                 }
             }, {
                 key: "onKeyDown",
-                value: function(e) {
+                value: function (e) {
                     var t = this.element,
                         n = Math.ceil(t.clientHeight / 5);
                     switch (e.key) {
@@ -11364,7 +11371,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "getLocation",
-                value: function(e) {
+                value: function (e) {
                     var t = b.a.fixPath(e);
                     t = t.substring(0, t.lastIndexOf("/"));
                     var n = b.a.getFirstLevel(t),
@@ -11374,7 +11381,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "getDisplayInfo",
-                value: function(e, t) {
+                value: function (e, t) {
                     var n = {};
                     n.name = b.a.getDisplayName(e.name), n.location = this.getLocation(e.name);
                     var o = new Date(e.lastModifiedDate);
@@ -11412,7 +11419,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "render",
-                value: function() {
+                value: function () {
                     var e = this;
                     if (null === this.state.fileInfo) return d.a.createElement("div", {
                         id: "detail-view"
@@ -11432,10 +11439,10 @@ webpackJsonp([0], [, , , function(e, t, n) {
                         className: o,
                         tabIndex: "-1",
                         role: "menuitem",
-                        ref: function(t) {
+                        ref: function (t) {
                             e.element = t
                         },
-                        onKeyDown: function(t) {
+                        onKeyDown: function (t) {
                             e.onKeyDown(t)
                         }
                     }, d.a.createElement("p", {
@@ -11482,13 +11489,13 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }]), t
         }(h.a))
-}, function(e, t, n) {
+}, function (e, t, n) {
     "use strict";
 
     function o(e) {
-        return (o = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+        return (o = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
             return typeof e
-        } : function(e) {
+        } : function (e) {
             return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
         })(e)
     }
@@ -11513,7 +11520,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
 
     function u(e) {
-        return (u = Object.setPrototypeOf ? Object.getPrototypeOf : function(e) {
+        return (u = Object.setPrototypeOf ? Object.getPrototypeOf : function (e) {
             return e.__proto__ || Object.getPrototypeOf(e)
         })(e)
     }
@@ -11535,11 +11542,11 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
 
     function p(e, t) {
-        return (p = Object.setPrototypeOf || function(e, t) {
+        return (p = Object.setPrototypeOf || function (e, t) {
             return e.__proto__ = t, e
         })(e, t)
     }
-    n.d(t, "a", function() {
+    n.d(t, "a", function () {
         return k
     });
     var f = n(9),
@@ -11552,10 +11559,10 @@ webpackJsonp([0], [, , , function(e, t, n) {
         b = n(97),
         E = n(1),
         _ = n(0),
-        k = function(e) {
+        k = function (e) {
             function t(e) {
                 var n;
-                return r(this, t), n = s(this, u(t).call(this, e)), n.FOCUS_SELECTOR = ".list-item", n.toggleFolder = function() {
+                return r(this, t), n = s(this, u(t).call(this, e)), n.FOCUS_SELECTOR = ".list-item", n.toggleFolder = function () {
                     n.setState({
                         itemChecked: !n.state.itemChecked
                     })
@@ -11571,12 +11578,12 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }
             return l(t, e), a(t, [{
                 key: "updatePath",
-                value: function(e) {
+                value: function (e) {
                     this.state.path = e, this.state.header = _.a.getDisplayHeader(e), this.updateListData()
                 }
             }, {
                 key: "updateSelectHeader",
-                value: function(e) {
+                value: function (e) {
                     var t = document.querySelector("#list-header p");
                     t && (t.textContent = navigator.mozL10n.get("number-selected", {
                         number: e
@@ -11584,7 +11591,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "onKeyDown",
-                value: function(e) {
+                value: function (e) {
                     if (_.a.transforming) return !1;
                     switch (e.key) {
                         case "Backspace":
@@ -11616,54 +11623,54 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "buildOptionMenuItems",
-                value: function() {
+                value: function () {
                     var e = this;
                     this.optionItems = {
                         deleteItem: {
                             id: "delete",
-                            callback: function() {
+                            callback: function () {
                                 e.showDeleteDialog()
                             }
                         },
                         copyItem: {
                             id: "copy",
-                            callback: function() {
+                            callback: function () {
                                 e.prepareCopyOrMove(!0)
                             }
                         },
                         moveItem: {
                             id: "move",
-                            callback: function() {
+                            callback: function () {
                                 e.prepareCopyOrMove(!1)
                             }
                         },
                         renameItem: {
                             id: "rename",
-                            callback: function() {
+                            callback: function () {
                                 e.showRenameDialog()
                             }
                         },
                         selectItemsItem: {
                             id: "select-items",
-                            callback: function() {
+                            callback: function () {
                                 e.enterSelectorMode()
                             }
                         },
                         newFolderItem: {
                             id: "new-folder",
-                            callback: function() {
+                            callback: function () {
                                 e.showNewFolderDialog()
                             }
                         },
                         searchItem: {
                             id: "search",
-                            callback: function() {
+                            callback: function () {
                                 y.a.request("push", "/search/true"), _.a.currentFolder = e.state.path
                             }
                         },
                         refreshItem: {
                             id: "refresh",
-                            callback: function() {
+                            callback: function () {
                                 e.updateListData(), Toaster.showToast({
                                     messageL10nId: "refresh-completed",
                                     latency: 3e3
@@ -11672,19 +11679,19 @@ webpackJsonp([0], [, , , function(e, t, n) {
                         },
                         detailsItem: {
                             id: "details",
-                            callback: function() {
+                            callback: function () {
                                 e.showDetails()
                             }
                         },
                         shareItem: {
                             id: "share",
-                            callback: function() {
+                            callback: function () {
                                 e.shareFile()
                             }
                         },
                         selectAll: {
                             id: "select-all",
-                            callback: function() {
+                            callback: function () {
                                 e.setState({
                                     header: navigator.mozL10n.get("number-selected", {
                                         number: e.number
@@ -11695,7 +11702,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                         },
                         deSelectAll: {
                             id: "deselect-all",
-                            callback: function() {
+                            callback: function () {
                                 e.setState({
                                     header: navigator.mozL10n.get("number-selected", {
                                         number: 0
@@ -11708,7 +11715,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "showSelectorModeOptions",
-                value: function() {
+                value: function () {
                     var e = _.a.selectorItems.length,
                         t = [];
                     0 === e ? t.push(this.optionItems.selectAll) : e === this.number ? t.push(this.optionItems.deSelectAll) : (t.push(this.optionItems.selectAll), t.push(this.optionItems.deSelectAll)), e > 0 && (this.number > 0 && !E.a.isSpecialPath(this.state.path, "readOnly") && t.push(this.optionItems.deleteItem), t.push(this.optionItems.copyItem), E.a.isSpecialPath(this.state.path, "readOnly") || t.push(this.optionItems.moveItem), 0 === _.a.selectorFolderNumber && t.push(this.optionItems.shareItem)), y.a.request("showOptionMenu", {
@@ -11717,7 +11724,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "showNormalModeOptions",
-                value: function() {
+                value: function () {
                     var e = [],
                         t = E.a.isSpecialPath(this.state.path, "readOnly");
                     this.number > 0 && !t && e.push(this.optionItems.deleteItem), this.number > 0 && !_.a.openActivityMode && e.push(this.optionItems.copyItem), this.number > 0 && !t && (_.a.openActivityMode || e.push(this.optionItems.moveItem), e.push(this.optionItems.renameItem)), this.number > 0 && !_.a.openActivityMode && e.push(this.optionItems.selectItemsItem), t || _.a.openActivityMode || e.push(this.optionItems.newFolderItem), this.number > 0 && e.push(this.optionItems.searchItem), e.push(this.optionItems.refreshItem), this.number > 0 && e.push(this.optionItems.detailsItem), this.number > 0 && !this.focusOnFolder && e.push(this.optionItems.shareItem), y.a.request("showOptionMenu", {
@@ -11726,7 +11733,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "showDeleteDialog",
-                value: function() {
+                value: function () {
                     var e = this;
                     if (this.state.selectorMode) y.a.request("showDialog", {
                         type: "confirm",
@@ -11734,10 +11741,10 @@ webpackJsonp([0], [, , , function(e, t, n) {
                         content: _.a.selectorFolderNumber > 0 ? "delete-all-folder" : "delete-all-file",
                         ok: "delete",
                         cancel: "cancel",
-                        onOk: function() {
+                        onOk: function () {
                             var t = 0;
-                            _.a.transforming = !0, _.a.selectorItems.forEach(function(n) {
-                                E.a.deleteFile(n.path, function() {
+                            _.a.transforming = !0, _.a.selectorItems.forEach(function (n) {
+                                E.a.deleteFile(n.path, function () {
                                     if (++t === _.a.selectorItems.length) {
                                         e.state.header = _.a.getDisplayHeader(e.state.path), e.state.selectorMode = !1, e.updateListData();
                                         var n = 1 === t ? "item-deleted" : "items-deleted";
@@ -11765,8 +11772,8 @@ webpackJsonp([0], [, , , function(e, t, n) {
                             ok: "delete",
                             cancel: "cancel",
                             translated: !0,
-                            onOk: function() {
-                                _.a.transforming = !0, E.a.deleteFile(t, function() {
+                            onOk: function () {
+                                _.a.transforming = !0, E.a.deleteFile(t, function () {
                                     Toaster.showToast({
                                         messageL10nId: "item-deleted",
                                         latency: 3e3
@@ -11780,7 +11787,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "getShareType",
-                value: function(e) {
+                value: function (e) {
                     var t = MimeMapper.guessTypeFromFileProperties(e[0].name, e[0].type),
                         n = t.substring(0, t.indexOf("/") + 1);
                     if (e.length > 1) {
@@ -11794,21 +11801,21 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "shareFile",
-                value: function() {
+                value: function () {
                     var e = this;
                     if (this.state.selectorMode) {
                         var t = 0,
                             n = [],
                             o = [],
                             r = [];
-                        _.a.selectorItems.forEach(function(i) {
+                        _.a.selectorItems.forEach(function (i) {
                             if (!_.a.checkFolderName(_.a.getLastLevel(i.path))) {
                                 var a = navigator.mozL10n.get("unsupport-string", {
                                     name: "share"
                                 });
                                 return void e.showErrorAlert(a, !0)
                             }
-                            r.push(i.path), o.push(_.a.getLastLevel(i.path)), E.a.getFileInfo(i.path, function(i) {
+                            r.push(i.path), o.push(_.a.getLastLevel(i.path)), E.a.getFileInfo(i.path, function (i) {
                                 if (t++, n.push(i), t === _.a.selectorItems.length) {
                                     var a = new MozActivity({
                                             name: "share",
@@ -11820,7 +11827,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                                                 filepaths: r
                                             }
                                         }),
-                                        s = function() {
+                                        s = function () {
                                             this.exitSelectorMode()
                                         };
                                     a.onsuccess = s.bind(e)
@@ -11836,7 +11843,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                             });
                             return void this.showErrorAlert(s, !0)
                         }
-                        E.a.getFileInfo(i, function(e) {
+                        E.a.getFileInfo(i, function (e) {
                             var t = MimeMapper.guessTypeFromFileProperties(a, e.type),
                                 n = t.substring(0, t.indexOf("/") + 1).concat("*");
                             "text/vcard" === t && (n = t), new MozActivity({
@@ -11854,51 +11861,51 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "showDetails",
-                value: function() {
+                value: function () {
                     var e = _.a.fixPath(this._item.dataset.path);
                     y.a.request("push", "/detail/".concat(this.focusOnFolder, "/").concat(e))
                 }
             }, {
                 key: "showNewFolderDialog",
-                value: function() {
+                value: function () {
                     var e = this;
                     y.a.request("showDialog", {
                         type: "prompt",
                         content: "new-folder",
                         ok: "ok",
                         initialValue: navigator.mozL10n.get("new-folder"),
-                        onOk: function(t) {
+                        onOk: function (t) {
                             if (t) {
                                 if (-1 !== t.search(/^\s+$|^\.+$/)) {
                                     var n = navigator.mozL10n.get("new-folder-invalid", {
                                         folderName: '"'.concat(t, '"')
                                     });
-                                    return void setTimeout(function() {
+                                    return void setTimeout(function () {
                                         e.showErrorAlert(n, !0)
                                     }, 200)
                                 }
                                 if (_.a.checkFolderName(t)) {
                                     var o = "/".concat(e.state.path, "/").concat(t, "/");
-                                    E.a.checkAvailable(o, function(n) {
-                                        n ? _.a.updateNameForVfat(o, t).then(function(t) {
+                                    E.a.checkAvailable(o, function (n) {
+                                        n ? _.a.updateNameForVfat(o, t).then(function (t) {
                                             var n = navigator.mozL10n.get("new-folder-error", {
                                                 folderName: '"'.concat(t, '"')
                                             });
-                                            setTimeout(function() {
+                                            setTimeout(function () {
                                                 e.showErrorAlert(n, !0)
                                             }, 100)
-                                        }) : (_.a.transforming = !0, E.a.createFolder("/".concat(e.state.path, "/").concat(t), function() {
+                                        }) : (_.a.transforming = !0, E.a.createFolder("/".concat(e.state.path, "/").concat(t), function () {
                                             Toaster.showToast({
                                                 messageL10nId: "folder-created",
                                                 latency: 3e3
                                             }), e.adjustFocus = !0, e.needFocusPath = "/".concat(e.state.path, "/").concat(t), e.updateListData()
-                                        }, function() {
+                                        }, function () {
                                             _.a.transforming = !1
                                         }))
                                     })
                                 } else {
                                     var r = navigator.mozL10n.get("unsupport-folder-name");
-                                    setTimeout(function() {
+                                    setTimeout(function () {
                                         e.showErrorAlert(r, !0)
                                     }, 200)
                                 }
@@ -11908,7 +11915,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "showNotSupportDialog",
-                value: function() {
+                value: function () {
                     y.a.request("showDialog", {
                         type: "alert",
                         header: "not-support-header",
@@ -11918,7 +11925,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "showRenameDialog",
-                value: function() {
+                value: function () {
                     var e = this,
                         t = this._item.dataset.path,
                         n = _.a.getLastLevel(t),
@@ -11930,13 +11937,13 @@ webpackJsonp([0], [, , , function(e, t, n) {
                         onFile: !o,
                         initialValue: n,
                         noClose: !0,
-                        onOk: function(r) {
+                        onOk: function (r) {
                             if (!r || r === n) {
                                 y.a.request("hideDialog");
                                 var i = navigator.mozL10n.get("new-folder-invalid", {
                                     folderName: '"'.concat(r, '"')
                                 });
-                                return void setTimeout(function() {
+                                return void setTimeout(function () {
                                     e.showErrorAlert(i, !0)
                                 }, 200)
                             }
@@ -11944,25 +11951,25 @@ webpackJsonp([0], [, , , function(e, t, n) {
                                 var a = navigator.mozL10n.get("new-folder-invalid", {
                                     folderName: '"'.concat(r, '"')
                                 });
-                                return void setTimeout(function() {
+                                return void setTimeout(function () {
                                     e.showErrorAlert(a, !0)
                                 }, 200)
                             }
                             if (_.a.checkFolderName(r)) {
                                 var s = "/".concat(e.state.path, "/").concat(r, "/");
-                                E.a.checkAvailable(s, function(i) {
-                                    i ? _.a.updateNameForVfat(s, r).then(function(t) {
+                                E.a.checkAvailable(s, function (i) {
+                                    i ? _.a.updateNameForVfat(s, r).then(function (t) {
                                         var n = navigator.mozL10n.get("new-folder-error", {
                                             folderName: '"'.concat(t, '"')
                                         });
-                                        setTimeout(function() {
+                                        setTimeout(function () {
                                             e.showErrorAlert(n, !0)
                                         }, 100)
                                     }) : e.renameSuffixNotSupport(o, n, r, t)
                                 })
                             } else {
                                 var u = navigator.mozL10n.get("unsupport-folder-name");
-                                setTimeout(function() {
+                                setTimeout(function () {
                                     e.showErrorAlert(u, !0)
                                 }, 200)
                             }
@@ -11971,13 +11978,13 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "renameSuffixNotSupport",
-                value: function(e, t, n, o) {
+                value: function (e, t, n, o) {
                     function r(t) {
-                        _.a.transforming = !0, E.a.renameFile(o, n, function() {
+                        _.a.transforming = !0, E.a.renameFile(o, n, function () {
                             Toaster.showToast({
                                 messageL10nId: e ? "folder-renamed" : "file-renamed"
                             }), t.adjustFocus = !0, t.needFocusPath = o.substring(0, o.lastIndexOf("/") + 1).concat(n), t.updateListData()
-                        }, function() {
+                        }, function () {
                             _.a.transforming = !1
                         })
                     }
@@ -11998,21 +12005,21 @@ webpackJsonp([0], [, , , function(e, t, n) {
                             message: "change"
                         }],
                         translated: !0,
-                        onOk: function(e) {
+                        onOk: function (e) {
                             0 !== e.selectedButton && r(i)
                         }
                     }) : void this.showNotSupportDialog()
                 }
             }, {
                 key: "checkFilePath",
-                value: function(e) {
-                    return new Promise(function(t, n) {
+                value: function (e) {
+                    return new Promise(function (t, n) {
                         function r(e) {
                             if (!a)
                                 for (var s = 0; s < e.length; s++) {
-                                    var u = function(o) {
-                                        return i.push(e[o]), _.a.checkFolderName(_.a.getLastLevel(e[o].path)) ? e[o].isFile ? (i.splice(e[o], 1), i.length || o !== e.length - 1 || t(), "continue") : void E.a.getDirectory(e[o].path, function(n) {
-                                            a || (n.getFilesAndDirectories ? n.getFilesAndDirectories().then(function(n) {
+                                    var u = function (o) {
+                                        return i.push(e[o]), _.a.checkFolderName(_.a.getLastLevel(e[o].path)) ? e[o].isFile ? (i.splice(e[o], 1), i.length || o !== e.length - 1 || t(), "continue") : void E.a.getDirectory(e[o].path, function (n) {
+                                            a || (n.getFilesAndDirectories ? n.getFilesAndDirectories().then(function (n) {
                                                 if (i.splice(e[o], 1), !a && (n.length || i.length || t(), n.length)) {
                                                     for (var s = [], u = 0; u < n.length; u++) n[u] instanceof Directory ? s.push({
                                                         path: e[o].path + "/" + n[u].name,
@@ -12043,7 +12050,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "prepareCopyOrMove",
-                value: function(e) {
+                value: function (e) {
                     var t = this;
                     _.a.copyOrMoveFile = this._item.dataset.path;
                     var n = [];
@@ -12053,12 +12060,12 @@ webpackJsonp([0], [, , , function(e, t, n) {
                     }) : n.push({
                         path: this._item.dataset.path,
                         isFolder: !0
-                    }), this.state.selectorMode && (_.a.tempSelectMode = !0, n = _.a.selectorItems), _.a.transforming = !0, this.checkFilePath(n).then(function() {
+                    }), this.state.selectorMode && (_.a.tempSelectMode = !0, n = _.a.selectorItems), _.a.transforming = !0, this.checkFilePath(n).then(function () {
                         _.a.copyOrMoveStatus = e ? _.a.PREPARE_COPY : _.a.PREPARE_MOVE, t.adjustFocus = !0, t.needFocusPath = _.a.copyOrMoveFile, t.setState({
                             header: _.a.getDisplayHeader(),
                             selectorMode: !1
                         })
-                    }, function() {
+                    }, function () {
                         _.a.transforming = !1;
                         var n = navigator.mozL10n.get,
                             o = e ? n("unsupport-string", {
@@ -12071,7 +12078,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "checkCopyOrMove",
-                value: function(e) {
+                value: function (e) {
                     var t = this,
                         n = this.state.path,
                         o = "/".concat(_.a.fixPath(n), "/");
@@ -12079,21 +12086,21 @@ webpackJsonp([0], [, , , function(e, t, n) {
                         var r = _.a.selectorItems.length;
                         if (r > 0) {
                             var i = _.a.selectorItems[r - 1].path;
-                            if (0 === o.indexOf("".concat(i, "/"))) return void setTimeout(function() {
+                            if (0 === o.indexOf("".concat(i, "/"))) return void setTimeout(function () {
                                 y.a.request("showDialog", {
                                     type: "alert",
                                     content: e ? "paste-error" : "move-error",
                                     ok: "ok",
-                                    onOk: function() {
+                                    onOk: function () {
                                         _.a.selectorItems.pop(), _.a.selectorItems.length > 0 ? t.checkCopyOrMove(e) : (t.endCopyOrMove(e), t.updateListData())
                                     }
                                 })
                             }, 100);
                             var a = o.concat(_.a.getLastLevel(i));
                             if (a === i && !e) return void(_.a.selectorItems.length > 1 ? (_.a.selectorItems.pop(), _.a.selectorItems.length > 0 && this.checkCopyOrMove(e)) : (this.endCopyOrMove(e), this.updateHeader()));
-                            E.a.checkAvailable(a, function(n) {
+                            E.a.checkAvailable(a, function (n) {
                                 var r = !1;
-                                if (1 === _.a.selectorItems.length && (r = !0), n) setTimeout(function() {
+                                if (1 === _.a.selectorItems.length && (r = !0), n) setTimeout(function () {
                                     t.copyOrMoveFileExistDialog(e, i, o, r)
                                 }, 100);
                                 else {
@@ -12106,20 +12113,20 @@ webpackJsonp([0], [, , , function(e, t, n) {
                         if (0 === o.indexOf("".concat(_.a.copyOrMoveFile, "/"))) return this.showErrorAlert(e ? "paste-error" : "move-error", !1), this.endCopyOrMove(e), void this.updateHeader();
                         var s = o.concat(_.a.getLastLevel(_.a.copyOrMoveFile));
                         if (_.a.copyOrMoveFile === s && !e) return this.endCopyOrMove(e), void this.updateHeader();
-                        E.a.checkAvailable(s, function(n) {
+                        E.a.checkAvailable(s, function (n) {
                             n ? t.copyOrMoveFileExistDialog(e, _.a.copyOrMoveFile, o, !0) : (t.showPorgressDialog(e, 0, 1), t.startCopyOrMove(e, _.a.copyOrMoveFile, o, !0))
                         })
                     }
                 }
             }, {
                 key: "startCopyOrMove",
-                value: function(e, t, n, o) {
+                value: function (e, t, n, o) {
                     var r = this;
-                    E.a.checkAvailableSpace(t, n, e, function(i) {
+                    E.a.checkAvailableSpace(t, n, e, function (i) {
                         if (i) return void r.startCopyOrMoveDialog("not-enough-space", e);
-                        var a = function() {
+                        var a = function () {
                                 var t = this;
-                                _.a.tempSelectMode ? this.showPorgressDialog(e, this.progressMax, this.progressMax) : this.showPorgressDialog(e, 1, 1), setTimeout(function() {
+                                _.a.tempSelectMode ? this.showPorgressDialog(e, this.progressMax, this.progressMax) : this.showPorgressDialog(e, 1, 1), setTimeout(function () {
                                     y.a.request("hideDialog");
                                     var n = e ? "item-copied" : "item-moved";
                                     _.a.tempSelectMode && t.progressMax > 1 && (n = e ? "items-copied" : "items-moved"), Toaster.showToast({
@@ -12128,44 +12135,44 @@ webpackJsonp([0], [, , , function(e, t, n) {
                                     }), t.endCopyOrMove(e), t.updateListData()
                                 }, 500)
                             },
-                            s = function() {
+                            s = function () {
                                 y.a.request("hideDialog"), this.endCopyOrMove(e), this.updateListData()
                             };
-                        _.a.transforming = !0, o ? E.a.copyOrMoveFile(e, t, n, a.bind(r), s.bind(r)) : E.a.copyOrMoveFile(e, t, n, function() {
+                        _.a.transforming = !0, o ? E.a.copyOrMoveFile(e, t, n, a.bind(r), s.bind(r)) : E.a.copyOrMoveFile(e, t, n, function () {
                             _.a.selectorItems.length > 1 && (_.a.selectorItems.pop(), _.a.selectorItems.length > 0 && r.checkCopyOrMove(e))
                         }, s.bind(r))
-                    }, function() {
+                    }, function () {
                         r.startCopyOrMoveDialog(e ? "error-while-copying" : "error-while-moving", e)
                     })
                 }
             }, {
                 key: "startCopyOrMoveDialog",
-                value: function(e, t) {
+                value: function (e, t) {
                     var n = this;
                     y.a.request("showDialog", {
                         type: "alert",
                         content: e,
                         ok: "ok",
-                        onOk: function() {
+                        onOk: function () {
                             _.a.selectorItems.pop(), n.endCopyOrMove(t), n.updateHeader()
                         },
-                        onBack: function() {
+                        onBack: function () {
                             _.a.selectorItems.pop(), n.endCopyOrMove(t), n.updateHeader()
                         }
                     })
                 }
             }, {
                 key: "endCopyOrMove",
-                value: function(e) {
+                value: function (e) {
                     _.a.tempSelectMode && (_.a.tempSelectMode = !1), _.a.copyOrMoveStatus = e ? _.a.END_COPY : _.a.END_MOVE
                 }
             }, {
                 key: "copyOrMoveFileExistDialog",
-                value: function(e, t, n, o) {
+                value: function (e, t, n, o) {
                     var r = this,
                         i = _.a.getLastLevel(t),
                         a = n + i;
-                    _.a.updateNameForVfat(a, i).then(function(i) {
+                    _.a.updateNameForVfat(a, i).then(function (i) {
                         y.a.request("showDialog", {
                             type: "custom",
                             header: navigator.mozL10n.get("confirmation-header"),
@@ -12181,10 +12188,10 @@ webpackJsonp([0], [, , , function(e, t, n) {
                             }],
                             translated: !0,
                             noClose: !0,
-                            onOk: function(i) {
+                            onOk: function (i) {
                                 r.handleExistDialog(i.selectedButton, e, t, n, o)
                             },
-                            onBack: function() {
+                            onBack: function () {
                                 _.a.selectorItems.length > 1 ? (_.a.selectorItems.pop(), r.checkCopyOrMove(e)) : (r.updateListData(), r.endCopyOrMove(e))
                             }
                         })
@@ -12192,7 +12199,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "showErrorAlert",
-                value: function(e, t) {
+                value: function (e, t) {
                     y.a.request("showDialog", {
                         type: "alert",
                         content: e,
@@ -12202,7 +12209,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "showPorgressDialog",
-                value: function(e, t, n) {
+                value: function (e, t, n) {
                     var o = this,
                         r = e ? "progress-head-copy" : "progress-head-move",
                         i = e ? "progress-content-copy" : "progress-content-move";
@@ -12215,7 +12222,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                         progressMax: n,
                         translated: !0,
                         hideCancel: n - t <= 1,
-                        onCancel: function() {
+                        onCancel: function () {
                             if (_.a.selectorItems.length > 1) {
                                 navigator.mozL10n.get;
                                 Toaster.showToast({
@@ -12232,14 +12239,14 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "handleExistDialog",
-                value: function(e, t, n, o, r) {
+                value: function (e, t, n, o, r) {
                     var i, a = this;
                     switch (e) {
                         case 0:
                             _.a.selectorItems.length > 1 ? (_.a.selectorItems.pop(), this.checkCopyOrMove(t)) : (this.endCopyOrMove(t), this.updateHeader());
                             break;
                         case 1:
-                            i = o.concat(_.a.getLastLevel(n)), i === n ? _.a.selectorItems.length > 1 ? (_.a.selectorItems.pop(), this.checkCopyOrMove(t)) : (this.endCopyOrMove(t), this.updateHeader(), y.a.request("hideDialog")) : E.a.deleteFile(o.concat(_.a.getLastLevel(n)), function() {
+                            i = o.concat(_.a.getLastLevel(n)), i === n ? _.a.selectorItems.length > 1 ? (_.a.selectorItems.pop(), this.checkCopyOrMove(t)) : (this.endCopyOrMove(t), this.updateHeader(), y.a.request("hideDialog")) : E.a.deleteFile(o.concat(_.a.getLastLevel(n)), function () {
                                 if (_.a.tempSelectMode) {
                                     var e = a.progressMax - _.a.selectorItems.length;
                                     a.showPorgressDialog(t, e, a.progressMax)
@@ -12257,7 +12264,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "enterSelectorMode",
-                value: function() {
+                value: function () {
                     for (this.setState({
                             header: navigator.mozL10n.get("number-selected", {
                                 number: 0
@@ -12269,7 +12276,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "exitSelectorMode",
-                value: function() {
+                value: function () {
                     this.setState({
                         header: _.a.getDisplayHeader(this.state.path),
                         selectorMode: !1
@@ -12277,7 +12284,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "updateSoftkeyList",
-                value: function(e) {
+                value: function (e) {
                     var t = _.a.copyOrMoveStatus === _.a.PREPARE_COPY || _.a.copyOrMoveStatus === _.a.START_COPY,
                         n = _.a.copyOrMoveStatus === _.a.PREPARE_MOVE || _.a.copyOrMoveStatus === _.a.START_MOVE,
                         o = e && E.a.isSpecialPath(e.path, "readOnly");
@@ -12308,7 +12315,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "updateSoftkey",
-                value: function(e) {
+                value: function (e) {
                     if (0 === e)
                         if (_.a.isInCopyOrMove()) {
                             var t = _.a.copyOrMoveStatus === _.a.PREPARE_COPY || _.a.copyOrMoveStatus === _.a.START_COPY,
@@ -12325,17 +12332,17 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "componentWillMount",
-                value: function() {
+                value: function () {
                     this.updateListData()
                 }
             }, {
                 key: "componentDidMount",
-                value: function() {
+                value: function () {
                     _.a.transforming = !1, this.navigator = new m.a(this.FOCUS_SELECTOR, this.element)
                 }
             }, {
                 key: "componentDidUpdate",
-                value: function() {
+                value: function () {
                     if (this.element.focus(), _.a.transforming = !1, this.number > 0)
                         if (this.adjustFocus) {
                             -1 !== this.needFocusPath.search(/^\/sdcard1\//) && (this.needFocusPath = this.needFocusPath.replace(/\.+$/, ""));
@@ -12349,12 +12356,12 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "componentWillUnmount",
-                value: function() {
+                value: function () {
                     y.a.unregister("updateSelectHeader", this), y.a.unregister("updateListData", this), y.a.unregister("updatePath", this), y.a.unregister("updateSoftkeyList", this)
                 }
             }, {
                 key: "updateListData",
-                value: function() {
+                value: function () {
                     var e = this,
                         t = [],
                         n = [];
@@ -12370,8 +12377,8 @@ webpackJsonp([0], [, , , function(e, t, n) {
                             fileList: n,
                             emptyContent: "no-files"
                         })
-                    } else E.a.enumeratePath(this.state.path, function(o) {
-                        o.forEach(function(o) {
+                    } else E.a.enumeratePath(this.state.path, function (o) {
+                        o.forEach(function (o) {
                             var r = E.a.specialPath["".concat(e.state.path, "/").concat(o.name)];
                             if (!r || !r.hide) {
                                 var i = {
@@ -12393,26 +12400,26 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "updateActivityDate",
-                value: function(e) {
+                value: function (e) {
                     this.needFocusPath = e, this.adjustFocus = !0, this.updateListData()
                 }
             }, {
                 key: "updateHeader",
-                value: function() {
+                value: function () {
                     this.setState({
                         header: _.a.getDisplayHeader(this.state.path)
                     })
                 }
             }, {
                 key: "render",
-                value: function() {
+                value: function () {
                     for (var e = this, t = _.a.isInCopyOrMove(), n = this.state.selectorMode, o = [], r = 0; r < this.state.folderList.length; r++) o.push(d.a.createElement(g.a, {
                         path: this.state.folderList[r].name,
                         selector: n,
                         checked: this.state.itemChecked,
                         index: r
                     }));
-                    var i = this.state.fileList.map(function(o) {
+                    var i = this.state.fileList.map(function (o) {
                         return d.a.createElement(b.a, {
                             checked: e.state.itemChecked,
                             selector: n,
@@ -12424,10 +12431,10 @@ webpackJsonp([0], [, , , function(e, t, n) {
                     });
                     return d.a.createElement("div", {
                         tabIndex: "-1",
-                        ref: function(t) {
+                        ref: function (t) {
                             e.element = t
                         },
-                        onKeyDown: function(t) {
+                        onKeyDown: function (t) {
                             e.onKeyDown(t)
                         }
                     }, d.a.createElement("div", {
@@ -12440,13 +12447,13 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }]), t
         }(h.a)
-}, function(e, t, n) {
+}, function (e, t, n) {
     "use strict";
 
     function o(e) {
-        return (o = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+        return (o = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
             return typeof e
-        } : function(e) {
+        } : function (e) {
             return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
         })(e)
     }
@@ -12471,7 +12478,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
 
     function u(e) {
-        return (u = Object.setPrototypeOf ? Object.getPrototypeOf : function(e) {
+        return (u = Object.setPrototypeOf ? Object.getPrototypeOf : function (e) {
             return e.__proto__ || Object.getPrototypeOf(e)
         })(e)
     }
@@ -12493,11 +12500,11 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
 
     function p(e, t) {
-        return (p = Object.setPrototypeOf || function(e, t) {
+        return (p = Object.setPrototypeOf || function (e, t) {
             return e.__proto__ = t, e
         })(e, t)
     }
-    n.d(t, "a", function() {
+    n.d(t, "a", function () {
         return _
     });
     var f = n(9),
@@ -12509,7 +12516,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         g = n(65),
         b = n(1),
         E = n(0),
-        _ = function(e) {
+        _ = function (e) {
             function t(e) {
                 var n;
                 return r(this, t), n = s(this, u(t).call(this, e)), n.FOCUS_SELECTOR = ".list-item", n.state = {
@@ -12518,7 +12525,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }
             return l(t, e), a(t, [{
                 key: "updateMainHeader",
-                value: function(e) {
+                value: function (e) {
                     var t = e ? "copy-move-header" : "filemanager";
                     this.setState({
                         header: t
@@ -12526,7 +12533,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "updateSoftkeyMain",
-                value: function(e) {
+                value: function (e) {
                     var t = E.a.copyOrMoveStatus === E.a.PREPARE_COPY || E.a.copyOrMoveStatus === E.a.START_COPY,
                         n = E.a.copyOrMoveStatus === E.a.PREPARE_MOVE || E.a.copyOrMoveStatus === E.a.START_MOVE;
                     if (E.a.pickActivityMode) return void v.a.register({
@@ -12544,7 +12551,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "onKeyDown",
-                value: function(e) {
+                value: function (e) {
                     switch (e.key) {
                         case "SoftRight":
                             if (E.a.isInCopyOrMove() || E.a.pickActivityMode) return;
@@ -12557,25 +12564,25 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "componentDidMount",
-                value: function() {
+                value: function () {
                     this.navigator = new m.a(this.FOCUS_SELECTOR, this.element), window.performance.mark("fullyLoaded"), b.a.initializeFolders(), window.dispatchEvent(new CustomEvent("fullyloaded"))
                 }
             }, {
                 key: "componentWillUnmount",
-                value: function() {
+                value: function () {
                     y.a.unregister("updateMainHeader", this), y.a.unregister("updateSoftkeyMain", this)
                 }
             }, {
                 key: "render",
-                value: function() {
+                value: function () {
                     var e = this,
                         t = !b.a.externalExist;
                     return d.a.createElement("div", {
                         tabIndex: "-1",
-                        ref: function(t) {
+                        ref: function (t) {
                             e.element = t
                         },
-                        onKeyDown: function(t) {
+                        onKeyDown: function (t) {
                             e.onKeyDown(t)
                         }
                     }, d.a.createElement("div", {
@@ -12597,13 +12604,13 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }]), t
         }(h.a)
-}, function(e, t, n) {
+}, function (e, t, n) {
     "use strict";
 
     function o(e) {
-        return (o = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+        return (o = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
             return typeof e
-        } : function(e) {
+        } : function (e) {
             return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
         })(e)
     }
@@ -12628,7 +12635,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
 
     function u(e) {
-        return (u = Object.setPrototypeOf ? Object.getPrototypeOf : function(e) {
+        return (u = Object.setPrototypeOf ? Object.getPrototypeOf : function (e) {
             return e.__proto__ || Object.getPrototypeOf(e)
         })(e)
     }
@@ -12650,11 +12657,11 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
 
     function p(e, t) {
-        return (p = Object.setPrototypeOf || function(e, t) {
+        return (p = Object.setPrototypeOf || function (e, t) {
             return e.__proto__ = t, e
         })(e, t)
     }
-    n.d(t, "a", function() {
+    n.d(t, "a", function () {
         return v
     });
     var f = n(9),
@@ -12662,7 +12669,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         h = n(10),
         m = n(124),
         y = n(12),
-        v = function(e) {
+        v = function (e) {
             function t(e) {
                 var n;
                 return r(this, t), n = s(this, u(t).call(this, e)), n.state = {
@@ -12672,7 +12679,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }
             return l(t, e), a(t, [{
                 key: "showOptionMenu",
-                value: function(e) {
+                value: function (e) {
                     this.setState({
                         menu: !0,
                         options: e
@@ -12680,14 +12687,14 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "componentDidUpdate",
-                value: function() {
-                    this.refs.menu ? (this.refs.menu.show(this.state.options), this.refs.menu.on("closed", function() {
+                value: function () {
+                    this.refs.menu ? (this.refs.menu.show(this.state.options), this.refs.menu.on("closed", function () {
                         y.a.request("focus")
                     })) : y.a.request("focus")
                 }
             }, {
                 key: "render",
-                value: function() {
+                value: function () {
                     return d.a.createElement("div", {
                         id: "menu-root"
                     }, this.state.menu ? d.a.createElement(m.a, {
@@ -12696,11 +12703,11 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }]), t
         }(h.a)
-}, function(e, t, n) {
+}, function (e, t, n) {
     "use strict";
 
     function o() {
-        return o = Object.assign || function(e) {
+        return o = Object.assign || function (e) {
             for (var t = 1; t < arguments.length; t++) {
                 var n = arguments[t];
                 for (var o in n) Object.prototype.hasOwnProperty.call(n, o) && (e[o] = n[o])
@@ -12719,7 +12726,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         f = {
             routes: [{
                 path: "/",
-                action: function() {
+                action: function () {
                     var e = n.i(a.a)(s.a, "left-to-center", "center-to-left");
                     return i.a.createElement(e, {
                         ref: "main"
@@ -12727,7 +12734,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 path: "/list/:path*",
-                action: function(e) {
+                action: function (e) {
                     var t = n.i(a.a)(u.a, "", "center-to-left");
                     return i.a.createElement(t, o({}, e, {
                         ref: "list"
@@ -12735,7 +12742,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 path: "/detail/:isFolder/:path*",
-                action: function(e) {
+                action: function (e) {
                     var t = n.i(a.a)(c.a, "left-to-center", "center-to-left");
                     return i.a.createElement(t, o({}, e, {
                         ref: "detail"
@@ -12743,7 +12750,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 path: "/search/:containCurrent",
-                action: function(e) {
+                action: function (e) {
                     var t = document.activeElement.getAttribute("data-path"),
                         r = n.i(a.a)(l.a, "left-to-center", "center-to-left");
                     return i.a.createElement(r, o({}, e, {
@@ -12754,7 +12761,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 path: "/searchList/:searchFolder",
-                action: function(e) {
+                action: function (e) {
                     var t = n.i(a.a)(p.a, "left-to-center", "center-to-left");
                     return i.a.createElement(t, o({}, e, {
                         ref: "searchList",
@@ -12764,13 +12771,13 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }]
         };
     t.a = f
-}, function(e, t, n) {
+}, function (e, t, n) {
     "use strict";
 
     function o(e) {
-        return (o = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+        return (o = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
             return typeof e
-        } : function(e) {
+        } : function (e) {
             return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
         })(e)
     }
@@ -12795,7 +12802,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
 
     function u(e) {
-        return (u = Object.setPrototypeOf ? Object.getPrototypeOf : function(e) {
+        return (u = Object.setPrototypeOf ? Object.getPrototypeOf : function (e) {
             return e.__proto__ || Object.getPrototypeOf(e)
         })(e)
     }
@@ -12817,11 +12824,11 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
 
     function p(e, t) {
-        return (p = Object.setPrototypeOf || function(e, t) {
+        return (p = Object.setPrototypeOf || function (e, t) {
             return e.__proto__ = t, e
         })(e, t)
     }
-    n.d(t, "a", function() {
+    n.d(t, "a", function () {
         return k
     });
     var f = n(9),
@@ -12834,7 +12841,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         b = n(97),
         E = n(1),
         _ = n(0),
-        k = function(e) {
+        k = function (e) {
             function t(e) {
                 var n;
                 return r(this, t), n = s(this, u(t).call(this, e)), n.FOCUS_SELECTOR = ".list-item", n.state = {
@@ -12847,39 +12854,39 @@ webpackJsonp([0], [, , , function(e, t, n) {
                     selectable: !0
                 }, v.a.register("updateSoftkeySearch", c(n)), n.deleteItem = {
                     id: "delete",
-                    callback: function() {
+                    callback: function () {
                         n.showDeleteDialog()
                     }
                 }, n.copyItem = {
                     id: "copy",
-                    callback: function() {
+                    callback: function () {
                         n.prepareCopyOrMove(!0)
                     }
                 }, n.moveItem = {
                     id: "move",
-                    callback: function() {
+                    callback: function () {
                         n.prepareCopyOrMove(!1)
                     }
                 }, n.renameItem = {
                     id: "rename",
-                    callback: function() {
+                    callback: function () {
                         n.showRenameDialog()
                     }
                 }, n.detailsItem = {
                     id: "details",
-                    callback: function() {
+                    callback: function () {
                         n.showDetails()
                     }
                 }, n.shareItem = {
                     id: "share",
-                    callback: function() {
+                    callback: function () {
                         n.shareFile()
                     }
                 }, n
             }
             return l(t, e), a(t, [{
                 key: "onKeyDown",
-                value: function(e) {
+                value: function (e) {
                     switch (e.key) {
                         case "SoftLeft":
                             v.a.request("updateListData"), v.a.request("back"), v.a.request("back");
@@ -12894,7 +12901,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "openListMenu",
-                value: function() {
+                value: function () {
                     var e = this.state.folderList.length + this.state.fileList.length,
                         t = [];
                     if (e > 0) {
@@ -12908,7 +12915,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "showDeleteDialog",
-                value: function() {
+                value: function () {
                     var e = this,
                         t = this._item.dataset.path,
                         n = _.a.getLastLevel(t),
@@ -12924,8 +12931,8 @@ webpackJsonp([0], [, , , function(e, t, n) {
                         ok: "delete",
                         cancel: "cancel",
                         translated: !0,
-                        onOk: function() {
-                            E.a.deleteFile(t, function() {
+                        onOk: function () {
+                            E.a.deleteFile(t, function () {
                                 e.state.selectable = !1, e.updateList()
                             })
                         }
@@ -12933,7 +12940,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "showRenameDialog",
-                value: function() {
+                value: function () {
                     var e = this,
                         t = this._item.dataset.path,
                         n = _.a.getLastLevel(t);
@@ -12944,24 +12951,24 @@ webpackJsonp([0], [, , , function(e, t, n) {
                         ok: "ok",
                         onFile: !this.focusOnFolder,
                         initialValue: n,
-                        onOk: function(n) {
+                        onOk: function (n) {
                             if (_.a.checkFolderName(n)) {
                                 var o = t.substring(0, t.lastIndexOf("/"));
-                                E.a.checkAvailable("".concat(o, "/").concat(n, "/"), function(o) {
+                                E.a.checkAvailable("".concat(o, "/").concat(n, "/"), function (o) {
                                     if (o) {
                                         var r = navigator.mozL10n.get("new-folder-error", {
                                             folderName: '"'.concat(n, '"')
                                         });
-                                        setTimeout(function() {
+                                        setTimeout(function () {
                                             e.showErrorAlert(r, !0)
                                         }, 100)
-                                    } else E.a.renameFile(t, n, function() {
+                                    } else E.a.renameFile(t, n, function () {
                                         e.updateList()
                                     })
                                 })
                             } else {
                                 var r = navigator.mozL10n.get("unsupport-folder-name");
-                                setTimeout(function() {
+                                setTimeout(function () {
                                     e.showErrorAlert(r, !0)
                                 }, 150)
                             }
@@ -12970,16 +12977,16 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "showDetails",
-                value: function() {
+                value: function () {
                     var e = _.a.fixPath(this._item.dataset.path);
                     v.a.request("push", "/detail/".concat(this.focusOnFolder, "/").concat(e))
                 }
             }, {
                 key: "shareFile",
-                value: function() {
+                value: function () {
                     var e = this._item.dataset.path,
                         t = _.a.getLastLevel(e);
-                    E.a.getFileInfo(e, function(n) {
+                    E.a.getFileInfo(e, function (n) {
                         var o = n.type.substring(0, n.type.indexOf("/") + 1).concat("*");
                         new MozActivity({
                             name: "share",
@@ -12995,12 +13002,12 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "prepareCopyOrMove",
-                value: function(e) {
+                value: function (e) {
                     _.a.copyOrMoveStatus = e ? _.a.PREPARE_COPY : _.a.PREPARE_MOVE, _.a.copyOrMoveFile = this._item.dataset.path, v.a.request("updateListData"), v.a.request("back"), v.a.request("back")
                 }
             }, {
                 key: "showErrorAlert",
-                value: function(e, t) {
+                value: function (e, t) {
                     v.a.request("showDialog", {
                         type: "alert",
                         content: e,
@@ -13010,7 +13017,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "updateSoftkeySearch",
-                value: function(e) {
+                value: function (e) {
                     e.unsupport ? y.a.register({
                         left: "cancel",
                         center: "",
@@ -13023,7 +13030,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "updateSoftkeys",
-                value: function() {
+                value: function () {
                     this.state.fileList.length + this.state.folderList.length > 0 ? y.a.register({
                         left: "cancel",
                         center: "open",
@@ -13036,14 +13043,14 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "searchKeyword",
-                value: function(e, t, n) {
+                value: function (e, t, n) {
                     var o = this,
                         r = [],
                         i = [],
                         a = "sdcard" === t;
-                    E.a.searchPath(t, e, n, function(e) {
+                    E.a.searchPath(t, e, n, function (e) {
                         var t = /^\/sdcard\/(audio|callrecording|music|photos|DCIM|downloads|others)(\/|$)/;
-                        e.forEach(function(e) {
+                        e.forEach(function (e) {
                             a && !e.fixPath.match(t) || (e instanceof Directory ? r.push(e) : i.push(e))
                         }), o.setState({
                             folderList: r,
@@ -13055,36 +13062,36 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "updateList",
-                value: function() {
+                value: function () {
                     var e = _.a.currentFolder,
                         t = !1;
                     "internal" === this.props.searchFolder ? (e = "sdcard", t = !0) : "sdcard" === this.props.searchFolder && (e = "sdcard1", t = !0), this.searchKeyword(_.a.searchKeyword, e, t)
                 }
             }, {
                 key: "componentWillMount",
-                value: function() {
+                value: function () {
                     this.updateList()
                 }
             }, {
                 key: "componentDidMount",
-                value: function() {
+                value: function () {
                     this.navigator = new m.a(this.FOCUS_SELECTOR, this.element), this.updateSoftkeys()
                 }
             }, {
                 key: "componentDidUpdate",
-                value: function() {
+                value: function () {
                     this.element.focus(), this.updateSoftkeys()
                 }
             }, {
                 key: "componentWillUnmount",
-                value: function() {
+                value: function () {
                     v.a.unregister("updateSoftkeySearch", this)
                 }
             }, {
                 key: "render",
-                value: function() {
+                value: function () {
                     var e = this,
-                        t = this.state.folderList.map(function(e) {
+                        t = this.state.folderList.map(function (e) {
                             return d.a.createElement(g.a, {
                                 path: e.fixPath,
                                 index: "0",
@@ -13092,7 +13099,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                                 search: "searchItem"
                             })
                         }),
-                        n = this.state.fileList.map(function(e) {
+                        n = this.state.fileList.map(function (e) {
                             return d.a.createElement(b.a, {
                                 path: e.fixPath,
                                 type: e.type,
@@ -13104,10 +13111,10 @@ webpackJsonp([0], [, , , function(e, t, n) {
                         o = t.length + n.length;
                     return d.a.createElement("div", {
                         tabIndex: "-1",
-                        ref: function(t) {
+                        ref: function (t) {
                             e.element = t
                         },
-                        onKeyDown: function(t) {
+                        onKeyDown: function (t) {
                             e.onKeyDown(t)
                         }
                     }, d.a.createElement("div", {
@@ -13119,13 +13126,13 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }]), t
         }(h.a)
-}, function(e, t, n) {
+}, function (e, t, n) {
     "use strict";
 
     function o(e) {
-        return (o = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(e) {
+        return (o = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) {
             return typeof e
-        } : function(e) {
+        } : function (e) {
             return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e
         })(e)
     }
@@ -13155,7 +13162,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
 
     function c(e) {
-        return (c = Object.setPrototypeOf ? Object.getPrototypeOf : function(e) {
+        return (c = Object.setPrototypeOf ? Object.getPrototypeOf : function (e) {
             return e.__proto__ || Object.getPrototypeOf(e)
         })(e)
     }
@@ -13172,11 +13179,11 @@ webpackJsonp([0], [, , , function(e, t, n) {
     }
 
     function p(e, t) {
-        return (p = Object.setPrototypeOf || function(e, t) {
+        return (p = Object.setPrototypeOf || function (e, t) {
             return e.__proto__ = t, e
         })(e, t)
     }
-    n.d(t, "a", function() {
+    n.d(t, "a", function () {
         return _
     });
     var f = n(9),
@@ -13188,7 +13195,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
         g = n(1),
         b = n(211),
         E = (n.n(b), n(0)),
-        _ = function(e) {
+        _ = function (e) {
             function t(e) {
                 var n;
                 if (r(this, t), n = s(this, c(t).call(this, e)), n.FOCUS_SELECTOR = ".search-item", n.searchModes = [], "false" !== n.props.containCurrent && n.searchModes.push("current"), n.searchModes.push("internal"), g.a.externalExist && n.searchModes.push("sdcard"), n.props.currentFocus) {
@@ -13199,19 +13206,19 @@ webpackJsonp([0], [, , , function(e, t, n) {
             }
             return l(t, e), a(t, [{
                 key: "componentDidMount",
-                value: function() {
+                value: function () {
                     var e = this;
-                    this.navigator = new m.a(this.FOCUS_SELECTOR, this.element), this.updateSoftkeys(), this.input.addEventListener("input", function() {
+                    this.navigator = new m.a(this.FOCUS_SELECTOR, this.element), this.updateSoftkeys(), this.input.addEventListener("input", function () {
                         e.updateSoftkeys()
-                    }), this.select.value = this.searchModes[0], this.select.addEventListener("change", function() {
+                    }), this.select.value = this.searchModes[0], this.select.addEventListener("change", function () {
                         e.li.focus()
-                    }), this.select.onblur = function() {
+                    }), this.select.onblur = function () {
                         this.li.focus()
                     }.bind(this)
                 }
             }, {
                 key: "updateSoftkeys",
-                value: function() {
+                value: function () {
                     y.a.register({
                         left: "cancel",
                         center: "select"
@@ -13226,7 +13233,7 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "onKeyDown",
-                value: function(e) {
+                value: function (e) {
                     switch (e.key) {
                         case "Enter":
                             document.activeElement === this.li && this.select.focus();
@@ -13241,14 +13248,14 @@ webpackJsonp([0], [, , , function(e, t, n) {
                 }
             }, {
                 key: "onFocus",
-                value: function() {
+                value: function () {
                     document.activeElement === this.element && this.input.focus(), this.input.parentElement.classList.toggle("focus", document.activeElement === this.input)
                 }
             }, {
                 key: "render",
-                value: function() {
+                value: function () {
                     var e = this,
-                        t = this.searchModes.map(function(e) {
+                        t = this.searchModes.map(function (e) {
                             return (!E.a.openActivityMode || "current" === e) && d.a.createElement("option", {
                                 value: e,
                                 "data-l10n-id": "search-".concat(e)
@@ -13257,13 +13264,13 @@ webpackJsonp([0], [, , , function(e, t, n) {
                     return d.a.createElement("div", {
                         id: "search-container",
                         tabIndex: "-1",
-                        onFocus: function() {
+                        onFocus: function () {
                             e.onFocus()
                         },
-                        ref: function(t) {
+                        ref: function (t) {
                             e.element = t
                         },
-                        onKeyDown: function(t) {
+                        onKeyDown: function (t) {
                             e.onKeyDown(t)
                         }
                     }, d.a.createElement("div", {
@@ -13275,14 +13282,14 @@ webpackJsonp([0], [, , , function(e, t, n) {
                     }, d.a.createElement("input", {
                         className: "search-input search-item",
                         type: "text",
-                        ref: function(t) {
+                        ref: function (t) {
                             e.input = t
                         },
                         maxLength: "100"
                     })), d.a.createElement("ul", null, d.a.createElement("li", {
                         className: "search-item",
                         tabIndex: "-1",
-                        ref: function(t) {
+                        ref: function (t) {
                             e.li = t
                         }
                     }, d.a.createElement("div", {
@@ -13292,12 +13299,12 @@ webpackJsonp([0], [, , , function(e, t, n) {
                     }), d.a.createElement("div", {
                         className: "select-div"
                     }, d.a.createElement("select", {
-                        ref: function(t) {
+                        ref: function (t) {
                             e.select = t
                         }
                     }, t))))))
                 }
             }]), t
         }(h.a)
-}, function(e, exports) {}, function(e, exports) {}, function(e, exports) {}, function(e, exports) {}, function(e, exports) {}, function(e, exports) {}, function(e, exports) {}, function(e, exports) {}, function(e, exports) {}, function(e, exports) {}]);
+}, function (e, exports) {}, function (e, exports) {}, function (e, exports) {}, function (e, exports) {}, function (e, exports) {}, function (e, exports) {}, function (e, exports) {}, function (e, exports) {}, function (e, exports) {}, function (e, exports) {}]);
 //# sourceMappingURL=0.bundle.js.map
