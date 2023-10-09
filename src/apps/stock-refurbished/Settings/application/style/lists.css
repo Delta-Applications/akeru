@@ -17,7 +17,7 @@ ul li {
   height: auto;
   min-height: 6rem;
   margin: 0;
-  color: #000;
+  color: var(--color-gs90);
   background: var(--color-gs00);
   padding: 1rem;
 }
