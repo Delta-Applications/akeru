@@ -230,7 +230,7 @@
             "sdcard1/callrecording": {
                 readOnly: !0
             },
-            "sdcard1/fota": {
+           /* "sdcard1/fota": {
                 hide: !0
             },
             "sdcard1/LOST.DIR": {
@@ -238,7 +238,7 @@
             },
             "sdcard1/.android_secure": {
                 hide: !0
-            }
+            }*/
         },
         externalExist: !1,
         initStorages: function() {

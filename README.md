@@ -11,7 +11,8 @@ Refurbished KaiOS Apps, Media & Builds by Delta
 - [x] Refurbish all Gaia apps (taken from <2.5.4+ and modified to fit 3.0 design)
 - [x] Modified 2.5.4 Settings app (with homescreen setting, sideloading & other dev features)
 - [x] Add app management features to Settings & move permissions there
-- [ ] **Fix File Manager opening instead of returning files in Pick Activity**
+- [x] **Fix File Manager opening instead of returning files in Pick Activity**
+- [ ] Calendar Gaia iCal File Support
 - [ ] De-kaiad TO-DO List, Magnifying Lens & Books & add to official-refurbished
 - [ ] SYSTEM: Holding shortcuts button while pressing either UP or DOWN acts as a volume key while media is being played
 - [ ] **Theme all refurbished apps to gaia-theme dark (email, sms, downloads?)**

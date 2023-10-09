@@ -3079,7 +3079,7 @@ webpackJsonp([0], [, , , function (e, t, n) {
                         "data-icon": r,
                         className: o ? "selector-show" : "hide"
                     }), d.a.createElement("div", {
-                        "data-icon": this.props.icon || "email-move",
+                        "data-icon": this.props.icon || MimeMapper.getSpecialIcon(n) ||"email-move",
                         "aria-hidden": "true",
                         className: "folder-icon"
                     }), i, d.a.createElement("div", {
@@ -11410,7 +11410,7 @@ webpackJsonp([0], [, , , function (e, t, n) {
                         case "type-photo":
                         case "type-video":
                         case "type-app":
-                        case "type-pkg":
+                        case "type-compressed":
                         case "type-other":
                             n.type = MimeMapper.guessTypeFromExtension(MimeMapper._parseExtension(e.name))
                             break;
@@ -12591,7 +12591,7 @@ webpackJsonp([0], [, , , function (e, t, n) {
                         "data-l10n-id": this.state.header
                     })), d.a.createElement("ul", null, d.a.createElement(g.a, {
                         l10n: "internal",
-                        icon: "mobile-phone",
+                        icon: "pda-phone", //pda or mobile? pda represents feature phones :)
                         path: "sdcard",
                         index: "0"
                     }), d.a.createElement(g.a, {
