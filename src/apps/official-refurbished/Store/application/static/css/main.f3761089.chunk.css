@@ -1,0 +1,166 @@
+.select-popup-container {
+    background: #fff
+}
+
+.kai-rbl-focused {
+    color: var(--rbl-text-focused)
+}
+
+.item-selected,
+.kai-rbl-focused {
+    background-color: var(--color-purple)
+}
+
+:root {
+    --tab-underline-color: var(--color-blue)
+}
+
+.AppDetailBody {
+    padding: 4px
+}
+
+.AppDetailMetadata>div {
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    /*! border-top: 1px solid var(--color-gs20); */
+}
+
+.AppDetailMetadata>div>b {
+    font-size: 16px
+}
+
+.AppViewContainer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(0, 0, 0, .7)
+}
+
+.AppView {
+    position: absolute;
+    /*! top: 10px; */
+    /*! bottom: calc(10px + var(--softkeybar-height)); */
+    /*! left: 10px; */
+    /*! right: 10px; */
+    color: var(--color-gs100);
+    background: var(--color-gs00);
+    /*! border-radius: 10px; */
+    overflow-x: hidden;
+    overflow-y: scroll
+}
+
+.AppViewHeader {
+    width: 100%;
+    height: 70px;
+    background-color: var(--color-gs00);
+    background-position: 0;
+    background-repeat: no-repeat;
+    background-size: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    padding-left: 70px;
+    box-sizing: border-box
+}
+
+.AppViewHeader>h3 {
+    font-weight: 700
+}
+
+.AppViewStatus {
+    font-size: 14px
+}
+
+.app-button {
+    padding-left: 5px;
+    padding-right: 5px;
+    background: var(--color-gs00);
+}
+
+.app-button-button {
+    border: none;
+    border-radius: 0;
+    width: 100%;
+    height: 60px;
+    font-size: 17px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    box-sizing: border-box;
+    padding-left: 60px;
+    transition: height .25s ease;
+    background: var(--color-gs00);
+    background-repeat: no-repeat;
+    background-position: 0;
+    background-size: 52px;
+    border-bottom: 1px solid var(--color-gs20);
+    color: var(--color-gs100)
+}
+
+.app-button-button:focus {
+    color: var(--color-gs00);
+    background-color: var(--color-blue);
+    background-repeat: no-repeat;
+    background-position: 0;
+    background-size: 52px;
+    height: 70px;
+    border-bottom: none
+}
+
+.AppList {
+    width: 100%;
+    height: 100%;
+    overflow: hidden
+}
+
+.AppListEmpty {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center
+}
+
+.Search {
+    height: calc(100% - var(--softkeybar-height));
+    display: flex;
+    flex-direction: column
+}
+
+.SearchPlaceholder {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center
+}
+
+.Store {
+    height: calc(100% - var(--softkeybar-height))
+}
+
+#root {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0
+}
+
+.App {
+    height: 100%
+}
+
+/*# sourceMappingURL=main.f3761089.chunk.css.map */

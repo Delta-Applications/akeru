@@ -1,0 +1,893 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+.kai-tab-view {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap
+}
+
+.kai-tab-view-tabs {
+    flex-shrink: 0
+}
+
+.kai-tab-view-content {
+    flex-grow: 1;
+    height: calc(100% - 3rem);
+    overflow: auto
+}
+
+:root {
+    --tabs-background-color: var(--color-gs00)
+}
+
+.kai-tabs {
+    overflow-x: hidden;
+    white-space: nowrap;
+    height: 3rem;
+    height: var(--tabs-height);
+    outline: none;
+    background-color: var(--color-gs00);
+    background-color: var(--tabs-background-color);
+    z-index: 9999;
+    z-index: var(--z-index--tab, 9999);
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+    top: 0
+}
+
+.kai-tabs>* {
+    margin: 0 .25rem
+}
+
+.kai-tabs>:first-child {
+    margin: 0 .25rem 0 1rem
+}
+
+.kai-tabs>:last-child {
+    margin: 0 1rem 0 .25rem
+}
+
+.h3,
+.kai-tab-active-label,
+.kai-tab-inactive-label,
+h3 {
+    font-weight: 400;
+    font-size: 1.4rem;
+    color: var(--color-gs90);
+}
+
+:root:not([lang|=fr]) .h1,
+:root:not([lang|=fr]) .h3,
+:root:not([lang|=fr]) .h4,
+:root:not([lang|=fr]) .h5,
+:root:not([lang|=fr]) .kai-tab-active-label,
+:root:not([lang|=fr]) .kai-tab-inactive-label,
+:root:not([lang|=fr]) h1,
+:root:not([lang|=fr]) h3,
+:root:not([lang|=fr]) h4,
+:root:not([lang|=fr]) h5 {
+    text-transform: capitalize
+}
+
+.large-text .h3,
+.large-text .kai-tab-active-label,
+.large-text .kai-tab-inactive-label,
+.large-text h3 {
+    font-size: 1.8rem
+}
+
+:root {
+    --tab-background-color: var(--color-gs00)
+}
+
+.kai-tab-active {
+    outline: none;
+    text-align: center;
+    background-color: #fff;
+    background-color: var(--tab-background-color);
+    width: 100%;
+    height: .35rem;
+    border-radius: 8px;
+    margin-bottom: .2rem;
+    box-shadow: 0 2.45rem 0 0 var(--tab-underline-color)
+}
+
+.kai-tab-active-label {
+    margin: 0 .5rem;
+    overflow: hidden;
+    height: 3rem;
+    line-height: 3rem;
+    font-weight: 900
+}
+
+.kai-tab-inactive {
+    outline: none;
+    text-align: center;
+    background-color: #fff;
+    background-color: var(--tab-background-color);
+    width: 100%;
+    height: .2rem;
+    border-radius: 6px;
+    margin-bottom: .2rem
+}
+
+.kai-tab-inactive-label {
+    margin: 0 .5rem;
+    overflow: hidden;
+    height: 3rem;
+    line-height: 3rem;
+    font-weight: 200
+}
+
+.h5,
+.kai-softkey>:first-child,
+.kai-softkey>:last-child,
+h5 {
+    font-weight: 600;
+    font-size: 1.4rem
+}
+
+:root:not([lang|=fr]) .h1,
+:root:not([lang|=fr]) .h3,
+:root:not([lang|=fr]) .h4,
+:root:not([lang|=fr]) .h5,
+:root:not([lang|=fr]) .kai-softkey>:first-child,
+:root:not([lang|=fr]) .kai-softkey>:last-child,
+:root:not([lang|=fr]) h1,
+:root:not([lang|=fr]) h3,
+:root:not([lang|=fr]) h4,
+:root:not([lang|=fr]) h5 {
+    text-transform: capitalize
+}
+
+.large-text .h5,
+.large-text .kai-softkey>:first-child,
+.large-text .kai-softkey>:last-child,
+.large-text h5 {
+    font-size: 1.8rem
+}
+
+.button-icon-font,
+.kai-softkey-btn span:before {
+    font-size: 2.2rem
+}
+
+.kai-softkey-btn {
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+:root {
+    --softkeybar-background-color: var(--color-gs00, #ccc);
+    --softkey-color: var(--color-gs90, #323232);
+    --softkey-color--icon: var(--color-gs70, #6a6a6a);
+    --softkey-color--disabled: var(--color-eta, #c7c7c7);
+    --softkey-background-color--active: #0ac;
+    --softkey-icon-size: 2rem
+}
+
+.kai-softkey {
+    z-index: 9999;
+    z-index: var(--z-index--softkey, 9999);
+    display: flex;
+    justify-content: space-between;
+    outline: none;
+    text-align: center;
+    color: #323232;
+    color: var(--softkey-color);
+    background-color: #ccc;
+    background-color: var(--softkeybar-background-color);
+    position: absolute;
+    bottom: 0;
+    width: 100%
+}
+
+.kai-softkey:not(.visible) {
+    opacity: 0
+}
+
+.kai-softkey>* {
+    text-transform: capitalize
+}
+
+.kai-softkey>:first-child {
+    min-width: 7.7rem;
+    padding: 0 0 0 .5rem;
+    text-align: left
+}
+
+.kai-softkey>:nth-child(2) {
+    font-size: 1.6rem;
+    font-weight: 700;
+    min-width: 3rem;
+    max-width: 7.6rem;
+    text-transform: uppercase;
+    padding: 0 .5rem
+}
+
+.kai-softkey>:last-child {
+    min-width: 7.7rem;
+    text-align: right;
+    padding: 0 .5rem 0 0
+}
+
+.kai-softkey-btn {
+    display: block;
+    min-width: 1rem;
+    height: 3rem;
+    height: var(--softkeybar-height);
+    line-height: 3rem;
+    line-height: var(--softkeybar-height);
+    border: unset;
+    overflow: hidden;
+    color: #323232;
+    color: var(--softkey-color);
+    background: unset
+}
+
+.kai-softkey-btn.active,
+.kai-softkey-btn:active {
+    background-color: #0ac;
+    background-color: var(--softkey-background-color--active)
+}
+
+.kai-softkey-btn[disabled] {
+    --softkey-color: var(--softkey-color--disabled);
+    background-color: initial;
+    pointer-events: auto
+}
+
+.kai-softkey-btn[data-icon] {
+    --softkey-font-size: var(--softkey-icon-size);
+    --softkey-color: var(--softkey-color--icon)
+}
+
+.kai-softkey-btn span:before {
+    line-height: 3rem;
+    line-height: var(--softkeybar-height);
+    color: #323232;
+    color: var(--softkey-color)
+}
+
+.kai-dialog {
+    z-index: 9999;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .85);
+    color: var(--color-gs90)
+}
+
+.kai-dialog-wrapper {
+    position: absolute;
+    bottom: var(--softkeybar-height);
+    width: 100%;
+    max-height: calc(100% - 2rem - var(--statusbar-height))
+}
+
+.kai-dialog-header {
+    padding: .5rem 1rem;
+    text-align: center;
+    background-color: var(--color-gs20)
+}
+
+.kai-dialog-container {
+    background-color: var(--color-gs00);
+    padding: 1rem
+}
+
+.kai-dialog-container.prompt {
+    color: var(--color-gs00);
+    background-color: var(--highlight-color)
+}
+
+.kai-dialog-container.prompt p {
+    margin-top: -.5rem;
+    font-size: 1.4rem
+}
+
+.kai-dialog-container.prompt input:focus {
+    border: none
+}
+
+.kai-dialog-content {
+    margin: 0;
+    overflow-y: scroll
+}
+
+.kai-dialog-input {
+    display: block;
+    width: 100%;
+    height: 3.6rem;
+    padding: 0 1rem;
+    margin-top: .5rem;
+    box-sizing: border-box
+}
+
+.kai-rbl-primary,
+.p-pri {
+    font-weight: 400;
+    font-size: 1.7rem
+}
+
+.kai-rbl-secondary,
+.p-sec {
+    font-weight: 400;
+    font-size: 1.4rem
+}
+
+.large-text .kai-rbl-primary,
+.large-text .p-pri {
+    font-size: 2.2rem
+}
+
+.large-text .kai-rbl-secondary,
+.large-text .p-sec {
+    font-size: 1.8rem
+}
+
+ul {
+    margin: 0;
+    padding: 0
+}
+
+@-webkit-keyframes loading {
+    0% {
+        left: -50px;
+        width: 30%
+    }
+
+    50% {
+        width: 30%
+    }
+
+    70% {
+        width: 70%
+    }
+
+    80% {
+        left: 50%
+    }
+
+    95% {
+        left: 120%
+    }
+
+    to {
+        left: 100%
+    }
+}
+
+@keyframes loading {
+    0% {
+        left: -50px;
+        width: 30%
+    }
+
+    50% {
+        width: 30%
+    }
+
+    70% {
+        width: 70%
+    }
+
+    80% {
+        left: 50%
+    }
+
+    95% {
+        left: 120%
+    }
+
+    to {
+        left: 100%
+    }
+}
+
+@font-face {
+    font-family: kai-icons;
+    src: url(/static/media/kai-icons.686d74df.eot);
+    src: url(/static/media/kai-icons.686d74df.eot#iefix) format("embedded-opentype"), url(/static/media/kai-icons.5a1c5c18.ttf) format("truetype"), url(/static/media/kai-icons.4e2f6619.woff) format("woff"), url(/static/media/kai-icons.07127065.svg#kai-icons) format("svg");
+    font-weight: 400;
+    font-style: normal
+}
+
+[class*=" kai-icon-"],
+[class^=kai-icon-] {
+    font-family: kai-icons !important;
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    -webkit-font-feature-settings: normal;
+    font-feature-settings: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+.kai-icon-arrow:before {
+    content: "\E900";
+    color: #fff
+}
+
+.kai-icon-checkbox-checked:before {
+    content: "\E901";
+    color: #fff
+}
+
+.kai-icon-checkbox-unchecked:before {
+    content: "\E902";
+    color: #fff
+}
+
+.kai-icon-radio-button-selected:before {
+    content: "\E906";
+    color: #fff
+}
+
+.kai-icon-radio-button-unselected:before {
+    content: "\E90F";
+    color: #fff
+}
+
+.kai-icon-bluetooth:before {
+    content: "\E903";
+    color: #fff
+}
+
+.kai-icon-calendar:before {
+    content: "\E904";
+    color: #fff
+}
+
+.kai-icon-camera:before {
+    content: "\E905";
+    color: #fff
+}
+
+.kai-icon-contacts:before {
+    content: "\E907";
+    color: #fff
+}
+
+.kai-icon-download:before {
+    content: "\E908";
+    color: #fff
+}
+
+.kai-icon-email:before {
+    content: "\E909";
+    color: #fff
+}
+
+.kai-icon-favorite-off:before {
+    content: "\E90A";
+    color: #fff
+}
+
+.kai-icon-favorite-on:before {
+    content: "\E90B";
+    color: #fff
+}
+
+.kai-icon-message:before {
+    content: "\E90C";
+    color: #fff
+}
+
+.kai-icon-mic:before {
+    content: "\E90D";
+    color: #fff
+}
+
+.kai-icon-phone:before {
+    content: "\E90E";
+    color: #fff
+}
+
+.kai-icon-search:before {
+    content: "\E910";
+    color: #fff
+}
+
+.kai-icon-settings:before {
+    content: "\E911";
+    color: #fff
+}
+
+.kai-icon-video:before {
+    content: "\E912";
+    color: #fff
+}
+
+.kai-icon-wifi:before {
+    content: "\E913";
+    color: #fff
+}
+
+:root {
+    --rbl-text-focused: var(--color-gs00);
+    --rbl-radio-unfocused: var(--color-zeta)
+}
+
+.kai-rbl {
+    width: auto;
+    min-height: 6rem;
+    min-height: var(--list-item-height);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow: hidden;
+    outline: none
+}
+
+.kai-rbl:focus {
+    color: #fff;
+    color: var(--rbl-text-focused)
+}
+
+.kai-rbl-button {
+    margin: 0 1rem
+}
+
+.kai-rbl-button-input-focused {
+    color: #fff;
+    color: var(--rbl-text-focused)
+}
+
+.kai-rbl-button-input-unfocused {
+    color: #a6a6a6;
+    color: var(--rbl-radio-unfocused)
+}
+
+.kai-rbl-button>input[type=radio] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 35%
+}
+
+.kai-rbl-button>input[type=radio]:before {
+    font-family: kai-icons;
+    position: absolute;
+    font-size: 2rem
+}
+
+.kai-rbl-button>input[type=radio]:not(:checked):before {
+    content: "\E90F"
+}
+
+.kai-rbl-button>input[type=radio]:checked:before {
+    content: "\E906"
+}
+
+.kai-rbl-line {
+    font-family: Roboto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%
+}
+
+.kai-rbl-line label,
+.kai-rbl-line span {
+    padding: 0;
+    width: 100%;
+    overflow: hidden
+}
+
+.kai-rbl .left {
+    box-sizing: border-box;
+    padding: 1rem 0 1rem 1rem
+}
+
+.kai-rbl .right {
+    box-sizing: border-box;
+    padding: 1rem 1rem 1rem 0
+}
+
+.h1,
+h1 {
+    font-weight: 300
+}
+
+.h1,
+.h2,
+h1,
+h2 {
+    font-size: 1.7rem
+}
+
+.h2,
+h2 {
+    font-weight: 600
+}
+
+.h3,
+.h4,
+h3,
+h4 {
+    font-weight: 400;
+    font-size: 1.4rem
+}
+
+.h5,
+h5 {
+    font-weight: 600;
+    font-size: 1.4rem
+}
+
+:root:not([lang|=fr]) .h1,
+:root:not([lang|=fr]) .h3,
+:root:not([lang|=fr]) .h4,
+:root:not([lang|=fr]) .h5,
+:root:not([lang|=fr]) h1,
+:root:not([lang|=fr]) h3,
+:root:not([lang|=fr]) h4,
+:root:not([lang|=fr]) h5 {
+    text-transform: capitalize
+}
+
+.p-pri {
+    font-size: 1.7rem
+}
+
+.p-pri,
+.p-sec {
+    font-weight: 400
+}
+
+.p-sec {
+    font-size: 1.4rem
+}
+
+.p-thi {
+    font-weight: 400;
+    font-size: 1.2rem
+}
+
+.p,
+.ul,
+p,
+ul {
+    font-weight: 400;
+    font-size: 1.7rem
+}
+
+.p-link {
+    font-weight: 700;
+    text-decoration: underline
+}
+
+.p-btn,
+.p-link {
+    font-size: 1.7rem
+}
+
+.p-btn {
+    font-weight: 400;
+    text-transform: capitalize
+}
+
+.large-text .h1,
+.large-text h1 {
+    font-size: 2.2rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis
+}
+
+.large-text .h2,
+.large-text h2 {
+    font-size: 2.2rem
+}
+
+.large-text .h3,
+.large-text .h4,
+.large-text .h5,
+.large-text h3,
+.large-text h4,
+.large-text h5 {
+    font-size: 1.8rem
+}
+
+.large-text .p-pri {
+    font-size: 2.2rem
+}
+
+.large-text .p-sec {
+    font-size: 1.8rem
+}
+
+.large-text .p-thi {
+    font-size: 1.6rem
+}
+
+.large-text .p,
+.large-text .p-btn,
+.large-text .p-link,
+.large-text .ul,
+.large-text p,
+.large-text ul {
+    font-size: 2.2rem
+}
+
+.icon-font {
+    font-size: 3.2rem
+}
+
+.button-icon-font {
+    font-size: 2.2rem
+}
+
+.arrow-font {
+    font-size: 2rem
+}
+
+* {
+    font-family: Open Sans;
+    font-size: 10px;
+    margin: 0;
+    padding: 0
+}
+
+input {
+    -webkit-font-feature-settings: normal;
+    font-feature-settings: normal;
+    font-variant-numeric: normal
+}
+
+:root {
+    --color-alpha: #cccccc;
+    --color-beta: #000000;
+    --color-gamma: #b2b2b2;
+    --color-delta: #a0a0a0;
+    --color-epsilon: #7a7a7a;
+    --color-zeta: #595959;
+    --color-eta: #383838;
+    --color-theta: #181818;
+    --color-iota: #0b0b0b;
+    --color-white: #000000;
+    --color-darkblue: #00539f;
+    --color-blue: #00caf2;
+    --color-turquoise: #27c8c2;
+    --color-darkorange: #e66000;
+    --color-orange: #ff9500;
+    --color-yellow: #ffcb00;
+    --color-violet: #c40c84;
+    --color-carrotorange: #eb9423;
+    --color-wathetblue: #005da5;
+    --color-gold: #ffa000;
+    --color-gold-pressed: #cc8000;
+    --color-warning: #fbbd3c;
+    --color-destructive: #e2443a;
+    --color-preferred: #00ba91;
+    --color-gs100: #ffffff;
+    --color-gs90: #e6e6e6;
+    --color-gs70: #cccccc;
+    --color-gs45: #8c8c8c;
+    --color-gs20: #6a6a6a;
+    --color-gs10: #181818;
+    --color-gs00: #000000;
+    --color-purple: #873eff;
+    --color-pink: #f6529b;
+    --color-lime: #82c51b;
+    --color-cyan: #1cc1c4;
+    --color-blue: #0da1e1;
+    --color-orange: #ff8329;
+    --color-red: #f3203d;
+    --color-purple-mid-dark: #6c32cc;
+    --color-pink-mid-dark: #bf2392;
+    --color-lime-mid-dark: #6b9a23;
+    --color-cyan-mid-dark: #31979e;
+    --color-blue-mid-dark: #0a80b4;
+    --color-orange-mid-dark: #cc5310;
+    --color-red-mid-dark: #c21930;
+    --color-purple-dark: #320374;
+    --color-pink-dark: #49122c;
+    --color-lime-dark: #143a06;
+    --color-cyan-dark: #03757c;
+    --color-blue-dark: #21407a;
+    --color-orange-dark: #391e0a;
+    --color-red-dark: #5c0600;
+    --background: var(--color-beta);
+    --background-plus: var(--color-theta);
+    --background-minus: var(--color-zeta);
+    --text-color: var(--color-gamma);
+    --text-color-minus: var(--color-eta);
+    --button-background: var(--color-iota);
+    --link-color: var(--highlight-color);
+    --input-background: var(--color-beta);
+    --input-color: var(--color-alpha);
+    --input-clear-background: #909ca7;
+    --button-box-shadow: inset 0 -1px 0 #d8d8d8, inset 0 1px 0 #eee;
+    --button-box-shadow-active: var(--button-box-shadow);
+    --color-purple-pressed: var(--color-purple-mid-dark);
+    --color-pink-pressed: var(--color-pink-mid-dark);
+    --color-lime-pressed: var(--color-lime-mid-dark);
+    --color-cyan-pressed: var(--color-cyan-mid-dark);
+    --color-blue-pressed: var(--color-blue-mid-dark);
+    --color-orange-pressed: var(--color-orange-mid-dark);
+    --color-red-pressed: var(--color-red-mid-dark);
+    --header-purple-background: var(--color-purple-dark);
+    --header-pink-background: var(--color-pink-dark);
+    --header-lime-background: var(--color-lime-dark);
+    --header-cyan-background: var(--color-cyan-dark);
+    --header-blue-background: var(--color-blue-dark);
+    --header-orange-background: var(--color-orange-dark);
+    --header-red-background: var(--color-red-dark);
+    --header-disabled-button-color: hsla(0, 0%, 100%, 0.3);
+    --statusbar-height: 2.6rem;
+    --softkeybar-height: 3rem;
+    --tabs-height: 3rem;
+    --header-height: 2.8rem;
+    --header-large-text-height: 2.4rem;
+    --tabbar-height: 2.7rem;
+    --list-item-height: 6rem;
+    --progress-bar-height: 6rem;
+    --slider-height: 6rem;
+    --separator-height: 2.4rem;
+    --button-height: 3.6rem;
+    --rocketbar-urlbar-height: 3.6rem;
+    --statusbar-softkeybar-height: 5.6rem;
+    --header-tabbar-height: 5.5rem;
+    --client-height: calc(100% - var(--statusbar-softkeybar-height))
+}
+
+.theme-launcher,
+.theme-system {
+    --highlight-color: var(--color-purple);
+    --highlight-color-pressed: var(--color-purple-pressed);
+    --header-background: var(--header-purple-background);
+    --header-color: var(--color-beta)
+}
+
+:root {
+    --tl-text-focused: var(--color-gs00)
+}
+
+.kai-text-input {
+    padding: 1rem
+}
+
+.kai-text-input-label {
+    padding-bottom: .5rem;
+    display: block;
+    color: #858585;
+    color: var(--color-epsilon)
+}
+
+.kai-text-input-input {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    line-height: 3.6rem;
+    padding: 0 .5rem;
+    border: 1px solid #858585;
+    border: 1px solid var(--color-epsilon);
+    border-radius: 2px;
+    background-color: #fff
+}
+
+.kai-text-input-input:focus {
+    outline: none
+}
+
+.kai-text-input--focused .kai-text-input-label {
+    color: #fff;
+    color: var(--tl-text-focused)
+}
+
+/*# sourceMappingURL=2.3b9d492f.chunk.css.map */

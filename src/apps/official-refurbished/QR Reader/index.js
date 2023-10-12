@@ -8156,6 +8156,7 @@
         });
         return Promise.race([r, t])
     }, e.createCodeObject = function (t) {
+        //TO:DO This part determines wheter or not to open text dialog or URL Prompt, add a third type for mozactivities (wifi, cell, contacts, etc.)
         return n(t) ? (t.startsWith("http") || (t = "http://" + t), {
             type: "URL",
             content: t
@@ -27989,9 +27990,9 @@
     }(u.Component);
     e.default = p;
     h.l10n.once(function () {
-                (0, u.render)((0, u.createComponentVNode)(2, p), document.body)
+        (0, u.render)((0, u.createComponentVNode)(2, p), document.body)
     })
-        
+
 }, function (t, e, r) {
     t.exports = {
         default: r(341),
@@ -37324,348 +37325,381 @@
             }, r
         }
         return (0, f.default)(e, t), (0, u.default)(e, [{
-            key: "componentDidMount",
-            value: function () {
-                this.openCamera();
-                var t = (0, y.isAskMode)(),
-                    e = (0, y.isVibrate)();
-                this.setState({
-                    ask: t,
-                    vibrate: e
-                }), document.addEventListener("visibilitychange", this.visibilityChangeHandler)
-            }
-        }, {
-            key: "computeHeader",
-            value: function () {}
-        }, {
-            key: "computeSoftkeys",
-            value: function (t) {
-                var e = this,
-                    r = this.state,
-                    n = r.permission;
-                if (r.processing) return {};
-                switch (t.type) {
-                    case "default":
-                        var i, a = {};
-                        return "granted" === n && (a = {
-                            center: "sfk-scan",
-                            Enter: function () {
-                                return e._handleTakePhoto()
-                            }
-                        }), "denied" === n && (a = {
-                            center: "sfk-ok",
-                            Enter: function () {
-                                return window.close()
-                            }
-                        }), i = {
-                            right: "options",
-                            SoftRight: function () {
-                                e.openOptions(e.optionsMenu())
-                            }
-                        }, (0, o.default)({}, a, i, {
-                            ArrowDown: function (t) {
-                                return t.preventDefault()
-                            },
-                            ArrowUp: function (t) {
-                                return t.preventDefault()
-                            }
-                        });
-                    case "options":
-                        return {
-                            center: "select", Backspace: function (t) {
-                                t.preventDefault(), e.closeOptions()
-                            }
-                        };
-                    case "text-dialog":
-                        return {
-                            center: "sfk-ok", Enter: function () {
-                                e.state.camera.resumePreview(), e.closeOverlay()
-                            }, Backspace: function (t) {
-                                t.preventDefault(), e.state.camera.resumePreview(), e.closeOverlay()
-                            }, ArrowDown: function () {
-                                var t = getComputedStyle(e.bodyDialog).getPropertyValue("font-size"),
-                                    r = e.bodyDialog.offsetHeight;
-                                e.bodyDialog.scrollBy(0, parseInt(t) + r / 2)
-                            }, ArrowUp: function () {
-                                var t = getComputedStyle(e.bodyDialog).getPropertyValue("font-size"),
-                                    r = e.bodyDialog.offsetHeight;
-                                e.bodyDialog.scrollBy(0, parseInt(t) - r / 2)
-                            }
-                        };
-                    case "url-dialog":
-                        return {
-                            left: "sfk-dialog-cancel", center: "sfk-open", SoftLeft: function () {
-                                e.state.camera.resumePreview(), e.closeOverlay()
-                            }, Enter: function () {
-                                e.openLink(e.state.link.data)
-                            }, Backspace: function (t) {
-                                t.preventDefault(), e.state.camera.resumePreview(), e.closeOverlay()
-                            }
-                        };
-                    case "text-confirm":
-                        return {
-                            left: "sfk-dialog-cancel", center: "sfk-open", SoftLeft: function () {
-                                e.state.camera.resumePreview(), e.closeOverlay()
-                            }, Enter: function () {
-                                e.openText(e.state.text.data)
-                            }, Backspace: function (t) {
-                                t.preventDefault(), e.state.camera.resumePreview(), e.closeOverlay()
-                            }
-                        }
+                key: "componentDidMount",
+                value: function () {
+                    this.openCamera();
+                    var t = (0, y.isAskMode)(),
+                        e = (0, y.isVibrate)();
+                    this.setState({
+                        ask: t,
+                        vibrate: e
+                    }), document.addEventListener("visibilitychange", this.visibilityChangeHandler)
                 }
-            }
-        }, {
-            key: "optionsMenu",
-            value: function () {
-                var t = this,
-                    e = [];
-                return (0, y.getHistory)().length > 0 && (e = [{
-                    label: "history",
-                    action: function () {
-                        t.setState({
-                            isLoadingAds: !0
-                        }),
-                        t.setState({
-                        isLoadingAds: !1
-                        }), t.props.goToHistory()
+            }, {
+                key: "computeHeader",
+                value: function () {}
+            }, {
+                key: "computeSoftkeys",
+                value: function (t) {
+                    var e = this,
+                        r = this.state,
+                        n = r.permission;
+                    if (r.processing) return {};
+                    switch (t.type) {
+                        case "default":
+                            var i, a = {};
+                            return "granted" === n && (a = {
+                                center: "sfk-scan",
+                                Enter: function () {
+                                    return e._handleTakePhoto()
+                                }
+                            }), "denied" === n && (a = {
+                                center: "sfk-ok",
+                                Enter: function () {
+                                    return window.close()
+                                }
+                            }), i = {
+                                right: "options",
+                                SoftRight: function () {
+                                    e.openOptions(e.optionsMenu())
+                                }
+                            }, (0, o.default)({}, a, i, {
+                                ArrowDown: function (t) {
+                                    return t.preventDefault()
+                                },
+                                ArrowUp: function (t) {
+                                    return t.preventDefault()
+                                }
+                            });
+                        case "options":
+                            return {
+                                center: "select", Backspace: function (t) {
+                                    t.preventDefault(), e.closeOptions()
+                                }
+                            };
+                        case "text-dialog":
+                            return {
+                                center: "sfk-ok", Enter: function () {
+                                    e.state.camera.resumePreview(), e.closeOverlay()
+                                }, Backspace: function (t) {
+                                    t.preventDefault(), e.state.camera.resumePreview(), e.closeOverlay()
+                                }, ArrowDown: function () {
+                                    var t = getComputedStyle(e.bodyDialog).getPropertyValue("font-size"),
+                                        r = e.bodyDialog.offsetHeight;
+                                    e.bodyDialog.scrollBy(0, parseInt(t) + r / 2)
+                                }, ArrowUp: function () {
+                                    var t = getComputedStyle(e.bodyDialog).getPropertyValue("font-size"),
+                                        r = e.bodyDialog.offsetHeight;
+                                    e.bodyDialog.scrollBy(0, parseInt(t) - r / 2)
+                                }
+                            };
+                        case "url-dialog":
+                            return {
+                                left: "sfk-dialog-cancel", center: "sfk-open", SoftLeft: function () {
+                                    e.state.camera.resumePreview(), e.closeOverlay()
+                                }, Enter: function () {
+                                    e.openLink(e.state.link.data)
+                                }, Backspace: function (t) {
+                                    t.preventDefault(), e.state.camera.resumePreview(), e.closeOverlay()
+                                }
+                            };
+                        case "text-confirm":
+                            return {
+                                left: "sfk-dialog-cancel", center: "sfk-open", SoftLeft: function () {
+                                    e.state.camera.resumePreview(), e.closeOverlay()
+                                }, Enter: function () {
+                                    e.openText(e.state.text.data)
+                                }, Backspace: function (t) {
+                                    t.preventDefault(), e.state.camera.resumePreview(), e.closeOverlay()
+                                }
+                            }
+                            case "action-confirm":
+                                return {
+                                    left: "sfk-dialog-cancel", center: "sfk-open", SoftLeft: function () {
+                                        e.state.camera.resumePreview(), e.closeOverlay()
+                                    }, Enter: function () {
+                                        try {
+                                            e.state.text.action()
+                                        } catch (e) {
+                                            console.log("ACTION ERROR: " + e)
+                                        };
+                                    }, Backspace: function (t) {
+                                        t.preventDefault(), e.state.camera.resumePreview(), e.closeOverlay()
+                                    }
+                                }
+
                     }
-                }]), {
-                    title: "options",
-                    items: e = [].concat((0, a.default)(e), [{
-                        label: "settings",
+                }
+            }, {
+                key: "optionsMenu",
+                value: function () {
+                    var t = this,
+                        e = [];
+                    return (0, y.getHistory)().length > 0 && (e = [{
+                        label: "history",
                         action: function () {
-                            t.props.goToSettings()
+                            t.setState({
+                                    isLoadingAds: !0
+                                }),
+                                t.setState({
+                                    isLoadingAds: !1
+                                }), t.props.goToHistory()
                         }
-                    }])
+                    }]), {
+                        title: "options",
+                        items: e = [].concat((0, a.default)(e), [{
+                            label: "settings",
+                            action: function () {
+                                t.props.goToSettings()
+                            }
+                        }])
+                    }
                 }
-            }
-        }, {
-            key: "openLink",
-            value: function (t) {
-                this.releaseCamera(), (0, y.updateHistory)(this.state.link);
-                var e = window.open(t, "popup"),
-                    r = setInterval(this.timerCallback, 0);
-                this.setState({
-                    timer: r,
-                    newWindow: e
-                }), this.closeOverlay()
-            }
-        }, {
-            key: "openText",
-            value: function (t) {
-                (0, y.updateHistory)(this.state.text), this.openOverlay((0, l.createComponentVNode)(2, p.TextView, {
-                    onRef: this.handleOnRef,
-                    text: t
-                }), {
-                    type: "text-dialog"
-                })
-            }
-        }, {
-            key: "openCamera",
-            value: function () {
-                var t = (0, i.default)(n.default.mark(function t() {
-                    var e, r, i, a;
-                    return n.default.wrap(function (t) {
-                        for (;;) switch (t.prev = t.next) {
-                            case 0:
-                                if (e = void 0, 0 !== this.state.attempts) {
-                                    t.next = 5;
-                                    break
-                                }
-                                return this.setState({
-                                    permission: "denied"
-                                }), e && clearTimeout(e), t.abrupt("return");
-                            case 5:
-                                if (r = b.default.getCameraManager()) {
-                                    t.next = 9;
-                                    break
-                                }
-                                return this.setState({
-                                    permission: "denied"
-                                }), t.abrupt("return");
-                            case 9:
-                                return t.prev = 9, t.next = 12, b.default.getCamera(r);
-                            case 12:
-                                i = t.sent, a = i.camera, this.setState({
-                                    permission: "granted",
-                                    camera: a,
-                                    attempts: 3
-                                }), e && clearTimeout(e), document.hidden && null !== a && this.releaseCamera(), t.next = 24;
-                                break;
-                            case 20:
-                                t.prev = 20, t.t0 = t.catch(9), this.setState({
-                                    attempts: --this.state.attempts
-                                }), e = setTimeout(this.openCamera(), 0);
-                            case 24:
-                            case "end":
-                                return t.stop()
-                        }
-                    }, t, this, [
-                        [9, 20]
-                    ])
-                }));
-                return function () {
-                    return t.apply(this, arguments)
+            }, {
+                key: "openLink",
+                value: function (t) {
+                    this.releaseCamera(), (0, y.updateHistory)(this.state.link);
+                    var e = window.open(t, "popup"),
+                        r = setInterval(this.timerCallback, 0);
+                    this.setState({
+                        timer: r,
+                        newWindow: e
+                    }), this.closeOverlay()
                 }
-            }()
-        }, {
-            key: "_downResolusion",
-            value: function (t, e) {
-                return this.setState({
-                    processing: !0
-                }), w.default.cropAndSharpen(t, e)
-            }
-        }, {
-            key: "_handleTakePhoto",
-            value: function () {
-                var t = (0, i.default)(n.default.mark(function t() {
-                    var e, r, i;
-                    return n.default.wrap(function (t) {
-                        for (;;) switch (t.prev = t.next) {
-                            case 0:
-                                return e = this.state.camera, t.next = 3, b.default.takePhoto(e);
-                            case 3:
-                                return r = t.sent, this.setState({
-                                    originPhoto: r
-                                }), t.next = 7, this._downResolusion(r, !1);
-                            case 7:
-                                i = t.sent, this.decodePhotoAndHandleResult(i);
-                            case 9:
-                            case "end":
-                                return t.stop()
-                        }
-                    }, t, this)
-                }));
-                return function () {
-                    return t.apply(this, arguments)
+            }, {
+                key: "openText",
+                value: function (t) {
+                    (0, y.updateHistory)(this.state.text), this.openOverlay((0, l.createComponentVNode)(2, p.TextView, {
+                        onRef: this.handleOnRef,
+                        text: t
+                    }), {
+                        type: "text-dialog"
+                    })
                 }
-            }()
-        }, {
-            key: "decodePhotoAndHandleResult",
-            value: function () {
-                var t = (0, i.default)(n.default.mark(function t(e) {
-                    var r;
-                    return n.default.wrap(function (t) {
-                        for (;;) switch (t.prev = t.next) {
-                            case 0:
-                                return t.next = 2, this.decodePhoto(e);
-                            case 2:
-                                r = t.sent, this.handleDecodedResult(r);
-                            case 4:
-                            case "end":
-                                return t.stop()
-                        }
-                    }, t, this)
-                }));
-                return function (e) {
-                    return t.apply(this, arguments)
+            },
+            {
+                key: "openOther",
+                value: function (t) {
+                    // OPENOTHER when scanning
+                    (0, y.updateHistory)(this.state.action), this.openOverlay((0, l.createComponentVNode)(2, p.TextView, {
+                        onRef: this.handleOnRef,
+                        text: t
+                    }), {
+                        type: "action-confirm"
+                    })
                 }
-            }()
-        }, {
-            key: "handleDecodedResult",
-            value: function () {
-                var t = (0, i.default)(n.default.mark(function t(e) {
-                    var r, i, a, o;
-                    return n.default.wrap(function (t) {
-                        for (;;) switch (t.prev = t.next) {
-                            case 0:
-                                try {
-                                    r = e.text, i = (0, m.createCodeObject)(r), this.state.vibrate && navigator.vibrate(200), "URL" === i.type ? (a = (0, v.getDateString)(Date.now()), this.setState({
-                                        link: {
-                                            data: i.content,
-                                            date: a
-                                        }
-                                    }), this.state.ask ? this.openOverlay((0, l.createComponentVNode)(2, d.default, {
-                                        header: m.l10n.get("open-website"),
-                                        text: r
-                                    }), {
-                                        type: "url-dialog"
-                                    }) : this.openLink(this.state.link.data)) : (o = (0, v.getDateString)(Date.now()), this.setState({
-                                        text: {
-                                            data: r,
-                                            date: o
-                                        }
-                                    }), this.state.ask ? this.openOverlay((0, l.createComponentVNode)(2, d.default, {
-                                        header: m.l10n.get("open-text"),
-                                        text: r
-                                    }), {
-                                        type: "text-confirm"
-                                    }) : this.openText(r))
-                                } catch (t) {
-                                    this.props.toast(m.l10n.get("error-qrcode-fail")), this.state.camera.resumePreview()
-                                } finally {
-                                    this.setState({
-                                        processing: !1
-                                    })
-                                }
-                                case 1:
+            }, {
+                key: "openCamera",
+                value: function () {
+                    var t = (0, i.default)(n.default.mark(function t() {
+                        var e, r, i, a;
+                        return n.default.wrap(function (t) {
+                            for (;;) switch (t.prev = t.next) {
+                                case 0:
+                                    if (e = void 0, 0 !== this.state.attempts) {
+                                        t.next = 5;
+                                        break
+                                    }
+                                    return this.setState({
+                                        permission: "denied"
+                                    }), e && clearTimeout(e), t.abrupt("return");
+                                case 5:
+                                    if (r = b.default.getCameraManager()) {
+                                        t.next = 9;
+                                        break
+                                    }
+                                    return this.setState({
+                                        permission: "denied"
+                                    }), t.abrupt("return");
+                                case 9:
+                                    return t.prev = 9, t.next = 12, b.default.getCamera(r);
+                                case 12:
+                                    i = t.sent, a = i.camera, this.setState({
+                                        permission: "granted",
+                                        camera: a,
+                                        attempts: 3
+                                    }), e && clearTimeout(e), document.hidden && null !== a && this.releaseCamera(), t.next = 24;
+                                    break;
+                                case 20:
+                                    t.prev = 20, t.t0 = t.catch(9), this.setState({
+                                        attempts: --this.state.attempts
+                                    }), e = setTimeout(this.openCamera(), 0);
+                                case 24:
                                 case "end":
                                     return t.stop()
-                        }
-                    }, t, this)
-                }));
-                return function (e) {
-                    return t.apply(this, arguments)
+                            }
+                        }, t, this, [
+                            [9, 20]
+                        ])
+                    }));
+                    return function () {
+                        return t.apply(this, arguments)
+                    }
+                }()
+            }, {
+                key: "_downResolusion",
+                value: function (t, e) {
+                    return this.setState({
+                        processing: !0
+                    }), w.default.cropAndSharpen(t, e)
                 }
-            }()
-        }, {
-            key: "decodePhoto",
-            value: function () {
-                var t = (0, i.default)(n.default.mark(function t(e) {
-                    var r, i;
-                    return n.default.wrap(function (t) {
-                        for (;;) switch (t.prev = t.next) {
-                            case 0:
-                                return r = {}, t.prev = 1, t.next = 4, w.default.decodeFromImage(e);
-                            case 4:
-                                r = t.sent, t.next = 15;
-                                break;
-                            case 7:
-                                return t.prev = 7, t.t0 = t.catch(1), t.next = 11, this._downResolusion(this.state.originPhoto, !0);
-                            case 11:
-                                return i = t.sent, t.next = 14, w.default.decodeFromImage(i);
-                            case 14:
-                                r = t.sent;
-                            case 15:
-                                return t.prev = 15, t.abrupt("return", r);
-                            case 18:
-                            case "end":
-                                return t.stop()
-                        }
-                    }, t, this, [
-                        [1, 7, 15, 18]
-                    ])
-                }));
-                return function (e) {
-                    return t.apply(this, arguments)
+            }, {
+                key: "_handleTakePhoto",
+                value: function () {
+                    var t = (0, i.default)(n.default.mark(function t() {
+                        var e, r, i;
+                        return n.default.wrap(function (t) {
+                            for (;;) switch (t.prev = t.next) {
+                                case 0:
+                                    return e = this.state.camera, t.next = 3, b.default.takePhoto(e);
+                                case 3:
+                                    return r = t.sent, this.setState({
+                                        originPhoto: r
+                                    }), t.next = 7, this._downResolusion(r, !1);
+                                case 7:
+                                    i = t.sent, this.decodePhotoAndHandleResult(i);
+                                case 9:
+                                case "end":
+                                    return t.stop()
+                            }
+                        }, t, this)
+                    }));
+                    return function () {
+                        return t.apply(this, arguments)
+                    }
+                }()
+            }, {
+                key: "decodePhotoAndHandleResult",
+                value: function () {
+                    var t = (0, i.default)(n.default.mark(function t(e) {
+                        var r;
+                        return n.default.wrap(function (t) {
+                            for (;;) switch (t.prev = t.next) {
+                                case 0:
+                                    return t.next = 2, this.decodePhoto(e);
+                                case 2:
+                                    r = t.sent, this.handleDecodedResult(r);
+                                case 4:
+                                case "end":
+                                    return t.stop()
+                            }
+                        }, t, this)
+                    }));
+                    return function (e) {
+                        return t.apply(this, arguments)
+                    }
+                }()
+            }, {
+                key: "handleDecodedResult",
+                value: function () {
+                    var t = (0, i.default)(n.default.mark(function t(e) {
+                        var r, i, a, o;
+                        return n.default.wrap(function (t) {
+                            for (;;) switch (t.prev = t.next) {
+                                case 0:
+                                    try {
+                                        r = e.text, i = (0, m.createCodeObject)(r), this.state.vibrate && navigator.vibrate(200), ("URL" === i.type && i.type != "Other") ? (a = (0, v.getDateString)(Date.now()), this.setState({
+                                            link: {
+                                                data: i.content,
+                                                date: a
+                                            }
+                                        }), this.state.ask ? this.openOverlay((0, l.createComponentVNode)(2, d.default, {
+                                            header: m.l10n.get("open-website"),
+                                            text: r
+                                        }), {
+                                            type: "url-dialog"
+                                        }) : this.openLink(this.state.link.data)) : i.type != "Other" ? (o = (0, v.getDateString)(Date.now()), this.setState({
+                                            text: {
+                                                data: r,
+                                                date: o
+                                            }
+                                        }), this.state.ask ? this.openOverlay((0, l.createComponentVNode)(2, d.default, {
+                                            header: m.l10n.get("open-text"),
+                                            text: r
+                                        }), {
+                                            type: "text-confirm"
+                                        }) : this.openText(r)) : (o = (0, v.getDateString)(Date.now()), this.setState({
+                                            action: {
+                                                data: r,
+                                                date: o
+                                            }
+                                        }), this.openOther(r))
+                                    } catch (t) {
+                                        this.props.toast(m.l10n.get("error-qrcode-fail")), this.state.camera.resumePreview()
+                                    } finally {
+                                        this.setState({
+                                            processing: !1
+                                        })
+                                    }
+                                    case 1:
+                                    case "end":
+                                        return t.stop()
+                            }
+                        }, t, this)
+                    }));
+                    return function (e) {
+                        return t.apply(this, arguments)
+                    }
+                }()
+            }, {
+                key: "decodePhoto",
+                value: function () {
+                    var t = (0, i.default)(n.default.mark(function t(e) {
+                        var r, i;
+                        return n.default.wrap(function (t) {
+                            for (;;) switch (t.prev = t.next) {
+                                case 0:
+                                    return r = {}, t.prev = 1, t.next = 4, w.default.decodeFromImage(e);
+                                case 4:
+                                    r = t.sent, t.next = 15;
+                                    break;
+                                case 7:
+                                    return t.prev = 7, t.t0 = t.catch(1), t.next = 11, this._downResolusion(this.state.originPhoto, !0);
+                                case 11:
+                                    return i = t.sent, t.next = 14, w.default.decodeFromImage(i);
+                                case 14:
+                                    r = t.sent;
+                                case 15:
+                                    return t.prev = 15, t.abrupt("return", r);
+                                case 18:
+                                case "end":
+                                    return t.stop()
+                            }
+                        }, t, this, [
+                            [1, 7, 15, 18]
+                        ])
+                    }));
+                    return function (e) {
+                        return t.apply(this, arguments)
+                    }
+                }()
+            }, {
+                key: "componentWillUnmount",
+                value: function () {
+                    this.state.camera && this.releaseCamera(), document.removeEventListener("visibilitychange", this.visibilityChangeHandler)
                 }
-            }()
-        }, {
-            key: "componentWillUnmount",
-            value: function () {
-                this.state.camera && this.releaseCamera(), document.removeEventListener("visibilitychange", this.visibilityChangeHandler)
+            }, {
+                key: "renderContent",
+                value: function () {
+                    var t = this.state,
+                        e = t.permission,
+                        r = t.camera;
+                    switch (e) {
+                        case "granted":
+                            return (0, l.createComponentVNode)(2, p.Camera, {
+                                camera: r
+                            });
+                        case "denied":
+                            return (0, l.createComponentVNode)(2, p.Placeholder, {
+                                image: g.default,
+                                title: "denied-title",
+                                text: "denied-message",
+                                name: "camera"
+                            })
+                    }
+                }
             }
-        }, {
-            key: "renderContent",
-            value: function () {
-                var t = this.state,
-                    e = t.permission,
-                    r = t.camera;
-                switch (e) {
-                    case "granted":
-                        return (0, l.createComponentVNode)(2, p.Camera, {
-                            camera: r
-                        });
-                    case "denied":
-                        return (0, l.createComponentVNode)(2, p.Placeholder, {
-                            image: g.default,
-                            title: "denied-title",
-                            text: "denied-message",
-                            name: "camera"
-                        })
-                }
-            }
-        }]), e
+        ]), e
     }(h.Page);
     e.default = E
 }, function (t, e, r) {
@@ -41733,171 +41767,199 @@
                 }, r
             }
             return (0, u.default)(e, t), (0, o.default)(e, [{
-                key: "componentDidMount",
-                value: function () {
-                    
-                }
-            }, {
-                key: "showAds",
-                value: function () {
-                    var t = this;
-                    this.state.history.forEach(function (e) {
-                        if (e.kind && "ADS" === e.kind) {
-                            e.ads = null;
-                            var r = document.querySelector("#" + e.adsConfig.containerId),
-                                n = e.adsConfig,
-                                i = n.containerId,
-                                a = n.adname,
-                                o = window.screen.mozOrientation.startsWith("portrait") ? 230 : 300;
-                                    e.ads = n, r.childElementCount > 1 && t.removeADSChildren(r, r.childElementCount), t.setState({
-                                        adsLoaded: !0
-                                    })
+                    key: "componentDidMount",
+                    value: function () {
+
+                    }
+                }, {
+                    key: "showAds",
+                    value: function () {
+                        var t = this;
+                        this.state.history.forEach(function (e) {
+                            if (e.kind && "ADS" === e.kind) {
+                                e.ads = null;
+                                var r = document.querySelector("#" + e.adsConfig.containerId),
+                                    n = e.adsConfig,
+                                    i = n.containerId,
+                                    a = n.adname,
+                                    o = window.screen.mozOrientation.startsWith("portrait") ? 230 : 300;
+                                e.ads = n, r.childElementCount > 1 && t.removeADSChildren(r, r.childElementCount), t.setState({
+                                    adsLoaded: !0
+                                })
                             }
-                    })
-                }
-            }, {
-                key: "removeADSChildren",
-                value: function (t, e) {
-                    for (var r = void 0, n = 0; n < e; n++) r = t.childNodes[n], t.removeChild(r)
-                }
-            }, {
-                key: "computeHeader",
-                value: function () {
-                    return (0, c.createComponentVNode)(2, l.Text, {
-                        className: _.default.header,
-                        text: "history"
-                    })
-                }
-            }, {
-                key: "computeSoftkeys",
-                value: function (t) {
-                    var e = this,
-                        r = this.state,
-                        n = r.currentIndex,
-                        a = r.history,
-                        o = r.isEdit,
-                        s = r.checkedList,
-                        u = a[n];
-                    switch (t.type) {
-                        case "default":
-                            return (0, i.default)({
-                                Backspace: function (t) {
-                                    t.preventDefault(), o ? e.setState({
-                                        isEdit: !1,
-                                        checkedList: []
-                                    }) : e.props.goToScan()
-                                },
-                                center: "sfk-ok",
-                                Enter: function () {
-                                    return e.props.goToScan()
+                        })
+                    }
+                }, {
+                    key: "removeADSChildren",
+                    value: function (t, e) {
+                        for (var r = void 0, n = 0; n < e; n++) r = t.childNodes[n], t.removeChild(r)
+                    }
+                }, {
+                    key: "computeHeader",
+                    value: function () {
+                        return (0, c.createComponentVNode)(2, l.Text, {
+                            className: _.default.header,
+                            text: "history"
+                        })
+                    }
+                }, {
+                    key: "computeSoftkeys",
+                    value: function (t) {
+                        var e = this,
+                            r = this.state,
+                            n = r.currentIndex,
+                            a = r.history,
+                            o = r.isEdit,
+                            s = r.checkedList,
+                            u = a[n];
+                        switch (t.type) {
+                            case "default":
+                                return (0, i.default)({
+                                    Backspace: function (t) {
+                                        t.preventDefault(), o ? e.setState({
+                                            isEdit: !1,
+                                            checkedList: []
+                                        }) : e.props.goToScan()
+                                    },
+                                    center: "sfk-ok",
+                                    Enter: function () {
+                                        return e.props.goToScan()
+                                    }
+                                }, this.softkeysExistHistory(a, u, o));
+                            case "confirmation-delete":
+                                return {
+                                    right: "sfk-clear", SoftRight: function () {
+                                        (0, y.deleteHistory)(s), e.setState({
+                                            history: e.createListWithADS(),
+                                            checkedList: [],
+                                            currentIndex: 0,
+                                            evtKeyboard: "ArrowUp",
+                                            behavior: "instant"
+                                        }), e.closeOverlay(), e.showAds()
+                                    }, left: "sfk-cancel", SoftLeft: function () {
+                                        return e.closeOverlay()
+                                    }, Backspace: function (t) {
+                                        t.preventDefault(), e.closeOverlay()
+                                    }
+                                };
+                            case "text-dialog":
+                                return {
+                                    center: "sfk-ok", Enter: function () {
+                                        e.closeOverlay()
+                                    }, Backspace: function (t) {
+                                        t.preventDefault(), e.closeOverlay()
+                                    }, ArrowDown: function () {
+                                        var t = getComputedStyle(e.bodyDialog).getPropertyValue("font-size"),
+                                            r = e.bodyDialog.offsetHeight;
+                                        e.bodyDialog.scrollBy(0, parseInt(t) + r / 2)
+                                    }, ArrowUp: function () {
+                                        var t = getComputedStyle(e.bodyDialog).getPropertyValue("font-size"),
+                                            r = e.bodyDialog.offsetHeight;
+                                        e.bodyDialog.scrollBy(0, parseInt(t) - r / 2)
+                                    }
                                 }
-                            }, this.softkeysExistHistory(a, u, o));
-                        case "confirmation-delete":
-                            return {
-                                right: "sfk-clear", SoftRight: function () {
-                                    (0, y.deleteHistory)(s), e.setState({
-                                        history: e.createListWithADS(),
-                                        checkedList: [],
-                                        currentIndex: 0,
-                                        evtKeyboard: "ArrowUp",
-                                        behavior: "instant"
-                                    }), e.closeOverlay(), e.showAds()
-                                }, left: "sfk-cancel", SoftLeft: function () {
-                                    return e.closeOverlay()
-                                }, Backspace: function (t) {
-                                    t.preventDefault(), e.closeOverlay()
-                                }
-                            };
-                        case "text-dialog":
-                            return {
-                                center: "sfk-ok", Enter: function () {
-                                    e.closeOverlay()
-                                }, Backspace: function (t) {
-                                    t.preventDefault(), e.closeOverlay()
-                                }, ArrowDown: function () {
-                                    var t = getComputedStyle(e.bodyDialog).getPropertyValue("font-size"),
-                                        r = e.bodyDialog.offsetHeight;
-                                    e.bodyDialog.scrollBy(0, parseInt(t) + r / 2)
-                                }, ArrowUp: function () {
-                                    var t = getComputedStyle(e.bodyDialog).getPropertyValue("font-size"),
-                                        r = e.bodyDialog.offsetHeight;
-                                    e.bodyDialog.scrollBy(0, parseInt(t) - r / 2)
-                                }
-                            }
+                            case "action-confirm":
+                                    return {
+                                        left: "sfk-dialog-cancel", center: "sfk-open", SoftLeft: function () {
+                                            return e.closeOverlay()
+                                        }, Enter: function () {
+                                            try {
+                                                e.state.text.action()
+                                            } catch (e) {
+                                                console.log("ACTION ERROR: " + e)
+                                            };
+                                        }, Backspace: function (t) {
+                                            t.preventDefault(), e.closeOverlay()
+                                        }
+                                    }
+
+                        }
+                    }
+                }, {
+                    key: "openUrl",
+                    value: function (t) {
+                        window.open(t.data, "popup")
+                    }
+                }, {
+                    key: "openText",
+                    value: function (t) {
+                        this.openOverlay((0, c.createComponentVNode)(2, h.TextView, {
+                            onRef: this.handleOnRef,
+                            text: t
+                        }), {
+                            type: "text-dialog"
+                        })
+                    }
+                },
+                {
+                    key: "openOther",
+                    value: function (t, d) {
+                        // OPENOTHER from history
+                        this.openOverlay((0, c.createComponentVNode)(2, h.TextView, {
+                            onRef: this.handleOnRef,
+                            text: d
+                        }), {
+                            type: "action-confirm"
+                        })
+                    }
+                }, {
+                    key: "createListWithADS",
+                    value: function () {
+                        var t = (0, y.getHistory)();
+                        return this.realocateSeparator(t)
+                    }
+                }, {
+                    key: "realocateSeparator",
+                    value: function (t) {
+                        var e = [];
+                        return t.map(function (r, n) {
+                            if (r.kind === A.ADS) {
+                                e.pop();
+                                var a = t[n - 1],
+                                    o = (0, i.default)({}, r, {
+                                        group: a.group,
+                                        isFirstOnGroup: !1,
+                                        isLastOnGroup: !!a.isLastOnGroup && a.isLastOnGroup
+                                    });
+                                a.isLastOnGroup && (a.isLastOnGroup = !1), e.push(a), e.push(o)
+                            } else e.push(r)
+                        }), e
+                    }
+                }, {
+                    key: "renderSeparator",
+                    value: function (t, e) {
+                        if (t.isLastOnGroup && !e) return (0, c.createVNode)(1, "div", _.default.separator)
+                    }
+                }, {
+                    key: "getCurrentElement",
+                    value: function () {
+                        var t = this.state.currentIndex;
+                        return document.querySelector("#item" + t)
+                    }
+                }, {
+                    key: "renderContent",
+                    value: function () {
+                        var t = this,
+                            e = this.state,
+                            r = e.evtKeyboard,
+                            n = e.history,
+                            i = e.behavior;
+                        return n.length ? (0, c.createVNode)(1, "div", _.default.container, (0, c.createVNode)(1, "div", _.default.items, this.renderItems(), 0, null, null, function (e) {
+                            var n = t.getCurrentElement();
+                            e && n && d.Scroll.vertical({
+                                offset: 30,
+                                behavior: i,
+                                header: 0,
+                                node: n,
+                                direction: r
+                            })
+                        }), 2) : (0, c.createComponentVNode)(2, h.Placeholder, {
+                            image: v.default,
+                            text: "my-history-empty"
+                        })
                     }
                 }
-            }, {
-                key: "openUrl",
-                value: function (t) {
-                    window.open(t.data, "popup")
-                }
-            }, {
-                key: "openText",
-                value: function (t) {
-                    this.openOverlay((0, c.createComponentVNode)(2, h.TextView, {
-                        onRef: this.handleOnRef,
-                        text: t
-                    }), {
-                        type: "text-dialog"
-                    })
-                }
-            }, {
-                key: "createListWithADS",
-                value: function () {
-                    var t = (0, y.getHistory)();
-                    return this.realocateSeparator(t)
-                }
-            }, {
-                key: "realocateSeparator",
-                value: function (t) {
-                    var e = [];
-                    return t.map(function (r, n) {
-                        if (r.kind === A.ADS) {
-                            e.pop();
-                            var a = t[n - 1],
-                                o = (0, i.default)({}, r, {
-                                    group: a.group,
-                                    isFirstOnGroup: !1,
-                                    isLastOnGroup: !!a.isLastOnGroup && a.isLastOnGroup
-                                });
-                            a.isLastOnGroup && (a.isLastOnGroup = !1), e.push(a), e.push(o)
-                        } else e.push(r)
-                    }), e
-                }
-            }, {
-                key: "renderSeparator",
-                value: function (t, e) {
-                    if (t.isLastOnGroup && !e) return (0, c.createVNode)(1, "div", _.default.separator)
-                }
-            }, {
-                key: "getCurrentElement",
-                value: function () {
-                    var t = this.state.currentIndex;
-                    return document.querySelector("#item" + t)
-                }
-            }, {
-                key: "renderContent",
-                value: function () {
-                    var t = this,
-                        e = this.state,
-                        r = e.evtKeyboard,
-                        n = e.history,
-                        i = e.behavior;
-                    return n.length ? (0, c.createVNode)(1, "div", _.default.container, (0, c.createVNode)(1, "div", _.default.items, this.renderItems(), 0, null, null, function (e) {
-                        var n = t.getCurrentElement();
-                        e && n && d.Scroll.vertical({
-                            offset: 30,
-                            behavior: i,
-                            header: 0,
-                            node: n,
-                            direction: r
-                        })
-                    }), 2) : (0, c.createComponentVNode)(2, h.Placeholder, {
-                        image: v.default,
-                        text: "my-history-empty"
-                    })
-                }
-            }]), e
+            ]), e
         }(f.Page);
     e.default = T
 }, function (t, e, r) {
