@@ -4490,19 +4490,20 @@ webpackJsonp([0], [, , , function (e, t, n) {
                                 }, function () {
                                     t.updateSoftkey()
                                 });
-                                this.checkFileSupport() && g.a.getFileInfo(this.props.path, this.openFile.bind(this))
+                                (this.checkFileSupport() || v.a.pickActivityMode) && g.a.getFileInfo(this.props.path, this.openFile.bind(this))
                         }
                     }
                 }, {
                     key: "checkFileSupport",
                     value: function () {
                         var e = v.a.getDisplayName(this.props.path),
-                            t = MimeMapper.guessTypeFromFileProperties(e, this.props.type);
+                            t = MimeMapper.guessTypeFromFileProperties(e, e.type);
                         return !(0 === t.length ||
                             !(MimeMapper._fileTypeMap.photo.includes(t) ||
                                 MimeMapper._fileTypeMap.audio.includes(t) ||
                                 MimeMapper._fileTypeMap.video.includes(t) ||
-                                MimeMapper._fileTypeMap.package.includes(t) ||
+                                MimeMapper._fileTypeMap.compressed.includes(t) ||
+                                MimeMapper._fileTypeMap.font.includes(t) ||
                                 MimeMapper._fileTypeMap.app.includes(t) ||
                                 MimeMapper._fileTypeMap.other.includes(t)))
                     }
@@ -4518,10 +4519,18 @@ webpackJsonp([0], [, , , function (e, t, n) {
                 , {
                     key: "openFile",
                     value: function (e) {
-                        if (v.a.pickActivityMode) return void v.a.activityObj.postResult({
-                            type: e.type,
-                            blob: e
-                        });
+                        if (v.a.pickActivityMode) { try {
+                            var mtype = MimeMapper.guessTypeFromFileProperties(e.name, e.type)
+                            // Implement our own MIME types
+                            e = e.slice(0, e.size, mtype)
+                            return void v.a.activityObj.postResult({
+                                type: mtype,
+                                blob: e
+                            });  
+                        } catch (e) {console.log(e)}
+                          
+                        }
+                       
                         MimeMapper.openFile(e);
                     }
                 }, {

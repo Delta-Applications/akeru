@@ -261,7 +261,7 @@ h5 {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, .85);
-    color: var(--color-gs90)
+    color: var(--color-gs90);
 }
 
 .kai-dialog-wrapper {
@@ -274,7 +274,7 @@ h5 {
 .kai-dialog-header {
     padding: .5rem 1rem;
     text-align: center;
-    background-color: var(--color-gs20)
+    background-color: var(--color-gs00);
 }
 
 .kai-dialog-container {
@@ -527,7 +527,9 @@ ul {
     flex-direction: row;
     align-items: center;
     overflow: hidden;
-    outline: none
+    outline: none;
+    color: var(--color-gs90);
+    background: var(--color-gs00);
 }
 
 .kai-rbl:focus {
@@ -536,17 +538,18 @@ ul {
 }
 
 .kai-rbl-button {
-    margin: 0 1rem
+    margin: 0 1rem;
+    /*! background: var(--color-gs00); */
 }
 
 .kai-rbl-button-input-focused {
-    color: #fff;
-    color: var(--rbl-text-focused)
+    /*! color: #fff; */
+    color: var(--rbl-text-focused);
 }
 
 .kai-rbl-button-input-unfocused {
     color: #a6a6a6;
-    color: var(--rbl-radio-unfocused)
+    /*! color: var(--rbl-radio-unfocused) */
 }
 
 .kai-rbl-button>input[type=radio] {
@@ -555,7 +558,7 @@ ul {
     position: relative;
     width: 2rem;
     height: 2rem;
-    border-radius: 35%
+    border-radius: 35%;
 }
 
 .kai-rbl-button>input[type=radio]:before {
@@ -859,7 +862,8 @@ input {
 }
 
 .kai-text-input {
-    padding: 1rem
+    padding: 1rem;
+    background: var(--color-gs00);
 }
 
 .kai-text-input-label {
@@ -878,7 +882,8 @@ input {
     border: 1px solid #858585;
     border: 1px solid var(--color-epsilon);
     border-radius: 2px;
-    background-color: #fff
+    background-color: var(--color-gs00);
+    color: var(--color-gs90);
 }
 
 .kai-text-input-input:focus {
@@ -887,7 +892,8 @@ input {
 
 .kai-text-input--focused .kai-text-input-label {
     color: #fff;
-    color: var(--tl-text-focused)
+    color: var(--tl-text-focused);
+    /*! background: var(--color-gs00); */
 }
 
 /*# sourceMappingURL=2.3b9d492f.chunk.css.map */

@@ -1,5 +1,5 @@
 {
-  "name": "Store",
+  "name": "Store client",
   "description": "Store client for B-Hackers store (and more)",
   "type": "certified", 
   "permissions": {
@@ -17,7 +17,7 @@
     "name": "Affe Null",
     "url": "https://gitlab.com/affenull2345"
   },
-  "version": "0.2.3",
+  "version": "0.2.6",
   "icons": {
     "56": "/icon_56.png",
     "112": "/icon_112.png"

@@ -8,11 +8,11 @@
 
 .item-selected,
 .kai-rbl-focused {
-    background-color: var(--color-purple)
+    background-color: var(--color-blue);
 }
 
 :root {
-    --tab-underline-color: var(--color-blue)
+    --tab-underline-color: var(--color-blue);
 }
 
 .AppDetailBody {
@@ -118,7 +118,9 @@
 .AppList {
     width: 100%;
     height: 100%;
-    overflow: hidden
+    overflow: hidden;
+    background: var(--color-gs00);
+    color: var(--color-gs90);
 }
 
 .AppListEmpty {
@@ -144,7 +146,9 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    text-align: center
+    text-align: center;
+    background: var(--color-gs00);
+    color: var(--color-gs90);
 }
 
 .Store {

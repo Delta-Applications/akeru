@@ -1,23 +1,23 @@
 self.__precacheManifest = [
   {
-    "revision": "54fb1195fe48305a9b09",
-    "url": "/static/css/main.f3761089.chunk.css"
+    "revision": "080d351ace3db9e7b8a4",
+    "url": "/static/css/main.bfcb2c6a.chunk.css"
   },
   {
-    "revision": "54fb1195fe48305a9b09",
-    "url": "/static/js/main.54fb1195.chunk.js"
+    "revision": "080d351ace3db9e7b8a4",
+    "url": "/static/js/main.080d351a.chunk.js"
   },
   {
     "revision": "d53d57e405a7cf0b07ab",
     "url": "/static/js/runtime~main.d53d57e4.js"
   },
   {
-    "revision": "6312148ee1d8b66bcbf4",
+    "revision": "5ec86cabbcbf64bd8222",
     "url": "/static/css/2.3b9d492f.chunk.css"
   },
   {
-    "revision": "6312148ee1d8b66bcbf4",
-    "url": "/static/js/2.6312148e.chunk.js"
+    "revision": "5ec86cabbcbf64bd8222",
+    "url": "/static/js/2.5ec86cab.chunk.js"
   },
   {
     "revision": "686d74dfef715329736523da67a68ce0",
@@ -36,7 +36,7 @@ self.__precacheManifest = [
     "url": "/static/media/kai-icons.07127065.svg"
   },
   {
-    "revision": "268b635e811d6737f368bdb2ce3f4d38",
+    "revision": "926bdcfe4e3efbe8c086d270eab51463",
     "url": "/index.html"
   }
 ];
